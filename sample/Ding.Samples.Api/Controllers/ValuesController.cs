@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Util.Helpers;
 
 namespace Ding.Samples.Api.Controllers
 {
@@ -14,7 +16,9 @@ namespace Ding.Samples.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var http = Ioc.Create<IHttpContextAccessor>();
+            var host = http.HttpContext.Request.Host.Value;
+            return new string[] { "value1", "value2", host };
         }
 
         // GET api/values/5
