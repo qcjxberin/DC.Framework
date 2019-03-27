@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../../build/version.props" />
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>Util.Security</AssemblyName>
     <RootNamespace>Util.Security</RootNamespace>
     <Authors>何镇汐</Authors>
@@ -32,11 +32,11 @@ Util是一个.net core平台下的应用框架，旨在提升小型团队的开�
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="3.0.0-preview-18579-0056" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Util\01-Ding.csproj" />
+    <ProjectReference Include="..\Ding\01-Ding.csproj" />
   </ItemGroup>
 
   <ItemGroup>

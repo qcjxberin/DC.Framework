@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>    
-    <TargetFramework>netcoreapp2.0</TargetFramework>    
+    <TargetFramework>netcoreapp3.0</TargetFramework>    
     <AssemblyName>Util.Tests</AssemblyName>    
     <RootNamespace>Util.Tests</RootNamespace>    
     <Description />    
@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.3.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
     <PackageReference Include="NSubstitute" Version="4.0.0" />
     <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -32,13 +32,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Util.Applications\08-Ding.Applications.csproj" />
-    <ProjectReference Include="..\..\src\Util.Caches\04-Ding.Caches.csproj" />
-    <ProjectReference Include="..\..\src\Util.Datas\07-Ding.Datas.csproj" />
-    <ProjectReference Include="..\..\src\Util.Events\05-Ding.Events.csproj" />
-    <ProjectReference Include="..\..\src\Util.Logs\03-Ding.Logs.csproj" />
-    <ProjectReference Include="..\..\src\Util.Security\02-Ding.Security.csproj" />
-    <ProjectReference Include="..\..\src\Util\01-Ding.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Applications\08-Ding.Applications.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Caches\04-Ding.Caches.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Datas\07-Ding.Datas.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Events\05-Ding.Events.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Logs\03-Ding.Logs.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Security\02-Ding.Security.csproj" />
+    <ProjectReference Include="..\..\src\Ding\01-Ding.csproj" />
   </ItemGroup>
 
   <ItemGroup>
