@@ -29,14 +29,14 @@ Util是一个.net core平台下的应用框架，旨在提升小型团队的开�
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Util\01-Util.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EasyCaching.HybridCache" Version="0.5.3" />
     <PackageReference Include="EasyCaching.InMemory" Version="0.5.3" />
     <PackageReference Include="EasyCaching.Memcached" Version="0.5.3" />
     <PackageReference Include="EasyCaching.Redis" Version="0.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Util\01-Ding.csproj" />
   </ItemGroup>
 
 </Project>

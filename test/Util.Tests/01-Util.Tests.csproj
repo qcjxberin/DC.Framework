@@ -38,7 +38,7 @@
     <ProjectReference Include="..\..\src\Util.Events\05-Util.Events.csproj" />
     <ProjectReference Include="..\..\src\Util.Logs\03-Util.Logs.csproj" />
     <ProjectReference Include="..\..\src\Util.Security\02-Util.Security.csproj" />
-    <ProjectReference Include="..\..\src\Util\01-Util.csproj" />
+    <ProjectReference Include="..\..\src\Util\01-Ding.csproj" />
   </ItemGroup>
 
   <ItemGroup>
