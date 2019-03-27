@@ -8,49 +8,49 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-test", "02-test", "{DE1D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Core", "01-Core", "{3746073A-1C5C-40A7-9D50-CB2A94CA888A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Util.Tests", "test\Util.Tests\01-Util.Tests.csproj", "{4C93DBB6-7840-4277-BAF1-56148B62FB3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Ding.Tests", "test\Util.Tests\01-Ding.Tests.csproj", "{4C93DBB6-7840-4277-BAF1-56148B62FB3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Core", "01-Core", "{6FA93B2E-A5E5-44CA-9851-52FAA2BF5C57}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Ding", "src\Util\01-Ding.csproj", "{5981ADBE-58A4-4F84-9529-E7D7F7E1610C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-Util.Datas", "src\Util.Datas\07-Util.Datas.csproj", "{CD83426E-2BA1-4DB0-94D9-1185C076276F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-Ding.Datas", "src\Util.Datas\07-Ding.Datas.csproj", "{CD83426E-2BA1-4DB0-94D9-1185C076276F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Util.Datas.Tests.Integration", "test\Util.Datas.Tests.Integration\02-Util.Datas.Tests.Integration.csproj", "{411B666F-EDA0-47E0-BB34-3EAF047549A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Ding.Datas.Tests.Integration", "test\Util.Datas.Tests.Integration\02-Ding.Datas.Tests.Integration.csproj", "{411B666F-EDA0-47E0-BB34-3EAF047549A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03-Util.Logs", "src\Util.Logs\03-Util.Logs.csproj", "{0330EB27-814D-4CF6-B377-3BFA884D5FD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03-Ding.Logs", "src\Util.Logs\03-Ding.Logs.csproj", "{0330EB27-814D-4CF6-B377-3BFA884D5FD2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-sample", "03-sample", "{F1B4AAEF-9162-4DFA-8B62-4069FC914839}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Biz", "02-Biz", "{62644B42-76EF-4FC2-8736-3E9B96C1D832}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Util.Biz", "src\Util.Biz\01-Util.Biz.csproj", "{BAB54FFD-DF77-40B6-86A5-A1A3E0985468}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Ding.Biz", "src\Util.Biz\01-Ding.Biz.csproj", "{BAB54FFD-DF77-40B6-86A5-A1A3E0985468}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Util.Security", "src\Util.Security\02-Util.Security.csproj", "{83E78951-5FBE-43D5-A6BE-7735721E4C1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Ding.Security", "src\Util.Security\02-Ding.Security.csproj", "{83E78951-5FBE-43D5-A6BE-7735721E4C1D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Util.Applications", "src\Util.Applications\08-Util.Applications.csproj", "{7A5E9C1B-CE91-463D-B0D1-8117C9E29D30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Ding.Applications", "src\Util.Applications\08-Ding.Applications.csproj", "{7A5E9C1B-CE91-463D-B0D1-8117C9E29D30}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05-Util.Events", "src\Util.Events\05-Util.Events.csproj", "{A93DFEEC-0DC7-4628-96F7-914A8053732B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05-Ding.Events", "src\Util.Events\05-Ding.Events.csproj", "{A93DFEEC-0DC7-4628-96F7-914A8053732B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Tools", "03-Tools", "{1907A873-8368-4CFF-B5B3-98F04CD2E3A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-Util.Webs", "src\Util.Webs\09-Util.Webs.csproj", "{0A32F32B-49DF-49AB-8F3C-AFDD28517A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-Ding.Webs", "src\Util.Webs\09-Ding.Webs.csproj", "{0A32F32B-49DF-49AB-8F3C-AFDD28517A89}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Util.Tools.QrCode", "src\Util.Tools.QrCode\01-Util.Tools.QrCode.csproj", "{ED44ED49-3F9E-4D14-A600-51D7792A3F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Ding.Tools.QrCode", "src\Util.Tools.QrCode\01-Ding.Tools.QrCode.csproj", "{ED44ED49-3F9E-4D14-A600-51D7792A3F64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Util.Tools.Sms", "src\Util.Tools.Sms\02-Util.Tools.Sms.csproj", "{883EF7C5-4234-4A1B-82BC-36597D280B57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Ding.Tools.Sms", "src\Util.Tools.Sms\02-Ding.Tools.Sms.csproj", "{883EF7C5-4234-4A1B-82BC-36597D280B57}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Util.Biz.Payments", "src\Util.Biz.Payments\02-Util.Biz.Payments.csproj", "{69B79A60-3719-43E5-BE12-78E401C7BC0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Ding.Biz.Payments", "src\Util.Biz.Payments\02-Ding.Biz.Payments.csproj", "{69B79A60-3719-43E5-BE12-78E401C7BC0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Biz", "02-Biz", "{D1083FEB-81A7-4BBF-ADDB-C03D143BC4AB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Util.Biz.Tests.Integration", "test\Util.Biz.Tests.Integration\Util.Biz.Tests.Integration.csproj", "{F680DA14-282E-471E-8E1C-F4D2067B718E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Biz.Tests.Integration", "test\Util.Biz.Tests.Integration\Ding.Biz.Tests.Integration.csproj", "{F680DA14-282E-471E-8E1C-F4D2067B718E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06-Util.Schedulers", "src\Util.Schedulers\06-Util.Schedulers.csproj", "{E220692E-909A-4855-A67F-64C3A9590BA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06-Ding.Schedulers", "src\Util.Schedulers\06-Ding.Schedulers.csproj", "{E220692E-909A-4855-A67F-64C3A9590BA6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Util.Samples.Schedulers", "sample\Util.Samples.Schedulers\Util.Samples.Schedulers.csproj", "{18A2D4FE-27BB-4A69-8C07-29169B9006B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Samples.Schedulers", "sample\Util.Samples.Schedulers\Ding.Samples.Schedulers.csproj", "{18A2D4FE-27BB-4A69-8C07-29169B9006B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04-Util.Caches", "src\Util.Caches\04-Util.Caches.csproj", "{26F6273A-567A-4AA4-8304-AEC57FC40DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04-Ding.Caches", "src\Util.Caches\04-Ding.Caches.csproj", "{26F6273A-567A-4AA4-8304-AEC57FC40DC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
