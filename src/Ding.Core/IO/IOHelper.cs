@@ -245,7 +245,7 @@ namespace System
         /// <param name="des">目的数据流</param>
         /// <param name="src">源数据流</param>
         /// <returns></returns>
-        public static Stream Write(this Stream des, params Byte[] src)
+        public static Stream WriteBytes(this Stream des, params Byte[] src)
         {
             if (src != null && src.Length > 0) des.Write(src, 0, src.Length);
             return des;
@@ -264,7 +264,7 @@ namespace System
             }
 
             des.WriteEncodedInt(src.Length);
-            return des.Write(src);
+            return des.WriteBytes(src);
         }
 
         /// <summary>读取字节数组，先读取压缩整数表示的长度</summary>
@@ -301,7 +301,7 @@ namespace System
         public static Stream WriteDateTime(this Stream stream, DateTime dt)
         {
             var seconds = dt.ToInt();
-            stream.Write(seconds.GetBytes());
+            stream.WriteBytes(seconds.GetBytes());
 
             return stream;
         }

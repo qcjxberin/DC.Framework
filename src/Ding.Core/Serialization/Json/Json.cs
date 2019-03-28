@@ -116,7 +116,7 @@ namespace NewLife.Serialization
             var sb = Pool.StringBuilder.Get();
             Write(sb, value);
 
-            Stream.Write(sb.Put(true).GetBytes());
+            Stream.WriteBytes(sb.Put(true).GetBytes());
 
             return false;
         }

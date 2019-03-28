@@ -269,7 +269,7 @@ namespace NewLife.Http
             else if (size < 0xFFFF)
             {
                 ms.WriteByte(126);
-                ms.Write(((Int16)size).GetBytes(false));
+                ms.WriteBytes(((Int16)size).GetBytes(false));
             }
             else
                 throw new NotSupportedException();

@@ -1,0 +1,102 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.1</TargetFrameworks>
+    <AssemblyName>NewLife.Net</AssemblyName>
+    <RootNamespace>NewLife.Net</RootNamespace>
+    <AssemblyTitle>新生命网络库</AssemblyTitle>
+    <Description>网络通讯基础框架及各种协议实现</Description>
+    <Company>新生命开发团队</Company>
+    <Copyright>版权所有(C) 新生命开发团队 2002~2019</Copyright>
+    <Version>3.5.2019.0310</Version>
+    <FileVersion>3.5.2019.0310</FileVersion>
+    <AssemblyVersion>3.5.*</AssemblyVersion>
+    <Deterministic>false</Deterministic>
+    <OutputPath>..\Bin</OutputPath>
+    <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Authors>$(Company)</Authors>
+    <ProjectUrl>https://github.com/NewLifeX</ProjectUrl>
+    <PackageIconUrl>http://www.NewLifeX.com/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/NewLifeX/NewLife.Net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>新生命团队;X组件;NewLife;$(AssemblyName)</PackageTags>
+    <PackageReleaseNotes>优化Json序列化对列表和字段的支持</PackageReleaseNotes>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSource>true</IncludeSource>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-*" PrivateAssets="All" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45'">
+    <DefineConstants>$(DefineConstants);__WIN__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CoAP\**" />
+    <Compile Remove="Dhcp\**" />
+    <Compile Remove="Fetion\**" />
+    <Compile Remove="ISO\**" />
+    <Compile Remove="MQTT\**" />
+    <Compile Remove="Proxy\Socks5\**" />
+    <Compile Remove="SNTP\**" />
+    <EmbeddedResource Remove="CoAP\**" />
+    <EmbeddedResource Remove="Dhcp\**" />
+    <EmbeddedResource Remove="Fetion\**" />
+    <EmbeddedResource Remove="ISO\**" />
+    <EmbeddedResource Remove="MQTT\**" />
+    <EmbeddedResource Remove="Proxy\Socks5\**" />
+    <EmbeddedResource Remove="SNTP\**" />
+    <None Remove="CoAP\**" />
+    <None Remove="Dhcp\**" />
+    <None Remove="Fetion\**" />
+    <None Remove="ISO\**" />
+    <None Remove="MQTT\**" />
+    <None Remove="Proxy\Socks5\**" />
+    <None Remove="SNTP\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Application\SerialServer.cs" />
+    <Compile Remove="Application\StreamServer.cs" />
+    <Compile Remove="Common\ClientMessageProvider.cs" />
+    <Compile Remove="Common\ExceptionEventArgs.cs" />
+    <Compile Remove="Common\NetHelper.cs" />
+    <Compile Remove="Common\NetUri.cs" />
+    <Compile Remove="Common\ServerMessageProvider.cs" />
+    <Compile Remove="Common\SessionMessageProvider.cs" />
+    <Compile Remove="DNS\DNSQuestion.cs" />
+    <Compile Remove="Http\ByteParser.cs" />
+    <Compile Remove="Http\ByteString.cs" />
+    <Compile Remove="Http\HttpServer.cs" />
+    <Compile Remove="Http\HttpSession.cs" />
+    <Compile Remove="Http\Messages.cs" />
+    <Compile Remove="Http\NtlmAuth.cs" />
+    <Compile Remove="Http\WebHost.cs" />
+    <Compile Remove="Http\WebRequest.cs" />
+    <Compile Remove="Http\WebServer.cs" />
+    <Compile Remove="Http\WebSession.cs" />
+    <Compile Remove="Modbus\UdpTransport.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ding.Core\02-Ding.Core.csproj" />
+  </ItemGroup>
+
+</Project>

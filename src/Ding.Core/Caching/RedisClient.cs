@@ -142,12 +142,12 @@ namespace NewLife.Caching
             if (args == null || args.Length == 0)
             {
                 //var str = "*1\r\n${0}\r\n{1}\r\n".F(cmd.Length, cmd);
-                ms.Write(GetHeaderBytes(cmd, 0));
+                ms.WriteBytes(GetHeaderBytes(cmd, 0));
             }
             else
             {
                 //var str = "*{2}\r\n${0}\r\n{1}\r\n".F(cmd.Length, cmd, 1 + args.Length);
-                ms.Write(GetHeaderBytes(cmd, args.Length));
+                ms.WriteBytes(GetHeaderBytes(cmd, args.Length));
 
                 foreach (var item in args)
                 {
@@ -166,11 +166,11 @@ namespace NewLife.Caching
                     //str = "${0}\r\n".F(item.Length);
                     //ms.Write(str.GetBytes());
                     ms.WriteByte((Byte)'$');
-                    ms.Write(sizes);
-                    ms.Write(NewLine);
+                    ms.WriteBytes(sizes);
+                    ms.WriteBytes(NewLine);
                     //ms.Write(item);
                     item.CopyTo(ms);
-                    ms.Write(NewLine);
+                    ms.WriteBytes(NewLine);
                 }
             }
             if (log != null) WriteLog(log.Put(true));
