@@ -57,6 +57,7 @@ namespace Ding.Utils.Config
             return _config.GetSection(sectionName).Value;
         }
 
+#if __CORE21__
         /// <summary>
         /// 设置配置项
         /// </summary>
@@ -78,5 +79,28 @@ namespace Ding.Utils.Config
                          .Build();
             }
         }
+#else
+        /// <summary>
+        /// 设置配置项
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="env"></param>
+        public static void Set(string file = "appsettings.json", IHostingEnvironment env = null)
+        {
+            if (env != null)
+            {
+                _config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                         .AddJsonFile(file, true, true)
+                         .AddJsonFile($"{file.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries)[0]}.{env.EnvironmentName}.json", true)
+                         .Build();
+            }
+            else
+            {
+                _config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                         .AddJsonFile(file, true, true)
+                         .Build();
+            }
+        }
+#endif
     }
 }
