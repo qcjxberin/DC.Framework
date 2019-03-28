@@ -1,9 +1,10 @@
-﻿using System;
-using System.Reflection;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System;
+using System.Reflection;
 
-namespace Ding.Webs.Extensions {
+namespace Ding.Webs.Extensions
+{
     /// <summary>
     /// Swagger扩展
     /// </summary>
@@ -16,7 +17,7 @@ namespace Ding.Webs.Extensions {
         public static IApplicationBuilder UseSwaggerX( this IApplicationBuilder builder,Action<SwaggerUIOptions> swaggerUiSetup = null ) {
             builder.UseSwagger();
             builder.UseSwaggerUI( options => {
-                options.IndexStream = () => typeof( Extensions ).GetTypeInfo().Assembly.GetManifestResourceStream( "Ding.Webs.Swaggers.index.html" );
+                options.IndexStream = () => typeof( Extensions ).GetTypeInfo().Assembly.GetManifestResourceStream("Ding.Webs.Swaggers.index.html");
                 if ( swaggerUiSetup == null ) {
                     options.SwaggerEndpoint( "/swagger/v1/swagger.json", "api v1" );
                     return;
