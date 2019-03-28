@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Locks {
+namespace Ding.Locks {
     /// <summary>
     /// 业务锁
     /// </summary>

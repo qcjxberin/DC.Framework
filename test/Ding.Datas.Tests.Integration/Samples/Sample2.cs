@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Util.Datas.Tests.Samples {
+namespace Ding.Datas.Tests.Samples {
     /// <summary>
     /// 测试样例2
     /// </summary>

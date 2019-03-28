@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Domains;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Domains;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Domains {
+namespace Ding.Tests.Domains {
     /// <summary>
     /// 列表比较器测试
     /// </summary>

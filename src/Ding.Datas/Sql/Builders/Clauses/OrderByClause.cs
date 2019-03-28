@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Sql.Builders.Internal;
-using Util.Properties;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Builders.Internal;
+using Ding.Properties;
 
-namespace Util.Datas.Sql.Builders.Clauses {
+namespace Ding.Datas.Sql.Builders.Clauses {
     /// <summary>
     /// Order By子句
     /// </summary>

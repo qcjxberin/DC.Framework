@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Util.Datas.Ef.Core;
-using Util.Domains;
+using Ding.Datas.Ef.Core;
+using Ding.Domains;
 
-namespace Util.Datas.Ef.SqlServer {
+namespace Ding.Datas.Ef.SqlServer {
     /// <summary>
     /// 聚合根映射配置
     /// </summary>

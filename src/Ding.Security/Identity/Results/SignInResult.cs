@@ -1,4 +1,4 @@
-﻿namespace Util.Security.Identity.Results {
+﻿namespace Ding.Security.Identity.Results {
     /// <summary>
     /// 登录结果
     /// </summary>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Domains;
-using Util.Logs.Extensions;
+using Ding.Domains;
+using Ding.Logs.Extensions;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 增删改查服务 - Save
     /// </summary>

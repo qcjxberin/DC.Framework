@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AspectCore.DynamicProxy.Parameters;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Logs.Extensions {
+namespace Ding.Logs.Extensions {
     /// <summary>
     /// AOP扩展
     /// </summary>

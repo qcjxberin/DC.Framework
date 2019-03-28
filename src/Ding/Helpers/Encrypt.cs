@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using Util.Helpers.Internal;
+using Ding.Helpers.Internal;
 
-namespace Util.Helpers {
+namespace Ding.Helpers {
     /// <summary>
     /// 加密操作
     /// 说明：

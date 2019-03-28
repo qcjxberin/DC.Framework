@@ -1,8 +1,8 @@
 ﻿
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Domains {
+namespace Ding.Tests.Domains {
     /// <summary>
     /// 测试值对象
     /// </summary>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests {
+namespace Ding.Tests {
     /// <summary>
     /// 扩展测试 - Lambda表达式扩展
     /// </summary>

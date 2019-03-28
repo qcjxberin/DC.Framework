@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 测试样例3
     /// </summary>

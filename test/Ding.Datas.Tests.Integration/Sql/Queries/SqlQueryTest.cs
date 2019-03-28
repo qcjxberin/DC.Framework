@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Datas.Sql;
-using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.SqlServer.UnitOfWorks;
-using Util.Dependency;
-using Util.Helpers;
+using Ding.Datas.Sql;
+using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks;
+using Ding.Dependency;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Datas.Tests.Sql.Queries {
+namespace Ding.Datas.Tests.Sql.Queries {
     /// <summary>
     /// Sql Server查询对象测试
     /// </summary>

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Util.Logs.Abstractions;
+using Ding.Logs.Abstractions;
 
-namespace Util.Logs.Extensions {
+namespace Ding.Logs.Extensions {
     /// <summary>
     /// 日志扩展
     /// </summary>

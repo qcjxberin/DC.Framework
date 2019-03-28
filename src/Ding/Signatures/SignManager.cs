@@ -1,7 +1,7 @@
-﻿using Util.Helpers;
-using Util.Parameters;
+﻿using Ding.Helpers;
+using Ding.Parameters;
 
-namespace Util.Signatures {
+namespace Ding.Signatures {
     /// <summary>
     /// 签名服务
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Randoms {
+namespace Ding.Randoms {
     /// <summary>
     /// 随机数生成器
     /// </summary>

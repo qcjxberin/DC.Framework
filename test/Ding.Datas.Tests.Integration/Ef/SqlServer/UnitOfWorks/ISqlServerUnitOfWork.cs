@@ -1,6 +1,6 @@
-﻿using Util.Datas.UnitOfWorks;
+﻿using Ding.Datas.UnitOfWorks;
 
-namespace Util.Datas.Tests.Ef.SqlServer.UnitOfWorks {
+namespace Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks {
     /// <summary>
     /// SqlServer工作单元
     /// </summary>

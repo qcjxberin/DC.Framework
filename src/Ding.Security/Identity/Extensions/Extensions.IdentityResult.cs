@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
-using Util.Exceptions;
+using Ding.Exceptions;
 
-namespace Util.Security.Identity.Extensions {
+namespace Ding.Security.Identity.Extensions {
     /// <summary>
     /// Identity结果扩展
     /// </summary>

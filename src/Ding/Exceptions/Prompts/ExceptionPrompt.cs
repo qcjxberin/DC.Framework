@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Hosting;
-using Util.Helpers;
-using Util.Properties;
+using Ding.Helpers;
+using Ding.Properties;
 
-namespace Util.Exceptions.Prompts {
+namespace Ding.Exceptions.Prompts {
     /// <summary>
     /// 异常提示
     /// </summary>

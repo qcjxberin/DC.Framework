@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Datas.Sql.Builders;
+using Ding.Datas.Sql.Builders;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// OrderBy子句扩展
     /// </summary>

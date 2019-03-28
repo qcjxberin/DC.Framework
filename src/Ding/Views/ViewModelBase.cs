@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Runtime.Serialization;
-using Util.Exceptions;
-using Util.Validations;
+using Ding.Exceptions;
+using Ding.Validations;
 
-namespace Util.Views {
+namespace Ding.Views {
     /// <summary>
     /// 视图模型
     /// </summary>

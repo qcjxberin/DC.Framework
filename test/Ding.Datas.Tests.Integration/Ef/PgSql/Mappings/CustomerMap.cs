@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Util.Datas.Tests.Commons.Domains.Models;
+using Ding.Datas.Tests.Commons.Domains.Models;
 
-namespace Util.Datas.Tests.Ef.PgSql.Mappings {
+namespace Ding.Datas.Tests.Ef.PgSql.Mappings {
     /// <summary>
     /// 客户映射配置
     /// </summary>

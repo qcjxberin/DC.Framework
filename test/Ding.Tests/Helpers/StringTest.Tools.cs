@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 测试字符串操作 - 工具库
     /// </summary>

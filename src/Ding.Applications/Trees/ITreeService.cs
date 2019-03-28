@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Applications.Dtos;
-using Util.Datas.Queries.Trees;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries.Trees;
 
-namespace Util.Applications.Trees {
+namespace Ding.Applications.Trees {
     /// <summary>
     /// 树型服务
     /// </summary>

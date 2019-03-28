@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Util.Domains;
+using Ding.Domains;
 
-namespace Util.Datas.Tests.Commons.Domains.Models {
+namespace Ding.Datas.Tests.Commons.Domains.Models {
     /// <summary>
     /// 商品 - int标识
     /// </summary>

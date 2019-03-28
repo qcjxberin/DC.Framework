@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
-using Util.Datas.Queries;
-using Util.Datas.Sql;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Tests.Samples;
-using Util.Helpers;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Tests.Samples;
+using Ding.Helpers;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer {
     /// <summary>
     /// Sql Server Sql生成器测试 - Where子句
     /// </summary>

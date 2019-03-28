@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 类型转换测试
     /// </summary>

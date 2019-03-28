@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Datas.Stores.Operations;
-using Util.Domains.Repositories;
+using Ding.Datas.Stores.Operations;
+using Ding.Domains.Repositories;
 
-namespace Util.Domains.Trees {
+namespace Ding.Domains.Trees {
     /// <summary>
     /// 树型仓储
     /// </summary>

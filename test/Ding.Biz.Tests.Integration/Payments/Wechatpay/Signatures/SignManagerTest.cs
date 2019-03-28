@@ -1,8 +1,8 @@
-﻿using Util.Biz.Payments.Wechatpay.Signatures;
-using Util.Signatures;
+﻿using Ding.Biz.Payments.Wechatpay.Signatures;
+using Ding.Signatures;
 using Xunit;
 
-namespace Util.Biz.Tests.Integration.Payments.Wechatpay.Signatures {
+namespace Ding.Biz.Tests.Integration.Payments.Wechatpay.Signatures {
     /// <summary>
     /// 微信支付签名服务测试
     /// </summary>

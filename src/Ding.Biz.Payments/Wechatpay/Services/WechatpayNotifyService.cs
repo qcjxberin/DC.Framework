@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Biz.Payments.Properties;
-using Util.Biz.Payments.Wechatpay.Abstractions;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Biz.Payments.Wechatpay.Results;
-using Util.Helpers;
-using Util.Validations;
+using Ding.Biz.Payments.Properties;
+using Ding.Biz.Payments.Wechatpay.Abstractions;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Biz.Payments.Wechatpay.Results;
+using Ding.Helpers;
+using Ding.Validations;
 
-namespace Util.Biz.Payments.Wechatpay.Services {
+namespace Ding.Biz.Payments.Wechatpay.Services {
     /// <summary>
     /// 微信支付通知服务
     /// </summary>
@@ -48,7 +48,7 @@ namespace Util.Biz.Payments.Wechatpay.Services {
         /// </summary>
         /// <param name="name">参数名</param>
         public T GetParam<T>( string name ) {
-            return Util.Helpers.Convert.To<T>( GetParam( name ) );
+            return Ding.Helpers.Convert.To<T>( GetParam( name ) );
         }
 
         /// <summary>

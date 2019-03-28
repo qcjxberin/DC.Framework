@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Domains.Trees {
+namespace Ding.Tests.Domains.Trees {
     /// <summary>
     /// 测试树型实体
     /// </summary>

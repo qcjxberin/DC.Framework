@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Events {
+namespace Ding.Events {
     /// <summary>
     /// 事件
     /// </summary>

@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Datas.Sql.Matedatas;
+using Ding.Datas.Sql.Matedatas;
 
-namespace Util.Datas.Tests.Sql.Builders.Samples {
+namespace Ding.Datas.Tests.Sql.Builders.Samples {
 
     public class TestEntityMatedata : IEntityMatedata {
         public string GetTable( Type entity ) {

@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace Util.Webs.Clients {
+namespace Ding.Webs.Clients {
     /// <summary>
     /// Web客户端
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Util.Domains {
+namespace Ding.Domains {
     /// <summary>
     /// 变更值
     /// </summary>

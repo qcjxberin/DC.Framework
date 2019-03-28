@@ -1,9 +1,9 @@
 ﻿using System.Text;
-using Util.Helpers;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 加密测试
     /// </summary>

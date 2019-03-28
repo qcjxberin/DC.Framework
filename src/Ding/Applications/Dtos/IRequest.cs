@@ -1,6 +1,6 @@
-﻿using Util.Validations;
+﻿using Ding.Validations;
 
-namespace Util.Applications.Dtos {
+namespace Ding.Applications.Dtos {
     /// <summary>
     /// 请求参数
     /// </summary>

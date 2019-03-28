@@ -1,7 +1,7 @@
-﻿using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Domains.Repositories;
+﻿using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Tests.Commons.Domains.Repositories {
+namespace Ding.Datas.Tests.Commons.Domains.Repositories {
     /// <summary>
     /// 商品仓储
     /// </summary>

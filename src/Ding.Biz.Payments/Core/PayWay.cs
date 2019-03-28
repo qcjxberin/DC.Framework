@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Util.Biz.Payments.Core {
+namespace Ding.Biz.Payments.Core {
     /// <summary>
     /// 支付方式
     /// </summary>

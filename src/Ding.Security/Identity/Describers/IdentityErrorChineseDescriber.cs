@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Util.Security.Properties;
+using Ding.Security.Properties;
 
-namespace Util.Security.Identity.Describers {
+namespace Ding.Security.Identity.Describers {
     /// <summary>
     /// Identity中文错误描述
     /// </summary>

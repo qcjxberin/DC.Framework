@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using Util.Datas.Queries;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Sql.Builders.Extensions;
-using Util.Datas.Sql.Builders.Internal;
-using Util.Datas.Sql.Matedatas;
-using Util.Helpers;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Builders.Extensions;
+using Ding.Datas.Sql.Builders.Internal;
+using Ding.Datas.Sql.Matedatas;
+using Ding.Helpers;
 
-namespace Util.Datas.Sql.Builders.Clauses {
+namespace Ding.Datas.Sql.Builders.Clauses {
     /// <summary>
     /// 表连接子句
     /// </summary>

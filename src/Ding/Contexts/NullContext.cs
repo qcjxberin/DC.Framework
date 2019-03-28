@@ -1,4 +1,4 @@
-﻿namespace Util.Contexts {
+﻿namespace Ding.Contexts {
     /// <summary>
     /// 空上下文
     /// </summary>

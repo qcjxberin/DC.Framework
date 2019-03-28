@@ -7,13 +7,13 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Util.Datas.Stores;
-using Util.Datas.UnitOfWorks;
-using Util.Domains;
-using Util.Domains.Repositories;
-using Util.Helpers;
+using Ding.Datas.Stores;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains;
+using Ding.Domains.Repositories;
+using Ding.Helpers;
 
-namespace Util.Datas.Ef.Core {
+namespace Ding.Datas.Ef.Core {
     /// <summary>
     /// 查询存储器
     /// </summary>
@@ -36,7 +36,7 @@ namespace Util.Datas.Ef.Core {
         /// <summary>
         /// Sql查询对象
         /// </summary>
-        private Util.Datas.Sql.ISqlQuery _sqlQuery;
+        private Ding.Datas.Sql.ISqlQuery _sqlQuery;
 
         /// <summary>
         /// 初始化查询存储器
@@ -64,13 +64,13 @@ namespace Util.Datas.Ef.Core {
         /// <summary>
         /// Sql查询对象
         /// </summary>
-        protected Util.Datas.Sql.ISqlQuery Sql => _sqlQuery ?? ( _sqlQuery = CreateSqlQuery() );
+        protected Ding.Datas.Sql.ISqlQuery Sql => _sqlQuery ?? ( _sqlQuery = CreateSqlQuery() );
 
         /// <summary>
         /// 创建Sql查询对象
         /// </summary>
-        protected virtual Util.Datas.Sql.ISqlQuery CreateSqlQuery() {
-            var result = Ioc.Create<Util.Datas.Sql.ISqlQuery>();
+        protected virtual Ding.Datas.Sql.ISqlQuery CreateSqlQuery() {
+            var result = Ioc.Create<Ding.Datas.Sql.ISqlQuery>();
             result.SetConnection( Connection );
             return result;
         }
@@ -149,7 +149,7 @@ namespace Util.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual List<TEntity> FindByIds( string ids ) {
-            var idList = Util.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
             return FindByIds( idList );
         }
 
@@ -177,7 +177,7 @@ namespace Util.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual async Task<List<TEntity>> FindByIdsAsync( string ids ) {
-            var idList = Util.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
             return await FindByIdsAsync( idList );
         }
 
@@ -227,7 +227,7 @@ namespace Util.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual List<TEntity> FindByIdsNoTracking( string ids ) {
-            var idList = Util.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
             return FindByIdsNoTracking( idList );
         }
 
@@ -255,7 +255,7 @@ namespace Util.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual async Task<List<TEntity>> FindByIdsNoTrackingAsync( string ids ) {
-            var idList = Util.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
             return await FindByIdsNoTrackingAsync( idList );
         }
 

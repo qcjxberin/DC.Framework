@@ -1,7 +1,7 @@
 ﻿using System.Data;
-using Util.Aspects;
+using Ding.Aspects;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// 数据库
     /// </summary>

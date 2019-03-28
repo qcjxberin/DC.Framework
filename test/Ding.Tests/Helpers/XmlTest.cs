@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Util.Helpers;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// Xml操作测试
     /// </summary>

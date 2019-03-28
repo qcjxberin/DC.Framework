@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace Util.Domains {
+namespace Ding.Domains {
     /// <summary>
     /// 值对象
     /// </summary>
@@ -55,7 +55,7 @@ namespace Util.Domains {
         /// 克隆副本
         /// </summary>
         public virtual TValueObject Clone() {
-            return Util.Helpers.Convert.To<TValueObject>( MemberwiseClone() );
+            return Ding.Helpers.Convert.To<TValueObject>( MemberwiseClone() );
         }
     }
 }

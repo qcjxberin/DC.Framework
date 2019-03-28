@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Util.Logs.Properties;
+using Ding.Logs.Properties;
 
-namespace Util.Logs.Exceptionless {
+namespace Ding.Logs.Exceptionless {
     /// <summary>
     /// Exceptionless日志内容
     /// </summary>
-    public class LogContent : Util.Logs.Contents.LogContent, ILogConvert {
+    public class LogContent : Ding.Logs.Contents.LogContent, ILogConvert {
         /// <summary>
         /// 转换
         /// </summary>

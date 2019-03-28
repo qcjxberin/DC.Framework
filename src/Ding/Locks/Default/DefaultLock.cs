@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Caches;
+using Ding.Caches;
 
-namespace Util.Locks.Default {
+namespace Ding.Locks.Default {
     /// <summary>
     /// 业务锁
     /// </summary>

@@ -1,4 +1,4 @@
-﻿namespace Util.Signatures {
+﻿namespace Ding.Signatures {
     /// <summary>
     /// 签名密钥
     /// </summary>

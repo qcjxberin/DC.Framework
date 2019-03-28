@@ -1,4 +1,4 @@
-﻿namespace Util.Applications.Dtos {
+﻿namespace Ding.Applications.Dtos {
     /// <summary>
     /// 标识
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Util.Domains {
+namespace Ding.Domains {
     /// <summary>
     /// 键列表比较结果
     /// </summary>

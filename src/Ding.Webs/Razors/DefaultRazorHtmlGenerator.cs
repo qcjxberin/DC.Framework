@@ -11,11 +11,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Routing;
-using Util.Helpers;
-using Util.Logs;
-using Util.Logs.Extensions;
+using Ding.Helpers;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
-namespace Util.Webs.Razors {
+namespace Ding.Webs.Razors {
     /// <summary>
     /// Razor静态Html生成器
     /// </summary>
@@ -104,7 +104,7 @@ namespace Util.Webs.Razors {
                     : await RenderActionViewToStringAsync(info);
                 if( string.IsNullOrWhiteSpace( html ) )
                     return;
-                var path = Util.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( info.FilePath ) ? GetPath( info ) : info.FilePath );
+                var path = Ding.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( info.FilePath ) ? GetPath( info ) : info.FilePath );
                 var directory = System.IO.Path.GetDirectoryName( path );
                 if( string.IsNullOrWhiteSpace( directory ) )
                     return;

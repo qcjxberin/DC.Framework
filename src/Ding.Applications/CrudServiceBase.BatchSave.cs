@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Logs.Extensions;
+using Ding.Logs.Extensions;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 增删改查服务 - 批量Save
     /// </summary>

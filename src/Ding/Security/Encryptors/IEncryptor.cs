@@ -1,4 +1,4 @@
-﻿namespace Util.Security.Encryptors {
+﻿namespace Ding.Security.Encryptors {
     /// <summary>
     /// 加密器
     /// </summary>

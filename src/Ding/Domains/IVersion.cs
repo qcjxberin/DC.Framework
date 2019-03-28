@@ -1,4 +1,4 @@
-﻿namespace Util.Domains {
+﻿namespace Ding.Domains {
     /// <summary>
     /// 乐观锁
     /// </summary>

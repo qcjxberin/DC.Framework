@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Applications.Dtos;
-using Util.Datas.Queries;
-using Util.Datas.Stores;
-using Util.Datas.UnitOfWorks;
-using Util.Domains;
-using Util.Helpers;
-using Util.Logs.Extensions;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries;
+using Ding.Datas.Stores;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains;
+using Ding.Helpers;
+using Ding.Logs.Extensions;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 删除服务
     /// </summary>

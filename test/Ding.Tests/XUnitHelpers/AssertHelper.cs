@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AspectCore.DynamicProxy;
 using Xunit;
 
-namespace Util.Tests.XUnitHelpers {
+namespace Ding.Tests.XUnitHelpers {
     /// <summary>
     /// 断言操作
     /// </summary>

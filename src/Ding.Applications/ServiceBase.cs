@@ -1,7 +1,7 @@
-﻿using Util.Logs;
-using Util.Sessions;
+﻿using Ding.Logs;
+using Ding.Sessions;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 应用服务
     /// </summary>
@@ -21,16 +21,16 @@ namespace Util.Applications {
         /// </summary>
         protected virtual ILog GetLog() {
             try {
-                return Util.Logs.Log.GetLog( this );
+                return Ding.Logs.Log.GetLog( this );
             }
             catch {
-                return Util.Logs.Log.Null;
+                return Ding.Logs.Log.Null;
             }
         }
 
         /// <summary>
         /// 用户会话
         /// </summary>
-        public virtual ISession Session => Util.Security.Sessions.Session.Instance;
+        public virtual ISession Session => Ding.Security.Sessions.Session.Instance;
     }
 }

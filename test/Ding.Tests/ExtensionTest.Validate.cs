@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Tests.XUnitHelpers;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests {
+namespace Ding.Tests {
     /// <summary>
     /// 扩展测试 - 验证
     /// </summary>

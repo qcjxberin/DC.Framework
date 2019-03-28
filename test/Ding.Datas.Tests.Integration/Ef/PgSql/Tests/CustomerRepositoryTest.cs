@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Datas.Ef;
-using Util.Datas.Queries;
-using Util.Datas.Tests.Commons.Datas.Criterias;
-using Util.Datas.Tests.Commons.Datas.PgSql.Configs;
-using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.PgSql.UnitOfWorks;
-using Util.Dependency;
-using Util.Helpers;
+using Ding.Datas.Ef;
+using Ding.Datas.Queries;
+using Ding.Datas.Tests.Commons.Datas.Criterias;
+using Ding.Datas.Tests.Commons.Datas.PgSql.Configs;
+using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.PgSql.UnitOfWorks;
+using Ding.Dependency;
+using Ding.Helpers;
 using Xunit;
 
-namespace Util.Datas.Tests.Ef.PgSql.Tests {
+namespace Ding.Datas.Tests.Ef.PgSql.Tests {
     /// <summary>
     /// 客户仓储测试 - 主要测试审计和查询操作
     /// </summary>

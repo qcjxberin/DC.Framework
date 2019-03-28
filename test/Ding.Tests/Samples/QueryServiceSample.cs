@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using Util.Applications;
-using Util.Applications.Dtos;
-using Util.Datas.Queries;
-using Util.Domains.Repositories;
+using Ding.Applications;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries;
+using Ding.Domains.Repositories;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 数据传输对象样例
     /// </summary>

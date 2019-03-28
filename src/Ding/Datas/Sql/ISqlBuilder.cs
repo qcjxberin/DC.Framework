@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Util.Datas.Sql.Builders;
-using Util.Domains.Repositories;
+using Ding.Datas.Sql.Builders;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// Sql生成器
     /// </summary>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Randoms {
+namespace Ding.Randoms {
     /// <summary>
     /// 随机数生成器
     /// </summary>
@@ -111,9 +111,9 @@ namespace Util.Randoms {
         /// </summary>
         /// <typeparam name="TEnum">枚举类型</typeparam>
         public TEnum GenerateEnum<TEnum>() {
-            var list = Util.Helpers.Enum.GetItems<TEnum>();
+            var list = Ding.Helpers.Enum.GetItems<TEnum>();
             int index = _random.Generate( 0, list.Count );
-            return Util.Helpers.Enum.Parse<TEnum>( list[index].Value );
+            return Ding.Helpers.Enum.Parse<TEnum>( list[index].Value );
         }
     }
 }

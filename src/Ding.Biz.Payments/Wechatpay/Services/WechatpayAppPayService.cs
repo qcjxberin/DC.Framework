@@ -1,14 +1,14 @@
 ﻿using System.Threading.Tasks;
-using Util.Biz.Payments.Core;
-using Util.Biz.Payments.Wechatpay.Abstractions;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Biz.Payments.Wechatpay.Parameters;
-using Util.Biz.Payments.Wechatpay.Parameters.Requests;
-using Util.Biz.Payments.Wechatpay.Results;
-using Util.Biz.Payments.Wechatpay.Services.Base;
-using Util.Helpers;
+using Ding.Biz.Payments.Core;
+using Ding.Biz.Payments.Wechatpay.Abstractions;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Biz.Payments.Wechatpay.Parameters;
+using Ding.Biz.Payments.Wechatpay.Parameters.Requests;
+using Ding.Biz.Payments.Wechatpay.Results;
+using Ding.Biz.Payments.Wechatpay.Services.Base;
+using Ding.Helpers;
 
-namespace Util.Biz.Payments.Wechatpay.Services {
+namespace Ding.Biz.Payments.Wechatpay.Services {
     /// <summary>
     /// 微信App支付服务
     /// </summary>

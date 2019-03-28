@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Datas.Queries;
+using Ding.Datas.Queries;
 
-namespace Util.Datas.Sql.Builders {
+namespace Ding.Datas.Sql.Builders {
     /// <summary>
     /// Join子句
     /// </summary>

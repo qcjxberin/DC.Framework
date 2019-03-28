@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace Util.Tests {
+namespace Ding.Tests {
     /// <summary>
     /// 系统扩展测试 - 日期格式扩展
     /// </summary>

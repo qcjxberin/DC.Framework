@@ -1,4 +1,4 @@
-﻿namespace Util.Logs.Contents {
+﻿namespace Ding.Logs.Contents {
     /// <summary>
     /// 标题
     /// </summary>

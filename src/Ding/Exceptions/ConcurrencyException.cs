@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Properties;
+using Ding.Properties;
 
-namespace Util.Exceptions {
+namespace Ding.Exceptions {
     /// <summary>
     /// 并发异常
     /// </summary>

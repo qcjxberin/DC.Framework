@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Biz.Payments.Alipay.Configs;
-using Util.Logs;
-using Util.Logs.Extensions;
-using Util.Parameters;
-using Util.Signatures;
-using Util.Validations;
+using Ding.Biz.Payments.Alipay.Configs;
+using Ding.Logs;
+using Ding.Logs.Extensions;
+using Ding.Parameters;
+using Ding.Signatures;
+using Ding.Validations;
 
-namespace Util.Biz.Payments.Alipay.Services.Base {
+namespace Ding.Biz.Payments.Alipay.Services.Base {
     /// <summary>
     /// 支付宝通知服务
     /// </summary>
@@ -42,7 +42,7 @@ namespace Util.Biz.Payments.Alipay.Services.Base {
         /// </summary>
         /// <param name="name">参数名</param>
         public T GetParam<T>( string name ) {
-            return Util.Helpers.Convert.To<T>( GetParam( name ) );
+            return Ding.Helpers.Convert.To<T>( GetParam( name ) );
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
-﻿using Util.Helpers;
+﻿using Ding.Helpers;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 系统扩展 - 字符串
     /// </summary>

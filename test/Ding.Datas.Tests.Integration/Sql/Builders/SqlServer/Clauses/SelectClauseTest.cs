@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Sql.Builders.Clauses;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Tests.Samples;
-using Util.Datas.Tests.Sql.Builders.Samples;
+using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Sql.Builders.Clauses;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Tests.Samples;
+using Ding.Datas.Tests.Sql.Builders.Samples;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer.Clauses {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Clauses {
     /// <summary>
     /// Select子句测试
     /// </summary>

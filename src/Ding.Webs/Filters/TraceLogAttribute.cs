@@ -2,12 +2,12 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Util.Helpers;
-using Util.Logs;
-using Util.Logs.Extensions;
-using Util.Webs.Commons;
+using Ding.Helpers;
+using Ding.Logs;
+using Ding.Logs.Extensions;
+using Ding.Webs.Commons;
 
-namespace Util.Webs.Filters {
+namespace Ding.Webs.Filters {
     /// <summary>
     /// 跟踪日志过滤器
     /// </summary>

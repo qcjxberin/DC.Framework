@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Applications;
-using Util.Applications.Dtos;
-using Util.Datas.Queries;
-using Util.Datas.UnitOfWorks;
-using Util.Domains.Repositories;
-using Util.Maps;
+using Ding.Applications;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains.Repositories;
+using Ding.Maps;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 增删改查服务样例
     /// </summary>

@@ -1,6 +1,6 @@
-﻿using Util.Parameters.Formats;
+﻿using Ding.Parameters.Formats;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 参数格式化器样例
     /// </summary>

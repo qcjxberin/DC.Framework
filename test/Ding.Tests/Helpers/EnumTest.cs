@@ -1,9 +1,9 @@
 ﻿using System;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 测试枚举操作
     /// </summary>

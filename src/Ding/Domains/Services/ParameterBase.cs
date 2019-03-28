@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using Util.Exceptions;
-using Util.Validations;
+using Ding.Exceptions;
+using Ding.Validations;
 
-namespace Util.Domains.Services {
+namespace Ding.Domains.Services {
     /// <summary>
     /// 参数
     /// </summary>

@@ -1,7 +1,7 @@
-﻿using Util.Datas.Sql.Builders.Conditions;
+﻿using Ding.Datas.Sql.Builders.Conditions;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer.Conditions {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Conditions {
     /// <summary>
     /// Is Not Null查询条件测试
     /// </summary>

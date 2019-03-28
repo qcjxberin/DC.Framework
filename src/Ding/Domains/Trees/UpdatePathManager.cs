@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Exceptions;
-using Util.Properties;
+using Ding.Exceptions;
+using Ding.Properties;
 
-namespace Util.Domains.Trees {
+namespace Ding.Domains.Trees {
     /// <summary>
     /// 树型路径更新服务
     /// </summary>

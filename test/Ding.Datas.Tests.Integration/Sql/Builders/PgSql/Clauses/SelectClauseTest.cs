@@ -1,9 +1,9 @@
-﻿using Util.Datas.Dapper.PgSql;
-using Util.Datas.Sql.Builders.Clauses;
-using Util.Datas.Sql.Builders.Core;
+﻿using Ding.Datas.Dapper.PgSql;
+using Ding.Datas.Sql.Builders.Clauses;
+using Ding.Datas.Sql.Builders.Core;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.PgSql.Clauses {
+namespace Ding.Datas.Tests.Sql.Builders.PgSql.Clauses {
     /// <summary>
     /// Select子句测试
     /// </summary>

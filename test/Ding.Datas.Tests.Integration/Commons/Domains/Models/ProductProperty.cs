@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Tests.Commons.Domains.Models {
+﻿namespace Ding.Datas.Tests.Commons.Domains.Models {
     /// <summary>
     /// 商品属性
     /// </summary>

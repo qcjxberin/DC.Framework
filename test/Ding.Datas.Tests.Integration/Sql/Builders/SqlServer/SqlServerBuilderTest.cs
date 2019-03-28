@@ -1,15 +1,15 @@
 ﻿using System;
-using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Queries;
-using Util.Datas.Sql;
-using Util.Datas.Tests.Samples;
-using Util.Datas.Tests.XUnitHelpers;
-using Util.Properties;
+using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql;
+using Ding.Datas.Tests.Samples;
+using Ding.Datas.Tests.XUnitHelpers;
+using Ding.Properties;
 using Xunit;
 using Xunit.Abstractions;
 using String = Util.Helpers.String;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer {
     /// <summary>
     /// Sql Server Sql生成器测试
     /// </summary>

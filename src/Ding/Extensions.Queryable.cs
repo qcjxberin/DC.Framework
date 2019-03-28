@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
-using Util.Datas.Queries;
-using Util.Datas.Queries.Criterias;
-using Util.Datas.Queries.Internal;
-using Util.Domains.Repositories;
+using Ding.Datas.Queries;
+using Ding.Datas.Queries.Criterias;
+using Ding.Datas.Queries.Internal;
+using Ding.Domains.Repositories;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 查询扩展
     /// </summary>

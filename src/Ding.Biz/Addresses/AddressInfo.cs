@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using Util.Domains;
+using Ding.Domains;
 
-namespace Util.Biz.Addresses {
+namespace Ding.Biz.Addresses {
     /// <summary>
     /// 地址信息 - 可变
     /// </summary>

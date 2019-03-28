@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Datas.Queries;
-using Util.Datas.Sql.Builders;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// From子句扩展
     /// </summary>

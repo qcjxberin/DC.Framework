@@ -2,10 +2,10 @@
 using DotNetCore.CAP;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Util.Events.Default;
-using Util.Events.Handlers;
+using Ding.Events.Default;
+using Ding.Events.Handlers;
 
-namespace Util.Events.Cap {
+namespace Ding.Events.Cap {
     /// <summary>
     /// 事件总线扩展
     /// </summary>

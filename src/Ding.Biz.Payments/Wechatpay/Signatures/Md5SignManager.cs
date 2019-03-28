@@ -1,8 +1,8 @@
-﻿using Util.Helpers;
-using Util.Parameters;
-using Util.Signatures;
+﻿using Ding.Helpers;
+using Ding.Parameters;
+using Ding.Signatures;
 
-namespace Util.Biz.Payments.Wechatpay.Signatures {
+namespace Ding.Biz.Payments.Wechatpay.Signatures {
     /// <summary>
     /// 微信支付Md5签名服务
     /// </summary>

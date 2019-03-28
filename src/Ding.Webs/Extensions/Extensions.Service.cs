@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Util.Webs.Razors;
+using Ding.Webs.Razors;
 
-namespace Util.Webs.Extensions {
+namespace Ding.Webs.Extensions {
     /// <summary>
     /// 服务扩展
     /// </summary>

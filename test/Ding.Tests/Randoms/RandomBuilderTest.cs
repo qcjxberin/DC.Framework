@@ -1,10 +1,10 @@
 ﻿using System;
 using NSubstitute;
-using Util.Datas.Queries;
-using Util.Randoms;
+using Ding.Datas.Queries;
+using Ding.Randoms;
 using Xunit;
 
-namespace Util.Tests.Randoms {
+namespace Ding.Tests.Randoms {
     /// <summary>
     /// 随机数生成器测试
     /// </summary>

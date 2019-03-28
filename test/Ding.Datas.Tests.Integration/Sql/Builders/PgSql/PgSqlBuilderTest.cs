@@ -1,10 +1,10 @@
-﻿using Util.Datas.Dapper.PgSql;
-using Util.Datas.Sql;
-using Util.Helpers;
+﻿using Ding.Datas.Dapper.PgSql;
+using Ding.Datas.Sql;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Datas.Tests.Sql.Builders.PgSql {
+namespace Ding.Datas.Tests.Sql.Builders.PgSql {
     /// <summary>
     /// PgSql Sql生成器测试
     /// </summary>

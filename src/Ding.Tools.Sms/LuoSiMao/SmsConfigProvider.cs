@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Util.Tools.Sms.LuoSiMao {
+namespace Ding.Tools.Sms.LuoSiMao {
     /// <summary>
     /// 短信配置提供器
     /// </summary>

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Validations;
+using Ding.Validations;
 
-namespace Util.Biz.Payments.Alipay.Abstractions {
+namespace Ding.Biz.Payments.Alipay.Abstractions {
     /// <summary>
     /// 支付宝返回服务
     /// </summary>

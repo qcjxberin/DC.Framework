@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Datas.Sql.Builders;
-using Util.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Builders;
+using Ding.Datas.Sql.Builders.Core;
 
-namespace Util.Datas.Tests.Sql.Builders.Samples {
+namespace Ding.Datas.Tests.Sql.Builders.Samples {
     /// <summary>
     /// 实体别名注册器
     /// </summary>

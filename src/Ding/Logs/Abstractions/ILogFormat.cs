@@ -1,4 +1,4 @@
-﻿namespace Util.Logs.Abstractions {
+﻿namespace Ding.Logs.Abstractions {
     /// <summary>
     /// 日志格式器
     /// </summary>

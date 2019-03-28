@@ -1,10 +1,10 @@
 ﻿using System;
 using NSubstitute;
-using Util.Datas.UnitOfWorks;
-using Util.Tests.XUnitHelpers;
+using Ding.Datas.UnitOfWorks;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Datas.UnitOfWorks {
+namespace Ding.Tests.Datas.UnitOfWorks {
     /// <summary>
     /// 工作单元服务测试
     /// </summary>

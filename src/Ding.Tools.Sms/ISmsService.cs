@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Util.Dependency;
+using Ding.Dependency;
 
-namespace Util.Tools.Sms {
+namespace Ding.Tools.Sms {
     /// <summary>
     /// 短信服务
     /// </summary>

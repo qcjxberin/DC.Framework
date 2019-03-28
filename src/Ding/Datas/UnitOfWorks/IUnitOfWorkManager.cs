@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Util.Dependency;
+using Ding.Dependency;
 
-namespace Util.Datas.UnitOfWorks {
+namespace Ding.Datas.UnitOfWorks {
     /// <summary>
     /// 工作单元管理器
     /// </summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Util.Events {
+namespace Ding.Events {
     /// <summary>
     /// 事件
     /// </summary>
@@ -10,7 +10,7 @@ namespace Util.Events {
         /// 初始化事件
         /// </summary>
         public Event() {
-            Id = Util.Helpers.Id.Guid();
+            Id = Ding.Helpers.Id.Guid();
             Time = DateTime.Now;
         }
 

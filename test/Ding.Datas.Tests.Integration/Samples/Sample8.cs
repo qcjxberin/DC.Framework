@@ -1,6 +1,6 @@
-﻿using Util.Domains;
+﻿using Ding.Domains;
 
-namespace Util.Datas.Tests.Samples {
+namespace Ding.Datas.Tests.Samples {
     public class Sample8 : Sample, IDelete {
     }
 }

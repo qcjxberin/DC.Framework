@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Datas.Persistence {
+namespace Ding.Tests.Datas.Persistence {
     /// <summary>
     /// 持久化对象测试
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Util.Logs.Internal {
+namespace Ding.Logs.Internal {
     /// <summary>
     /// 日志上下文信息
     /// </summary>

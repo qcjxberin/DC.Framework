@@ -8,9 +8,9 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Webs.Clients {
+namespace Ding.Webs.Clients {
     /// <summary>
     /// Http请求
     /// </summary>

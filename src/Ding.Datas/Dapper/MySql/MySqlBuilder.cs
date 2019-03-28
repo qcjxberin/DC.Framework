@@ -1,9 +1,9 @@
-﻿using Util.Datas.Sql;
-using Util.Datas.Sql.Builders;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Sql.Matedatas;
+﻿using Ding.Datas.Sql;
+using Ding.Datas.Sql.Builders;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Matedatas;
 
-namespace Util.Datas.Dapper.MySql {
+namespace Ding.Datas.Dapper.MySql {
     /// <summary>
     /// MySql Sql生成器
     /// </summary>

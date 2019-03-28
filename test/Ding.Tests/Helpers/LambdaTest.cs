@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Util.Datas.Queries;
-using Util.Helpers;
-using Util.Tests.Samples;
+using Ding.Datas.Queries;
+using Ding.Helpers;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 测试Lambda表达式操作
     /// </summary>

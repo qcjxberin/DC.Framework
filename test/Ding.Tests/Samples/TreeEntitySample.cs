@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Domains.Trees;
+using Ding.Domains.Trees;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 树型实体测试样例
     /// </summary>

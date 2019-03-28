@@ -1,4 +1,4 @@
-﻿namespace Util.Files {
+﻿namespace Ding.Files {
     /// <summary>
     /// 文件信息
     /// </summary>

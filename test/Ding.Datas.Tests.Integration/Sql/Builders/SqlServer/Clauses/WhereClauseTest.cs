@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Queries;
-using Util.Datas.Sql;
-using Util.Datas.Sql.Builders.Clauses;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Tests.Samples;
-using Util.Datas.Tests.Sql.Builders.Samples;
-using Util.Datas.Tests.XUnitHelpers;
-using Util.Properties;
+using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql;
+using Ding.Datas.Sql.Builders.Clauses;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Tests.Samples;
+using Ding.Datas.Tests.Sql.Builders.Samples;
+using Ding.Datas.Tests.XUnitHelpers;
+using Ding.Properties;
 using Xunit;
 using String = Util.Helpers.String;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer.Clauses {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Clauses {
     /// <summary>
     /// Where子句测试
     /// </summary>

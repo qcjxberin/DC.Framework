@@ -1,6 +1,6 @@
-﻿using Util.Datas.Sql.Matedatas;
+﻿using Ding.Datas.Sql.Matedatas;
 
-namespace Util.Datas.Tests.Sql.Builders.Samples {
+namespace Ding.Datas.Tests.Sql.Builders.Samples {
     /// <summary>
     /// 表数据库
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Util.Events {
+namespace Ding.Events {
     /// <summary>
     /// 基于消息的事件总线
     /// </summary>

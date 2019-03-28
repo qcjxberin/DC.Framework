@@ -1,4 +1,4 @@
-﻿namespace Util.Domains.Trees {
+﻿namespace Ding.Domains.Trees {
     /// <summary>
     /// 树型节点启用
     /// </summary>

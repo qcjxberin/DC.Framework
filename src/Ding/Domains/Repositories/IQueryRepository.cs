@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Datas.Stores;
+using Ding.Datas.Stores;
 
-namespace Util.Domains.Repositories {
+namespace Ding.Domains.Repositories {
     /// <summary>
     /// 查询仓储
     /// </summary>

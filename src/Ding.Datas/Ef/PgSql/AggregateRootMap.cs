@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Util.Datas.Ef.Core;
-using Util.Domains;
+using Ding.Datas.Ef.Core;
+using Ding.Domains;
 
-namespace Util.Datas.Ef.PgSql {
+namespace Ding.Datas.Ef.PgSql {
     /// <summary>
     /// 聚合根映射配置
     /// </summary>

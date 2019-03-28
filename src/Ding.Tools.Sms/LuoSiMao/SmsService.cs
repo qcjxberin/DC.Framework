@@ -1,8 +1,8 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Tools.Sms.LuoSiMao {
+namespace Ding.Tools.Sms.LuoSiMao {
     /// <summary>
     /// 短信服务
     /// </summary>

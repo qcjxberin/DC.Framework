@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Sql.Builders.Core {
+﻿namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 参数字面值解析器
     /// </summary>

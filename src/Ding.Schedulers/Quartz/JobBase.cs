@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Helpers;
+using Ding.Helpers;
 using Quartz;
-using Util.Dependency;
+using Ding.Dependency;
 using Qz = Quartz;
 
-namespace Util.Schedulers.Quartz {
+namespace Ding.Schedulers.Quartz {
     /// <summary>
     /// Quartz作业
     /// </summary>

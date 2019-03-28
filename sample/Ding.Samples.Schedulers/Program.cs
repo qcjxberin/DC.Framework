@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Dependency;
-using Util.Schedulers.Quartz;
+using Ding.Dependency;
+using Ding.Schedulers.Quartz;
 
-namespace Util.Samples.Schedulers {
+namespace Ding.Samples.Schedulers {
     public class Program {
         /// <summary>
         /// 入口

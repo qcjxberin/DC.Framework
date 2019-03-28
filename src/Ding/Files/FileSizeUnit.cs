@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Util.Files {
+namespace Ding.Files {
     /// <summary>
     /// 文件大小单位
     /// </summary>

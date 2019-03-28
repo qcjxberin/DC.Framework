@@ -1,6 +1,6 @@
 ﻿using QRCoder;
 
-namespace Util.Tools.QrCode.QrCoder {
+namespace Ding.Tools.QrCode.QrCoder {
     /// <summary>
     /// QRCoder二维码服务
     /// </summary>

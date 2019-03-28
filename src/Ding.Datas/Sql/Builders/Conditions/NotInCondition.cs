@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Util.Datas.Sql.Builders.Conditions {
+namespace Ding.Datas.Sql.Builders.Conditions {
     /// <summary>
     /// Not In查询条件
     /// </summary>

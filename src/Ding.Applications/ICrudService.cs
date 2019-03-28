@@ -1,8 +1,8 @@
-﻿using Util.Applications.Dtos;
-using Util.Applications.Operations;
-using Util.Datas.Queries;
+﻿using Ding.Applications.Dtos;
+using Ding.Applications.Operations;
+using Ding.Datas.Queries;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 增删改查服务
     /// </summary>

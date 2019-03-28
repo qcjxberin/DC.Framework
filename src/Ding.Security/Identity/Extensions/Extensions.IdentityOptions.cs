@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Util.Security.Identity.Options;
+using Ding.Security.Identity.Options;
 
-namespace Util.Security.Identity.Extensions {
+namespace Ding.Security.Identity.Extensions {
     /// <summary>
     /// Identity配置扩展
     /// </summary>

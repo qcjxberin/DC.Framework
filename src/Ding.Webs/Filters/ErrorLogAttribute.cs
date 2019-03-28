@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Util.Logs;
-using Util.Logs.Extensions;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
-namespace Util.Webs.Filters {
+namespace Ding.Webs.Filters {
     /// <summary>
     /// 错误日志过滤器
     /// </summary>

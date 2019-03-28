@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
-using Util.Biz.Payments.Alipay.Services;
-using Util.Biz.Payments.Core;
-using Util.Biz.Tests.Integration.Payments.Alipay.Configs;
-using Util.Helpers;
+using Ding.Biz.Payments.Alipay.Services;
+using Ding.Biz.Payments.Core;
+using Ding.Biz.Tests.Integration.Payments.Alipay.Configs;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Biz.Tests.Integration.Payments.Alipay.Services {
+namespace Ding.Biz.Tests.Integration.Payments.Alipay.Services {
     /// <summary>
     /// 支付宝电脑网站支付服务测试
     /// </summary>

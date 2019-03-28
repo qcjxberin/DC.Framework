@@ -1,7 +1,7 @@
-﻿using Util.Datas.Queries;
+﻿using Ding.Datas.Queries;
 using Xunit;
 
-namespace Util.Tests.Datas.Queries {
+namespace Ding.Tests.Datas.Queries {
     /// <summary>
     /// 测试排序生成器
     /// </summary>

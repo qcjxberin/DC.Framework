@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Datas.Stores.Operations;
-using Util.Domains;
+using Ding.Datas.Stores.Operations;
+using Ding.Domains;
 
-namespace Util.Datas.Stores {
+namespace Ding.Datas.Stores {
     /// <summary>
     /// 存储器
     /// </summary>

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Sql.Builders;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Tests.Samples;
+using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Sql.Builders;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Tests.Samples;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer.Resolvers {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Resolvers {
     /// <summary>
     /// 谓词表达式解析器测试
     /// </summary>

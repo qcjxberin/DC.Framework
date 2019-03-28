@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Util.Helpers;
+using Ding.Helpers;
 using Regex = System.Text.RegularExpressions.Regex;
 
-namespace Util.Reflections {
+namespace Ding.Reflections {
     /// <summary>
     /// 类型查找器
     /// </summary>

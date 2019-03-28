@@ -1,8 +1,8 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
-using Util.Security.Principals;
+using Ding.Security.Principals;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 系统扩展 - 安全
     /// </summary>

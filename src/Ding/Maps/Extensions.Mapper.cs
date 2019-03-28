@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 
-namespace Util.Maps {
+namespace Ding.Maps {
     /// <summary>
     /// 对象映射
     /// </summary>

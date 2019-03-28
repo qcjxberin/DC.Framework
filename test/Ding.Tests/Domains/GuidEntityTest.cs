@@ -1,10 +1,10 @@
 ﻿using System;
-using Util.Exceptions;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Exceptions;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Domains {
+namespace Ding.Tests.Domains {
     /// <summary>
     /// Guid标识实体测试
     /// </summary>

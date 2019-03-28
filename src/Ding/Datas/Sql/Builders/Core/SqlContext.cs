@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Datas.Sql.Matedatas;
+using Ding.Datas.Sql.Matedatas;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// Sql执行上下文
     /// </summary>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Domains.Repositories;
+using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Tests.Commons.Datas.Criterias {
+namespace Ding.Datas.Tests.Commons.Datas.Criterias {
     /// <summary>
     /// 客户查询条件
     /// </summary>

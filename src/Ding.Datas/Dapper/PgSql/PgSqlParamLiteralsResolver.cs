@@ -1,6 +1,6 @@
-﻿using Util.Datas.Sql.Builders;
+﻿using Ding.Datas.Sql.Builders;
 
-namespace Util.Datas.Dapper.PgSql {
+namespace Ding.Datas.Dapper.PgSql {
     /// <summary>
     /// PgSql参数字面值解析器
     /// </summary>

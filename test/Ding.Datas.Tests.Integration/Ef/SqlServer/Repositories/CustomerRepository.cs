@@ -1,9 +1,9 @@
-﻿using Util.Datas.Ef.Core;
-using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.SqlServer.UnitOfWorks;
+﻿using Ding.Datas.Ef.Core;
+using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks;
 
-namespace Util.Datas.Tests.Ef.SqlServer.Repositories {
+namespace Ding.Datas.Tests.Ef.SqlServer.Repositories {
     /// <summary>
     /// 客户仓储
     /// </summary>

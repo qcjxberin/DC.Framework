@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 系统扩展 - 验证
     /// </summary>

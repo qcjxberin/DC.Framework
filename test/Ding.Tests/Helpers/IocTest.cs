@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Autofac;
-using Util.Dependency;
-using Util.Helpers;
-using Util.Tests.Samples;
+using Ding.Dependency;
+using Ding.Helpers;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// Ioc配置
     /// </summary>

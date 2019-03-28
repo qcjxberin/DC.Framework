@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
-using Util.Domains.Trees;
-using Util.Exceptions;
-using Util.Properties;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Domains.Trees;
+using Ding.Exceptions;
+using Ding.Properties;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Domains.Trees {
+namespace Ding.Tests.Domains.Trees {
     /// <summary>
     /// 树型更新路径服务测试
     /// </summary>

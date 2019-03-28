@@ -1,4 +1,4 @@
-﻿namespace Util.Tools.QrCode {
+﻿namespace Ding.Tools.QrCode {
     /// <summary>
     /// 容错级别
     /// </summary>

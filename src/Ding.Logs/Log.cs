@@ -1,11 +1,11 @@
-﻿using Util.Helpers;
-using Util.Logs.Abstractions;
-using Util.Logs.Core;
-using Util.Logs.Exceptionless;
-using Util.Security;
-using Util.Sessions;
+﻿using Ding.Helpers;
+using Ding.Logs.Abstractions;
+using Ding.Logs.Core;
+using Ding.Logs.Exceptionless;
+using Ding.Security;
+using Ding.Sessions;
 
-namespace Util.Logs {
+namespace Ding.Logs {
     /// <summary>
     /// 日志操作
     /// </summary>
@@ -103,7 +103,7 @@ namespace Util.Logs {
                 return Ioc.Create<ILogProviderFactory>();
             }
             catch {
-                return new Util.Logs.NLog.LogProviderFactory();
+                return new Ding.Logs.NLog.LogProviderFactory();
             }
         }
 
@@ -115,7 +115,7 @@ namespace Util.Logs {
                 return Ioc.Create<ILogFormat>();
             }
             catch {
-                return Util.Logs.Formats.ContentFormat.Instance;
+                return Ding.Logs.Formats.ContentFormat.Instance;
             }
         }
 
@@ -139,7 +139,7 @@ namespace Util.Logs {
                 return Ioc.Create<ISession>();
             }
             catch {
-                return Util.Security.Sessions.Session.Instance;
+                return Ding.Security.Sessions.Session.Instance;
             }
         }
     }

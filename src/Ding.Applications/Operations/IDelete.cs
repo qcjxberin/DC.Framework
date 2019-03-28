@@ -1,4 +1,4 @@
-﻿namespace Util.Applications.Operations {
+﻿namespace Ding.Applications.Operations {
     /// <summary>
     /// 删除操作
     /// </summary>

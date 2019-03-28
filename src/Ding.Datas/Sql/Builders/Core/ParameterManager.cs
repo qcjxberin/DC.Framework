@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Util.Datas.Queries;
+using Ding.Datas.Queries;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 参数管理器
     /// </summary>

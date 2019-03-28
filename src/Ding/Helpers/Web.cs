@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Http.Internal;
-using Util.Security.Principals;
+using Ding.Security.Principals;
 
-namespace Util.Helpers {
+namespace Ding.Helpers {
     /// <summary>
     /// Web操作
     /// </summary>
@@ -126,16 +126,16 @@ namespace Util.Helpers {
         /// <summary>
         /// Web客户端，用于发送Http请求
         /// </summary>
-        public static Util.Webs.Clients.WebClient Client() {
-            return new Util.Webs.Clients.WebClient();
+        public static Ding.Webs.Clients.WebClient Client() {
+            return new Ding.Webs.Clients.WebClient();
         }
 
         /// <summary>
         /// Web客户端，用于发送Http请求
         /// </summary>
         /// <typeparam name="TResult">返回结果类型</typeparam>
-        public static Util.Webs.Clients.WebClient<TResult> Client<TResult>() where TResult : class {
-            return new Util.Webs.Clients.WebClient<TResult>();
+        public static Ding.Webs.Clients.WebClient<TResult> Client<TResult>() where TResult : class {
+            return new Ding.Webs.Clients.WebClient<TResult>();
         }
 
         #endregion

@@ -1,9 +1,9 @@
-﻿using Util.Datas.Queries;
-using Util.Datas.Queries.Criterias;
-using Util.Tests.Samples;
+﻿using Ding.Datas.Queries;
+using Ding.Datas.Queries.Criterias;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Datas.Queries.Criterias {
+namespace Ding.Tests.Datas.Queries.Criterias {
     /// <summary>
     /// 测试double范围过滤条件
     /// </summary>

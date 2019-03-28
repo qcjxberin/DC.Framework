@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Util.Tests.Samples;
-using Util.Validations;
+using Ding.Tests.Samples;
+using Ding.Validations;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 验证规则样例 - 名称长度大于3将验证失败
     /// </summary>

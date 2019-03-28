@@ -1,4 +1,4 @@
-﻿namespace Util.Security.Identity.Options {
+﻿namespace Ding.Security.Identity.Options {
     /// <summary>
     /// 存储配置
     /// </summary>

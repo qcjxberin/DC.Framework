@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Util.Helpers;
-using Util.Sessions;
-using Util.Validations;
+using Ding.Helpers;
+using Ding.Sessions;
+using Ding.Validations;
 
-namespace Util.Domains {
+namespace Ding.Domains {
     /// <summary>
     /// 领域实体
     /// </summary>
@@ -87,7 +87,7 @@ namespace Util.Domains {
         /// 创建标识
         /// </summary>
         protected virtual TKey CreateId() {
-            return Util.Helpers.Convert.To<TKey>( Guid.NewGuid() );
+            return Ding.Helpers.Convert.To<TKey>( Guid.NewGuid() );
         }
 
         /// <summary>

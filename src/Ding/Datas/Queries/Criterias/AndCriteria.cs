@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Domains.Repositories;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Queries.Criterias {
+namespace Ding.Datas.Queries.Criterias {
     /// <summary>
     /// 与查询条件
     /// </summary>

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Sql.Builders.Internal;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Builders.Internal;
 
-namespace Util.Datas.Sql.Builders.Clauses {
+namespace Ding.Datas.Sql.Builders.Clauses {
     /// <summary>
     /// Select子句
     /// </summary>

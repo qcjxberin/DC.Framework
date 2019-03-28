@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Datas.Sql.Builders {
+namespace Ding.Datas.Sql.Builders {
     /// <summary>
     /// From子句
     /// </summary>

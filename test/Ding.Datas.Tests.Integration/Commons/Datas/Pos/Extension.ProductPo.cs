@@ -1,7 +1,7 @@
-﻿using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Maps;
+﻿using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Maps;
 
-namespace Util.Datas.Tests.Commons.Datas.Pos {
+namespace Ding.Datas.Tests.Commons.Datas.Pos {
     /// <summary>
     /// 商品持久化对象扩展
     /// </summary>

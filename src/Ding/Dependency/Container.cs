@@ -4,9 +4,9 @@ using System.Linq;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Dependency {
+namespace Ding.Dependency {
     /// <summary>
     /// Autofac对象容器
     /// </summary>

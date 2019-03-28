@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Sql.Builders.Conditions {
+﻿namespace Ding.Datas.Sql.Builders.Conditions {
     /// <summary>
     /// Sql相等查询条件
     /// </summary>

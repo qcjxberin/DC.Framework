@@ -1,6 +1,6 @@
-﻿using Util.Helpers;
+﻿using Ding.Helpers;
 
-namespace Util.Contexts {
+namespace Ding.Contexts {
     /// <summary>
     /// Web上下文
     /// </summary>
@@ -30,7 +30,7 @@ namespace Util.Contexts {
         public T Get<T>( string key ) {
             if( Web.HttpContext == null )
                 return default( T );
-            return Util.Helpers.Convert.To<T>( Web.HttpContext.Items[key] );
+            return Ding.Helpers.Convert.To<T>( Web.HttpContext.Items[key] );
         }
 
         /// <summary>

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Util.Logs;
-using Util.Logs.Extensions;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
-namespace Util.Webs.Middlewares {
+namespace Ding.Webs.Middlewares {
     /// <summary>
     /// 错误日志中间件
     /// </summary>

@@ -1,8 +1,8 @@
-﻿using Util.Datas.Queries;
-using Util.Datas.Sql.Builders.Conditions;
+﻿using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders.Conditions;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer.Conditions {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Conditions {
     /// <summary>
     /// 范围过滤条件测试
     /// </summary>

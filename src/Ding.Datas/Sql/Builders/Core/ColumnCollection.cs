@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 列集合
     /// </summary>

@@ -1,6 +1,6 @@
-﻿using Util.Sessions;
+﻿using Ding.Sessions;
 
-namespace Util.Datas.Tests.Commons {
+namespace Ding.Datas.Tests.Commons {
     /// <summary>
     /// 用户会话
     /// </summary>

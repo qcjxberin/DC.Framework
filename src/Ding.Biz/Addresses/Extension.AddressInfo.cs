@@ -1,4 +1,4 @@
-﻿namespace Util.Biz.Addresses {
+﻿namespace Ding.Biz.Addresses {
     /// <summary>
     /// 地址信息扩展
     /// </summary>

@@ -1,6 +1,6 @@
-﻿using Util.Biz.Payments.Core;
+﻿using Ding.Biz.Payments.Core;
 
-namespace Util.Biz.Payments.Alipay.Parameters.Requests {
+namespace Ding.Biz.Payments.Alipay.Parameters.Requests {
     /// <summary>
     /// 支付宝支付参数
     /// </summary>

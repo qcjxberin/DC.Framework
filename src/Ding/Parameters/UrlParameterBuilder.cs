@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using Util.Helpers;
-using Util.Parameters.Formats;
+using Ding.Helpers;
+using Ding.Parameters.Formats;
 
-namespace Util.Parameters {
+namespace Ding.Parameters {
     /// <summary>
     /// Url参数生成器
     /// </summary>

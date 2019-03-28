@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Util.Events.Handlers;
-using Util.Helpers;
+using Ding.Events.Handlers;
+using Ding.Helpers;
 
-namespace Util.Events.Default {
+namespace Ding.Events.Default {
     /// <summary>
     /// 事件处理器服务
     /// </summary>

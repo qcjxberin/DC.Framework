@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Util.Domains.Services;
-using Util.Security.Identity.Models;
-using Util.Security.Identity.Results;
+using Ding.Domains.Services;
+using Ding.Security.Identity.Models;
+using Ding.Security.Identity.Results;
 
-namespace Util.Security.Identity.Services.Abstractions {
+namespace Ding.Security.Identity.Services.Abstractions {
     /// <summary>
     /// 登录服务
     /// </summary>

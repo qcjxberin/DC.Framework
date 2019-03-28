@@ -1,6 +1,6 @@
-﻿using Util.Dependency;
+﻿using Ding.Dependency;
 
-namespace Util.Contexts {
+namespace Ding.Contexts {
     /// <summary>
     /// 上下文
     /// </summary>

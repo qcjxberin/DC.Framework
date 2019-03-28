@@ -1,8 +1,8 @@
 ﻿using System.Globalization;
-using Util;
-using Util.Helpers;
-using Util.Properties;
-using Util.Validations.Validators;
+using Ding;
+using Ding.Helpers;
+using Ding.Properties;
+using Ding.Validations.Validators;
 
 namespace System.ComponentModel.DataAnnotations {
     /// <summary>

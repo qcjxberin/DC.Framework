@@ -1,6 +1,6 @@
-﻿using Util.Dependency;
+﻿using Ding.Dependency;
 
-namespace Util.Datas.Tests.Commons.Datas.PgSql.Configs {
+namespace Ding.Datas.Tests.Commons.Datas.PgSql.Configs {
     /// <summary>
     /// 测试应用程序配置
     /// </summary>

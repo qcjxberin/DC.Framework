@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Sql {
+﻿namespace Ding.Datas.Sql {
     /// <summary>
     /// Sql查询对象扩展 - 杂项
     /// </summary>

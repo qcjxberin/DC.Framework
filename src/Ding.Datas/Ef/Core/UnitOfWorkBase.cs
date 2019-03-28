@@ -10,19 +10,19 @@ using System.Data;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using Util.Datas.Ef.Configs;
-using Util.Datas.UnitOfWorks;
-using Util.Domains.Auditing;
-using Util.Exceptions;
-using Util.Datas.Ef.Logs;
-using Util.Datas.Sql;
-using Util.Datas.Sql.Matedatas;
-using Util.Datas.Transactions;
-using Util.Helpers;
-using Util.Logs;
-using Util.Sessions;
+using Ding.Datas.Ef.Configs;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains.Auditing;
+using Ding.Exceptions;
+using Ding.Datas.Ef.Logs;
+using Ding.Datas.Sql;
+using Ding.Datas.Sql.Matedatas;
+using Ding.Datas.Transactions;
+using Ding.Helpers;
+using Ding.Logs;
+using Ding.Sessions;
 
-namespace Util.Datas.Ef.Core {
+namespace Ding.Datas.Ef.Core {
     /// <summary>
     /// 工作单元
     /// </summary>
@@ -64,7 +64,7 @@ namespace Util.Datas.Ef.Core {
             : base( options ) {
             manager?.Register( this );
             TraceId = Guid.NewGuid().ToString();
-            Session = Util.Security.Sessions.Session.Instance;
+            Session = Ding.Security.Sessions.Session.Instance;
         }
 
         #endregion
@@ -187,7 +187,7 @@ namespace Util.Datas.Ef.Core {
         /// </summary>
         /// <param name="assembly">程序集</param>
         protected virtual IEnumerable<IMap> GetMapInstances( Assembly assembly ) {
-            return Util.Helpers.Reflection.GetInstancesByInterface<IMap>( assembly );
+            return Ding.Helpers.Reflection.GetInstancesByInterface<IMap>( assembly );
         }
 
         #endregion

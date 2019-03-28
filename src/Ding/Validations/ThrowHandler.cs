@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using Util.Exceptions;
+using Ding.Exceptions;
 
-namespace Util.Validations {
+namespace Ding.Validations {
     /// <summary>
     /// 验证失败，抛出异常 - 默认验证处理器
     /// </summary>

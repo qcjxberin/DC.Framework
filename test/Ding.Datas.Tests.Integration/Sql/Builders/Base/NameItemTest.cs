@@ -1,9 +1,9 @@
-﻿using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Tests.Sql.Builders.Samples;
+﻿using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Tests.Sql.Builders.Samples;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.Base {
+namespace Ding.Datas.Tests.Sql.Builders.Base {
     /// <summary>
     /// 名称项测试
     /// </summary>

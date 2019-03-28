@@ -1,4 +1,4 @@
-﻿namespace Util.Tests.Samples {
+﻿namespace Ding.Tests.Samples {
     public class Sample4 {
         public string A { get; set; }
         public string B { get; set; }

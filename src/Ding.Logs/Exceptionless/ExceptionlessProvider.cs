@@ -3,11 +3,11 @@ using Exceptionless;
 using Microsoft.Extensions.Logging;
 using el = Exceptionless;
 using NLogs = NLog;
-using Util.Logs.Abstractions;
-using Util.Logs.Contents;
-using Util.Logs.NLog;
+using Ding.Logs.Abstractions;
+using Ding.Logs.Contents;
+using Ding.Logs.NLog;
 
-namespace Util.Logs.Exceptionless {
+namespace Ding.Logs.Exceptionless {
     /// <summary>
     /// Exceptionless日志提供程序
     /// </summary>

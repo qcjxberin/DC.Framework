@@ -1,13 +1,13 @@
 ﻿using Autofac;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.PgSql.Repositories;
-using Util.Datas.Tests.Ef.PgSql.UnitOfWorks;
-using Util.Datas.Transactions;
-using Util.Datas.UnitOfWorks;
-using Util.Dependency;
-using Util.Sessions;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.PgSql.Repositories;
+using Ding.Datas.Tests.Ef.PgSql.UnitOfWorks;
+using Ding.Datas.Transactions;
+using Ding.Datas.UnitOfWorks;
+using Ding.Dependency;
+using Ding.Sessions;
 
-namespace Util.Datas.Tests.Commons.Datas.PgSql.Configs {
+namespace Ding.Datas.Tests.Commons.Datas.PgSql.Configs {
     /// <summary>
     /// 依赖注入配置
     /// </summary>

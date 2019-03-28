@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Util.Datas.UnitOfWorks;
-using Util.Domains.Trees;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains.Trees;
 
-namespace Util.Datas.Ef.Core {
+namespace Ding.Datas.Ef.Core {
     /// <summary>
     /// 树型仓储
     /// </summary>

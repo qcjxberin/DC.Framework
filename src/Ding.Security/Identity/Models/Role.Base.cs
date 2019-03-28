@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Util.Domains;
-using Util.Domains.Auditing;
-using Util.Domains.Trees;
+using Ding.Domains;
+using Ding.Domains.Auditing;
+using Ding.Domains.Trees;
 
-namespace Util.Security.Identity.Models {
+namespace Ding.Security.Identity.Models {
     /// <summary>
     /// 角色
     /// </summary>

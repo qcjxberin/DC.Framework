@@ -1,8 +1,8 @@
-﻿using Util.Datas.Queries.Criterias;
-using Util.Tests.Samples;
+﻿using Ding.Datas.Queries.Criterias;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Datas.Queries.Criterias {
+namespace Ding.Tests.Datas.Queries.Criterias {
     /// <summary>
     /// 测试默认查询条件
     /// </summary>

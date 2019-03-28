@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Enums {
+﻿namespace Ding.Datas.Enums {
     /// <summary>
     /// 数据库类型
     /// </summary>

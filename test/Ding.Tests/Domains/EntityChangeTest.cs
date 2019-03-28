@@ -1,7 +1,7 @@
-﻿using Util.Tests.Samples;
+﻿using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Domains {
+namespace Ding.Tests.Domains {
     /// <summary>
     /// 测试获取变更属性集 - 实体
     /// </summary>

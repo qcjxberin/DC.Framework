@@ -1,9 +1,9 @@
-﻿using Util.Datas.Sql;
-using Util.Datas.Tests.Samples;
-using Util.Helpers;
+﻿using Ding.Datas.Sql;
+using Ding.Datas.Tests.Samples;
+using Ding.Helpers;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer {
     /// <summary>
     /// Sql Server Sql生成器测试 - From子句
     /// </summary>

@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Webs.Extensions {
+namespace Ding.Webs.Extensions {
     /// <summary>
     /// 服务扩展
     /// </summary>

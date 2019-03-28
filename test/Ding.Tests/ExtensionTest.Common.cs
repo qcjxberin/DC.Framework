@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests {
+namespace Ding.Tests {
     /// <summary>
     /// 扩展测试 - 公共扩展
     /// </summary>

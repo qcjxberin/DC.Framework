@@ -1,4 +1,4 @@
-﻿namespace Util.Domains.Repositories {
+﻿namespace Ding.Domains.Repositories {
     /// <summary>
     /// 查询对象
     /// </summary>

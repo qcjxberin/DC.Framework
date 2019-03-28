@@ -1,7 +1,7 @@
-﻿using Util.Parameters;
+﻿using Ding.Parameters;
 using Xunit;
 
-namespace Util.Tests.Parameters {
+namespace Ding.Tests.Parameters {
     /// <summary>
     /// Url参数生成器测试
     /// </summary>

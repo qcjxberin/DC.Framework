@@ -1,11 +1,11 @@
 ﻿using System;
-using Util.Biz.Payments.Alipay.Configs;
-using Util.Biz.Payments.Alipay.Parameters;
-using Util.Helpers;
+using Ding.Biz.Payments.Alipay.Configs;
+using Ding.Biz.Payments.Alipay.Parameters;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Biz.Tests.Integration.Payments.Alipay.Parameters {
+namespace Ding.Biz.Tests.Integration.Payments.Alipay.Parameters {
     /// <summary>
     /// 支付宝参数生成器测试
     /// </summary>

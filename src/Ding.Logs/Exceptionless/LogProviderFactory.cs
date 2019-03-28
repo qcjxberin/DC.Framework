@@ -1,6 +1,6 @@
-﻿using Util.Logs.Abstractions;
+﻿using Ding.Logs.Abstractions;
 
-namespace Util.Logs.Exceptionless {
+namespace Ding.Logs.Exceptionless {
     /// <summary>
     /// Exceptionless日志提供程序工厂
     /// </summary>

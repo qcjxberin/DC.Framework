@@ -1,6 +1,6 @@
-﻿using Util.Biz.Payments.Core;
+﻿using Ding.Biz.Payments.Core;
 
-namespace Util.Biz.Payments.Wechatpay.Parameters.Requests {
+namespace Ding.Biz.Payments.Wechatpay.Parameters.Requests {
     /// <summary>
     /// 微信JsApi支付参数
     /// </summary>

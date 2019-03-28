@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Sql.Builders.Core {
+﻿namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 方言
     /// </summary>

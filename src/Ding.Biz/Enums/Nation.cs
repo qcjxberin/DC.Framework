@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Util.Biz.Enums {
+namespace Ding.Biz.Enums {
     /// <summary>
     /// 民族
     /// </summary>

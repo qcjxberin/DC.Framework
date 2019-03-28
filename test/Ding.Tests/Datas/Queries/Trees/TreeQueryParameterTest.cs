@@ -1,7 +1,7 @@
-﻿using Util.Datas.Queries.Trees;
+﻿using Ding.Datas.Queries.Trees;
 using Xunit;
 
-namespace Util.Tests.Datas.Queries.Trees {
+namespace Ding.Tests.Datas.Queries.Trees {
     /// <summary>
     /// 树型查询参数测试
     /// </summary>

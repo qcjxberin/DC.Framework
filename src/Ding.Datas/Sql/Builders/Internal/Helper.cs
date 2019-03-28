@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Util.Datas.Queries;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Sql.Builders.Core;
-using Util.Helpers;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Helpers;
 
-namespace Util.Datas.Sql.Builders.Internal {
+namespace Ding.Datas.Sql.Builders.Internal {
     /// <summary>
     /// Sql生成器辅助操作
     /// </summary>
@@ -97,7 +97,7 @@ namespace Util.Datas.Sql.Builders.Internal {
                 return null;
             var type = result.GetType();
             if( type.IsEnum )
-                return Util.Helpers.Enum.GetValue( type, result );
+                return Ding.Helpers.Enum.GetValue( type, result );
             return result;
         }
 

@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Util.Domains;
-using Util.Helpers;
-using Util.Tests.Samples;
+using Ding.Domains;
+using Ding.Helpers;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 测试反射操作
     /// </summary>

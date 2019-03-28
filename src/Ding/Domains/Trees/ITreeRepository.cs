@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Domains.Repositories;
+using Ding.Domains.Repositories;
 
-namespace Util.Domains.Trees {
+namespace Ding.Domains.Trees {
     /// <summary>
     /// 树型仓储
     /// </summary>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Helpers;
+using Ding.Helpers;
 using Xunit;
 
-namespace Util.Tests.Locks {
+namespace Ding.Tests.Locks {
     /// <summary>
     /// 业务锁测试
     /// </summary>

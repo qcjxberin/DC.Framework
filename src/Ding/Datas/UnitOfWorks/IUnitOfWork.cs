@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Aspects;
+using Ding.Aspects;
 
-namespace Util.Datas.UnitOfWorks {
+namespace Ding.Datas.UnitOfWorks {
     /// <summary>
     /// 工作单元
     /// </summary>

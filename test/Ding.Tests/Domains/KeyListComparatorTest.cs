@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Domains;
-using Util.Tests.XUnitHelpers;
+using Ding.Domains;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Domains {
+namespace Ding.Tests.Domains {
     /// <summary>
     /// 键列表比较器测试
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Util.Events.Handlers {
+namespace Ding.Events.Handlers {
     /// <summary>
     /// 内存事件处理器
     /// </summary>

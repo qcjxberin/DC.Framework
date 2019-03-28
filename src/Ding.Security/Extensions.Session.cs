@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using IdentityModel;
-using Util.Helpers;
-using Util.Security.Claims;
-using Util.Sessions;
-using Convert = Util.Helpers.Convert;
+using Ding.Helpers;
+using Ding.Security.Claims;
+using Ding.Sessions;
+using Convert = Ding.Helpers.Convert;
 
-namespace Util.Security {
+namespace Ding.Security {
     /// <summary>
     /// 用户会话扩展
     /// </summary>

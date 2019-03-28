@@ -1,8 +1,8 @@
-﻿using Util.Helpers;
+﻿using Ding.Helpers;
 using IdentityModel;
-using Util.Sessions;
+using Ding.Sessions;
 
-namespace Util.Security.Sessions {
+namespace Ding.Security.Sessions {
     /// <summary>
     /// 用户会话
     /// </summary>

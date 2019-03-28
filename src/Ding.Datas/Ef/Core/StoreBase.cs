@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Util.Datas.Stores;
-using Util.Datas.UnitOfWorks;
-using Util.Domains;
+using Ding.Datas.Stores;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains;
 
-namespace Util.Datas.Ef.Core {
+namespace Ding.Datas.Ef.Core {
     /// <summary>
     /// 存储器
     /// </summary>

@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
-using Util.Helpers;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Helpers;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// Json测试
     /// </summary>

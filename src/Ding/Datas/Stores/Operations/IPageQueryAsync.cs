@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Domains;
-using Util.Domains.Repositories;
+using Ding.Domains;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Stores.Operations {
+namespace Ding.Datas.Stores.Operations {
     /// <summary>
     /// 分页查询
     /// </summary>

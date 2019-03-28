@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Applications.Dtos;
-using Util.Datas.Queries;
-using Util.Domains.Repositories;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries;
+using Ding.Domains.Repositories;
 
-namespace Util.Applications.Operations {
+namespace Ding.Applications.Operations {
     /// <summary>
     /// 分页查询
     /// </summary>

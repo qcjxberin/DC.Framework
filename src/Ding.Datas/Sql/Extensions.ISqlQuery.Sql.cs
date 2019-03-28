@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Util.Datas.Queries;
+using Ding.Datas.Queries;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// Sql查询对象扩展 - 拼接Sql相关
     /// </summary>

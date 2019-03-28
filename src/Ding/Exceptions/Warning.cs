@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Extensions.Logging;
-using Util.Properties;
+using Ding.Properties;
 
-namespace Util.Exceptions {
+namespace Ding.Exceptions {
     /// <summary>
     /// 应用程序异常
     /// </summary>

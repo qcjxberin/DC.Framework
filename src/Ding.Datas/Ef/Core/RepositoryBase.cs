@@ -1,9 +1,9 @@
 ﻿using System;
-using Util.Datas.UnitOfWorks;
-using Util.Domains;
-using Util.Domains.Repositories;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Ef.Core {
+namespace Ding.Datas.Ef.Core {
     /// <summary>
     /// 仓储
     /// </summary>

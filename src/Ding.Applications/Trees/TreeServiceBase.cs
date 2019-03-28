@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Applications.Dtos;
-using Util.Datas.Queries.Trees;
-using Util.Datas.Stores;
-using Util.Datas.UnitOfWorks;
-using Util.Domains;
-using Util.Domains.Trees;
-using Convert = Util.Helpers.Convert;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries.Trees;
+using Ding.Datas.Stores;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains;
+using Ding.Domains.Trees;
+using Convert = Ding.Helpers.Convert;
 
-namespace Util.Applications.Trees {
+namespace Ding.Applications.Trees {
     /// <summary>
     /// 树型服务
     /// </summary>

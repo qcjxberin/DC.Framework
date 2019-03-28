@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Helpers {
+namespace Ding.Helpers {
     /// <summary>
     /// 标识生成器
     /// </summary>
@@ -29,7 +29,7 @@ namespace Util.Helpers {
         /// 创建标识
         /// </summary>
         public static string ObjectId() {
-            return string.IsNullOrWhiteSpace( _id ) ? Util.Helpers.Internal.ObjectId.GenerateNewStringId() : _id;
+            return string.IsNullOrWhiteSpace( _id ) ? Ding.Helpers.Internal.ObjectId.GenerateNewStringId() : _id;
         }
 
         /// <summary>

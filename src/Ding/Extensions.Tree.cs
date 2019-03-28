@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Domains.Trees;
+using Ding.Domains.Trees;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 树型扩展
     /// </summary>

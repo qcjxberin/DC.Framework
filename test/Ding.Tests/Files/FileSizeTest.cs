@@ -1,7 +1,7 @@
-﻿using Util.Files;
+﻿using Ding.Files;
 using Xunit;
 
-namespace Util.Tests.Files {
+namespace Ding.Tests.Files {
     /// <summary>
     /// 测试文件大小
     /// </summary>

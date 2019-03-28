@@ -1,4 +1,4 @@
-﻿namespace Util.Helpers {
+﻿namespace Ding.Helpers {
     /// <summary>
     /// 常量
     /// </summary>

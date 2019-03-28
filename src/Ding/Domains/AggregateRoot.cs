@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Domains {
+namespace Ding.Domains {
     /// <summary>
     /// 聚合根
     /// </summary>

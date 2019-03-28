@@ -1,4 +1,4 @@
-﻿namespace Util.Security.Identity.Services.Configs {
+﻿namespace Ding.Security.Identity.Services.Configs {
     /// <summary>
     /// 令牌用途
     /// </summary>

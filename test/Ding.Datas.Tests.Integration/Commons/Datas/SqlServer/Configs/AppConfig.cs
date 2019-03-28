@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Tests.Commons.Datas.SqlServer.Configs {
+﻿namespace Ding.Datas.Tests.Commons.Datas.SqlServer.Configs {
     /// <summary>
     /// 测试应用程序配置
     /// </summary>

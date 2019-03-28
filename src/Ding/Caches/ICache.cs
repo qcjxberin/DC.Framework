@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Caches {
+namespace Ding.Caches {
     /// <summary>
     /// 缓存
     /// </summary>

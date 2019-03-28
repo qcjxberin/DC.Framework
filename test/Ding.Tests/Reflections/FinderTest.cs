@@ -1,7 +1,7 @@
-﻿using Util.Reflections;
+﻿using Ding.Reflections;
 using Xunit;
 
-namespace Util.Tests.Reflections {
+namespace Ding.Tests.Reflections {
     /// <summary>
     /// 类型查找器测试
     /// </summary>

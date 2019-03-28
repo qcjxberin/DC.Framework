@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Util.Tests {
+namespace Ding.Tests {
     /// <summary>
     /// 扩展测试 - 格式化
     /// </summary>

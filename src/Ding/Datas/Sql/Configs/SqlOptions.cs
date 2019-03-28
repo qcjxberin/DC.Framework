@@ -1,6 +1,6 @@
-﻿using Util.Datas.Enums;
+﻿using Ding.Datas.Enums;
 
-namespace Util.Datas.Sql.Configs {
+namespace Ding.Datas.Sql.Configs {
     /// <summary>
     /// Sql配置
     /// </summary>

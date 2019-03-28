@@ -1,6 +1,6 @@
 ﻿using IdentityModel;
 
-namespace Util.Security.Claims {
+namespace Ding.Security.Claims {
     /// <summary>
     /// 声明类型
     /// </summary>

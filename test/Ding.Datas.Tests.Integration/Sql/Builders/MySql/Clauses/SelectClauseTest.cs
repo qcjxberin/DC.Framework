@@ -1,9 +1,9 @@
-﻿using Util.Datas.Dapper.MySql;
-using Util.Datas.Sql.Builders.Clauses;
-using Util.Datas.Sql.Builders.Core;
+﻿using Ding.Datas.Dapper.MySql;
+using Ding.Datas.Sql.Builders.Clauses;
+using Ding.Datas.Sql.Builders.Core;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.MySql.Clauses {
+namespace Ding.Datas.Tests.Sql.Builders.MySql.Clauses {
     /// <summary>
     /// Select子句测试
     /// </summary>

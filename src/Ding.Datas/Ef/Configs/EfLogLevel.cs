@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Ef.Configs {
+﻿namespace Ding.Datas.Ef.Configs {
     /// <summary>
     /// Ef日志级别
     /// </summary>

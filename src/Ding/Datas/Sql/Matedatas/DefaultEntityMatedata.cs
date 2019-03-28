@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Datas.Sql.Matedatas {
+namespace Ding.Datas.Sql.Matedatas {
     /// <summary>
     /// 实体元数据
     /// </summary>

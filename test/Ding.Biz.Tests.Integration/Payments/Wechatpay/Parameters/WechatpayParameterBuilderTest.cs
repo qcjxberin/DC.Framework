@@ -1,12 +1,12 @@
 ﻿using System;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Biz.Payments.Wechatpay.Parameters;
-using Util.Helpers;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Biz.Payments.Wechatpay.Parameters;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 using String = Util.Helpers.String;
 
-namespace Util.Biz.Tests.Integration.Payments.Wechatpay.Parameters {
+namespace Ding.Biz.Tests.Integration.Payments.Wechatpay.Parameters {
     /// <summary>
     /// 微信支付参数生成器测试
     /// </summary>

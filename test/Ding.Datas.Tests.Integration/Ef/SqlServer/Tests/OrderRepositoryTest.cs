@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Util.Datas.Ef;
-using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.SqlServer.UnitOfWorks;
-using Util.Datas.Tests.XUnitHelpers;
-using Util.Dependency;
-using Util.Exceptions;
-using Util.Helpers;
+using Ding.Datas.Ef;
+using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks;
+using Ding.Datas.Tests.XUnitHelpers;
+using Ding.Dependency;
+using Ding.Exceptions;
+using Ding.Helpers;
 using Xunit;
 
-namespace Util.Datas.Tests.Ef.SqlServer.Tests {
+namespace Ding.Datas.Tests.Ef.SqlServer.Tests {
     /// <summary>
     /// 订单仓储测试
     /// </summary>

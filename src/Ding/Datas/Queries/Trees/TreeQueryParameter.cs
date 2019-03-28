@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Datas.Queries.Trees {
+namespace Ding.Datas.Queries.Trees {
     /// <summary>
     /// 树型查询参数
     /// </summary>

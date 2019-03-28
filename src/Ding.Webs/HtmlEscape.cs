@@ -1,4 +1,4 @@
-﻿namespace Util.Webs {
+﻿namespace Ding.Webs {
     /// <summary>
     /// Html转义字符
     /// </summary>

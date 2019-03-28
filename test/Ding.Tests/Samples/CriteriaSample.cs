@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Domains.Repositories;
+using Ding.Domains.Repositories;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 查询条件对象样例
     /// </summary>

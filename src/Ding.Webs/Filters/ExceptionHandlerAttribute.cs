@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Util.Webs.Commons;
+using Ding.Webs.Commons;
 
-namespace Util.Webs.Filters {
+namespace Ding.Webs.Filters {
     /// <summary>
     /// 异常处理过滤器
     /// </summary>

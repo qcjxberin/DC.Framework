@@ -1,4 +1,4 @@
-﻿namespace Util.Validations {
+﻿namespace Ding.Validations {
     /// <summary>
     /// 验证处理器
     /// </summary>

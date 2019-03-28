@@ -1,4 +1,4 @@
-﻿namespace Util.Applications.Trees {
+﻿namespace Ding.Applications.Trees {
     /// <summary>
     /// 加载模式
     /// </summary>

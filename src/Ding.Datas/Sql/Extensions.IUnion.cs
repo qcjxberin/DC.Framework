@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Datas.Sql.Builders;
-using Util.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Builders;
+using Ding.Datas.Sql.Builders.Core;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// 联合操作扩展
     /// </summary>

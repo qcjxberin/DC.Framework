@@ -1,4 +1,4 @@
-﻿namespace Util.Sessions {
+﻿namespace Ding.Sessions {
     /// <summary>
     /// 空用户会话
     /// </summary>

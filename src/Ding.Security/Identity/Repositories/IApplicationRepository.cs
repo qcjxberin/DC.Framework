@@ -1,7 +1,7 @@
-﻿using Util.Domains.Repositories;
-using Util.Security.Identity.Models;
+﻿using Ding.Domains.Repositories;
+using Ding.Security.Identity.Models;
 
-namespace Util.Security.Identity.Repositories {
+namespace Ding.Security.Identity.Repositories {
     /// <summary>
     /// 应用程序仓储
     /// </summary>

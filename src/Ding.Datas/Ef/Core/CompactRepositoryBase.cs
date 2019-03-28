@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Util.Datas.Stores;
-using Util.Domains;
-using Util.Domains.Repositories;
+using Ding.Datas.Stores;
+using Ding.Domains;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Ef.Core {
+namespace Ding.Datas.Ef.Core {
     /// <summary>
     /// 仓储 - 配合持久化对象使用
     /// </summary>

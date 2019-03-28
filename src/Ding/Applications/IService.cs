@@ -1,6 +1,6 @@
-﻿using Util.Dependency;
+﻿using Ding.Dependency;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 应用服务
     /// </summary>

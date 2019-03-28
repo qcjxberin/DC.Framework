@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Datas.Queries.Trees {
+namespace Ding.Datas.Queries.Trees {
     /// <summary>
     /// 树型查询参数
     /// </summary>

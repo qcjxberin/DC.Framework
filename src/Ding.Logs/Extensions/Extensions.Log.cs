@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Util.Exceptions;
-using Util.Helpers;
-using Util.Logs.Contents;
-using Util.Logs.Properties;
+using Ding.Exceptions;
+using Ding.Helpers;
+using Ding.Logs.Contents;
+using Ding.Logs.Properties;
 
-namespace Util.Logs.Extensions {
+namespace Ding.Logs.Extensions {
     /// <summary>
     /// 日志扩展
     /// </summary>

@@ -1,13 +1,13 @@
 ﻿using System;
-using Util.Applications.Aspects;
-using Util.Applications.Dtos;
-using Util.Datas.Queries;
-using Util.Datas.UnitOfWorks;
-using Util.Domains;
-using Util.Domains.Repositories;
-using Util.Maps;
+using Ding.Applications.Aspects;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries;
+using Ding.Datas.UnitOfWorks;
+using Ding.Domains;
+using Ding.Domains.Repositories;
+using Ding.Maps;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 增删改查服务
     /// </summary>
@@ -153,7 +153,7 @@ namespace Util.Applications {
         /// <param name="request">创建参数</param>
         protected virtual TEntity ToEntityFromCreateRequest( TCreateRequest request ) {
             if( typeof( TCreateRequest ) == typeof( TRequest ) )
-                return ToEntity( Util.Helpers.Convert.To<TRequest>( request ) );
+                return ToEntity( Ding.Helpers.Convert.To<TRequest>( request ) );
             return request.MapTo<TEntity>();
         }
 
@@ -163,7 +163,7 @@ namespace Util.Applications {
         /// <param name="request">修改参数</param>
         protected virtual TEntity ToEntityFromUpdateRequest( TUpdateRequest request ) {
             if( typeof( TUpdateRequest ) == typeof( TRequest ) )
-                return ToEntity( Util.Helpers.Convert.To<TRequest>( request ) );
+                return ToEntity( Ding.Helpers.Convert.To<TRequest>( request ) );
             return request.MapTo<TEntity>();
         }
     }

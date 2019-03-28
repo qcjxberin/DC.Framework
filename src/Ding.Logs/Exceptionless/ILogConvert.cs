@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Util.Logs.Exceptionless {
+namespace Ding.Logs.Exceptionless {
     /// <summary>
     /// 日志转换器
     /// </summary>

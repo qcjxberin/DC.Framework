@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-using Util.Applications.Dtos;
+using Ding.Applications.Dtos;
 
-namespace Util.Applications.Trees {
+namespace Ding.Applications.Trees {
     /// <summary>
     /// 树型数据传输对象
     /// </summary>

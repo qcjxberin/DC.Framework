@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Datas.Ef;
-using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.SqlServer.UnitOfWorks;
-using Util.Dependency;
-using Util.Helpers;
+using Ding.Datas.Ef;
+using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks;
+using Ding.Dependency;
+using Ding.Helpers;
 using Xunit;
 
-namespace Util.Datas.Tests.Ef.SqlServer.Tests {
+namespace Ding.Datas.Tests.Ef.SqlServer.Tests {
     /// <summary>
     /// 商品仓储测试
     /// </summary>

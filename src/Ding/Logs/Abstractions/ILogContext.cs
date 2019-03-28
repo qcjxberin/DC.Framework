@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using Util.Aspects;
+using Ding.Aspects;
 
-namespace Util.Logs.Abstractions {
+namespace Ding.Logs.Abstractions {
     /// <summary>
     /// 日志上下文
     /// </summary>

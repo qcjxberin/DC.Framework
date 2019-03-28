@@ -1,6 +1,6 @@
 ﻿using System;
-using Util.Datas.Persistence;
-namespace Util.Tests.Samples {
+using Ding.Datas.Persistence;
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 持久化对象测试样例
     /// </summary>

@@ -1,6 +1,6 @@
-﻿using Util.Dependency;
+﻿using Ding.Dependency;
 
-namespace Util.Tools.QrCode {
+namespace Ding.Tools.QrCode {
     /// <summary>
     /// 二维码服务
     /// </summary>

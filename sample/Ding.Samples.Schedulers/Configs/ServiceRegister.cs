@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Util.Dependency;
-using Util.Samples.Schedulers.Services;
+using Ding.Dependency;
+using Ding.Samples.Schedulers.Services;
 
-namespace Util.Samples.Schedulers.Configs {
+namespace Ding.Samples.Schedulers.Configs {
     /// <summary>
     /// 服务注册
     /// </summary>

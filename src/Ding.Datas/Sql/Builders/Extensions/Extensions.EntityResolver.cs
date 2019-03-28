@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Datas.Sql.Builders.Extensions {
+namespace Ding.Datas.Sql.Builders.Extensions {
     /// <summary>
     /// 实体解析器扩展
     /// </summary>

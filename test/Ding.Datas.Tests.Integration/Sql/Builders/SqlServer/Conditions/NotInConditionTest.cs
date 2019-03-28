@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Util.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Conditions;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer.Conditions {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Conditions {
     /// <summary>
     /// Not In查询条件测试
     /// </summary>

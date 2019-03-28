@@ -1,6 +1,6 @@
-﻿using Util.Dependency;
+﻿using Ding.Dependency;
 
-namespace Util.Sessions {
+namespace Ding.Sessions {
     /// <summary>
     /// 用户会话
     /// </summary>

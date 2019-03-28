@@ -2,10 +2,10 @@
 using AspectCore.DynamicProxy;
 using AspectCore.Extensions.AspectScope;
 using Microsoft.Extensions.DependencyInjection;
-using Util.Aspects.Base;
-using Util.Datas.UnitOfWorks;
+using Ding.Aspects.Base;
+using Ding.Datas.UnitOfWorks;
 
-namespace Util.Applications.Aspects {
+namespace Ding.Applications.Aspects {
     /// <summary>
     /// 工作单元拦截器
     /// </summary>

@@ -1,6 +1,6 @@
-﻿using Util.Datas.Queries;
+﻿using Ding.Datas.Queries;
 
-namespace Util.Datas.Sql.Builders.Conditions {
+namespace Ding.Datas.Sql.Builders.Conditions {
     /// <summary>
     /// 范围过滤条件
     /// </summary>

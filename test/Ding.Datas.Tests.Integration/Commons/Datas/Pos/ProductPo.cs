@@ -1,7 +1,7 @@
-﻿using Util.Datas.Persistence;
-using Util.Domains;
+﻿using Ding.Datas.Persistence;
+using Ding.Domains;
 
-namespace Util.Datas.Tests.Commons.Datas.Pos {
+namespace Ding.Datas.Tests.Commons.Datas.Pos {
     /// <summary>
     /// 商品持久化对象
     /// </summary>

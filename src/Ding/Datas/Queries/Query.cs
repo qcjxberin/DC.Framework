@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Datas.Queries.Criterias;
-using Util.Datas.Queries.Internal;
-using Util.Domains.Repositories;
-using Util.Helpers;
+using Ding.Datas.Queries.Criterias;
+using Ding.Datas.Queries.Internal;
+using Ding.Domains.Repositories;
+using Ding.Helpers;
 
-namespace Util.Datas.Queries {
+namespace Ding.Datas.Queries {
     /// <summary>
     /// 查询对象
     /// </summary>

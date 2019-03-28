@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Util.Datas.Tests.Commons.Datas.Pos;
+using Ding.Datas.Tests.Commons.Datas.Pos;
 
-namespace Util.Datas.Tests.Ef.SqlServer.Mappings {
+namespace Ding.Datas.Tests.Ef.SqlServer.Mappings {
     /// <summary>
     /// 商品持久化对象映射配置
     /// </summary>

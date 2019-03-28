@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Util.Events;
-using Util.Events.Handlers;
+using Ding.Events;
+using Ding.Events.Handlers;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 事件样例
     /// </summary>

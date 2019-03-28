@@ -2,7 +2,7 @@
 using Xunit;
 using String = Util.Helpers.String;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 测试字符串生成器
     /// </summary>

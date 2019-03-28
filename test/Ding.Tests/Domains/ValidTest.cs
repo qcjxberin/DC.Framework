@@ -1,14 +1,14 @@
 ﻿using System;
 using Autofac;
-using Util.Dependency;
-using Util.Exceptions;
-using Util.Helpers;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Dependency;
+using Ding.Exceptions;
+using Ding.Helpers;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 using IContainer = Util.Dependency.IContainer;
 
-namespace Util.Tests.Domains {
+namespace Ding.Tests.Domains {
     /// <summary>
     /// 验证测试
     /// </summary>

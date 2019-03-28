@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Sql.Builders.Internal;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Internal;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 谓词表达式解析器
     /// </summary>

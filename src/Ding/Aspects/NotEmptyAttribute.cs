@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AspectCore.DynamicProxy.Parameters;
-using Util.Aspects.Base;
+using Ding.Aspects.Base;
 
-namespace Util.Aspects {
+namespace Ding.Aspects {
     /// <summary>
     /// 验证不能为空
     /// </summary>

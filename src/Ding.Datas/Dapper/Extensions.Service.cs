@@ -2,16 +2,16 @@
 using Dapper;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Util.Datas.Dapper.Handlers;
-using Util.Datas.Dapper.MySql;
-using Util.Datas.Dapper.PgSql;
-using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Enums;
-using Util.Datas.Sql;
-using Util.Datas.Sql.Configs;
-using Util.Datas.Sql.Matedatas;
+using Ding.Datas.Dapper.Handlers;
+using Ding.Datas.Dapper.MySql;
+using Ding.Datas.Dapper.PgSql;
+using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Enums;
+using Ding.Datas.Sql;
+using Ding.Datas.Sql.Configs;
+using Ding.Datas.Sql.Matedatas;
 
-namespace Util.Datas.Dapper {
+namespace Ding.Datas.Dapper {
     /// <summary>
     /// 服务扩展
     /// </summary>

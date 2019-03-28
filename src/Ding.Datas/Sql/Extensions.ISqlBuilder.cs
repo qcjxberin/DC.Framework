@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Util.Datas.Queries;
-using Util.Datas.Sql.Builders;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// Sql生成器扩展
     /// </summary>

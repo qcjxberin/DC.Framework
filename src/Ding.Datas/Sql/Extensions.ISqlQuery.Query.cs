@@ -2,7 +2,7 @@
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// Sql查询对象扩展 - 查询相关
     /// </summary>
@@ -22,7 +22,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static int ToInt( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToInt( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToInt( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<int> ToIntAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToInt( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToInt( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static int? ToIntOrNull( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToIntOrNull( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToIntOrNull( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<int?> ToIntOrNullAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToIntOrNull( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToIntOrNull( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static float ToFloat( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToFloat( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToFloat( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<float> ToFloatAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToFloat( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToFloat( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static float? ToFloatOrNull( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToFloatOrNull( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToFloatOrNull( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<float?> ToFloatOrNullAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToFloatOrNull( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToFloatOrNull( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static double ToDouble( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDouble( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToDouble( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<double> ToDoubleAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDouble( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToDouble( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static double? ToDoubleOrNull( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDoubleOrNull( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToDoubleOrNull( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<double?> ToDoubleOrNullAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDoubleOrNull( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToDoubleOrNull( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static decimal ToDecimal( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDecimal( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToDecimal( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<decimal> ToDecimalAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDecimal( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToDecimal( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static decimal? ToDecimalOrNull( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDecimalOrNull( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToDecimalOrNull( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<decimal?> ToDecimalOrNullAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDecimalOrNull( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToDecimalOrNull( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static bool ToBool( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToBool( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToBool( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<bool> ToBoolAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToBool( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToBool( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static bool? ToBoolOrNull( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToBoolOrNull( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToBoolOrNull( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<bool?> ToBoolOrNullAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToBoolOrNull( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToBoolOrNull( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static DateTime ToDate( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDate( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToDate( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<DateTime> ToDateAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDate( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToDate( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -220,7 +220,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static DateTime? ToDateOrNull( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDateOrNull( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToDateOrNull( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<DateTime?> ToDateOrNullAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToDateOrNull( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToDateOrNull( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static Guid ToGuid( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToGuid( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToGuid( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -247,7 +247,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<Guid> ToGuidAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToGuid( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToGuid( await sqlQuery.ToScalarAsync( connection ) );
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static Guid? ToGuidOrNull( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToGuidOrNull( sqlQuery.ToScalar( connection ) );
+            return Ding.Helpers.Convert.ToGuidOrNull( sqlQuery.ToScalar( connection ) );
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Util.Datas.Sql {
         /// <param name="sqlQuery">Sql查询对象</param>
         /// <param name="connection">数据库连接</param>
         public static async Task<Guid?> ToGuidOrNullAsync( this ISqlQuery sqlQuery, IDbConnection connection = null ) {
-            return Util.Helpers.Convert.ToGuidOrNull( await sqlQuery.ToScalarAsync( connection ) );
+            return Ding.Helpers.Convert.ToGuidOrNull( await sqlQuery.ToScalarAsync( connection ) );
         }
     }
 }

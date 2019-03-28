@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Exceptions;
+using Ding.Exceptions;
 
-namespace Util.Logs.Extensions {
+namespace Ding.Logs.Extensions {
     /// <summary>
     /// 异常扩展
     /// </summary>

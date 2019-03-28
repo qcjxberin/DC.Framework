@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Util.Schedulers {
+namespace Ding.Schedulers {
     /// <summary>
     /// 调度器
     /// </summary>

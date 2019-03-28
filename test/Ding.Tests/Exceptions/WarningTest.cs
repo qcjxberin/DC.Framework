@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Exceptions;
+using Ding.Exceptions;
 using Xunit;
 
-namespace Util.Tests.Exceptions {
+namespace Ding.Tests.Exceptions {
     /// <summary>
     /// 应用程序异常测试
     /// </summary>

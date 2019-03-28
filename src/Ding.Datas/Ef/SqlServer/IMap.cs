@@ -1,7 +1,7 @@
-﻿namespace Util.Datas.Ef.SqlServer {
+﻿namespace Ding.Datas.Ef.SqlServer {
     /// <summary>
     /// 映射
     /// </summary>
-    public interface IMap : Util.Datas.Ef.Core.IMap {
+    public interface IMap : Ding.Datas.Ef.Core.IMap {
     }
 }

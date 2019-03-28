@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Exceptions.Prompts;
+using Ding.Exceptions.Prompts;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 异常扩展
     /// </summary>

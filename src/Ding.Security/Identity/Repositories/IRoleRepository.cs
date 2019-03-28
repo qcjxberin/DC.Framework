@@ -1,7 +1,7 @@
-﻿using Util.Domains.Trees;
-using Util.Security.Identity.Models;
+﻿using Ding.Domains.Trees;
+using Ding.Security.Identity.Models;
 
-namespace Util.Security.Identity.Repositories {
+namespace Ding.Security.Identity.Repositories {
     /// <summary>
     /// 角色仓储
     /// </summary>

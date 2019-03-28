@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using Util.Datas.Sql.Builders;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Sql.Configs;
-using Util.Domains.Repositories;
-using Util.Helpers;
+using Ding.Datas.Sql.Builders;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Configs;
+using Ding.Domains.Repositories;
+using Ding.Helpers;
 
-namespace Util.Datas.Sql.Queries {
+namespace Ding.Datas.Sql.Queries {
     /// <summary>
     /// Sql查询对象
     /// </summary>

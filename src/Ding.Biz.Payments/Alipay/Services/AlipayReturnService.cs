@@ -1,9 +1,9 @@
-﻿using Util.Biz.Payments.Alipay.Abstractions;
-using Util.Biz.Payments.Alipay.Configs;
-using Util.Biz.Payments.Alipay.Services.Base;
-using Util.Parameters;
+﻿using Ding.Biz.Payments.Alipay.Abstractions;
+using Ding.Biz.Payments.Alipay.Configs;
+using Ding.Biz.Payments.Alipay.Services.Base;
+using Ding.Parameters;
 
-namespace Util.Biz.Payments.Alipay.Services {
+namespace Ding.Biz.Payments.Alipay.Services {
     /// <summary>
     /// 支付宝返回服务
     /// </summary>

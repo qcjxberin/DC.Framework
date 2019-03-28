@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using NSubstitute;
-using Util.Events.Default;
-using Util.Events.Handlers;
-using Util.Tests.Samples;
+using Ding.Events.Default;
+using Ding.Events.Handlers;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Events {
+namespace Ding.Tests.Events {
     /// <summary>
     /// 事件总线测试
     /// </summary>

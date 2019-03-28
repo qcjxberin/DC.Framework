@@ -1,6 +1,6 @@
-﻿using Util.Datas.Sql.Configs;
+﻿using Ding.Datas.Sql.Configs;
 
-namespace Util.Datas.Ef.Configs {
+namespace Ding.Datas.Ef.Configs {
     /// <summary>
     /// Ef配置
     /// </summary>

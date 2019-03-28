@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using Util.Logs.Abstractions;
+using Ding.Logs.Abstractions;
 
-namespace Util.Logs.Contents {
+namespace Ding.Logs.Contents {
     /// <summary>
     /// 日志内容
     /// </summary>

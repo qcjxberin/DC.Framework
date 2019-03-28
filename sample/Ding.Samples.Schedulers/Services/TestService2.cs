@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Util.Samples.Schedulers.Services {
+namespace Ding.Samples.Schedulers.Services {
     /// <summary>
     /// 测试服务2
     /// </summary>

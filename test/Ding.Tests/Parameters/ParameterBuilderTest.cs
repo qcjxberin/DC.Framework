@@ -1,9 +1,9 @@
 ﻿using System;
-using Util.Parameters;
-using Util.Tests.Samples;
+using Ding.Parameters;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Parameters {
+namespace Ding.Tests.Parameters {
     /// <summary>
     /// 参数生成器测试
     /// </summary>

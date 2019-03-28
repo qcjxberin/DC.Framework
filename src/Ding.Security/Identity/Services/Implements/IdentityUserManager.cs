@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Util.Security.Identity.Models;
+using Ding.Security.Identity.Models;
 
-namespace Util.Security.Identity.Services.Implements {
+namespace Ding.Security.Identity.Services.Implements {
     /// <summary>
     /// Identity用户服务
     /// </summary>

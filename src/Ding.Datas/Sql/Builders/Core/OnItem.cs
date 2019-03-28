@@ -1,6 +1,6 @@
-﻿using Util.Datas.Queries;
+﻿using Ding.Datas.Queries;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 连接条件项
     /// </summary>

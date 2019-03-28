@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Util.Domains;
+using Ding.Domains;
 
-namespace Util.Datas.Tests.Commons.Domains.Models {
+namespace Ding.Datas.Tests.Commons.Domains.Models {
     /// <summary>
     /// 订单
     /// </summary>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Util.Domains;
+using Ding.Domains;
 
-namespace Util.Datas.Stores.Operations {
+namespace Ding.Datas.Stores.Operations {
     /// <summary>
     /// 通过表达式判断是否存在
     /// </summary>

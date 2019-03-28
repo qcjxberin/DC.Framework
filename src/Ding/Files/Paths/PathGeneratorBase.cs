@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using Util.Helpers;
-using Util.Randoms;
+using Ding.Helpers;
+using Ding.Randoms;
 
-namespace Util.Files.Paths {
+namespace Ding.Files.Paths {
     /// <summary>
     /// 路径生成器
     /// </summary>
@@ -58,7 +58,7 @@ namespace Util.Files.Paths {
         /// </summary>
         private static string FilterFileName( string fileName ) {
             fileName = Regex.Replace( fileName, "\\W", "" );
-            return Util.Helpers.String.PinYin( fileName );
+            return Ding.Helpers.String.PinYin( fileName );
         }
     }
 }

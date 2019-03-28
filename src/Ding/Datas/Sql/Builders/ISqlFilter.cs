@@ -1,6 +1,6 @@
-﻿using Util.Datas.Sql.Builders.Core;
+﻿using Ding.Datas.Sql.Builders.Core;
 
-namespace Util.Datas.Sql.Builders {
+namespace Ding.Datas.Sql.Builders {
     /// <summary>
     /// Sql过滤器
     /// </summary>

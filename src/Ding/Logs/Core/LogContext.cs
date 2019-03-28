@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
-using Util.Contexts;
-using Util.Helpers;
-using Util.Logs.Abstractions;
-using Util.Logs.Internal;
+using Ding.Contexts;
+using Ding.Helpers;
+using Ding.Logs.Abstractions;
+using Ding.Logs.Internal;
 
-namespace Util.Logs.Core {
+namespace Ding.Logs.Core {
     /// <summary>
     /// 日志上下文
     /// </summary>
@@ -67,7 +67,7 @@ namespace Util.Logs.Core {
         private LogContextInfo GetInfo() {
             if ( _info != null )
                 return _info;
-            var key = "Util.Logs.LogContext";
+            var key = "Ding.Logs.LogContext";
             _info = Context.Get<LogContextInfo>( key );
             if( _info != null )
                 return _info;

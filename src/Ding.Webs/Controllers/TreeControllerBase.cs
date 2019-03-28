@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Util.Applications.Dtos;
-using Util.Applications.Trees;
-using Util.Datas.Queries.Trees;
+using Ding.Applications.Dtos;
+using Ding.Applications.Trees;
+using Ding.Datas.Queries.Trees;
 
-namespace Util.Webs.Controllers {
+namespace Ding.Webs.Controllers {
     /// <summary>
     /// 树型控制器
     /// </summary>

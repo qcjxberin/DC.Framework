@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Util.Tools.Sms.LuoSiMao;
+using Ding.Tools.Sms.LuoSiMao;
 
-namespace Util.Tools.Sms.Extensions {
+namespace Ding.Tools.Sms.Extensions {
     /// <summary>
     /// 短信服务扩展
     /// </summary>

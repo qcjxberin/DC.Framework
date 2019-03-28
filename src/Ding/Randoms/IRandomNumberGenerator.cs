@@ -1,4 +1,4 @@
-﻿namespace Util.Randoms {
+﻿namespace Ding.Randoms {
     /// <summary>
     /// 随机数字生成器
     /// </summary>

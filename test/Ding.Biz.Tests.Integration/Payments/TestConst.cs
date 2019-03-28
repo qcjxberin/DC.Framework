@@ -1,4 +1,4 @@
-﻿namespace Util.Biz.Tests.Integration.Payments {
+﻿namespace Ding.Biz.Tests.Integration.Payments {
     /// <summary>
     /// 测试常量
     /// </summary>

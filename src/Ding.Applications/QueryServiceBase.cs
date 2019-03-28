@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Util.Datas.Queries;
-using Util.Domains;
-using Util.Domains.Repositories;
+using Ding.Datas.Queries;
+using Ding.Domains;
+using Ding.Domains.Repositories;
 using System.Linq.Dynamic.Core;
 using Microsoft.EntityFrameworkCore;
-using Util.Applications.Dtos;
-using Util.Datas.Ef;
-using Util.Datas.Stores;
-using Util.Maps;
+using Ding.Applications.Dtos;
+using Ding.Datas.Ef;
+using Ding.Datas.Stores;
+using Ding.Maps;
 
-namespace Util.Applications {
+namespace Ding.Applications {
     /// <summary>
     /// 查询服务
     /// </summary>
@@ -83,7 +83,7 @@ namespace Util.Applications {
         /// </summary>
         /// <param name="id">实体编号</param>
         public virtual TDto GetById( object id ) {
-            var key = Util.Helpers.Convert.To<TKey>( id );
+            var key = Ding.Helpers.Convert.To<TKey>( id );
             return ToDto( _store.Find( key ) );
         }
 
@@ -92,7 +92,7 @@ namespace Util.Applications {
         /// </summary>
         /// <param name="id">实体编号</param>
         public virtual async Task<TDto> GetByIdAsync( object id ) {
-            var key = Util.Helpers.Convert.To<TKey>( id );
+            var key = Ding.Helpers.Convert.To<TKey>( id );
             return ToDto( await _store.FindAsync( key ) );
         }
 

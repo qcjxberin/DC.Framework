@@ -1,6 +1,6 @@
-﻿using Util.Helpers;
+﻿using Ding.Helpers;
 
-namespace Util.Randoms {
+namespace Ding.Randoms {
     /// <summary>
     /// Guid随机数生成器，每次创建一个新的Guid字符串，去掉了Guid的分隔符
     /// </summary>

@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using Util.Exceptions;
-using Util.Validations;
+using Ding.Exceptions;
+using Ding.Validations;
 
-namespace Util.Applications.Dtos {
+namespace Ding.Applications.Dtos {
     /// <summary>
     /// 请求参数
     /// </summary>

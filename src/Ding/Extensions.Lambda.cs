@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Util.Datas.Queries;
-using Util.Expressions;
-using Util.Helpers;
+using Ding.Datas.Queries;
+using Ding.Expressions;
+using Ding.Helpers;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 系统扩展 - Lambda表达式
     /// </summary>

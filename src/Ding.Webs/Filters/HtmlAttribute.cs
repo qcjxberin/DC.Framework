@@ -12,11 +12,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Util.Helpers;
-using Util.Logs;
-using Util.Logs.Extensions;
+using Ding.Helpers;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
-namespace Util.Webs.Filters {
+namespace Ding.Webs.Filters {
     /// <summary>
     /// 生成Html静态文件
     /// </summary>
@@ -57,7 +57,7 @@ namespace Util.Webs.Filters {
                 var html = await RenderToStringAsync( context );
                 if( string.IsNullOrWhiteSpace( html ) )
                     return;
-                var path = Util.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( Path ) ? GetPath( context ) : Path );
+                var path = Ding.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( Path ) ? GetPath( context ) : Path );
                 var directory = System.IO.Path.GetDirectoryName( path );
                 if( string.IsNullOrWhiteSpace( directory ) )
                     return;

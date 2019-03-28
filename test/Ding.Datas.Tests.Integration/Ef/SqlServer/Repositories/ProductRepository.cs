@@ -1,10 +1,10 @@
-﻿using Util.Datas.Ef.Core;
-using Util.Datas.Tests.Commons.Datas.Pos;
-using Util.Datas.Tests.Commons.Domains.Models;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.SqlServer.Stores;
+﻿using Ding.Datas.Ef.Core;
+using Ding.Datas.Tests.Commons.Datas.Pos;
+using Ding.Datas.Tests.Commons.Domains.Models;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.SqlServer.Stores;
 
-namespace Util.Datas.Tests.Ef.SqlServer.Repositories {
+namespace Ding.Datas.Tests.Ef.SqlServer.Repositories {
     /// <summary>
     /// 商品仓储
     /// </summary>

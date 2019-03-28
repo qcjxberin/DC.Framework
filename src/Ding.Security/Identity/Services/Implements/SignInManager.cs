@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using Util.Exceptions;
-using Util.Security.Identity.Models;
-using Util.Security.Identity.Results;
-using Util.Security.Identity.Services.Abstractions;
-using Util.Security.Properties;
+using Ding.Exceptions;
+using Ding.Security.Identity.Models;
+using Ding.Security.Identity.Results;
+using Ding.Security.Identity.Services.Abstractions;
+using Ding.Security.Properties;
 
-namespace Util.Security.Identity.Services.Implements {
+namespace Ding.Security.Identity.Services.Implements {
     /// <summary>
     /// 登录服务
     /// </summary>

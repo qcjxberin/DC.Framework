@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Util.Validations {
+namespace Ding.Validations {
     /// <summary>
     /// DataAnnotations验证操作
     /// </summary>

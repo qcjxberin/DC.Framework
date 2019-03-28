@@ -1,6 +1,6 @@
-﻿using Util.Validations;
+﻿using Ding.Validations;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 验证处理器样例 - 什么也不做
     /// </summary>

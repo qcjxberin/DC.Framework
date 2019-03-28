@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Util.Applications.Dtos;
+using Ding.Applications.Dtos;
 
-namespace Util.Applications.Operations {
+namespace Ding.Applications.Operations {
     /// <summary>
     /// 获取指定标识实体
     /// </summary>

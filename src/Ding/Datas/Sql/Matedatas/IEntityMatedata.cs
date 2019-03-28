@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Aspects;
+using Ding.Aspects;
 
-namespace Util.Datas.Sql.Matedatas {
+namespace Ding.Datas.Sql.Matedatas {
     /// <summary>
     /// 实体元数据
     /// </summary>

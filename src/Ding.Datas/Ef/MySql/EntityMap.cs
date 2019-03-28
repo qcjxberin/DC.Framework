@@ -1,6 +1,6 @@
-﻿using Util.Datas.Ef.Core;
+﻿using Ding.Datas.Ef.Core;
 
-namespace Util.Datas.Ef.MySql {
+namespace Ding.Datas.Ef.MySql {
     /// <summary>
     /// 实体映射配置
     /// </summary>

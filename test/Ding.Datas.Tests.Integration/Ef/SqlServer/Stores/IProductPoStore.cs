@@ -1,7 +1,7 @@
-﻿using Util.Datas.Stores;
-using Util.Datas.Tests.Commons.Datas.Pos;
+﻿using Ding.Datas.Stores;
+using Ding.Datas.Tests.Commons.Datas.Pos;
 
-namespace Util.Datas.Tests.Ef.SqlServer.Stores {
+namespace Ding.Datas.Tests.Ef.SqlServer.Stores {
     /// <summary>
     /// 商品持久化存储
     /// </summary>

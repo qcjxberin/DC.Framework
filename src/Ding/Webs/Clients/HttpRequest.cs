@@ -2,9 +2,9 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Util.Helpers;
+using Ding.Helpers;
 
-namespace Util.Webs.Clients {
+namespace Ding.Webs.Clients {
     /// <summary>
     /// Http请求
     /// </summary>
@@ -56,7 +56,7 @@ namespace Util.Webs.Clients {
         /// 获取Json结果
         /// </summary>
         public async Task<TResult> ResultFromJsonAsync<TResult>() {
-            return Util.Helpers.Json.ToObject<TResult>( await ResultAsync() );
+            return Ding.Helpers.Json.ToObject<TResult>( await ResultAsync() );
         }
     }
 
@@ -121,7 +121,7 @@ namespace Util.Webs.Clients {
         /// </summary>
         private TResult ConvertTo( string result, string contentType ) {
             if( typeof( TResult ) == typeof( string ) )
-                return Util.Helpers.Convert.To<TResult>( result );
+                return Ding.Helpers.Convert.To<TResult>( result );
             if( _convertAction != null )
                 return _convertAction( result );
             if( contentType.SafeString().ToLower() == "application/json" )
@@ -133,7 +133,7 @@ namespace Util.Webs.Clients {
         /// 获取Json结果
         /// </summary>
         public async Task<TResult> ResultFromJsonAsync() {
-            return Util.Helpers.Json.ToObject<TResult>( await ResultAsync() );
+            return Ding.Helpers.Json.ToObject<TResult>( await ResultAsync() );
         }
     }
 }

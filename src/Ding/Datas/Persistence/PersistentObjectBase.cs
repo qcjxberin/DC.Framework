@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Domains;
+using Ding.Domains;
 
-namespace Util.Datas.Persistence {
+namespace Ding.Datas.Persistence {
     /// <summary>
     /// 持久化对象
     /// </summary>

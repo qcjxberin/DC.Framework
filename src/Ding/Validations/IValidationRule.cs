@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Util.Validations {
+namespace Ding.Validations {
     /// <summary>
     /// 验证规则
     /// </summary>

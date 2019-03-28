@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Datas.Sql.Builders;
-using Util.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Builders;
+using Ding.Datas.Sql.Builders.Core;
 
-namespace Util.Datas.Sql {
+namespace Ding.Datas.Sql {
     /// <summary>
     /// 公用表表达式CTE操作扩展
     /// </summary>

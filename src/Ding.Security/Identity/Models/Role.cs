@@ -1,6 +1,6 @@
-﻿using Util.Helpers;
+﻿using Ding.Helpers;
 
-namespace Util.Security.Identity.Models {
+namespace Ding.Security.Identity.Models {
     /// <summary>
     /// 角色
     /// </summary>

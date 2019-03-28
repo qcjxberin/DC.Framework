@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
 using NLogs = NLog;
-using Util.Logs.Abstractions;
-using Util.Logs.Formats;
+using Ding.Logs.Abstractions;
+using Ding.Logs.Formats;
 
-namespace Util.Logs.NLog {
+namespace Ding.Logs.NLog {
     /// <summary>
     /// NLog日志提供程序
     /// </summary>

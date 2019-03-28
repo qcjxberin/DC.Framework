@@ -1,11 +1,11 @@
 ﻿using System;
-using Util.Files.Paths;
-using Util.Helpers;
-using Util.Randoms;
-using Util.Tests.XUnitHelpers;
+using Ding.Files.Paths;
+using Ding.Helpers;
+using Ding.Randoms;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Files.Paths {
+namespace Ding.Tests.Files.Paths {
     /// <summary>
     /// 路径生成器
     /// </summary>

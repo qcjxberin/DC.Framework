@@ -1,4 +1,4 @@
-﻿namespace Util.Tools.QrCode {
+﻿namespace Ding.Tools.QrCode {
     /// <summary>
     /// 二维码尺寸
     /// </summary>

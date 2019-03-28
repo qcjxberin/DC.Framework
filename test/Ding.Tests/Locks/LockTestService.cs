@@ -1,11 +1,11 @@
 ﻿using System;
 using EasyCaching.InMemory;
 using Microsoft.Extensions.DependencyInjection;
-using Util.Caches;
-using Util.Caches.EasyCaching;
-using Util.Locks.Default;
+using Ding.Caches;
+using Ding.Caches.EasyCaching;
+using Ding.Locks.Default;
 
-namespace Util.Tests.Locks {
+namespace Ding.Tests.Locks {
     /// <summary>
     /// 业务锁测试服务
     /// </summary>

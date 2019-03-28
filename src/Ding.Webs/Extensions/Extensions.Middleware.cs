@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Util.Webs.Middlewares;
+using Ding.Webs.Middlewares;
 
-namespace Util.Webs.Extensions {
+namespace Ding.Webs.Extensions {
     /// <summary>
     /// 中间件扩展
     /// </summary>

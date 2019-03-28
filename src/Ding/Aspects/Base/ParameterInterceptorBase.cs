@@ -1,6 +1,6 @@
 ﻿using AspectCore.DynamicProxy.Parameters;
 
-namespace Util.Aspects.Base {
+namespace Ding.Aspects.Base {
     /// <summary>
     /// 参数拦截器
     /// </summary>

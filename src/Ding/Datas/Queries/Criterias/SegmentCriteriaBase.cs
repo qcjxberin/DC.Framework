@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Util.Domains.Repositories;
-using Util.Expressions;
-using Util.Helpers;
+using Ding.Domains.Repositories;
+using Ding.Expressions;
+using Ding.Helpers;
 
-namespace Util.Datas.Queries.Criterias {
+namespace Ding.Datas.Queries.Criterias {
     /// <summary>
     /// 范围过滤条件
     /// </summary>

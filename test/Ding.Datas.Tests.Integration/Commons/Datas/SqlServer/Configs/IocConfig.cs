@@ -1,19 +1,19 @@
 ﻿using Autofac;
-using Util.Datas.Dapper;
-using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Sql;
-using Util.Datas.Sql.Matedatas;
-using Util.Datas.Sql.Queries;
-using Util.Datas.Tests.Commons.Domains.Repositories;
-using Util.Datas.Tests.Ef.SqlServer.Repositories;
-using Util.Datas.Tests.Ef.SqlServer.Stores;
-using Util.Datas.Tests.Ef.SqlServer.UnitOfWorks;
-using Util.Datas.Transactions;
-using Util.Datas.UnitOfWorks;
-using Util.Dependency;
-using Util.Sessions;
+using Ding.Datas.Dapper;
+using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Sql;
+using Ding.Datas.Sql.Matedatas;
+using Ding.Datas.Sql.Queries;
+using Ding.Datas.Tests.Commons.Domains.Repositories;
+using Ding.Datas.Tests.Ef.SqlServer.Repositories;
+using Ding.Datas.Tests.Ef.SqlServer.Stores;
+using Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks;
+using Ding.Datas.Transactions;
+using Ding.Datas.UnitOfWorks;
+using Ding.Dependency;
+using Ding.Sessions;
 
-namespace Util.Datas.Tests.Commons.Datas.SqlServer.Configs {
+namespace Ding.Datas.Tests.Commons.Datas.SqlServer.Configs {
     /// <summary>
     /// 依赖注入配置
     /// </summary>

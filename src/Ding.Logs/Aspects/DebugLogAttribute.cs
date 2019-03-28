@@ -1,4 +1,4 @@
-﻿namespace Util.Logs.Aspects {
+﻿namespace Ding.Logs.Aspects {
     /// <summary>
     /// 调试日志
     /// </summary>

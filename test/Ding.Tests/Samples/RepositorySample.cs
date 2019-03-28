@@ -7,10 +7,10 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using Util.Domains;
-using Util.Domains.Repositories;
+using Ding.Domains;
+using Ding.Domains.Repositories;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 实体样例
     /// </summary>

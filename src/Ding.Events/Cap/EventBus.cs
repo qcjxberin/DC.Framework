@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Util.Events.Cap {
+namespace Ding.Events.Cap {
     /// <summary>
     /// Cap事件总线
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Dependency {
+namespace Ding.Dependency {
     /// <summary>
     /// 作用域
     /// </summary>

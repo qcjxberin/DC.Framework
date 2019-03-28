@@ -1,6 +1,6 @@
-﻿using Util.Biz.Payments.Core;
+﻿using Ding.Biz.Payments.Core;
 
-namespace Util.Biz.Payments.Wechatpay.Abstractions {
+namespace Ding.Biz.Payments.Wechatpay.Abstractions {
     /// <summary>
     /// 微信支付通知服务
     /// </summary>

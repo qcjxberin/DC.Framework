@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Util.Tests.Samples;
-using Util.Validations;
+using Ding.Tests.Samples;
+using Ding.Validations;
 using Xunit;
 
-namespace Util.Tests.Validations {
+namespace Ding.Tests.Validations {
     /// <summary>
     /// 测试验证操作
     /// </summary>

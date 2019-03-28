@@ -1,6 +1,6 @@
-﻿using Util.Validations;
+﻿using Ding.Validations;
 
-namespace Util.Domains {
+namespace Ding.Domains {
     /// <summary>
     /// 领域对象
     /// </summary>

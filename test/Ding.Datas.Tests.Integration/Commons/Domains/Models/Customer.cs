@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Util.Domains;
-using Util.Domains.Auditing;
+using Ding.Domains;
+using Ding.Domains.Auditing;
 
-namespace Util.Datas.Tests.Commons.Domains.Models {
+namespace Ding.Datas.Tests.Commons.Domains.Models {
     /// <summary>
     /// 客户 - 字符串类型标识
     /// </summary>

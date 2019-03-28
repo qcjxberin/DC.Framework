@@ -1,4 +1,4 @@
-﻿namespace Util.Domains {
+﻿namespace Ding.Domains {
     /// <summary>
     /// 标识
     /// </summary>

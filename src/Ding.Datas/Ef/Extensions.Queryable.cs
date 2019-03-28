@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Util.Datas.Queries.Internal;
-using Util.Domains.Repositories;
+using Ding.Datas.Queries.Internal;
+using Ding.Domains.Repositories;
 
-namespace Util.Datas.Ef {
+namespace Ding.Datas.Ef {
     /// <summary>
     /// 查询扩展
     /// </summary>

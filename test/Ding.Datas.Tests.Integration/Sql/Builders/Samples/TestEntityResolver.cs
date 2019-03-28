@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Util.Datas.Sql.Builders;
-using Util.Datas.Tests.Samples;
-using Util.Helpers;
+using Ding.Datas.Sql.Builders;
+using Ding.Datas.Tests.Samples;
+using Ding.Helpers;
 
-namespace Util.Datas.Tests.Sql.Builders.Samples {
+namespace Ding.Datas.Tests.Sql.Builders.Samples {
     /// <summary>
     /// 实体解析器
     /// </summary>

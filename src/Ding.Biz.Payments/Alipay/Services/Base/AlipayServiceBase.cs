@@ -1,13 +1,13 @@
 ﻿using System.Threading.Tasks;
-using Util.Biz.Payments.Alipay.Configs;
-using Util.Biz.Payments.Alipay.Parameters;
-using Util.Biz.Payments.Alipay.Results;
-using Util.Biz.Payments.Core;
-using Util.Helpers;
-using Util.Logs;
-using Util.Logs.Extensions;
+using Ding.Biz.Payments.Alipay.Configs;
+using Ding.Biz.Payments.Alipay.Parameters;
+using Ding.Biz.Payments.Alipay.Results;
+using Ding.Biz.Payments.Core;
+using Ding.Helpers;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
-namespace Util.Biz.Payments.Alipay.Services.Base {
+namespace Ding.Biz.Payments.Alipay.Services.Base {
     /// <summary>
     /// 支付宝支付服务
     /// </summary>

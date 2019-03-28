@@ -1,12 +1,12 @@
 ﻿using System.Xml;
-using Util.Biz.Payments.Core;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Biz.Payments.Wechatpay.Signatures;
-using Util.Helpers;
-using Util.Parameters;
-using Convert = Util.Helpers.Convert;
+using Ding.Biz.Payments.Core;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Biz.Payments.Wechatpay.Signatures;
+using Ding.Helpers;
+using Ding.Parameters;
+using Convert = Ding.Helpers.Convert;
 
-namespace Util.Biz.Payments.Wechatpay.Parameters {
+namespace Ding.Biz.Payments.Wechatpay.Parameters {
     /// <summary>
     /// 微信支付参数生成器
     /// </summary>

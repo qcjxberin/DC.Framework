@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Util.Helpers;
-using Util.Maps;
-using Util.Tests.Samples;
+using Ding.Helpers;
+using Ding.Maps;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Maps {
+namespace Ding.Tests.Maps {
     /// <summary>
     /// 对象映射测试
     /// </summary>

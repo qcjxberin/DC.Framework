@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Util.Domains;
-using Util.Domains.Auditing;
+using Ding.Domains;
+using Ding.Domains.Auditing;
 
-namespace Util.Security.Identity.Models {
+namespace Ding.Security.Identity.Models {
     /// <summary>
     /// 应用程序
     /// </summary>

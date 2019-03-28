@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Text;
 using Exceptionless.Extensions;
-using Util.Exceptions;
-using Util.Logs.Abstractions;
-using Util.Logs.Contents;
-using Util.Logs.Properties;
+using Ding.Exceptions;
+using Ding.Logs.Abstractions;
+using Ding.Logs.Contents;
+using Ding.Logs.Properties;
 
-namespace Util.Logs.Formats {
+namespace Ding.Logs.Formats {
     /// <summary>
     /// 内容格式化器
     /// </summary>

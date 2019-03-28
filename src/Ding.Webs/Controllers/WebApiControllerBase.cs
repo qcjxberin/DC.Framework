@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Util.Logs;
-using Util.Properties;
-using Util.Sessions;
-using Util.Webs.Commons;
-using Util.Webs.Filters;
+using Ding.Logs;
+using Ding.Properties;
+using Ding.Sessions;
+using Ding.Webs.Commons;
+using Ding.Webs.Filters;
 
-namespace Util.Webs.Controllers {
+namespace Ding.Webs.Controllers {
     /// <summary>
     /// WebApi控制器
     /// </summary>
@@ -29,10 +29,10 @@ namespace Util.Webs.Controllers {
         /// </summary>
         protected virtual ILog GetLog() {
             try {
-                return Util.Logs.Log.GetLog( this );
+                return Ding.Logs.Log.GetLog( this );
             }
             catch {
-                return Util.Logs.Log.Null;
+                return Ding.Logs.Log.Null;
             }
         }
 

@@ -1,6 +1,6 @@
-﻿using Util.Datas.Ef.Core;
+﻿using Ding.Datas.Ef.Core;
 
-namespace Util.Datas.Ef.PgSql {
+namespace Ding.Datas.Ef.PgSql {
     /// <summary>
     /// 实体映射配置
     /// </summary>

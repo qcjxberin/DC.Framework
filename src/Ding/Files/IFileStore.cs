@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Util.Files {
+namespace Ding.Files {
     /// <summary>
     /// 文件存储服务
     /// </summary>

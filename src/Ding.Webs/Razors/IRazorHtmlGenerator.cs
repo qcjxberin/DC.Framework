@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Util.Webs.Razors {
+namespace Ding.Webs.Razors {
     /// <summary>
     /// Razor Html生成器
     /// </summary>

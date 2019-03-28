@@ -1,6 +1,6 @@
-﻿using Util.Datas.Sql.Builders.Core;
+﻿using Ding.Datas.Sql.Builders.Core;
 
-namespace Util.Datas.Dapper.MySql {
+namespace Ding.Datas.Dapper.MySql {
     /// <summary>
     /// MySql方言
     /// </summary>

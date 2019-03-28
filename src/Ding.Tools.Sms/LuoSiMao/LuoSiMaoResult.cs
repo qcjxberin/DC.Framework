@@ -1,4 +1,4 @@
-﻿namespace Util.Tools.Sms.LuoSiMao {
+﻿namespace Ding.Tools.Sms.LuoSiMao {
     /// <summary>
     /// LuoSiMao短信接口返回结果
     /// </summary>

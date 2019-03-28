@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Biz.Payments.Wechatpay.Enums;
-using Util.Biz.Payments.Wechatpay.Results;
-using Util.Parameters;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Biz.Payments.Wechatpay.Enums;
+using Ding.Biz.Payments.Wechatpay.Results;
+using Ding.Parameters;
 using Xunit;
 
-namespace Util.Biz.Tests.Integration.Payments.Wechatpay.Results {
+namespace Ding.Biz.Tests.Integration.Payments.Wechatpay.Results {
     /// <summary>
     /// 微信支付结果测试
     /// </summary>

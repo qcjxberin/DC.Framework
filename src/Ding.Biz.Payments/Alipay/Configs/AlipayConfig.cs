@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Util.Exceptions;
-using Util.Validations;
+using Ding.Exceptions;
+using Ding.Validations;
 
-namespace Util.Biz.Payments.Alipay.Configs {
+namespace Ding.Biz.Payments.Alipay.Configs {
     /// <summary>
     /// 支付宝配置
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Util.Tools.Sms {
+namespace Ding.Tools.Sms {
     /// <summary>
     /// 短信错误码
     /// </summary>

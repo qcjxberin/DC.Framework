@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.Extensions.Logging;
 
-namespace Util.Datas.Tests.Samples {
+namespace Ding.Datas.Tests.Samples {
     public interface ISample {
     }
 

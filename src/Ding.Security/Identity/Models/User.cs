@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
-using Util.Exceptions;
-using Util.Security.Encryptors;
-using Util.Validations;
+using Ding.Exceptions;
+using Ding.Security.Encryptors;
+using Ding.Validations;
 
-namespace Util.Security.Identity.Models {
+namespace Ding.Security.Identity.Models {
     /// <summary>
     /// 用户
     /// </summary>
@@ -48,7 +48,7 @@ namespace Util.Security.Identity.Models {
         /// </summary>
         public override ValidationResultCollection Validate() {
             if( UserName.IsEmpty() )
-                throw new Warning( Util.Security.Properties.SecurityResource.UserNameIsEmpty );
+                throw new Warning( Ding.Security.Properties.SecurityResource.UserNameIsEmpty );
             return base.Validate();
         }
 
@@ -132,8 +132,8 @@ namespace Util.Security.Identity.Models {
         /// 添加用户声明
         /// </summary>
         public virtual void AddUserClaims() {
-            AddClaim( Util.Security.Claims.ClaimTypes.Mobile, PhoneNumber );
-            AddClaim( Util.Security.Claims.ClaimTypes.Email, Email );
+            AddClaim( Ding.Security.Claims.ClaimTypes.Mobile, PhoneNumber );
+            AddClaim( Ding.Security.Claims.ClaimTypes.Email, Email );
         }
     }
 }

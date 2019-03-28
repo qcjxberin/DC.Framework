@@ -4,18 +4,18 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
-using Util.Datas.Sql;
-using Util.Datas.Sql.Configs;
-using Util.Domains.Repositories;
-using Util.Helpers;
-using Util.Logs;
-using Util.Logs.Extensions;
+using Ding.Datas.Sql;
+using Ding.Datas.Sql.Configs;
+using Ding.Domains.Repositories;
+using Ding.Helpers;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
-namespace Util.Datas.Dapper {
+namespace Ding.Datas.Dapper {
     /// <summary>
     /// Dapper Sql查询对象
     /// </summary>
-    public class SqlQuery : Util.Datas.Sql.Queries.SqlQueryBase {
+    public class SqlQuery : Ding.Datas.Sql.Queries.SqlQueryBase {
         /// <summary>
         /// 跟踪日志名称
         /// </summary>
@@ -130,7 +130,7 @@ namespace Util.Datas.Dapper {
             var sql = builder.ToSql();
             WriteTraceLog( sql, builder.GetParams(), builder.ToDebugSql() );
             var result = GetConnection( connection ).ExecuteScalar( sql, builder.GetParams() );
-            return Util.Helpers.Convert.ToInt( result );
+            return Ding.Helpers.Convert.ToInt( result );
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Util.Datas.Dapper {
             var sql = builder.ToSql();
             WriteTraceLog( sql, builder.GetParams(), builder.ToDebugSql() );
             var result = await GetConnection( connection ).ExecuteScalarAsync( sql, builder.GetParams() );
-            return Util.Helpers.Convert.ToInt( result );
+            return Ding.Helpers.Convert.ToInt( result );
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Util.Domains.Auditing {
+﻿namespace Ding.Domains.Auditing {
     /// <summary>
     /// 操作审计
     /// </summary>

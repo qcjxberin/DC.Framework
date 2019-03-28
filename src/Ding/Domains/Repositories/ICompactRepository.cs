@@ -1,8 +1,8 @@
 ﻿using System;
-using Util.Datas.Stores.Operations;
-using Util.Dependency;
+using Ding.Datas.Stores.Operations;
+using Ding.Dependency;
 
-namespace Util.Domains.Repositories {
+namespace Ding.Domains.Repositories {
     /// <summary>
     /// 仓储
     /// </summary>

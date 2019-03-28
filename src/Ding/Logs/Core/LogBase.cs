@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
-using Util.Logs.Abstractions;
-using Util.Logs.Extensions;
-using Util.Sessions;
+using Ding.Logs.Abstractions;
+using Ding.Logs.Extensions;
+using Ding.Sessions;
 
-namespace Util.Logs.Core {
+namespace Ding.Logs.Core {
     /// <summary>
     /// 日志操作
     /// </summary>
@@ -107,7 +107,7 @@ namespace Util.Logs.Core {
             if ( Enabled( level ) == false )
                 return;
             try {
-                content.Level = Util.Helpers.Enum.GetName<LogLevel>( level );
+                content.Level = Ding.Helpers.Enum.GetName<LogLevel>( level );
                 Init( content );
                 Provider.WriteLog( level, content );
             }

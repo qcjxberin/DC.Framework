@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Biz.Payments.Core;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Biz.Payments.Wechatpay.Services;
-using Util.Biz.Tests.Integration.Payments.Wechatpay.Configs;
-using Util.Helpers;
+using Ding.Biz.Payments.Core;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Biz.Payments.Wechatpay.Services;
+using Ding.Biz.Tests.Integration.Payments.Wechatpay.Configs;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 using String = Util.Helpers.String;
 
-namespace Util.Biz.Tests.Integration.Payments.Wechatpay.Services {
+namespace Ding.Biz.Tests.Integration.Payments.Wechatpay.Services {
     /// <summary>
     /// 微信App支付服务测试
     /// </summary>

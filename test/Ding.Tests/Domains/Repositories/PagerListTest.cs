@@ -1,9 +1,9 @@
-﻿using Util.Domains.Repositories;
-using Util.Helpers;
-using Util.Tests.Samples;
+﻿using Ding.Domains.Repositories;
+using Ding.Helpers;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Domains.Repositories {
+namespace Ding.Tests.Domains.Repositories {
     /// <summary>
     /// 分页集合测试
     /// </summary>

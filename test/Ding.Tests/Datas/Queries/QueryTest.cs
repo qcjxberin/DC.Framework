@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Text;
-using Util.Datas.Queries;
-using Util.Datas.Queries.Criterias;
-using Util.Properties;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Datas.Queries;
+using Ding.Datas.Queries.Criterias;
+using Ding.Properties;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Datas.Queries {
+namespace Ding.Tests.Datas.Queries {
     /// <summary>
     /// 查询对象测试
     /// </summary>

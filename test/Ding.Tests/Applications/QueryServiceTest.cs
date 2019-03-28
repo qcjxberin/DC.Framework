@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NSubstitute;
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Applications {
+namespace Ding.Tests.Applications {
     /// <summary>
     /// 查询服务测试
     /// </summary>

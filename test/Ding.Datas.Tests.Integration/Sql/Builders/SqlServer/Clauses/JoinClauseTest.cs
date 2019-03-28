@@ -1,13 +1,13 @@
-﻿using Util.Datas.Dapper.SqlServer;
-using Util.Datas.Queries;
-using Util.Datas.Sql.Builders.Clauses;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Tests.Samples;
-using Util.Datas.Tests.Sql.Builders.Samples;
-using Util.Helpers;
+﻿using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders.Clauses;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Tests.Samples;
+using Ding.Datas.Tests.Sql.Builders.Samples;
+using Ding.Helpers;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.SqlServer.Clauses {
+namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Clauses {
     /// <summary>
     /// 表连接子句测试
     /// </summary>

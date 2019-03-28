@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Sessions;
+using Ding.Sessions;
 
-namespace Util.Domains.Auditing {
+namespace Ding.Domains.Auditing {
     /// <summary>
     /// 修改操作审计初始化器
     /// </summary>

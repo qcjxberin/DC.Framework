@@ -1,10 +1,10 @@
-﻿using Util.Datas.Dapper.MySql;
-using Util.Datas.Sql;
-using Util.Helpers;
+﻿using Ding.Datas.Dapper.MySql;
+using Ding.Datas.Sql;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Datas.Tests.Sql.Builders.MySql {
+namespace Ding.Datas.Tests.Sql.Builders.MySql {
     /// <summary>
     /// MySql Sql生成器测试
     /// </summary>

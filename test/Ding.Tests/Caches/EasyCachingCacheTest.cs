@@ -1,10 +1,10 @@
 ﻿using EasyCaching.InMemory;
 using Microsoft.Extensions.DependencyInjection;
-using Util.Caches;
-using Util.Caches.EasyCaching;
+using Ding.Caches;
+using Ding.Caches.EasyCaching;
 using Xunit;
 
-namespace Util.Tests.Caches {
+namespace Ding.Tests.Caches {
     /// <summary>
     /// EasyCaching缓存测试
     /// </summary>

@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Util.Datas.Dapper;
-using Util.Datas.Ef.Configs;
-using Util.Datas.Ef.Core;
-using Util.Datas.Enums;
-using Util.Datas.UnitOfWorks;
+using Ding.Datas.Dapper;
+using Ding.Datas.Ef.Configs;
+using Ding.Datas.Ef.Core;
+using Ding.Datas.Enums;
+using Ding.Datas.UnitOfWorks;
 
-namespace Util.Datas.Ef {
+namespace Ding.Datas.Ef {
     /// <summary>
     /// 服务扩展
     /// </summary>
@@ -49,11 +49,11 @@ namespace Util.Datas.Ef {
         /// </summary>
         private static DatabaseType GetDbType<TUnitOfWork>() {
             var type = typeof( TUnitOfWork ).BaseType;
-            if( type == typeof( Util.Datas.Ef.SqlServer.UnitOfWork ) )
+            if( type == typeof( Ding.Datas.Ef.SqlServer.UnitOfWork ) )
                 return DatabaseType.SqlServer;
-            if( type == typeof( Util.Datas.Ef.MySql.UnitOfWork ) )
+            if( type == typeof( Ding.Datas.Ef.MySql.UnitOfWork ) )
                 return DatabaseType.MySql;
-            if( type == typeof( Util.Datas.Ef.PgSql.UnitOfWork ) )
+            if( type == typeof( Ding.Datas.Ef.PgSql.UnitOfWork ) )
                 return DatabaseType.PgSql;
             return DatabaseType.SqlServer;
         }

@@ -4,15 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using NSubstitute;
-using Util.Datas.UnitOfWorks;
-using Util.Dependency;
-using Util.Exceptions;
-using Util.Helpers;
-using Util.Tests.Samples;
-using Util.Tests.XUnitHelpers;
+using Ding.Datas.UnitOfWorks;
+using Ding.Dependency;
+using Ding.Exceptions;
+using Ding.Helpers;
+using Ding.Tests.Samples;
+using Ding.Tests.XUnitHelpers;
 using Xunit;
 
-namespace Util.Tests.Applications {
+namespace Ding.Tests.Applications {
     /// <summary>
     /// 增删改查服务测试
     /// </summary>

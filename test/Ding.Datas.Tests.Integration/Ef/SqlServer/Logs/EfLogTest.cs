@@ -1,8 +1,8 @@
 ﻿//using System.Linq;
-//using Util.Datas.Ef.Logs;
+//using Ding.Datas.Ef.Logs;
 //using Xunit;
 
-//namespace Util.Datas.Tests.Ef.SqlServer.Logs {
+//namespace Ding.Datas.Tests.Ef.SqlServer.Logs {
 //    /// <summary>
 //    /// Ef日志测试
 //    /// </summary>

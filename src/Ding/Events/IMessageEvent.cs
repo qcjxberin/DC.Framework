@@ -1,4 +1,4 @@
-﻿namespace Util.Events {
+﻿namespace Ding.Events {
     /// <summary>
     /// 消息事件
     /// </summary>

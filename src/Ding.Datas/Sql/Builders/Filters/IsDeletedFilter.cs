@@ -1,9 +1,9 @@
 ﻿using System;
-using Util.Datas.Sql.Builders.Core;
-using Util.Datas.Sql.Matedatas;
-using Util.Domains;
+using Ding.Datas.Sql.Builders.Core;
+using Ding.Datas.Sql.Matedatas;
+using Ding.Domains;
 
-namespace Util.Datas.Sql.Builders.Filters {
+namespace Ding.Datas.Sql.Builders.Filters {
     /// <summary>
     /// 逻辑删除过滤器
     /// </summary>

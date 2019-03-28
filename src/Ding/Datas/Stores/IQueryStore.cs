@@ -1,9 +1,9 @@
 ﻿using System;
-using Util.Datas.Stores.Operations;
-using Util.Dependency;
-using Util.Domains;
+using Ding.Datas.Stores.Operations;
+using Ding.Dependency;
+using Ding.Domains;
 
-namespace Util.Datas.Stores {
+namespace Ding.Datas.Stores {
     /// <summary>
     /// 查询存储器
     /// </summary>

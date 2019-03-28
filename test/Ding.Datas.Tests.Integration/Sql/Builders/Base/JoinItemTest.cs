@@ -1,9 +1,9 @@
-﻿using Util.Datas.Queries;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Sql.Builders.Core;
+﻿using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Core;
 using Xunit;
 
-namespace Util.Datas.Tests.Sql.Builders.Base {
+namespace Ding.Datas.Tests.Sql.Builders.Base {
     /// <summary>
     /// 表连接项测试
     /// </summary>

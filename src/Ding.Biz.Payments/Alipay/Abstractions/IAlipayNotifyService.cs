@@ -1,6 +1,6 @@
-﻿using Util.Biz.Payments.Core;
+﻿using Ding.Biz.Payments.Core;
 
-namespace Util.Biz.Payments.Alipay.Abstractions {
+namespace Ding.Biz.Payments.Alipay.Abstractions {
     /// <summary>
     /// 支付宝通知服务
     /// </summary>

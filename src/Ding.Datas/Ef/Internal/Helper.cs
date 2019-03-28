@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Util.Domains;
+using Ding.Domains;
 
-namespace Util.Datas.Ef.Internal {
+namespace Ding.Datas.Ef.Internal {
     /// <summary>
     /// 工具操作
     /// </summary>

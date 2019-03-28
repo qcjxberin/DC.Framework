@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Util.Datas.Tests.Commons.Datas.SqlServer.Configs {
+namespace Ding.Datas.Tests.Commons.Datas.SqlServer.Configs {
     /// <summary>
     /// 全局测试配置
     /// </summary>

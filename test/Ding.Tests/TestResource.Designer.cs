@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Util.Tests {
+namespace Ding.Tests {
     using System;
     
     

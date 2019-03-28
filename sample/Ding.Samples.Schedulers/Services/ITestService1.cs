@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Dependency;
+using Ding.Dependency;
 
-namespace Util.Samples.Schedulers.Services {
+namespace Ding.Samples.Schedulers.Services {
     /// <summary>
     /// 测试服务1 - 通过自动扫描IScopeDependency注册
     /// </summary>

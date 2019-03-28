@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Util.Helpers;
-using Util.Locks;
-using Util.Properties;
-using Util.Security.Sessions;
-using Util.Webs.Commons;
+using Ding.Helpers;
+using Ding.Locks;
+using Ding.Properties;
+using Ding.Security.Sessions;
+using Ding.Webs.Commons;
 
-namespace Util.Webs.Filters {
+namespace Ding.Webs.Filters {
     /// <summary>
     /// 防止重复提交过滤器
     /// </summary>

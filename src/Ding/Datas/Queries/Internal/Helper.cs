@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
-using Util.Domains.Repositories;
-using Util.Helpers;
-using Util.Properties;
+using Ding.Domains.Repositories;
+using Ding.Helpers;
+using Ding.Properties;
 
-namespace Util.Datas.Queries.Internal {
+namespace Ding.Datas.Queries.Internal {
     /// <summary>
     /// 查询工具类
     /// </summary>

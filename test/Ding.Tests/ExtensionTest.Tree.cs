@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Castle.Components.DictionaryAdapter;
 using NSubstitute;
-using Util.Domains.Trees;
-using Util.Tests.Samples;
+using Ding.Domains.Trees;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests {
+namespace Ding.Tests {
     /// <summary>
     /// 扩展测试 - 树型扩展
     /// </summary>

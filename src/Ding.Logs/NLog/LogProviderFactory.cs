@@ -1,6 +1,6 @@
-﻿using Util.Logs.Abstractions;
+﻿using Ding.Logs.Abstractions;
 
-namespace Util.Logs.NLog {
+namespace Ding.Logs.NLog {
     /// <summary>
     /// NLog日志提供程序工厂
     /// </summary>

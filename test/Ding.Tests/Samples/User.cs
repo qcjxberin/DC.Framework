@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Security.Identity.Models;
+using Ding.Security.Identity.Models;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 用户
     /// </summary>

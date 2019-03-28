@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// 正则操作测试
     /// </summary>

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Util.Validations;
+using Ding.Validations;
 using Xunit;
 
-namespace Util.Tests.Validations {
+namespace Ding.Tests.Validations {
     /// <summary>
     /// 测试验证结果集合
     /// </summary>

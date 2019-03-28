@@ -1,4 +1,4 @@
-﻿namespace Util.Files.Paths {
+﻿namespace Ding.Files.Paths {
     /// <summary>
     /// 基路径
     /// </summary>

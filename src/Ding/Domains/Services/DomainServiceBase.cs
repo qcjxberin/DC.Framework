@@ -1,8 +1,8 @@
-﻿using Util.Logs;
-using Util.Logs.Core;
-using Util.Sessions;
+﻿using Ding.Logs;
+using Ding.Logs.Core;
+using Ding.Sessions;
 
-namespace Util.Domains.Services {
+namespace Ding.Domains.Services {
     /// <summary>
     /// 领域服务
     /// </summary>

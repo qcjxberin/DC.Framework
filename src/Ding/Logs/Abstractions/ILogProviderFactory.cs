@@ -1,4 +1,4 @@
-﻿namespace Util.Logs.Abstractions {
+﻿namespace Ding.Logs.Abstractions {
     /// <summary>
     /// 日志提供程序工厂
     /// </summary>

@@ -1,6 +1,6 @@
-﻿using Util.Randoms;
+﻿using Ding.Randoms;
 
-namespace Util.Files.Paths {
+namespace Ding.Files.Paths {
     /// <summary>
     /// 路径生成器
     /// </summary>

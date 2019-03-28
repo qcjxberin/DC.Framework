@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Util.Security.Identity.Options {
+namespace Ding.Security.Identity.Options {
     /// <summary>
     /// 登录锁定配置
     /// </summary>

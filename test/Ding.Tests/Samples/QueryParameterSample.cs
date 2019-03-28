@@ -1,6 +1,6 @@
-﻿using Util.Datas.Queries;
+﻿using Ding.Datas.Queries;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 查询参数测试样例
     /// </summary>

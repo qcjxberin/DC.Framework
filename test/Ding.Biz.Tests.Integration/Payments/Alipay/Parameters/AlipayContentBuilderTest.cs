@@ -1,8 +1,8 @@
-﻿using Util.Biz.Payments.Alipay.Parameters;
-using Util.Biz.Payments.Core;
+﻿using Ding.Biz.Payments.Alipay.Parameters;
+using Ding.Biz.Payments.Core;
 using Xunit;
 
-namespace Util.Biz.Tests.Integration.Payments.Alipay.Parameters {
+namespace Ding.Biz.Tests.Integration.Payments.Alipay.Parameters {
     /// <summary>
     /// 支付宝内容参数生成器测试
     /// </summary>

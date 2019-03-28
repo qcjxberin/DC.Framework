@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Util.Datas.Sql.Matedatas;
-using Util.Helpers;
+using Ding.Datas.Sql.Matedatas;
+using Ding.Helpers;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 名称项，处理名称中包含符号.
     /// </summary>

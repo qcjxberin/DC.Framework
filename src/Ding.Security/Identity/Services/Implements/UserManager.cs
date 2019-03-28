@@ -2,15 +2,15 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Util.Domains.Services;
-using Util.Security.Identity.Extensions;
-using Util.Security.Identity.Models;
-using Util.Security.Identity.Options;
-using Util.Security.Identity.Repositories;
-using Util.Security.Identity.Services.Abstractions;
-using Util.Security.Identity.Services.Configs;
+using Ding.Domains.Services;
+using Ding.Security.Identity.Extensions;
+using Ding.Security.Identity.Models;
+using Ding.Security.Identity.Options;
+using Ding.Security.Identity.Repositories;
+using Ding.Security.Identity.Services.Abstractions;
+using Ding.Security.Identity.Services.Configs;
 
-namespace Util.Security.Identity.Services.Implements {
+namespace Ding.Security.Identity.Services.Implements {
     /// <summary>
     /// 用户服务
     /// </summary>

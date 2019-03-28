@@ -1,4 +1,4 @@
-﻿namespace Util.Biz.Payments.Core {
+﻿namespace Ding.Biz.Payments.Core {
     /// <summary>
     /// 支付结果
     /// </summary>

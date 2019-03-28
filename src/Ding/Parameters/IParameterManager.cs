@@ -1,4 +1,4 @@
-﻿namespace Util.Parameters {
+﻿namespace Ding.Parameters {
     /// <summary>
     /// 参数服务
     /// </summary>

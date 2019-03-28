@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Quartz;
-using Util.Dependency;
-using Util.Samples.Schedulers.Services;
-using Util.Schedulers.Quartz;
+using Ding.Dependency;
+using Ding.Samples.Schedulers.Services;
+using Ding.Schedulers.Quartz;
 
-namespace Util.Samples.Schedulers.Jobs {
+namespace Ding.Samples.Schedulers.Jobs {
     /// <summary>
     /// 测试作业2
     /// </summary>

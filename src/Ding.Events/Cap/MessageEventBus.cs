@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using DotNetCore.CAP;
-using Util.Datas.Transactions;
+using Ding.Datas.Transactions;
 
-namespace Util.Events.Cap {
+namespace Ding.Events.Cap {
     /// <summary>
     /// Cap消息事件总线
     /// </summary>

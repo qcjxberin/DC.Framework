@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
-using Util.Exceptions;
-using Util.Files.Paths;
-using Util.Helpers;
+using Ding.Exceptions;
+using Ding.Files.Paths;
+using Ding.Helpers;
 
-namespace Util.Files {
+namespace Ding.Files {
     /// <summary>
     /// 本地文件存储服务
     /// </summary>

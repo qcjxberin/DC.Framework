@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Util.Datas.Ef.Configs;
-using Util.Datas.Ef.Core;
-using Util.Datas.UnitOfWorks;
-using Util.Helpers;
-using Util.Logs;
-using Util.Logs.Extensions;
+using Ding.Datas.Ef.Configs;
+using Ding.Datas.Ef.Core;
+using Ding.Datas.UnitOfWorks;
+using Ding.Helpers;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
-namespace Util.Datas.Ef.Logs {
+namespace Ding.Datas.Ef.Logs {
     /// <summary>
     /// Ef日志记录器
     /// </summary>
@@ -60,10 +60,10 @@ namespace Util.Datas.Ef.Logs {
         /// </summary>
         protected virtual ILog GetLog() {
             try {
-                return Util.Logs.Log.GetLog( TraceLogName );
+                return Ding.Logs.Log.GetLog( TraceLogName );
             }
             catch {
-                return Util.Logs.Log.Null;
+                return Ding.Logs.Log.Null;
             }
         }
 

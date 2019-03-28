@@ -1,7 +1,7 @@
 ﻿using System;
-using Util.Logs.Abstractions;
+using Ding.Logs.Abstractions;
 
-namespace Util.Logs {
+namespace Ding.Logs {
     /// <summary>
     /// 日志操作
     /// </summary>

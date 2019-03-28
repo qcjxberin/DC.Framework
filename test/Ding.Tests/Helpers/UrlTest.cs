@@ -1,7 +1,7 @@
-﻿using Util.Helpers;
+﻿using Ding.Helpers;
 using Xunit;
 
-namespace Util.Tests.Helpers {
+namespace Ding.Tests.Helpers {
     /// <summary>
     /// Url操作测试
     /// </summary>

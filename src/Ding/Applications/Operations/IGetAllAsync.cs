@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Util.Applications.Dtos;
+using Ding.Applications.Dtos;
 
-namespace Util.Applications.Operations {
+namespace Ding.Applications.Operations {
     /// <summary>
     /// 获取全部数据
     /// </summary>

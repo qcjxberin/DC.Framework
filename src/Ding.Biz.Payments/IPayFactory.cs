@@ -1,8 +1,8 @@
-﻿using Util.Biz.Payments.Alipay.Abstractions;
-using Util.Biz.Payments.Core;
-using Util.Biz.Payments.Wechatpay.Abstractions;
+﻿using Ding.Biz.Payments.Alipay.Abstractions;
+using Ding.Biz.Payments.Core;
+using Ding.Biz.Payments.Wechatpay.Abstractions;
 
-namespace Util.Biz.Payments {
+namespace Ding.Biz.Payments {
     /// <summary>
     /// 支付工厂
     /// </summary>

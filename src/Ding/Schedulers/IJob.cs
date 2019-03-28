@@ -1,4 +1,4 @@
-﻿namespace Util.Schedulers {
+﻿namespace Ding.Schedulers {
     /// <summary>
     /// 作业
     /// </summary>

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using Util.Helpers;
-using Util.Validations;
+using Ding.Helpers;
+using Ding.Validations;
 
-namespace Util.Domains {
+namespace Ding.Domains {
     /// <summary>
     /// 领域层顶级基类
     /// </summary>
@@ -155,11 +155,11 @@ namespace Util.Domains {
         /// <param name="expression">属性表达式,范例：t => t.Name</param>
         /// <param name="newValue">新值,范例：newEntity.Name</param>
         protected void AddChange<TProperty, TValue>( Expression<Func<T, TProperty>> expression, TValue newValue ) {
-            var member = Util.Helpers.Lambda.GetMemberExpression( expression );
-            var name = Util.Helpers.Lambda.GetMemberName( member );
-            var description = Util.Helpers.Reflection.GetDisplayNameOrDescription( member.Member );
+            var member = Ding.Helpers.Lambda.GetMemberExpression( expression );
+            var name = Ding.Helpers.Lambda.GetMemberName( member );
+            var description = Ding.Helpers.Reflection.GetDisplayNameOrDescription( member.Member );
             var value = member.Member.GetPropertyValue( this );
-            AddChange( name, description, Util.Helpers.Convert.To<TValue>( value ), newValue );
+            AddChange( name, description, Ding.Helpers.Convert.To<TValue>( value ), newValue );
         }
 
         /// <summary>
@@ -244,11 +244,11 @@ namespace Util.Domains {
         /// </summary>
         /// <param name="expression">属性表达式,范例：t => t.Name</param>
         protected void AddDescription<TProperty>( Expression<Func<T, TProperty>> expression ) {
-            var member = Util.Helpers.Lambda.GetMember( expression );
-            var description = Util.Helpers.Reflection.GetDisplayNameOrDescription( member );
+            var member = Ding.Helpers.Lambda.GetMember( expression );
+            var description = Ding.Helpers.Reflection.GetDisplayNameOrDescription( member );
             var value = member.GetPropertyValue( this );
             if ( Reflection.IsBool( member ) )
-                value = Util.Helpers.Convert.ToBool( value ).Description();
+                value = Ding.Helpers.Convert.ToBool( value ).Description();
             AddDescription( description, value );
         }
 

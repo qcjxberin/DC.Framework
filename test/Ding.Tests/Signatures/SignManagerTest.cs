@@ -1,9 +1,9 @@
-﻿using Util.Signatures;
-using Util.Tests.Helpers;
+﻿using Ding.Signatures;
+using Ding.Tests.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Tests.Signatures {
+namespace Ding.Tests.Signatures {
     /// <summary>
     /// 签名服务测试
     /// </summary>

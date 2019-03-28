@@ -1,6 +1,6 @@
-﻿using Util.Domains;
+﻿using Ding.Domains;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// int聚合根测试样例
     /// </summary>

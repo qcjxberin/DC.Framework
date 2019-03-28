@@ -5,11 +5,11 @@ using System.Reflection;
 using AspectCore.Configuration;
 using Autofac;
 using Microsoft.Extensions.DependencyInjection;
-using Util.Events.Handlers;
-using Util.Helpers;
-using Util.Reflections;
+using Ding.Events.Handlers;
+using Ding.Helpers;
+using Ding.Reflections;
 
-namespace Util.Dependency {
+namespace Ding.Dependency {
     /// <summary>
     /// 依赖引导器
     /// </summary>

@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Parameters;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Parameters;
 
-namespace Util.Biz.Tests.Integration.Payments.Wechatpay.Configs {
+namespace Ding.Biz.Tests.Integration.Payments.Wechatpay.Configs {
     /// <summary>
     /// 微信支付测试配置提供器
     /// </summary>

@@ -1,7 +1,7 @@
-﻿using Util.Domains.Repositories;
+﻿using Ding.Domains.Repositories;
 using Xunit;
 
-namespace Util.Tests.Domains.Repositories {
+namespace Ding.Tests.Domains.Repositories {
     /// <summary>
     /// 分页参数测试
     /// </summary>

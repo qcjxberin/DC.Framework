@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Util.Biz.Payments.Alipay.Configs;
+using Ding.Biz.Payments.Alipay.Configs;
 
-namespace Util.Biz.Tests.Integration.Payments.Alipay.Configs {
+namespace Ding.Biz.Tests.Integration.Payments.Alipay.Configs {
     /// <summary>
     /// 支付宝测试配置提供器
     /// </summary>

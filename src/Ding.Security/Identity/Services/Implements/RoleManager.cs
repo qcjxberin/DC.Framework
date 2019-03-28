@@ -1,14 +1,14 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Util.Domains.Services;
-using Util.Exceptions;
-using Util.Security.Identity.Extensions;
-using Util.Security.Identity.Models;
-using Util.Security.Identity.Repositories;
-using Util.Security.Identity.Services.Abstractions;
-using Util.Security.Properties;
+using Ding.Domains.Services;
+using Ding.Exceptions;
+using Ding.Security.Identity.Extensions;
+using Ding.Security.Identity.Models;
+using Ding.Security.Identity.Repositories;
+using Ding.Security.Identity.Services.Abstractions;
+using Ding.Security.Properties;
 
-namespace Util.Security.Identity.Services.Implements {
+namespace Ding.Security.Identity.Services.Implements {
     /// <summary>
     /// 角色服务
     /// </summary>

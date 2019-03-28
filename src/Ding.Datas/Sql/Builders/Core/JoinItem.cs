@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Datas.Queries;
-using Util.Datas.Sql.Builders.Conditions;
-using Util.Datas.Sql.Builders.Internal;
-using Util.Datas.Sql.Matedatas;
+using Ding.Datas.Queries;
+using Ding.Datas.Sql.Builders.Conditions;
+using Ding.Datas.Sql.Builders.Internal;
+using Ding.Datas.Sql.Matedatas;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 表连接项
     /// </summary>

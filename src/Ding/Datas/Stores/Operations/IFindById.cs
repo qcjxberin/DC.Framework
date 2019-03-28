@@ -1,6 +1,6 @@
-﻿using Util.Domains;
+﻿using Ding.Domains;
 
-namespace Util.Datas.Stores.Operations {
+namespace Ding.Datas.Stores.Operations {
     /// <summary>
     /// 通过标识查找
     /// </summary>

@@ -3,11 +3,11 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Quartz;
 using Quartz.Impl;
-using Util.Helpers;
-using Util.Reflections;
+using Ding.Helpers;
+using Ding.Reflections;
 using Qz = Quartz;
 
-namespace Util.Schedulers.Quartz {
+namespace Ding.Schedulers.Quartz {
     /// <summary>
     /// Quartz调度器
     /// </summary>
@@ -102,7 +102,7 @@ namespace Util.Schedulers.Quartz {
         /// <param name="job">作业</param>
         public async Task AddJobAsync( IJob job ) {
             if( !( job is JobBase quartzJob ) )
-                throw new InvalidOperationException( "Quartz调度器必须从Util.Schedulers.Quartz.JobBase派生" );
+                throw new InvalidOperationException( "Quartz调度器必须从Ding.Schedulers.Quartz.JobBase派生" );
             var jobDetail = CreateJob( quartzJob );
             var trigger = CreateTrigger( quartzJob );
             await AddJobAsync( jobDetail, trigger );

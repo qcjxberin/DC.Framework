@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace Util.Domains.Trees {
+namespace Ding.Domains.Trees {
     /// <summary>
     /// 树型实体
     /// </summary>
@@ -96,7 +96,7 @@ namespace Util.Domains.Trees {
             var result = Path.Split( ',' ).Where( id => !string.IsNullOrWhiteSpace( id ) && id != "," ).ToList();
             if( excludeSelf )
                 result = result.Where( id => id.SafeString().ToLower() != Id.SafeString().ToLower() ).ToList();
-            return result.Select( Util.Helpers.Convert.To<TKey> ).ToList();
+            return result.Select( Ding.Helpers.Convert.To<TKey> ).ToList();
         }
     }
 }

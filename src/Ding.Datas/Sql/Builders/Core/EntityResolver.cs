@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Util.Datas.Sql.Matedatas;
-using Util.Helpers;
+using Ding.Datas.Sql.Matedatas;
+using Ding.Helpers;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// 实体解析器
     /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Util.Biz.Payments.Core {
+namespace Ding.Biz.Payments.Core {
     /// <summary>
     /// 支付服务
     /// </summary>

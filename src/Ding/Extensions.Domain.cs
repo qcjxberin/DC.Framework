@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Util.Domains;
+using Ding.Domains;
 
-namespace Util {
+namespace Ding {
     /// <summary>
     /// 实体扩展
     /// </summary>

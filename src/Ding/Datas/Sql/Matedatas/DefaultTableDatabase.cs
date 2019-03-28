@@ -1,4 +1,4 @@
-﻿namespace Util.Datas.Sql.Matedatas {
+﻿namespace Ding.Datas.Sql.Matedatas {
     /// <summary>
     /// 表数据库
     /// </summary>

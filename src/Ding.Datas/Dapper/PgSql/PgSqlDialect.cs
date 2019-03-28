@@ -1,6 +1,6 @@
-﻿using Util.Datas.Sql.Builders.Core;
+﻿using Ding.Datas.Sql.Builders.Core;
 
-namespace Util.Datas.Dapper.PgSql {
+namespace Ding.Datas.Dapper.PgSql {
     /// <summary>
     /// PgSql方言
     /// </summary>

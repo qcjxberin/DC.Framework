@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Util.Applications;
-using Util.Applications.Dtos;
-using Util.Datas.Queries;
-using Util.Domains.Repositories;
+using Ding.Applications;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries;
+using Ding.Domains.Repositories;
 
-namespace Util.Webs.Controllers {
+namespace Ding.Webs.Controllers {
     /// <summary>
     /// 查询控制器
     /// </summary>

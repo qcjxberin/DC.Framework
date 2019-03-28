@@ -1,4 +1,4 @@
-﻿namespace Util.Files {
+﻿namespace Ding.Files {
     /// <summary>
     /// 文件大小
     /// </summary>
@@ -45,21 +45,21 @@
         /// 获取文件大小，单位：K
         /// </summary>
         public double GetSizeByK() {
-            return Util.Helpers.Convert.ToDouble( _size / 1024.0, 2 );
+            return Ding.Helpers.Convert.ToDouble( _size / 1024.0, 2 );
         }
 
         /// <summary>
         /// 获取文件大小，单位：M
         /// </summary>
         public double GetSizeByM() {
-            return Util.Helpers.Convert.ToDouble( _size / 1024.0 / 1024.0, 2 );
+            return Ding.Helpers.Convert.ToDouble( _size / 1024.0 / 1024.0, 2 );
         }
 
         /// <summary>
         /// 获取文件大小，单位：G
         /// </summary>
         public double GetSizeByG() {
-            return Util.Helpers.Convert.ToDouble( _size / 1024.0 / 1024.0 / 1024.0, 2 );
+            return Ding.Helpers.Convert.ToDouble( _size / 1024.0 / 1024.0 / 1024.0, 2 );
         }
 
         /// <summary>

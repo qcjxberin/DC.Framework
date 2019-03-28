@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Util.Applications;
-using Util.Applications.Dtos;
-using Util.Datas.Queries;
-using Util.Webs.Properties;
+using Ding.Applications;
+using Ding.Applications.Dtos;
+using Ding.Datas.Queries;
+using Ding.Webs.Properties;
 
-namespace Util.Webs.Controllers {
+namespace Ding.Webs.Controllers {
     /// <summary>
     /// Crud控制器
     /// </summary>

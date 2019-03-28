@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NSubstitute;
-using Util.Tests.Samples;
+using Ding.Tests.Samples;
 using Xunit;
 
-namespace Util.Tests.Applications {
+namespace Ding.Tests.Applications {
     /// <summary>
     /// 增删改查服务测试 - 批量删除
     /// </summary>

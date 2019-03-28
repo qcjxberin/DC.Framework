@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Util.Datas.Tests.Commons.Datas.PgSql.Configs;
-using Util.Datas.UnitOfWorks;
+using Ding.Datas.Tests.Commons.Datas.PgSql.Configs;
+using Ding.Datas.UnitOfWorks;
 
-namespace Util.Datas.Tests.Ef.PgSql.UnitOfWorks {
+namespace Ding.Datas.Tests.Ef.PgSql.UnitOfWorks {
     /// <summary>
     /// PgSql工作单元
     /// </summary>

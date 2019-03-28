@@ -1,6 +1,6 @@
-﻿using Util.Logs.Abstractions;
+﻿using Ding.Logs.Abstractions;
 
-namespace Util.Logs.Core {
+namespace Ding.Logs.Core {
     /// <summary>
     /// 空日志格式器
     /// </summary>

@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Util.Biz.Payments.Properties;
-using Util.Exceptions;
-using Util.Maps;
-using Util.Validations;
+using Ding.Biz.Payments.Properties;
+using Ding.Exceptions;
+using Ding.Maps;
+using Ding.Validations;
 
-namespace Util.Biz.Payments.Core {
+namespace Ding.Biz.Payments.Core {
     /// <summary>
     /// 支付参数
     /// </summary>

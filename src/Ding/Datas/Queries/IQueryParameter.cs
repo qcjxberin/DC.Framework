@@ -1,6 +1,6 @@
-﻿using Util.Domains.Repositories;
+﻿using Ding.Domains.Repositories;
 
-namespace Util.Datas.Queries {
+namespace Ding.Datas.Queries {
     /// <summary>
     /// 查询参数
     /// </summary>

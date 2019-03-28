@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using Util.Datas.Sql.Matedatas;
-using Util.Helpers;
+using Ding.Datas.Sql.Matedatas;
+using Ding.Helpers;
 
-namespace Util.Datas.Sql.Builders.Core {
+namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
     /// Sql项
     /// </summary>

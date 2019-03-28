@@ -1,9 +1,9 @@
 ﻿using System;
-using Util.Domains.Repositories;
-using Util.Domains.Trees;
-using Util.Security.Identity.Models;
+using Ding.Domains.Repositories;
+using Ding.Domains.Trees;
+using Ding.Security.Identity.Models;
 
-namespace Util.Tests.Samples {
+namespace Ding.Tests.Samples {
     /// <summary>
     /// 角色
     /// </summary>

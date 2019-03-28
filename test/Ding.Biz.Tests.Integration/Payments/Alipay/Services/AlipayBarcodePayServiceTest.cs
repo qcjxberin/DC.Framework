@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Util.Biz.Payments;
-using Util.Biz.Payments.Alipay.Parameters.Requests;
-using Util.Biz.Payments.Alipay.Results;
-using Util.Biz.Payments.Alipay.Services;
-using Util.Biz.Payments.Core;
-using Util.Biz.Payments.Properties;
-using Util.Biz.Tests.Integration.Payments.Alipay.Configs;
-using Util.Biz.Tests.Integration.XUnitHelpers;
-using Util.Exceptions;
-using Util.Helpers;
+using Ding.Biz.Payments;
+using Ding.Biz.Payments.Alipay.Parameters.Requests;
+using Ding.Biz.Payments.Alipay.Results;
+using Ding.Biz.Payments.Alipay.Services;
+using Ding.Biz.Payments.Core;
+using Ding.Biz.Payments.Properties;
+using Ding.Biz.Tests.Integration.Payments.Alipay.Configs;
+using Ding.Biz.Tests.Integration.XUnitHelpers;
+using Ding.Exceptions;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Util.Biz.Tests.Integration.Payments.Alipay.Services {
+namespace Ding.Biz.Tests.Integration.Payments.Alipay.Services {
     /// <summary>
     /// 支付宝条码支付服务测试
     /// </summary>

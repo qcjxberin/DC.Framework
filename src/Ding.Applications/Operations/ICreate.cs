@@ -1,8 +1,8 @@
-﻿using Util.Applications.Aspects;
-using Util.Applications.Dtos;
-using Util.Validations.Aspects;
+﻿using Ding.Applications.Aspects;
+using Ding.Applications.Dtos;
+using Ding.Validations.Aspects;
 
-namespace Util.Applications.Operations {
+namespace Ding.Applications.Operations {
     /// <summary>
     /// 创建操作
     /// </summary>

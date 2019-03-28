@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Util.Datas.Tests.Commons.Domains.Models {
+namespace Ding.Datas.Tests.Commons.Domains.Models {
     /// <summary>
     /// 商品类型
     /// </summary>

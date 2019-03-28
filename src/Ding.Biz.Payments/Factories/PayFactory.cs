@@ -1,13 +1,13 @@
 ﻿using System;
-using Util.Biz.Payments.Alipay.Abstractions;
-using Util.Biz.Payments.Alipay.Configs;
-using Util.Biz.Payments.Alipay.Services;
-using Util.Biz.Payments.Core;
-using Util.Biz.Payments.Wechatpay.Abstractions;
-using Util.Biz.Payments.Wechatpay.Configs;
-using Util.Biz.Payments.Wechatpay.Services;
+using Ding.Biz.Payments.Alipay.Abstractions;
+using Ding.Biz.Payments.Alipay.Configs;
+using Ding.Biz.Payments.Alipay.Services;
+using Ding.Biz.Payments.Core;
+using Ding.Biz.Payments.Wechatpay.Abstractions;
+using Ding.Biz.Payments.Wechatpay.Configs;
+using Ding.Biz.Payments.Wechatpay.Services;
 
-namespace Util.Biz.Payments.Factories {
+namespace Ding.Biz.Payments.Factories {
     /// <summary>
     /// 支付工厂
     /// </summary>

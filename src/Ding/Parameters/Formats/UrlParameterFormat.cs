@@ -1,4 +1,4 @@
-﻿namespace Util.Parameters.Formats {
+﻿namespace Ding.Parameters.Formats {
     /// <summary>
     /// Url参数格式化器
     /// </summary>
