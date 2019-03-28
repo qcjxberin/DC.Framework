@@ -36,6 +36,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NewLife.Core, Version=8.1.7025.14014, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NewLife.Core.8.1.2019.327\lib\net45\NewLife.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -397,10 +400,6 @@
     <EmbeddedResource Include="XRegex\Sample\网页\最外层嵌套.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ding.Core\02-Ding.Core.csproj">
-      <Project>{5c990908-1594-40ed-8569-d6aa055b0887}</Project>
-      <Name>02-Ding.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ding.Net\12-Ding.Net.csproj">
       <Project>{e491579a-9e6a-41a3-9fc0-75c5a5083009}</Project>
       <Name>12-Ding.Net</Name>

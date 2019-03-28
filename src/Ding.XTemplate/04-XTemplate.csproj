@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NewLife.Core">
-      <Version>7.0.6712.2419</Version>
+      <Version>8.1.2019.327</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

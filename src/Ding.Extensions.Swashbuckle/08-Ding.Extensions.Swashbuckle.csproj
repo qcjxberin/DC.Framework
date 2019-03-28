@@ -10,11 +10,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>Ding.Webs</AssemblyName>
-    <RootNamespace>Ding.Webs</RootNamespace>
+    <AssemblyName>Ding.Extensions.Swashbuckle</AssemblyName>
+    <RootNamespace>Ding.Extensions.Swashbuckle</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>NetCore Web操作类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore Web操作类库。</Description>
+    <AssemblyTitle>NetCore Swashbuckle扩展类</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的扩展Swashbuckle.AspNetCore的一些常用操作，便于使用以及过滤。</Description>
     <Company>星尘</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
@@ -27,14 +27,14 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>
-      Ding.Webs项目是Ding应用框架的Web操作类库。
+      Ding.Extensions.Swashbuckle项目是Ding应用框架的Swashbuckle扩展类。
       Ding是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
     </PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;Webs;</PackageTags>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;Swashbuckle;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -42,40 +42,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Swaggers\index.html" />
+    <None Remove="Resources\export.js" />
+    <None Remove="Resources\jquery.min.js" />
+    <None Remove="Resources\swagger-common.css" />
+    <None Remove="Resources\translator.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Swaggers\index.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Extensions\Extensions.Middleware.cs" />
+    <EmbeddedResource Include="Resources\export.js" />
+    <EmbeddedResource Include="Resources\jquery.min.js" />
+    <EmbeddedResource Include="Resources\swagger-common.css" />
+    <EmbeddedResource Include="Resources\translator.js" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ding.Applications\09-Ding.Applications.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Properties\WebResource.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>WebResource.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\WebResource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>WebResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Folder Include="Attributes\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Filters\Operations\" />
+    <Folder Include="Internal\" />
   </ItemGroup>
 
 </Project>

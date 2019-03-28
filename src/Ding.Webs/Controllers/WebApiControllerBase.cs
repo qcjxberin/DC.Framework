@@ -10,7 +10,6 @@ namespace Ding.Webs.Controllers
     /// <summary>
     /// WebApi控制器
     /// </summary>
-    [ApiController]
     [Route("api/[controller]")]
     [ExceptionHandler]
     [ErrorLog]
