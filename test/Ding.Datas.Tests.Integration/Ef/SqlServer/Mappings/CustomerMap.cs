@@ -6,7 +6,7 @@ namespace Ding.Datas.Tests.Ef.SqlServer.Mappings {
     /// <summary>
     /// 客户映射配置
     /// </summary>
-    public class CustomerMap : Util.Datas.Ef.SqlServer.AggregateRootMap<Customer> {
+    public class CustomerMap : Ding.Datas.Ef.SqlServer.AggregateRootMap<Customer> {
         /// <summary>
         /// 映射表
         /// </summary>

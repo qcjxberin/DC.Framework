@@ -31,7 +31,7 @@ namespace Ding.Samples.Api
                 .AddNewtonsoftJson();
 
             //添加Util基础设施服务
-            services.AddUtil();
+            services.AddDing();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

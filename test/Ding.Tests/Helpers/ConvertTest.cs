@@ -21,7 +21,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1778019.78", 1778020 )]
         [InlineData( "1778019.7801684", 1778020 )]
         public void TestToInt( object input, int result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToInt( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToInt( input ) );
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1778019.78", 1778020 )]
         [InlineData( "1778019.7801684", 1778020 )]
         public void TestToIntOrNull( object input, int? result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToIntOrNull( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToIntOrNull( input ) );
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1778019.7801684", 1778020 )]
         [InlineData( "177801978016841234", 177801978016841234 )]
         public void TestToLong( object input, long result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToLong( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToLong( input ) );
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1778019.7801684", 1778020L )]
         [InlineData( "177801978016841234", 177801978016841234L )]
         public void TestToLongOrNull( object input, long? result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToLongOrNull( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToLongOrNull( input ) );
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1.2", 1.2, null )]
         [InlineData( "12.346", 12.35, 2 )]
         public void TestToFloat( object input, float result, int? digits ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToFloat( input, digits ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToFloat( input, digits ) );
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1.2", 1.2f, null )]
         [InlineData( "12.346", 12.35f, 2 )]
         public void TestToFloatOrNull( object input, float? result, int? digits ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToFloatOrNull( input, digits ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToFloatOrNull( input, digits ) );
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "12.3451", 12.35, 2 )]
         [InlineData( "12.346", 12.35, 2 )]
         public void TestToDouble( object input, double result, int? digits ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToDouble( input, digits ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToDouble( input, digits ) );
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1.2", 1.2, null )]
         [InlineData( "12.355", 12.36, 2 )]
         public void TestToDoubleOrNull( object input, double? result, int? digits ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToDoubleOrNull( input, digits ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToDoubleOrNull( input, digits ) );
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "12.3451", 12.35, 2 )]
         [InlineData( "12.346", 12.35, 2 )]
         public void TestToDecimal( object input, decimal result, int? digits ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToDecimal( input, digits ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToDecimal( input, digits ) );
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "1A", null, null )]
         [InlineData( "1A", null, 2 )]
         public void TestToDecimalOrNull_Validate( object input, decimal? result, int? digits ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToDecimalOrNull( input, digits ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToDecimalOrNull( input, digits ) );
         }
 
         /// <summary>
@@ -191,9 +191,9 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToDecimalOrNull() {
-            Assert.Equal( 0M, Util.Helpers.Convert.ToDecimalOrNull( "0" ) );
-            Assert.Equal( 1.2M, Util.Helpers.Convert.ToDecimalOrNull( "1.2" ) );
-            Assert.Equal( 23.46M, Util.Helpers.Convert.ToDecimalOrNull( "23.456", 2 ) );
+            Assert.Equal( 0M, Ding.Helpers.Convert.ToDecimalOrNull( "0" ) );
+            Assert.Equal( 1.2M, Ding.Helpers.Convert.ToDecimalOrNull( "1.2" ) );
+            Assert.Equal( 23.46M, Ding.Helpers.Convert.ToDecimalOrNull( "23.456", 2 ) );
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "true", true )]
         [InlineData( "ok", true )]
         public void TestToBool( object input, bool result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToBool( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToBool( input ) );
         }
 
         /// <summary>
@@ -243,7 +243,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "true", true )]
         [InlineData( "ok", true )]
         public void TestToBoolOrNull( object input, bool? result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToBoolOrNull( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToBoolOrNull( input ) );
         }
 
         /// <summary>
@@ -251,9 +251,9 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToDate_Validate() {
-            Assert.Equal( DateTime.MinValue, Util.Helpers.Convert.ToDate( null ) );
-            Assert.Equal( DateTime.MinValue, Util.Helpers.Convert.ToDate( "" ) );
-            Assert.Equal( DateTime.MinValue, Util.Helpers.Convert.ToDate( "1A" ) );
+            Assert.Equal( DateTime.MinValue, Ding.Helpers.Convert.ToDate( null ) );
+            Assert.Equal( DateTime.MinValue, Ding.Helpers.Convert.ToDate( "" ) );
+            Assert.Equal( DateTime.MinValue, Ding.Helpers.Convert.ToDate( "1A" ) );
         }
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToDate() {
-            Assert.Equal( new DateTime( 2000, 1, 1 ), Util.Helpers.Convert.ToDate( "2000-1-1" ) );
+            Assert.Equal( new DateTime( 2000, 1, 1 ), Ding.Helpers.Convert.ToDate( "2000-1-1" ) );
         }
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "", null )]
         [InlineData( "1A", null )]
         public void TestToDateOrNull_Validate( object input, DateTime? result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToDateOrNull( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToDateOrNull( input ) );
         }
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToDateOrNull() {
-            Assert.Equal( new DateTime( 2000, 1, 1 ), Util.Helpers.Convert.ToDateOrNull( "2000-1-1" ) );
+            Assert.Equal( new DateTime( 2000, 1, 1 ), Ding.Helpers.Convert.ToDateOrNull( "2000-1-1" ) );
         }
 
         /// <summary>
@@ -290,9 +290,9 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToGuid_Validate() {
-            Assert.Equal( Guid.Empty, Util.Helpers.Convert.ToGuid( null ) );
-            Assert.Equal( Guid.Empty, Util.Helpers.Convert.ToGuid( "" ) );
-            Assert.Equal( Guid.Empty, Util.Helpers.Convert.ToGuid( "1A" ) );
+            Assert.Equal( Guid.Empty, Ding.Helpers.Convert.ToGuid( null ) );
+            Assert.Equal( Guid.Empty, Ding.Helpers.Convert.ToGuid( "" ) );
+            Assert.Equal( Guid.Empty, Ding.Helpers.Convert.ToGuid( "1A" ) );
         }
 
         /// <summary>
@@ -300,7 +300,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToGuid() {
-            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Util.Helpers.Convert.ToGuid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
+            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Ding.Helpers.Convert.ToGuid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
         }
 
         /// <summary>
@@ -313,7 +313,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "", null )]
         [InlineData( "1A", null )]
         public void TestToGuidOrNull_Validate( object input, Guid? result ) {
-            Assert.Equal( result, Util.Helpers.Convert.ToGuidOrNull( input ) );
+            Assert.Equal( result, Ding.Helpers.Convert.ToGuidOrNull( input ) );
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToGuidOrNull() {
-            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Util.Helpers.Convert.ToGuidOrNull( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
+            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Ding.Helpers.Convert.ToGuidOrNull( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
         }
 
         /// <summary>
@@ -329,17 +329,17 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToGuidList() {
-            Assert.Empty( Util.Helpers.Convert.ToGuidList( null ));
-            Assert.Empty( Util.Helpers.Convert.ToGuidList( "" ));
+            Assert.Empty(Ding.Helpers.Convert.ToGuidList( null ));
+            Assert.Empty(Ding.Helpers.Convert.ToGuidList( "" ));
 
             const string guid = "83B0233C-A24F-49FD-8083-1337209EBC9A";
-            Assert.Single( Util.Helpers.Convert.ToGuidList( guid ));
-            Assert.Equal( new Guid( guid ), Util.Helpers.Convert.ToGuidList( guid )[0] );
+            Assert.Single(Ding.Helpers.Convert.ToGuidList( guid ));
+            Assert.Equal( new Guid( guid ), Ding.Helpers.Convert.ToGuidList( guid )[0] );
 
             const string guid2 = "83B0233C-A24F-49FD-8083-1337209EBC9A,EAB523C6-2FE7-47BE-89D5-C6D440C3033A";
-            Assert.Equal( 2, Util.Helpers.Convert.ToGuidList( guid2 ).Count );
-            Assert.Equal( new Guid( "83B0233C-A24F-49FD-8083-1337209EBC9A" ), Util.Helpers.Convert.ToGuidList( guid2 )[0] );
-            Assert.Equal( new Guid( "EAB523C6-2FE7-47BE-89D5-C6D440C3033A" ), Util.Helpers.Convert.ToGuidList( guid2 )[1] );
+            Assert.Equal( 2, Ding.Helpers.Convert.ToGuidList( guid2 ).Count );
+            Assert.Equal( new Guid( "83B0233C-A24F-49FD-8083-1337209EBC9A" ), Ding.Helpers.Convert.ToGuidList( guid2 )[0] );
+            Assert.Equal( new Guid( "EAB523C6-2FE7-47BE-89D5-C6D440C3033A" ), Ding.Helpers.Convert.ToGuidList( guid2 )[1] );
         }
 
         /// <summary>
@@ -348,9 +348,9 @@ namespace Ding.Tests.Helpers {
         [Fact]
         public void TestToGuidList_2() {
             const string guid = "83B0233C-A24F-49FD-8083-1337209EBC9A,,EAB523C6-2FE7-47BE-89D5-C6D440C3033A,";
-            Assert.Equal( 2, Util.Helpers.Convert.ToGuidList( guid ).Count );
-            Assert.Equal( new Guid( "83B0233C-A24F-49FD-8083-1337209EBC9A" ), Util.Helpers.Convert.ToGuidList( guid )[0] );
-            Assert.Equal( new Guid( "EAB523C6-2FE7-47BE-89D5-C6D440C3033A" ), Util.Helpers.Convert.ToGuidList( guid )[1] );
+            Assert.Equal( 2, Ding.Helpers.Convert.ToGuidList( guid ).Count );
+            Assert.Equal( new Guid( "83B0233C-A24F-49FD-8083-1337209EBC9A" ), Ding.Helpers.Convert.ToGuidList( guid )[0] );
+            Assert.Equal( new Guid( "EAB523C6-2FE7-47BE-89D5-C6D440C3033A" ), Ding.Helpers.Convert.ToGuidList( guid )[1] );
         }
 
         /// <summary>
@@ -358,10 +358,10 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToList() {
-            Assert.Empty( Util.Helpers.Convert.ToList<string>( null ));
-            Assert.Single( Util.Helpers.Convert.ToList<string>( "1" ));
-            Assert.Equal( 2, Util.Helpers.Convert.ToList<string>( "1,2" ).Count );
-            Assert.Equal( 2, Util.Helpers.Convert.ToList<int>( "1,2" )[1] );
+            Assert.Empty(Ding.Helpers.Convert.ToList<string>( null ));
+            Assert.Single(Ding.Helpers.Convert.ToList<string>( "1" ));
+            Assert.Equal( 2, Ding.Helpers.Convert.ToList<string>( "1,2" ).Count );
+            Assert.Equal( 2, Ding.Helpers.Convert.ToList<int>( "1,2" )[1] );
         }
 
         /// <summary>
@@ -369,28 +369,28 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestTo() {
-            Assert.Null( Util.Helpers.Convert.To<string>( "" ) );
-            Assert.Equal( "1A", Util.Helpers.Convert.To<string>( "1A" ) );
-            Assert.Equal( 0, Util.Helpers.Convert.To<int>( null ) );
-            Assert.Equal( 0, Util.Helpers.Convert.To<int>( "" ) );
-            Assert.Equal( 0, Util.Helpers.Convert.To<int>( "2A" ) );
-            Assert.Equal( 1, Util.Helpers.Convert.To<int>( "1" ) );
-            Assert.Null( Util.Helpers.Convert.To<int?>( null ) );
-            Assert.Null( Util.Helpers.Convert.To<int?>( "" ) );
-            Assert.Null( Util.Helpers.Convert.To<int?>( "3A" ) );
-            Assert.Equal( Guid.Empty, Util.Helpers.Convert.To<Guid>( "" ) );
-            Assert.Equal( Guid.Empty, Util.Helpers.Convert.To<Guid>( "4A" ) );
-            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Util.Helpers.Convert.To<Guid>( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
-            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Util.Helpers.Convert.To<Guid?>( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
-            Assert.Equal( 12.5, Util.Helpers.Convert.To<double>( "12.5" ) );
-            Assert.Equal( 12.5, Util.Helpers.Convert.To<double?>( "12.5" ) );
-            Assert.Equal( 12.5M, Util.Helpers.Convert.To<decimal>( "12.5" ) );
-            Assert.True( Util.Helpers.Convert.To<bool>( "true" ) );
-            Assert.Equal( new DateTime( 2000, 1, 1 ), Util.Helpers.Convert.To<DateTime>( "2000-1-1" ) );
-            Assert.Equal( new DateTime( 2000, 1, 1 ), Util.Helpers.Convert.To<DateTime?>( "2000-1-1" ) );
+            Assert.Null(Ding.Helpers.Convert.To<string>( "" ) );
+            Assert.Equal( "1A", Ding.Helpers.Convert.To<string>( "1A" ) );
+            Assert.Equal( 0, Ding.Helpers.Convert.To<int>( null ) );
+            Assert.Equal( 0, Ding.Helpers.Convert.To<int>( "" ) );
+            Assert.Equal( 0, Ding.Helpers.Convert.To<int>( "2A" ) );
+            Assert.Equal( 1, Ding.Helpers.Convert.To<int>( "1" ) );
+            Assert.Null(Ding.Helpers.Convert.To<int?>( null ) );
+            Assert.Null(Ding.Helpers.Convert.To<int?>( "" ) );
+            Assert.Null(Ding.Helpers.Convert.To<int?>( "3A" ) );
+            Assert.Equal( Guid.Empty, Ding.Helpers.Convert.To<Guid>( "" ) );
+            Assert.Equal( Guid.Empty, Ding.Helpers.Convert.To<Guid>( "4A" ) );
+            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Ding.Helpers.Convert.To<Guid>( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
+            Assert.Equal( new Guid( "B9EB56E9-B720-40B4-9425-00483D311DDC" ), Ding.Helpers.Convert.To<Guid?>( "B9EB56E9-B720-40B4-9425-00483D311DDC" ) );
+            Assert.Equal( 12.5, Ding.Helpers.Convert.To<double>( "12.5" ) );
+            Assert.Equal( 12.5, Ding.Helpers.Convert.To<double?>( "12.5" ) );
+            Assert.Equal( 12.5M, Ding.Helpers.Convert.To<decimal>( "12.5" ) );
+            Assert.True(Ding.Helpers.Convert.To<bool>( "true" ) );
+            Assert.Equal( new DateTime( 2000, 1, 1 ), Ding.Helpers.Convert.To<DateTime>( "2000-1-1" ) );
+            Assert.Equal( new DateTime( 2000, 1, 1 ), Ding.Helpers.Convert.To<DateTime?>( "2000-1-1" ) );
             var guid = Guid.NewGuid();
-            Assert.Equal( guid.ToString(), Util.Helpers.Convert.To<string>( guid ) );
-            Assert.Equal( EnumSample.C, Util.Helpers.Convert.To<EnumSample>( "c" ) );
+            Assert.Equal( guid.ToString(), Ding.Helpers.Convert.To<string>( guid ) );
+            Assert.Equal( EnumSample.C, Ding.Helpers.Convert.To<EnumSample>( "c" ) );
         }
     }
 }

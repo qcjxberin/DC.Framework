@@ -12,7 +12,7 @@ namespace Ding.Tests.Helpers {
         [Fact]
         public void TestSort() {
             int[] input = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            var list = Util.Helpers.Random.Sort( input );
+            var list = Ding.Helpers.Random.Sort( input );
             Assert.Equal( 10, list.Distinct().Count() );
             Assert.NotEqual( "1,2,3,4,5,6,7,8,9,10", list.Join() );
         }

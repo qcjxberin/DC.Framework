@@ -15,7 +15,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "C", EnumSample.C )]
         [InlineData( "3", EnumSample.C )]
         public void TestParse( string memeber, EnumSample sample ) {
-            Assert.Equal( sample, Util.Helpers.Enum.Parse<EnumSample>( memeber ) );
+            Assert.Equal( sample, Ding.Helpers.Enum.Parse<EnumSample>( memeber ) );
         }
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( null )]
         [InlineData( "" )]
         public void TestParse_MemberIsEmpty( string member ) {
-            AssertHelper.Throws<ArgumentNullException>( () => { Util.Helpers.Enum.Parse<EnumSample>( member ); }, "member" );
+            AssertHelper.Throws<ArgumentNullException>( () => { Ding.Helpers.Enum.Parse<EnumSample>( member ); }, "member" );
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "C", EnumSample.C )]
         [InlineData( "3", EnumSample.C )]
         public void TestParse_Nullable( string memeber, EnumSample? sample ) {
-            Assert.Equal( sample, Util.Helpers.Enum.Parse<EnumSample?>( memeber ) );
+            Assert.Equal( sample, Ding.Helpers.Enum.Parse<EnumSample?>( memeber ) );
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( 3, "C" )]
         [InlineData( EnumSample.C, "C" )]
         public void TestGetName( object member, string name ) {
-            Assert.Equal( name, Util.Helpers.Enum.GetName<EnumSample>( member ) );
+            Assert.Equal( name, Ding.Helpers.Enum.GetName<EnumSample>( member ) );
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetName_Validate() {
-            Assert.Equal( string.Empty, Util.Helpers.Enum.GetName( typeof( Sample ), 3 ) );
+            Assert.Equal( string.Empty, Ding.Helpers.Enum.GetName( typeof( Sample ), 3 ) );
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( 3, "C" )]
         [InlineData( EnumSample.C, "C" )]
         public void TestGetName_Nullable( object member, string name ) {
-            Assert.Equal( name, Util.Helpers.Enum.GetName<EnumSample?>( member ) );
+            Assert.Equal( name, Ding.Helpers.Enum.GetName<EnumSample?>( member ) );
         }
 
         /// <summary>
@@ -82,9 +82,9 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetValue_Validate() {
-            AssertHelper.Throws<ArgumentNullException>( () => Util.Helpers.Enum.GetValue<EnumSample>( null ), "member" );
-            AssertHelper.Throws<ArgumentNullException>( () => Util.Helpers.Enum.GetValue<EnumSample>( string.Empty ), "member" );
-            AssertHelper.Throws<ArgumentNullException>( () => Util.Helpers.Enum.GetValue<Sample>( string.Empty ), "member" );
+            AssertHelper.Throws<ArgumentNullException>( () => Ding.Helpers.Enum.GetValue<EnumSample>( null ), "member" );
+            AssertHelper.Throws<ArgumentNullException>( () => Ding.Helpers.Enum.GetValue<EnumSample>( string.Empty ), "member" );
+            AssertHelper.Throws<ArgumentNullException>( () => Ding.Helpers.Enum.GetValue<Sample>( string.Empty ), "member" );
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( 3, 3 )]
         [InlineData( EnumSample.C, 3 )]
         public void TestGetValue( object member, int value ) {
-            Assert.Equal( value, Util.Helpers.Enum.GetValue<EnumSample>( member ) );
+            Assert.Equal( value, Ding.Helpers.Enum.GetValue<EnumSample>( member ) );
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( 3, 3 )]
         [InlineData( EnumSample.C, 3 )]
         public void TestGetValue_Nullable( object member, int value ) {
-            Assert.Equal( value, Util.Helpers.Enum.GetValue<EnumSample?>( member ) );
+            Assert.Equal( value, Ding.Helpers.Enum.GetValue<EnumSample?>( member ) );
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( 2, "B2" )]
         [InlineData( EnumSample.B, "B2" )]
         public void TestGetDescription( object member, string description ) {
-            Assert.Equal( description, Util.Helpers.Enum.GetDescription<EnumSample>( member ) );
+            Assert.Equal( description, Ding.Helpers.Enum.GetDescription<EnumSample>( member ) );
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( 2, "B2" )]
         [InlineData( EnumSample.B, "B2" )]
         public void TestGetDescription_Nullable( object member, string description ) {
-            Assert.Equal( description, Util.Helpers.Enum.GetDescription<EnumSample?>( member ) );
+            Assert.Equal( description, Ding.Helpers.Enum.GetDescription<EnumSample?>( member ) );
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetItems() {
-            var items = Util.Helpers.Enum.GetItems<EnumSample>();
+            var items = Ding.Helpers.Enum.GetItems<EnumSample>();
             Assert.Equal( 5, items.Count );
             Assert.Equal( "A", items[0].Text );
             Assert.Equal( 1, items[0].Value );
@@ -157,7 +157,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetItems_Type() {
-            var items = Util.Helpers.Enum.GetItems( typeof( EnumSample ) );
+            var items = Ding.Helpers.Enum.GetItems( typeof( EnumSample ) );
             Assert.Equal( 5, items.Count );
             Assert.Equal( "A", items[0].Text );
             Assert.Equal( 1, items[0].Value );
@@ -172,7 +172,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetItems_Nullable() {
-            var items = Util.Helpers.Enum.GetItems<EnumSample?>();
+            var items = Ding.Helpers.Enum.GetItems<EnumSample?>();
             Assert.Equal( 5, items.Count );
             Assert.Equal( "A", items[0].Text );
             Assert.Equal( 1, items[0].Value );
@@ -187,7 +187,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetItems_Nullable_Type() {
-            var items = Util.Helpers.Enum.GetItems( typeof( EnumSample? ) );
+            var items = Ding.Helpers.Enum.GetItems( typeof( EnumSample? ) );
             Assert.Equal( 5, items.Count );
             Assert.Equal( "A", items[0].Text );
             Assert.Equal( 1, items[0].Value );
@@ -203,7 +203,7 @@ namespace Ding.Tests.Helpers {
         [Fact]
         public void TestGetItems_Validate() {
             AssertHelper.Throws<InvalidOperationException>( () => {
-                Util.Helpers.Enum.GetItems<Sample>();
+                Ding.Helpers.Enum.GetItems<Sample>();
             }, "类型 Util.Tests.Samples.Sample 不是枚举" );
         }
     }

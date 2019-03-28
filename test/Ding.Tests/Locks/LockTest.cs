@@ -43,7 +43,7 @@ namespace Ding.Tests.Locks {
         public void Test_2() {
             var key = "Test_2";
             var result = new List<string>();
-            Util.Helpers.Thread.ParallelExecute( () => result.Add( _service.Execute( key ) ), 20 );
+            Ding.Helpers.Thread.ParallelExecute( () => result.Add( _service.Execute( key ) ), 20 );
             Assert.Single( result.FindAll( t => t == "ok" ));
         }
 
@@ -59,14 +59,14 @@ namespace Ding.Tests.Locks {
 
             //未解锁，无法执行
             var result = new List<string>();
-            Util.Helpers.Thread.ParallelExecute( () => result.Add( _service.Execute( key ) ), 20 );
+            Ding.Helpers.Thread.ParallelExecute( () => result.Add( _service.Execute( key ) ), 20 );
             Assert.Empty( result.FindAll( t => t == "ok" ) );
 
             //解锁
             _service.UnLock();
 
             //再次执行
-            Util.Helpers.Thread.ParallelExecute( () => result.Add( _service.Execute( key ) ), 20 );
+            Ding.Helpers.Thread.ParallelExecute( () => result.Add( _service.Execute( key ) ), 20 );
             Assert.Single( result.FindAll( t => t == "ok" ));
         }
 

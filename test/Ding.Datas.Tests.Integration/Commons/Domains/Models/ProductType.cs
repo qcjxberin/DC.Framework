@@ -4,7 +4,7 @@ namespace Ding.Datas.Tests.Commons.Domains.Models {
     /// <summary>
     /// 商品类型
     /// </summary>
-    public class ProductType : Util.Domains.ValueObjectBase<ProductType> {
+    public class ProductType : Ding.Domains.ValueObjectBase<ProductType> {
         /// <summary>
         /// 商品属性集合
         /// </summary>

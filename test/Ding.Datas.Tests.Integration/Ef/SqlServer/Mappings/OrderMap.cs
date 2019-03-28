@@ -6,7 +6,7 @@ namespace Ding.Datas.Tests.Ef.SqlServer.Mappings {
     /// <summary>
     /// 订单映射配置
     /// </summary>
-    public class OrderMap : Util.Datas.Ef.SqlServer.AggregateRootMap<Order> {
+    public class OrderMap : Ding.Datas.Ef.SqlServer.AggregateRootMap<Order> {
         /// <summary>
         /// 映射表
         /// </summary>

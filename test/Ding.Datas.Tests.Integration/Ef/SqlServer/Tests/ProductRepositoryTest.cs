@@ -31,7 +31,7 @@ namespace Ding.Datas.Tests.Ef.SqlServer.Tests {
         /// <summary>
         /// 随机数操作
         /// </summary>
-        private readonly Util.Helpers.Random _random;
+        private readonly Ding.Helpers.Random _random;
 
         /// <summary>
         /// 测试初始化
@@ -40,7 +40,7 @@ namespace Ding.Datas.Tests.Ef.SqlServer.Tests {
             _scope = Ioc.BeginScope();
             _unitOfWork = _scope.Create<ISqlServerUnitOfWork>();
             _productRepository = _scope.Create<IProductRepository>();
-            _random = new Util.Helpers.Random();
+            _random = new Ding.Helpers.Random();
         }
 
         /// <summary>

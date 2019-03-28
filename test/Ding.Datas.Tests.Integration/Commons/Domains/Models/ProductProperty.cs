@@ -2,7 +2,7 @@
     /// <summary>
     /// 商品属性
     /// </summary>
-    public class ProductProperty : Util.Domains.ValueObjectBase<ProductProperty> {
+    public class ProductProperty : Ding.Domains.ValueObjectBase<ProductProperty> {
         /// <summary>
         /// 初始化商品属性
         /// </summary>

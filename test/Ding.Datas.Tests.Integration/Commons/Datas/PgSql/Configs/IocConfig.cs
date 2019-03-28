@@ -27,7 +27,7 @@ namespace Ding.Datas.Tests.Commons.Datas.PgSql.Configs {
             builder.AddScoped<IUnitOfWorkManager, UnitOfWorkManager>();
             builder.AddScoped<ITransactionActionManager, TransactionActionManager>();
             builder.AddScoped<IPgSqlUnitOfWork, PgSqlUnitOfWork>().PropertiesAutowired();
-            builder.AddSingleton<ISession>( new Util.Datas.Tests.Commons.Session( AppConfig.UserId ) );
+            builder.AddSingleton<ISession>( new Ding.Datas.Tests.Commons.Session( AppConfig.UserId ) );
         }
 
         /// <summary>

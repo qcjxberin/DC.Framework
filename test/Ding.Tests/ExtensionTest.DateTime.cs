@@ -12,10 +12,10 @@ namespace Ding.Tests {
         [Fact]
         public void TestToDateTimeString() {
             string date = "2012-01-02 11:11:11";
-            Assert.Equal( date, Util.Helpers.Convert.ToDate( date ).ToDateTimeString() );
-            Assert.Equal( "2012-01-02 11:11", Util.Helpers.Convert.ToDate( date ).ToDateTimeString( true ) );
-            Assert.Equal( "", Util.Helpers.Convert.ToDateOrNull( "" ).ToDateTimeString() );
-            Assert.Equal( date, Util.Helpers.Convert.ToDateOrNull( date ).ToDateTimeString() );
+            Assert.Equal( date, Ding.Helpers.Convert.ToDate( date ).ToDateTimeString() );
+            Assert.Equal( "2012-01-02 11:11", Ding.Helpers.Convert.ToDate( date ).ToDateTimeString( true ) );
+            Assert.Equal( "", Ding.Helpers.Convert.ToDateOrNull( "" ).ToDateTimeString() );
+            Assert.Equal( date, Ding.Helpers.Convert.ToDateOrNull( date ).ToDateTimeString() );
         }
 
         /// <summary>
@@ -24,9 +24,9 @@ namespace Ding.Tests {
         [Fact]
         public void TestToDateString() {
             string date = "2012-01-02";
-            Assert.Equal( date, Util.Helpers.Convert.ToDate( date ).ToDateString() );
-            Assert.Equal( "", Util.Helpers.Convert.ToDateOrNull( "" ).ToDateString() );
-            Assert.Equal( date, Util.Helpers.Convert.ToDateOrNull( date ).ToDateString() );
+            Assert.Equal( date, Ding.Helpers.Convert.ToDate( date ).ToDateString() );
+            Assert.Equal( "", Ding.Helpers.Convert.ToDateOrNull( "" ).ToDateString() );
+            Assert.Equal( date, Ding.Helpers.Convert.ToDateOrNull( date ).ToDateString() );
         }
 
         /// <summary>
@@ -35,9 +35,9 @@ namespace Ding.Tests {
         [Fact]
         public void TestToTimeString() {
             string date = "2012-01-02 11:11:11";
-            Assert.Equal( "11:11:11", Util.Helpers.Convert.ToDate( date ).ToTimeString() );
-            Assert.Equal( "", Util.Helpers.Convert.ToDateOrNull( "" ).ToTimeString() );
-            Assert.Equal( "11:11:11", Util.Helpers.Convert.ToDateOrNull( date ).ToTimeString() );
+            Assert.Equal( "11:11:11", Ding.Helpers.Convert.ToDate( date ).ToTimeString() );
+            Assert.Equal( "", Ding.Helpers.Convert.ToDateOrNull( "" ).ToTimeString() );
+            Assert.Equal( "11:11:11", Ding.Helpers.Convert.ToDateOrNull( date ).ToTimeString() );
         }
 
         /// <summary>
@@ -46,9 +46,9 @@ namespace Ding.Tests {
         [Fact]
         public void TestToMillisecondString() {
             string date = "2012-01-02 11:11:11.123";
-            Assert.Equal( date, Util.Helpers.Convert.ToDate( date ).ToMillisecondString() );
-            Assert.Equal( "", Util.Helpers.Convert.ToDateOrNull( "" ).ToMillisecondString() );
-            Assert.Equal( date, Util.Helpers.Convert.ToDateOrNull( date ).ToMillisecondString() );
+            Assert.Equal( date, Ding.Helpers.Convert.ToDate( date ).ToMillisecondString() );
+            Assert.Equal( "", Ding.Helpers.Convert.ToDateOrNull( "" ).ToMillisecondString() );
+            Assert.Equal( date, Ding.Helpers.Convert.ToDateOrNull( date ).ToMillisecondString() );
         }
 
         /// <summary>
@@ -57,10 +57,10 @@ namespace Ding.Tests {
         [Fact]
         public void TestToChineseDateString() {
             string date = "2012-01-02";
-            Assert.Equal( "2012年1月2日", Util.Helpers.Convert.ToDate( date ).ToChineseDateString() );
-            Assert.Equal( "2012年12月12日", Util.Helpers.Convert.ToDate( "2012-12-12" ).ToChineseDateString() );
-            Assert.Equal( "", Util.Helpers.Convert.ToDateOrNull( "" ).ToChineseDateString() );
-            Assert.Equal( "2012年1月2日", Util.Helpers.Convert.ToDateOrNull( date ).ToChineseDateString() );
+            Assert.Equal( "2012年1月2日", Ding.Helpers.Convert.ToDate( date ).ToChineseDateString() );
+            Assert.Equal( "2012年12月12日", Ding.Helpers.Convert.ToDate( "2012-12-12" ).ToChineseDateString() );
+            Assert.Equal( "", Ding.Helpers.Convert.ToDateOrNull( "" ).ToChineseDateString() );
+            Assert.Equal( "2012年1月2日", Ding.Helpers.Convert.ToDateOrNull( date ).ToChineseDateString() );
         }
 
         /// <summary>
@@ -69,12 +69,12 @@ namespace Ding.Tests {
         [Fact]
         public void TestToChineseDateTimeString() {
             string date = "2012-01-02 11:11:11";
-            Assert.Equal( "2012年1月2日 11时11分11秒", Util.Helpers.Convert.ToDate( date ).ToChineseDateTimeString() );
-            Assert.Equal( "2012年12月12日 11时11分11秒", Util.Helpers.Convert.ToDate( "2012-12-12 11:11:11" ).ToChineseDateTimeString() );
-            Assert.Equal( "2012年1月2日 11时11分", Util.Helpers.Convert.ToDate( date ).ToChineseDateTimeString( true ) );
-            Assert.Equal( "", Util.Helpers.Convert.ToDateOrNull( "" ).ToChineseDateTimeString() );
-            Assert.Equal( "2012年1月2日 11时11分11秒", Util.Helpers.Convert.ToDateOrNull( date ).ToChineseDateTimeString() );
-            Assert.Equal( "2012年1月2日 11时11分", Util.Helpers.Convert.ToDateOrNull( date ).ToChineseDateTimeString( true ) );
+            Assert.Equal( "2012年1月2日 11时11分11秒", Ding.Helpers.Convert.ToDate( date ).ToChineseDateTimeString() );
+            Assert.Equal( "2012年12月12日 11时11分11秒", Ding.Helpers.Convert.ToDate( "2012-12-12 11:11:11" ).ToChineseDateTimeString() );
+            Assert.Equal( "2012年1月2日 11时11分", Ding.Helpers.Convert.ToDate( date ).ToChineseDateTimeString( true ) );
+            Assert.Equal( "", Ding.Helpers.Convert.ToDateOrNull( "" ).ToChineseDateTimeString() );
+            Assert.Equal( "2012年1月2日 11时11分11秒", Ding.Helpers.Convert.ToDateOrNull( date ).ToChineseDateTimeString() );
+            Assert.Equal( "2012年1月2日 11时11分", Ding.Helpers.Convert.ToDateOrNull( date ).ToChineseDateTimeString( true ) );
         }
 
         /// <summary>

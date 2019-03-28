@@ -30,7 +30,7 @@ namespace Ding.Tests.Caches {
         [Fact(Skip = "偶尔运行失败")]
         public void Test_1() {
             int i = 0;
-            Util.Helpers.Thread.ParallelExecute( () => {
+            Ding.Helpers.Thread.ParallelExecute( () => {
                 _cache.Get( "EasyCachingCacheTest_1", () => i++ );
             },20 );
             Assert.Equal( 1,i );

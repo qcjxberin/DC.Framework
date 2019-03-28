@@ -6,7 +6,7 @@ using Ding.Helpers;
 using Ding.Tests.Samples;
 using Ding.Tests.XUnitHelpers;
 using Xunit;
-using IContainer = Util.Dependency.IContainer;
+using IContainer = Ding.Dependency.IContainer;
 
 namespace Ding.Tests.Domains {
     /// <summary>

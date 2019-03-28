@@ -6,7 +6,7 @@ namespace Ding.Datas.Tests.Ef.PgSql.Mappings {
     /// <summary>
     /// 客户映射配置
     /// </summary>
-    public class CustomerMap : Util.Datas.Ef.PgSql.AggregateRootMap<Customer> {
+    public class CustomerMap : Ding.Datas.Ef.PgSql.AggregateRootMap<Customer> {
         /// <summary>
         /// 映射表
         /// </summary>

@@ -7,7 +7,7 @@ using Ding.Biz.Tests.Integration.Payments.Wechatpay.Configs;
 using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
-using String = Util.Helpers.String;
+using String = Ding.Helpers.String;
 
 namespace Ding.Biz.Tests.Integration.Payments.Wechatpay.Services {
     /// <summary>

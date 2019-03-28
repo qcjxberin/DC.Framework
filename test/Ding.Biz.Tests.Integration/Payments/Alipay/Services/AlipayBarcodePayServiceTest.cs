@@ -106,7 +106,7 @@ namespace Ding.Biz.Tests.Integration.Payments.Alipay.Services {
         [Fact]
         public async Task TestRequestParam() {
             //结果
-            Util.Helpers.String result = new Util.Helpers.String();
+            Ding.Helpers.String result = new Ding.Helpers.String();
             result.Append( "app_id=2016090800463464&" );
             result.Append( "biz_content={\"out_trade_no\":\"59f7caeeab89e009e4a4e1fb\",\"subject\":\"test\",\"total_amount\":\"10\",\"timeout_express\":\"90m\",\"scene\":\"bar_code\",\"auth_code\":\"281023564031402341\"}&" );
             result.Append( "charset=utf-8&" );

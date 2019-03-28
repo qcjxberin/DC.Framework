@@ -8,7 +8,7 @@ namespace Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks {
     /// SqlServer工作单元
     /// </summary>
     [Ignore]
-    public class SqlServerUnitOfWork : Util.Datas.Ef.SqlServer.UnitOfWork, ISqlServerUnitOfWork {
+    public class SqlServerUnitOfWork : Ding.Datas.Ef.SqlServer.UnitOfWork, ISqlServerUnitOfWork {
         /// <summary>
         /// 初始化SqlServer工作单元
         /// </summary>
@@ -19,7 +19,7 @@ namespace Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks {
     /// <summary>
     /// SqlServer工作单元
     /// </summary>
-    public class SqlServerUnitOfWork2 : Util.Datas.Ef.SqlServer.UnitOfWork, ISqlServerUnitOfWork {
+    public class SqlServerUnitOfWork2 : Ding.Datas.Ef.SqlServer.UnitOfWork, ISqlServerUnitOfWork {
         /// <summary>
         /// 初始化
         /// </summary>

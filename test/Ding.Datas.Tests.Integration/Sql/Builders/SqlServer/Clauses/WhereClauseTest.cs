@@ -12,7 +12,7 @@ using Ding.Datas.Tests.Sql.Builders.Samples;
 using Ding.Datas.Tests.XUnitHelpers;
 using Ding.Properties;
 using Xunit;
-using String = Util.Helpers.String;
+using String = Ding.Helpers.String;
 
 namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Clauses {
     /// <summary>

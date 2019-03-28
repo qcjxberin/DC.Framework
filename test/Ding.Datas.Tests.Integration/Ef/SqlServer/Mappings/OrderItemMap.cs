@@ -6,7 +6,7 @@ namespace Ding.Datas.Tests.Ef.SqlServer.Mappings {
     /// <summary>
     /// 订单明细映射配置
     /// </summary>
-    public class OrderItemMap : Util.Datas.Ef.SqlServer.EntityMap<OrderItem> {
+    public class OrderItemMap : Ding.Datas.Ef.SqlServer.EntityMap<OrderItem> {
         /// <summary>
         /// 映射表
         /// </summary>
