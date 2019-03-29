@@ -1,6 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+#if __CORE21__
 using Microsoft.Extensions.Hosting;
+#endif
+#if __CORE20__
+using Microsoft.AspNetCore.Hosting;
+#endif
 using Microsoft.Extensions.Options;
 using System;
 using System.IO;
