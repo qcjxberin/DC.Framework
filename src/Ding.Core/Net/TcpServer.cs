@@ -4,10 +4,10 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Model;
+using Ding.Log;
+using Ding.Model;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>TCP服务器</summary>
     /// <remarks>

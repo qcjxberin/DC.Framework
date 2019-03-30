@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Threading;
+using Ding.Threading;
 
-namespace NewLife.Collections
+namespace Ding.Collections
 {
     /// <summary>字典缓存。当指定键的缓存项不存在时，调用委托获取值，并写入缓存。</summary>
     /// <remarks>常用匿名函数或者Lambda表达式作为委托。</remarks>
@@ -358,7 +358,7 @@ namespace NewLife.Collections
                 }
             }
 #if DEBUG
-            if (k2 > 0) NewLife.Log.XTrace.WriteLine("字典缓存[{0:n0}]超过容量[{1:n0}]，逐出[{2:n0}]个", _count, Capacity, k2);
+            if (k2 > 0) Ding.Log.XTrace.WriteLine("字典缓存[{0:n0}]超过容量[{1:n0}]，逐出[{2:n0}]个", _count, Capacity, k2);
 #endif
 
             foreach (var item in ds)

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using NewLife.Messaging;
+using Ding.Messaging;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>Api会话</summary>
     public interface IApiSession

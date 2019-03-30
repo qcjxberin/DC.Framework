@@ -7,11 +7,11 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Net;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Net;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>迷你Http客户端。不支持https和302跳转</summary>
     public class TinyHttpClient : DisposeBase

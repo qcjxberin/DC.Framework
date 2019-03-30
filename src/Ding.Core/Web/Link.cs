@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>超链接</summary>
     public class Link

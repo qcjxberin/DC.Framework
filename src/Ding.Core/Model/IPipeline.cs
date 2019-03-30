@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>管道。进站顺序，出站逆序</summary>
     public interface IPipeline : IEnumerable<IHandler>

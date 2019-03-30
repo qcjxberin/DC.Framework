@@ -2,10 +2,10 @@
 using System.IO;
 using System.Reflection;
 using System.Text;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Data;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>访问器基类</summary>
     public abstract class Accessor : IAccessor
@@ -23,8 +23,8 @@ namespace NewLife.Serialization
             if (fm is Binary)
                 (fm as Binary).EnableTrace();
             else
-                stream = new NewLife.Log.TraceStream(stream);
-            fm.Log = NewLife.Log.XTrace.Log;
+                stream = new Ding.Log.TraceStream(stream);
+            fm.Log = Ding.Log.XTrace.Log;
 #endif
             Object obj = this;
             return fm.TryRead(GetType(), ref obj);
@@ -41,8 +41,8 @@ namespace NewLife.Serialization
             if (fm is Binary)
                 (fm as Binary).EnableTrace();
             else
-                stream = new NewLife.Log.TraceStream(stream);
-            fm.Log = NewLife.Log.XTrace.Log;
+                stream = new Ding.Log.TraceStream(stream);
+            fm.Log = Ding.Log.XTrace.Log;
 #endif
             return fm.Write(this);
         }

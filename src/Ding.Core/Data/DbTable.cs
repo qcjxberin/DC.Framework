@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Reflection;
+using Ding.Serialization;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>数据表</summary>
     public class DbTable : IEnumerable<DbRow>, ICloneable
@@ -95,7 +95,7 @@ namespace NewLife.Data
         {
             // 头部，幻数、版本和压缩标记
             var magic = bn.ReadBytes(14).ToStr();
-            if (magic.Trim() != "NewLifeDbTable") throw new InvalidDataException();
+            if (magic.Trim() != "DingDbTable") throw new InvalidDataException();
 
             var ver = bn.Read<Byte>();
             var flag = bn.Read<Byte>();
@@ -199,7 +199,7 @@ namespace NewLife.Data
             var ts = Types;
 
             // 头部，幻数、版本和压缩标记
-            bn.Write("NewLifeDbTable".GetBytes(), 0, 14);
+            bn.Write("DingDbTable".GetBytes(), 0, 14);
             bn.Write(_Ver);
             bn.Write(0);
 

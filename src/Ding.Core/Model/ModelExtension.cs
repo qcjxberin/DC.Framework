@@ -1,4 +1,4 @@
-﻿using NewLife.Reflection;
+﻿using Ding.Reflection;
 
 namespace System
 {

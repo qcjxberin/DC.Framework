@@ -3,9 +3,9 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.Text;
 using System.Threading;
-using NewLife.Threading;
+using Ding.Threading;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>文本文件日志类。提供向文本文件写日志的能力</summary>
     /// <remarks>

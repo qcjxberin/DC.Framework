@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Log;
+using Ding.Reflection;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>通用插件接口</summary>
     /// <remarks>

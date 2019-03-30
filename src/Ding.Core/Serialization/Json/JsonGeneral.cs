@@ -1,11 +1,11 @@
 ﻿using System;
-using NewLife.Reflection;
+using Ding.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Json基础类型处理器</summary>
     public class JsonGeneral : JsonHandlerBase

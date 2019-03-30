@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.Text;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Json写入器</summary>
     public class JsonWriter

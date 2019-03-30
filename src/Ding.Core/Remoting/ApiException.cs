@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>远程调用异常</summary>
     public class ApiException : Exception

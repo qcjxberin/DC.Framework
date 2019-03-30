@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>写日志事件参数</summary>
     public class WriteLogEventArgs : EventArgs

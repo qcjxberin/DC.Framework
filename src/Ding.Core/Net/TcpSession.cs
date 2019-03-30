@@ -2,10 +2,10 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using NewLife.Data;
-using NewLife.Threading;
+using Ding.Data;
+using Ding.Threading;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>增强TCP客户端</summary>
     public class TcpSession : SessionBase, ISocketSession

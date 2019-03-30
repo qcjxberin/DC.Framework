@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
-using NewLife.Reflection;
-using NewLife.Xml;
+using Ding.Reflection;
+using Ding.Xml;
 
-namespace NewLife.Common
+namespace Ding.Common
 {
     /// <summary>系统设置。提供系统名称、版本等基本设置。</summary>
     public class SysConfig : SysConfig<SysConfig> { }
@@ -58,10 +58,10 @@ namespace NewLife.Common
         {
             var asmx = SysAssembly;
 
-            Name = asmx?.Name ?? "NewLife.Cube";
+            Name = asmx?.Name ?? "Ding.Cube";
             Version = asmx?.Version ?? "0.1";
-            DisplayName = (asmx?.Title ?? asmx?.Name) ?? "魔方平台";
-            Company = asmx?.Company ?? "新生命开发团队";
+            DisplayName = (asmx?.Title ?? asmx?.Name) ?? "星尘平台";
+            Company = asmx?.Company ?? "星尘开发团队";
             //Address = "新生命开发团队";
 
             if (DisplayName.IsNullOrEmpty()) DisplayName = "系统设置";

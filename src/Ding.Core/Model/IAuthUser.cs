@@ -1,8 +1,8 @@
 ﻿using System;
-using NewLife.Net;
-using NewLife.Web;
+using Ding.Net;
+using Ding.Web;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>认证用户接口，具有登录验证、注册、在线等基本信息</summary>
     public interface IAuthUser : IManageUser

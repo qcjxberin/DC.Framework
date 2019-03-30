@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.IO;
 using Microsoft.Win32;
-using NewLife.Log;
-using NewLife.Web;
+using Ding.Log;
+using Ding.Web;
 
-namespace NewLife.Compression
+namespace Ding.Compression
 {
     /// <summary>7Zip</summary>
     public class SevenZip

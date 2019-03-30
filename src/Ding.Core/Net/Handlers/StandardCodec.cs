@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Model;
 
-namespace NewLife.Net.Handlers
+namespace Ding.Net.Handlers
 {
     /// <summary>标准网络封包。头部4字节定长</summary>
     public class StandardCodec : MessageCodec<IMessage>

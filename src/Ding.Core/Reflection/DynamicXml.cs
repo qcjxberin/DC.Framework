@@ -2,7 +2,7 @@
 using System.Dynamic;
 using System.Xml.Linq;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     /// <summary>动态Xml</summary>
     public class DynamicXml : DynamicObject
@@ -66,10 +66,10 @@ namespace NewLife.Reflection
         //public static void Test()
         //{
         //    dynamic xml = new DynamicXml("Test");
-        //    xml.Name = "NewLife";
+        //    xml.Name = "Ding";
         //    xml.Sign = "学无先后达者为师！";
         //    xml.Detail = new DynamicXml();
-        //    xml.Detail.Name = "新生命开发团队";
+        //    xml.Detail.Name = "星尘开发团队";
         //    xml.Detail.CreateTime = new DateTime(2002, 12, 31);
 
         //    var node = xml.Node as XElement;

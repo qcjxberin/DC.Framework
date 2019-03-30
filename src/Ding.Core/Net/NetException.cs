@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>网络异常</summary>
     [Serializable]

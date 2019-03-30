@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Security;
-using NewLife.Serialization;
-using NewLife.Web;
+using Ding.Data;
+using Ding.Log;
+using Ding.Security;
+using Ding.Serialization;
+using Ding.Web;
 
-namespace NewLife.Yun
+namespace Ding.Yun
 {
     /// <summary>地图提供者接口</summary>
     public interface IMap

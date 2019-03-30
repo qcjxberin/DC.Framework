@@ -4,10 +4,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Xml.Serialization;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Threading;
 
-namespace NewLife.Xml
+namespace Ding.Xml
 {
     /// <summary>Xml配置文件基类</summary>
     /// <remarks>
@@ -335,7 +335,7 @@ namespace NewLife.Xml
 
         private String GetXml()
         {
-            var xml = new NewLife.Serialization.Xml
+            var xml = new Ding.Serialization.Xml
             {
                 Encoding = Encoding.UTF8,
                 UseAttribute = false,

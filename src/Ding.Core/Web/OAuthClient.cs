@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Log;
+using Ding.Model;
+using Ding.Reflection;
+using Ding.Serialization;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>OAuth 2.0 客户端</summary>
     public class OAuthClient

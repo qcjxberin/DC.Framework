@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Threading;
 
-namespace NewLife.Net.Handlers
+namespace Ding.Net.Handlers
 {
     /// <summary>消息匹配队列接口。用于把响应数据包配对到请求包</summary>
     public interface IMatchQueue

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Model;
 
-namespace NewLife.Net.Handlers
+namespace Ding.Net.Handlers
 {
     /// <summary>长度字段作为头部</summary>
     public class LengthFieldCodec : MessageCodec<Packet>

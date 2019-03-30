@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Log;
+using Ding.Collections;
+using Ding.Log;
 
-namespace NewLife.Threading
+namespace Ding.Threading
 {
     /// <summary>轻量级线程池。无等待和调度逻辑，直接创建线程竞争处理器资源</summary>
     public class ThreadPoolX : DisposeBase

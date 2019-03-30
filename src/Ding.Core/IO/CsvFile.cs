@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.IO
+namespace Ding.IO
 {
     /// <summary>Csv文件</summary>
     /// <remarks>

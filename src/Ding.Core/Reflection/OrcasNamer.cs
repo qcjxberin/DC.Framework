@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     class OrcasNamer
     {

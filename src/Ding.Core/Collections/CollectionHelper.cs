@@ -1,8 +1,8 @@
 ﻿using System.Collections.Concurrent;
 using System.Reflection;
 using System.Xml.Serialization;
-using NewLife.Collections;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Reflection;
 
 namespace System.Collections.Generic
 {

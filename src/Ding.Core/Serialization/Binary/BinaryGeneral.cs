@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>二进制基础类型处理器</summary>
     public class BinaryGeneral : BinaryHandlerBase

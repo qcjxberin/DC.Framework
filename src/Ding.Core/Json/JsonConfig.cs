@@ -4,12 +4,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Web.Script.Serialization;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Serialization;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Serialization;
+using Ding.Threading;
 
-namespace NewLife.Json
+namespace Ding.Json
 {
     /// <summary>Json配置文件基类</summary>
     /// <remarks>
@@ -341,7 +341,7 @@ namespace NewLife.Json
 
         private String GetJson()
         {
-            var json = new NewLife.Serialization.Json
+            var json = new Ding.Serialization.Json
             {
                 Encoding = Encoding.UTF8,
                 UseProperty = true

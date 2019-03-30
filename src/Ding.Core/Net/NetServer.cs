@@ -7,12 +7,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>网络服务器。可同时支持多个Socket服务器，同时支持IPv4和IPv6，同时支持Tcp和Udp</summary>
     /// <remarks>

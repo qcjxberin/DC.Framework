@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Xml
+namespace Ding.Xml
 {
     /// <summary>Xml辅助类</summary>
     public static class XmlHelper
@@ -45,7 +45,7 @@ namespace NewLife.Xml
             // 删除字节序
             //encoding = encoding.TrimPreamble();
 
-            var xml = new NewLife.Serialization.Xml
+            var xml = new Ding.Serialization.Xml
             {
                 Stream = stream,
                 Encoding = encoding,
@@ -102,7 +102,7 @@ namespace NewLife.Xml
             if (xml.IsNullOrWhiteSpace()) throw new ArgumentNullException("xml");
             if (type == null) throw new ArgumentNullException("type");
 
-            var x = new NewLife.Serialization.Xml
+            var x = new Ding.Serialization.Xml
             {
                 Stream = new MemoryStream(xml.GetBytes())
             };
@@ -142,7 +142,7 @@ namespace NewLife.Xml
             if (type == null) throw new ArgumentNullException("type");
             if (encoding == null) encoding = Encoding.UTF8;
 
-            var x = new NewLife.Serialization.Xml
+            var x = new Ding.Serialization.Xml
             {
                 Stream = stream,
                 Encoding = encoding

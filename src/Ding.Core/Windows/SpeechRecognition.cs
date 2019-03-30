@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using NewLife.IO;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Reflection;
+using Ding.IO;
+using Ding.Log;
+using Ding.Model;
+using Ding.Reflection;
 
-namespace NewLife.Windows
+namespace Ding.Windows
 {
     /// <summary>语音识别</summary>
     public class SpeechRecognition : DisposeBase

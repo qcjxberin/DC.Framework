@@ -3,9 +3,9 @@ using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Reflection;
+using Ding;
+using Ding.Collections;
+using Ding.Reflection;
 
 namespace System
 {
@@ -199,7 +199,7 @@ namespace System
 
                     // 如果还有数据，说明是目标数据流缓冲区不够大
 #if DEBUG
-                    NewLife.Log.XTrace.WriteLine("目标数据流缓冲区不够大，设计上建议加大（>{0}）以提升性能！", count);
+                    Ding.Log.XTrace.WriteLine("目标数据流缓冲区不够大，设计上建议加大（>{0}）以提升性能！", count);
 #endif
                 }
             }

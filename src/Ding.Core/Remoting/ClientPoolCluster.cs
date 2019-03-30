@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using NewLife.Collections;
-using NewLife.Net;
+using Ding.Collections;
+using Ding.Net;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>客户端连接池负载均衡集群</summary>
     public class ClientPoolCluster : ICluster<String, ISocketClient>

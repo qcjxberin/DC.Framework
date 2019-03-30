@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Json读取器</summary>
     public class JsonReader

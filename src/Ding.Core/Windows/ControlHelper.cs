@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Threading;
 
 namespace System.Windows.Forms
 {

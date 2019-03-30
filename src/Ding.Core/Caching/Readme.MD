@@ -13,7 +13,7 @@ MemoryCache支持过期时间，默认容量10万个，未过期key超过该值�
 ```
 
 ### 基础 Redis
-Redis实现标准协议以及基础字符串操作，完整实现由独立开源项目[NewLife.Redis](https://github.com/NewLifeX/NewLife.Redis)提供。  
+Redis实现标准协议以及基础字符串操作，完整实现由[Ding.Redis]提供。  
 采取连接池加同步阻塞架构，具有超低延迟（200~600us）以及超高吞吐量的特点。  
 在物流行业大数据实时计算中广泛应有，经过日均100亿次调用量验证。  
 
@@ -43,7 +43,7 @@ class User
 
 添删改查：  
 ```csharp
-var user = new User { Name = "NewLife", CreateTime = DateTime.Now };
+var user = new User { Name = "Ding", CreateTime = DateTime.Now };
 ic.Set("user", user, 3600);
 var user2 = ic.Get<User>("user");
 XTrace.WriteLine("Json: {0}", ic.Get<String>("user"));
@@ -61,7 +61,7 @@ ic.Remove("user");
 14:14:26.048  1 N - => [53]
 14:14:26.064  1 N - GET user
 14:14:26.065  1 N - => [53]
-14:14:26.066  1 N - Json: {"Name":"NewLife","CreateTime":"2018-09-25 14:14:25"}
+14:14:26.066  1 N - Json: {"Name":"Ding","CreateTime":"2018-09-25 14:14:25"}
 14:14:26.067  1 N - EXISTS user
 14:14:26.068  1 N - => 1
 14:14:26.068  1 N - 存在！
@@ -79,7 +79,7 @@ GetAll/SetAll 在Redis上是很常用的批量操作，同时获取或设置多�
 ```csharp
 var dic = new Dictionary<String, Object>
 {
-    ["name"] = "NewLife",
+    ["name"] = "Ding",
     ["time"] = DateTime.Now,
     ["count"] = 1234
 };
@@ -91,17 +91,17 @@ XTrace.WriteLine(vs.Join(",", e => $"{e.Key}={e.Value}"));
 
 执行结果：
 ```csharp
-MSET name NewLife time 2018-09-25 15:56:26 count 1234
+MSET name Ding time 2018-09-25 15:56:26 count 1234
 => OK
 EXPIRE name 120
 EXPIRE time 120
 EXPIRE count 120
 MGET name time count
-name=NewLife,time=2018-09-25 15:56:26,count=1234
+name=Ding,time=2018-09-25 15:56:26,count=1234
 ```
 
 集合操作里面还有 `GetList/GetDictionary/GetQueue/GetSet` 四个类型集合，分别代表Redis的列表、哈希、队列、Set集合等。  
-基础版Redis不支持这四个集合，完整版[NewLife.Redis](https://github.com/NewLifeX/NewLife.Redis)支持，MemoryCache则直接支持。  
+基础版Redis不支持这四个集合，完整版[Ding.Redis]支持，MemoryCache则直接支持。  
 
 ### 高级操作
 + Add 添加，当key不存在时添加，已存在时返回false。  

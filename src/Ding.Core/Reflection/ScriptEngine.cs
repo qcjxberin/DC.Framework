@@ -8,10 +8,10 @@ using System.IO;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
-using NewLife.Collections;
-using NewLife.Log;
+using Ding.Collections;
+using Ding.Log;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     /// <summary>脚本引擎</summary>
     /// <remarks>

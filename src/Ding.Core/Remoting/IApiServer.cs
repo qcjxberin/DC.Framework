@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>应用接口服务器接口</summary>
     public interface IApiServer

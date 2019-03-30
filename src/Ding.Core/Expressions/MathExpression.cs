@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace NewLife.Expressions
+namespace Ding.Expressions
 {
     /// <summary>数学表达式</summary>
     public class MathExpression : RpnExpression

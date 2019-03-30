@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace NewLife.Security
+namespace Ding.Security
 {
     /// <summary>RSA算法</summary>
     /// <remarks>

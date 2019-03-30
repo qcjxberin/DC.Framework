@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace NewLife
+namespace Ding
 {
     /// <summary>泛型事件参数</summary>
     /// <typeparam name="TArg"></typeparam>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>用于与对方进行通讯的Socket会话，仅具有收发功能，也专用于上层应用收发数据</summary>
     /// <remarks>

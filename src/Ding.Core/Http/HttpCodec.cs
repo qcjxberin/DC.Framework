@@ -1,9 +1,9 @@
 ﻿using System;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Model;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>Http编解码器</summary>
     public class HttpCodec : Handler

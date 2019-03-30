@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>接口管理器</summary>
     public interface IApiManager

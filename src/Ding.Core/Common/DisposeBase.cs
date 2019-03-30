@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
 using System.Xml.Serialization;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife
+namespace Ding
 {
     /// <summary>具有是否已释放和释放后事件的接口</summary>
     public interface IDisposable2 : IDisposable

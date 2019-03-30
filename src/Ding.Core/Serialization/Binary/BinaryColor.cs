@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>颜色处理器。</summary>
     public class BinaryColor : BinaryHandlerBase

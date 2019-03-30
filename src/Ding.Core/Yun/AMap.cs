@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using NewLife.Data;
-using NewLife.Serialization;
+using Ding.Data;
+using Ding.Serialization;
 
-namespace NewLife.Yun
+namespace Ding.Yun
 {
     /// <summary>高德地图</summary>
     /// <remarks>

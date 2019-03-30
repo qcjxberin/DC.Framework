@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
-using NewLife.Collections;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>复合对象处理器</summary>
     public class JsonComposite : JsonHandlerBase

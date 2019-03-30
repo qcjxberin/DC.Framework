@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>序列化接口</summary>
     public interface IFormatterX

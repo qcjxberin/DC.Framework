@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Log;
+using Ding.Reflection;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>插件助手</summary>
     public static class PluginHelper

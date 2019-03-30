@@ -5,11 +5,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.ServiceProcess;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Threading;
 
-namespace NewLife.Agent
+namespace Ding.Agent
 {
     /// <typeparam name="TService">服务类型</typeparam>
     public abstract class AgentServiceBase<TService> : AgentServiceBase

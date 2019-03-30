@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace NewLife
+namespace Ding
 {
     /// <summary>运行时</summary>
     public static class Runtime

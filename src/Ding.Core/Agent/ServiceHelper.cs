@@ -5,9 +5,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.ServiceProcess;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Agent
+namespace Ding.Agent
 {
     /// <summary>服务助手</summary>
     [EditorBrowsable(EditorBrowsableState.Never)]

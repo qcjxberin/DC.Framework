@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 using System.Threading;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Threading
+namespace Ding.Threading
 {
     /// <summary>不可重入的定时器。</summary>
     /// <remarks>

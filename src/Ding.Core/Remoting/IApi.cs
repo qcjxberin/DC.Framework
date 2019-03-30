@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>Api接口</summary>
     public interface IApi

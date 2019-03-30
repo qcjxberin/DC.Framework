@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Log;
+using Ding.Reflection;
 
-namespace NewLife.Extension
+namespace Ding.Extension
 {
     class SpeakProvider
     {

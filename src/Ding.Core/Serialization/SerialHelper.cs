@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>序列化助手</summary>
     public static class SerialHelper

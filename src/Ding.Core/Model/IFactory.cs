@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>用于创建对象的工厂接口</summary>
     /// <typeparam name="T"></typeparam>

@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>文本控件输出日志</summary>
     public class TextControlLog : Logger

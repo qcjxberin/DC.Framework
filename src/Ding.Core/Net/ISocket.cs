@@ -3,13 +3,13 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Threading;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
+using Ding.Threading;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>基础Socket接口</summary>
     /// <remarks>

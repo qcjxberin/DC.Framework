@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>标识Api</summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false)]

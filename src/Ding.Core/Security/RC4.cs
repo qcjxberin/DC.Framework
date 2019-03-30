@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Security
+namespace Ding.Security
 {
     /// <summary>RC4对称加密算法</summary>
     /// <remarks>

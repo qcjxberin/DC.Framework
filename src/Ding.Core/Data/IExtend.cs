@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>具有扩展数据的接口</summary>
     public interface IExtend

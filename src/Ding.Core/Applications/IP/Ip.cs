@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Threading;
-using NewLife.Web;
+using Ding.Log;
+using Ding.Threading;
+using Ding.Web;
 
-namespace NewLife.IP
+namespace Ding.IP
 {
     /// <summary>IP搜索</summary>
     public static class Ip

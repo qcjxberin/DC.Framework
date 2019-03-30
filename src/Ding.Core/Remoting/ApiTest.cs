@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using NewLife.Log;
-using NewLife.Net;
+using Ding.Log;
+using Ding.Net;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
 #if DEBUG
     /// <summary>Rpc测试</summary>
@@ -53,7 +53,7 @@ namespace NewLife.Remoting
 
             client.Open();
 
-            var msg = "NewLifeX";
+            var msg = "Ding";
             Console.WriteLine();
             var rs = await client.InvokeAsync<String>("Say", new { msg });
             XTrace.WriteLine(rs);

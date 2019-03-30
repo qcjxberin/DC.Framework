@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NewLife.Collections
+namespace Ding.Collections
 {
     /// <summary>集群管理</summary>
     /// <typeparam name="TKey"></typeparam>

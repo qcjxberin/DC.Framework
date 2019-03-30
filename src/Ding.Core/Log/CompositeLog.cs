@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>复合日志提供者，多种方式输出</summary>
     public class CompositeLog : Logger

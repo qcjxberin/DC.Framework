@@ -1,16 +1,16 @@
 ﻿using System;
-using NewLife.Caching;
-using NewLife.Model;
-using NewLife.Security;
+using Ding.Caching;
+using Ding.Model;
+using Ding.Security;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>单点登录服务端</summary>
     public class OAuthServer
     {
         #region 属性
         /// <summary>缓存</summary>
-        public ICache Cache { get; set; } = NewLife.Caching.Cache.Default;
+        public ICache Cache { get; set; } = Ding.Caching.Cache.Default;
 
         /// <summary>令牌提供者</summary>
         public TokenProvider TokenProvider { get; set; } = new TokenProvider();
@@ -168,7 +168,7 @@ namespace NewLife.Web
 
         #region 日志
         /// <summary>日志</summary>
-        public NewLife.Log.ILog Log { get; set; }
+        public Ding.Log.ILog Log { get; set; }
 
         /// <summary>写日志</summary>
         /// <param name="format"></param>

@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Net;
+using Ding.Net;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>Http服务器</summary>
     [DisplayName("Http服务器")]

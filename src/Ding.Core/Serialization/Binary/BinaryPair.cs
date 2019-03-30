@@ -6,10 +6,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
-using NewLife.Collections;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>二进制名值对</summary>
     public class BinaryPair : BinaryHandlerBase

@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.IO.Compression;
 using System.Linq;
 using System.Web;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>页面压缩模块</summary>
     public class CompressionModule : IHttpModule
@@ -68,7 +68,7 @@ namespace NewLife.Web
         {
             if (exts == null)
             {
-                //String files = Config.GetMutilConfig<String>(".aspx,.axd,.js,.css", "NewLife.Web.CompressFiles", "NewLife.CommonEntity.CompressFiles");
+                //String files = Config.GetMutilConfig<String>(".aspx,.axd,.js,.css", "Ding.Web.CompressFiles", "Ding.CommonEntity.CompressFiles");
                 var files = WebCompressFiles;
                 exts = files.ToLower().Split(",", ";", " ");
             }

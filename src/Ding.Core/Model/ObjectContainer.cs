@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Log;
+using Ding.Reflection;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>实现 <seealso cref="IObjectContainer"/> 接口的对象容器</summary>
     /// <remarks>

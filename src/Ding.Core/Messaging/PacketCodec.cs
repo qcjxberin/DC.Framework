@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Data;
+using Ding.Log;
+using Ding.Threading;
 
-namespace NewLife.Messaging
+namespace Ding.Messaging
 {
     /// <summary>数据包编码器</summary>
     public class PacketCodec

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>经纬度坐标</summary>
     public class GeoPoint

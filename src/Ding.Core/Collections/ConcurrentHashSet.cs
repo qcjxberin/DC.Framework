@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace NewLife.Collections
+namespace Ding.Collections
 {
     /// <summary>并行哈希集合</summary>
     /// <remarks>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife.Collections;
-using NewLife.Data;
+using Ding.Collections;
+using Ding.Data;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>处理器上下文</summary>
     public interface IHandlerContext : IExtend

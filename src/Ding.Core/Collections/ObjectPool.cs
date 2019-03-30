@@ -2,11 +2,11 @@
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Threading;
 
-namespace NewLife.Collections
+namespace Ding.Collections
 {
     /// <summary>资源池。支持空闲释放，主要用于数据库连接池和网络连接池</summary>
     /// <typeparam name="T"></typeparam>

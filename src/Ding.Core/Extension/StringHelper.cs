@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Log;
+using Ding;
+using Ding.Collections;
+using Ding.Log;
 
 namespace System
 {
@@ -835,7 +835,7 @@ namespace System
         #endregion
 
         #region 文字转语音
-        private static NewLife.Extension.SpeakProvider _provider;
+        private static Ding.Extension.SpeakProvider _provider;
         //private static System.Speech.Synthesis.SpeechSynthesizer _provider;
         static void Init()
         {
@@ -843,7 +843,7 @@ namespace System
             {
                 //_provider = new Speech.Synthesis.SpeechSynthesizer();
                 //_provider.SetOutputToDefaultAudioDevice();
-                _provider = new NewLife.Extension.SpeakProvider();
+                _provider = new Ding.Extension.SpeakProvider();
             }
         }
 
@@ -924,7 +924,7 @@ namespace System
                     p.OutputDataReceived += (s, e) => output(e.Data);
                     p.ErrorDataReceived += (s, e) => output(e.Data);
                 }
-                else if (NewLife.Runtime.IsConsole)
+                else if (Ding.Runtime.IsConsole)
                 {
                     p.OutputDataReceived += (s, e) => XTrace.WriteLine(e.Data);
                     p.ErrorDataReceived += (s, e) => XTrace.Log.Error(e.Data);
@@ -933,7 +933,7 @@ namespace System
             if (onExit != null) p.Exited += (s, e) => onExit(s as Process);
 
             p.Start();
-            if (msWait > 0 && (output != null || NewLife.Runtime.IsConsole))
+            if (msWait > 0 && (output != null || Ding.Runtime.IsConsole))
             {
                 p.BeginOutputReadLine();
                 p.BeginErrorReadLine();

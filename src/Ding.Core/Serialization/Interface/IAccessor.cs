@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Data;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>序列化访问器。接口实现者可以在这里完全自定义序列化行为</summary>
     public interface IAccessor

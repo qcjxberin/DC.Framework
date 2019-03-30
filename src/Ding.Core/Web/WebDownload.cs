@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Web;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>提供网页下载支持，在服务端把一个数据流作为附件传给浏览器，带有断点续传和限速的功能</summary>
     public class WebDownload

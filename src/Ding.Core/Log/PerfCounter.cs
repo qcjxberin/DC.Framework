@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using NewLife.Threading;
+using Ding.Threading;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>性能计数器。次数、TPS、平均耗时</summary>
     public class PerfCounter : DisposeBase, ICounter

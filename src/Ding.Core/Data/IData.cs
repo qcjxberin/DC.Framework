@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>数据帧接口</summary>
     public interface IData

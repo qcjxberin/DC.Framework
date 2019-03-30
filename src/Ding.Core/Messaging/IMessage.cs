@@ -1,8 +1,8 @@
 ﻿using System;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Data;
+using Ding.Reflection;
 
-namespace NewLife.Messaging
+namespace Ding.Messaging
 {
     /// <summary>消息命令</summary>
     public interface IMessage //: IAccessor

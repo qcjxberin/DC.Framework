@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>常用类型编码</summary>
     public class BinaryNormal : BinaryHandlerBase

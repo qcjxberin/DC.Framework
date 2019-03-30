@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using NewLife.Collections;
-using NewLife.Data;
+using Ding.Collections;
+using Ding.Data;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>Http请求响应基类</summary>
     public abstract class HttpBase

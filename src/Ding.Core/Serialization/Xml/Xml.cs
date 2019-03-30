@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Serialization;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Xml序列化</summary>
     public class Xml : FormatterBase, IXml

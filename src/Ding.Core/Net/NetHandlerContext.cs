@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Model;
-using NewLife.Threading;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Model;
+using Ding.Threading;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>网络处理器上下文</summary>
     public class NetHandlerContext : HandlerContext

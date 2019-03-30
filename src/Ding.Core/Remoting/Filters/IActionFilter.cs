@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>定义操作筛选器中使用的方法。</summary>
     public interface IActionFilter

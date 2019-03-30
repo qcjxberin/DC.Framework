@@ -1,7 +1,7 @@
 ﻿#if !__CORE__
 using System;
 
-namespace NewLife.Agent
+namespace Ding.Agent
 {
 #if DEBUG
     /// <summary>代理服务例子。自定义服务程序可参照该类实现。</summary>

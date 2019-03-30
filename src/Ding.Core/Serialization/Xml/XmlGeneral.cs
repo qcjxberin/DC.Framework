@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Xml;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Xml基础类型处理器</summary>
     public class XmlGeneral : XmlHandlerBase

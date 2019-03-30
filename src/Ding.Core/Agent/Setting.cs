@@ -1,9 +1,9 @@
 ﻿#if !__CORE__
 using System;
 using System.ComponentModel;
-using NewLife.Xml;
+using Ding.Xml;
 
-namespace NewLife.Agent
+namespace Ding.Agent
 {
     /// <summary>服务设置</summary>
     [DisplayName("服务设置")]

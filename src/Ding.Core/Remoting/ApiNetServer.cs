@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NewLife.Messaging;
-using NewLife.Net;
+using Ding.Messaging;
+using Ding.Net;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     class ApiNetServer : NetServer<ApiNetSession>, IApiServer
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>控制台输出日志</summary>
     public class ConsoleLog : Logger

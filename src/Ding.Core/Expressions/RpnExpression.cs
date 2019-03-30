@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NewLife.Expressions
+namespace Ding.Expressions
 {
     /*
      * （1）若取出的字符是操作数，则分析出完整的运算数，该操作数直接送入S2栈

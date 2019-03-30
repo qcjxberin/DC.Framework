@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Runtime;
 using System.Text;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>日志基类。提供日志的基本实现</summary>
     [EditorBrowsable(EditorBrowsableState.Advanced)]
@@ -97,7 +97,7 @@ namespace NewLife.Log
         public virtual Boolean Enable { get; set; } = true;
 
         private LogLevel? _Level;
-        /// <summary>日志等级，只输出大于等于该级别的日志，默认Info，打开NewLife.Debug时默认为最低的Debug</summary>
+        /// <summary>日志等级，只输出大于等于该级别的日志，默认Info，打开Ding.Debug时默认为最低的Debug</summary>
         public LogLevel Level
         {
             get

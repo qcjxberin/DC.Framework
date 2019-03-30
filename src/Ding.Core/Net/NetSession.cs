@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>网络服务的会话</summary>
     /// <typeparam name="TServer">网络服务类型</typeparam>

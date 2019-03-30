@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife.Collections;
-using NewLife.Net;
+using Ding.Collections;
+using Ding.Net;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>API控制器</summary>
     //[AllowAnonymous]

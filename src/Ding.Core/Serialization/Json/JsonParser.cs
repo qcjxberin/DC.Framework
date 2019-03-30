@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
 
     /// <summary>Json分析器</summary>

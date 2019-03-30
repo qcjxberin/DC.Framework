@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Threading;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>会话集合。带有自动清理不活动会话的功能</summary>
     class SessionCollection : DisposeBase, IDictionary<String, ISocketSession>

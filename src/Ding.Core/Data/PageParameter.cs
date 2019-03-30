@@ -2,7 +2,7 @@
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>分页参数信息</summary>
     public class PageParameter

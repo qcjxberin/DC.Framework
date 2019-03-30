@@ -1,5 +1,5 @@
 ﻿using System;
-using NewLife.Reflection;
+using Ding.Reflection;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>Socket扩展</summary>
     public static class SocketHelper

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace NewLife.IO
+namespace Ding.IO
 {
     /// <summary>编码助手</summary>
     public static class EncodingHelper

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>IJson序列化接口</summary>
     public interface IJson : IFormatterX

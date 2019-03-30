@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Messaging;
-using NewLife.Model;
-using NewLife.Net.Handlers;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Messaging;
+using Ding.Model;
+using Ding.Net.Handlers;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>Api主机</summary>
     public abstract class ApiHost : DisposeBase, IApiHost, IExtend

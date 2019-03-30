@@ -4,13 +4,13 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Security;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Security;
 
 
 #if DEBUG
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Binary测试</summary>
     public static class BinaryTest

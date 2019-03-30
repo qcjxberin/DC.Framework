@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using NewLife.Security;
+using Ding.Security;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>令牌提供者</summary>
     public class TokenProvider

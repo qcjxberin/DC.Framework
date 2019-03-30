@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Data;
+using Ding.Reflection;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>Api动作</summary>
     public class ApiAction

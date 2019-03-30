@@ -4,7 +4,7 @@ using System.IO;
 using System.Xml.Serialization;
 
 #if DEBUG
-namespace NewLife.Json
+namespace Ding.Json
 {
     /// <summary>
     /// 测试Json配置文件功能

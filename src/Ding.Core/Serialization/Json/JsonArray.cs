@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using NewLife.Reflection;
+using Ding.Reflection;
 using System.Linq;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>列表数据编码</summary>
     public class JsonArray : JsonHandlerBase

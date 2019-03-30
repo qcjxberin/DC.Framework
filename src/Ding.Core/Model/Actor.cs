@@ -2,9 +2,9 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>无锁并行编程模型</summary>
     /// <remarks>

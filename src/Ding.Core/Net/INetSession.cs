@@ -2,10 +2,10 @@
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Messaging;
+using Ding.Data;
+using Ding.Messaging;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>网络服务会话接口</summary>
     /// <remarks>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>对象容器接口</summary>
     /// <remarks>

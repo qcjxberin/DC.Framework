@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Web.OAuth
+namespace Ding.Web.OAuth
 {
     /// <summary>身份验证提供者</summary>
     public class WeixinClient : OAuthClient

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Net;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Model;
+using Ding.Net;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>Redis缓存</summary>
     public class Redis : Cache

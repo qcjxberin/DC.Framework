@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>性能计数器接口</summary>
     public interface ICounter

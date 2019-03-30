@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>缓存接口</summary>
     public interface ICache

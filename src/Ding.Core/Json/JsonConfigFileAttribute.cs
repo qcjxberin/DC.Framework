@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Json
+namespace Ding.Json
 {
     /// <summary>Json配置文件特性</summary>
     [AttributeUsage(AttributeTargets.Class)]

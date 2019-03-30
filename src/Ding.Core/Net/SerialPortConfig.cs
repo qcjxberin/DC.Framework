@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.IO.Ports;
 using System.Text;
 using System.Xml.Serialization;
-using NewLife.Xml;
+using Ding.Xml;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>串口配置</summary>
     [XmlConfigFile("Config\\Serial.config")]

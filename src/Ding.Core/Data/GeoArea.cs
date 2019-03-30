@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>地理区域</summary>
     public class GeoArea

@@ -4,7 +4,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace NewLife.Xml
+namespace Ding.Xml
 {
     /// <summary>支持Xml序列化的泛型字典类 </summary>
     /// <typeparam name="TKey"></typeparam>

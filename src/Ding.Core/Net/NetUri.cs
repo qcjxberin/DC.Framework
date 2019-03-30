@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Xml.Serialization;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>协议类型</summary>
     public enum NetType : Byte

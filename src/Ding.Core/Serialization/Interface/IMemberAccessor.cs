@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>成员序列化访问器。接口实现者可以在这里完全自定义序列化行为</summary>
     public interface IMemberAccessor

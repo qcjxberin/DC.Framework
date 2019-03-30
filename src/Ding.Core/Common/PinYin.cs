@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Common
+namespace Ding.Common
 {
     /// <summary>汉字拼音转换类</summary>
     public class PinYin

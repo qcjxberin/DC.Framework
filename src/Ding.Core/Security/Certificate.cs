@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 using RuntimeHelpers = System.Runtime.CompilerServices.RuntimeHelpers;
 using SecureString = System.Security.SecureString;
 
-namespace NewLife.Security
+namespace Ding.Security
 {
     /// <summary>证书</summary>
     /// <remarks>http://blogs.msdn.com/b/dcook/archive/2008/11/25/creating-a-self-signed-certificate-in-c.aspx</remarks>
@@ -61,7 +61,7 @@ namespace NewLife.Security
         }
 
         /// <summary>建立自签名证书</summary>
-        /// <param name="x500">例如CN=SelfSignCertificate;C=China;OU=NewLife;O=Development Team;E=nnhy@vip.qq.com，其中CN是显示名</param>
+        /// <param name="x500">例如CN=SelfSignCertificate;C=China;OU=Ding;O=Development Team;E=nnhy@vip.qq.com，其中CN是显示名</param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
         /// <param name="password"></param>

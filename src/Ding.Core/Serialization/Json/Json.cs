@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using NewLife.Collections;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Json序列化</summary>
     public class Json : FormatterBase, IJson

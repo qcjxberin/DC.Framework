@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     /// <summary>
     /// 索引器接访问口。

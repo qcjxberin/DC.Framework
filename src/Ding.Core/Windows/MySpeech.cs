@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Speech.Recognition;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Windows
+namespace Ding.Windows
 {
     class MySpeech : ISpeech
     {

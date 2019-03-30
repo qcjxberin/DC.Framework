@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Net;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Net;
+using Ding.Reflection;
+using Ding.Serialization;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>Redis客户端</summary>
     /// <remarks>

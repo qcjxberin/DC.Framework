@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Messaging;
-using NewLife.Model;
-using NewLife.Net;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Messaging;
+using Ding.Model;
+using Ding.Net;
+using Ding.Reflection;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>Api主机</summary>
     public interface IApiHost

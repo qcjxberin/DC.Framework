@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Reflection;
 using System.Text;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>字段大小特性。</summary>
     /// <remarks>

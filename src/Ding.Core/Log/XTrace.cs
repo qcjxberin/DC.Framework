@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 #if !__CORE__
 using System.Windows.Forms;
 #endif
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding.Reflection;
+using Ding.Threading;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>日志类，包含跟踪调试功能</summary>
     /// <remarks>

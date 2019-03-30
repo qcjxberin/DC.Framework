@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     /// <summary>反射接口</summary>
     /// <remarks>该接口仅用于扩展，不建议外部使用</remarks>

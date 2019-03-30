@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace NewLife.IP
+namespace Ding.IP
 {
     class Zip : IDisposable
     {

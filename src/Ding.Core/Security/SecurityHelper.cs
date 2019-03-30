@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using NewLife.Security;
+using Ding.Security;
 
 namespace System
 {
@@ -205,7 +205,7 @@ namespace System
         /// <param name="data"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        public static Byte[] RC4(this Byte[] data, Byte[] pass) { return NewLife.Security.RC4.Encrypt(data, pass); }
+        public static Byte[] RC4(this Byte[] data, Byte[] pass) { return Ding.Security.RC4.Encrypt(data, pass); }
         #endregion
     }
 }

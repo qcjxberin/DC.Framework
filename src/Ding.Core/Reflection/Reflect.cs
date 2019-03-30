@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     /// <summary>反射工具类</summary>
     public static class Reflect

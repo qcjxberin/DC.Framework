@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Model;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Model;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>Socket服务器接口</summary>
     public interface ISocketServer : ISocket, IServer

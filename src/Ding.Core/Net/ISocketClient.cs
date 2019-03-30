@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>Socket客户端</summary>
     /// <remarks>

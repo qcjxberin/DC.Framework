@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using NewLife.Model;
+using Ding.Model;
 
 namespace System
 {

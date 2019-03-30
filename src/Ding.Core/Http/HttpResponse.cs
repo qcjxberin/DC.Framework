@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Messaging;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Messaging;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>Http响应</summary>
     public class HttpResponse : HttpBase

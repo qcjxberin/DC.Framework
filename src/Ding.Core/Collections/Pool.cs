@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Collections
+namespace Ding.Collections
 {
     /// <summary>轻量级对象池。数组无锁实现，高性能</summary>
     /// <remarks>

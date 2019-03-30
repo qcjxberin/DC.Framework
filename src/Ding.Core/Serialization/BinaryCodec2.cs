@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife.Data;
-using NewLife.Model;
-using NewLife.Net.Handlers;
+using Ding.Data;
+using Ding.Model;
+using Ding.Net.Handlers;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>二进制编码解码器</summary>
     public class BinaryCodec2 : Handler

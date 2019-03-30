@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>数据过滤器</summary>
     public interface IFilter

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using NewLife.Collections;
-using NewLife.Net;
+using Ding.Collections;
+using Ding.Net;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>客户端单连接故障转移集群</summary>
     public class ClientSingleCluster : ICluster<String, ISocketClient>

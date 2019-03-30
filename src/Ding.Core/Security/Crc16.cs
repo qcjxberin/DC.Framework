@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace NewLife.Security
+namespace Ding.Security
 {
     /// <summary>CRC16校验</summary>
     public sealed class Crc16

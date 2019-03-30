@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace NewLife
+namespace Ding
 {
     /// <summary>X组件异常</summary>
     [Serializable]

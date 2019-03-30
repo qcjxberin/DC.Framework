@@ -4,13 +4,13 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Threading;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
+using Ding.Threading;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>Udp会话。仅用于服务端与某一固定远程地址通信</summary>
     class UdpSession : DisposeBase, ISocketSession, ITransport

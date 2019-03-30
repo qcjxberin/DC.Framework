@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Reflection;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife
+namespace Ding
 {
     /// <summary>弱引用Action</summary>
     /// <remarks>

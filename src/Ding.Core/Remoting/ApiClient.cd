@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="NewLife.Remoting.ApiClient" Collapsed="true">
+  <Class Name="Ding.Remoting.ApiClient" Collapsed="true">
     <Position X="3.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAgCAEIAAAAAAACAAAEAgAAAAQAAAAAACBAEQ=</HashCode>
@@ -11,21 +11,21 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Remoting.ApiAction" Collapsed="true">
+  <Class Name="Ding.Remoting.ApiAction" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAEIAAkQAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Remoting\ApiAction.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Remoting.JsonEncoder" Collapsed="true">
+  <Class Name="Ding.Remoting.JsonEncoder" Collapsed="true">
     <Position X="3.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAIAAAAAAgAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Remoting\JsonEncoder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Remoting.EncoderBase" Collapsed="true">
+  <Class Name="Ding.Remoting.EncoderBase" Collapsed="true">
     <Position X="3.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAMAAAAAAAAgAAAAAAAABQAAAAAA=</HashCode>
@@ -33,14 +33,14 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Remoting.ApiHttpClient" Collapsed="true">
+  <Class Name="Ding.Remoting.ApiHttpClient" Collapsed="true">
     <Position X="6.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Remoting\ApiHttpClient.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Remoting.ApiNetClient" Collapsed="true">
+  <Class Name="Ding.Remoting.ApiNetClient" Collapsed="true">
     <Position X="6.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAACAEIAAAAAAACAAAEAgAAACAAAACAADAAEQ=</HashCode>
@@ -48,7 +48,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Remoting.ApiHost" Collapsed="true">
+  <Class Name="Ding.Remoting.ApiHost" Collapsed="true">
     <Position X="3.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABBAAcCAAACoAAAAAEAAABBAABAAAAAAAAAEA=</HashCode>
@@ -61,21 +61,21 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="NewLife.Remoting.IApiClient" Collapsed="true">
+  <Interface Name="Ding.Remoting.IApiClient" Collapsed="true">
     <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAEIAAAAAAAAAAAEAgAAACAAAACAACAAAA=</HashCode>
       <FileName>Remoting\IApiClient.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewLife.Remoting.IEncoder" Collapsed="true">
+  <Interface Name="Ding.Remoting.IEncoder" Collapsed="true">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAIAAAAAAAAgAAAAAAAABQAAAAAA=</HashCode>
       <FileName>Remoting\IEncoder.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewLife.Remoting.IApiHandler" Collapsed="true">
+  <Interface Name="Ding.Remoting.IApiHandler" Collapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -85,7 +85,7 @@
       <FileName>Remoting\IApiHandler.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewLife.Remoting.IApiManager" Collapsed="true">
+  <Interface Name="Ding.Remoting.IApiManager" Collapsed="true">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
@@ -98,7 +98,7 @@
       <Property Name="Services" />
     </ShowAsCollectionAssociation>
   </Interface>
-  <Interface Name="NewLife.Remoting.IApiSession" Collapsed="true">
+  <Interface Name="Ding.Remoting.IApiSession" Collapsed="true">
     <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAACAAAAAAAAAAAAACQAAAAAAABAAA=</HashCode>

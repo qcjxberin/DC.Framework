@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>日志等级</summary>
     public enum LogLevel : System.Byte

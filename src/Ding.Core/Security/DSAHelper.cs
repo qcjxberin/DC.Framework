@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Xml;
 
-namespace NewLife.Security
+namespace Ding.Security
 {
     /// <summary>DSA算法</summary>
     public static class DSAHelper

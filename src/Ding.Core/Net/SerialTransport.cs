@@ -6,11 +6,11 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Win32;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Data;
+using Ding.Log;
+using Ding.Threading;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>串口传输</summary>
     /// <example>

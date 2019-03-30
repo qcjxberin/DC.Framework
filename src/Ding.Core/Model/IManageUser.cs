@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>用户接口</summary>
     public interface IManageUser

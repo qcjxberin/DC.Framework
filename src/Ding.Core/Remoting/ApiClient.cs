@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Messaging;
-using NewLife.Net;
-using NewLife.Threading;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Messaging;
+using Ding.Net;
+using Ding.Threading;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>应用接口客户端</summary>
     public class ApiClient : ApiHost, IApiSession

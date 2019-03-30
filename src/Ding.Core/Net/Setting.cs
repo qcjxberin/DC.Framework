@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using NewLife.Xml;
+using Ding.Xml;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>网络设置</summary>
     [DisplayName("网络设置")]

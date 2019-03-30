@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
-using NewLife.Threading;
+using Ding.Threading;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>分布式锁</summary>
     public class CacheLock : DisposeBase

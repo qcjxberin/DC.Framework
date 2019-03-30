@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Web;
-using NewLife.Collections;
-using NewLife.Log;
+using Ding.Collections;
+using Ding.Log;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>全局错误处理模块</summary>
     public class ErrorModule : IHttpModule

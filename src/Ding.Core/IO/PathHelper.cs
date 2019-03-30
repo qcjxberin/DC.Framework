@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using NewLife.IO;
+using Ding.IO;
 using System.IO.Compression;
-using NewLife.Compression;
+using Ding.Compression;
 
 namespace System.IO
 {
@@ -43,7 +43,7 @@ namespace System.IO
             if (path.StartsWith(@"\\")) return Path.GetFullPath(path);
 
             // 考虑兼容Linux
-            if (!NewLife.Runtime.Mono)
+            if (!Ding.Runtime.Mono)
             {
                 //if (!Path.IsPathRooted(path))
                 //!!! 注意：不能直接依赖于Path.IsPathRooted判断，/和\开头的路径虽然是绝对路径，但是它们不是驱动器级别的绝对路径

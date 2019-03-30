@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Xml
+namespace Ding.Xml
 {
     /// <summary>Xml配置文件特性</summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]

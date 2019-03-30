@@ -2,9 +2,9 @@
 using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>内部对象处理器。对于其它处理器无法支持的类型，一律由该处理器解决</summary>
     public class BinaryUnknown : BinaryHandlerBase

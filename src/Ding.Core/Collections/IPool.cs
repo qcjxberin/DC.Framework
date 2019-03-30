@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace NewLife.Collections
+namespace Ding.Collections
 {
     /// <summary>对象池接口</summary>
     /// <typeparam name="T"></typeparam>

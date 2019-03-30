@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Expressions
+namespace Ding.Expressions
 {
     class IndexInfoResult
     {

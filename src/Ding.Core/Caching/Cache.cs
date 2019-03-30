@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Win32;
-using NewLife.Log;
-using NewLife.Security;
+using Ding.Log;
+using Ding.Security;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>缓存</summary>
     public abstract class Cache : DisposeBase, ICache

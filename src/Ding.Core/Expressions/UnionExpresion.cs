@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace NewLife.Expressions
+namespace Ding.Expressions
 {
     /// <summary>与或非表达式</summary>
     public class UnionExpresion : RpnExpression

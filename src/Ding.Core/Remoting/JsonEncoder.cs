@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Serialization;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Serialization;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>Json编码器</summary>
     public class JsonEncoder : EncoderBase, IEncoder

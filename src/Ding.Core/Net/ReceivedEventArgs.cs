@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>收到数据时的事件参数</summary>
     public class ReceivedEventArgs : EventArgs, IData

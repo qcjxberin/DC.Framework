@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>生产者消费者接口</summary>
     /// <typeparam name="T"></typeparam>

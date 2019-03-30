@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Threading
+namespace Ding.Threading
 {
     /// <summary>定时器调度器</summary>
     public class TimerScheduler

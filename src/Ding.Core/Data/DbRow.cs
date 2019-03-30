@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Reflection;
+using Ding.Reflection;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>数据行</summary>
     public struct DbRow : IIndexAccessor

@@ -6,9 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     /// <summary>程序集辅助类。使用Create创建，保证每个程序集只有一个辅助类</summary>
     public class AssemblyX

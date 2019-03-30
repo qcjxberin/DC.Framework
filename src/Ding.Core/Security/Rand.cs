@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Security
+namespace Ding.Security
 {
     /// <summary>随机数</summary>
     public static class Rand

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using NewLife.Reflection;
+using Ding.Reflection;
 
 namespace System
 {

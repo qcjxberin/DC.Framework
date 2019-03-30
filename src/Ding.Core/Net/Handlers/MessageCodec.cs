@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Model;
 
-namespace NewLife.Net.Handlers
+namespace Ding.Net.Handlers
 {
     /// <summary>消息封包</summary>
     public class MessageCodec<T> : Handler

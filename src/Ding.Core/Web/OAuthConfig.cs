@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Xml.Serialization;
-using NewLife.Common;
-using NewLife.Xml;
+using Ding.Common;
+using Ding.Xml;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>配置</summary>
     [XmlConfigFile("Config/OAuth.config", 15000)]
@@ -47,10 +47,10 @@ namespace NewLife.Web
                 var sc = SysConfig.Current;
                 var mi = new OAuthItem
                 {
-                    Name = "NewLife",
-                    Server = "https://sso.newlifex.com/sso",
+                    Name = "Ding",
+                    Server = "https://sso.haocoding.com/sso",
                     AppID = sc.Name,
-                    Secret = sc.Name.GetBytes().RC4("NewLife".GetBytes()).ToBase64(),
+                    Secret = sc.Name.GetBytes().RC4("Ding".GetBytes()).ToBase64(),
                 };
                 list.Add(mi);
                 Items = list.ToArray();

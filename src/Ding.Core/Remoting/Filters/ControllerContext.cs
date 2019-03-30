@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>控制器上下文</summary>
     public class ControllerContext

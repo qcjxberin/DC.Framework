@@ -1,9 +1,9 @@
 ﻿using System;
-using NewLife.Data;
-using NewLife.Model;
-using NewLife.Net.Handlers;
+using Ding.Data;
+using Ding.Model;
+using Ding.Net.Handlers;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>Json编码解码器</summary>
     public class JsonCodec<T> : Handler

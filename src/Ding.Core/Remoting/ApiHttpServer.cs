@@ -1,8 +1,8 @@
 ﻿using System;
-using NewLife.Http;
-using NewLife.Net;
+using Ding.Http;
+using Ding.Net;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     class ApiHttpServer : ApiNetServer
     {

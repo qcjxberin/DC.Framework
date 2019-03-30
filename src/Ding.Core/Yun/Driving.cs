@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Yun
+namespace Ding.Yun
 {
     /// <summary>驾车距离和时间</summary>
     public class Driving

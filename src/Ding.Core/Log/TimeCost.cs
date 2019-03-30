@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>统计代码的时间消耗</summary>
     public class TimeCost : DisposeBase

@@ -1,10 +1,10 @@
 ﻿using System;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Net;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Model;
+using Ding.Net;
+using Ding.Threading;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>应用接口服务器</summary>
     public class ApiServer : ApiHost, IServer

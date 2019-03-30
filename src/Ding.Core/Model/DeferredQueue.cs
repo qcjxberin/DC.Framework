@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using NewLife.Log;
-using NewLife.Security;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Security;
+using Ding.Threading;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>延迟队列。缓冲合并对象，批量处理</summary>
     /// <remarks>

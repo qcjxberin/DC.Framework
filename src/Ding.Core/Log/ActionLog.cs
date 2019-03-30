@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>依托于动作的日志类</summary>
     public class ActionLog : Logger

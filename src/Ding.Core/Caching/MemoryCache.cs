@@ -3,11 +3,11 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Threading;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>默认字典缓存</summary>
     public class MemoryCache : Cache

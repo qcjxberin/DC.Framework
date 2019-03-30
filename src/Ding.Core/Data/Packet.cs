@@ -2,9 +2,9 @@
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>数据包</summary>
     public class Packet

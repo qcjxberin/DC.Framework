@@ -2,9 +2,9 @@
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using NewLife.Net;
+using Ding.Net;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>网络日志</summary>
     public class NetworkLog : Logger, IDisposable

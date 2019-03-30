@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Reflection;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>Api处理器</summary>
     public interface IApiHandler

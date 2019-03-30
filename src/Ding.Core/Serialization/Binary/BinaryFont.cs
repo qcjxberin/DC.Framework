@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>字体处理器。</summary>
     public class BinaryFont : BinaryHandlerBase

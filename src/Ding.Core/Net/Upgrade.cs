@@ -5,11 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Web;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Web;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>升级更新</summary>
     /// <remarks>
@@ -54,7 +54,7 @@ namespace NewLife.Net
             Name = asm.GetName().Name;
             Compile = asmx.Compile;
 
-            Server = NewLife.Setting.Current.PluginServer;
+            Server = Ding.Setting.Current.PluginServer;
         }
         #endregion
 
@@ -212,7 +212,7 @@ namespace NewLife.Net
 
             var web = new WebClientX(true, true)
             {
-                UserAgent = "NewLife.Upgrade"
+                UserAgent = "Ding.Upgrade"
             };
             return _Client = web;
         }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Model;
 
-namespace NewLife.Net.Handlers
+namespace Ding.Net.Handlers
 {
     /// <summary>
     /// 按指定分割字节来处理粘包的处理器

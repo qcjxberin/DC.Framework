@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>Http请求</summary>
     public class HttpRequest : HttpBase

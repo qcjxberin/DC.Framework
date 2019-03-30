@@ -6,11 +6,11 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>增强的UDP</summary>
     /// <remarks>

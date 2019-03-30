@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Data;
+using Ding.Log;
+using Ding.Reflection;
 
-namespace NewLife.Serialization
+namespace Ding.Serialization
 {
     /// <summary>二进制序列化</summary>
     public class Binary : FormatterBase, IBinary

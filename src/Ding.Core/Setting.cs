@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.IO;
-using NewLife.Log;
-using NewLife.Xml;
+using Ding.Log;
+using Ding.Xml;
 
-namespace NewLife
+namespace Ding
 {
     /// <summary>核心设置</summary>
     [DisplayName("核心设置")]
@@ -42,7 +42,7 @@ namespace NewLife
 
         /// <summary>插件服务器。将从该网页上根据关键字分析链接并下载插件</summary>
         [Description("插件服务器。将从该网页上根据关键字分析链接并下载插件")]
-        public String PluginServer { get; set; } = "http://x.newlifex.com/";
+        public String PluginServer { get; set; } = "http://x.haocoding.com/";
         #endregion
 
         #region 方法
@@ -55,7 +55,7 @@ namespace NewLife
             if (TempPath.IsNullOrEmpty()) TempPath = web ? "..\\XTemp" : "XTemp";
             if (LogFileFormat.IsNullOrEmpty()) LogFileFormat = "{0:yyyy_MM_dd}.log";
 
-            if (PluginServer.IsNullOrWhiteSpace()) PluginServer = "http://x.newlifex.com/";
+            if (PluginServer.IsNullOrWhiteSpace()) PluginServer = "http://x.haocoding.com/";
 
             base.OnLoaded();
         }

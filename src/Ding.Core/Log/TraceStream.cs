@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace NewLife.Log
+namespace Ding.Log
 {
     /// <summary>跟踪流。包装一个基础数据流，主要用于重写Read/Write等行为，跟踪程序操作数据流的过程</summary>
     public class TraceStream : Stream

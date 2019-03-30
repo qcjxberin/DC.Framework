@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Messaging;
+using Ding.Data;
+using Ding.Log;
+using Ding.Messaging;
 
-namespace NewLife.Remoting
+namespace Ding.Remoting
 {
     /// <summary>编码器</summary>
     public interface IEncoder

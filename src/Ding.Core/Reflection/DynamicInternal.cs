@@ -3,7 +3,7 @@ using System.Dynamic;
 using System.Globalization;
 using System.Reflection;
 
-namespace NewLife.Reflection
+namespace Ding.Reflection
 {
     /// <summary>包装程序集内部类的动态对象</summary>
     public class DynamicInternal : DynamicObject

@@ -5,10 +5,10 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Net;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Model;
+using Ding.Net;
 
 namespace System
 {
@@ -145,8 +145,8 @@ namespace System
         /// <returns></returns>
         public static Boolean CheckPort(this IPAddress address, NetType protocol, Int32 port)
         {
-            //if (NewLife.Runtime.Mono) return false;
-            if (!NewLife.Runtime.Windows) return false;
+            //if (Ding.Runtime.Mono) return false;
+            if (!Ding.Runtime.Windows) return false;
 
             try
             {

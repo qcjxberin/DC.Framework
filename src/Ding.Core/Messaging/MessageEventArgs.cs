@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Messaging
+namespace Ding.Messaging
 {
     /// <summary>收到消息时的事件参数</summary>
     public class MessageEventArgs : EventArgs

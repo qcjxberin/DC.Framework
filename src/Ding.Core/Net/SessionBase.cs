@@ -4,13 +4,13 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Threading;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
+using Ding.Threading;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>会话基类</summary>
     public abstract class SessionBase : DisposeBase, ISocketClient, ITransport

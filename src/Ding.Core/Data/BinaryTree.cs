@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace NewLife.Data
+namespace Ding.Data
 {
     /// <summary>二叉树</summary>
     public class BinaryTree

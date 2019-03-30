@@ -10,11 +10,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Serialization;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Serialization;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>扩展的Web客户端</summary>
     public class WebClientX : DisposeBase

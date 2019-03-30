@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Messaging;
-using NewLife.Reflection;
-using NewLife.Remoting;
-using NewLife.Serialization;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Messaging;
+using Ding.Reflection;
+using Ding.Remoting;
+using Ding.Serialization;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>Http编码器</summary>
     public class HttpEncoder : EncoderBase, IEncoder

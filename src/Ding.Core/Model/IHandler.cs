@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Model
+namespace Ding.Model
 {
     /// <summary>处理器</summary>
     public interface IHandler

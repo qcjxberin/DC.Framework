@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 
-namespace NewLife.IO
+namespace Ding.IO
 {
     /// <summary>文件资源</summary>
     public static class FileSource

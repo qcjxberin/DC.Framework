@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Security.Cryptography;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Security;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Security;
 
-namespace NewLife.Http
+namespace Ding.Http
 {
     /// <summary>Http帮助类</summary>
     public static class HttpHelper

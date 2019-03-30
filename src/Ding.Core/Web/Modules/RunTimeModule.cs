@@ -3,9 +3,9 @@ using System;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Web
+namespace Ding.Web
 {
     /// <summary>页面执行时间模块</summary>
     public class RunTimeModule : IHttpModule
