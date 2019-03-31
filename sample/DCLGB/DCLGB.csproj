@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <LangVersion>7.3</LangVersion>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <AssemblyName>DCLGB</AssemblyName>
+    <RootNamespace>DCLGB</RootNamespace>
+    <Copyright>深圳市海凌科电子商务有限公司</Copyright>
+    <Company>深圳市海凌科电子商务有限公司</Company>
+    <Authors>丁川</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Swagger\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Swagger\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="2.4.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Ding.Caches\05-Ding.Caches.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Core\02-Ding.Core.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Events\06-Ding.Events.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Logs\04-Ding.Logs.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Schedulers\07-Ding.Schedulers.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Swashbuckle\08-Ding.Swashbuckle.csproj" />
+    <ProjectReference Include="..\..\src\Ding.TimedJob\09-Ding.TimedJob.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Utils\01-Ding.Utils.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Webs\10-Ding.Webs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\MySql\Mappings\" />
+    <Folder Include="Data\PgSql\Mappings\" />
+    <Folder Include="Data\Repositories\" />
+    <Folder Include="Data\SqlServer\Mappings\" />
+    <Folder Include="DbScripts\MySql\" />
+    <Folder Include="DbScripts\PgSql\" />
+    <Folder Include="DbScripts\SqlServer\" />
+    <Folder Include="Domains\Models\" />
+    <Folder Include="Domains\Repositories\" />
+    <Folder Include="Domains\Services\" />
+    <Folder Include="Services\Abstractions\" />
+    <Folder Include="Services\Dtos\" />
+    <Folder Include="Services\Implements\" />
+    <Folder Include="Services\Queries\" />
+  </ItemGroup>
+
+</Project>
