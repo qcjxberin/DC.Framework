@@ -80,7 +80,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Utils", "00-Utils", "{08
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Ding.Swashbuckle", "src\Ding.Swashbuckle\08-Ding.Swashbuckle.csproj", "{55135129-C53D-4360-9443-382F3A5A6BA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.TimedJob", "src\Ding.TimedJob\Ding.TimedJob.csproj", "{1F3D708F-EABA-4570-A9A7-AE844FB5D54B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-Ding.TimedJob", "src\Ding.TimedJob\09-Ding.TimedJob.csproj", "{1F3D708F-EABA-4570-A9A7-AE844FB5D54B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
