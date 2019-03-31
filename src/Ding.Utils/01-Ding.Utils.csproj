@@ -77,4 +77,19 @@
     <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="3.0.0-preview3.19153.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Properties\R.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>R.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\R.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>R.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
