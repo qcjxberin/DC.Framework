@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using AspectCore.Configuration;
+﻿using AspectCore.Configuration;
 using Autofac;
-using Microsoft.Extensions.DependencyInjection;
 using Ding.Events.Handlers;
 using Ding.Helpers;
 using Ding.Reflections;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
-namespace Ding.Dependency {
+namespace Ding.Dependency
+{
     /// <summary>
     /// 依赖引导器
     /// </summary>
@@ -90,6 +91,14 @@ namespace Ding.Dependency {
             RegisterInfrastracture();
             RegisterEventHandlers();
             RegisterDependency();
+            //var Configs = GetTypes(typeof(IConfig));
+            //Console.WriteLine(Configs.Join(","));
+            builder.RegisterAssemblyModules<IConfig>(_assemblies.ToArray());
+            //foreach(var config in Configs)
+            //{
+                
+            //    //builder.RegisterModule(config);
+            //}
         }
 
         /// <summary>
