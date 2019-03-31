@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Ding.Datas.Queries;
 using Ding.Expressions;
 using Ding.Helpers;
+using Ding.Utils;
 
 namespace Ding {
     /// <summary>

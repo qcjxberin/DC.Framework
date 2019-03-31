@@ -34,7 +34,7 @@
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;TimedJob;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>

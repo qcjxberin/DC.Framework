@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ding.Datas.Queries;
 using Ding.Datas.Sql.Builders.Conditions;
 using Ding.Datas.Sql.Builders.Internal;
 using Ding.Datas.Sql.Matedatas;
+using Ding.Utils;
 
 namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>

@@ -7,6 +7,7 @@ using Ding.Datas.Sql.Builders.Core;
 using Ding.Datas.Sql.Builders.Internal;
 using Ding.Helpers;
 using Ding.Properties;
+using Ding.Utils;
 
 namespace Ding.Datas.Sql.Builders.Clauses {
     /// <summary>

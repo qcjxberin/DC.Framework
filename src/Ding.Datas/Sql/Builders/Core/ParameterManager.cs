@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Ding.Datas.Queries;
+using Ding.Utils;
 
 namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>

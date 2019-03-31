@@ -1,6 +1,6 @@
 ﻿using System;
-using Ding.Datas.Queries;
 using Ding.Datas.Sql.Builders;
+using Ding.Utils;
 
 namespace Ding.Datas.Sql {
     /// <summary>

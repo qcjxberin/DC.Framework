@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Ding.Datas.Queries;
 using Ding.Helpers;
+using Ding.Utils;
 
 namespace Ding.Expressions {
     /// <summary>

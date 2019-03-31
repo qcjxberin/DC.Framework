@@ -3,6 +3,7 @@ using System.Linq.Expressions;
 using Ding.Domains.Repositories;
 using Ding.Expressions;
 using Ding.Helpers;
+using Ding.Utils;
 
 namespace Ding.Datas.Queries.Criterias {
     /// <summary>

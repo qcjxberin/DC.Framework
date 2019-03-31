@@ -83,6 +83,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Ding.Utils\01-Ding.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\LibraryResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -6,6 +6,7 @@ using Ding.Datas.Queries;
 using Ding.Datas.Sql.Builders.Conditions;
 using Ding.Datas.Sql.Builders.Core;
 using Ding.Helpers;
+using Ding.Utils;
 
 namespace Ding.Datas.Sql.Builders.Internal {
     /// <summary>

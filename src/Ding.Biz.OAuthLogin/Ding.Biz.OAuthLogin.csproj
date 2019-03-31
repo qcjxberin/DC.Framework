@@ -10,11 +10,11 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <AssemblyName>Ding.Utils</AssemblyName>
-    <RootNamespace>Ding.Utils</RootNamespace>
+    <AssemblyName>Ding.Biz.OAuthLogin</AssemblyName>
+    <RootNamespace>Ding.Biz.OAuthLogin</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>NetCore核心帮助类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore核心帮助类库。</Description>
+    <AssemblyTitle>NetCore第三方授权登录类库</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的第三方授权登录类库。</Description>
     <Company>星尘</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
@@ -27,14 +27,14 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>
-      Ding.Utils项目是Ding应用框架的核心帮助类库。
+      Ding.Biz.OAuthLogin项目是Ding应用框架的第三方授权登录类库。
       Ding是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
     </PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;OAuthLogin;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -50,31 +50,35 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <Folder Include="Baidu\" />
+    <Folder Include="Coding\" />
+    <Folder Include="DingTalk\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Facebook\" />
+    <Folder Include="Gitee\" />
+    <Folder Include="Github\" />
+    <Folder Include="Jd\" />
+    <Folder Include="MeiliShuo\" />
+    <Folder Include="Microsoft\" />
+    <Folder Include="OsChina\" />
+    <Folder Include="QQ\" />
+    <Folder Include="Taobao\" />
+    <Folder Include="Wechat\" />
+    <Folder Include="Weibo\" />
+    <Folder Include="Youzan\" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="2.2.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="3.0.0-preview3.19153.1" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="3.0.0-preview3.19153.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.6.0-preview3.19128.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ding.Utils\01-Ding.Utils.csproj" />
+    <ProjectReference Include="..\Ding\01-Ding.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using Ding.Datas.Queries;
 using Ding.Datas.Sql.Builders.Conditions;
 using Ding.Datas.Sql.Builders.Core;
 using Ding.Datas.Sql.Builders.Extensions;
 using Ding.Datas.Sql.Builders.Internal;
 using Ding.Datas.Sql.Matedatas;
 using Ding.Helpers;
+using Ding.Utils;
 
 namespace Ding.Datas.Sql.Builders.Clauses {
     /// <summary>

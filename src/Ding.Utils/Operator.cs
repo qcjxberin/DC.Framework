@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Ding.Datas.Queries {
+namespace Ding.Utils {
     /// <summary>
     /// 查询操作符
     /// </summary>
