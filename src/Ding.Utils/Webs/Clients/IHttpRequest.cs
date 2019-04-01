@@ -2,7 +2,7 @@
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Ding.Webs.Clients {
+namespace Ding.Utils.Webs.Clients {
     /// <summary>
     /// Http请求
     /// </summary>

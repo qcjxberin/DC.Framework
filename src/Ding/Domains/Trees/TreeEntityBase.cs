@@ -69,7 +69,7 @@ namespace Ding.Domains.Trees {
         /// 初始化路径
         /// </summary>
         public virtual void InitPath() {
-            InitPath( default(TEntity) );
+            InitPath( default );
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Ding.Domains.Trees {
             var result = Path.Split( ',' ).Where( id => !string.IsNullOrWhiteSpace( id ) && id != "," ).ToList();
             if( excludeSelf )
                 result = result.Where( id => id.SafeString().ToLower() != Id.SafeString().ToLower() ).ToList();
-            return result.Select( Ding.Helpers.Convert.To<TKey> ).ToList();
+            return result.Select( Ding.Utils.Helpers.Convert.To<TKey> ).ToList();
         }
     }
 }

@@ -7,6 +7,7 @@ using Ding.Datas.Sql.Builders.Conditions;
 using Ding.Datas.Sql.Builders.Core;
 using Ding.Helpers;
 using Ding.Utils;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Sql.Builders.Internal {
     /// <summary>
@@ -98,7 +99,7 @@ namespace Ding.Datas.Sql.Builders.Internal {
                 return null;
             var type = result.GetType();
             if( type.IsEnum )
-                return Ding.Helpers.Enum.GetValue( type, result );
+                return Ding.Utils.Helpers.Enum.GetValue( type, result );
             return result;
         }
 

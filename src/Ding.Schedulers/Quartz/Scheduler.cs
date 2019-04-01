@@ -6,6 +6,7 @@ using Quartz.Impl;
 using Ding.Helpers;
 using Ding.Reflections;
 using Qz = Quartz;
+using Ding.Utils.Helpers;
 
 namespace Ding.Schedulers.Quartz {
     /// <summary>

@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Dependency {
     /// <summary>

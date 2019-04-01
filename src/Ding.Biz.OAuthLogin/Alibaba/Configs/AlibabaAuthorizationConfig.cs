@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Ding.Biz.OAuthLogin.Core;
 
 namespace Ding.Biz.OAuthLogin.Alibaba.Configs
 {

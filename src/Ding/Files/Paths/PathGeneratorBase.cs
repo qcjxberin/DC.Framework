@@ -2,6 +2,7 @@
 using System.IO;
 using Ding.Helpers;
 using Ding.Randoms;
+using Ding.Utils.Helpers;
 
 namespace Ding.Files.Paths {
     /// <summary>
@@ -57,8 +58,8 @@ namespace Ding.Files.Paths {
         /// 过滤文件名
         /// </summary>
         private static string FilterFileName( string fileName ) {
-            fileName = Regex.Replace( fileName, "\\W", "" );
-            return Ding.Helpers.String.PinYin( fileName );
+            fileName = Regexs.Replace( fileName, "\\W", "" );
+            return Ding.Utils.Helpers.String.PinYin( fileName );
         }
     }
 }

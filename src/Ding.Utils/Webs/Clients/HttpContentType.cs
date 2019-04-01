@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Ding.Webs.Clients {
+namespace Ding.Utils.Webs.Clients {
     /// <summary>
     /// 内容类型
     /// </summary>

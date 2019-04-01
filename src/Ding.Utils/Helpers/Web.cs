@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -10,9 +9,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Http.Internal;
-using Ding.Security.Principals;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// Web操作
     /// </summary>
@@ -24,12 +22,7 @@ namespace Ding.Helpers {
         /// 初始化Web操作
         /// </summary>
         static Web() {
-            try {
-                HttpContextAccessor = Ioc.Create<IHttpContextAccessor>();
-                Environment = Ioc.Create<IHostingEnvironment>();
-            }
-            catch {
-            }
+            ServicePointManager.DefaultConnectionLimit = 200;
         }
 
         #endregion
@@ -60,38 +53,6 @@ namespace Ding.Helpers {
         /// 宿主环境
         /// </summary>
         public static IHostingEnvironment Environment { get; set; }
-
-        #endregion
-
-        #region User(当前用户安全主体)
-
-        /// <summary>
-        /// 当前用户安全主体
-        /// </summary>
-        public static ClaimsPrincipal User {
-            get {
-                if( HttpContext == null )
-                    return UnauthenticatedPrincipal.Instance;
-                if( HttpContext.User is ClaimsPrincipal principal )
-                    return principal;
-                return UnauthenticatedPrincipal.Instance;
-            }
-        }
-
-        #endregion
-
-        #region Identity(当前用户身份)
-
-        /// <summary>
-        /// 当前用户身份
-        /// </summary>
-        public static ClaimsIdentity Identity {
-            get {
-                if( User.Identity is ClaimsIdentity identity )
-                    return identity;
-                return UnauthenticatedIdentity.Instance;
-            }
-        }
 
         #endregion
 
@@ -126,16 +87,16 @@ namespace Ding.Helpers {
         /// <summary>
         /// Web客户端，用于发送Http请求
         /// </summary>
-        public static Ding.Webs.Clients.WebClient Client() {
-            return new Ding.Webs.Clients.WebClient();
+        public static Ding.Utils.Webs.Clients.WebClient Client() {
+            return new Ding.Utils.Webs.Clients.WebClient();
         }
 
         /// <summary>
         /// Web客户端，用于发送Http请求
         /// </summary>
         /// <typeparam name="TResult">返回结果类型</typeparam>
-        public static Ding.Webs.Clients.WebClient<TResult> Client<TResult>() where TResult : class {
-            return new Ding.Webs.Clients.WebClient<TResult>();
+        public static Ding.Utils.Webs.Clients.WebClient<TResult> Client<TResult>() where TResult : class {
+            return new Ding.Utils.Webs.Clients.WebClient<TResult>();
         }
 
         #endregion

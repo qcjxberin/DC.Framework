@@ -7,6 +7,7 @@ using Ding.Datas.Sql.Builders.Filters;
 using Ding.Datas.Sql.Matedatas;
 using Ding.Domains.Repositories;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
@@ -390,7 +391,7 @@ namespace Ding.Datas.Sql.Builders.Core {
         private string GetDebugSql( string sql ) {
             var parameters = GetParams();
             foreach( var parameter in parameters )
-                sql = Regex.Replace( sql, $@"{parameter.Key}\b", ParamLiteralsResolver.GetParamLiterals( parameter.Value ) );
+                sql = Regexs.Replace( sql, $@"{parameter.Key}\b", ParamLiteralsResolver.GetParamLiterals( parameter.Value ) );
             return sql;
         }
 

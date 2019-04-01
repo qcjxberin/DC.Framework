@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Ding.Datas.Sql.Matedatas;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
@@ -51,7 +51,7 @@ namespace Ding.Datas.Sql.Builders.Core {
         /// </summary>
         private List<string> ResolveByPattern( string name ) {
             var pattern = "^(([\\[`\"]\\S+?[\\]`\"]).)?(([\\[`\"]\\S+[\\]`\"]).)?([\\[`\"]\\S+[\\]`\"])$";
-            var list = Regex.GetValues( name, pattern, new[] { "$1", "$2", "$3", "$4", "$5" } ).Select( t => t.Value ).ToList();
+            var list = Regexs.GetValues( name, pattern, new[] { "$1", "$2", "$3", "$4", "$5" } ).Select( t => t.Value ).ToList();
             return list.Where( t => string.IsNullOrWhiteSpace( t ) == false && t.EndsWith( "." ) == false ).ToList();
         }
 

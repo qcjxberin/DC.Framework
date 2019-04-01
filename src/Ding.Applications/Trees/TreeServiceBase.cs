@@ -8,7 +8,7 @@ using Ding.Datas.Stores;
 using Ding.Datas.UnitOfWorks;
 using Ding.Domains;
 using Ding.Domains.Trees;
-using Convert = Ding.Helpers.Convert;
+using Convert = Ding.Utils.Helpers.Convert;
 
 namespace Ding.Applications.Trees {
     /// <summary>

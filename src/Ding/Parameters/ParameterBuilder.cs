@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ding.Helpers;
 using Ding.Parameters.Formats;
+using Ding.Utils.Helpers;
 
 namespace Ding.Parameters {
     /// <summary>
@@ -121,7 +121,7 @@ namespace Ding.Parameters {
         /// </summary>
         /// <param name="isConvertToSingleQuotes">是否将双引号转成单引号</param>
         public string ToJson( bool isConvertToSingleQuotes = false ) {
-            return Json.ToJson( _params, isConvertToSingleQuotes );
+            return Ding.Utils.Helpers.Json.ToJson( _params, isConvertToSingleQuotes );
         }
 
         /// <summary>

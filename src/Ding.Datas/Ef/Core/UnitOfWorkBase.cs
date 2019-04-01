@@ -187,7 +187,7 @@ namespace Ding.Datas.Ef.Core {
         /// </summary>
         /// <param name="assembly">程序集</param>
         protected virtual IEnumerable<IMap> GetMapInstances( Assembly assembly ) {
-            return Ding.Helpers.Reflection.GetInstancesByInterface<IMap>( assembly );
+            return Ding.Utils.Helpers.Reflection.GetInstancesByInterface<IMap>( assembly );
         }
 
         #endregion

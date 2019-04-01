@@ -1,4 +1,5 @@
 ﻿using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Security.Identity.Models {
     /// <summary>

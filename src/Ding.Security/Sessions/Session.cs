@@ -20,15 +20,15 @@ namespace Ding.Security.Sessions {
         /// <summary>
         /// 是否认证
         /// </summary>
-        public bool IsAuthenticated => Web.Identity.IsAuthenticated;
+        public bool IsAuthenticated => WebIdentity.Identity.IsAuthenticated;
 
         /// <summary>
         /// 用户标识
         /// </summary>
         public string UserId {
             get {
-                var result = Web.Identity.GetValue( JwtClaimTypes.Subject );
-                return string.IsNullOrWhiteSpace( result ) ? Web.Identity.GetValue( System.Security.Claims.ClaimTypes.NameIdentifier ) : result;
+                var result = WebIdentity.Identity.GetValue( JwtClaimTypes.Subject );
+                return string.IsNullOrWhiteSpace( result ) ? WebIdentity.Identity.GetValue( System.Security.Claims.ClaimTypes.NameIdentifier ) : result;
             }
         }
     }

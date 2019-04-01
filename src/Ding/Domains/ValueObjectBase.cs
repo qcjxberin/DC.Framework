@@ -55,7 +55,7 @@ namespace Ding.Domains {
         /// 克隆副本
         /// </summary>
         public virtual TValueObject Clone() {
-            return Ding.Helpers.Convert.To<TValueObject>( MemberwiseClone() );
+            return Ding.Utils.Helpers.Convert.To<TValueObject>( MemberwiseClone() );
         }
     }
 }

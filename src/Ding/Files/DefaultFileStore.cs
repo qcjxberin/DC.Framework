@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Ding.Exceptions;
 using Ding.Files.Paths;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Files {
     /// <summary>

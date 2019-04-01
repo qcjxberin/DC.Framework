@@ -1,4 +1,6 @@
-﻿namespace Ding.Helpers {
+﻿using Ding.Utils.Helpers;
+
+namespace Ding.Helpers {
     /// <summary>
     /// 验证操作
     /// </summary>
@@ -11,7 +13,7 @@
             if( input.IsEmpty() )
                 return false;
             const string pattern = @"^(-?\d*)(\.\d+)?$";
-            return Regex.IsMatch( input, pattern );
+            return Regexs.IsMatch( input, pattern );
         }
     }
 }

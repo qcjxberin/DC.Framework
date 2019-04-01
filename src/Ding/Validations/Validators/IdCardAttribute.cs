@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using Ding;
-using Ding.Helpers;
 using Ding.Properties;
+using Ding.Utils.Helpers;
 using Ding.Validations.Validators;
 
 namespace System.ComponentModel.DataAnnotations {
@@ -25,7 +25,7 @@ namespace System.ComponentModel.DataAnnotations {
         protected override ValidationResult IsValid( object value, ValidationContext validationContext ) {
             if( value.SafeString().IsEmpty() )
                 return ValidationResult.Success;
-            if( Regex.IsMatch( value.SafeString(), ValidatePattern.IdCardPattern ) )
+            if( Regexs.IsMatch( value.SafeString(), ValidatePattern.IdCardPattern ) )
                 return ValidationResult.Success;
             return new ValidationResult( FormatErrorMessage( string.Empty ) );
         }

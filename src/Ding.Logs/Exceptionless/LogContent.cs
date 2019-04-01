@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Ding.Logs.Properties;
+using Ding.Utils.Helpers;
 
 namespace Ding.Logs.Exceptionless {
     /// <summary>

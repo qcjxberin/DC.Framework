@@ -57,7 +57,7 @@ namespace Ding.Webs.Filters {
                 var html = await RenderToStringAsync( context );
                 if( string.IsNullOrWhiteSpace( html ) )
                     return;
-                var path = Ding.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( Path ) ? GetPath( context ) : Path );
+                var path = Ding.Utils.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( Path ) ? GetPath( context ) : Path );
                 var directory = System.IO.Path.GetDirectoryName( path );
                 if( string.IsNullOrWhiteSpace( directory ) )
                     return;

@@ -2,9 +2,8 @@
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Ding.Helpers;
 
-namespace Ding.Webs.Clients {
+namespace Ding.Utils.Webs.Clients {
     /// <summary>
     /// Http请求
     /// </summary>
@@ -56,7 +55,7 @@ namespace Ding.Webs.Clients {
         /// 获取Json结果
         /// </summary>
         public async Task<TResult> ResultFromJsonAsync<TResult>() {
-            return Ding.Helpers.Json.ToObject<TResult>( await ResultAsync() );
+            return Ding.Utils.Helpers.Json.ToObject<TResult>( await ResultAsync() );
         }
     }
 
@@ -121,11 +120,11 @@ namespace Ding.Webs.Clients {
         /// </summary>
         private TResult ConvertTo( string result, string contentType ) {
             if( typeof( TResult ) == typeof( string ) )
-                return Ding.Helpers.Convert.To<TResult>( result );
+                return Ding.Utils.Helpers.Convert.To<TResult>( result );
             if( _convertAction != null )
                 return _convertAction( result );
             if( contentType.SafeString().ToLower() == "application/json" )
-                return Json.ToObject<TResult>( result );
+                return Ding.Utils.Helpers.Json.ToObject<TResult>( result );
             return null;
         }
 
@@ -133,7 +132,7 @@ namespace Ding.Webs.Clients {
         /// 获取Json结果
         /// </summary>
         public async Task<TResult> ResultFromJsonAsync() {
-            return Ding.Helpers.Json.ToObject<TResult>( await ResultAsync() );
+            return Ding.Utils.Helpers.Json.ToObject<TResult>( await ResultAsync() );
         }
     }
 }

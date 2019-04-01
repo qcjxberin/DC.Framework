@@ -9,6 +9,7 @@ using Ding.Datas.UnitOfWorks;
 using Ding.Helpers;
 using Ding.Logs;
 using Ding.Logs.Extensions;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Ef.Logs {
     /// <summary>

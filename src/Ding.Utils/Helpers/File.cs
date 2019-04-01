@@ -2,7 +2,7 @@
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// 文件和流操作
     /// </summary>

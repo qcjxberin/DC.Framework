@@ -222,7 +222,7 @@ namespace Ding.Utils.Helpers
         public static void FileExists(string fileName, string paramName = null)
         {
             NotNull(fileName, paramName);
-            Require<FileNotFoundException>(File.Exists(fileName), string.Format(R.ParameterCheck_FileNotExists, fileName));
+            Require<FileNotFoundException>(System.IO.File.Exists(fileName), string.Format(R.ParameterCheck_FileNotExists, fileName));
         }
 
         #endregion

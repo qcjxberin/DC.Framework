@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Regex = System.Text.RegularExpressions.Regex;
 
 namespace Ding.Reflections {

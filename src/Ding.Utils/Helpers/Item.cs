@@ -1,7 +1,8 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Ding {
+namespace Ding.Utils.Helpers
+{
     /// <summary>
     /// 列表项
     /// </summary>

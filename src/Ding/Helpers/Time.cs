@@ -23,7 +23,7 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="dateTime">时间</param>
         public static void SetTime( string dateTime ) {
-            _dateTime = Ding.Helpers.Convert.ToDateOrNull( dateTime );
+            _dateTime = Ding.Utils.Helpers.Convert.ToDateOrNull( dateTime );
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Ding.Helpers {
         public static long GetUnixTimestamp( DateTime time ) {
             var start = TimeZoneInfo.ConvertTime( new DateTime( 1970, 1, 1 ), TimeZoneInfo.Local );
             long ticks = ( time - start.Add( new TimeSpan( 8, 0, 0 ) ) ).Ticks;
-            return Ding.Helpers.Convert.ToLong( ticks / TimeSpan.TicksPerSecond );
+            return Ding.Utils.Helpers.Convert.ToLong( ticks / TimeSpan.TicksPerSecond );
         }
 
         /// <summary>

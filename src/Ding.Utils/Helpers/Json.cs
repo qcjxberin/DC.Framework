@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// Json操作
     /// </summary>

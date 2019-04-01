@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// 类型转换
     /// </summary>

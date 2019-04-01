@@ -107,7 +107,7 @@ namespace Ding.Logs.Core {
             if ( Enabled( level ) == false )
                 return;
             try {
-                content.Level = Ding.Helpers.Enum.GetName<LogLevel>( level );
+                content.Level = Ding.Utils.Helpers.Enum.GetName<LogLevel>( level );
                 Init( content );
                 Provider.WriteLog( level, content );
             }

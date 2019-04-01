@@ -6,6 +6,7 @@ using AspectCore.Extensions.AspectScope;
 using AspectCore.Extensions.Autofac;
 using Autofac;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Dependency {
     /// <summary>

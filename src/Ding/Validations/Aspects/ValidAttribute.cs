@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AspectCore.DynamicProxy.Parameters;
 using Ding.Aspects.Base;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Validations.Aspects {
     /// <summary>

@@ -1,4 +1,6 @@
-﻿using IdentityModel.Client;
+﻿#if __CORE21__
+using IdentityModel.Client;
+#endif
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +10,14 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using Ding.Helpers;
 
-namespace Ding.Webs.Clients {
+namespace Ding.Utils.Webs.Clients {
     /// <summary>
     /// Http请求
     /// </summary>
     public abstract class HttpRequestBase<TRequest> where TRequest : IRequest<TRequest> {
 
-        #region 字段
+#region 字段
 
         /// <summary>
         /// 地址
@@ -71,9 +72,9 @@ namespace Ding.Webs.Clients {
         /// </summary>
         private string _token;
 
-        #endregion
+#endregion
 
-        #region 构造方法
+#region 构造方法
 
         /// <summary>
         /// 初始化Http请求
@@ -94,9 +95,9 @@ namespace Ding.Webs.Clients {
             _encoding = System.Text.Encoding.UTF8;
         }
 
-        #endregion
+#endregion
 
-        #region 配置
+#region 配置
 
         /// <summary>
         /// 设置字符编码
@@ -230,7 +231,7 @@ namespace Ding.Webs.Clients {
         /// <param name="value">值</param>
         public TRequest JsonData<T>( T value ) {
             ContentType( HttpContentType.Json );
-            _data = Json.ToJson( value );
+            _data = Ding.Utils.Helpers.Json.ToJson( value );
             return This();
         }
 
@@ -278,9 +279,9 @@ namespace Ding.Webs.Clients {
             return This();
         }
 
-        #endregion
+#endregion
 
-        #region ResultAsync(获取结果)
+#region ResultAsync(获取结果)
 
         /// <summary>
         /// 获取结果
@@ -293,9 +294,9 @@ namespace Ding.Webs.Clients {
             return result;
         }
 
-        #endregion
+#endregion
 
-        #region SendBefore(发送前操作)
+#region SendBefore(发送前操作)
 
         /// <summary>
         /// 发送前操作
@@ -303,9 +304,9 @@ namespace Ding.Webs.Clients {
         protected virtual void SendBefore() {
         }
 
-        #endregion
+#endregion
 
-        #region SendAsync(发送请求)
+#region SendAsync(发送请求)
 
         /// <summary>
         /// 发送请求
@@ -369,7 +370,7 @@ namespace Ding.Webs.Clients {
         /// </summary>
         private HttpContent CreateJsonContent() {
             if( string.IsNullOrWhiteSpace( _data ) )
-                _data = Json.ToJson( _params );
+                _data = Ding.Utils.Helpers.Json.ToJson( _params );
             return new StringContent( _data, _encoding, "application/json" );
         }
 
@@ -380,9 +381,9 @@ namespace Ding.Webs.Clients {
             return new StringContent( _data, _encoding, "text/xml" );
         }
 
-        #endregion
+#endregion
 
-        #region SendAfter(发送后操作)
+#region SendAfter(发送后操作)
 
         /// <summary>
         /// 发送后操作
@@ -417,6 +418,6 @@ namespace Ding.Webs.Clients {
             _failStatusCodeAction?.Invoke( result, statusCode );
         }
 
-        #endregion
+#endregion
     }
 }

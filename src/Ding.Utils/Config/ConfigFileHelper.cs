@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.IO;
 using System.Linq;
+using Ding.Utils.Helpers;
 
 namespace Ding.Utils.Config
 {
@@ -105,6 +106,7 @@ namespace Ding.Utils.Config
                          .AddJsonFile(file, true, true)
                          .Build();
             }
+            Web.Environment = env;
         }
 #endif
     }

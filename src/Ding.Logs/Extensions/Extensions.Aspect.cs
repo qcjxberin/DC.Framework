@@ -2,6 +2,7 @@
 using System.Linq;
 using AspectCore.DynamicProxy.Parameters;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Logs.Extensions {
     /// <summary>

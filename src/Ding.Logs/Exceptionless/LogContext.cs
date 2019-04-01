@@ -1,6 +1,7 @@
 ﻿using System;
 using Ding.Helpers;
 using Ding.Logs.Internal;
+using Ding.Utils.Helpers;
 
 namespace Ding.Logs.Exceptionless {
     /// <summary>

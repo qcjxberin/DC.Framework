@@ -3,6 +3,7 @@ using Autofac;
 using Ding.Events.Handlers;
 using Ding.Helpers;
 using Ding.Reflections;
+using Ding.Utils.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

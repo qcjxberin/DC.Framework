@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// 字符串操作 - 字符串生成器
     /// </summary>

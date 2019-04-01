@@ -6,6 +6,7 @@ using Ding.Exceptions;
 using Ding.Helpers;
 using Ding.Logs.Contents;
 using Ding.Logs.Properties;
+using Ding.Utils.Helpers;
 
 namespace Ding.Logs.Extensions {
     /// <summary>
@@ -144,7 +145,7 @@ namespace Ding.Logs.Extensions {
                 return "''";
             switch( value.GetType().Name.ToLower() ) {
                 case "boolean":
-                    return Helpers.Convert.ToBool( value ) ? "1" : "0";
+                    return Utils.Helpers.Convert.ToBool( value ) ? "1" : "0";
                 case "int16":
                 case "int32":
                 case "int64":

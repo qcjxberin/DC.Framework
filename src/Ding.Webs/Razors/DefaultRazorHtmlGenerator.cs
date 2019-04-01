@@ -104,7 +104,7 @@ namespace Ding.Webs.Razors {
                     : await RenderActionViewToStringAsync(info);
                 if( string.IsNullOrWhiteSpace( html ) )
                     return;
-                var path = Ding.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( info.FilePath ) ? GetPath( info ) : info.FilePath );
+                var path = Ding.Utils.Helpers.Common.GetPhysicalPath( string.IsNullOrWhiteSpace( info.FilePath ) ? GetPath( info ) : info.FilePath );
                 var directory = System.IO.Path.GetDirectoryName( path );
                 if( string.IsNullOrWhiteSpace( directory ) )
                     return;

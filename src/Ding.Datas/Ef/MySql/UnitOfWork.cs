@@ -33,7 +33,7 @@ namespace Ding.Datas.Ef.MySql {
         /// </summary>
         /// <param name="assembly">程序集</param>
         protected override IEnumerable<Ding.Datas.Ef.Core.IMap> GetMapInstances( Assembly assembly ) {
-            return Ding.Helpers.Reflection.GetInstancesByInterface<IMap>( assembly );
+            return Ding.Utils.Helpers.Reflection.GetInstancesByInterface<IMap>( assembly );
         }
 
         /// <summary>

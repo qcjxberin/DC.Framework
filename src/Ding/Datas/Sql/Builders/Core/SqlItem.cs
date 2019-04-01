@@ -1,6 +1,6 @@
 ﻿using System.Text;
 using Ding.Datas.Sql.Matedatas;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>
@@ -46,7 +46,7 @@ namespace Ding.Datas.Sql.Builders.Core {
         /// </summary>
         private void Resolve( string name, bool isSplit ) {
             var pattern = @"\s+[aA][sS]\s+";
-            var list = Regex.Split( name, pattern );
+            var list = Regexs.Split( name, pattern );
             if( list == null || list.Length == 0 )
                 return;
             if( list.Length == 2 )

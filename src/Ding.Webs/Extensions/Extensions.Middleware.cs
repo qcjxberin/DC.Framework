@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Ding.Webs.Middlewares;
+using Ding.Utils.Helpers;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Http;
 
 namespace Ding.Webs.Extensions {
     /// <summary>
@@ -12,6 +15,18 @@ namespace Ding.Webs.Extensions {
         /// <param name="builder">应用程序生成器</param>
         public static IApplicationBuilder UseErrorLog( this IApplicationBuilder builder ) {
             return builder.UseMiddleware<ErrorLogMiddleware>();
+        }
+
+        /// <summary>
+        /// 启用静态请求上下文
+        /// </summary>
+        /// <param name="builder">应用程序生成器</param>
+        /// <returns></returns>
+        public static IApplicationBuilder UseStaticHttpContext(this IApplicationBuilder builder)
+        {
+            var httpContextAccessor = builder.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
+            Web.HttpContextAccessor = httpContextAccessor;
+            return builder;
         }
     }
 }

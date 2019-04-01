@@ -1,4 +1,4 @@
-﻿using Ding.Helpers;
+﻿using Ding.Utils.Helpers;
 
 namespace Ding {
     /// <summary>

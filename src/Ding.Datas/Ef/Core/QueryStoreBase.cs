@@ -149,7 +149,7 @@ namespace Ding.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual List<TEntity> FindByIds( string ids ) {
-            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Utils.Helpers.Convert.ToList<TKey>( ids );
             return FindByIds( idList );
         }
 
@@ -177,7 +177,7 @@ namespace Ding.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual async Task<List<TEntity>> FindByIdsAsync( string ids ) {
-            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Utils.Helpers.Convert.ToList<TKey>( ids );
             return await FindByIdsAsync( idList );
         }
 
@@ -227,7 +227,7 @@ namespace Ding.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual List<TEntity> FindByIdsNoTracking( string ids ) {
-            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Utils.Helpers.Convert.ToList<TKey>( ids );
             return FindByIdsNoTracking( idList );
         }
 
@@ -255,7 +255,7 @@ namespace Ding.Datas.Ef.Core {
         /// </summary>
         /// <param name="ids">逗号分隔的标识列表，范例："1,2"</param>
         public virtual async Task<List<TEntity>> FindByIdsNoTrackingAsync( string ids ) {
-            var idList = Ding.Helpers.Convert.ToList<TKey>( ids );
+            var idList = Ding.Utils.Helpers.Convert.ToList<TKey>( ids );
             return await FindByIdsNoTrackingAsync( idList );
         }
 

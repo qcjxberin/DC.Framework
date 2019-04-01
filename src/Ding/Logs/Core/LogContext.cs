@@ -3,6 +3,7 @@ using Ding.Contexts;
 using Ding.Helpers;
 using Ding.Logs.Abstractions;
 using Ding.Logs.Internal;
+using Ding.Utils.Helpers;
 
 namespace Ding.Logs.Core {
     /// <summary>

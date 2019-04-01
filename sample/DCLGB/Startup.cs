@@ -270,6 +270,7 @@ namespace DCLGB
 
             app.UseErrorLog();
             app.UseStaticFiles();
+            app.UseStaticHttpContext();
             app.UseIdentityServer();// 启用 IdentityServer4 服务
             app.UseAuthentication();
             app.UseSignalR(routes =>

@@ -4,7 +4,7 @@ using IdentityModel;
 using Ding.Helpers;
 using Ding.Security.Claims;
 using Ding.Sessions;
-using Convert = Ding.Helpers.Convert;
+using Convert = Ding.Utils.Helpers.Convert;
 
 namespace Ding.Security {
     /// <summary>
@@ -32,8 +32,8 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetUserName( this ISession session ) {
-            var result = Web.Identity.GetValue( JwtClaimTypes.Name );
-            return string.IsNullOrWhiteSpace( result ) ? Web.Identity.GetValue( System.Security.Claims.ClaimTypes.Name ) : result;
+            var result = WebIdentity.Identity.GetValue( JwtClaimTypes.Name );
+            return string.IsNullOrWhiteSpace( result ) ? WebIdentity.Identity.GetValue( System.Security.Claims.ClaimTypes.Name ) : result;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetFullName( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.FullName );
+            return WebIdentity.Identity.GetValue( ClaimTypes.FullName );
         }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetEmail( this ISession session ) {
-            var result = Web.Identity.GetValue( JwtClaimTypes.Email );
-            return string.IsNullOrWhiteSpace( result ) ? Web.Identity.GetValue( System.Security.Claims.ClaimTypes.Email ) : result;
+            var result = WebIdentity.Identity.GetValue( JwtClaimTypes.Email );
+            return string.IsNullOrWhiteSpace( result ) ? WebIdentity.Identity.GetValue( System.Security.Claims.ClaimTypes.Email ) : result;
         }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetMobile( this ISession session ) {
-            var result = Web.Identity.GetValue( JwtClaimTypes.PhoneNumber );
-            return string.IsNullOrWhiteSpace( result ) ? Web.Identity.GetValue( System.Security.Claims.ClaimTypes.MobilePhone ) : result;
+            var result = WebIdentity.Identity.GetValue( JwtClaimTypes.PhoneNumber );
+            return string.IsNullOrWhiteSpace( result ) ? WebIdentity.Identity.GetValue( System.Security.Claims.ClaimTypes.MobilePhone ) : result;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static Guid GetApplicationId( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.ApplicationId ).ToGuid();
+            return WebIdentity.Identity.GetValue( ClaimTypes.ApplicationId ).ToGuid();
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static T GetApplicationId<T>( this ISession session ) {
-            return Convert.To<T>( Web.Identity.GetValue( ClaimTypes.ApplicationId ) );
+            return Convert.To<T>(WebIdentity.Identity.GetValue( ClaimTypes.ApplicationId ) );
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetApplicationCode( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.ApplicationCode );
+            return WebIdentity.Identity.GetValue( ClaimTypes.ApplicationCode );
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetApplicationName( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.ApplicationName );
+            return WebIdentity.Identity.GetValue( ClaimTypes.ApplicationName );
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static Guid GetTenantId( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.TenantId ).ToGuid();
+            return WebIdentity.Identity.GetValue( ClaimTypes.TenantId ).ToGuid();
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static T GetTenantId<T>( this ISession session ) {
-            return Convert.To<T>( Web.Identity.GetValue( ClaimTypes.TenantId ) );
+            return Convert.To<T>(WebIdentity.Identity.GetValue( ClaimTypes.TenantId ) );
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetTenantCode( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.TenantCode );
+            return WebIdentity.Identity.GetValue( ClaimTypes.TenantCode );
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetTenantName( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.TenantName );
+            return WebIdentity.Identity.GetValue( ClaimTypes.TenantName );
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static List<T> GetRoleIds<T>( this ISession session ) {
-            return Convert.ToList<T>( Web.Identity.GetValue( ClaimTypes.RoleIds ) );
+            return Convert.ToList<T>(WebIdentity.Identity.GetValue( ClaimTypes.RoleIds ) );
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Ding.Security {
         /// </summary>
         /// <param name="session">用户会话</param>
         public static string GetRoleName( this ISession session ) {
-            return Web.Identity.GetValue( ClaimTypes.RoleName );
+            return WebIdentity.Identity.GetValue( ClaimTypes.RoleName );
         }
     }
 }

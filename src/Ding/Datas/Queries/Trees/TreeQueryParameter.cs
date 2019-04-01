@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Queries.Trees {
     /// <summary>

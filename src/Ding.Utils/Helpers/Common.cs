@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// 常用公共操作
     /// </summary>

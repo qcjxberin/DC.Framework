@@ -83,7 +83,7 @@ namespace Ding.Applications {
         /// </summary>
         /// <param name="id">实体编号</param>
         public virtual TDto GetById( object id ) {
-            var key = Ding.Helpers.Convert.To<TKey>( id );
+            var key = Ding.Utils.Helpers.Convert.To<TKey>( id );
             return ToDto( _store.Find( key ) );
         }
 
@@ -92,7 +92,7 @@ namespace Ding.Applications {
         /// </summary>
         /// <param name="id">实体编号</param>
         public virtual async Task<TDto> GetByIdAsync( object id ) {
-            var key = Ding.Helpers.Convert.To<TKey>( id );
+            var key = Ding.Utils.Helpers.Convert.To<TKey>( id );
             return ToDto( await _store.FindAsync( key ) );
         }
 

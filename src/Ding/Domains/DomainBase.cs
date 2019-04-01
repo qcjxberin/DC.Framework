@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Ding.Validations;
 
 namespace Ding.Domains {
@@ -157,9 +158,9 @@ namespace Ding.Domains {
         protected void AddChange<TProperty, TValue>( Expression<Func<T, TProperty>> expression, TValue newValue ) {
             var member = Ding.Helpers.Lambda.GetMemberExpression( expression );
             var name = Ding.Helpers.Lambda.GetMemberName( member );
-            var description = Ding.Helpers.Reflection.GetDisplayNameOrDescription( member.Member );
+            var description = Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription( member.Member );
             var value = member.Member.GetPropertyValue( this );
-            AddChange( name, description, Ding.Helpers.Convert.To<TValue>( value ), newValue );
+            AddChange( name, description, Ding.Utils.Helpers.Convert.To<TValue>( value ), newValue );
         }
 
         /// <summary>
@@ -245,10 +246,10 @@ namespace Ding.Domains {
         /// <param name="expression">属性表达式,范例：t => t.Name</param>
         protected void AddDescription<TProperty>( Expression<Func<T, TProperty>> expression ) {
             var member = Ding.Helpers.Lambda.GetMember( expression );
-            var description = Ding.Helpers.Reflection.GetDisplayNameOrDescription( member );
+            var description = Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription( member );
             var value = member.GetPropertyValue( this );
             if ( Reflection.IsBool( member ) )
-                value = Ding.Helpers.Convert.ToBool( value ).Description();
+                value = Ding.Utils.Helpers.Convert.ToBool( value ).Description();
             AddDescription( description, value );
         }
 
