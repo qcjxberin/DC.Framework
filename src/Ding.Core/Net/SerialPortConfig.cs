@@ -1,5 +1,4 @@
-﻿#if __WIN__
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.IO.Ports;
 using System.Text;
@@ -70,4 +69,3 @@ namespace Ding.Net
         public Boolean BreakState { get; set; } = false;
     }
 }
-#endif
