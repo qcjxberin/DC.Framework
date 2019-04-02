@@ -4,13 +4,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列属性集
 // 控制。更改这些属性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("新生命码神工具")]
+[assembly: AssemblyTitle("星尘码神工具")]
 [assembly: AssemblyDescription("基于编译型模版引擎的代码生成器，以及众多开发者工具")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("XCoder")]
-[assembly: AssemblyCompany("新生命开发团队")]
-[assembly: AssemblyCopyright("©2002-2018 新生命开发团队 http://www.NewLifeX.com")]
-[assembly: AssemblyTrademark("四叶草")]
+[assembly: AssemblyCompany("星尘开发团队")]
+[assembly: AssemblyCopyright("©2008-2019 星尘开发团队 https://gitee.com/xingchensoft/DC.Framework")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 使此程序集中的类型

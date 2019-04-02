@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("XProxy代理服务器")]
 [assembly: AssemblyDescription("反向代理")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("新生命开发团队")]
+[assembly: AssemblyCompany("星尘开发团队")]
 [assembly: AssemblyProduct("XProxy")]
-[assembly: AssemblyCopyright("版权所有 (C) 新生命开发团队 2008")]
+[assembly: AssemblyCopyright("版权所有 (C) 星尘开发团队 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

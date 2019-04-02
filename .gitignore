@@ -61,3 +61,5 @@ BenchmarkDotNet.Artifacts/
 /XCoder/XTemplate.dll
 /XCoder/XTemplate.pdb
 /XCoder/XTemplate.xml
+/XCoder
+/src/Ding.XTemplate/.vs/04-Ding.XTemplate/v15
