@@ -1,9 +1,9 @@
 ﻿using System;
-using NewLife.Data;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Data;
+using Ding.Reflection;
+using Ding.Serialization;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>基础结构</summary>
     public abstract class RedisBase

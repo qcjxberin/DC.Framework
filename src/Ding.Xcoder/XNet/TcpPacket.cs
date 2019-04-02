@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Sockets;
-using NewLife.Data;
+using Ding.Data;
 
 namespace XCoder.XNet
 {

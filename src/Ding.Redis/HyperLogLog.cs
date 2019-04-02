@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>超级基数估算</summary>
     /// <remarks>

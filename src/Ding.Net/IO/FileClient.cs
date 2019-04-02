@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Net.IO
+namespace Ding.Net.IO
 {
     /// <summary>文件客户端</summary>
     public class FileClient : DisposeBase

@@ -1,4 +1,4 @@
-﻿namespace NewLife.XRegex
+﻿namespace Ding.XRegex
 {
     partial class FrmMain
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>A记录</summary>
     public class DNS_AAAA : DNS_A

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
-using NewLife.Data;
-using NewLife.Net.Sockets;
+using Ding.Data;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.Stun
+namespace Ding.Net.Stun
 {
     /// <summary>Stun客户端。Simple Traversal of UDP over NATs，NAT 的UDP简单穿越。RFC 3489</summary>
     /// <remarks>
@@ -95,7 +95,7 @@ namespace NewLife.Net.Stun
                 if (_Servers == null)
                 {
                     var list = new List<String>();
-                    //var ss = Config.GetConfigSplit<String>("NewLife.Net.StunServers", null);
+                    //var ss = Config.GetConfigSplit<String>("Ding.Net.StunServers", null);
                     //if (ss != null && ss.Length > 0) list.AddRange(ss);
                     list.AddRange(servers);
                     _Servers = list;

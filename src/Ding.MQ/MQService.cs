@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Net;
-using NewLife.Remoting;
+using Ding.Data;
+using Ding.Log;
+using Ding.Net;
+using Ding.Remoting;
 
-namespace NewLife.MessageQueue
+namespace Ding.MessageQueue
 {
     /// <summary>消息队列服务</summary>
     [Api("MQ")]

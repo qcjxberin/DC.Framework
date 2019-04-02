@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
-using NewLife.Reflection;
+using Ding.Reflection;
 using XCode.Common;
 using XCode.Configuration;
 using XCode.Model;

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Xml.Serialization;
-using NewLife.Net.Proxy;
-using NewLife.Xml;
+using Ding.Net.Proxy;
+using Ding.Xml;
 
 namespace XProxy
 {

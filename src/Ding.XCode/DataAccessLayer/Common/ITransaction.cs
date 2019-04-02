@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Threading;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Log;
+using Ding;
+using Ding.Collections;
+using Ding.Log;
 
 namespace XCode.DataAccessLayer
 {

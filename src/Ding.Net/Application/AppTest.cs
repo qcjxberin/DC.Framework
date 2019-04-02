@@ -6,11 +6,11 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Net.Sockets;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Net.Sockets;
+using Ding.Threading;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>网络应用程序测试</summary>
     public static class AppTest

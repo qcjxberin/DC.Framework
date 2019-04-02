@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Net.P2P
+namespace Ding.Net.P2P
 {
     /// <summary>打洞服务器</summary>
     /// <remarks>

@@ -1,5 +1,5 @@
 ﻿using System;
-using NewLife.Caching;
+using Ding.Caching;
 
 namespace XCode.Extension
 {

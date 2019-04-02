@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Serialization;
+using Ding.Serialization;
 
-namespace NewLife.Net.SGIP
+namespace Ding.Net.SGIP
 {
     /// <summary>MO指令</summary>
     public class SGIPDeliver : SGIPEntity

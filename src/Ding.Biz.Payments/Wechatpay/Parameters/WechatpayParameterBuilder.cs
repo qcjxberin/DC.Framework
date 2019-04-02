@@ -4,7 +4,8 @@ using Ding.Biz.Payments.Wechatpay.Configs;
 using Ding.Biz.Payments.Wechatpay.Signatures;
 using Ding.Helpers;
 using Ding.Parameters;
-using Convert = Ding.Helpers.Convert;
+using Ding.Utils.Helpers;
+using Convert = Ding.Utils.Helpers.Convert;
 
 namespace Ding.Biz.Payments.Wechatpay.Parameters {
     /// <summary>

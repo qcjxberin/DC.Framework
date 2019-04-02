@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewLife.Net.DICOM
+namespace Ding.Net.DICOM
 {
     /// <summary>DICOM会话。每一个远程连接唯一对应一个网络会话，再次重复收发信息</summary>
     public class DicomSession : NetSession<DicomServer>

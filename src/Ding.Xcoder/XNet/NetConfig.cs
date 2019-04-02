@@ -4,7 +4,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
-using NewLife.Xml;
+using Ding.Xml;
 
 namespace XNet
 {

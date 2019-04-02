@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>查询的资源记录类型</summary>
     public enum DNSQueryType : System.UInt16

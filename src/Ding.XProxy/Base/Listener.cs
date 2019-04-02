@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
-using NewLife.Log;
+using Ding.Log;
 using XProxy.Config;
 using XProxy.Plugin;
 

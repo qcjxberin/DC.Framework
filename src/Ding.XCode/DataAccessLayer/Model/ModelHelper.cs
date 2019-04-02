@@ -8,8 +8,8 @@ using System.Reflection;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Log;
+using Ding.Reflection;
 
 namespace XCode.DataAccessLayer
 {

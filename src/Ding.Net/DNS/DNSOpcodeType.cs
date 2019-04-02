@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>
     /// The Query Types (OPCODE) that specifies kind of query in a message.

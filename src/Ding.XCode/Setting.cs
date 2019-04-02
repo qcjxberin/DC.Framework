@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-using NewLife;
-using NewLife.Xml;
+using Ding;
+using Ding.Xml;
 using XCode.DataAccessLayer;
 
 namespace XCode

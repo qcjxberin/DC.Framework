@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Common
+namespace Ding.Net.Common
 {
     /// <summary>统计接口。
     /// <see cref="Increment"/>后更新<see cref="First"/>、<see cref="Last"/>、<see cref="Total"/>，

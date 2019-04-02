@@ -2,10 +2,10 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using NewLife.Net.Sockets;
-using NewLife.Security;
+using Ding.Net.Sockets;
+using Ding.Security;
 
-namespace NewLife.Net.P2P
+namespace Ding.Net.P2P
 {
     /// <summary>P2P客户端</summary>
     /// <remarks>

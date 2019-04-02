@@ -4,11 +4,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using NewLife.Messaging;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Messaging;
+using Ding.Reflection;
+using Ding.Serialization;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>DNS实体类基类</summary>
     /// <remarks>

@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Serialization;
+using Ding.Serialization;
 
-namespace NewLife.Net.SGIP
+namespace Ding.Net.SGIP
 {
     /// <summary>Report命令用于向SP发送一条先前的Submit命令的当前状态，或者用于向前转SMG发送一条先前的Deliver命令的当前状态。Report命令的接收方需要向发送方返回Report_Resp命令</summary>
     public class SGIPReport : SGIPEntity

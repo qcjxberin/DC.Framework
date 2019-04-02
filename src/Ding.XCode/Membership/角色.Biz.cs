@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Threading;
 
 namespace XCode.Membership
 {

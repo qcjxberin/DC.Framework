@@ -5,8 +5,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Windows.Forms;
-using NewLife.Collections;
-using NewLife.Security;
+using Ding.Collections;
+using Ding.Security;
 
 namespace XCoder.Tools
 {

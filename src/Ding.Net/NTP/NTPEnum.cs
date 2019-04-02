@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.NTP
+namespace Ding.Net.NTP
 {
     /// <summary>Leap indicator</summary>
     public enum NTPLeapIndicator

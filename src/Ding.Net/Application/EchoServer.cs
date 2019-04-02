@@ -1,6 +1,6 @@
-﻿using NewLife.Data;
+﻿using Ding.Data;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>Echo服务。把客户端发来的数据原样返回。</summary>
     public class EchoServer : NetServer

@@ -7,11 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Reflection;
 
 namespace XCode.DataAccessLayer
 {

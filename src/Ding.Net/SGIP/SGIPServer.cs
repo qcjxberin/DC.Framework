@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.SGIP
+namespace Ding.Net.SGIP
 {
     /// <summary>SGIP服务器</summary>
     public class SGIPServer : NetServer

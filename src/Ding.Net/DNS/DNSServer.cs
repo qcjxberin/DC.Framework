@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
 #if !NET4
 using TaskEx = System.Threading.Tasks.Task;
 #endif
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>DNS服务器</summary>
     public class DNSServer : NetServer

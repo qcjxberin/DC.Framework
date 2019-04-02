@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Reflection;
+using Ding.Serialization;
 using System.Linq;
-using NewLife.Security;
+using Ding.Security;
 
-namespace NewLife.Net.Stun
+namespace Ding.Net.Stun
 {
     /// <summary>Stun消息</summary>
     /// <remarks>未测试，可能没有考虑字节序</remarks>

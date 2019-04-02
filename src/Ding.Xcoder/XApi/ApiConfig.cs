@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
-using NewLife.Xml;
+using Ding.Xml;
 
 namespace XApi
 {

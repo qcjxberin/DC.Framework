@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.Net.Sdp
+namespace Ding.Net.Sdp
 {
     /// <summary>会话描述协议</summary>
     /// <remarks>

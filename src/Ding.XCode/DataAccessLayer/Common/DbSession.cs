@@ -8,11 +8,11 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Log;
+using Ding.Reflection;
 using XCode.Exceptions;
 
 namespace XCode.DataAccessLayer

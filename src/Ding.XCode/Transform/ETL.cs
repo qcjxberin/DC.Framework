@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding;
+using Ding.Log;
+using Ding.Threading;
 using XCode.Membership;
 
 /*
@@ -361,7 +361,7 @@ namespace XCode.Transform
 
         #region 日志
         /// <summary>日志</summary>
-        public NewLife.Log.ILog Log { get; set; } = Logger.Null;
+        public Ding.Log.ILog Log { get; set; } = Logger.Null;
 
         /// <summary>数据库日志提供者</summary>
         public LogProvider Provider { get; set; }

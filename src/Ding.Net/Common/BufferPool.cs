@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Sockets;
 
-namespace NewLife.Net.Common
+namespace Ding.Net.Common
 {
     /// <summary>缓冲池</summary>
     /// <remarks>

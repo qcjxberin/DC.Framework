@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>Chargen服务器。不停的向连接者发送数据</summary>
     public class ChargenServer : NetServer

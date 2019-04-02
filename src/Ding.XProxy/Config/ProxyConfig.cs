@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 using System.IO;
-using NewLife.Log;
+using Ding.Log;
 
 namespace XProxy.Config
 {

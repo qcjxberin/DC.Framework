@@ -4,10 +4,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Reflection;
-using NewLife.Remoting;
-using NewLife.Serialization;
+using Ding.Data;
+using Ding.Reflection;
+using Ding.Remoting;
+using Ding.Serialization;
 using XCode.DataAccessLayer;
 
 namespace XCode.Service

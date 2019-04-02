@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.Pop3
+namespace Ding.Net.Pop3
 {
     /// <summary>Pop3服务器</summary>
     public class Pop3Server : NetServer<Pop3Session>

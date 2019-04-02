@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Reflection;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Net.Sockets
+namespace Ding.Net.Sockets
 {
     /// <summary>网络基类，提供资源释放和日志输出的统一处理</summary>
     public abstract class Netbase : DisposeBase

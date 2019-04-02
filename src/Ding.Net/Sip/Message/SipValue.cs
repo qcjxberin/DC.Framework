@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.Sip.Message
+namespace Ding.Net.Sip.Message
 {
     /// <summary>Sip实体基类</summary>
     public abstract class SipValue

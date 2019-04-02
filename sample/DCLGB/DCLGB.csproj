@@ -41,8 +41,8 @@
     <ProjectReference Include="..\..\src\Ding.Events\06-Ding.Events.csproj" />
     <ProjectReference Include="..\..\src\Ding.Logs\04-Ding.Logs.csproj" />
     <ProjectReference Include="..\..\src\Ding.Schedulers\07-Ding.Schedulers.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Swashbuckle\08-Ding.Swashbuckle.csproj" />
-    <ProjectReference Include="..\..\src\Ding.TimedJob\09-Ding.TimedJob.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Swashbuckle\05-Ding.Swashbuckle.csproj" />
+    <ProjectReference Include="..\..\src\Ding.TimedJob\06-Ding.TimedJob.csproj" />
     <ProjectReference Include="..\..\src\Ding.Utils\01-Ding.Utils.csproj" />
     <ProjectReference Include="..\..\src\Ding.Webs\10-Ding.Webs.csproj" />
   </ItemGroup>

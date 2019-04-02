@@ -3,10 +3,10 @@ using System.Diagnostics;
 using System.Net;
 using System.Text;
 using System.Threading;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Threading;
 
-namespace NewLife.Net.Stress
+namespace Ding.Net.Stress
 {
     /// <summary>Tcp压力测试</summary>
     public class TcpStress : DisposeBase

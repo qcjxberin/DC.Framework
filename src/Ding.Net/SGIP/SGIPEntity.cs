@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.IO;
-using NewLife.Model;
-using NewLife.Serialization;
+using Ding.Model;
+using Ding.Serialization;
 
-namespace NewLife.Net.SGIP
+namespace Ding.Net.SGIP
 {
     /// <summary>SGIP命令实体基类</summary>
     public abstract class SGIPEntity

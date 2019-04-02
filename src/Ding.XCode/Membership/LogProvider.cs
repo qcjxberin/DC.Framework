@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Text;
 using System.Web;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Model;
+using Ding.Reflection;
 
 namespace XCode.Membership
 {
@@ -90,7 +90,7 @@ namespace XCode.Membership
         /// <summary>转为标准日志接口</summary>
         /// <param name="category">日志分类</param>
         /// <returns></returns>
-        public NewLife.Log.ILog AsLog(String category) => new DbLog { Provider = this, Category = category };
+        public Ding.Log.ILog AsLog(String category) => new DbLog { Provider = this, Category = category };
 
         class DbLog : Logger
         {

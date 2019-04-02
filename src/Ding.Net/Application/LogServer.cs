@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using NewLife.Log;
-using NewLife.Net.Sockets;
+using Ding.Log;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>日志服务</summary>
     public class LogServer : NetServer<LogServer.LogSession>

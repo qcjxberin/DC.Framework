@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>MX记录</summary>
     public class DNS_MX : DNSRecord

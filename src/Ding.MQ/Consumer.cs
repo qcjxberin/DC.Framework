@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NewLife.MessageQueue
+namespace Ding.MessageQueue
 {
     /// <summary>消费者。相同标识的多个订阅者，构成消费组，共享消费一个队列</summary>
     public class Consumer

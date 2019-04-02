@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.FTP
+namespace Ding.Net.FTP
 {
     /// <summary>FTP服务器</summary>
     public class FTPServer : NetServer<FTPSession>

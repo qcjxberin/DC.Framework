@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using NewLife.Model;
+using Ding.Model;
 
 namespace XCode.Membership
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>Modbus功能码</summary>
     public enum MBFunction : System.Byte

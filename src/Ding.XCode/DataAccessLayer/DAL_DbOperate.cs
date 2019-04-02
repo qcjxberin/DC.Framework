@@ -6,10 +6,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Reflection;
+using Ding.Serialization;
 
 namespace XCode.DataAccessLayer
 {

@@ -6,8 +6,8 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Threading;
 
 namespace XCoder.FolderInfo
 {

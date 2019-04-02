@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using NewLife.Security;
+using Ding.Security;
 
-namespace NewLife.Net.IO
+namespace Ding.Net.IO
 {
     /// <summary>文件格式</summary>
     public class FileFormat

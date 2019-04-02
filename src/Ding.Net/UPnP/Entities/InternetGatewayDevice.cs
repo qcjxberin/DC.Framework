@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
-using NewLife.Xml;
+using Ding.Xml;
 
-namespace NewLife.Net.UPnP
+namespace Ding.Net.UPnP
 {
     /// <summary>因特网网关设备</summary>
     [Serializable, XmlRoot("root", Namespace = "urn:schemas-upnp-org:device-1-0")]

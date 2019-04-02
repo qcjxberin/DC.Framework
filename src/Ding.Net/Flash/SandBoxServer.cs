@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Net
+namespace Ding.Net
 {
     /// <summary>安全沙箱</summary>
     public class SandBoxServer : NetServer

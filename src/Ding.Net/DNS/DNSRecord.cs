@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
-using NewLife.Serialization;
+using Ding.Serialization;
 using System.Linq;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>DNS查询记录</summary>
     public class DNSQuery

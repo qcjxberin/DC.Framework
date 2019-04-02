@@ -5,9 +5,9 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Web;
-using NewLife.Common;
-using NewLife.Model;
-using NewLife.Web;
+using Ding.Common;
+using Ding.Model;
+using Ding.Web;
 using XCode.Model;
 
 namespace XCode.Membership

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewLife.Net.DICOM
+namespace Ding.Net.DICOM
 {
     /// <summary>DICOM服务端。管理所有网络会话</summary>
     public class DicomServer: NetServer<DicomSession>

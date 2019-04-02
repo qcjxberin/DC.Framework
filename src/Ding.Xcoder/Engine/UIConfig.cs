@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using NewLife.Net;
-using NewLife.Serialization;
+using Ding.Net;
+using Ding.Serialization;
 
 namespace XCoder
 {

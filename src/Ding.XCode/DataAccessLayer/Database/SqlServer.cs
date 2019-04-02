@@ -6,9 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Reflection;
 
 namespace XCode.DataAccessLayer
 {
@@ -221,7 +221,7 @@ namespace XCode.DataAccessLayer
             var builder = new SelectBuilder();
             builder.Parse(sql);
 
-            var sb = NewLife.Collections.Pool.StringBuilder.Get();
+            var sb = Ding.Collections.Pool.StringBuilder.Get();
             sb.Append("Select ");
             sb.Append(builder.ColumnOrDefault);
             sb.Append(" From ");

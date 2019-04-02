@@ -8,10 +8,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Microsoft.CSharp;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Reflection;
 
 namespace XTemplate.Templating
 {

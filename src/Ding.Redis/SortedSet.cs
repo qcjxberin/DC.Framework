@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Data;
+using Ding.Reflection;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>排序集合</summary>
     public class SortedSet<T> : RedisBase

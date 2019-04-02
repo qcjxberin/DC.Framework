@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.Smtp
+namespace Ding.Net.Smtp
 {
     /// <summary>Smtp客户端</summary>
     public class SmtpClient : DisposeBase

@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>Discard服务器。抛弃所有收到的数据包，不做任何响应</summary>
     public class DiscardServer : NetServer

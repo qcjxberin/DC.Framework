@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.Sip.Message
+namespace Ding.Net.Sip.Message
 {
     /// <summary></summary>
     public class SipJoin : SipValueWithParams

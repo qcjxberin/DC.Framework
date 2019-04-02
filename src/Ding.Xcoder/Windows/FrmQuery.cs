@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NewLife.Threading;
+using Ding.Threading;
 using XCode.DataAccessLayer;
 
 namespace XCoder

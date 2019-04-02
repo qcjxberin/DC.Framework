@@ -5,11 +5,11 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Serialization;
-using NewLife.Yun;
+using Ding.Data;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Serialization;
+using Ding.Yun;
 
 namespace XCoder.Yun
 {
@@ -112,7 +112,7 @@ namespace XCoder.Yun
             SaveConfig();
             var cfg = Setting;
 
-            var map = type.CreateInstance() as NewLife.Yun.Map;
+            var map = type.CreateInstance() as Ding.Yun.Map;
             map.Log = XTrace.Log;
             map.CoordType = cfg.Coordtype;
 

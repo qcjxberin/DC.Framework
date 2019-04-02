@@ -4,11 +4,11 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NewLife.Reflection;
-using NewLife.Net;
+using Ding.Reflection;
+using Ding.Net;
 using System.IO;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Threading;
 
 namespace XCoder
 {

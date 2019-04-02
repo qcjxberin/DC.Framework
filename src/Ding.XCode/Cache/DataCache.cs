@@ -3,8 +3,8 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using NewLife.Serialization;
-using NewLife.Threading;
+using Ding.Serialization;
+using Ding.Threading;
 
 namespace XCode.Cache
 {

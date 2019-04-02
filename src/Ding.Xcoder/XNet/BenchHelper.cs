@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Net;
-using NewLife.Threading;
+using Ding.Data;
+using Ding.Net;
+using Ding.Threading;
 #if !NET4
 using TaskEx = System.Threading.Tasks.Task;
 #endif

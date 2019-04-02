@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using NewLife.Collections;
+using Ding.Collections;
 
-namespace NewLife.Net.Http
+namespace Ding.Net.Http
 {
     /// <summary>Http缓存。以Url作为缓存键</summary>
     class HttpCache

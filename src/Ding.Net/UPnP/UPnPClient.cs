@@ -4,11 +4,11 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Net.Sockets;
-using NewLife.Xml;
+using Ding.Log;
+using Ding.Net.Sockets;
+using Ding.Xml;
 
-namespace NewLife.Net.UPnP
+namespace Ding.Net.UPnP
 {
     /// <summary>通用即插即用协议客户端</summary>
     /// <remarks>
@@ -19,7 +19,7 @@ namespace NewLife.Net.UPnP
     /// <example>
     /// <code>
     /// UPnPClient client = new UPnPClient();
-    /// client.OnNewDevice += new EventHandler&lt;NewLife.EventArgs&lt;InternetGatewayDevice, bool&gt;&gt;(client_OnNewDevice);
+    /// client.OnNewDevice += new EventHandler&lt;Ding.EventArgs&lt;InternetGatewayDevice, bool&gt;&gt;(client_OnNewDevice);
     /// client.StartDiscover();
     /// 
     /// static void client_OnNewDevice(object sender, EventArgs&lt;InternetGatewayDevice, bool&gt; e)
@@ -225,7 +225,7 @@ namespace NewLife.Net.UPnP
 
         #region 辅助函数
         /// <summary>是否缓存网关。缓存网关可以加速UPnP的发现过程</summary>
-        public static Boolean CacheGateway { get; } = true;//=> Config.GetConfig<Boolean>("NewLife.Net.UPnP.CacheGateway");
+        public static Boolean CacheGateway { get; } = true;//=> Config.GetConfig<Boolean>("Ding.Net.UPnP.CacheGateway");
         #endregion
     }
 }

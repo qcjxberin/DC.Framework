@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net;
-using NewLife.Serialization;
+using Ding.Serialization;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>A记录</summary>
     /// <remarks>

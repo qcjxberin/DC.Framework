@@ -1,5 +1,5 @@
 ﻿指令
-<#@template inherits="NewLife.CMX.Templates.Index"#>
+<#@template inherits="Ding.CMX.Templates.Index"#>
 
 包含
 <#@include Name="Header"#>

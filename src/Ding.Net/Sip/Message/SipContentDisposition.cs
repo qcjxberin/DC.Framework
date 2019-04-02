@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Sip.Message
+namespace Ding.Net.Sip.Message
 {
     /// <summary></summary>
     public class SipContentDisposition : SipValueWithParams

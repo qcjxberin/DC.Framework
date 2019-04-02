@@ -44,7 +44,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.spList = new NewLife.Windows.SerialPortList();
+            this.spList = new Ding.Windows.SerialPortList();
             ((System.ComponentModel.ISupportInitialize)(this.numMutilSend)).BeginInit();
             this.gbReceive.SuspendLayout();
             this.gbSend.SuspendLayout();
@@ -214,7 +214,7 @@
             this.spList.SelectedPort = "COM1(Serial0)";
             this.spList.Size = new System.Drawing.Size(415, 29);
             this.spList.TabIndex = 6;
-            this.spList.ReceivedString += new System.EventHandler<NewLife.Windows.StringEventArgs>(this.OnReceived);
+            this.spList.ReceivedString += new System.EventHandler<Ding.Windows.StringEventArgs>(this.OnReceived);
             // 
             // FrmMain
             // 
@@ -250,7 +250,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ContextMenuStrip menuSend;
         private System.Windows.Forms.ToolStripMenuItem mi清空2;
-        private NewLife.Windows.SerialPortList spList;
+        private Ding.Windows.SerialPortList spList;
         private System.Windows.Forms.RichTextBox txtReceive;
         private System.Windows.Forms.RichTextBox txtSend;
         private System.Windows.Forms.FontDialog fontDialog1;

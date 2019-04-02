@@ -4,7 +4,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
-using NewLife.Log;
+using Ding.Log;
 
 namespace XProxy
 {

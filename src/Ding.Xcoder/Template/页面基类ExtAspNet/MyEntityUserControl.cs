@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.UI;
-using NewLife.CommonEntity;
+using Ding.CommonEntity;
 using XCode;
 
 /// <summary>实体用户控件基类</summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.UPnP
+namespace Ding.Net.UPnP
 {
     /// <summary>服务项</summary>
     public class Service

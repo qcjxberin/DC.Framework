@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using NewLife.Net.Http;
+using Ding.Net.Http;
 
-namespace NewLife.Net.Proxy
+namespace Ding.Net.Proxy
 {
     /// <summary>Http反向代理。把所有收到的Http请求转发到目标服务器。</summary>
     /// <remarks>

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Model;
+using Ding.Reflection;
 using XCode.Model;
 
 namespace XCode.DataAccessLayer

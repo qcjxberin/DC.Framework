@@ -4,10 +4,10 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Data;
+using Ding.Reflection;
 
-namespace NewLife.Net.Stun
+namespace Ding.Net.Stun
 {
     /// <summary>Stun服务端。Simple Traversal of UDP over NATs，NAT 的UDP简单穿越。RFC 3489</summary>
     /// <remarks>

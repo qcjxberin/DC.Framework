@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Net;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Net;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>服务器节点。内部连接池</summary>
     public class Node

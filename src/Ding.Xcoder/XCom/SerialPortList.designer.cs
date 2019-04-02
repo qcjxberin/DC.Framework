@@ -1,4 +1,4 @@
-﻿namespace NewLife.Windows
+﻿namespace Ding.Windows
 {
     partial class SerialPortList
     {

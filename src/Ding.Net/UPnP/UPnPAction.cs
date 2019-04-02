@@ -2,10 +2,10 @@
 using System.Reflection;
 using System.Xml;
 using System.Xml.Serialization;
-using NewLife.Reflection;
-using NewLife.Xml;
+using Ding.Reflection;
+using Ding.Xml;
 
-namespace NewLife.Net.UPnP
+namespace Ding.Net.UPnP
 {
     /// <summary>UPnP操作</summary>
     /// <typeparam name="TEntity"></typeparam>

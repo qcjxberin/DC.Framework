@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>哈希结构</summary>
     /// <typeparam name="TKey"></typeparam>

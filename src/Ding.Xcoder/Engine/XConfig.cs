@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Text;
-using NewLife.Xml;
+using Ding.Xml;
 
 namespace XCoder
 {
@@ -61,7 +61,7 @@ namespace XCoder
 
         protected override void OnLoaded()
         {
-            if (UpdateServer.IsNullOrEmpty() || UpdateServer.EqualIgnoreCase("http://x.newlifex.com/")) UpdateServer = NewLife.Setting.Current.PluginServer;
+            if (UpdateServer.IsNullOrEmpty() || UpdateServer.EqualIgnoreCase("http://x.newlifex.com/")) UpdateServer = Ding.Setting.Current.PluginServer;
 
             base.OnLoaded();
         }

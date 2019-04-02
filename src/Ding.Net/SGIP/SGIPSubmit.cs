@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Serialization;
+using Ding.Serialization;
 
-namespace NewLife.Net.SGIP
+namespace Ding.Net.SGIP
 {
     /// <summary>
     /// 在SP和SMG的通信中，SP用Submit命令向SMG提交MT短消息，发送到用户的手机中。SMG接收到Submit命令，会返回Submit_Resp应答。SMG根据Submit命令中的付费号码，判断出该命令是否应从本地SMSC发送，如果属于本地发送，则直接发送到相应的SMSC，否则路由至相应的SMG。

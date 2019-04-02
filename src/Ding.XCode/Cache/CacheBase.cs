@@ -2,9 +2,9 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
-using NewLife;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding;
+using Ding.Log;
+using Ding.Threading;
 using XCode.DataAccessLayer;
 
 namespace XCode.Cache

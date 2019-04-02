@@ -6,11 +6,11 @@ using System.IO;
 using System.IO.Ports;
 using System.Text;
 using System.Windows.Forms;
-using NewLife.Log;
-using NewLife.Net;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Net;
+using Ding.Threading;
 
-namespace NewLife.Windows
+namespace Ding.Windows
 {
     /// <summary>串口列表控件</summary>
     [DefaultEvent("ReceivedString")]

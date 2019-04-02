@@ -15,9 +15,9 @@
 #endregion
 
 using System;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>Modbus从站</summary>
     /// <example>
@@ -190,7 +190,7 @@ namespace NewLife.Net.Modbus
 #if MF
                 Microsoft.SPOT.Debug.Print(ex.Message);
 #else
-                NewLife.Log.XTrace.WriteLine(ex.ToString());
+                Ding.Log.XTrace.WriteLine(ex.ToString());
 #endif
 
                 // 执行错误
@@ -602,7 +602,7 @@ namespace NewLife.Net.Modbus
 #if MF
             if (EnableDebug) Microsoft.SPOT.Debug.Print(msg);
 #else
-            if (EnableDebug) NewLife.Log.XTrace.WriteLine(msg);
+            if (EnableDebug) Ding.Log.XTrace.WriteLine(msg);
 #endif
         }
         #endregion

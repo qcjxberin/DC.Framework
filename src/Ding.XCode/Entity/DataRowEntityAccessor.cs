@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using NewLife.Data;
+using Ding.Data;
 using XCode.Configuration;
 using XCode.DataAccessLayer;
 

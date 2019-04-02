@@ -49,6 +49,10 @@
     <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE20__</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="DotNetCore.CAP.Kafka" Version="2.5.0-preview-69219007" />
     <PackageReference Include="DotNetCore.CAP.MySql" Version="2.5.0-preview-69219007" />

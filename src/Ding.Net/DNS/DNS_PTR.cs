@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>PTR记录</summary>
     /// <remarks>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.FTP
+namespace Ding.Net.FTP
 {
     /// <summary>FTP项</summary>
     public class FTPItem

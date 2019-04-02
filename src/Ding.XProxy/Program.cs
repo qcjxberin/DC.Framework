@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NewLife;
-using NewLife.Agent;
-using NewLife.Log;
-using NewLife.Net;
-using NewLife.Net.Proxy;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding;
+using Ding.Agent;
+using Ding.Log;
+using Ding.Net;
+using Ding.Net.Proxy;
+using Ding.Reflection;
+using Ding.Threading;
 
 namespace XProxy
 {

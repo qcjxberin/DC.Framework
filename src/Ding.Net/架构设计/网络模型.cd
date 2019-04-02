@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="NewLife.Net.Sockets.SocketClient">
+  <Class Name="Ding.Net.Sockets.SocketClient">
     <Position X="16.5" Y="7.25" Width="1.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -11,7 +11,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Net.Sockets.SocketServer">
+  <Class Name="Ding.Net.Sockets.SocketServer">
     <Position X="10.5" Y="7.25" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -22,7 +22,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Net.Tcp.TcpServer">
+  <Class Name="Ding.Net.Tcp.TcpServer">
     <Position X="9.25" Y="11.25" Width="1.75" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -32,7 +32,7 @@
       <FileName>Tcp\TcpServer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Net.Udp.UdpServer">
+  <Class Name="Ding.Net.Udp.UdpServer">
     <Position X="11.75" Y="11.25" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -43,7 +43,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Net.Sockets.SocketBase">
+  <Class Name="Ding.Net.Sockets.SocketBase">
     <Position X="13.75" Y="4.75" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -57,7 +57,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Net.Tcp.TcpClientX">
+  <Class Name="Ding.Net.Tcp.TcpClientX">
     <Position X="14.5" Y="12" Width="3" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -68,7 +68,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Net.Udp.UdpClientX">
+  <Class Name="Ding.Net.Udp.UdpClientX">
     <Position X="18.25" Y="12" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAABAAAEAAAAAAAAAAAAAgABAgAAAAAAA=</HashCode>
@@ -76,7 +76,7 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Net.Sockets.NetServer">
+  <Class Name="Ding.Net.Sockets.NetServer">
     <Position X="10" Y="0.75" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
@@ -90,49 +90,49 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="NewLife.Net.Application.ChargenServer" Collapsed="true">
+  <Class Name="Ding.Net.Application.ChargenServer" Collapsed="true">
     <Position X="3.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAIAEAAAABAAAEAAAAAAAEAAQAAgAA=</HashCode>
       <FileName>Application\ChargenServer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Net.Application.DaytimeServer" Collapsed="true">
+  <Class Name="Ding.Net.Application.DaytimeServer" Collapsed="true">
     <Position X="5.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Application\DaytimeServer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Net.Application.DiscardServer" Collapsed="true">
+  <Class Name="Ding.Net.Application.DiscardServer" Collapsed="true">
     <Position X="8" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Application\DiscardServer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Net.Application.EchoServer" Collapsed="true">
+  <Class Name="Ding.Net.Application.EchoServer" Collapsed="true">
     <Position X="10.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Application\EchoServer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Net.Application.StreamServer" Collapsed="true">
+  <Class Name="Ding.Net.Application.StreamServer" Collapsed="true">
     <Position X="12.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAAQAAAAA=</HashCode>
       <FileName>Application\StreamServer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Net.Application.TimeServer" Collapsed="true">
+  <Class Name="Ding.Net.Application.TimeServer" Collapsed="true">
     <Position X="14.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>Application\TimeServer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="NewLife.Net.IO.FileServer" Collapsed="true">
+  <Class Name="Ding.Net.IO.FileServer" Collapsed="true">
     <Position X="17" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAIAAAABAAAAAAAAAAAEAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -144,7 +144,7 @@
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="NewLife.Net.Proxy.IProxySession">
+  <Interface Name="Ding.Net.Proxy.IProxySession">
     <Position X="10" Y="4.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAKAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -155,28 +155,28 @@
       <Property Name="Remote" />
     </ShowAsAssociation>
   </Interface>
-  <Interface Name="NewLife.Net.Proxy.IProxy">
+  <Interface Name="Ding.Net.Proxy.IProxy">
     <Position X="13.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Proxy\IProxy.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewLife.Net.Sockets.ISocketClient">
+  <Interface Name="Ding.Net.Sockets.ISocketClient">
     <Position X="5.25" Y="9.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAABAAAAAAAIAAAIAAAAAQABAAAAAAAAQ=</HashCode>
       <FileName>Sockets\ISocketClient.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewLife.Net.Sockets.ISocketServer">
+  <Interface Name="Ding.Net.Sockets.ISocketServer">
     <Position X="3" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAA=</HashCode>
       <FileName>Sockets\ISocketServer.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="NewLife.Net.Sockets.ISocketSession">
+  <Interface Name="Ding.Net.Sockets.ISocketSession">
     <Position X="7" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAgAAAAEAAAAAAAIAICAAQABAAABAAAAA=</HashCode>
@@ -186,7 +186,7 @@
       <Property Name="Host" />
     </ShowAsAssociation>
   </Interface>
-  <Interface Name="NewLife.Net.Sockets.ISocket">
+  <Interface Name="Ding.Net.Sockets.ISocket">
     <Position X="4" Y="4.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACgAAAAAAAIQIEAAAAAAAACAAAAQACAAAgAACAAAE=</HashCode>
@@ -196,7 +196,7 @@
       <Property Name="Statistics" />
     </ShowAsAssociation>
   </Interface>
-  <Interface Name="NewLife.Net.Common.IStatistics">
+  <Interface Name="Ding.Net.Common.IStatistics">
     <Position X="1" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAEAAQAAAAAQAAIAAACAAAAAACQAAAAAASAAgAAAA=</HashCode>

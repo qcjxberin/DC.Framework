@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using NewLife.Log;
+using Ding.Log;
 
 namespace XTemplate.Templating
 {
@@ -174,8 +174,8 @@ namespace XTemplate.Templating
                 // 特别支持，导入它们的所有命名空间
                 var maps = new HashSet<String>();
                 maps.Add("XCode");
-                maps.Add("NewLife.Core");
-                maps.Add("NewLife.CommonEntity");
+                maps.Add("Ding.Core");
+                maps.Add("Ding.CommonEntity");
 
                 foreach (var item in maps)
                 {
@@ -188,7 +188,6 @@ namespace XTemplate.Templating
                         {
                             var name = type.Namespace;
                             if (String.IsNullOrEmpty(name)) continue;
-                            //if (!name.StartsWith("XCode") && !name.StartsWith("NewLife")) continue;
                             if (!list.Contains(name)) list.Add(name);
                         }
                     }

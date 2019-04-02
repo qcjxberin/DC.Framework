@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.SGIP
+namespace Ding.Net.SGIP
 {
     /// <summary>SGIP客户端</summary>
     public class SGIPClient : Netbase

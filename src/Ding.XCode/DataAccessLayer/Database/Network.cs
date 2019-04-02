@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
-using NewLife.Data;
+using Ding.Data;
 using XCode.Service;
 
 namespace XCode.DataAccessLayer

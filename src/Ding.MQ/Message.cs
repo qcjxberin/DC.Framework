@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-using NewLife.Data;
-using NewLife.Serialization;
+using Ding.Data;
+using Ding.Serialization;
 
-namespace NewLife.MessageQueue
+namespace Ding.MessageQueue
 {
     /// <summary>消息</summary>
     public class Message

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace NewLife.Net.UPnP
+namespace Ding.Net.UPnP
 {
     /// <summary>设备</summary>
     public class Device

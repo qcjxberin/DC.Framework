@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>Time服务器</summary>
     public class TimeServer : NetServer

@@ -4,13 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Net;
-using NewLife.Reflection;
-using NewLife.Remoting;
-using NewLife.Security;
-using NewLife.Serialization;
+using Ding.Data;
+using Ding.Log;
+using Ding.Net;
+using Ding.Reflection;
+using Ding.Remoting;
+using Ding.Security;
+using Ding.Serialization;
 
 namespace XCode.Service
 {

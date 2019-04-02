@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
-using NewLife.Reflection;
-using NewLife.Security;
+using Ding.Reflection;
+using Ding.Security;
 
 namespace XCode.DataAccessLayer
 {

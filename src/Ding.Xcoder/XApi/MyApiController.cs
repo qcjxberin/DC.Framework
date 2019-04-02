@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using NewLife.Data;
-using NewLife.Remoting;
-using NewLife.Security;
+using Ding.Data;
+using Ding.Remoting;
+using Ding.Security;
 
 namespace XApi
 {

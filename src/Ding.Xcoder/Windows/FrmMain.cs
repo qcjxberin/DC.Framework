@@ -10,9 +10,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Threading;
 using XCode.DataAccessLayer;
 using XTemplate.Templating;
 #if !NET4

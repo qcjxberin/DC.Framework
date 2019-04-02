@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using NewLife;
-using NewLife.Model;
-using NewLife.Reflection;
+using Ding;
+using Ding.Model;
+using Ding.Reflection;
 using XCode.DataAccessLayer;
 using XTemplate.Templating;
 
@@ -150,7 +150,7 @@ namespace XCoder
                 else
                     return table.Properties[key];
             });
-            NewLife.Log.XTrace.WriteLine("NameSpace" + Config.NameSpace + "@" + NameSpace);
+            Ding.Log.XTrace.WriteLine("NameSpace" + Config.NameSpace + "@" + NameSpace);
             cfg.NameSpace = NameSpace;
             #endregion
 

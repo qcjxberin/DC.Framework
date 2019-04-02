@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Data;
-using NewLife.Model;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding.Data;
+using Ding.Model;
+using Ding.Reflection;
+using Ding.Serialization;
 
 namespace XCode.DataAccessLayer
 {

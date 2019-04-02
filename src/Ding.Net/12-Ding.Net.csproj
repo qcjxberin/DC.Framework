@@ -1,42 +1,52 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build/version.props" />
+
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard2.1</TargetFrameworks>
-    <AssemblyName>NewLife.Net</AssemblyName>
-    <RootNamespace>NewLife.Net</RootNamespace>
-    <AssemblyTitle>新生命网络库</AssemblyTitle>
-    <Description>网络通讯基础框架及各种协议实现</Description>
-    <Company>新生命开发团队</Company>
-    <Copyright>版权所有(C) 新生命开发团队 2002~2019</Copyright>
-    <Version>3.5.2019.0310</Version>
-    <FileVersion>3.5.2019.0310</FileVersion>
-    <AssemblyVersion>3.5.*</AssemblyVersion>
+    <LangVersion>8</LangVersion>
+    <!-- Disable warning for Controller/Action/Method not have block comment -->
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <AssemblyName>Ding.Net</AssemblyName>
+    <RootNamespace>Ding.Net</RootNamespace>
+    <Product>$(AssemblyName)</Product>
+    <AssemblyTitle>网络帮助类库</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的网络通讯基础框架及各种协议实现。</Description>
+    <Company>星尘</Company>
+    <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
-    <OutputPath>..\Bin</OutputPath>
+    <OutputPath>..\..\output\release\</OutputPath>
     <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
-    <Authors>$(Company)</Authors>
-    <ProjectUrl>https://github.com/NewLifeX</ProjectUrl>
-    <PackageIconUrl>http://www.NewLifeX.com/favicon.ico</PackageIconUrl>
-    <RepositoryUrl>https://github.com/NewLifeX/NewLife.Net</RepositoryUrl>
+    <Authors>丁川</Authors>
+    <PackageReleaseNotes>
+      Ding.Net项目是Ding应用框架的应用框架中的网络通讯基础框架及各种协议实现。
+      Ding是一个.net core/Windows平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
+    </PackageReleaseNotes>
+    <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
+    <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>新生命团队;X组件;NewLife;$(AssemblyName)</PackageTags>
-    <PackageReleaseNotes>优化Json序列化对列表和字段的支持</PackageReleaseNotes>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSource>true</IncludeSource>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-*" PrivateAssets="All" />
-  </ItemGroup>
-
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
     <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE__</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='net45'">

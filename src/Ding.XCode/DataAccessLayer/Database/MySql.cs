@@ -4,9 +4,9 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Net;
-using NewLife.Collections;
-using NewLife.Data;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Data;
+using Ding.Reflection;
 
 namespace XCode.DataAccessLayer
 {
@@ -26,10 +26,10 @@ namespace XCode.DataAccessLayer
                 {
                     lock (typeof(MySql))
                     {
-                        //_Factory = GetProviderFactory("NewLife.MySql.dll", "NewLife.MySql.MySqlClientFactory") ??
+                        //_Factory = GetProviderFactory("Ding.MySql.dll", "Ding.MySql.MySqlClientFactory") ??
                         //           GetProviderFactory("MySql.Data.dll", "MySql.Data.MySqlClient.MySqlClientFactory");
                         // MewLife.MySql 在开发过程中，数据驱动下载站点没有它的包，暂时不支持下载
-                        _Factory = GetProviderFactory(null, "NewLife.MySql.MySqlClientFactory", true) ??
+                        _Factory = GetProviderFactory(null, "Ding.MySql.MySqlClientFactory", true) ??
                                   GetProviderFactory("MySql.Data.dll", "MySql.Data.MySqlClient.MySqlClientFactory");
                     }
                 }

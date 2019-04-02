@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewLife.Net.Model
+namespace Ding.Net.Model
 {
     /// <summary>数据接收事件参数</summary>
     public class DataEventArgs : EventArgs

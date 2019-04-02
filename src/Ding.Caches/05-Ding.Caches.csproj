@@ -49,6 +49,10 @@
     <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE20__</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="EasyCaching.HybridCache" Version="0.5.4.1" />
     <PackageReference Include="EasyCaching.InMemory" Version="0.5.4.1" />

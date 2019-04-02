@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.FTP
+namespace Ding.Net.FTP
 {
     /// <summary>传输模式</summary>
     public enum FTPTransferMode

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Log;
+using Ding.Log;
 using XCode.Configuration;
 
 namespace XCode.Transform

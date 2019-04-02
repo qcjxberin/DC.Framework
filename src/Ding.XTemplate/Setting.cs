@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using NewLife.Xml;
+using Ding.Xml;
 
 namespace XTemplate
 {

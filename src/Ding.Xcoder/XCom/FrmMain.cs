@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NewLife.Log;
-using NewLife.Threading;
-using NewLife.Windows;
+using Ding.Log;
+using Ding.Threading;
+using Ding.Windows;
 using XCoder;
 
 namespace XCom

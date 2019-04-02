@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Reflection;
-using NewLife.Reflection;
-using NewLife.Xml;
+using Ding.Reflection;
+using Ding.Xml;
 
-namespace NewLife.Net.Stress
+namespace Ding.Net.Stress
 {
     /// <summary>Tcp压力测试配置文件</summary>
     [XmlConfigFile("TcpStress.xml")]

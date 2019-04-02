@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.MessageQueue
+namespace Ding.MessageQueue
 {
     /// <summary>消息队列主机</summary>
     public class MQHost : DisposeBase

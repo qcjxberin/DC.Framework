@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.Telnet
+namespace Ding.Net.Telnet
 {
     /// <summary>Telnet客户端</summary>
     public class TelnetClient : DisposeBase

@@ -9,11 +9,11 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading;
-using NewLife;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Web;
+using Ding;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Web;
 
 namespace XCode.DataAccessLayer
 {
@@ -37,7 +37,7 @@ namespace XCode.DataAccessLayer
             // 不要判断是否存在，因为可能目录还不存在，一会下载驱动后将创建目录
             if (Runtime.Windows) SetDllDirectory(dir);
 
-            root = NewLife.Setting.Current.GetPluginPath();
+            root = Ding.Setting.Current.GetPluginPath();
             dir = Environment.Is64BitProcess ? "x64" : "x86";
             dir = root.CombinePath(dir);
             if (Runtime.Windows) SetDllDirectory(dir);
@@ -338,7 +338,7 @@ namespace XCode.DataAccessLayer
 
                 // 反射实现获取数据库工厂
                 var file = assemblyFile;
-                var plugin = NewLife.Setting.Current.GetPluginPath();
+                var plugin = Ding.Setting.Current.GetPluginPath();
                 file = plugin.CombinePath(file);
 
                 // 如果还没有，就写异常

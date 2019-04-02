@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using NewLife.Log;
+using Ding.Log;
 using XCode.Model;
 
 namespace XCode.DataAccessLayer

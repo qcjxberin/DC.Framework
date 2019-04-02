@@ -4,8 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using NewLife.Caching;
-using NewLife.Collections;
+using Ding.Caching;
+using Ding.Collections;
 
 namespace XCode.DataAccessLayer
 {
@@ -257,7 +257,7 @@ $";
         }
 
         /// <summary>缓存存储</summary>
-        public static ICache Store { get; set; } = NewLife.Caching.Cache.Default;
+        public static ICache Store { get; set; } = Ding.Caching.Cache.Default;
 
         /// <summary>根据SQL创建，带缓存</summary>
         /// <remarks>

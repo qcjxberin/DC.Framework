@@ -7,9 +7,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using NewLife.Data;
-using NewLife.Model;
-using NewLife.Threading;
+using Ding.Data;
+using Ding.Model;
+using Ding.Threading;
 
 namespace XCode.Membership
 {

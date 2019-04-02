@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
-using NewLife;
-using NewLife.Log;
+using Ding;
+using Ding.Log;
 using XCode.DataAccessLayer;
 
 namespace XCode

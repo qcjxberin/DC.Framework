@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
 using System.Text;
-using NewLife.Serialization;
+using Ding.Serialization;
 
-namespace NewLife.Net.Stun
+namespace Ding.Net.Stun
 {
     class StunAttribute
     {

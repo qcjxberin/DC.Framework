@@ -1,6 +1,6 @@
-﻿using NewLife.Net.Sockets;
+﻿using Ding.Net.Sockets;
 
-namespace NewLife.Net.Smtp
+namespace Ding.Net.Smtp
 {
     /// <summary>Relay会话</summary>
     public class RelaySession : NetSession

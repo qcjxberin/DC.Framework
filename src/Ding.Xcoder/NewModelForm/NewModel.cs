@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using NewLife.Model;
+using Ding.Model;
 using XCode.DataAccessLayer;
 
 namespace XCoder

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.Common;
-using NewLife.Collections;
-using NewLife.Log;
+using Ding.Collections;
+using Ding.Log;
 
 namespace XCode.DataAccessLayer
 {

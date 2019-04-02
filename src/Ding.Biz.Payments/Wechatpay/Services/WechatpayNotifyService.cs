@@ -5,6 +5,7 @@ using Ding.Biz.Payments.Wechatpay.Abstractions;
 using Ding.Biz.Payments.Wechatpay.Configs;
 using Ding.Biz.Payments.Wechatpay.Results;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Ding.Validations;
 
 namespace Ding.Biz.Payments.Wechatpay.Services {
@@ -48,7 +49,7 @@ namespace Ding.Biz.Payments.Wechatpay.Services {
         /// </summary>
         /// <param name="name">参数名</param>
         public T GetParam<T>( string name ) {
-            return Ding.Helpers.Convert.To<T>( GetParam( name ) );
+            return Ding.Utils.Helpers.Convert.To<T>( GetParam( name ) );
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Sdp
+namespace Ding.Net.Sdp
 {
     /// <summary>SDP 时间</summary>
     public class SdpTime

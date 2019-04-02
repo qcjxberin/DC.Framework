@@ -13,8 +13,8 @@
     <AssemblyName>Ding.Core</AssemblyName>
     <RootNamespace>Ding.Core</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>NetCore核心帮助类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore核心帮助类库。</Description>
+    <AssemblyTitle>Ding核心帮助类库</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的日志、网络、RPC、序列化、缓存、Windows服务、线程池核心类库。</Description>
     <Company>星尘</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>

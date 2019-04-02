@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>发布订阅</summary>
     public class PubSub : RedisBase

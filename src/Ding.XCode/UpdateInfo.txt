@@ -475,7 +475,7 @@ v6.3.2010.1209   修正实体工厂EntityFactory缓存实体导致无法识别�
 v6.2.2010.1202   SQLite增加读写锁，限制同时只能指定一个Excute操作
                  Entity的PageSplitSQL方法修正表名没有进行格式化的BUG
 
-v6.1.2010.1119   取消依赖XLog，升级为依赖NewLife.Core，部分公共类库移植到NewLife.Core
+v6.1.2010.1119   取消依赖XLog，升级为依赖Ding.Core，部分公共类库移植到Ding.Core
                  修正EntityTree中FindChilds错误，增加排序字段的支持，如果指定排序字段，查询子级的时候将按排序字段降序排序
                  取消授权限制，但仍然混淆代码
 

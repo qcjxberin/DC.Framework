@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Serialization;
+using Ding.Serialization;
 
-namespace NewLife.Net.SGIP
+namespace Ding.Net.SGIP
 {
     /// <summary>Bind操作由Bind命令和Bind_Resp应答组成。客户端首先发送Bind命令，服务器端收到Bind命令后，对命令发送方进行验证，然后返回Bind_Resp应答。</summary>
     public class SGIPBind : SGIPEntity

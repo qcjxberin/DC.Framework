@@ -7,6 +7,7 @@ using Ding.Biz.Payments.Alipay.Parameters.Requests;
 using Ding.Biz.Payments.Alipay.Services.Base;
 using Ding.Biz.Payments.Core;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Biz.Payments.Alipay.Services {
     /// <summary>

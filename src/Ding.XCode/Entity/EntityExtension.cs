@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using NewLife;
-using NewLife.Data;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding;
+using Ding.Data;
+using Ding.Reflection;
+using Ding.Serialization;
 using XCode.Configuration;
 using XCode.DataAccessLayer;
 

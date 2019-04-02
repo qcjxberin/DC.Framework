@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading;
-using NewLife.Threading;
+using Ding.Threading;
 
-namespace NewLife.MessageQueue
+namespace Ding.MessageQueue
 {
     /// <summary>主题</summary>
     /// <remarks>

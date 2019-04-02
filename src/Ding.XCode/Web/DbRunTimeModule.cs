@@ -1,7 +1,7 @@
 ﻿#if !__CORE__
 using System;
 using System.Web;
-using NewLife.Web;
+using Ding.Web;
 using XCode.DataAccessLayer;
 
 namespace XCode.Web

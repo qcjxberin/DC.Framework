@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Threading;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Threading;
 
 namespace XCode
 {

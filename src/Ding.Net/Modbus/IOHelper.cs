@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>IO操作助手</summary>
     static class IOHelper

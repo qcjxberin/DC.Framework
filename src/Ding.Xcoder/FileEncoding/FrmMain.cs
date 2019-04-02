@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using NewLife.IO;
+using Ding.IO;
 
 namespace XCoder.FileEncoding
 {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using NewLife.IO;
-using NewLife.Serialization;
+using Ding.IO;
+using Ding.Serialization;
 
-namespace NewLife.Net.Http
+namespace Ding.Net.Http
 {
     /// <summary>Http头部</summary>
     public class HttpHeader

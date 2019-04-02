@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Sdp
+namespace Ding.Net.Sdp
 {
     /// <summary>SDP Origin。RFC 4566 5.2</summary>
     public class SdpOrigin

@@ -6,8 +6,8 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using NewLife.Collections;
-using NewLife.Xml;
+using Ding.Collections;
+using Ding.Xml;
 
 namespace XCode.DataAccessLayer
 {

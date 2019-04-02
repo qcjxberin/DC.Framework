@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Threading;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Threading;
 
 namespace XCode.Cache
 {

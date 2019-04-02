@@ -1,5 +1,5 @@
 ﻿using System;
-using NewLife.Model;
+using Ding.Model;
 using XCode.DataAccessLayer;
 
 namespace XCode.Model

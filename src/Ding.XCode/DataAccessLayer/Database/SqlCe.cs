@@ -8,11 +8,11 @@ using System.Data.SqlTypes;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using NewLife;
-using NewLife.Collections;
-using NewLife.IO;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding;
+using Ding.Collections;
+using Ding.IO;
+using Ding.Log;
+using Ding.Reflection;
 
 namespace XCode.DataAccessLayer
 {

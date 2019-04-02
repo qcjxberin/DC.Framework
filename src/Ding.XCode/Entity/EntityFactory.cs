@@ -3,9 +3,9 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Reflection;
 using XCode.Configuration;
 using XCode.DataAccessLayer;
 

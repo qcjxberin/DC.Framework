@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>Daytime服务器。返回服务端的时间日期</summary>
     public class DaytimeServer : NetServer

@@ -22,7 +22,7 @@ XCode在最重要的数据管道主线上拥有三级缓存设计，在其它地
 
 ### 使用NuGet安装到你的项目
 
-PM> Install-Package NewLife.XCode
+PM> Install-Package Ding.XCode
 
 ### 编写一个简单Xml模型（如果你已有现成的数据库，则可以使用XCoder.exe工具生成）
 ```xml
@@ -131,7 +131,7 @@ public static IList<UserInfo> Search(String name, Int32 age, Pager p)
 
 void Test()
 {
-    // 默认第一页，每页20行。魔方NewLife.Cube自动从页面Request获取以下参数
+    // 默认第一页，每页20行。魔方Ding.Cube自动从页面Request获取以下参数
     var p = new Pager();
     p.PageIndex = 3;
     p.PageSize = 10;
@@ -166,15 +166,15 @@ void Test()
 [ORM组件XCode（动手）](http://www.cnblogs.com/nnhy/archive/2010/09/15/1826602.html)  
 ---
 * 系列
-[NewLife.XCode 上手指南](http://www.cnblogs.com/JangoJing/archive/2012/07/26/2610034.html)  
-[NewLife.XCode 上手指南(二) 反向工程使用举例](http://www.cnblogs.com/JangoJing/archive/2012/07/26/2610368.html)  
-[NewLife.Xcode 上手指南(三) 扩展属性的使用](http://www.cnblogs.com/JangoJing/archive/2012/07/31/2616238.html)  
-[NewLife.XCode 上手指南(四) 级联操作](http://www.cnblogs.com/JangoJing/archive/2012/08/02/2619311.html)  
-[NewLife.XCode 上手指南(五) 复杂查询](http://www.cnblogs.com/JangoJing/archive/2012/08/17/2644124.html)  
+[Ding.XCode 上手指南](http://www.cnblogs.com/JangoJing/archive/2012/07/26/2610034.html)  
+[Ding.XCode 上手指南(二) 反向工程使用举例](http://www.cnblogs.com/JangoJing/archive/2012/07/26/2610368.html)  
+[Ding.Xcode 上手指南(三) 扩展属性的使用](http://www.cnblogs.com/JangoJing/archive/2012/07/31/2616238.html)  
+[Ding.XCode 上手指南(四) 级联操作](http://www.cnblogs.com/JangoJing/archive/2012/08/02/2619311.html)  
+[Ding.XCode 上手指南(五) 复杂查询](http://www.cnblogs.com/JangoJing/archive/2012/08/17/2644124.html)  
 ---
 * 进阶
 > [充血模型的ORM能做什么？——ORM组件XCode（十八般武艺）](http://www.cnblogs.com/nnhy/archive/2010/09/25/1834320.html)  
->[NewLife.XCode中如何借助分部抽象多个具有很多共同字段的实体类](http://www.cnblogs.com/nnhy/archive/2012/04/27/2473052.html)  
+>[Ding.XCode中如何借助分部抽象多个具有很多共同字段的实体类](http://www.cnblogs.com/nnhy/archive/2012/04/27/2473052.html)  
 >[ORM组件XCode（撬动千万级数据）](http://www.cnblogs.com/nnhy/archive/2010/09/15/1827477.html)  
 >[ORM组件XCode（动手）](http://www.cnblogs.com/nnhy/archive/2010/09/15/1826602.html)  
 

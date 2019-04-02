@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Sdp
+namespace Ding.Net.Sdp
 {
     /// <summary>SDP Connection</summary>
     public class SdpConnection

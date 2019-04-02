@@ -1,7 +1,7 @@
 ﻿using System;
-using NewLife.Serialization;
+using Ding.Serialization;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>TXT记录</summary>
     public class DNS_TXT : DNSRecord

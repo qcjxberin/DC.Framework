@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using NewLife.Log;
+using Ding.Log;
 
 namespace XCode.Statistics
 {

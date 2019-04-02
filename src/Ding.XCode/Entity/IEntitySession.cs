@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using NewLife.Data;
+using Ding.Data;
 using XCode.Cache;
 using XCode.DataAccessLayer;
 

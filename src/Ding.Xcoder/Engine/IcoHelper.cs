@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using NewLife.IO;
+using Ding.IO;
 using XICO;
 
 namespace XCoder

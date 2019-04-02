@@ -6,12 +6,12 @@ using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
-using NewLife;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Reflection;
-using NewLife.Collections;
-using NewLife.Threading;
+using Ding;
+using Ding.Log;
+using Ding.Model;
+using Ding.Reflection;
+using Ding.Collections;
+using Ding.Threading;
 
 namespace XCode.Membership
 {

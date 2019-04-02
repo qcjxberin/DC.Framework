@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>列表结构</summary>
     /// <typeparam name="T"></typeparam>

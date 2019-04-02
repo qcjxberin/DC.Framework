@@ -5,8 +5,8 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
-using NewLife.Collections;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Reflection;
 using XCode.Configuration;
 using XCode.DataAccessLayer;
 

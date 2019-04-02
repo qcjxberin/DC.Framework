@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Collections;
+using Ding.Collections;
 
 namespace XCode.Transform
 {

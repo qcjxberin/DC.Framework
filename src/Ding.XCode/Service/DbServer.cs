@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Remoting;
+using Ding.Log;
+using Ding.Remoting;
 
 namespace XCode.Service
 {

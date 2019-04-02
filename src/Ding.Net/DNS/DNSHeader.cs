@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>DNS头部</summary>
     public class DNSHeader

@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.Stun
+namespace Ding.Net.Stun
 {
     /// <summary>STUN消息类型</summary>
     public enum StunMessageType : System.UInt16

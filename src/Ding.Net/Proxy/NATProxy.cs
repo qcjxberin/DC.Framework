@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Proxy
+namespace Ding.Net.Proxy
 {
     /// <summary>通用NAT代理。所有收到的数据，都转发到指定目标</summary>
     public class NATProxy : ProxyBase

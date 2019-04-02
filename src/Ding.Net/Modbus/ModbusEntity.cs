@@ -16,7 +16,7 @@
 
 using System;
 
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>Modbus实体</summary>
     public class ModbusEntity

@@ -3,7 +3,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace NewLife.Net.UPnP
+namespace Ding.Net.UPnP
 {
     /// <summary>端口映射结构</summary>
     [Serializable, XmlRoot("Envelope", Namespace = "http://schemas.xmlsoap.org/soap/envelope/")]

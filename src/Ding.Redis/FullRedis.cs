@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>Redis缓存</summary>
     public class FullRedis : Redis

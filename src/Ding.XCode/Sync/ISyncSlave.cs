@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using NewLife.Reflection;
+using Ding.Reflection;
 using XCode.Configuration;
 using XCode.DataAccessLayer;
 

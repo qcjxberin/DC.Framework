@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Proxy
+namespace Ding.Net.Proxy
 {
     /// <summary>网络数据转发代理基类</summary>
     /// <remarks>

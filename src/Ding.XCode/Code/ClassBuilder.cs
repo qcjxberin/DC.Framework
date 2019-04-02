@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NewLife.Log;
+using Ding.Log;
 using XCode.DataAccessLayer;
 
 namespace XCode.Code

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewLife.Net.Sdp
+namespace Ding.Net.Sdp
 {
     /// <summary>SDP 媒体描述</summary>
     public class SdpMediaDescription

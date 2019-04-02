@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>Redis集群</summary>
     public class RedisCluster : RedisBase

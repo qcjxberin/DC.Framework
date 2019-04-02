@@ -1,5 +1,5 @@
 ﻿using System;
-using NewLife.Reflection;
+using Ding.Reflection;
 using XCode.Exceptions;
 
 namespace XCode.DataAccessLayer

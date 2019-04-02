@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.TDP
+namespace Ding.Net.TDP
 {
     /// <summary>TDP协议包</summary>
     /// <remarks>

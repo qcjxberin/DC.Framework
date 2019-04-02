@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife.Collections;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Reflection;
 
 namespace XCode.Sync
 {

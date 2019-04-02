@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>CNAME记录</summary>
     public class DNS_CNAME : DNSRecord

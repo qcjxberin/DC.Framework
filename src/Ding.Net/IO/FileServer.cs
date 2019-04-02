@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Net.Sockets;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.IO
+namespace Ding.Net.IO
 {
     /// <summary>文件服务端</summary>
     public class FileServer : NetServer<FileSession>

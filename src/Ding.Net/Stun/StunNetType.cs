@@ -1,6 +1,6 @@
 ﻿
 using System.ComponentModel;
-namespace NewLife.Net.Stun
+namespace Ding.Net.Stun
 {
     /// <summary>UDP网络类型</summary>
     /// <remarks>

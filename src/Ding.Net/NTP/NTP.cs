@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.NTP
+namespace Ding.Net.NTP
 {
     /// <summary>Network Time Protocol（NTP）是用来使计算机时间同步化的一种协议</summary>
     public class NTP

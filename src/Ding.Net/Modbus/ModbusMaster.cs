@@ -16,9 +16,9 @@
 
 using System;
 using System.Threading;
-using NewLife.Log;
+using Ding.Log;
 
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>Modbus主站</summary>
     /// <example>

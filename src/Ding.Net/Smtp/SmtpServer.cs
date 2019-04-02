@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.Smtp
+namespace Ding.Net.Smtp
 {
     /// <summary>Smtp服务器</summary>
     public class SmtpServer : NetServer<SmtpSession>

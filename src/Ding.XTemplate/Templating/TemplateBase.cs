@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using NewLife;
-using NewLife.Reflection;
+using Ding;
+using Ding.Reflection;
 
 namespace XTemplate.Templating
 {

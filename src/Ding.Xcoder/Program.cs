@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using NewLife;
-using NewLife.Log;
-using NewLife.Net;
-using NewLife.Threading;
-using NewLife.Xml;
+using Ding;
+using Ding.Log;
+using Ding.Net;
+using Ding.Threading;
+using Ding.Xml;
 using XCode.DataAccessLayer;
 
 namespace XCoder

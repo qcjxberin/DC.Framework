@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Reflection;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Reflection;
 using XCode.DataAccessLayer;
 
 namespace XCode.Code
@@ -278,12 +278,12 @@ namespace XCode.Code
                 us.Add("System.Xml.Serialization");
 
                 us.Add("NewLife");
-                us.Add("NewLife.Data");
-                us.Add("NewLife.Model");
-                us.Add("NewLife.Log");
-                us.Add("NewLife.Reflection");
-                us.Add("NewLife.Threading");
-                us.Add("NewLife.Web");
+                us.Add("Ding.Data");
+                us.Add("Ding.Model");
+                us.Add("Ding.Log");
+                us.Add("Ding.Reflection");
+                us.Add("Ding.Threading");
+                us.Add("Ding.Web");
                 us.Add("XCode.Cache");
                 us.Add("XCode.Membership");
             }

@@ -60,21 +60,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="UpdateInfo.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Test.xt" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="NewLife.Core">
-      <Version>8.1.2019.327</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ding.Core\02-Ding.Core.csproj">
-      <Project>{5c990908-1594-40ed-8569-d6aa055b0887}</Project>
-      <Name>02-Ding.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

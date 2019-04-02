@@ -7,10 +7,10 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Xml.Serialization;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Web;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
+using Ding.Web;
 
 namespace XCode.Membership
 {

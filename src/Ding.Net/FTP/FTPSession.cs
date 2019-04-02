@@ -1,6 +1,6 @@
-﻿using NewLife.Net.Sockets;
+﻿using Ding.Net.Sockets;
 
-namespace NewLife.Net.FTP
+namespace Ding.Net.FTP
 {
     /// <summary>FTP会话</summary>
     public class FTPSession : NetSession

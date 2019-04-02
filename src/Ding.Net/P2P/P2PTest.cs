@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 
-namespace NewLife.Net.P2P
+namespace Ding.Net.P2P
 {
     /// <summary>P2P测试</summary>
     public static class P2PTest

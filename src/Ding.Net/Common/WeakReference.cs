@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NewLife.Net.Common
+namespace Ding.Net.Common
 {
     /// <summary>
     /// 弱引用

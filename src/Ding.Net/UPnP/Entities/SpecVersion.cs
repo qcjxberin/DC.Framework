@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.UPnP
+namespace Ding.Net.UPnP
 {
     /// <summary>SpecVersion</summary>
     public class SpecVersion

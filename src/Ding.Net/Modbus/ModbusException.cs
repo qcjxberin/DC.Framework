@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>Modbus异常</summary>
     public class ModbusException : Exception

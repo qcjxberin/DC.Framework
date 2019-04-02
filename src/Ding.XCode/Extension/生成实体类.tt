@@ -1,5 +1,5 @@
 ﻿<#@ template language="C#" hostSpecific="true" debug="true" #>
-<#@ assembly name="$(SolutionDir)\..\Bin\NewLife.Core.dll" #>
+<#@ assembly name="$(SolutionDir)\..\Bin\Ding.Core.dll" #>
 <#@ assembly name="$(SolutionDir)\..\Bin\XCode.dll" #>
 <#@ import namespace="System.Diagnostics" #>
 <#@ import namespace="System.IO" #>

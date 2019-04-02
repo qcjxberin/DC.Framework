@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
-using NewLife.Threading;
+using Ding.Threading;
 
-namespace NewLife.Net.Stress
+namespace Ding.Net.Stress
 {
     class TcpStressClient : DisposeBase
     {

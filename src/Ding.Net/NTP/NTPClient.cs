@@ -5,7 +5,7 @@
 //using System.Net.Sockets;
 //using System.Runtime.InteropServices;
 
-//namespace NewLife.Net.Application
+//namespace Ding.Net.Application
 //{
 //    /// <summary>
 //    /// Leap indicator

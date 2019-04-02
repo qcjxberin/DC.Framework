@@ -6,10 +6,10 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using NewLife;
-using NewLife.Log;
-using NewLife.Reflection;
-using NewLife.Serialization;
+using Ding;
+using Ding.Log;
+using Ding.Reflection;
+using Ding.Serialization;
 using XCode.Code;
 
 namespace XCode.DataAccessLayer

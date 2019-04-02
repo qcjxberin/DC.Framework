@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.FTP
+namespace Ding.Net.FTP
 {
     /// <summary>FTP客户端</summary>
     public class FTPClient : DisposeBase

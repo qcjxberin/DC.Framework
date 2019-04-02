@@ -6,6 +6,7 @@ using Ding.Biz.Payments.Wechatpay.Results;
 using Ding.Helpers;
 using Ding.Logs;
 using Ding.Logs.Extensions;
+using Ding.Utils.Helpers;
 
 namespace Ding.Biz.Payments.Wechatpay.Services.Base {
     /// <summary>

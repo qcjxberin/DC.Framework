@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
-using NewLife.Collections;
+using Ding.Collections;
 using XCode.DataAccessLayer;
 
 namespace XCode.Configuration

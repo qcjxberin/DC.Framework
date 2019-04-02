@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
-using NewLife.Net.Sockets;
+using Ding.Net.Sockets;
 
-namespace NewLife.Net.Telnet
+namespace Ding.Net.Telnet
 {
     /// <summary>Telnet服务器</summary>
     public class TelnetServer : NetServer<TelnetSession>

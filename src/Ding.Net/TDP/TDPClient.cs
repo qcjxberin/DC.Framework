@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.TDP
+namespace Ding.Net.TDP
 {
     class TDPClient
     {

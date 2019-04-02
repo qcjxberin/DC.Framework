@@ -4,8 +4,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using NewLife.Log;
-using NewLife.Security;
+using Ding.Log;
+using Ding.Security;
 using XCode.Model;
 
 namespace XCode.Common

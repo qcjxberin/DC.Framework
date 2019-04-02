@@ -1,9 +1,9 @@
 ﻿﻿using System;
 using System.Text;
 using System.Web.UI;
-using NewLife.Collections;
-using NewLife.CommonEntity;
-using NewLife.Web;
+using Ding.Collections;
+using Ding.CommonEntity;
+using Ding.Web;
 using XCode;
 using XControl;
 

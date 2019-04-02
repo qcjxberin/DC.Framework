@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using NewLife;
+using Ding;
 
 namespace XCode.DataAccessLayer
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.DNS
+namespace Ding.Net.DNS
 {
     /// <summary>These are the return codes (RCODE) the server can send back. (RFC 1035 4.1.1)</summary>
     public enum DNSRcodeType

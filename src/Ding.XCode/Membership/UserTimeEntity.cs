@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Web;
-using NewLife.Model;
-using NewLife.Threading;
-using NewLife.Web;
+using Ding.Model;
+using Ding.Threading;
+using Ding.Web;
 using XCode.Configuration;
 
 namespace XCode.Membership

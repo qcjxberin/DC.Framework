@@ -1,9 +1,9 @@
 ﻿using System;
-using NewLife.Data;
-using NewLife.Log;
-using NewLife.Model;
+using Ding.Data;
+using Ding.Log;
+using Ding.Model;
 
-namespace NewLife.Net.Application
+namespace Ding.Net.Application
 {
     /// <summary>回声处理器</summary>
     public class EchoHandler : Handler

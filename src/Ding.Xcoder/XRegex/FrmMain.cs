@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using XCoder;
 using XCoder.XRegex;
 
-namespace NewLife.XRegex
+namespace Ding.XRegex
 {
     [DisplayName("正则表达式工具")]
     public partial class FrmMain : Form, IXForm

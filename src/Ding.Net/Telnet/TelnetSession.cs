@@ -1,6 +1,6 @@
-﻿using NewLife.Net.Sockets;
+﻿using Ding.Net.Sockets;
 
-namespace NewLife.Net.Telnet
+namespace Ding.Net.Telnet
 {
     /// <summary>Telnet会话</summary>
     public class TelnetSession : NetSession

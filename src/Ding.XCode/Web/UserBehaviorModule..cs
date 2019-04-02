@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
-using NewLife.Collections;
-using NewLife.Log;
-using NewLife.Model;
-using NewLife.Threading;
-using NewLife.Web;
+using Ding.Collections;
+using Ding.Log;
+using Ding.Model;
+using Ding.Threading;
+using Ding.Web;
 using XCode.Membership;
 
 namespace XCode.Web

@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NewLife.Collections;
-using NewLife.Serialization;
-using NewLife.Threading;
+using Ding.Collections;
+using Ding.Serialization;
+using Ding.Threading;
 using XCode;
 using XCode.Configuration;
 using XCode.DataAccessLayer;
 using XCode.Extension;
 
-namespace NewLife.Caching
+namespace Ding.Caching
 {
     /// <summary>数据库缓存。利用数据表来缓存信息</summary>
     /// <remarks>
     /// 构建一个操作队列，新增、更新、删除等操作全部排队单线程执行，以改进性能
     /// </remarks>
-    public class DbCache : NewLife.Caching.Cache
+    public class DbCache : Ding.Caching.Cache
     {
         #region 属性
         /// <summary>实体工厂</summary>

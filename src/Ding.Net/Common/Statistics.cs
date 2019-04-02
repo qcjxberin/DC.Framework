@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace NewLife.Net.Common
+namespace Ding.Net.Common
 {
     /// <summary>统计</summary>
     class Statistics : IStatistics

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using NewLife.Data;
-using NewLife.Model;
-using NewLife.Web;
+using Ding.Data;
+using Ding.Model;
+using Ding.Web;
 using XCode.Cache;
 
 namespace XCode.Membership

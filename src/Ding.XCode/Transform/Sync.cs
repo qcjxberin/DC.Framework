@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using NewLife.Log;
+using Ding.Log;
 using XCode.Membership;
 
 namespace XCode.Transform

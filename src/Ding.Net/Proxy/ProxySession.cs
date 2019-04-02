@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using NewLife.Data;
+using Ding.Data;
 
-namespace NewLife.Net.Proxy
+namespace Ding.Net.Proxy
 {
     /// <summary>代理会话。客户端的一次转发请求（或者Tcp连接），就是一个会话。转发的全部操作都在会话中完成。</summary>
     /// <remarks>

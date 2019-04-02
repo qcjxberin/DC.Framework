@@ -1,5 +1,5 @@
 ﻿
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>错误代码</summary>
     public enum Errors : System.Byte

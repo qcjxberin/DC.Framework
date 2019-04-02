@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace NewLife.Net.Stun
+namespace Ding.Net.Stun
 {
     /// <summary>Stun结果</summary>
     public class StunResult

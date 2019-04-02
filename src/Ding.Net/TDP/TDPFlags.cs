@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.TDP
+namespace Ding.Net.TDP
 {
     /// <summary>TDP标记</summary>
     [Flags]

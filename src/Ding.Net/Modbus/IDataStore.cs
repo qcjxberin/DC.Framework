@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NewLife.Net.Modbus
+namespace Ding.Net.Modbus
 {
     /// <summary>数据存储接口</summary>
     public interface IDataStore
