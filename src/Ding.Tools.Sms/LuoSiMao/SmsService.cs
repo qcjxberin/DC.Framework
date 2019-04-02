@@ -1,6 +1,6 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Tools.Sms.LuoSiMao {
     /// <summary>
