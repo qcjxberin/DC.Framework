@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HaoCoding.Pdu
+namespace Ding.Pdu
 {
     public enum SMSDirection
     {

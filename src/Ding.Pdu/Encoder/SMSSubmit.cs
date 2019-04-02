@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace HaoCoding.Pdu
+namespace Ding.Pdu
 {
     /// <summary>
     /// 表示要发送的SMS消息

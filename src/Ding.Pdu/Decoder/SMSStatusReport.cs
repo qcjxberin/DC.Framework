@@ -4,7 +4,7 @@
 
 using System;
 
-namespace HaoCoding.Pdu
+namespace Ding.Pdu
 {
     public enum ReportStatus
     {

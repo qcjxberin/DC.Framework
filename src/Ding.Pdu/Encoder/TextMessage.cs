@@ -4,7 +4,7 @@
 
 using System.Text;
 
-namespace HaoCoding.Pdu
+namespace Ding.Pdu
 {
     /// <summary>
     /// 标准纯文本消息

@@ -1,4 +1,4 @@
-###  **HaoCoding.Pdu** 
+###  **Ding.Pdu** 
 
 是一个用于C#的PDU编码及解码的功能库，支持.net 4.5及net core。
 
@@ -7,7 +7,7 @@
 您可以使用以下命令从Nuget安装：
 
 ```
-Install-Package HaoCoding.Pdu
+Install-Package Ding.Pdu
 ```
 
 或者通过Visual Studio包管理器。
