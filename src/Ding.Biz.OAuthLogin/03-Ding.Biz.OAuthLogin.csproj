@@ -53,25 +53,6 @@
     <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Baidu\" />
-    <Folder Include="Coding\" />
-    <Folder Include="DingTalk\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Facebook\" />
-    <Folder Include="Gitee\" />
-    <Folder Include="Github\" />
-    <Folder Include="Jd\" />
-    <Folder Include="MeiliShuo\" />
-    <Folder Include="Microsoft\" />
-    <Folder Include="OsChina\" />
-    <Folder Include="QQ\" />
-    <Folder Include="Taobao\" />
-    <Folder Include="Wechat\" />
-    <Folder Include="Weibo\" />
-    <Folder Include="Youzan\" />
-  </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
