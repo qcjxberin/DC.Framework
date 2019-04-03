@@ -1,22 +1,22 @@
 ﻿using System.Threading.Tasks;
 
-namespace Ding.Biz.OAuthLogin.QQ.Configs
+namespace Ding.Biz.OAuthLogin.WeChat.Configs
 {
     /// <summary>
     /// QQ配置提供器
     /// </summary>
-    public class QQConfigProvider : IQQConfigProvider
+    public class WeChatConfigProvider : IWeChatConfigProvider
     {
         /// <summary>
         /// 配置
         /// </summary>
-        private readonly QQConfig _config;
+        private readonly WeChatConfig _config;
 
         /// <summary>
         /// 初始化QQ配置提供器
         /// </summary>
         /// <param name="config"></param>
-        public QQConfigProvider(QQConfig config)
+        public WeChatConfigProvider(WeChatConfig config)
         {
             _config = config;
         }
@@ -25,7 +25,7 @@ namespace Ding.Biz.OAuthLogin.QQ.Configs
         /// 获取配置
         /// </summary>
         /// <returns></returns>
-        public Task<QQConfig> GetConfigAsync()
+        public Task<WeChatConfig> GetConfigAsync()
         {
             return Task.FromResult(_config);
         }

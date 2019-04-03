@@ -1,4 +1,4 @@
-﻿namespace Ding.Biz.OAuthLogin.Configs
+﻿namespace Ding.Biz.OAuthLogin.QQ.Configs
 {
     /// <summary>
     /// QQ配置
