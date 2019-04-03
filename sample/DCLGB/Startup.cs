@@ -1,44 +1,48 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Ding;
-using Ding.Dependency;
-using Ding.Logs.Extensions;
-using Ding.Schedulers.Quartz;
-using Ding.Webs.Extensions;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.ResponseCompression;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Ding.Caches.EasyCaching;
-using EasyCaching.InMemory;
-using Ding.Locks.Default;
-using Ding.Datas.Ef;
-using Swashbuckle.AspNetCore.Swagger;
-using System.IO;
-using Ding.Events.Default;
-using Ding.Utils.Config;
-using DCLGB.Data;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
-using Microsoft.AspNetCore.HttpOverrides;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using Microsoft.AspNetCore.Mvc.Versioning;
-using DCLGB.SwaggerExtensions;
-using System.Collections.Generic;
-using Ding.Swashbuckle.Filters.Operations;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using IdentityServer4.AccessTokenValidation;
-using IdentityServer4.Models;
-using IdentityModel;
-using IdentityServer4.Test;
-using System.Security.Claims;
+﻿using DCLGB.Data;
 using DCLGB.OAuths;
 using DCLGB.SignalR;
+using DCLGB.SwaggerExtensions;
+using Ding;
 using Ding.Biz.OAuthLogin.Extensions;
+using Ding.Caches.EasyCaching;
+using Ding.Datas.Ef;
+using Ding.Dependency;
+using Ding.Events.Default;
+using Ding.Locks.Default;
+using Ding.Logs.Extensions;
+using Ding.Schedulers.Quartz;
+using Ding.Swashbuckle.Filters.Operations;
+using Ding.Utils.Config;
+using Ding.Webs.Extensions;
+using Ding.Webs.Filters;
+using EasyCaching.InMemory;
+using IdentityModel;
+using IdentityServer4.AccessTokenValidation;
+using IdentityServer4.Models;
+using IdentityServer4.Test;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace DCLGB
 {
@@ -70,7 +74,19 @@ namespace DCLGB
         {
             //添加Mvc服务
             services.AddMvc(options => {
-                //options.Filters.Add( new AutoValidateAntiforgeryTokenAttribute() );
+                //options.Filters.Add(new ValidationAttribute() { AllowNulls = true });
+                options.Filters.Add<ValidationAttribute>(); // 全局检查是否允许传入的值为空, true为如?id=&id1=或者空的实体这样的方式传入空值时不做检测并允许传入，否则如果当id没有值时，只能传入?id1=Url不能有id=  
+                options.Filters.Add<ResultHandlerAttribute>(); // 对返回的结果进行全局处理
+                options.ValueProviderFactories.Add(new JQueryQueryStringValueProviderFactory()); //处理数组接收中[]括号不识别问题
+            }).AddJsonOptions(options => {
+                // 解决json序列化时的循环引用问题,设置为不处理循环引用
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                // 对 JSON 数据使用混合大小写。跟属性名同样的大小.输出
+                //options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                // 设置时间格式
+                options.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
+                // 实现所有非ASCII和控制字符(例如换行符)都被转义
+                options.SerializerSettings.StringEscapeHandling = StringEscapeHandling.EscapeNonAscii;
             }).AddControllersAsServices()
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -127,45 +143,7 @@ namespace DCLGB
             });
 
             //添加Swagger
-            services.AddSwaggerGen(options => {
-                options.SwaggerDoc("v1", new Info { Version = "v1", Title = "LiGongBang API", Description = "理工邦管理系统", Contact = new Contact() { Name = "丁川", Email = "100538511@qq.com", Url = "http://www.y-s.cc" } } );
-                options.SwaggerDoc("v2", new Info { Version = "v2", Title = "LiGongBang API", Description = "理工邦管理系统", Contact = new Contact() { Name = "丁川", Email = "100538511@qq.com", Url = "http://www.y-s.cc" } });
-
-                options.DocumentFilter<SetVersionInPaths>();
-                options.DocInclusionPredicate((docName, apiDesc) =>
-                {
-                    if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;
-
-                    var versions = methodInfo.DeclaringType
-                        .GetCustomAttributes(true)
-                        .OfType<ApiVersionAttribute>()
-                        .SelectMany(attr => attr.Versions);
-
-                    return versions.Any(v => $"v{v.ToString()}" == docName);
-                });
-
-                options.OperationFilter<AddRequestHeaderOperationFilter>();
-                options.OperationFilter<AddResponseHeadersOperationFilter>();
-                options.OperationFilter<AddFileParameterOperationFilter>();
-
-                // 授权组合
-                options.OperationFilter<AddSecurityRequirementsOperationFilter>();
-                options.OperationFilter<AddAppendAuthorizeToSummaryOperationFilter>();
-                
-                options.AddSecurityDefinition("oauth2", new ApiKeyScheme()
-                {
-                    Description = "Token令牌(数据将在请求头中进行传输) 参数结构: \"Authorization: Bearer {token}\"",  
-                    In = "header",
-                    Name = "Authorization", // jwt默认的参数名称
-                    Type = "apiKey",
-                });
-            });
-            services.ConfigureSwaggerGen(options =>
-            {
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Ding.xml"));
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Ding.Webs.xml"));
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "DCLGB.xml"));
-            });
+            ConfigSwagger(services);
 
             services.AddAuthentication(options =>
             {
@@ -211,6 +189,8 @@ namespace DCLGB
             services.AddConnections();
 
             services.AddTimedJob(); //注册定时任务
+
+            services.AddSession();
 
             services.AddLogin(x =>
             {
@@ -278,7 +258,8 @@ namespace DCLGB
 
             app.UseErrorLog();
             app.UseStaticFiles();
-            app.UseStaticHttpContext();
+			app.UseStaticHttpContext();
+            app.UseSession();
             app.UseIdentityServer();// 启用 IdentityServer4 服务
             app.UseAuthentication();
             app.UseSignalR(routes =>
@@ -286,6 +267,12 @@ namespace DCLGB
                 routes.MapHub<ChatsHub>("/chathub");
             });
             app.UseCsrfToken();
+            //Cookie策略设置
+            app.UseCookiePolicy(new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.Lax
+            });
+
             ConfigRoute(app);
 
             app.UseTimedJob();
@@ -317,6 +304,51 @@ namespace DCLGB
 
             //启动调度器
             await scheduler.StartAsync();
+        }
+
+        /// <summary>
+        /// 配置Swagger
+        /// </summary>
+        /// <param name="services"></param>
+        public void ConfigSwagger(IServiceCollection services)
+        {
+            services.AddSwaggerGen(options => {
+                options.SwaggerDoc("v1", new Info { Version = "v1", Title = "LiGongBang API", Description = "理工邦管理系统", Contact = new Contact() { Name = "丁川", Email = "100538511@qq.com", Url = "http://www.y-s.cc" } });
+                options.SwaggerDoc("v2", new Info { Version = "v2", Title = "LiGongBang API", Description = "理工邦管理系统", Contact = new Contact() { Name = "丁川", Email = "100538511@qq.com", Url = "http://www.y-s.cc" } });
+
+                options.DocumentFilter<SetVersionInPaths>();
+                options.DocInclusionPredicate((docName, apiDesc) =>
+                {
+                    if (!apiDesc.TryGetMethodInfo(out MethodInfo methodInfo)) return false;
+
+                    var versions = methodInfo.DeclaringType
+                        .GetCustomAttributes(true)
+                        .OfType<ApiVersionAttribute>()
+                        .SelectMany(attr => attr.Versions);
+
+                    return versions.Any(v => $"v{v.ToString()}" == docName);
+                });
+
+                options.OperationFilter<AddRequestHeaderOperationFilter>();
+                options.OperationFilter<AddResponseHeadersOperationFilter>();
+                options.OperationFilter<AddFileParameterOperationFilter>();
+
+                // 授权组合
+                options.OperationFilter<AddSecurityRequirementsOperationFilter>();
+                options.OperationFilter<AddAppendAuthorizeToSummaryOperationFilter>();
+
+                options.AddSecurityDefinition("oauth2", new ApiKeyScheme()
+                {
+                    Description = "Token令牌(数据将在请求头中进行传输) 参数结构: \"Authorization: Bearer {token}\"",
+                    In = "header",
+                    Name = "Authorization", // jwt默认的参数名称
+                    Type = "apiKey",
+                });
+            });
+            services.ConfigureSwaggerGen(options =>
+            {
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "DCLGB.xml"));
+            });
         }
 
         /// <summary>

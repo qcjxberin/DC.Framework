@@ -15,6 +15,10 @@ namespace DCLGB
         [Description("网站域名")]
         public string Url { get; set; } = "http://localhost:9191";
 
+        /// <summary>
+        /// 登录参数设置
+        /// </summary>
+        [Description("登录参数设置")]
         public Login Login { get; set; } = new Login();
     }
 

@@ -35,9 +35,11 @@ namespace DCLGB
         /// <returns></returns>
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
+            var configuration = new ConfigurationBuilder().SetBasePath(AppContext.BaseDirectory).AddJsonFile("hosting.json").Build();
+
             return WebHost.CreateDefaultBuilder(args)
                 .UseApplicationInsights()
-                .UseUrls(SiteSetting.Current.Url)
+                .UseConfiguration(configuration)
                 .ConfigureAppConfiguration((context, config) =>
                 {
                     // Configure the app here.
