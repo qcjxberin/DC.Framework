@@ -3,6 +3,7 @@ using Ding.Biz.OAuthLogin.Factories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
+using Ding.Biz.OAuthLogin.WeChat.Configs;
 
 namespace Ding.Biz.OAuthLogin.Extensions
 {
@@ -21,6 +22,7 @@ namespace Ding.Biz.OAuthLogin.Extensions
             var options = new LoginOptions();
             setupAction?.Invoke(options);
             services.TryAddSingleton<IQQConfigProvider>(new QQConfigProvider(options.QqOptions));
+            services.TryAddSingleton<IWeChatConfigProvider>(new WeChatConfigProvider(options.WeChatOptions));
             services.TryAddScoped<ILoginFactory, LoginFactory>();
         }
     }

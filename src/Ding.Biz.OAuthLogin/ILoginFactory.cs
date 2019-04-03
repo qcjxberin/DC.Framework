@@ -34,5 +34,26 @@ namespace Ding.Biz.OAuthLogin
         /// <param name="entity"></param>
         /// <returns></returns>
         Task<QQ_OpenId_get_user_info_ResultEntity> OpenId_Get_User_Info(QQ_OpenAPI_RequestEntity entity);
+
+        /// <summary>
+        /// Step1：获取Authorization Code
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<string> AuthorizationHref(WeChat_Authorization_RequestEntity entity);
+
+        /// <summary>
+        /// Step2：通过Authorization Code获取Access Token、openid
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<WeChat_AccessToken_ResultEntity> AccessToken(WeChat_AccessToken_RequestEntity entity);
+
+        /// <summary>
+        /// Step3：获取用户信息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<WeChat_OpenId_get_user_info_ResultEntity> Get_User_Info(WeChat_OpenAPI_RequestEntity entity);
     }
 }

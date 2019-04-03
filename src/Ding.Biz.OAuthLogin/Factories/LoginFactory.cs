@@ -1,4 +1,5 @@
 ﻿using Ding.Biz.OAuthLogin.QQ.Configs;
+using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Utils.Helpers;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
@@ -17,9 +18,15 @@ namespace Ding.Biz.OAuthLogin.Factories
         /// </summary>
         protected readonly IQQConfigProvider _qqConfigProvider;
 
-        public LoginFactory(IQQConfigProvider qqConfigProvider)
+        /// <summary>
+        /// 微信登录配置提供器
+        /// </summary>
+        protected readonly IWeChatConfigProvider _wechatConfigProvider;
+
+        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider)
         {
             _qqConfigProvider = qqConfigProvider;
+            _wechatConfigProvider = wechatConfigProvider;
         }
 
         #region QQ登录
@@ -89,9 +96,6 @@ namespace Ding.Biz.OAuthLogin.Factories
         /// <returns></returns>
         public async Task<QQ_OpenId_ResultEntity> OpenId(QQ_OpenId_RequestEntity entity)
         {
-            var mo = new QQ_OpenId_ResultEntity();
-            var pis = mo.GetType().GetProperties();
-
             if (!LoginBase.IsValid(entity))
             {
                 return null;
@@ -102,7 +106,6 @@ namespace Ding.Biz.OAuthLogin.Factories
 
             string pars = LoginBase.EntityToPars(entity);
             string result = HttpTo.Get(config.API_OpenID_PC + "?" + pars);
-            //callback( {"client_id":"xx12196xx","openid":"09196B48CA96A8C8ED4FFxxCBxx59Dxx"} );
             result = result.Replace("callback( ", "").Replace(" );", "");
 
             var outmo = LoginBase.ResultOutput<QQ_OpenId_ResultEntity>(result);
@@ -129,6 +132,83 @@ namespace Ding.Biz.OAuthLogin.Factories
             string result = HttpTo.Get(config.API_Get_User_Info + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<QQ_OpenId_get_user_info_ResultEntity>(result.Replace("\r\n", ""));
+
+            return outmo;
+        }
+        #endregion
+
+        #region 微信登录
+        /// <summary>
+        /// Step1：获取Authorization Code
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<string> AuthorizationHref(WeChat_Authorization_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _wechatConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            return string.Concat(new string[] {
+                config.API_Authorization,
+                "?appid=",
+                entity.appid,
+                "&response_type=",
+                entity.response_type,
+                "&scope=",
+                entity.scope,
+                "&state=",
+                entity.state,
+                "&redirect_uri=",
+                entity.redirect_uri.ToEncode()});
+        }
+
+        /// <summary>
+        /// Step2：通过Authorization Code获取Access Token、openid
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<WeChat_AccessToken_ResultEntity> AccessToken(WeChat_AccessToken_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _wechatConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+            string result = HttpTo.Get(config.API_AccessToken + "?" + pars);
+
+            var outmo = LoginBase.ResultOutput<WeChat_AccessToken_ResultEntity>(result);
+
+            return outmo;
+        }
+
+        /// <summary>
+        /// Step3：获取用户信息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<WeChat_OpenId_get_user_info_ResultEntity> Get_User_Info(WeChat_OpenAPI_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _wechatConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+            string result = HttpTo.Get(config.API_UserInfo + "?" + pars);
+
+            var outmo = LoginBase.ResultOutput<WeChat_OpenId_get_user_info_ResultEntity>(result.Replace("\r\n", ""));
 
             return outmo;
         }
