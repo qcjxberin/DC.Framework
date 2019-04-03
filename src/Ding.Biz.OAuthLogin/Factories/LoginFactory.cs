@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ding.Biz.OAuthLogin.Factories
+namespace Ding.Biz.OAuthLogin
 {
     /// <summary>
     /// 登录工厂

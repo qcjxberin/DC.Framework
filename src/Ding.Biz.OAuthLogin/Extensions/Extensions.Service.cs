@@ -1,5 +1,4 @@
 ﻿using Ding.Biz.OAuthLogin.QQ.Configs;
-using Ding.Biz.OAuthLogin.Factories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
