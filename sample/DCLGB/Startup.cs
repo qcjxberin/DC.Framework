@@ -38,6 +38,7 @@ using IdentityServer4.Test;
 using System.Security.Claims;
 using DCLGB.OAuths;
 using DCLGB.SignalR;
+using Ding.Biz.OAuthLogin.Extensions;
 
 namespace DCLGB
 {
@@ -210,6 +211,13 @@ namespace DCLGB
             services.AddConnections();
 
             services.AddTimedJob(); //注册定时任务
+
+            services.AddLogin(x =>
+            {
+                x.QqOptions.APPID = SiteSetting.Current.Login.QQ.APPID;
+                x.QqOptions.APPKey = SiteSetting.Current.Login.QQ.APPKey;
+                x.QqOptions.Redirect_Uri = SiteSetting.Current.Login.QQ.Redirect_Uri;
+            });
 
             //添加Ding基础设施服务
             return services.AddDing();

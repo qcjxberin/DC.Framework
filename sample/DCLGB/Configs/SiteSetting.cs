@@ -1,4 +1,5 @@
-﻿using Ding.Xml;
+﻿using Ding.Biz.OAuthLogin;
+using Ding.Xml;
 using System.ComponentModel;
 
 namespace DCLGB
@@ -13,5 +14,24 @@ namespace DCLGB
         /// <summary>网站域名</summary>
         [Description("网站域名")]
         public string Url { get; set; } = "http://localhost:9191";
+
+        public Login Login { get; set; } = new Login();
+    }
+
+    /// <summary>
+    /// 登录参数设置
+    /// </summary>
+    [DisplayName("登录参数设置")]
+    public class Login
+    {
+        public QQ QQ { get; set; } = new QQ();
+    }
+
+    /// <summary>
+    /// QQ登录参数设置
+    /// </summary>
+    [DisplayName("QQ登录参数设置")]
+    public class QQ : ConfigBase
+    {
     }
 }

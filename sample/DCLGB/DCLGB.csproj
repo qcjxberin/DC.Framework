@@ -36,6 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Ding.Biz.OAuthLogin\03-Ding.Biz.OAuthLogin.csproj" />
     <ProjectReference Include="..\..\src\Ding.Caches\05-Ding.Caches.csproj" />
     <ProjectReference Include="..\..\src\Ding.Core\02-Ding.Core.csproj" />
     <ProjectReference Include="..\..\src\Ding.Events\06-Ding.Events.csproj" />
