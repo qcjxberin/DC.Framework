@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ding.Biz.OAuthLogin.GitHub.Configs;
+using Ding.Helpers;
+using System;
 
 namespace Ding.Biz.OAuthLogin
 {
@@ -8,10 +10,25 @@ namespace Ding.Biz.OAuthLogin
     public class GitHub_Authorize_RequestEntity
     {
         /// <summary>
+        /// GitHub登录配置
+        /// </summary>
+        protected static readonly GitHubConfig GitHubConfig;
+
+        /// <summary>
+        /// 初始化一个<see cref="QQ_Authorization_RequestEntity"/>类型的实例
+        /// </summary>
+        static GitHub_Authorize_RequestEntity()
+        {
+            var provider = Ioc.Create<IGitHubConfigProvider>();
+            provider.CheckNotNull(nameof(provider));
+            GitHubConfig = provider.GetConfigAsync().Result;
+        }
+
+        /// <summary>
         /// 注册应用时的获取的client_id
         /// </summary>
         [Required]
-        public string client_id { get; set; } = GitHubConfig.ClientID;
+        public string client_id { get; set; } = GitHubConfig.APPID;
         /// <summary>
         /// github鉴权成功之后，重定向到网站
         /// </summary>

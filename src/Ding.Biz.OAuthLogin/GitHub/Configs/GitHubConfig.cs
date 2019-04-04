@@ -3,7 +3,7 @@
     /// <summary>
     /// 配置
     /// </summary>
-    public class GitHubConfig
+    public class GitHubConfig : ConfigBase
     {
         /// <summary>
         /// 请根据步骤操作：authorize => access_token => user

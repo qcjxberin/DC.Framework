@@ -1,4 +1,5 @@
-﻿using Ding.Biz.OAuthLogin.QQ.Configs;
+﻿using Ding.Biz.OAuthLogin.GitHub.Configs;
+using Ding.Biz.OAuthLogin.QQ.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
 
 namespace Ding.Biz.OAuthLogin.Extensions
@@ -17,5 +18,10 @@ namespace Ding.Biz.OAuthLogin.Extensions
         /// 微信配置
         /// </summary>
         public WeChatConfig WeChatOptions { get; set; } = new WeChatConfig();
+
+        /// <summary>
+        /// GitHub配置
+        /// </summary>
+        public GitHubConfig GitHubOptions { get; set; } = new GitHubConfig();
     }
 }

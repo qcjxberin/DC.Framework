@@ -1,4 +1,5 @@
-﻿using Ding.Biz.OAuthLogin.QQ.Configs;
+﻿using Ding.Biz.OAuthLogin.GitHub.Configs;
+using Ding.Biz.OAuthLogin.QQ.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Utils.Helpers;
 using Newtonsoft.Json.Linq;
@@ -23,10 +24,16 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         protected readonly IWeChatConfigProvider _wechatConfigProvider;
 
-        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider)
+        /// <summary>
+        /// 微信登录配置提供器
+        /// </summary>
+        protected readonly IGitHubConfigProvider _githubConfigProvider;
+
+        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider, IGitHubConfigProvider githubConfigProvider)
         {
             _qqConfigProvider = qqConfigProvider;
             _wechatConfigProvider = wechatConfigProvider;
+            _githubConfigProvider = githubConfigProvider;
         }
 
         #region QQ登录
@@ -209,6 +216,87 @@ namespace Ding.Biz.OAuthLogin
             string result = HttpTo.Get(config.API_UserInfo + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<WeChat_OpenId_get_user_info_ResultEntity>(result.Replace("\r\n", ""));
+
+            return outmo;
+        }
+        #endregion
+
+        #region GitHub
+        /// <summary>
+        /// 请求授权地址
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<string> AuthorizeHref(GitHub_Authorize_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _githubConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            return string.Concat(new string[] {
+                config.API_Authorize,
+                "?client_id=",
+                entity.client_id,
+                "&scope=",
+                entity.scope.ToEncode(),
+                "&state=",
+                entity.state,
+                "&redirect_uri=",
+                entity.redirect_uri.ToEncode()});
+        }
+
+        /// <summary>
+        /// 获取 access token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<GitHub_AccessToken_ResultEntity> AccessToken(GitHub_AccessToken_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _githubConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+
+            var hwr = HttpTo.HWRequest(config.API_AccessToken, "POST", pars);
+            hwr.Accept = "application/json";//application/xml
+            string result = HttpTo.Url(hwr);
+
+            var outmo = LoginBase.ResultOutput<GitHub_AccessToken_ResultEntity>(result);
+
+            return outmo;
+        }
+
+        /// <summary>
+        /// 获取 用户信息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<GitHub_User_ResultEntity> User(GitHub_User_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _githubConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+
+            var hwr = HttpTo.HWRequest(config.API_User + "?" + pars);
+            hwr.UserAgent = entity.ApplicationName;
+            string result = HttpTo.Url(hwr);
+
+            var outmo = LoginBase.ResultOutput<GitHub_User_ResultEntity>(result, new List<string> { "plan" });
 
             return outmo;
         }

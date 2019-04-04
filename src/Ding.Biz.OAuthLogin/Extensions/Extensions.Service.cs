@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
+using Ding.Biz.OAuthLogin.GitHub.Configs;
 
 namespace Ding.Biz.OAuthLogin.Extensions
 {
@@ -22,6 +23,7 @@ namespace Ding.Biz.OAuthLogin.Extensions
             setupAction?.Invoke(options);
             services.TryAddSingleton<IQQConfigProvider>(new QQConfigProvider(options.QqOptions));
             services.TryAddSingleton<IWeChatConfigProvider>(new WeChatConfigProvider(options.WeChatOptions));
+            services.TryAddSingleton<IGitHubConfigProvider>(new GitHubConfigProvider(options.GitHubOptions));
             services.TryAddScoped<ILoginFactory, LoginFactory>();
         }
     }
