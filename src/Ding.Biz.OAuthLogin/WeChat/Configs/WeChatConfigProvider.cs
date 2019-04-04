@@ -3,7 +3,7 @@
 namespace Ding.Biz.OAuthLogin.WeChat.Configs
 {
     /// <summary>
-    /// QQ配置提供器
+    /// WeChat配置提供器
     /// </summary>
     public class WeChatConfigProvider : IWeChatConfigProvider
     {
@@ -13,7 +13,7 @@ namespace Ding.Biz.OAuthLogin.WeChat.Configs
         private readonly WeChatConfig _config;
 
         /// <summary>
-        /// 初始化QQ配置提供器
+        /// 初始化WeChat配置提供器
         /// </summary>
         /// <param name="config"></param>
         public WeChatConfigProvider(WeChatConfig config)

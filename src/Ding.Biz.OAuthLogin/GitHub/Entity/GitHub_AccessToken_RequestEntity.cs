@@ -14,7 +14,7 @@ namespace Ding.Biz.OAuthLogin
         protected static readonly GitHubConfig GitHubConfig;
 
         /// <summary>
-        /// 初始化一个<see cref="QQ_Authorization_RequestEntity"/>类型的实例
+        /// 初始化一个<see cref="GitHub_AccessToken_RequestEntity"/>类型的实例
         /// </summary>
         static GitHub_AccessToken_RequestEntity()
         {

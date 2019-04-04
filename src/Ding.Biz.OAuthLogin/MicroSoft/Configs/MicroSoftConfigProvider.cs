@@ -1,22 +1,22 @@
 ﻿using System.Threading.Tasks;
 
-namespace Ding.Biz.OAuthLogin.GitHub.Configs
+namespace Ding.Biz.OAuthLogin.MicroSoft.Configs
 {
     /// <summary>
-    /// GitHub配置提供器
+    /// MicroSoft配置提供器
     /// </summary>
-    public class GitHubConfigProvider : IGitHubConfigProvider
+    public class MicroSoftConfigProvider : IMicroSoftConfigProvider
     {
         /// <summary>
         /// 配置
         /// </summary>
-        private readonly GitHubConfig _config;
+        private readonly MicroSoftConfig _config;
 
         /// <summary>
-        /// 初始化GitHub配置提供器
+        /// 初始化MicroSoft配置提供器
         /// </summary>
         /// <param name="config"></param>
-        public GitHubConfigProvider(GitHubConfig config)
+        public MicroSoftConfigProvider(MicroSoftConfig config)
         {
             _config = config;
         }
@@ -25,7 +25,7 @@ namespace Ding.Biz.OAuthLogin.GitHub.Configs
         /// 获取配置
         /// </summary>
         /// <returns></returns>
-        public Task<GitHubConfig> GetConfigAsync()
+        public Task<MicroSoftConfig> GetConfigAsync()
         {
             return Task.FromResult(_config);
         }
