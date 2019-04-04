@@ -1,7 +1,9 @@
 ﻿using Ding.Biz.OAuthLogin.GitHub.Configs;
 using Ding.Biz.OAuthLogin.MicroSoft.Configs;
 using Ding.Biz.OAuthLogin.QQ.Configs;
+using Ding.Biz.OAuthLogin.Taobao.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
+using Ding.Biz.OAuthLogin.Weibo.Configs;
 using Ding.Utils.Helpers;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
@@ -35,12 +37,24 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         protected readonly IMicroSoftConfigProvider _microsoftConfigProvider;
 
-        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider, IGitHubConfigProvider githubConfigProvider, IMicroSoftConfigProvider microsoftConfigProvider)
+        /// <summary>
+        /// Taobao登录配置提供器
+        /// </summary>
+        protected readonly ITaobaoConfigProvider _taobaoConfigProvider;
+
+        /// <summary>
+        /// Weibo登录配置提供器
+        /// </summary>
+        protected readonly IWeiboConfigProvider _weibaoConfigProvider;
+
+        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider, IGitHubConfigProvider githubConfigProvider, IMicroSoftConfigProvider microsoftConfigProvider, ITaobaoConfigProvider taobaoConfigProvider, IWeiboConfigProvider weibaoConfigProvider)
         {
             _qqConfigProvider = qqConfigProvider;
             _wechatConfigProvider = wechatConfigProvider;
             _githubConfigProvider = githubConfigProvider;
             _microsoftConfigProvider = microsoftConfigProvider;
+            _taobaoConfigProvider = taobaoConfigProvider;
+            _weibaoConfigProvider = weibaoConfigProvider;
         }
 
         #region QQ登录
@@ -400,7 +414,7 @@ namespace Ding.Biz.OAuthLogin
                 return null;
             }
 
-            var config = await _microsoftConfigProvider.GetConfigAsync();
+            var config = await _taobaoConfigProvider.GetConfigAsync();
             config.CheckNotNull(nameof(config));
 
             return string.Concat(new string[] {
@@ -429,12 +443,110 @@ namespace Ding.Biz.OAuthLogin
                 return null;
             }
 
-            var config = await _microsoftConfigProvider.GetConfigAsync();
+            var config = await _taobaoConfigProvider.GetConfigAsync();
             config.CheckNotNull(nameof(config));
 
             string pars = LoginBase.EntityToPars(entity);
             string result = HttpTo.Post(config.API_AccessToken, pars);
             var outmo = LoginBase.ResultOutput<Taobao_AccessToken_ResultEntity>(result);
+
+            return outmo;
+        }
+        #endregion
+
+        #region Weibo
+        /// <summary>
+        /// Step1：请求用户授权Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<string> AuthorizeHref(Weibo_Authorize_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _weibaoConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            return string.Concat(new string[] {
+                config.API_Authorize,
+                "?client_id=",
+                entity.client_id,
+                "&response_type=",
+                entity.response_type,
+                "&state=",
+                entity.state,
+                "&redirect_uri=",
+                entity.redirect_uri.ToEncode()});
+        }
+
+        /// <summary>
+        /// Step2：获取授权过的Access Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<Weibo_AccessToken_ResultEntity> AccessToken(Weibo_AccessToken_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _weibaoConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+            string result = HttpTo.Post(config.API_AccessToken, pars);
+
+            var outmo = LoginBase.ResultOutput<Weibo_AccessToken_ResultEntity>(result);
+
+            return outmo;
+        }
+
+        /// <summary>
+        /// Step3：查询用户access_token的授权相关信息，包括授权时间，过期时间和scope权限。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<Weibo_GetTokenInfo_ResultEntity> GetTokenInfo(Weibo_GetTokenInfo_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _weibaoConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+            string result = HttpTo.Post(config.API_GetTokenInfo, pars);
+
+            var outmo = LoginBase.ResultOutput<Weibo_GetTokenInfo_ResultEntity>(result);
+
+            return outmo;
+        }
+
+        /// <summary>
+        /// Step4：根据用户ID获取用户信息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<Weibo_UserShow_ResultEntity> UserShow(Weibo_UserShow_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _weibaoConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+            string result = HttpTo.Get(config.API_UserShow + "?" + pars);
+
+            var outmo = LoginBase.ResultOutput<Weibo_UserShow_ResultEntity>(result, new List<string> { "status" });
 
             return outmo;
         }

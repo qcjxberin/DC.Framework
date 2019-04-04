@@ -111,5 +111,33 @@ namespace Ding.Biz.OAuthLogin
         /// <param name="entity"></param>
         /// <returns></returns>
         Task<Taobao_AccessToken_ResultEntity> AccessToken(Taobao_AccessToken_RequestEntity entity);
+
+        /// <summary>
+        /// Step1：请求用户授权Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<string> AuthorizeHref(Weibo_Authorize_RequestEntity entity);
+
+        /// <summary>
+        /// Step2：获取授权过的Access Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<Weibo_AccessToken_ResultEntity> AccessToken(Weibo_AccessToken_RequestEntity entity);
+
+        /// <summary>
+        /// Step3：查询用户access_token的授权相关信息，包括授权时间，过期时间和scope权限。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<Weibo_GetTokenInfo_ResultEntity> GetTokenInfo(Weibo_GetTokenInfo_RequestEntity entity);
+
+        /// <summary>
+        /// Step4：根据用户ID获取用户信息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<Weibo_UserShow_ResultEntity> UserShow(Weibo_UserShow_RequestEntity entity);
     }
 }

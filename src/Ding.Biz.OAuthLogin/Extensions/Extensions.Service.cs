@@ -6,6 +6,7 @@ using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Biz.OAuthLogin.GitHub.Configs;
 using Ding.Biz.OAuthLogin.Taobao.Configs;
 using Ding.Biz.OAuthLogin.MicroSoft.Configs;
+using Ding.Biz.OAuthLogin.Weibo.Configs;
 
 namespace Ding.Biz.OAuthLogin.Extensions
 {
@@ -28,6 +29,7 @@ namespace Ding.Biz.OAuthLogin.Extensions
             services.TryAddSingleton<IGitHubConfigProvider>(new GitHubConfigProvider(options.GitHubOptions));
             services.TryAddSingleton<IMicroSoftConfigProvider>(new MicroSoftConfigProvider(options.MicroSoftConfig));
             services.TryAddSingleton<ITaobaoConfigProvider>(new TaobaoConfigProvider(options.TaobaoConfig));
+            services.TryAddSingleton<IWeiboConfigProvider>(new WeiboConfigProvider(options.WeiboConfig));
             services.TryAddScoped<ILoginFactory, LoginFactory>();
         }
     }

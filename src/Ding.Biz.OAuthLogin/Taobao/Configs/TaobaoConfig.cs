@@ -16,12 +16,12 @@
         /// <summary>
         /// GET
         /// </summary>
-        public static string API_Authorize = "https://oauth.taobao.com/authorize";
+        public string API_Authorize = "https://oauth.taobao.com/authorize";
 
         /// <summary>
         /// POST
         /// </summary>
-        public static string API_AccessToken = "https://oauth.taobao.com/token";
+        public string API_AccessToken = "https://oauth.taobao.com/token";
 
         #endregion
     }

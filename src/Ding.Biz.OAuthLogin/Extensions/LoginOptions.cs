@@ -3,6 +3,7 @@ using Ding.Biz.OAuthLogin.MicroSoft.Configs;
 using Ding.Biz.OAuthLogin.QQ.Configs;
 using Ding.Biz.OAuthLogin.Taobao.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
+using Ding.Biz.OAuthLogin.Weibo.Configs;
 
 namespace Ding.Biz.OAuthLogin.Extensions
 {
@@ -35,5 +36,10 @@ namespace Ding.Biz.OAuthLogin.Extensions
         /// TaoBao配置
         /// </summary>
         public TaobaoConfig TaobaoConfig { get; set; } = new TaobaoConfig();
+
+        /// <summary>
+        /// Weibo配置
+        /// </summary>
+        public WeiboConfig WeiboConfig { get; set; } = new WeiboConfig();
     }
 }
