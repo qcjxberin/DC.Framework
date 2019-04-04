@@ -67,8 +67,4 @@
     <ProjectReference Include="..\Ding\01-Ding.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MicroSoft\Entity\" />
-  </ItemGroup>
-
 </Project>

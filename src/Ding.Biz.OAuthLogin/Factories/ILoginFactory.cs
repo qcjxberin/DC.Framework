@@ -76,5 +76,26 @@ namespace Ding.Biz.OAuthLogin
         /// <param name="entity"></param>
         /// <returns></returns>
         Task<GitHub_User_ResultEntity> User(GitHub_User_RequestEntity entity);
+
+        /// <summary>
+        /// 请求授权地址
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<string> AuthorizeHref(MicroSoft_Authorize_RequestEntity entity);
+
+        /// <summary>
+        /// 获取 access token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<MicroSoft_AccessToken_ResultEntity> AccessToken(MicroSoft_AccessToken_RequestEntity entity);
+
+        /// <summary>
+        /// 获取 用户信息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<MicroSoft_User_ResultEntity> User(MicroSoft_User_RequestEntity entity);
     }
 }

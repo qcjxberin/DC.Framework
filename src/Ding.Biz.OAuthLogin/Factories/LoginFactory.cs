@@ -1,4 +1,5 @@
 ﻿using Ding.Biz.OAuthLogin.GitHub.Configs;
+using Ding.Biz.OAuthLogin.MicroSoft.Configs;
 using Ding.Biz.OAuthLogin.QQ.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Utils.Helpers;
@@ -25,15 +26,21 @@ namespace Ding.Biz.OAuthLogin
         protected readonly IWeChatConfigProvider _wechatConfigProvider;
 
         /// <summary>
-        /// 微信登录配置提供器
+        /// GitHub登录配置提供器
         /// </summary>
         protected readonly IGitHubConfigProvider _githubConfigProvider;
 
-        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider, IGitHubConfigProvider githubConfigProvider)
+        /// <summary>
+        /// MicroSoft登录配置提供器
+        /// </summary>
+        protected readonly IMicroSoftConfigProvider _microsoftConfigProvider;
+
+        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider, IGitHubConfigProvider githubConfigProvider, IMicroSoftConfigProvider microsoftConfigProvider)
         {
             _qqConfigProvider = qqConfigProvider;
             _wechatConfigProvider = wechatConfigProvider;
             _githubConfigProvider = githubConfigProvider;
+            _microsoftConfigProvider = microsoftConfigProvider;
         }
 
         #region QQ登录
@@ -297,6 +304,84 @@ namespace Ding.Biz.OAuthLogin
             string result = HttpTo.Url(hwr);
 
             var outmo = LoginBase.ResultOutput<GitHub_User_ResultEntity>(result, new List<string> { "plan" });
+
+            return outmo;
+        }
+        #endregion
+
+        #region MicroSoft
+        /// <summary>
+        /// 请求授权地址
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<string> AuthorizeHref(MicroSoft_Authorize_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _microsoftConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            return string.Concat(new string[] {
+                config.API_Authorize,
+                "?client_id=",
+                entity.client_id,
+                "&scope=",
+                entity.scope,
+                "&response_type=",
+                entity.response_type,
+                "&redirect_uri=",
+                entity.redirect_uri.ToEncode()});
+        }
+
+        /// <summary>
+        /// 获取 access token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<MicroSoft_AccessToken_ResultEntity> AccessToken(MicroSoft_AccessToken_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _microsoftConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+
+            string result = HttpTo.Post(config.API_AccessToken, pars);
+
+            var outmo = LoginBase.ResultOutput<MicroSoft_AccessToken_ResultEntity>(result);
+
+            return outmo;
+        }
+
+        /// <summary>
+        /// 获取 用户信息
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<MicroSoft_User_ResultEntity> User(MicroSoft_User_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _microsoftConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+
+            var hwr = HttpTo.HWRequest(config.API_User + "?" + pars);
+            hwr.ContentType = null;
+            string result = HttpTo.Url(hwr);
+            var outmo = LoginBase.ResultOutput<MicroSoft_User_ResultEntity>(result, new List<string> { "emails" });
 
             return outmo;
         }

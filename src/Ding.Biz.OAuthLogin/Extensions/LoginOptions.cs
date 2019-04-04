@@ -1,4 +1,5 @@
 ﻿using Ding.Biz.OAuthLogin.GitHub.Configs;
+using Ding.Biz.OAuthLogin.MicroSoft.Configs;
 using Ding.Biz.OAuthLogin.QQ.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
 
@@ -23,5 +24,10 @@ namespace Ding.Biz.OAuthLogin.Extensions
         /// GitHub配置
         /// </summary>
         public GitHubConfig GitHubOptions { get; set; } = new GitHubConfig();
+
+        /// <summary>
+        /// MicroSoft配置
+        /// </summary>
+        public MicroSoftConfig MicroSoftConfig { get; set; } = new MicroSoftConfig();
     }
 }
