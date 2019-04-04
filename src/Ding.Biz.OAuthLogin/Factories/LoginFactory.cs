@@ -386,5 +386,58 @@ namespace Ding.Biz.OAuthLogin
             return outmo;
         }
         #endregion
+
+        #region TaoBao
+        /// <summary>
+        /// Step1：请求用户授权Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<string> AuthorizeHref(Taobao_Authorize_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _microsoftConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            return string.Concat(new string[] {
+                config.API_Authorize,
+                "?response_type=",
+                entity.response_type,
+                "&client_id=",
+                entity.client_id,
+                "&redirect_uri=",
+                entity.redirect_uri.ToEncode(),
+                "&state=",
+                entity.state,
+                "&view=",
+                entity.view});
+        }
+
+        /// <summary>
+        /// Step2：获取授权过的Access Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<Taobao_AccessToken_ResultEntity> AccessToken(Taobao_AccessToken_RequestEntity entity)
+        {
+            if (!LoginBase.IsValid(entity))
+            {
+                return null;
+            }
+
+            var config = await _microsoftConfigProvider.GetConfigAsync();
+            config.CheckNotNull(nameof(config));
+
+            string pars = LoginBase.EntityToPars(entity);
+            string result = HttpTo.Post(config.API_AccessToken, pars);
+            var outmo = LoginBase.ResultOutput<Taobao_AccessToken_ResultEntity>(result);
+
+            return outmo;
+        }
+        #endregion
     }
 }

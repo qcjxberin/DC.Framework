@@ -1,6 +1,7 @@
 ﻿using Ding.Biz.OAuthLogin.GitHub.Configs;
 using Ding.Biz.OAuthLogin.MicroSoft.Configs;
 using Ding.Biz.OAuthLogin.QQ.Configs;
+using Ding.Biz.OAuthLogin.Taobao.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
 
 namespace Ding.Biz.OAuthLogin.Extensions
@@ -16,7 +17,7 @@ namespace Ding.Biz.OAuthLogin.Extensions
         public QQConfig QqOptions { get; set; } = new QQConfig();
 
         /// <summary>
-        /// 微信配置
+        /// WeChat配置
         /// </summary>
         public WeChatConfig WeChatOptions { get; set; } = new WeChatConfig();
 
@@ -29,5 +30,10 @@ namespace Ding.Biz.OAuthLogin.Extensions
         /// MicroSoft配置
         /// </summary>
         public MicroSoftConfig MicroSoftConfig { get; set; } = new MicroSoftConfig();
+
+        /// <summary>
+        /// TaoBao配置
+        /// </summary>
+        public TaobaoConfig TaobaoConfig { get; set; } = new TaobaoConfig();
     }
 }

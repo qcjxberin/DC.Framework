@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Biz.OAuthLogin.GitHub.Configs;
+using Ding.Biz.OAuthLogin.Taobao.Configs;
+using Ding.Biz.OAuthLogin.MicroSoft.Configs;
 
 namespace Ding.Biz.OAuthLogin.Extensions
 {
@@ -24,6 +26,8 @@ namespace Ding.Biz.OAuthLogin.Extensions
             services.TryAddSingleton<IQQConfigProvider>(new QQConfigProvider(options.QqOptions));
             services.TryAddSingleton<IWeChatConfigProvider>(new WeChatConfigProvider(options.WeChatOptions));
             services.TryAddSingleton<IGitHubConfigProvider>(new GitHubConfigProvider(options.GitHubOptions));
+            services.TryAddSingleton<IMicroSoftConfigProvider>(new MicroSoftConfigProvider(options.MicroSoftConfig));
+            services.TryAddSingleton<ITaobaoConfigProvider>(new TaobaoConfigProvider(options.TaobaoConfig));
             services.TryAddScoped<ILoginFactory, LoginFactory>();
         }
     }

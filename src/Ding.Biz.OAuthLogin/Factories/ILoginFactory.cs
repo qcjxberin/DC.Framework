@@ -97,5 +97,19 @@ namespace Ding.Biz.OAuthLogin
         /// <param name="entity"></param>
         /// <returns></returns>
         Task<MicroSoft_User_ResultEntity> User(MicroSoft_User_RequestEntity entity);
+
+        /// <summary>
+        /// Step1：请求用户授权Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<string> AuthorizeHref(Taobao_Authorize_RequestEntity entity);
+
+        /// <summary>
+        /// Step2：获取授权过的Access Token
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<Taobao_AccessToken_ResultEntity> AccessToken(Taobao_AccessToken_RequestEntity entity);
     }
 }
