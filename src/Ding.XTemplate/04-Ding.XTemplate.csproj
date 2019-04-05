@@ -46,7 +46,6 @@
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
     <Compile Include="Templating\TemplateException.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templating\Block.cs" />
     <Compile Include="Templating\BlockType.cs" />
     <Compile Include="Templating\Template.cs" />
@@ -67,6 +66,9 @@
       <Project>{5c990908-1594-40ed-8569-d6aa055b0887}</Project>
       <Name>02-Ding.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
