@@ -7,10 +7,10 @@ using NSubstitute;
 using Ding.Datas.UnitOfWorks;
 using Ding.Dependency;
 using Ding.Exceptions;
-using Ding.Helpers;
 using Ding.Tests.Samples;
 using Ding.Tests.XUnitHelpers;
 using Xunit;
+using Ding.Helpers;
 
 namespace Ding.Tests.Applications {
     /// <summary>

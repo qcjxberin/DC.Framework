@@ -1,10 +1,10 @@
 ﻿using Ding.Datas.Dapper.SqlServer;
-using Ding.Datas.Queries;
 using Ding.Datas.Sql.Builders.Clauses;
 using Ding.Datas.Sql.Builders.Core;
 using Ding.Datas.Tests.Samples;
 using Ding.Datas.Tests.Sql.Builders.Samples;
-using Ding.Helpers;
+using Ding.Utils;
+using Ding.Utils.Helpers;
 using Xunit;
 
 namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Clauses {

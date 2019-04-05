@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Autofac;
 using Ding.Dependency;
-using Ding.Helpers;
 using Ding.Tests.Samples;
 using Xunit;
+using Ding.Helpers;
 
 namespace Ding.Tests.Helpers {
     /// <summary>

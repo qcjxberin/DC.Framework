@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
-using Ding.Datas.Queries;
 using Ding.Datas.Sql;
 using Ding.Datas.Sql.Builders.Conditions;
 using Ding.Datas.Tests.Samples;
-using Ding.Helpers;
 using Xunit;
+using Ding.Utils.Helpers;
+using Ding.Utils;
 
 namespace Ding.Datas.Tests.Sql.Builders.SqlServer {
     /// <summary>
