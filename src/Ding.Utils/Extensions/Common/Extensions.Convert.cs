@@ -33,6 +33,26 @@ namespace Ding
         }
 
         /// <summary>
+        /// 转换为short
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static short ToShort( this string obj)
+        {
+            return Ding.Utils.Helpers.Convert.ToShort(obj);
+        }
+
+        /// <summary>
+        /// 转换为可空short
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static short? ToShortOrNull( this string obj)
+        {
+            return Ding.Utils.Helpers.Convert.ToShortOrNull(obj);
+        }
+
+        /// <summary>
         /// 转换为int
         /// </summary>
         /// <param name="obj">数据</param>
