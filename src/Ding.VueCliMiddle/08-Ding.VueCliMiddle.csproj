@@ -54,7 +54,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Ding.Pdu.csproj.DotSettings" />
+    <None Remove="Ding.VueCliMiddle.csproj.DotSettings" />
   </ItemGroup>
 
   <ItemGroup>

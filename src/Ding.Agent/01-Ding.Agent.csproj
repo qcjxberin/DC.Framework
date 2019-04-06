@@ -49,13 +49,13 @@
     <DefineConstants>$(DefineConstants);NETSTANDARD2_0</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='net45'">
-    <DefineConstants>$(DefineConstants);__WIN__</DefineConstants>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Ding.Agent.csproj.DotSettings" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Include="..\Ding.Core\Agent\AgentService.cs" Link="AgentService.cs" />
