@@ -88,7 +88,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-Ding.Pdu", "src\Ding.Pdu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Ding.XTemplate", "src\Ding.XTemplate\04-Ding.XTemplate.csproj", "{55BA37EE-01A2-438F-A0FB-6B57440BF2F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.VueCliMiddle", "src\Ding.VueCliMiddle\Ding.VueCliMiddle.csproj", "{201045A8-839C-41F3-8816-F46D09295EFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Ding.VueCliMiddle", "src\Ding.VueCliMiddle\08-Ding.VueCliMiddle.csproj", "{201045A8-839C-41F3-8816-F46D09295EFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.CookieManager", "src\Ding.CookieManager\Ding.CookieManager.csproj", "{D694A236-E760-4A16-8930-5EEA001026C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -370,6 +372,14 @@ Global
 		{201045A8-839C-41F3-8816-F46D09295EFD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{201045A8-839C-41F3-8816-F46D09295EFD}.Release|x86.ActiveCfg = Release|Any CPU
 		{201045A8-839C-41F3-8816-F46D09295EFD}.Release|x86.Build.0 = Release|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Debug|x86.Build.0 = Debug|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Release|x86.ActiveCfg = Release|Any CPU
+		{D694A236-E760-4A16-8930-5EEA001026C4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -416,6 +426,7 @@ Global
 		{76C7A04C-CA41-483C-B41D-D323F710565A} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
 		{55BA37EE-01A2-438F-A0FB-6B57440BF2F0} = {89E7C203-8F78-4918-AAB5-C69D709B1F1B}
 		{201045A8-839C-41F3-8816-F46D09295EFD} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
+		{D694A236-E760-4A16-8930-5EEA001026C4} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}
