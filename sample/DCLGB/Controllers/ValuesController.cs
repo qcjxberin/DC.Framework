@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Ding.Helpers;
 using Ding.Webs.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +23,9 @@ namespace DCLGB.Controllers
         /// <returns></returns>
         [HttpGet]
         [AllowAnonymous]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<string>> Get()
         {
+
             return new string[] { "value1", "value2" };
         }
 

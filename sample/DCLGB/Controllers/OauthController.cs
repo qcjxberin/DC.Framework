@@ -69,7 +69,7 @@ namespace DCLGB.Apis
         /// 生成请求链接
         /// </summary>
         /// <returns></returns>
-        public async Task<string> Auth(LoginBase.LoginType loginType)
+        private async Task<string> Auth(LoginBase.LoginType loginType)
         {
             var url = string.Empty;
 
@@ -102,7 +102,7 @@ namespace DCLGB.Apis
         /// </summary>
         /// <param name="code">请求链接得到的code</param>
         /// <param name="loginType">登录类型</param>
-        public async void AuthCallback(string code, LoginBase.LoginType loginType)
+        private async void AuthCallback(string code, LoginBase.LoginType loginType)
         {
             if (string.IsNullOrWhiteSpace(code))
             {

@@ -1,9 +1,29 @@
 ﻿{
-  "Env": [],
+  "Env": [
+    {
+      "Name": "windows",
+      "ServerList": [
+        {
+          "Token": "asdfawreqwrqw23412fasdfasdbasvasdf23564573245!@#",
+          "Host": "120.79.187.148:8091",
+          "NickName": "",
+          "IIsFireUrl": "",
+          "DockerFireUrl": null,
+          "WindowsServiceFireUrl": null
+        }
+      ],
+      "LinuxServerList": [],
+      "IgnoreList": [
+        "wwwroot",
+        "Config"
+      ],
+      "WindowsBackUpIgnoreList": []
+    }
+  ],
   "IIsConfig": {
     "SdkType": "netcore",
-    "WebSiteName": "",
-    "LastEnvName": null
+    "WebSiteName": "LGB",
+    "LastEnvName": "windows"
   },
   "WindowsServiveConfig": {
     "ServiceName": "",

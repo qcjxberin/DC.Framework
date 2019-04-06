@@ -1,4 +1,5 @@
 ﻿using DCLGB.Data;
+using DCLGB.JwtPolicys;
 using DCLGB.OAuths;
 using DCLGB.SignalR;
 using DCLGB.SwaggerExtensions;
@@ -20,7 +21,9 @@ using IdentityModel;
 using IdentityServer4.AccessTokenValidation;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -42,6 +45,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace DCLGB
@@ -145,26 +149,102 @@ namespace DCLGB
             //添加Swagger
             ConfigSwagger(services);
 
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer(options =>
-                {
-                    options.Authority = SiteSetting.Current.Url;
-                    options.RequireHttpsMetadata = false;
-                    options.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ValidateIssuer = true,
-                        ValidIssuer = SiteSetting.Current.Url,
-                        ValidateAudience = false,
-                        ValidAudience = "Admin",
-                        ValidateLifetime = true
-                    };
-                });
+            #region 授权
+            #region 参数
+            //读取配置文件
+            var audienceConfig = SiteSetting.Current.Audience;
+            var symmetricKeyAsBase64 = audienceConfig.Secret;
+            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
+            var signingKey = new SymmetricSecurityKey(keyByteArray);
 
-            ConfigureIdentityServer4(services);
+            // 令牌验证参数
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,
+                ValidateIssuer = true,
+                ValidIssuer = audienceConfig.Issuer,//发行人
+                ValidateAudience = true,
+                ValidAudience = audienceConfig.Audiences,//订阅人
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
+                RequireExpirationTime = true,
+            };
+            var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
+
+            // 如果要数据库动态绑定，这里先留个空，后边处理器里动态赋值
+            var permission = new List<PermissionItem>();
+
+            // 角色与接口的权限要求参数
+            var permissionRequirement = new PermissionRequirement(
+                "/api/denied",// 拒绝授权的跳转地址（目前无用）
+                permission,
+                ClaimTypes.Role,//基于角色的授权
+                audienceConfig.Issuer,//发行人
+                audienceConfig.Audiences,//听众
+                signingCredentials,//签名凭据
+                expiration: TimeSpan.FromSeconds(60 * 2)//接口的过期时间
+                );
+            #endregion
+
+            //授权
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Permission",
+                         policy => policy.Requirements.Add(permissionRequirement));
+            });
+            #endregion
+
+            #region Jwt认证
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+             .AddJwtBearer(o =>
+             {
+                 o.TokenValidationParameters = tokenValidationParameters;
+                 o.Events = new JwtBearerEvents
+                 {
+                     OnAuthenticationFailed = context =>
+                     {
+                         // 如果过期，则把<是否过期>添加到，返回头信息中
+                         if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                         {
+                             context.Response.Headers.Add("Token-Expired", "true");
+                         }
+                         return Task.CompletedTask;
+                     }
+                 };
+             });
+
+            // 注入权限处理器
+            services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
+            services.AddSingleton(permissionRequirement);
+            #endregion
+
+            #region IdentityServer4认证，后续根据使用情况切换调整
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //})
+            //    .AddJwtBearer(options =>
+            //    {
+            //        options.Authority = SiteSetting.Current.Url;
+            //        options.RequireHttpsMetadata = false;
+            //        options.TokenValidationParameters = new TokenValidationParameters()
+            //        {
+            //            ValidateIssuer = true,
+            //            ValidIssuer = SiteSetting.Current.Url,
+            //            ValidateAudience = false,
+            //            ValidAudience = "Admin",
+            //            ValidateLifetime = true
+            //        };
+            //    });
+            #endregion
+
+            ConfigureIdentityServer4(services);  // 注册IdentityServer4服务
 
             // 添加Razor静态Html生成器
             services.AddRazorHtml();
@@ -286,7 +366,7 @@ namespace DCLGB
         private void ConfigRoute(IApplicationBuilder app)
         {
             app.UseMvc(routes => {
-                routes.MapRoute("areaRoute", "view/{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("areaRoute", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute("api", "{controller}/{id?}");
             });
@@ -347,7 +427,7 @@ namespace DCLGB
             });
             services.ConfigureSwaggerGen(options =>
             {
-                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "DCLGB.xml"));
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "DCLGB.xml"), true);  // 第二个参数是Controller的注释，默认为false
             });
         }
 

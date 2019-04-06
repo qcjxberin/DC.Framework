@@ -17,6 +17,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="AntDeploy.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Swagger\index.html" />
   </ItemGroup>
 
@@ -25,27 +29,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Ding.Biz.OAuthLogin" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Caches" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Datas" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Logs" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Schedulers" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Swashbuckle" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.TimedJob" Version="1.0.0-preview-20190405-04" />
+    <PackageReference Include="Ding.Webs" Version="1.0.0-preview-20190405-04" />
     <PackageReference Include="IdentityServer4" Version="2.4.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Ding.Biz.OAuthLogin\03-Ding.Biz.OAuthLogin.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Caches\05-Ding.Caches.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Core\02-Ding.Core.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Events\06-Ding.Events.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Logs\04-Ding.Logs.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Schedulers\07-Ding.Schedulers.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Swashbuckle\05-Ding.Swashbuckle.csproj" />
-    <ProjectReference Include="..\..\src\Ding.TimedJob\06-Ding.TimedJob.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Utils\01-Ding.Utils.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Webs\10-Ding.Webs.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,26 +55,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="hosting.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\MySql\Mappings\" />
-    <Folder Include="Data\PgSql\Mappings\" />
-    <Folder Include="Data\Repositories\" />
-    <Folder Include="Data\SqlServer\Mappings\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Members\Controllers\" />
+    <Folder Include="Areas\Members\Models\" />
+    <Folder Include="Areas\Members\Views\" />
+    <Folder Include="Areas\Mobile\Models\" />
     <Folder Include="DbScripts\MySql\" />
     <Folder Include="DbScripts\PgSql\" />
-    <Folder Include="DbScripts\SqlServer\" />
-    <Folder Include="Domains\Models\" />
-    <Folder Include="Domains\Repositories\" />
     <Folder Include="Domains\Services\" />
-    <Folder Include="Services\Abstractions\" />
-    <Folder Include="Services\Dtos\" />
-    <Folder Include="Services\Implements\" />
-    <Folder Include="Services\Queries\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
