@@ -90,7 +90,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Ding.XTemplate", "src\Di
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Ding.VueCliMiddle", "src\Ding.VueCliMiddle\08-Ding.VueCliMiddle.csproj", "{201045A8-839C-41F3-8816-F46D09295EFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.CookieManager", "src\Ding.CookieManager\Ding.CookieManager.csproj", "{D694A236-E760-4A16-8930-5EEA001026C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-Ding.CookieManager", "src\Ding.CookieManager\09-Ding.CookieManager.csproj", "{D694A236-E760-4A16-8930-5EEA001026C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
