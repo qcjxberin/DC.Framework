@@ -22,16 +22,16 @@
         /// <summary>
         /// PC网站，GET
         /// </summary>
-        public string API_Authorization_PC = "https://graph.qq.com/oauth2.0/authorize";
+        public string API_Authorization_PC { get; set; } = "https://graph.qq.com/oauth2.0/authorize";
 
         /// <summary>
         /// PC网站，GET
         /// </summary>
-        public string API_AccessToken_PC = "https://graph.qq.com/oauth2.0/token";
+        public string API_AccessToken_PC { get; set; } = "https://graph.qq.com/oauth2.0/token";
         /// <summary>
         /// WAP网站，GET
         /// </summary>
-        public string API_AccessToken_WAP = "https://graph.z.qq.com/moc2/token";
+        public string API_AccessToken_WAP { get; set; } = "https://graph.z.qq.com/moc2/token";
 
         /// <summary>
         /// PC GET
