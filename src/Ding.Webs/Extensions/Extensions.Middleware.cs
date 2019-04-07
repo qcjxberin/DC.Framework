@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Ding.Webs.Middlewares;
-using Ding.Utils.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Http;
 
@@ -25,7 +24,7 @@ namespace Ding.Webs.Extensions {
         public static IApplicationBuilder UseStaticHttpContext(this IApplicationBuilder builder)
         {
             var httpContextAccessor = builder.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
-            Web.HttpContextAccessor = httpContextAccessor;
+            Ding.Utils.Helpers.Web.HttpContextAccessor = httpContextAccessor;
             return builder;
         }
     }

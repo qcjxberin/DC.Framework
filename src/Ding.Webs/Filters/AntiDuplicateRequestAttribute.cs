@@ -70,7 +70,7 @@ namespace Ding.Webs.Filters {
             var userId = string.Empty;
             if( Type == LockType.User )
                 userId = $"{Session.Instance.UserId}_";
-            return string.IsNullOrWhiteSpace( Key ) ? $"{userId}{Web.Request.Path}" : $"{userId}{Key}";
+            return string.IsNullOrWhiteSpace( Key ) ? $"{userId}{Ding.Utils.Helpers.Web.Request.Path}" : $"{userId}{Key}";
         }
 
         /// <summary>
