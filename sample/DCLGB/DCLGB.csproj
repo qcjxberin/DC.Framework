@@ -77,4 +77,8 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Ding.MailKit\Ding.MailKit.csproj" />
+  </ItemGroup>
+
 </Project>
