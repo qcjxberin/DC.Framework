@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ding.Utils.Helpers;
+using System;
 using System.Xml;
 
 namespace Ding.Helpers {

@@ -4,6 +4,7 @@ using Ding.Helpers;
 using Quartz;
 using Ding.Dependency;
 using Qz = Quartz;
+using Ding.Utils.Helpers;
 
 namespace Ding.Schedulers.Quartz {
     /// <summary>

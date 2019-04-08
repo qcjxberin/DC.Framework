@@ -10,7 +10,7 @@ namespace Ding.Events {
         /// 初始化事件
         /// </summary>
         public Event() {
-            Id = Ding.Helpers.Id.Guid();
+            Id = Ding.Utils.Helpers.Id.Guid();
             Time = DateTime.Now;
         }
 
