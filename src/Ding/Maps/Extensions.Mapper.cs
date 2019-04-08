@@ -3,6 +3,9 @@ using AutoMapper;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
+using System.Linq;
+using System.Linq.Expressions;
+using AutoMapper.QueryableExtensions;
 
 namespace Ding.Maps {
     /// <summary>
@@ -14,6 +17,7 @@ namespace Ding.Maps {
         /// </summary>
         private static readonly object Sync = new object();
 
+        #region MapTo(将源对象映射到目标对象)
         /// <summary>
         /// 将源对象映射到目标对象
         /// </summary>
@@ -115,7 +119,9 @@ namespace Ding.Maps {
             var configuration = typeMapper.GetDeclaredField( "_configuration" );
             configuration.SetValue( null, null, BindingFlags.Static, null, CultureInfo.CurrentCulture );
         }
+#endregion
 
+        #region MapToList(将源集合映射到目标列表)
         /// <summary>
         /// 将源集合映射到目标集合
         /// </summary>
@@ -124,5 +130,22 @@ namespace Ding.Maps {
         public static List<TDestination> MapToList<TDestination>( this System.Collections.IEnumerable source ) {
             return MapTo<List<TDestination>>( source );
         }
+        #endregion
+
+        #region ToOutput(将数据源映射为指定输出DTO的集合)
+
+        /// <summary>
+        /// 将数据源映射为指定<typeparamref name="TOutputDto"/>集合
+        /// </summary>
+        /// <typeparam name="TOutputDto">输出Dto类型</typeparam>
+        /// <param name="source">源类型</param>
+        /// <param name="membersToExpand">成员展开</param>
+        /// <returns></returns>
+        public static IQueryable<TOutputDto> ToOutput<TOutputDto>(IQueryable source, params Expression<Func<TOutputDto, object>>[] membersToExpand)
+        {
+            return source.ProjectTo(membersToExpand);
+        }
+
+        #endregion
     }
 }
