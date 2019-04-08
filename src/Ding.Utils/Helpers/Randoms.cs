@@ -4,12 +4,10 @@ using System.Text;
 namespace Ding.Utils.Helpers
 {
     /// <summary>
-    /// 随机性操作管理类
+    /// 随机数操作管理类
     /// </summary>
     public static class Randoms
     {
-        private static Random rnd = new Random();
-
         public static string RandomString(int lens)
         {
             char[] chArray = new char[] {
@@ -20,10 +18,10 @@ namespace Ding.Utils.Helpers
      };
             int length = chArray.Length;
             string str = "";
-            Random random = new Random();
+            Random rnd = new Random();
             for (int i = 0; i < lens; i++)
             {
-                str = str + chArray[random.Next(length)];
+                str += chArray[rnd.Next(length)];
             }
             return str;
         }
@@ -38,6 +36,7 @@ namespace Ding.Utils.Helpers
         public static string MakeRandomString(this string pwdchars, int pwdlen)
         {
             StringBuilder builder = new StringBuilder();
+            Random rnd = new Random();
             for (int i = 0; i < pwdlen; i++)
             {
                 int num = rnd.Next(pwdchars.Length);
@@ -56,10 +55,10 @@ namespace Ding.Utils.Helpers
         public static string RndNum(int VcodeNum)
         {
             StringBuilder sb = new StringBuilder(VcodeNum);
-            Random rand = new Random();
+            Random rnd = new Random();
             for (int i = 1; i < VcodeNum + 1; i++)
             {
-                int t = rand.Next(9);
+                int t = rnd.Next(9);
                 sb.AppendFormat("{0}", t);
             }
             return sb.ToString();
@@ -122,7 +121,7 @@ namespace Ding.Utils.Helpers
             Random random = new Random();
             for (int i = 0; i < intLong; i++)
             {
-                str = str + strArray[random.Next(26)];
+                str += strArray[random.Next(26)];
             }
             return str;
         }
