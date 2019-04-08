@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// 时间操作
     /// </summary>

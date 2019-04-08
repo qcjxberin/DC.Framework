@@ -8,6 +8,7 @@ using Ding.Biz.Payments.Wechatpay.Results;
 using Ding.Biz.Payments.Wechatpay.Services.Base;
 using Ding.Exceptions;
 using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Biz.Payments.Wechatpay.Services {
     /// <summary>

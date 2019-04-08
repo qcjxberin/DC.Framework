@@ -2,7 +2,7 @@
 using System.Linq;
 using Ding.Biz.Payments.Wechatpay.Enums;
 using Ding.Exceptions;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Ding.Validations;
 
 namespace Ding.Biz.Payments.Wechatpay.Configs {
