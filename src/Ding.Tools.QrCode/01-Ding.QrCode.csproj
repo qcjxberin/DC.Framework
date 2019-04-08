@@ -11,7 +11,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Ding.Tools.QrCode</AssemblyName>
-    <RootNamespace>Ding.Tools.QrCode</RootNamespace>
+    <RootNamespace>Ding.QrCode</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>NetCore二维码操作类库</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore二维码操作类库。</Description>

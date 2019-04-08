@@ -11,7 +11,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Ding.Tools.Sms</AssemblyName>
-    <RootNamespace>Ding.Tools.Sms</RootNamespace>
+    <RootNamespace>Ding.Sms</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>NetCore短信操作类库</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore短信操作类库。</Description>
