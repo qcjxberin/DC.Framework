@@ -670,5 +670,42 @@ namespace Ding.Utils.Helpers {
         }
 
         #endregion
+
+        #region 转换对象为字符串
+        /// <summary>
+        /// 转换对象为字符串
+        /// </summary>
+        /// <param name="Value">对象</param>
+        /// <returns>转换后的字符串</returns>
+        public static string ObjToString(this object Value)
+        {
+            if (Value.ObjIsNull())
+            {
+                return string.Empty;
+            }
+            return Value.ToString();
+        }
+
+        /// <summary>
+        /// 转换对象为字符串
+        /// </summary>
+        /// <param name="Value">对象</param>
+        /// <param name="DefaultValue">默认值</param>
+        /// <param name="Trim">是否去除空格</param>
+        /// <returns>转换后的字符串</returns>
+        public static string ObjToString(this object Value, string DefaultValue, bool Trim)
+        {
+            if (Value.ObjIsNull())
+            {
+                return ObjToString(DefaultValue);
+            }
+            if (Trim)
+            {
+                return Value.ToString().Trim();
+            }
+            return Value.ToString();
+        }
+
+        #endregion
     }
 }
