@@ -87,5 +87,10 @@ namespace Ding.Sms.AliYun
                 return new SmsResult(false, response.Message, SmsErrorCode.MobileError);
             return new SmsResult(false, response.Message);
         }
+
+        public Task<SmsResult> SendAsync(string mobile, string content)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
