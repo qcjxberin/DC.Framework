@@ -1,5 +1,4 @@
-﻿using Ding.Sms.LuoSiMao;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Ding.Sms.FengHuo
 {
