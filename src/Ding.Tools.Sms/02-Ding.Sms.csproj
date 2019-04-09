@@ -61,4 +61,8 @@
     <ProjectReference Include="..\Ding\01-Ding.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="aliyun-net-sdk-core" Version="1.2.8" />
+  </ItemGroup>
+
 </Project>

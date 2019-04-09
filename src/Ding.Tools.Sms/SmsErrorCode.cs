@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel;
 
-namespace Ding.Tools.Sms {
+namespace Ding.Sms {
     /// <summary>
     /// 短信错误码
     /// </summary>
-    public enum SmsErrorCode {
+    public enum SmsErrorCode
+    {
         /// <summary>
         /// 发送成功
         /// </summary>
