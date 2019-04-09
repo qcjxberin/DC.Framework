@@ -22,7 +22,7 @@ namespace Ding.Sms {
         /// <param name="templatecode">阿里大于的短信模板-可在短信控制台中找到</param>
         /// <param name="templateparam">模板中的变量替换JSON串</param>
         /// <param name="outid">为提供给业务方扩展字段,最终在短信回执消息中将此值带回给调用者</param>
-        Task<SmsResult> SendAsync(string mobile, string content, string templatecode, string templateparam,
+        Task<SmsResult> SendAsync(string mobile, string templatecode, string templateparam,
             string outid);
     }
 }
