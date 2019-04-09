@@ -92,9 +92,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Ding.VueCliMiddle", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-Ding.CookieManager", "src\Ding.CookieManager\09-Ding.CookieManager.csproj", "{D694A236-E760-4A16-8930-5EEA001026C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.MailKit", "src\Ding.MailKit\Ding.MailKit.csproj", "{48743457-0E35-46E2-B47A-97962179AE0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05-Ding.MailKit", "src\Ding.MailKit\05-Ding.MailKit.csproj", "{48743457-0E35-46E2-B47A-97962179AE0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Encryption", "src\Ding.Encryption\Ding.Encryption.csproj", "{BBF6CC40-8680-4802-B04D-86C9AE08618E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10-Ding.Encryption", "src\Ding.Encryption\10-Ding.Encryption.csproj", "{BBF6CC40-8680-4802-B04D-86C9AE08618E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

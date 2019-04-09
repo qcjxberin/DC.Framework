@@ -78,7 +78,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Ding.MailKit\Ding.MailKit.csproj" />
+    <ProjectReference Include="..\..\src\Ding.MailKit\05-Ding.MailKit.csproj" />
   </ItemGroup>
 
 </Project>
