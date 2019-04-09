@@ -6,6 +6,11 @@
     public class SmsConfig
     {
         /// <summary>
+        /// 短信网关地址
+        /// </summary>
+        public string Url { get; set; } = "http://210.51.191.35:8080/eums/sms/utf8/";
+
+        /// <summary>
         /// 密钥Id
         /// </summary>
         public string Name { get; set; }

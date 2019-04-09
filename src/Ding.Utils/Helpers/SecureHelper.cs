@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace Ding.Utils.Helpers
 {
     /// <summary>
-    /// 安装帮助类
+    /// 安全帮助类
     /// </summary>
     public static class SecureHelper
     {
@@ -22,8 +22,8 @@ namespace Ding.Utils.Helpers
 
         public static string DecodeBase64(Encoding encode, string result)
         {
-            string str = "";
             byte[] numArray = System.Convert.FromBase64String(result);
+            string str;
             try
             {
                 str = encode.GetString(numArray);

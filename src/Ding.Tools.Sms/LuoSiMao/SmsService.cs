@@ -63,7 +63,7 @@ namespace Ding.Sms.LuoSiMao {
         /// 发送短信
         /// </summary>
         /// <param name="mobile">手机号,可批量，用逗号分隔开，上限为1000个</param>
-        /// <param name="content">内容，阿里大于的不需要填此项</param>
+        /// <param name="content">内容</param>
         public async Task<SmsResult> SendAsync(string mobile, string content)
         {
             var result = await Web.Client().Post("https://sms-api.luosimao.com/v1/send.json")
