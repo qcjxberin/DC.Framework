@@ -14,7 +14,7 @@ namespace Ding.Sms.FengHuo
         /// </summary>
         /// <param name="services">服务集合</param>
         /// <param name="setupAction">配置操作</param>
-        public static void AddAliSms(this IServiceCollection services, Action<SmsOptions> setupAction)
+        public static void AddFengHuoSms(this IServiceCollection services, Action<SmsOptions> setupAction)
         {
             var options = new SmsOptions();
             setupAction?.Invoke(options);

@@ -92,7 +92,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Ding.VueCliMiddle", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-Ding.CookieManager", "src\Ding.CookieManager\09-Ding.CookieManager.csproj", "{D694A236-E760-4A16-8930-5EEA001026C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.MailKit", "src\Ding.MailKit\Ding.MailKit.csproj", "{48743457-0E35-46E2-B47A-97962179AE0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.MailKit", "src\Ding.MailKit\Ding.MailKit.csproj", "{48743457-0E35-46E2-B47A-97962179AE0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Encryption", "src\Ding.Encryption\Ding.Encryption.csproj", "{BBF6CC40-8680-4802-B04D-86C9AE08618E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -390,6 +392,14 @@ Global
 		{48743457-0E35-46E2-B47A-97962179AE0E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{48743457-0E35-46E2-B47A-97962179AE0E}.Release|x86.ActiveCfg = Release|Any CPU
 		{48743457-0E35-46E2-B47A-97962179AE0E}.Release|x86.Build.0 = Release|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Debug|x86.Build.0 = Debug|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Release|x86.ActiveCfg = Release|Any CPU
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -438,6 +448,7 @@ Global
 		{201045A8-839C-41F3-8816-F46D09295EFD} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
 		{D694A236-E760-4A16-8930-5EEA001026C4} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
 		{48743457-0E35-46E2-B47A-97962179AE0E} = {89E7C203-8F78-4918-AAB5-C69D709B1F1B}
+		{BBF6CC40-8680-4802-B04D-86C9AE08618E} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}

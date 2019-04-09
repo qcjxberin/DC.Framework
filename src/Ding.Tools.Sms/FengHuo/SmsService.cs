@@ -42,8 +42,8 @@ namespace Ding.Sms.FengHuo
         /// <returns></returns>
         private string GetKey(string seed, SmsConfig config)
         {
-            var key = Encrypt.Md5By32(config.PassWrod);
-            return Encrypt.Md5By32(key + seed);
+            var key = Encrypt.Md5By32(config.PassWrod).ToLower();
+            return Encrypt.Md5By32(key + seed).ToLower();
         }
 
         /// <summary>
