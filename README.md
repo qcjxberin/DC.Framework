@@ -1,0 +1,1 @@
+本项目安装使用需要vs2019 preveiew最新版及最新版net core 3.0 sdk
