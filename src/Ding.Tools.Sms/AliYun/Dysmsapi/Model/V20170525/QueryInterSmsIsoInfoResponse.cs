@@ -1,66 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using Aliyun.Acs.Core;
+using System.Collections.Generic;
 
 namespace Ding.Sms.AliYun.Dysmsapi.Model.V20170525
 {
     public class QueryInterSmsIsoInfoResponse : AcsResponse
     {
-        private string requestId;
+        public new string RequestId { get; set; }
 
-        private string code;
+        public string Code { get; set; }
 
-        private string message;
+        public string Message { get; set; }
 
-        private List<QueryInterSmsIsoInfo_IsoSupportDTO> isoSupportDTOs;
-
-        public string RequestId
-        {
-            get { return requestId; }
-            set { requestId = value; }
-        }
-
-        public string Code
-        {
-            get { return code; }
-            set { code = value; }
-        }
-
-        public string Message
-        {
-            get { return message; }
-            set { message = value; }
-        }
-
-        public List<QueryInterSmsIsoInfo_IsoSupportDTO> IsoSupportDTOs
-        {
-            get { return isoSupportDTOs; }
-            set { isoSupportDTOs = value; }
-        }
+        public List<QueryInterSmsIsoInfo_IsoSupportDTO> IsoSupportDTOs { get; set; }
 
         public class QueryInterSmsIsoInfo_IsoSupportDTO
         {
-            private string countryName;
+            public string CountryName { get; set; }
 
-            private string countryCode;
+            public string CountryCode { get; set; }
 
-            private string isoCode;
-
-            public string CountryName
-            {
-                get { return countryName; }
-                set { countryName = value; }
-            }
-
-            public string CountryCode
-            {
-                get { return countryCode; }
-                set { countryCode = value; }
-            }
-
-            public string IsoCode
-            {
-                get { return isoCode; }
-                set { isoCode = value; }
-            }
+            public string IsoCode { get; set; }
         }
     }
 }

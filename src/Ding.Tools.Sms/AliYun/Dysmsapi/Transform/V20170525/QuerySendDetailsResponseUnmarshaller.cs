@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Aliyun.Acs.Core.Transform;
+using Ding.Sms.AliYun.Dysmsapi.Model.V20170525;
+using System.Collections.Generic;
 
 namespace Ding.Sms.AliYun.Dysmsapi.Transform.V20170525
 {

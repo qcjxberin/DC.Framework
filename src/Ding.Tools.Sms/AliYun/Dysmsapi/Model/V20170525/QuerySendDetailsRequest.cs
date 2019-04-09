@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aliyun.Acs.Core.Utils;
+using Ding.Sms.AliYun.Dysmsapi.Transform.V20170525;
+using Core = Aliyun.Acs.Core;
 
 namespace Ding.Sms.AliYun.Dysmsapi.Model.V20170525
 {
