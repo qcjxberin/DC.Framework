@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Ding.Datas.Ef.Core;
 using Ding.Datas.Ef.Internal;
-using Ding.Datas.UnitOfWorks;
 
 namespace Ding.Datas.Ef.PgSql {
     /// <summary>
@@ -16,9 +15,9 @@ namespace Ding.Datas.Ef.PgSql {
         /// 初始化PgSql工作单元
         /// </summary>
         /// <param name="options">配置</param>
-        /// <param name="manager">工作单元服务</param>
-        protected UnitOfWork( DbContextOptions options, IUnitOfWorkManager manager )
-            : base( options, manager ) {
+        /// <param name="serviceProvider">服务提供器</param>
+        protected UnitOfWork( DbContextOptions options, IServiceProvider serviceProvider = null )
+            : base( options, serviceProvider ) {
         }
 
         /// <summary>

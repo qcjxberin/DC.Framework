@@ -38,6 +38,10 @@ namespace Ding.Datas.Ef.Core {
         /// 日志工厂
         /// </summary>
         private static readonly ILoggerFactory LoggerFactory;
+        /// <summary>
+        /// 服务提供器
+        /// </summary>
+        private IServiceProvider _serviceProvider;
 
         #endregion
 
@@ -46,9 +50,32 @@ namespace Ding.Datas.Ef.Core {
         /// <summary>
         /// 初始化Entity Framework工作单元
         /// </summary>
-        static UnitOfWorkBase() {
-            Maps = new ConcurrentDictionary<Type, IEnumerable<IMap>>();
-            LoggerFactory = new LoggerFactory( new[] { new EfLogProvider() } );
+        /// <param name="options">配置</param>
+        /// <param name="serviceProvider">服务提供器</param>
+        protected UnitOfWorkBase( DbContextOptions options, IServiceProvider serviceProvider )
+            : base( options ) {
+            TraceId = Guid.NewGuid().ToString();
+            Session = Ding.Security.Sessions.Session.Instance;
+            _serviceProvider = serviceProvider ?? Ioc.Create<IServiceProvider>();
+            RegisterToManager();
+        }
+
+        /// <summary>
+        /// 注册到工作单元管理器
+        /// </summary>
+        private void RegisterToManager() {
+            var manager = Create<IUnitOfWorkManager>();
+            manager?.Register( this );
+        }
+
+        /// <summary>
+        /// 创建实例
+        /// </summary>
+        private T Create<T>() {
+            var result = _serviceProvider.GetService( typeof( T ) );
+            if( result == null )
+                return default( T );
+            return (T)result;
         }
 
         #endregion
@@ -133,7 +160,7 @@ namespace Ding.Datas.Ef.Core {
         /// </summary>
         private EfConfig GetConfig() {
             try {
-                var options = Ioc.Create<IOptionsSnapshot<EfConfig>>();
+                var options = Create<IOptionsSnapshot<EfConfig>>();
                 return options.Value;
             }
             catch {
@@ -234,8 +261,8 @@ namespace Ding.Datas.Ef.Core {
         /// </summary>
         public override async Task<int> SaveChangesAsync( CancellationToken cancellationToken = default( CancellationToken ) ) {
             SaveChangesBefore();
-            var transactionActionManager = Ioc.Create<ITransactionActionManager>();
-            if( transactionActionManager.Count == 0 )
+            var transactionActionManager = Create<ITransactionActionManager>();
+            if ( transactionActionManager.Count == 0 )
                 return await base.SaveChangesAsync( cancellationToken );
             return await TransactionCommit( transactionActionManager, cancellationToken );
         }

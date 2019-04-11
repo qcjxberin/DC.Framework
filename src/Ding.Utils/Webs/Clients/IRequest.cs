@@ -62,6 +62,11 @@ namespace Ding.Utils.Webs.Clients {
         /// </summary>
         /// <param name="token">令牌</param>
         TRequest BearerToken( string token );
+        /// 设置证书
+        /// </summary>
+        /// <param name="path">证书路径</param>
+        /// <param name="password">证书密码</param>
+        TRequest Certificate(string path, string password);
         /// <summary>
         /// 超时时间
         /// </summary>

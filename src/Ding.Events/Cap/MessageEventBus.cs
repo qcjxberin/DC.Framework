@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using DotNetCore.CAP;
 using Ding.Datas.Transactions;
+using Ding.Logs;
+using Ding.Logs.Extensions;
 
 namespace Ding.Events.Cap {
     /// <summary>
@@ -47,8 +49,33 @@ namespace Ding.Events.Cap {
                 Publisher.Transaction.DbTransaction = transaction;
                 Publisher.Transaction.AutoCommit = false;
                 await Publisher.PublishAsync( name, data, callback );
+                WriteLog(name);
             } );
             return Task.CompletedTask;
+        }
+
+        /// <summary>
+        /// 写日志
+        /// </summary>
+        private void WriteLog( string name ) {
+            var log = GetLog();
+            if( log.IsTraceEnabled == false )
+                return;
+            log.Caption( "Cap已发送事件" )
+                .Content( $"消息名称:{name}" )
+                .Trace();
+        }
+
+        /// <summary>
+        /// 获取日志
+        /// </summary>
+        private ILog GetLog() {
+            try {
+                return Log.GetLog( this );
+            }
+            catch {
+                return Log.Null;
+            }
         }
     }
 }

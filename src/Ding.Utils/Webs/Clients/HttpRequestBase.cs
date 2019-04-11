@@ -71,10 +71,18 @@ namespace Ding.Utils.Webs.Clients {
         /// 令牌
         /// </summary>
         private string _token;
+        /// <summary>
+        /// 证书路径
+        /// </summary>
+        private string _certificatePath;
+        /// <summary>
+        /// 证书密码
+        /// </summary>
+        private string _certificatePassword;
 
-#endregion
+        #endregion
 
-#region 构造方法
+        #region 构造方法
 
         /// <summary>
         /// 初始化Http请求
@@ -279,9 +287,21 @@ namespace Ding.Utils.Webs.Clients {
             return This();
         }
 
-#endregion
+        /// <summary>
+        /// 设置证书
+        /// </summary>
+        /// <param name="path">证书路径</param>
+        /// <param name="password">证书密码</param>
+        public TRequest Certificate(string path, string password)
+        {
+            _certificatePath = path;
+            _certificatePassword = password;
+            return This();
+        }
 
-#region ResultAsync(获取结果)
+        #endregion
+
+        #region ResultAsync(获取结果)
 
         /// <summary>
         /// 获取结果
@@ -320,11 +340,26 @@ namespace Ding.Utils.Webs.Clients {
         /// <summary>
         /// 创建Http客户端
         /// </summary>
-        protected virtual HttpClient CreateHttpClient() {
-            return new HttpClient( new HttpClientHandler {
+        protected virtual HttpClient CreateHttpClient()
+        {
+            return new HttpClient(CreateHttpClientHandler()) { Timeout = _timeout };
+        }
+
+        /// <summary>
+        /// 创建Http客户端处理器
+        /// </summary>
+        protected HttpClientHandler CreateHttpClientHandler()
+        {
+            var handler = new HttpClientHandler
+            {
                 CookieContainer = _cookieContainer,
                 ServerCertificateCustomValidationCallback = _serverCertificateCustomValidationCallback
-            } ) { Timeout = _timeout };
+            };
+            if (string.IsNullOrWhiteSpace(_certificatePath))
+                return handler;
+            var certificate = new X509Certificate2(_certificatePath, _certificatePassword, X509KeyStorageFlags.PersistKeySet | X509KeyStorageFlags.MachineKeySet);
+            handler.ClientCertificates.Add(certificate);
+            return handler;
         }
 
         /// <summary>
