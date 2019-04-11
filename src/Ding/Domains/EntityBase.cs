@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Ding.Helpers;
 using Ding.Sessions;
 using Ding.Validations;
+using Serilog;
 
 namespace Ding.Domains {
     /// <summary>
@@ -35,7 +36,6 @@ namespace Ding.Domains {
         /// <summary>
         /// 标识
         /// </summary>
-        [Required(ErrorMessage = "Id不能为空")]
         [Key]
         public TKey Id { get; private set; }
 
@@ -78,7 +78,17 @@ namespace Ding.Domains {
         /// <summary>
         /// 初始化
         /// </summary>
-        public virtual void Init() {
+        public virtual void Init()
+        {
+            InitId();
+        }
+
+        /// <summary>
+        /// 初始化标识
+        /// </summary>
+        protected virtual void InitId() {
+            if (typeof(TKey) == typeof(int) || typeof(TKey) == typeof(long))
+                return;
             if( string.IsNullOrWhiteSpace( Id.SafeString() ) || Id.Equals( default( TKey ) ) )
                 Id = CreateId();
         }
@@ -98,9 +108,24 @@ namespace Ding.Domains {
         /// <summary>
         /// 验证
         /// </summary>
-        protected override void Validate( ValidationResultCollection results ) {
-            if( Id == null || Id.Equals( default( TKey ) ) )
-                results.Add( new ValidationResult( "Id不能为空" ) );
+        /// <param name="results"></param>
+        protected override void Validate(ValidationResultCollection results)
+        {
+            ValidateId(results);
+        }
+
+        /// <summary>
+        /// 验证标识
+        /// </summary>
+        protected virtual void ValidateId( ValidationResultCollection results ) {
+            if (typeof(TKey) == typeof(int) || typeof(TKey) == typeof(long))
+                return;
+
+            if ( string.IsNullOrWhiteSpace(Id.SafeString()) || Id.Equals( default( TKey ) ))
+            {
+                results.Add(new ValidationResult("Id不能为空"));
+            }
+                
         }
     }
 }
