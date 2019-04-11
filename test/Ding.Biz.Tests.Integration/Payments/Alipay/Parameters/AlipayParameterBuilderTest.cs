@@ -1,7 +1,7 @@
 ﻿using System;
 using Ding.Biz.Payments.Alipay.Configs;
 using Ding.Biz.Payments.Alipay.Parameters;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Ding.Datas.Ef.Core;
-using Ding.Datas.UnitOfWorks;
 
 namespace Ding.Datas.Ef.SqlServer {
     /// <summary>

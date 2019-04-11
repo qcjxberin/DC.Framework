@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Ding.Biz.Payments;
 using Ding.Biz.Payments.Alipay.Parameters.Requests;
 using Ding.Biz.Payments.Alipay.Results;
 using Ding.Biz.Payments.Alipay.Services;
@@ -9,7 +8,7 @@ using Ding.Biz.Payments.Properties;
 using Ding.Biz.Tests.Integration.Payments.Alipay.Configs;
 using Ding.Biz.Tests.Integration.XUnitHelpers;
 using Ding.Exceptions;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -106,7 +105,7 @@ namespace Ding.Biz.Tests.Integration.Payments.Alipay.Services {
         [Fact]
         public async Task TestRequestParam() {
             //结果
-            Ding.Helpers.String result = new Ding.Helpers.String();
+            Ding.Utils.Helpers.String result = new Ding.Utils.Helpers.String();
             result.Append( "app_id=2016090800463464&" );
             result.Append( "biz_content={\"out_trade_no\":\"59f7caeeab89e009e4a4e1fb\",\"subject\":\"test\",\"total_amount\":\"10\",\"timeout_express\":\"90m\",\"scene\":\"bar_code\",\"auth_code\":\"281023564031402341\"}&" );
             result.Append( "charset=utf-8&" );

@@ -14,7 +14,7 @@ namespace Ding.Datas.Dapper.PgSql {
                 return "''";
             switch( value.GetType().Name.ToLower() ) {
                 case "boolean":
-                    return Utils.Helpers.Convert.ToBool( value ) ? "true" : "false";
+                    return Ding.Utils.Helpers.Convert.ToBool( value ) ? "true" : "false";
                 case "int16":
                 case "int32":
                 case "int64":

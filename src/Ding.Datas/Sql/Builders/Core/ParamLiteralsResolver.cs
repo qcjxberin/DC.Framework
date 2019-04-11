@@ -12,7 +12,7 @@
                 return "''";
             switch( value.GetType().Name.ToLower() ) {
                 case "boolean":
-                    return Utils.Helpers.Convert.ToBool( value ) ? "1" : "0";
+                    return Ding.Utils.Helpers.Convert.ToBool( value ) ? "1" : "0";
                 case "int16":
                 case "int32":
                 case "int64":

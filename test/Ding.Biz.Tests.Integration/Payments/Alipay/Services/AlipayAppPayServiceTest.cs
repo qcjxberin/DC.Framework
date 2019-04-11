@@ -4,7 +4,7 @@ using Ding.Biz.Payments.Alipay.Parameters.Requests;
 using Ding.Biz.Payments.Alipay.Services;
 using Ding.Biz.Payments.Core;
 using Ding.Biz.Tests.Integration.Payments.Alipay.Configs;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -57,7 +57,7 @@ namespace Ding.Biz.Tests.Integration.Payments.Alipay.Services {
         /// 获取结果
         /// </summary>
         private string GetResult() {
-            Ding.Helpers.String result = new Ding.Helpers.String();
+            Ding.Utils.Helpers.String result = new Ding.Utils.Helpers.String();
             result.Append( "app_id=2016090800463464&" );
             result.Append( "biz_content=%7b%22out_trade_no%22%3a%2259f7caeeab89e009e4a4e1fb%22%2c%22subject%22%3a%22test%22%2c%22total_amount%22%3a%2210%22%2c%22timeout_express%22%3a%2290m%22%7d&" );
             result.Append( "charset=utf-8&" );

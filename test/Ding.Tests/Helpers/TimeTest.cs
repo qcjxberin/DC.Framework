@@ -1,5 +1,5 @@
-﻿using System;
-using Ding.Helpers;
+﻿using Ding.Utils.Helpers;
+using System;
 using Xunit;
 
 namespace Ding.Tests.Helpers {

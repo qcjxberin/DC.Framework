@@ -1,4 +1,4 @@
-﻿using Ding.Files;
+﻿using Ding.Utils.Files;
 using Xunit;
 
 namespace Ding.Tests.Files {

@@ -4,7 +4,7 @@ using Ding.Biz.Payments.Alipay.Parameters.Requests;
 using Ding.Biz.Payments.Alipay.Services;
 using Ding.Biz.Payments.Core;
 using Ding.Biz.Tests.Integration.Payments.Alipay.Configs;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 

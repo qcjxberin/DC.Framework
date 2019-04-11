@@ -1,8 +1,8 @@
 ﻿using System;
-using Ding.Files.Paths;
-using Ding.Helpers;
-using Ding.Randoms;
 using Ding.Tests.XUnitHelpers;
+using Ding.Utils.Files.Paths;
+using Ding.Utils.Helpers;
+using Ding.Utils.Randoms;
 using Xunit;
 
 namespace Ding.Tests.Files.Paths {

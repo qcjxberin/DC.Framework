@@ -7,7 +7,6 @@ using Dapper;
 using Ding.Datas.Sql;
 using Ding.Datas.Sql.Configs;
 using Ding.Domains.Repositories;
-using Ding.Helpers;
 using Ding.Logs;
 using Ding.Logs.Extensions;
 using Ding.Utils.Helpers;

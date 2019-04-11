@@ -38,7 +38,7 @@ namespace Ding.Datas.Dapper.MySql {
         /// <param name="builder">Sql生成器</param>
         /// <param name="register">实体别名注册器</param>
         public override IFromClause Clone( ISqlBuilder builder, IEntityAliasRegister register ) {
-            if (register != null)
+            if( register != null )
                 register.FromType = Register.FromType;
             return new MySqlFromClause( builder, Dialect, Resolver, register, TableDatabase, Table );
         }

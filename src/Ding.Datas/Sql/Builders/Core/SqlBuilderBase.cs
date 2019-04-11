@@ -6,7 +6,6 @@ using Ding.Datas.Sql.Builders.Clauses;
 using Ding.Datas.Sql.Builders.Filters;
 using Ding.Datas.Sql.Matedatas;
 using Ding.Domains.Repositories;
-using Ding.Helpers;
 using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Sql.Builders.Core {

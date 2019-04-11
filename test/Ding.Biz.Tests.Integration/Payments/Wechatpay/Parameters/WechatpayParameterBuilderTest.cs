@@ -1,10 +1,10 @@
 ﻿using System;
 using Ding.Biz.Payments.Wechatpay.Configs;
 using Ding.Biz.Payments.Wechatpay.Parameters;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Xunit;
 using Xunit.Abstractions;
-using String = Ding.Helpers.String;
+using String = Ding.Utils.Helpers.String;
 
 namespace Ding.Biz.Tests.Integration.Payments.Wechatpay.Parameters {
     /// <summary>

@@ -50,6 +50,18 @@ namespace Ding.Datas.Ef.Core {
         /// <summary>
         /// 初始化Entity Framework工作单元
         /// </summary>
+        static UnitOfWorkBase() {
+            Maps = new ConcurrentDictionary<Type, IEnumerable<IMap>>();
+            LoggerFactory = new LoggerFactory( new[] { new EfLogProvider() } );
+        }
+
+        #endregion
+
+        #region 构造方法
+
+        /// <summary>
+        /// 初始化Entity Framework工作单元
+        /// </summary>
         /// <param name="options">配置</param>
         /// <param name="serviceProvider">服务提供器</param>
         protected UnitOfWorkBase( DbContextOptions options, IServiceProvider serviceProvider )
@@ -76,22 +88,6 @@ namespace Ding.Datas.Ef.Core {
             if( result == null )
                 return default( T );
             return (T)result;
-        }
-
-        #endregion
-
-        #region 构造方法
-
-        /// <summary>
-        /// 初始化Entity Framework工作单元
-        /// </summary>
-        /// <param name="options">配置</param>
-        /// <param name="manager">工作单元管理器</param>
-        protected UnitOfWorkBase( DbContextOptions options, IUnitOfWorkManager manager )
-            : base( options ) {
-            manager?.Register( this );
-            TraceId = Guid.NewGuid().ToString();
-            Session = Ding.Security.Sessions.Session.Instance;
         }
 
         #endregion
@@ -262,7 +258,7 @@ namespace Ding.Datas.Ef.Core {
         public override async Task<int> SaveChangesAsync( CancellationToken cancellationToken = default( CancellationToken ) ) {
             SaveChangesBefore();
             var transactionActionManager = Create<ITransactionActionManager>();
-            if ( transactionActionManager.Count == 0 )
+            if( transactionActionManager.Count == 0 )
                 return await base.SaveChangesAsync( cancellationToken );
             return await TransactionCommit( transactionActionManager, cancellationToken );
         }
