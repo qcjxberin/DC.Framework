@@ -1,8 +1,10 @@
-﻿namespace Ding.Tools.QrCode {
+﻿namespace Ding.QRCode.Enums
+{
     /// <summary>
     /// 容错级别
     /// </summary>
-    public enum ErrorCorrectionLevel {
+    public enum ErrorCorrectionLevel
+    {
         /// <summary>
         /// 可以纠正最大7%的错误
         /// </summary>
