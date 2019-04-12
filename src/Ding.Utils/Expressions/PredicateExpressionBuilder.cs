@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Ding.Helpers;
-using Ding.Utils;
+using Ding.Utils.Helpers;
 
-namespace Ding.Expressions {
+namespace Ding.Utils.Expressions {
     /// <summary>
     /// 谓词表达式生成器
     /// </summary>

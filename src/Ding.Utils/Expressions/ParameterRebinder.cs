@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Ding.Expressions {
+namespace Ding.Utils.Expressions {
     /// <summary>
     /// 参数重绑定操作
     /// </summary>

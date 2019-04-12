@@ -108,7 +108,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06-Ding.BankCardValidation"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-Ding.MockData", "src\Ding.MockData\07-Ding.MockData.csproj", "{08FD7C39-8E53-465B-8817-4507909DF208}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Elasticsearch", "src\Ding.Elasticsearch\Ding.Elasticsearch.csproj", "{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-Ding.Elasticsearch", "src\Ding.Elasticsearch\08-Ding.Elasticsearch.csproj", "{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Ding.Datas.Sql.Matedatas;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>

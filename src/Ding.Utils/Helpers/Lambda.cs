@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Ding.Utils;
-using Ding.Utils.Helpers;
 
-namespace Ding.Helpers {
+namespace Ding.Utils.Helpers {
     /// <summary>
     /// Lambda表达式操作
     /// </summary>

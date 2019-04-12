@@ -3,8 +3,8 @@ using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using Ding.Domains.Repositories;
-using Ding.Helpers;
 using Ding.Properties;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Queries.Internal {
     /// <summary>

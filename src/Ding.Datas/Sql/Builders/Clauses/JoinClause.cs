@@ -8,8 +8,8 @@ using Ding.Datas.Sql.Builders.Core;
 using Ding.Datas.Sql.Builders.Extensions;
 using Ding.Datas.Sql.Builders.Internal;
 using Ding.Datas.Sql.Matedatas;
-using Ding.Helpers;
 using Ding.Utils;
+using Ding.Utils.Helpers;
 
 namespace Ding.Datas.Sql.Builders.Clauses {
     /// <summary>

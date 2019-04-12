@@ -155,8 +155,8 @@ namespace Ding.Domains {
         /// <param name="expression">属性表达式,范例：t => t.Name</param>
         /// <param name="newValue">新值,范例：newEntity.Name</param>
         protected void AddChange<TProperty, TValue>( Expression<Func<T, TProperty>> expression, TValue newValue ) {
-            var member = Ding.Helpers.Lambda.GetMemberExpression( expression );
-            var name = Ding.Helpers.Lambda.GetMemberName( member );
+            var member = Ding.Utils.Helpers.Lambda.GetMemberExpression( expression );
+            var name = Ding.Utils.Helpers.Lambda.GetMemberName( member );
             var description = Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription( member.Member );
             var value = member.Member.GetPropertyValue( this );
             AddChange( name, description, Ding.Utils.Helpers.Convert.To<TValue>( value ), newValue );
@@ -244,7 +244,7 @@ namespace Ding.Domains {
         /// </summary>
         /// <param name="expression">属性表达式,范例：t => t.Name</param>
         protected void AddDescription<TProperty>( Expression<Func<T, TProperty>> expression ) {
-            var member = Ding.Helpers.Lambda.GetMember( expression );
+            var member = Ding.Utils.Helpers.Lambda.GetMember( expression );
             var description = Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription( member );
             var value = member.GetPropertyValue( this );
             if ( Reflection.IsBool( member ) )
