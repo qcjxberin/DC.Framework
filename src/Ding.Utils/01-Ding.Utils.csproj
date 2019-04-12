@@ -13,8 +13,8 @@
     <AssemblyName>Ding.Utils</AssemblyName>
     <RootNamespace>Ding.Utils</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>NetCore核心帮助类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore核心帮助类库。</Description>
+    <AssemblyTitle>核心帮助类库</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的核心帮助类库。</Description>
     <Company>星尘</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
@@ -69,6 +69,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="IdentityModel" Version="3.10.7" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
@@ -86,6 +87,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="IdentityModel" Version="4.0.0-cragganmore" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview3.19128.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -94,10 +96,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Ip\db\ipipfree.ipdb" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview3.19128.7" />
   </ItemGroup>
 
   <ItemGroup>
