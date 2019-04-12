@@ -108,6 +108,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06-Ding.BankCardValidation"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-Ding.MockData", "src\Ding.MockData\07-Ding.MockData.csproj", "{08FD7C39-8E53-465B-8817-4507909DF208}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Elasticsearch", "src\Ding.Elasticsearch\Ding.Elasticsearch.csproj", "{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -452,6 +454,14 @@ Global
 		{08FD7C39-8E53-465B-8817-4507909DF208}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08FD7C39-8E53-465B-8817-4507909DF208}.Release|x86.ActiveCfg = Release|Any CPU
 		{08FD7C39-8E53-465B-8817-4507909DF208}.Release|x86.Build.0 = Release|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -507,6 +517,7 @@ Global
 		{C436C07E-8A47-408E-B2D3-C51A997048E4} = {E73B727B-4627-41BE-BEF7-877F946B32D2}
 		{8726A207-3D7F-4787-B452-655885253E85} = {89E7C203-8F78-4918-AAB5-C69D709B1F1B}
 		{08FD7C39-8E53-465B-8817-4507909DF208} = {89E7C203-8F78-4918-AAB5-C69D709B1F1B}
+		{5E2CE0A3-CFB8-4CA9-A816-37EA9F0E8C97} = {89E7C203-8F78-4918-AAB5-C69D709B1F1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}
