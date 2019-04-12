@@ -96,6 +96,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05-Ding.MailKit", "src\Ding
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10-Ding.Encryption", "src\Ding.Encryption\10-Ding.Encryption.csproj", "{BBF6CC40-8680-4802-B04D-86C9AE08618E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.UrlShorter", "src\Ding.UrlShorter\Ding.UrlShorter.csproj", "{04A529A6-6769-461D-A872-AED2B9CC345E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -400,6 +402,14 @@ Global
 		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Release|x86.ActiveCfg = Release|Any CPU
 		{BBF6CC40-8680-4802-B04D-86C9AE08618E}.Release|x86.Build.0 = Release|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Debug|x86.Build.0 = Debug|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Release|x86.ActiveCfg = Release|Any CPU
+		{04A529A6-6769-461D-A872-AED2B9CC345E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -449,6 +459,7 @@ Global
 		{D694A236-E760-4A16-8930-5EEA001026C4} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
 		{48743457-0E35-46E2-B47A-97962179AE0E} = {89E7C203-8F78-4918-AAB5-C69D709B1F1B}
 		{BBF6CC40-8680-4802-B04D-86C9AE08618E} = {1907A873-8368-4CFF-B5B3-98F04CD2E3A7}
+		{04A529A6-6769-461D-A872-AED2B9CC345E} = {89E7C203-8F78-4918-AAB5-C69D709B1F1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}

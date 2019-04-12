@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Ding.Utils.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
 
-namespace Ding.Helpers
+namespace Ding.Utils.Helpers
 {
     /// <summary>
     /// 文件操作对象类型
@@ -102,7 +102,7 @@ namespace Ding.Helpers
 
         public static void CopyFile(string oldFile, string newFile)
         {
-            File.Copy(oldFile, newFile, true);
+            System.IO.File.Copy(oldFile, newFile, true);
         }
 
         public static bool CopyFileStream(string oldPath, string newPath)
@@ -158,7 +158,7 @@ namespace Ding.Helpers
             {
                 throw new ArgumentNullException("folderName", "folderName为空！");
             }
-            string path = Path.Combine(Ioc.Create<IHostingEnvironment>().ContentRootPath, folderName);
+            string path = Path.Combine(Web.RootPath, folderName);
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -168,9 +168,9 @@ namespace Ding.Helpers
 
         public static void Delete(string file, FsoMethod method)
         {
-            if ((method == FsoMethod.File) && File.Exists(file))
+            if ((method == FsoMethod.File) && System.IO.File.Exists(file))
             {
-                File.Delete(file);
+                System.IO.File.Delete(file);
             }
             if ((method == FsoMethod.Folder) && Directory.Exists(file))
             {
@@ -291,7 +291,7 @@ namespace Ding.Helpers
                     model.name = info2.Name;
                     model.type = 2;
                     model.size = info2.Length;
-                    model.content_type = info2.Extension.Replace(".", String.Empty);
+                    model.content_type = info2.Extension.Replace(".", string.Empty);
                     model.createTime = info2.CreationTime;
                     model.lastWriteTime = info2.LastWriteTime;
                     model.path = info2.Name;
@@ -352,7 +352,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        public static String GetFileSize(String filePath)
+        public static string GetFileSize(string filePath)
         {
             var info = new System.IO.FileInfo(filePath);
             float num = info.Length / 0x400L;
@@ -381,14 +381,14 @@ namespace Ding.Helpers
         {
             if (method == FsoMethod.File)
             {
-                return File.Exists(file);
+                return System.IO.File.Exists(file);
             }
             return ((method == FsoMethod.Folder) && Directory.Exists(file));
         }
 
         public static Boolean IsExistCategoryDirAndCreate(string categorDir)
         {
-            string file = Path.Combine(Ioc.Create<IHostingEnvironment>().ContentRootPath, categorDir);
+            string file = Path.Combine(Web.RootPath, categorDir);
             if (IsExist(file, FsoMethod.Folder))
             {
                 return true;
@@ -401,7 +401,7 @@ namespace Ding.Helpers
         {
             if (method == FsoMethod.File)
             {
-                File.Move(oldFile, newFile);
+                System.IO.File.Move(oldFile, newFile);
             }
             if (method == FsoMethod.Folder)
             {
@@ -412,14 +412,14 @@ namespace Ding.Helpers
         public static string ReadFile(string filePath)
         {
             string content = string.Empty;
-            if (!File.Exists(filePath))
+            if (!System.IO.File.Exists(filePath))
             {
                 return content;
             }
             using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 Encoding encoding = GetEncoding(stream);
-                StreamReader reader = new StreamReader(File.OpenRead(filePath), encoding, true, 0x400);
+                StreamReader reader = new StreamReader(System.IO.File.OpenRead(filePath), encoding, true, 0x400);
                 content = reader.ReadToEnd();
                 reader.Dispose();
                 if (encoding != Encoding.UTF8)
@@ -436,17 +436,17 @@ namespace Ding.Helpers
         /// <param name="filePath"></param>
         /// <param name="gbk"></param>
         /// <returns></returns>
-        public static String ReadFile(String filePath, String gbk)
+        public static string ReadFile(string filePath, string gbk)
         {
-            String content = String.Empty;
-            if (!File.Exists(filePath))
+            string content = string.Empty;
+            if (!System.IO.File.Exists(filePath))
             {
                 return content;
             }
             using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 Encoding encoding = Encoding.GetEncoding(936);
-                StreamReader reader = new StreamReader(File.OpenRead(filePath), encoding, true, 0x400);
+                StreamReader reader = new StreamReader(System.IO.File.OpenRead(filePath), encoding, true, 0x400);
                 content = reader.ReadToEnd();
                 reader.Dispose();
                 if (encoding != Encoding.UTF8)
@@ -457,9 +457,9 @@ namespace Ding.Helpers
             }
         }
 
-        public static void ReplaceFileContent(String dir, String originalContent, String newContent)
+        public static void ReplaceFileContent(string dir, string originalContent, string newContent)
         {
-            if (!String.IsNullOrEmpty(originalContent))
+            if (!string.IsNullOrEmpty(originalContent))
             {
                 DirectoryInfo info = new DirectoryInfo(dir);
                 foreach (var info2 in info.GetFiles("*.*", SearchOption.AllDirectories))
@@ -470,7 +470,7 @@ namespace Ding.Helpers
                     if (str.Contains(originalContent))
                     {
                         str = str.Replace(originalContent, newContent);
-                        StreamWriter writer = new StreamWriter(File.OpenWrite(info2.FullName));
+                        StreamWriter writer = new StreamWriter(System.IO.File.OpenWrite(info2.FullName));
                         writer.Write(str);
                         writer.Dispose();
                     }
@@ -555,7 +555,7 @@ namespace Ding.Helpers
             return list;
         }
 
-        public static String WriteAppend(String file, String fileContent)
+        public static string WriteAppend(string file, string fileContent)
         {
             string str;
             var info = new System.IO.FileInfo(file);
@@ -584,7 +584,7 @@ namespace Ding.Helpers
             return str;
         }
 
-        public static String WriteFile(String file, String fileContent)
+        public static string WriteFile(string file, string fileContent)
         {
             string str;
             var info = new System.IO.FileInfo(file);
@@ -618,7 +618,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="fileName">文件名与路径</param>
         /// <returns>byte[]类型数据</returns>
-        public static Byte[] ReadFile1(String fileName)
+        public static Byte[] ReadFile1(string fileName)
         {
             FileStream pFileStream = null;
             byte[] pReadByte = new byte[0];

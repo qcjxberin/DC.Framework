@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Ding.HttpUtilitys
+namespace Ding.Utils.HttpUtilitys
 {
     /// <summary>
     /// Get请求处理

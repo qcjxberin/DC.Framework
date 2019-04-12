@@ -1,4 +1,4 @@
-﻿using Ding.Helpers;
+﻿using Ding.Utils.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +10,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ding.HttpUtilitys
+namespace Ding.Utils.HttpUtilitys
 {
     /// <summary>
     /// Request请求处理

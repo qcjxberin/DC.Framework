@@ -1,9 +1,8 @@
-﻿using Ding.HttpUtilitys;
-using Microsoft.AspNetCore.Hosting;
+﻿using Ding.Utils.HttpUtilitys;
 using System;
 using System.IO;
 
-namespace Ding.Helpers
+namespace Ding.Utils.Helpers
 {
     /// <summary>
     /// 文件或者文件夹操作类
@@ -13,27 +12,27 @@ namespace Ding.Helpers
         /// <summary>
         /// 目录分隔符
         /// </summary>
-        public static String DirectorySeparatorChar = Path.DirectorySeparatorChar.ToString(); //目录分隔符，因为是跨平台的应用，我们要判断目录分隔符，windows 下是 "\"， Mac OS and Linux 下是 "/"
+        public static string DirectorySeparatorChar = Path.DirectorySeparatorChar.ToString(); //目录分隔符，因为是跨平台的应用，我们要判断目录分隔符，windows 下是 "\"， Mac OS and Linux 下是 "/"
 
         /// <summary>
         /// 包含应用程序的目录的绝对路径
         /// </summary>
-        public static String _ContentRootPath = Helpers.Ioc.Create<IHostingEnvironment>().ContentRootPath; //包含应用程序的目录的绝对路径
+        public static string _ContentRootPath = Web.RootPath; //包含应用程序的目录的绝对路径
 
         /// <summary>
         /// 包含Web的目录的绝对路径
         /// </summary>
-        public static String _WebRootPath = Helpers.Ioc.Create<IHostingEnvironment>().WebRootPath; //包含应用程序的目录的绝对路径
+        public static string _WebRootPath = Web.WebRootPath; //包含应用程序的目录的绝对路径
 
         /// <summary>
         /// 根据完整文件路径获取FileStream
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public static FileStream GetFileStream(String fileName)
+        public static FileStream GetFileStream(string fileName)
         {
             FileStream fileStream = null;
-            if (!String.IsNullOrEmpty(fileName) && File.Exists(fileName))
+            if (!string.IsNullOrEmpty(fileName) && System.IO.File.Exists(fileName))
             {
                 fileStream = new FileStream(fileName, FileMode.Open);
             }
@@ -45,7 +44,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="url"></param>
         /// <param name="fullFilePathAndName"></param>
-        public void DownLoadFileFromUrl(String url, String fullFilePathAndName)
+        public void DownLoadFileFromUrl(string url, string fullFilePathAndName)
         {
             using (FileStream fs = new FileStream(fullFilePathAndName, FileMode.OpenOrCreate))
             {
@@ -59,7 +58,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="path">文件路径</param>
         /// <returns></returns>
-        public static String MapPath(String path)
+        public static string MapPath(string path)
         {
             return IsAbsolute(path) ? path : Path.Combine(_ContentRootPath, path.TrimStart('~', '/').Replace("/", DirectorySeparatorChar));
         }
@@ -69,7 +68,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="path">文件路径</param>
         /// <returns></returns>
-        public static String WebMapPath(String path)
+        public static string WebMapPath(string path)
         {
             return IsAbsolute(path) ? path : Path.Combine(_WebRootPath, path.TrimStart('~', '/').Replace("/", DirectorySeparatorChar));
         }
@@ -81,7 +80,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="path">路径</param>
         /// <returns></returns>
-        public static Boolean IsAbsolute(String path)
+        public static bool IsAbsolute(string path)
         {
             return Path.VolumeSeparatorChar == ':' ? path.IndexOf(Path.VolumeSeparatorChar) > 0 : path.IndexOf('\\') > 0;
         }
@@ -92,9 +91,9 @@ namespace Ding.Helpers
         /// <param name="path">虚拟路径</param>
         /// <param name="isDirectory">是否是目录</param>
         /// <returns></returns>
-        public static Boolean IsExist(string path, bool isDirectory)
+        public static bool IsExist(string path, bool isDirectory)
         {
-            return isDirectory ? Directory.Exists(MapPath(path)) : File.Exists(MapPath(path));
+            return isDirectory ? Directory.Exists(MapPath(path)) : System.IO.File.Exists(MapPath(path));
         }
 
         /// <summary>
@@ -112,7 +111,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="path">路径</param>
         /// <param name="isDirectory">是否是目录</param>
-        public static void CreateFiles(String path, Boolean isDirectory)
+        public static void CreateFiles(string path, Boolean isDirectory)
         {
             try
             {
@@ -139,7 +138,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="path">虚拟路径</param>
         /// <param name="isDirectory">是否是目录</param>
-        public static void DeleteFiles(String path, Boolean isDirectory)
+        public static void DeleteFiles(string path, Boolean isDirectory)
         {
             try
             {
@@ -148,7 +147,7 @@ namespace Ding.Helpers
                     if (isDirectory)
                         Directory.Delete(MapPath(path));
                     else
-                        File.Delete(MapPath(path));
+                        System.IO.File.Delete(MapPath(path));
                 }
             }
             catch (Exception ex)
@@ -161,7 +160,7 @@ namespace Ding.Helpers
         /// 清空目录下所有文件及子目录，依然保留该目录
         /// </summary>
         /// <param name="path"></param>
-        public static void ClearDirectory(String path)
+        public static void ClearDirectory(string path)
         {
             if (IsExist(path, true))
             {
@@ -184,7 +183,7 @@ namespace Ding.Helpers
         /// 清空目录下所有文件及子目录，不保留该目录
         /// </summary>
         /// <param name="path"></param>
-        public static void ClearAndDeleteDirectory(String path)
+        public static void ClearAndDeleteDirectory(string path)
         {
             if (IsExist(path, true))
             {
@@ -213,9 +212,9 @@ namespace Ding.Helpers
         /// <param name="sourcePath">源文件</param>
         /// <param name="targetPath">目标文件夹</param>
         /// <param name="isOverWrite">是否可以覆盖</param>
-        public static void Copy(String sourcePath, String targetPath, Boolean isOverWrite = true)
+        public static void Copy(string sourcePath, string targetPath, Boolean isOverWrite = true)
         {
-            File.Copy(IsAbsolute(sourcePath) ? sourcePath : MapPath(sourcePath), (IsAbsolute(targetPath) ? targetPath : MapPath(targetPath)) + GetFileName(sourcePath), isOverWrite);
+            System.IO.File.Copy(IsAbsolute(sourcePath) ? sourcePath : MapPath(sourcePath), (IsAbsolute(targetPath) ? targetPath : MapPath(targetPath)) + GetFileName(sourcePath), isOverWrite);
         }
 
         /// <summary>
@@ -223,7 +222,7 @@ namespace Ding.Helpers
         /// </summary>
         /// <param name="sourcePath">源文件</param>
         /// <param name="targetPath">目标目录</param>
-        public static void Move(String sourcePath, String targetPath)
+        public static void Move(string sourcePath, string targetPath)
         {
             string sourceFileName = GetFileName(sourcePath);
             //如果目标目录不存在则创建
@@ -240,7 +239,7 @@ namespace Ding.Helpers
                 }
             }
 
-            File.Move(IsAbsolute(sourcePath) ? sourcePath : MapPath(sourcePath), Path.Combine(IsAbsolute(targetPath) ? targetPath : MapPath(targetPath), sourceFileName));
+            System.IO.File.Move(IsAbsolute(sourcePath) ? sourcePath : MapPath(sourcePath), Path.Combine(IsAbsolute(targetPath) ? targetPath : MapPath(targetPath), sourceFileName));
 
         }
 
