@@ -1,29 +1,26 @@
-﻿using DCLGB.Data;
-using DCLGB.JwtPolicys;
-using DCLGB.OAuths;
+﻿using DCLGB.Auth;
+using DCLGB.Data;
 using DCLGB.SignalR;
 using DCLGB.SwaggerExtensions;
 using Ding;
 using Ding.Biz.OAuthLogin.Extensions;
 using Ding.Caches.EasyCaching;
+using Ding.CookieManager;
 using Ding.Datas.Ef;
 using Ding.Dependency;
 using Ding.Events.Default;
 using Ding.Locks.Default;
 using Ding.Logs.Extensions;
+using Ding.MailKit.Extensions;
+using Ding.Net.Mail.Smtp;
 using Ding.Schedulers.Quartz;
+using Ding.Sms.FengHuo;
 using Ding.Swashbuckle.Filters.Operations;
 using Ding.Utils.Config;
 using Ding.Webs.Extensions;
 using Ding.Webs.Filters;
 using EasyCaching.InMemory;
-using IdentityModel;
-using IdentityServer4.AccessTokenValidation;
-using IdentityServer4.Models;
-using IdentityServer4.Test;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,17 +32,22 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using Senparc.CO2NET;
+using Senparc.CO2NET.RegisterServices;
+using Senparc.Weixin;
+using Senparc.Weixin.Entities;
+using Senparc.Weixin.MP;
+using Senparc.Weixin.RegisterServices;
+using Senparc.Weixin.TenPay;
+using Senparc.Weixin.WxOpen;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DCLGB
@@ -111,7 +113,7 @@ namespace DCLGB
             {
                 case "MSSQL2012":
                     //====== 支持Sql Server 2012+ ==========
-                    services.AddUnitOfWork<ILGBUnitOfWork, Data.SqlServer.LGBUnitOfWork>(Configuration.GetConnectionString("DefaultConnection"), config => config.SqlQuery.IsClearAfterExecution = true);
+                    services.AddUnitOfWork<ILGBUnitOfWork, Data.SqlServer.LGBUnitOfWork>(Configuration.GetConnectionString("DefaultConnection"), Configuration);
                     break;
 
                 case "MSSQL2005":
@@ -149,102 +151,17 @@ namespace DCLGB
             //添加Swagger
             ConfigSwagger(services);
 
-            #region 授权
-            #region 参数
-            //读取配置文件
-            var audienceConfig = SiteSetting.Current.Audience;
-            var symmetricKeyAsBase64 = audienceConfig.Secret;
-            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
-            var signingKey = new SymmetricSecurityKey(keyByteArray);
-
-            // 令牌验证参数
-            var tokenValidationParameters = new TokenValidationParameters
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, o =>
             {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = signingKey,
-                ValidateIssuer = true,
-                ValidIssuer = audienceConfig.Issuer,//发行人
-                ValidateAudience = true,
-                ValidAudience = audienceConfig.Audiences,//订阅人
-                ValidateLifetime = true,
-                ClockSkew = TimeSpan.Zero,
-                RequireExpirationTime = true,
-            };
-            var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
-
-            // 如果要数据库动态绑定，这里先留个空，后边处理器里动态赋值
-            var permission = new List<PermissionItem>();
-
-            // 角色与接口的权限要求参数
-            var permissionRequirement = new PermissionRequirement(
-                "/api/denied",// 拒绝授权的跳转地址（目前无用）
-                permission,
-                ClaimTypes.Role,//基于角色的授权
-                audienceConfig.Issuer,//发行人
-                audienceConfig.Audiences,//听众
-                signingCredentials,//签名凭据
-                expiration: TimeSpan.FromSeconds(60 * 2)//接口的过期时间
-                );
-            #endregion
-
-            //授权
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Permission",
-                         policy => policy.Requirements.Add(permissionRequirement));
-            });
-            #endregion
-
-            #region Jwt认证
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                o.LoginPath = new PathString("/Account/Login");
+                o.AccessDeniedPath = new PathString("/Error/Forbidden");
             })
-             .AddJwtBearer(o =>
-             {
-                 o.TokenValidationParameters = tokenValidationParameters;
-                 o.Events = new JwtBearerEvents
-                 {
-                     OnAuthenticationFailed = context =>
-                     {
-                         // 如果过期，则把<是否过期>添加到，返回头信息中
-                         if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
-                         {
-                             context.Response.Headers.Add("Token-Expired", "true");
-                         }
-                         return Task.CompletedTask;
-                     }
-                 };
-             });
-
-            // 注入权限处理器
-            services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
-            services.AddSingleton(permissionRequirement);
-            #endregion
-
-            #region IdentityServer4认证，后续根据使用情况切换调整
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
-            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //})
-            //    .AddJwtBearer(options =>
-            //    {
-            //        options.Authority = SiteSetting.Current.Url;
-            //        options.RequireHttpsMetadata = false;
-            //        options.TokenValidationParameters = new TokenValidationParameters()
-            //        {
-            //            ValidateIssuer = true,
-            //            ValidIssuer = SiteSetting.Current.Url,
-            //            ValidateAudience = false,
-            //            ValidAudience = "Admin",
-            //            ValidateLifetime = true
-            //        };
-            //    });
-            #endregion
-
-            ConfigureIdentityServer4(services);  // 注册IdentityServer4服务
+            .AddCookie(H5AuthorizeAttribute.H5AuthenticationScheme, o =>
+            {
+                o.LoginPath = new PathString("/Mobile/Login");
+                o.AccessDeniedPath = new PathString("/Error/Forbidden");
+            });
 
             // 添加Razor静态Html生成器
             services.AddRazorHtml();
@@ -266,10 +183,10 @@ namespace DCLGB
             });
 
             services.AddSignalR();  // 注册SignalR
-            services.AddConnections();
 
             services.AddTimedJob(); //注册定时任务
 
+            services.AddMemoryCache();//使用本地缓存必须添加
             services.AddSession();
 
             services.AddLogin(x =>
@@ -277,7 +194,45 @@ namespace DCLGB
                 x.QqOptions.APPID = SiteSetting.Current.Login.QQ.APPID;
                 x.QqOptions.APPKey = SiteSetting.Current.Login.QQ.APPKey;
                 x.QqOptions.Redirect_Uri = SiteSetting.Current.Login.QQ.Redirect_Uri;
+                x.WeChatOptions.APPID = SiteSetting.Current.Login.WeChat.APPID;
+                x.WeChatOptions.APPKey = SiteSetting.Current.Login.WeChat.APPKey;
+                x.WeChatOptions.Redirect_Uri = SiteSetting.Current.Login.WeChat.Redirect_Uri;
             });
+
+            //注册Cookie服务
+            services.AddCookieManager(options =>
+            {
+                options.AllowEncryption = false;  //允许Cookie数据默认加密
+                options.ThrowForPartialCookies = true;  //如果不是所有的 cookie 块在重新组装请求中都可用, 则抛出。
+                options.ChunkSize = null;  //如果不允许在块中偏离，则设置为null
+                options.DefaultExpireTimeInDays = 1;  //如果过期时间设置为空的 cookie，则默认 cookie 过期时间为1天
+            });
+
+            // 注册邮件
+            services.AddMailKit(optionBuilder =>
+            {
+                optionBuilder.EmailConfig = new Ding.Net.Mail.Configs.EmailConfig()
+                {
+                    Host = SiteSetting.Current.Email.Host,
+                    Port = SiteSetting.Current.Email.Port,
+                    DisplayName = SiteSetting.Current.Email.FromName,
+                    FromAddress = SiteSetting.Current.Email.From,
+                    UserName = SiteSetting.Current.Email.UserName,
+                    Password = SiteSetting.Current.Email.Password,
+                    EnableSsl = SiteSetting.Current.Email.IsSSL
+                };
+                optionBuilder.MailKitConfig = new Ding.MailKit.Configs.MailKitConfig();
+            });
+
+            // 烽火短信
+            services.AddFengHuoSms(o =>
+            {
+                o.SmsConfig.Name = SiteSetting.Current.Sms.FengHuoName;
+                o.SmsConfig.PassWrod = SiteSetting.Current.Sms.FengHuoPassWord;
+            });
+
+            services.AddSenparcGlobalServices(Configuration)//Senparc.CO2NET 全局注册
+                    .AddSenparcWeixinServices(Configuration);//Senparc.Weixin 注册
 
             //添加Ding基础设施服务
             return services.AddDing();
@@ -286,7 +241,7 @@ namespace DCLGB
         /// <summary>
         /// 配置开发环境请求管道
         /// </summary>
-        public void ConfigureDevelopment(IApplicationBuilder app)
+        public void ConfigureDevelopment(IApplicationBuilder app, IHostingEnvironment env, IOptions<SenparcSetting> senparcSetting, IOptions<SenparcWeixinSetting> senparcWeixinSetting)
         {
             app.UseResponseCompression();
             app.UseBrowserLink();
@@ -309,25 +264,25 @@ namespace DCLGB
                 config.DisplayOperationId();
             });
 
-            CommonConfig(app);
+            CommonConfig(app, env, senparcSetting, senparcWeixinSetting);
         }
 
         /// <summary>
         /// 配置生产环境请求管道
         /// </summary>
-        public void ConfigureProduction(IApplicationBuilder app)
+        public void ConfigureProduction(IApplicationBuilder app, IHostingEnvironment env, IOptions<SenparcSetting> senparcSetting, IOptions<SenparcWeixinSetting> senparcWeixinSetting)
         {
             app.UseResponseCompression();
             app.UseExceptionHandler("/Home/Error");
             app.UseHsts();
             app.UseHttpsRedirection();
-            CommonConfig(app);
+            CommonConfig(app, env, senparcSetting, senparcWeixinSetting);
         }
 
         /// <summary>
         /// 公共配置
         /// </summary>
-        private void CommonConfig(IApplicationBuilder app)
+        private void CommonConfig(IApplicationBuilder app, IHostingEnvironment env, IOptions<SenparcSetting> senparcSetting, IOptions<SenparcWeixinSetting> senparcWeixinSetting)
         {
             #region 解决Ubuntu Nginx 代理不能获取IP问题
             app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -336,24 +291,66 @@ namespace DCLGB
             });
             #endregion
 
+            app.UseEnableRequestRewind();
             app.UseErrorLog();
             app.UseStaticFiles();
 			app.UseStaticHttpContext();
             app.UseSession();
-            app.UseIdentityServer();// 启用 IdentityServer4 服务
             app.UseAuthentication();
             app.UseSignalR(routes =>
             {
                 routes.MapHub<ChatsHub>("/chathub");
             });
             app.UseCsrfToken();
-            //Cookie策略设置
+
+            // Cookie策略设置
             app.UseCookiePolicy(new CookiePolicyOptions
             {
                 MinimumSameSitePolicy = SameSiteMode.Lax
             });
 
             ConfigRoute(app);
+
+            #region 微信相关配置
+            // 启动 CO2NET 全局注册，必须！
+            IRegisterService register = RegisterService.Start(env, senparcSetting.Value)
+                                                        .UseSenparcGlobal();
+
+            #region 注册日志（按需，建议）
+
+            register.RegisterTraceLog(ConfigTraceLog);//配置TraceLog
+
+            #endregion
+
+            //开始注册微信信息，必须！
+            register.UseSenparcWeixin(senparcWeixinSetting.Value, senparcSetting.Value)
+                //注意：上一行没有 ; 下面可接着写 .RegisterXX()
+
+            #region 注册公众号或小程序（按需）
+
+                //注册公众号（可注册多个）                                                -- DPBMARK MP
+                .RegisterMpAccount(senparcWeixinSetting.Value, "【盛派网络小助手】公众号")// DPBMARK_END
+
+
+                //注册多个公众号或小程序（可注册多个）                                        -- DPBMARK MiniProgram
+                .RegisterWxOpenAccount(senparcWeixinSetting.Value, "【盛派网络小助手】小程序")// DPBMARK_END
+
+                //除此以外，仍然可以在程序任意地方注册公众号或小程序：
+                //AccessTokenContainer.Register(appId, appSecret, name);//命名空间：Senparc.Weixin.MP.Containers
+            #endregion
+
+            #region 注册微信支付（按需）        -- DPBMARK TenPay
+
+                //注册旧微信支付版本（V2）（可注册多个）
+                .RegisterTenpayOld(senparcWeixinSetting.Value, "【盛派网络小助手】公众号")//这里的 name 和第一个 RegisterMpAccount() 中的一致，会被记录到同一个 SenparcWeixinSettingItem 对象中
+
+                //注册最新微信支付版本（V3）（可注册多个）
+                .RegisterTenpayV3(senparcWeixinSetting.Value, "【盛派网络小助手】公众号")//记录到同一个 SenparcWeixinSettingItem 对象中
+
+            #endregion             
+            ;
+
+            #endregion
 
             app.UseTimedJob();
             Bootstrapper.Run();
@@ -432,128 +429,30 @@ namespace DCLGB
         }
 
         /// <summary>
-        /// 配置 IdentityServer4 服务
+        /// 配置微信跟踪日志
         /// </summary>
-        /// <param name="services">服务集合</param>
-        public void ConfigureIdentityServer4(IServiceCollection services)
+        private void ConfigTraceLog()
         {
-            // AddIdentityServer：方法在依赖注入系统中注册IdentityServer，它还会注册一个基于内存存储的运行时状态，这对于开发场景非常有用，对于生产环境，您需要一个持久化或共享存储。https://identityserver4.readthedocs.io/en/release/quickstarts/8_entity_framework.html#refentityframeworkquickstart
-            // AddDeveloperSigningCredential：在每次启动时，为令牌签名创建一个临时密钥。在生产环境需要一个持久化的密钥。https://identityserver4.readthedocs.io/en/release/topics/crypto.html#refcrypto
-            // AddInMemoryApiResources：使用内存存储API资源。
-            // AddInMemoryClients：使用内存存储密钥以及客户端
-            // AddTestUsers：添加测试用户，用于自定义用户登录
-            services.AddAuthentication().AddCookie("dummy");
-            services.AddIdentityServer(options => options.Authentication.CookieAuthenticationScheme = "dummy")
-                .AddDeveloperSigningCredential()
-                .AddInMemoryApiResources(GetApiResources())
-                .AddInMemoryClients(GetClients())
-                .AddTestUsers(GetUsers())
-                .AddProfileService<CustomProfileService>()
-                .AddResourceOwnerValidator<CustomResourceOwnerPasswordValidator>();
-        }
+            //这里设为Debug状态时，/App_Data/WeixinTraceLog/目录下会生成日志文件记录所有的API请求日志，正式发布版本建议关闭
 
-        /// <summary>
-        /// 获取Api资源列表，作用域列表
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<ApiResource> GetApiResources()
-        {
-            return new List<ApiResource>()
+            //如果全局的IsDebug（Senparc.CO2NET.Config.IsDebug）为false，此处可以单独设置true，否则自动为true
+            Senparc.CO2NET.Trace.SenparcTrace.SendCustomLog("系统日志", "系统启动");//只在Senparc.Weixin.Config.IsDebug = true的情况下生效
+
+            //全局自定义日志记录回调
+            Senparc.CO2NET.Trace.SenparcTrace.OnLogFunc = () =>
             {
-                new ApiResource("Admin", "管理员", new List<string>(){JwtClaimTypes.Role}),
-                new ApiResource("Customer", "客户"),
-                new ApiResource("EveryOne", "匿名")
+                //加入每次触发Log后需要执行的代码
+            };
+
+            //当发生基于WeixinException的异常时触发
+            WeixinTrace.OnWeixinExceptionFunc = ex =>
+            {
+                //加入每次触发WeixinExceptionLog后需要执行的代码
+
+                ////发送模板消息给管理员                             -- DPBMARK Redis
+                //var eventService = new Senparc.Weixin.MP.Sample.CommonService.EventService();
+                //eventService.ConfigOnWeixinExceptionFunc(ex);      // DPBMARK_END
             };
         }
-
-        /// <summary>
-        /// 获取客户端列表，用于限制客户端访问作用域
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<Client> GetClients()
-        {
-            return new List<Client>()
-            {
-                // 客户端认证方式
-                new Client()
-                {
-                    ClientId = "ding.admin",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    // 用于认证的密码
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    // 客户端有权访问的作用域范围
-                    AllowedScopes = {"Admin","Customer","EveryOne"}
-                },
-                new Client()
-                {
-                    ClientId = "ding.customer",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    AllowedScopes = {"Customer","EveryOne"}
-                },
-                new Client()
-                {
-                    ClientId = "ding.everyone",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    AllowedScopes = {"EveryOne"}
-                },
-                // 密码认证方式
-                new Client()
-                {
-                    ClientId = "ding.ro.admin",
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    AllowOfflineAccess = true,// 启用刷新Token
-                    ClientSecrets = new List<Secret>()
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    AllowedScopes = { "Admin", "Customer", "EveryOne"}
-                }
-            };
-        }
-
-        /// <summary>
-        /// 获取测试用户
-        /// </summary>
-        /// <returns></returns>
-        public static List<TestUser> GetUsers()
-        {
-            return new List<TestUser>()
-            {
-                new TestUser()
-                {
-                    SubjectId = "1",
-                    Username = "admin",
-                    Password = "123456",
-                    Claims = new List<Claim>()
-                    {
-                        new Claim(JwtClaimTypes.Role, "admin"),
-                        new Claim(JwtClaimTypes.Email, "jianxuanbing@126.com")
-                    }
-                },
-                new TestUser()
-                {
-                    SubjectId = "2",
-                    Username = "test",
-                    Password = "123456",
-                    Claims = new List<Claim>()
-                    {
-                        new Claim(JwtClaimTypes.Role, "customer"),
-                        new Claim(JwtClaimTypes.Email, "test@126.com")
-                    }
-                }
-            };
-        }
-
     }
 }

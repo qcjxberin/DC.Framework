@@ -25,6 +25,12 @@ namespace DCLGB.Controllers
         [AllowAnonymous]
         public async Task<IEnumerable<string>> Get()
         {
+            //var BspAdmingroupsService = Ioc.Create<IBspAdmingroupsService>();
+            //var list = await BspAdmingroupsService.GetAllAsync();
+
+            //var str = list.Join(",");
+
+            //return new string[] { "value1", "value2", list.Count.ToString() };
 
             return new string[] { "value1", "value2" };
         }

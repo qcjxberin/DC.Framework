@@ -17,7 +17,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\images\login\**" />
+    <Content Remove="wwwroot\images\login\**" />
+    <EmbeddedResource Remove="wwwroot\images\login\**" />
+    <None Remove="wwwroot\images\login\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Domains\CreditAction.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="AntDeploy.json" />
+    <Content Remove="wwwroot\ding.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,25 +41,35 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ding.Biz.OAuthLogin" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Caches" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Datas" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Logs" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Schedulers" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Swashbuckle" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.TimedJob" Version="1.0.0-preview-20190410-01" />
-    <PackageReference Include="Ding.Webs" Version="1.0.0-preview-20190410-01" />
+    <PackageReference Include="Ding.Biz.OAuthLogin" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Caches" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.CookieManager" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Datas" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Logs" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.MailKit" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Schedulers" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Swashbuckle" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.TimedJob" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Tools.Sms" Version="1.0.0-preview-20190412-01" />
+    <PackageReference Include="Ding.Webs" Version="1.0.0-preview-20190412-01" />
     <PackageReference Include="IdentityServer4" Version="2.4.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="Senparc.Weixin.MP.MVC" Version="7.2.7.2" />
+    <PackageReference Include="Senparc.Weixin.TenPay" Version="1.2.1" />
+    <PackageReference Include="Senparc.Weixin.WxOpen" Version="3.3.10" />
   </ItemGroup>
 
   <ItemGroup>
@@ -71,14 +93,47 @@
     <Folder Include="Areas\Members\Models\" />
     <Folder Include="Areas\Members\Views\" />
     <Folder Include="Areas\Mobile\Models\" />
-    <Folder Include="DbScripts\MySql\" />
-    <Folder Include="DbScripts\PgSql\" />
-    <Folder Include="Domains\Services\" />
-    <Folder Include="wwwroot\" />
+    <Folder Include="Data\DbScripts\MySql\" />
+    <Folder Include="Data\DbScripts\PgSql\" />
+    <Folder Include="Data\DbScripts\SqlServer\" />
+    <Folder Include="Data\Mappings\MySql\Mappings\" />
+    <Folder Include="Data\Mappings\PgSql\Mappings\" />
+    <Folder Include="Data\Mappings\SqlServer\Mappings\" />
+    <Folder Include="Data\Repositories\" />
+    <Folder Include="Domains\Models\" />
+    <Folder Include="Domains\Repositories\" />
+    <Folder Include="Domains\ViewModels\" />
+    <Folder Include="Services\Abstractions\" />
+    <Folder Include="Services\Dtos\" />
+    <Folder Include="Services\Implements\" />
+    <Folder Include="Services\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Ding.MailKit\05-Ding.MailKit.csproj" />
+    <None Include="wwwroot\layui\font\iconfont.svg" />
+    <None Include="wwwroot\layui\lay\modules\carousel.js" />
+    <None Include="wwwroot\layui\lay\modules\code.js" />
+    <None Include="wwwroot\layui\lay\modules\colorpicker.js" />
+    <None Include="wwwroot\layui\lay\modules\element.js" />
+    <None Include="wwwroot\layui\lay\modules\flow.js" />
+    <None Include="wwwroot\layui\lay\modules\form.js" />
+    <None Include="wwwroot\layui\lay\modules\jquery.js" />
+    <None Include="wwwroot\layui\lay\modules\laydate.js" />
+    <None Include="wwwroot\layui\lay\modules\layedit.js" />
+    <None Include="wwwroot\layui\lay\modules\layer.js" />
+    <None Include="wwwroot\layui\lay\modules\laypage.js" />
+    <None Include="wwwroot\layui\lay\modules\laytpl.js" />
+    <None Include="wwwroot\layui\lay\modules\mobile.js" />
+    <None Include="wwwroot\layui\lay\modules\rate.js" />
+    <None Include="wwwroot\layui\lay\modules\slider.js" />
+    <None Include="wwwroot\layui\lay\modules\table.js" />
+    <None Include="wwwroot\layui\lay\modules\tree.js" />
+    <None Include="wwwroot\layui\lay\modules\upload.js" />
+    <None Include="wwwroot\layui\lay\modules\util.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ding.ts" />
   </ItemGroup>
 
 </Project>

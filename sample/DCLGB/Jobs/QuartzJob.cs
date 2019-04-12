@@ -23,6 +23,15 @@ namespace DCLGB.Jobs
         protected override async Task Execute(IJobExecutionContext context, IScope scope)
         {
             Console.WriteLine("测试定时调度功能");
+            try
+            {
+                //var service = scope.Create<IBspLoginfaillogsService>();
+                //Console.WriteLine("测试测试" + (await service.GetAllAsync()).Count);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
             await Task.FromResult(0);
         }
     }
