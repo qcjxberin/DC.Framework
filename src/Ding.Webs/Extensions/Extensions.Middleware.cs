@@ -17,6 +17,16 @@ namespace Ding.Webs.Extensions {
         }
 
         /// <summary>
+        /// 注册请求日志中间件
+        /// </summary>
+        /// <param name="builder">应用程序生成器</param>
+        /// <returns></returns>
+        public static IApplicationBuilder UseRequestLog(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<RequestLogMiddleware>();
+        }
+
+        /// <summary>
         /// 启用静态请求上下文
         /// </summary>
         /// <param name="builder">应用程序生成器</param>

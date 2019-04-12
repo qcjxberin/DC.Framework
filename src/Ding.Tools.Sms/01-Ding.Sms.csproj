@@ -58,11 +58,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ding\01-Ding.csproj" />
+    <PackageReference Include="aliyun-net-sdk-core" Version="1.2.8" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="aliyun-net-sdk-core" Version="1.2.8" />
+    <ProjectReference Include="..\Ding\Ding.csproj" />
   </ItemGroup>
 
 </Project>

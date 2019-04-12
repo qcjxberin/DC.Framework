@@ -55,7 +55,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ding\01-Ding.csproj" />
+    <ProjectReference Include="..\Ding\Ding.csproj" />
   </ItemGroup>
 
 </Project>

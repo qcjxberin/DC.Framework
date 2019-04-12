@@ -401,9 +401,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ding.Core\02-Ding.Core.csproj">
+    <ProjectReference Include="..\Ding.Core\Ding.Core.csproj">
       <Project>{5c990908-1594-40ed-8569-d6aa055b0887}</Project>
-      <Name>02-Ding.Core</Name>
+      <Name>Ding.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ding.Net\12-Ding.Net.csproj">
       <Project>{e491579a-9e6a-41a3-9fc0-75c5a5083009}</Project>

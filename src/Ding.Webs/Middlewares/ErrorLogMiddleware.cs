@@ -39,6 +39,8 @@ namespace Ding.Webs.Middlewares {
         /// <summary>
         /// 记录错误日志
         /// </summary>
+        /// <param name="context">Http上下文</param>
+        /// <param name="ex">异常</param>
         private void WriteLog( HttpContext context, Exception ex ) {
             if( context == null )
                 return;

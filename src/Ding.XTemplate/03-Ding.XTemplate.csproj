@@ -62,9 +62,9 @@
     <None Include="Test.xt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ding.Core\02-Ding.Core.csproj">
+    <ProjectReference Include="..\Ding.Core\Ding.Core.csproj">
       <Project>{5c990908-1594-40ed-8569-d6aa055b0887}</Project>
-      <Name>02-Ding.Core</Name>
+      <Name>Ding.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

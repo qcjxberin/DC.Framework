@@ -30,8 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Ding.Datas\08-Ding.Datas.csproj" />
-    <ProjectReference Include="..\..\src\Ding\01-Ding.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Datas\Ding.Datas.csproj" />
+    <ProjectReference Include="..\..\src\Ding\Ding.csproj" />
   </ItemGroup>
 
   <ItemGroup>

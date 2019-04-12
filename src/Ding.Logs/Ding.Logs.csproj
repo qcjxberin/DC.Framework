@@ -10,11 +10,11 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <AssemblyName>Ding.Events</AssemblyName>
-    <RootNamespace>Ding.Events</RootNamespace>
+    <AssemblyName>Ding.Logs</AssemblyName>
+    <RootNamespace>Ding.Logs</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>NetCore事件总线操作类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore事件总线操作类库。</Description>
+    <AssemblyTitle>NetCore日志操作类库</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore日志操作类库。</Description>
     <Company>星尘</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
@@ -27,14 +27,14 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>
-      Ding.Events项目是Ding应用框架的事件总线操作类库。
+      Ding.Logs项目是Ding应用框架的日志操作类库。
       Ding是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
     </PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;Events;</PackageTags>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;Logs;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -54,15 +54,32 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetCore.CAP.Kafka" Version="2.5.0" />
-    <PackageReference Include="DotNetCore.CAP.MySql" Version="2.5.0" />
-    <PackageReference Include="DotNetCore.CAP.PostgreSql" Version="2.5.0" />
-    <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="2.5.0" />
-    <PackageReference Include="DotNetCore.CAP.SqlServer" Version="2.5.0" />
+    <None Include="Extensions\Extensions.Aspect.cs" />
+    <None Include="Extensions\Extensions.Log.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ding.Logs\04-Ding.Logs.csproj" />
+    <PackageReference Include="Exceptionless" Version="4.3.2027" />
+    <PackageReference Include="NLog" Version="5.0.0-beta11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ding.Security\Ding.Security.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\LogResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LogResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\LogResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

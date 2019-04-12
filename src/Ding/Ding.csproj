@@ -92,7 +92,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ding.Utils\01-Ding.Utils.csproj" />
+    <ProjectReference Include="..\Ding.Utils\Ding.Utils.csproj" />
   </ItemGroup>
 
   <ItemGroup>

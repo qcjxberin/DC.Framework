@@ -62,9 +62,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ding.Logs\04-Ding.Logs.csproj" />
-    <ProjectReference Include="..\Ding.Utils\01-Ding.Utils.csproj" />
-    <ProjectReference Include="..\Ding\01-Ding.csproj" />
+    <ProjectReference Include="..\Ding.Logs\Ding.Logs.csproj" />
+    <ProjectReference Include="..\Ding.Utils\Ding.Utils.csproj" />
+    <ProjectReference Include="..\Ding\Ding.csproj" />
   </ItemGroup>
 
 </Project>

@@ -32,13 +32,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Ding.Applications\09-Ding.Applications.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Caches\05-Ding.Caches.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Datas\08-Ding.Datas.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Events\06-Ding.Events.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Logs\04-Ding.Logs.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Security\03-Ding.Security.csproj" />
-    <ProjectReference Include="..\..\src\Ding\01-Ding.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Applications\Ding.Applications.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Caches\Ding.Caches.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Datas\Ding.Datas.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Events\Ding.Events.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Logs\Ding.Logs.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Security\Ding.Security.csproj" />
+    <ProjectReference Include="..\..\src\Ding\Ding.csproj" />
   </ItemGroup>
 
   <ItemGroup>
