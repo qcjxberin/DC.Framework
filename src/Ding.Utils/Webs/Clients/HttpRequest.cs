@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ding.Utils.Json;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -55,7 +56,7 @@ namespace Ding.Utils.Webs.Clients {
         /// 获取Json结果
         /// </summary>
         public async Task<TResult> ResultFromJsonAsync<TResult>() {
-            return Ding.Utils.Helpers.Json.ToObject<TResult>( await ResultAsync() );
+            return JsonUtil.ToObject<TResult>( await ResultAsync() );
         }
     }
 
@@ -124,7 +125,7 @@ namespace Ding.Utils.Webs.Clients {
             if( _convertAction != null )
                 return _convertAction( result );
             if( contentType.SafeString().ToLower() == "application/json" )
-                return Ding.Utils.Helpers.Json.ToObject<TResult>( result );
+                return JsonUtil.ToObject<TResult>( result );
             return null;
         }
 
@@ -132,7 +133,7 @@ namespace Ding.Utils.Webs.Clients {
         /// 获取Json结果
         /// </summary>
         public async Task<TResult> ResultFromJsonAsync() {
-            return Ding.Utils.Helpers.Json.ToObject<TResult>( await ResultAsync() );
+            return JsonUtil.ToObject<TResult>( await ResultAsync() );
         }
     }
 }

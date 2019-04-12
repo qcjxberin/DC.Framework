@@ -1,7 +1,7 @@
 ﻿using Ding.Biz.Payments.Alipay.Configs;
 using Ding.Biz.Payments.Core;
-using Ding.Parameters;
-using Ding.Parameters.Formats;
+using Ding.Utils.Parameters;
+using Ding.Utils.Parameters.Formats;
 
 namespace Ding.Biz.Payments.Alipay.Parameters {
     /// <summary>

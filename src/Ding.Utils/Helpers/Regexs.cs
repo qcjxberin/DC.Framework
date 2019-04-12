@@ -6,6 +6,8 @@ namespace Ding.Utils.Helpers {
     /// 正则操作
     /// </summary>
     public static class Regexs {
+        #region GetValues(获取匹配值集合)
+
         /// <summary>
         /// 获取匹配值集合
         /// </summary>
@@ -36,6 +38,10 @@ namespace Ding.Utils.Helpers {
                 result.Add( resultPattern, match.Result( resultPattern ) );
         }
 
+        #endregion
+
+        #region GetValue(获取匹配值)
+
         /// <summary>
         /// 获取匹配值
         /// </summary>
@@ -52,6 +58,10 @@ namespace Ding.Utils.Helpers {
             return string.IsNullOrWhiteSpace( resultPattern ) ? match.Value : match.Result( resultPattern );
         }
 
+        #endregion
+
+        #region Split(分割成字符串数组)
+
         /// <summary>
         /// 分割成字符串数组
         /// </summary>
@@ -63,6 +73,10 @@ namespace Ding.Utils.Helpers {
                 return new string[]{};
             return Regex.Split( input, pattern, options );
         }
+
+        #endregion
+
+        #region Replace(替换)
 
         /// <summary>
         /// 替换
@@ -76,6 +90,10 @@ namespace Ding.Utils.Helpers {
                 return string.Empty;
             return Regex.Replace( input, pattern, replacement, options );
         }
+
+        #endregion
+
+        #region IsMatch(验证输入与模式是否匹配)
 
         /// <summary>
         /// 验证输入与模式是否匹配
@@ -95,5 +113,7 @@ namespace Ding.Utils.Helpers {
         public static bool IsMatch( string input, string pattern, RegexOptions options ) {
             return Regex.IsMatch( input, pattern, options );
         }
+
+        #endregion
     }
 }

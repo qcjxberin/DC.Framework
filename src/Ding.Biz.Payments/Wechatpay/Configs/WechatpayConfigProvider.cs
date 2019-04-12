@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Ding.Parameters;
+using Ding.Utils.Parameters;
 
 namespace Ding.Biz.Payments.Wechatpay.Configs {
     /// <summary>

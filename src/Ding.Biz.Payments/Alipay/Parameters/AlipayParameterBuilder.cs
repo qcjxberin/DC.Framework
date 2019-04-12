@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Ding.Biz.Payments.Alipay.Configs;
 using Ding.Biz.Payments.Core;
-using Ding.Parameters;
-using Ding.Signatures;
+using Ding.Utils.Parameters;
+using Ding.Utils.Signatures;
 using Ding.Utils.Helpers;
 
 namespace Ding.Biz.Payments.Alipay.Parameters {

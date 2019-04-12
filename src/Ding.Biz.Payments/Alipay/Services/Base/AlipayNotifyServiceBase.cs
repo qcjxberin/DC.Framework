@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using Ding.Biz.Payments.Alipay.Configs;
 using Ding.Logs;
 using Ding.Logs.Extensions;
-using Ding.Parameters;
-using Ding.Signatures;
+using Ding.Utils.Parameters;
+using Ding.Utils.Signatures;
 using Ding.Validations;
 
 namespace Ding.Biz.Payments.Alipay.Services.Base {

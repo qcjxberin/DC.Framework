@@ -3,10 +3,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Ding.Biz.Payments.Wechatpay.Configs;
 using Ding.Biz.Payments.Wechatpay.Signatures;
-using Ding.Helpers;
+using Ding.Utils.Helpers;
 using Ding.Logs;
 using Ding.Logs.Extensions;
-using Ding.Parameters;
+using Ding.Utils.Parameters;
 using Ding.Validations;
 
 namespace Ding.Biz.Payments.Wechatpay.Results {

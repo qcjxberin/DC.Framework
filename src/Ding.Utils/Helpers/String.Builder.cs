@@ -108,11 +108,6 @@ namespace Ding.Utils.Helpers {
         public int Length => Builder.Length;
 
         /// <summary>
-        /// 空字符串
-        /// </summary>
-        public string Empty => string.Empty;
-
-        /// <summary>
         /// 转换为字符串
         /// </summary>
         public override string ToString() {

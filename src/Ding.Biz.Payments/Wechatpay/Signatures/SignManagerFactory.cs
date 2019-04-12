@@ -1,8 +1,8 @@
 ﻿using System;
 using Ding.Biz.Payments.Wechatpay.Configs;
 using Ding.Biz.Payments.Wechatpay.Enums;
-using Ding.Parameters;
-using Ding.Signatures;
+using Ding.Utils.Parameters;
+using Ding.Utils.Signatures;
 
 namespace Ding.Biz.Payments.Wechatpay.Signatures {
     /// <summary>

@@ -1,6 +1,6 @@
-﻿using Ding.Helpers;
-using Ding.Parameters;
-using Ding.Signatures;
+﻿using Ding.Utils.Helpers;
+using Ding.Utils.Parameters;
+using Ding.Utils.Signatures;
 
 namespace Ding.Biz.Payments.Wechatpay.Signatures {
     /// <summary>

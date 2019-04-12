@@ -8,6 +8,7 @@ namespace Ding.Utils.Webs.Clients {
     /// <summary>
     /// Http请求
     /// </summary>
+    /// <typeparam name="TRequest">Http请求</typeparam>
     public interface IRequest<out TRequest> where TRequest : IRequest<TRequest> {
         /// <summary>
         /// 设置字符编码
@@ -99,6 +100,19 @@ namespace Ding.Utils.Webs.Clients {
         /// </summary>
         /// <param name="value">值</param>
         TRequest XmlData( string value );
+        /// <summary>
+        /// 添加文件参数
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
+        TRequest FileData(string filePath);
+        /// <summary>
+        /// 添加文件参数
+        /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
+        TRequest FileData(string name, string filePath);
         /// <summary>
         /// 请求失败回调函数
         /// </summary>

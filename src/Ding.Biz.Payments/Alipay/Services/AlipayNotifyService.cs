@@ -2,7 +2,7 @@
 using Ding.Biz.Payments.Alipay.Configs;
 using Ding.Biz.Payments.Alipay.Enums;
 using Ding.Biz.Payments.Alipay.Services.Base;
-using Ding.Parameters;
+using Ding.Utils.Parameters;
 using Ding.Validations;
 
 namespace Ding.Biz.Payments.Alipay.Services {

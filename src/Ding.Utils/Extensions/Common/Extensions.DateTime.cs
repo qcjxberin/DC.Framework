@@ -7,6 +7,8 @@ namespace Ding {
     /// 系统扩展 - 日期
     /// </summary>
     public static partial class Extensions {
+        #region ToDateTimeString(yyyy-MM-dd HH:mm:ss)
+
         /// <summary>
         /// 获取格式化字符串，带时分秒，格式："yyyy-MM-dd HH:mm:ss"
         /// </summary>
@@ -29,6 +31,10 @@ namespace Ding {
             return ToDateTimeString( dateTime.Value, removeSecond );
         }
 
+        #endregion
+
+        #region ToDateString(yyyy-MM-dd)
+
         /// <summary>
         /// 获取格式化字符串，不带时分秒，格式："yyyy-MM-dd"
         /// </summary>
@@ -46,6 +52,10 @@ namespace Ding {
                 return string.Empty;
             return ToDateString( dateTime.Value );
         }
+
+        #endregion
+
+        #region ToTimeString(HH:mm:ss)
 
         /// <summary>
         /// 获取格式化字符串，不带年月日，格式："HH:mm:ss"
@@ -65,6 +75,10 @@ namespace Ding {
             return ToTimeString( dateTime.Value );
         }
 
+        #endregion
+
+        #region ToMillisecondString(yyyy-MM-dd HH:mm:ss.fff)
+
         /// <summary>
         /// 获取格式化字符串，带毫秒，格式："yyyy-MM-dd HH:mm:ss.fff"
         /// </summary>
@@ -83,6 +97,10 @@ namespace Ding {
             return ToMillisecondString( dateTime.Value );
         }
 
+        #endregion
+
+        #region ToChineseDateString(yyyy年MM月dd日)
+
         /// <summary>
         /// 获取格式化字符串，不带时分秒，格式："yyyy年MM月dd日"
         /// </summary>
@@ -100,6 +118,10 @@ namespace Ding {
                 return string.Empty;
             return ToChineseDateString( dateTime.SafeValue() );
         }
+
+        #endregion
+
+        #region ToChineseDateTimeString(yyyy年MM月dd日 HH时mm分)
 
         /// <summary>
         /// 获取格式化字符串，带时分秒，格式："yyyy年MM月dd日 HH时mm分"
@@ -126,6 +148,10 @@ namespace Ding {
             return ToChineseDateTimeString( dateTime.Value, removeSecond );
         }
 
+        #endregion
+
+        #region Description(获取描述)
+
         /// <summary>
         /// 获取描述
         /// </summary>
@@ -147,6 +173,7 @@ namespace Ding {
             return $"{span.TotalSeconds * 1000}毫秒";
         }
 
+        #endregion
         #region 格式化日期时间,0(yyyy-MM-dd),1(yyyy-MM-dd HH:mm:ss),2(yyyy/MM/dd),3(yyyy年MM月dd日),4(MM-dd),5(MM/dd),6(MM月dd日),7(yyyy-MM),8(yyyy/MM),9(yyyy年MM月),10(HH:mm:ss),11(yyyy-MM-dd HH:mm)
         /// <summary>
         /// 格式化日期时间,0(yyyy-MM-dd),1(yyyy-MM-dd HH:mm:ss),2(yyyy/MM/dd),3(yyyy年MM月dd日),4(MM-dd),5(MM/dd),6(MM月dd日),7(yyyy-MM),8(yyyy/MM),9(yyyy年MM月),10(HH:mm:ss),11(yyyy-MM-dd HH:mm)

@@ -1,8 +1,10 @@
 ﻿#if __CORE21__
 using IdentityModel.Client;
 #endif
+using Ding.Utils.Webs.Clients.Parameters;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -79,6 +81,10 @@ namespace Ding.Utils.Webs.Clients {
         /// 证书密码
         /// </summary>
         private string _certificatePassword;
+        /// <summary>
+        /// 文件集合
+        /// </summary>
+        private readonly IList<IFileParameter> _files;
 
         #endregion
 
@@ -92,7 +98,7 @@ namespace Ding.Utils.Webs.Clients {
         protected HttpRequestBase( HttpMethod httpMethod, string url ) {
             if( string.IsNullOrWhiteSpace( url ) )
                 throw new ArgumentNullException( nameof( url ) );
-            System.Text.Encoding.RegisterProvider( CodePagesEncodingProvider.Instance );
+            System.Text.Encoding.RegisterProvider( CodePagesEncodingProvider.Instance ); // 解决当前.net框架未支持的未知字符编码类型
             _url = url;
             _httpMethod = httpMethod;
             _params = new Dictionary<string, object>();
@@ -101,11 +107,21 @@ namespace Ding.Utils.Webs.Clients {
             _timeout = new TimeSpan( 0, 0, 30 );
             _headers = new Dictionary<string, string>();
             _encoding = System.Text.Encoding.UTF8;
+            _files = new List<IFileParameter>();
         }
 
-#endregion
+        /// <summary>
+        /// 返回自身
+        /// </summary>
+        /// <returns></returns>
+        private TRequest This()
+        {
+            return (TRequest)(object)this;
+        }
 
-#region 配置
+        #endregion
+
+        #region Encoding(设置字符编码)
 
         /// <summary>
         /// 设置字符编码
@@ -124,6 +140,10 @@ namespace Ding.Utils.Webs.Clients {
             return Encoding( System.Text.Encoding.GetEncoding( encoding ) );
         }
 
+        #endregion
+
+        #region ContentType(设置内容类型)
+
         /// <summary>
         /// 设置内容类型
         /// </summary>
@@ -141,12 +161,9 @@ namespace Ding.Utils.Webs.Clients {
             return This();
         }
 
-        /// <summary>
-        /// 返回自身
-        /// </summary>
-        private TRequest This() {
-            return (TRequest)(object)this;
-        }
+        #endregion
+
+        #region Cookie(设置Cookie)
 
         /// <summary>
         /// 设置Cookie
@@ -191,6 +208,10 @@ namespace Ding.Utils.Webs.Clients {
             return This();
         }
 
+        #endregion
+
+        #region Timeout(设置超时时间)
+
         /// <summary>
         /// 超时时间
         /// </summary>
@@ -199,6 +220,10 @@ namespace Ding.Utils.Webs.Clients {
             _timeout = new TimeSpan( 0, 0, timeout );
             return This();
         }
+
+        #endregion
+
+        #region Header(设置请求头)
 
         /// <summary>
         /// 请求头
@@ -209,6 +234,10 @@ namespace Ding.Utils.Webs.Clients {
             _headers.Add( key, value.SafeString() );
             return This();
         }
+
+        #endregion
+
+        #region Data(添加参数)
 
         /// <summary>
         /// 添加参数字典
@@ -254,6 +283,33 @@ namespace Ding.Utils.Webs.Clients {
         }
 
         /// <summary>
+        /// 添加文件参数
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
+        public TRequest FileData(string filePath)
+        {
+            return FileData("files", filePath);
+        }
+
+        /// <summary>
+        /// 添加文件参数
+        /// </summary>
+        /// <param name="name">参数名</param>
+        /// <param name="filePath">文件路径</param>
+        /// <returns></returns>
+        public TRequest FileData(string name, string filePath)
+        {
+            ContentType(HttpContentType.FormData);
+            _files.Add(new PhysicalFileParameter(filePath, name));
+            return This();
+        }
+
+        #endregion
+
+        #region OnFail(请求失败回调函数)
+
+        /// <summary>
         /// 请求失败回调函数
         /// </summary>
         /// <param name="action">执行失败的回调函数,参数为响应结果</param>
@@ -270,6 +326,11 @@ namespace Ding.Utils.Webs.Clients {
             _failStatusCodeAction = action;
             return This();
         }
+
+        #endregion
+
+        #region IgnoreSsl(忽略Ssl)
+
         /// <summary>
         /// 忽略Ssl
         /// </summary>
@@ -277,6 +338,10 @@ namespace Ding.Utils.Webs.Clients {
             _serverCertificateCustomValidationCallback = ( a, b, c, d ) => true;
             return This();
         }
+
+        #endregion
+
+        #region BearerToken(设置Bearer令牌)
 
         /// <summary>
         /// 设置Bearer令牌
@@ -286,6 +351,10 @@ namespace Ding.Utils.Webs.Clients {
             _token = token;
             return This();
         }
+
+        #endregion
+
+        #region Certificate(设置证书)
 
         /// <summary>
         /// 设置证书
@@ -314,9 +383,9 @@ namespace Ding.Utils.Webs.Clients {
             return result;
         }
 
-#endregion
+        #endregion
 
-#region SendBefore(发送前操作)
+        #region SendBefore(发送前操作)
 
         /// <summary>
         /// 发送前操作
@@ -324,9 +393,9 @@ namespace Ding.Utils.Webs.Clients {
         protected virtual void SendBefore() {
         }
 
-#endregion
+        #endregion
 
-#region SendAsync(发送请求)
+        #region SendAsync(发送请求)
 
         /// <summary>
         /// 发送请求
@@ -389,15 +458,18 @@ namespace Ding.Utils.Webs.Clients {
         /// </summary>
         private HttpContent CreateHttpContent() {
             var contentType = _contentType.SafeString().ToLower();
-            switch( contentType ) {
+            switch (contentType)
+            {
                 case "application/x-www-form-urlencoded":
-                    return new FormUrlEncodedContent( _params.ToDictionary( t => t.Key, t => t.Value.SafeString() ) );
+                    return new FormUrlEncodedContent(_params.ToDictionary(t => t.Key, t => t.Value.SafeString()));
                 case "application/json":
                     return CreateJsonContent();
                 case "text/xml":
                     return CreateXmlContent();
+                case "multipart/form-data":
+                    return CreateMultipartFormDataContent();
             }
-            throw new NotImplementedException( "未实现该ContentType" );
+            throw new NotImplementedException($"未实现该 '{contentType}' ContentType");
         }
 
         /// <summary>
@@ -416,13 +488,30 @@ namespace Ding.Utils.Webs.Clients {
             return new StringContent( _data, _encoding, "text/xml" );
         }
 
-#endregion
+        /// <summary>
+        /// 创建表单内容
+        /// </summary>
+        /// <returns></returns>
+        private HttpContent CreateMultipartFormDataContent()
+        {
+            var content =
+                new MultipartFormDataContent("Upload----" + DateTime.Now.ToString(CultureInfo.InvariantCulture));
+            foreach (var file in _files)
+            {
+                content.Add(new StreamContent(file.GetFileStream()), file.GetName(), file.GetFileName());
+            }
+            return content;
+        }
 
-#region SendAfter(发送后操作)
+        #endregion
+
+        #region SendAfter(发送后操作)
 
         /// <summary>
         /// 发送后操作
         /// </summary>
+        /// <param name="result">结果</param>
+        /// <param name="response">Http响应消息</param>
         protected virtual void SendAfter( string result, HttpResponseMessage response ) {
             var contentType = GetContentType( response );
             if( response.IsSuccessStatusCode ) {
@@ -435,6 +524,8 @@ namespace Ding.Utils.Webs.Clients {
         /// <summary>
         /// 获取内容类型
         /// </summary>
+        /// <param name="response">Http响应消息</param>
+        /// <returns></returns>
         private string GetContentType( HttpResponseMessage response ) {
             return response?.Content?.Headers?.ContentType == null ? string.Empty : response.Content.Headers.ContentType.MediaType;
         }
@@ -442,12 +533,18 @@ namespace Ding.Utils.Webs.Clients {
         /// <summary>
         /// 成功处理操作
         /// </summary>
+        /// <param name="result">结果</param>
+        /// <param name="statusCode">状态码</param>
+        /// <param name="contentType">内容类型</param>
         protected virtual void SuccessHandler( string result, HttpStatusCode statusCode, string contentType ) {
         }
 
         /// <summary>
         /// 失败处理操作
         /// </summary>
+        /// <param name="result">结果</param>
+        /// <param name="statusCode">状态码</param>
+        /// <param name="contentType">内容类型</param>
         protected virtual void FailHandler( string result, HttpStatusCode statusCode, string contentType ) {
             _failAction?.Invoke( result );
             _failStatusCodeAction?.Invoke( result, statusCode );

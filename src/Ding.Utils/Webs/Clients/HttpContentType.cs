@@ -2,23 +2,29 @@
 
 namespace Ding.Utils.Webs.Clients {
     /// <summary>
-    /// 内容类型
+    /// Http 内容类型
     /// </summary>
-    public enum HttpContentType {
+    public enum HttpContentType
+    {
         /// <summary>
-        /// application/x-www-form-urlencoded
+        /// Form格式：application/x-www-form-urlencoded
         /// </summary>
-        [Description( "application/x-www-form-urlencoded" )]
+        [Description("application/x-www-form-urlencoded")]
         FormUrlEncoded,
         /// <summary>
-        /// application/json
+        /// JSON格式：application/json
         /// </summary>
-        [Description( "application/json" )]
+        [Description("application/json")]
         Json,
         /// <summary>
-        /// text/xml
+        /// 表单文件上传：multipart/form-data
         /// </summary>
-        [Description( "text/xml" )]
+        [Description("multipart/form-data")]
+        FormData,
+        /// <summary>
+        /// XML格式：text/xml
+        /// </summary>
+        [Description("text/xml")]
         Xml
     }
 }
