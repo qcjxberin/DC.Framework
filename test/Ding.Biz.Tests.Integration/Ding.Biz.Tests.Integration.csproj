@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Ding.Biz.Payments\02-Ding.Biz.Payments.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Biz\01-Ding.Biz.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Biz.Payments\Ding.Biz.Payments.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Biz\Ding.Biz.csproj" />
   </ItemGroup>
 
 </Project>

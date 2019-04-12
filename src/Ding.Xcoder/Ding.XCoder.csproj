@@ -405,17 +405,17 @@
       <Project>{5c990908-1594-40ed-8569-d6aa055b0887}</Project>
       <Name>Ding.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ding.Net\12-Ding.Net.csproj">
+    <ProjectReference Include="..\Ding.Net\Ding.Net.csproj">
       <Project>{e491579a-9e6a-41a3-9fc0-75c5a5083009}</Project>
-      <Name>12-Ding.Net</Name>
+      <Name>Ding.Net</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ding.XCode\11-Ding.XCode.csproj">
+    <ProjectReference Include="..\Ding.XCode\Ding.XCode.csproj">
       <Project>{c4f5d39c-ef57-42e3-bad4-0293782aff10}</Project>
-      <Name>11-Ding.XCode</Name>
+      <Name>Ding.XCode</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ding.XTemplate\03-Ding.XTemplate.csproj">
+    <ProjectReference Include="..\Ding.XTemplate\Ding.XTemplate.csproj">
       <Project>{55ba37ee-01a2-438f-a0fb-6b57440bf2f0}</Project>
-      <Name>03-Ding.XTemplate</Name>
+      <Name>Ding.XTemplate</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

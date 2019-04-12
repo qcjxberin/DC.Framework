@@ -145,9 +145,9 @@
       <Project>{5c990908-1594-40ed-8569-d6aa055b0887}</Project>
       <Name>Ding.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ding.Net\12-Ding.Net.csproj">
+    <ProjectReference Include="..\Ding.Net\Ding.Net.csproj">
       <Project>{e491579a-9e6a-41a3-9fc0-75c5a5083009}</Project>
-      <Name>12-Ding.Net</Name>
+      <Name>Ding.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

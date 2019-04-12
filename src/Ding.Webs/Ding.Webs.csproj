@@ -83,7 +83,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Ding.Applications\Ding.Applications.csproj" />
     <ProjectReference Include="..\Ding.AspNetCore\Ding.AspNetCore.csproj" />
-    <ProjectReference Include="..\Ding.CookieManager\09-Ding.CookieManager.csproj" />
+    <ProjectReference Include="..\Ding.CookieManager\Ding.CookieManager.csproj" />
   </ItemGroup>
 
   <ItemGroup>

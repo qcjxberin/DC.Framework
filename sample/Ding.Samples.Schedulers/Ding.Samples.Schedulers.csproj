@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Ding.Applications\Ding.Applications.csproj" />
-    <ProjectReference Include="..\..\src\Ding.Schedulers\07-Ding.Schedulers.csproj" />
+    <ProjectReference Include="..\..\src\Ding.Schedulers\Ding.Schedulers.csproj" />
   </ItemGroup>
 
 </Project>
