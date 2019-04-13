@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build/version.props" />
+  <PropertyGroup>
+    <LangVersion>7.2</LangVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>FivePower.Web.Template</AssemblyName>
+    <RootNamespace>FivePower.Web.FPTemplate</RootNamespace>
+    <Product>FivePower.Web.Template</Product>
+    <Copyright>广西五次方软件科技有限公司</Copyright>
+    <Company>广西五次方软件科技有限公司</Company>
+    <Authors>五次方研发团队</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>FivePower;applicationframework;dotnetcore;aspnetcore;template</PackageTags>
+    <Description>FivePower.Web.Template是一个五次方软件基于.net core平台下的应用框架的Html、Web模板引擎。</Description>
+    <PackageId>FivePower.Web.Template</PackageId>
+    <PackageReleaseNotes>用于广西五次方软件科技有限公司内部使用</PackageReleaseNotes>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <!-- Disable warning for Controller/Action/Method not have block comment -->
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\output\release</OutputPath>
+    <DocumentationFile>..\..\output\release\netstandard2.0\FivePower.Web.Template.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6,NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\output\release</OutputPath>
+    <DocumentationFile>..\..\output\release\netstandard2.0\FivePower.Web.Template.xml</DocumentationFile>
+    <DefineConstants>TRACE;DEBUG;RELEASE;NETSTANDARD1_3;NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+
+</Project>
