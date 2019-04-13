@@ -11,7 +11,7 @@ namespace Ding.Webs.Middlewares
     public class RealIpMiddleware
     {
         /// <summary>
-        /// 方法
+        /// 下一个中间件
         /// </summary>
         private readonly RequestDelegate _next;
 

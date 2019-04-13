@@ -1,16 +1,17 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Ding.Logs;
+﻿using Ding.Logs;
 using Ding.Logs.Extensions;
+using Microsoft.AspNetCore.Http;
+using System;
+using System.Threading.Tasks;
 
-namespace Ding.Webs.Middlewares {
+namespace Ding.Webs.Middlewares
+{
     /// <summary>
     /// 错误日志中间件
     /// </summary>
     public class ErrorLogMiddleware {
         /// <summary>
-        /// 方法
+        /// 下一个中间件
         /// </summary>
         private readonly RequestDelegate _next;
 

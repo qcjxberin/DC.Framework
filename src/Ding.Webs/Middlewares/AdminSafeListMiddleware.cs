@@ -14,7 +14,7 @@ namespace Ding.Webs.Middlewares
     public class AdminSafeListMiddleware : IMiddleware
     {
         /// <summary>
-        /// 方法
+        /// 下一个中间件
         /// </summary>
         private readonly RequestDelegate _next;
 

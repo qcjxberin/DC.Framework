@@ -428,5 +428,63 @@ namespace Ding.Utils.Helpers {
         public static string QueryString => HttpContext?.Request?.QueryString.ToString();
 
         #endregion
+
+        /// <summary>
+        /// 返回绝对地址
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static string AbsoluteUri(this HttpRequest request)
+        {
+            var absoluteUri = string.Concat(
+                          request.Scheme,
+                          "://",
+                          request.Host.ToUriComponent(),
+                          request.PathBase.ToUriComponent(),
+                          request.Path.ToUriComponent(),
+                          request.QueryString.ToUriComponent());
+
+            return absoluteUri;
+        }
+
+        public enum AgentType
+        {
+            Android = 0,
+            IPhone = 1,
+            IPad = 2,
+            WindowsPhone = 3,
+            Windows = 4,
+            Wechat = 6,
+            MacOS = 7
+        }
+
+        /// <summary>
+        /// 获取客户端信息
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static AgentType UserAgentType(this HttpRequest request)
+        {
+            var userAgent = request.Headers["User-Agent"].ToString();
+            switch (userAgent)
+            {
+                case string android when android.Contains("MicroMessenger"):
+                    return AgentType.Wechat;
+                case string android when android.Contains("Android"):
+                    return AgentType.Android;
+                case string android when android.Contains("iPhone"):
+                    return AgentType.IPhone;
+                case string android when android.Contains("iPad"):
+                    return AgentType.IPad;
+                case string android when android.Contains("Windows Phone"):
+                    return AgentType.WindowsPhone;
+                case string android when android.Contains("Windows NT"):
+                    return AgentType.Windows;
+                case string android when android.Contains("Mac OS"):
+                    return AgentType.MacOS;
+            }
+            return AgentType.Android;
+        }
+
     }
 }

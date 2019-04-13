@@ -6,7 +6,6 @@ using Ding.Locks;
 using Ding.Properties;
 using Ding.Security.Sessions;
 using Ding.Webs.Commons;
-using Ding.Utils.Helpers;
 
 namespace Ding.Webs.Filters {
     /// <summary>
