@@ -10,31 +10,32 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <AssemblyName>Ding.Caches</AssemblyName>
-    <RootNamespace>Ding.Caches</RootNamespace>
+    <AssemblyName>Ding.MySqlBackup</AssemblyName>
+    <RootNamespace>MySql.Data.MySqlClient</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>NetCore缓存操作类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的NetCore缓存操作类库。</Description>
+    <AssemblyTitle>Mysql数据库备份操作核心类库</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的Mysql数据库备份操作核心类库。基于MySqlConnector</Description>
     <Company>星尘</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
     <OutputPath>..\..\output\release\</OutputPath>
     <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>
-      Ding.Caches项目是Ding应用框架的缓存操作类库。
+      Ding.MySqlBackup项目是Ding应用框架的Mysql数据库备份操作核心类库。
       Ding是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
     </PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;Caches;</PackageTags>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -54,16 +55,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EasyCaching.HybridCache" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.InMemory" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.Memcached" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.Redis" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.Serialization.MessagePack" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.SQLite" Version="0.5.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Ding\Ding.csproj" />
+    <PackageReference Include="MySqlConnector" Version="0.52.0" />
   </ItemGroup>
 
 </Project>

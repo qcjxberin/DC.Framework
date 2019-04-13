@@ -4,6 +4,7 @@ using Ding.Web.FPTemplate.Parser;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace Ding.Web.FPTemplate
 {
@@ -18,7 +19,7 @@ namespace Ding.Web.FPTemplate
         private static VariableScope _scope;
         private static ITagTypeResolver _tagResolver;
         private static StringComparison _stringComparison;
-#if !NETSTANDARD
+#if !__CORE__
         private static BindingFlags _bindingFlags;
 #endif
         private static StringComparer _stringComparer;
@@ -76,7 +77,7 @@ namespace Ding.Web.FPTemplate
 
             if (Common.Utility.ToBoolean(GetEnvironmentVariable("IgnoreCase")))
             {
-#if NETSTANDARD
+#if __CORE__
                 //_bindingFlags = true;
 #else
                 _bindingFlags = BindingFlags.IgnoreCase;
@@ -87,7 +88,7 @@ namespace Ding.Web.FPTemplate
             else
             {
                 _stringComparison = StringComparison.Ordinal;
-#if NETSTANDARD
+#if __CORE__
                 //_bindingFlags = false;
 #else
                 _bindingFlags = BindingFlags.DeclaredOnly;
@@ -225,7 +226,7 @@ namespace Ding.Web.FPTemplate
             get { return _stringComparison; }
         }
 
-#if !NETSTANDARD
+#if !__CORE__
         /// <summary>
         /// 绑定大小写配置
         /// </summary>

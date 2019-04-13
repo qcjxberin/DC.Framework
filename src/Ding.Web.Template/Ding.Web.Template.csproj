@@ -1,38 +1,60 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../../build/version.props" />
+
   <PropertyGroup>
-    <LangVersion>7.2</LangVersion>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>FivePower.Web.Template</AssemblyName>
-    <RootNamespace>FivePower.Web.FPTemplate</RootNamespace>
-    <Product>FivePower.Web.Template</Product>
-    <Copyright>广西五次方软件科技有限公司</Copyright>
-    <Company>广西五次方软件科技有限公司</Company>
-    <Authors>五次方研发团队</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>FivePower;applicationframework;dotnetcore;aspnetcore;template</PackageTags>
-    <Description>FivePower.Web.Template是一个五次方软件基于.net core平台下的应用框架的Html、Web模板引擎。</Description>
-    <PackageId>FivePower.Web.Template</PackageId>
-    <PackageReleaseNotes>用于广西五次方软件科技有限公司内部使用</PackageReleaseNotes>
-    <PackageIconUrl></PackageIconUrl>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl></RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <LangVersion>8</LangVersion>
     <!-- Disable warning for Controller/Action/Method not have block comment -->
     <NoWarn>1701;1702;1705;1591</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\output\release</OutputPath>
-    <DocumentationFile>..\..\output\release\netstandard2.0\FivePower.Web.Template.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD1_6,NETSTANDARD</DefineConstants>
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <AssemblyName>Ding.Web.Template</AssemblyName>
+    <RootNamespace>Ding.Web.FPTemplate</RootNamespace>
+    <Product>$(AssemblyName)</Product>
+    <AssemblyTitle>Html、Web模板引擎</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的Html、Web模板引擎。</Description>
+    <Company>星尘</Company>
+    <Copyright>©2008-2019 $(Company)开发团队</Copyright>
+    <Deterministic>false</Deterministic>
+    <OutputPath>..\..\output\release\</OutputPath>
+    <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\output\release</OutputPath>
-    <DocumentationFile>..\..\output\release\netstandard2.0\FivePower.Web.Template.xml</DocumentationFile>
-    <DefineConstants>TRACE;DEBUG;RELEASE;NETSTANDARD1_3;NETSTANDARD</DefineConstants>
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Authors>丁川</Authors>
+    <PackageReleaseNotes>
+      Ding.Web.Template项目是Ding应用框架的Html、Web模板引擎。
+      Ding是一个.net core/Windows平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
+    </PackageReleaseNotes>
+    <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
+    <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSource>true</IncludeSource>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45'">
+    <DefineConstants>$(DefineConstants);__WIN__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
   </PropertyGroup>
 
 </Project>

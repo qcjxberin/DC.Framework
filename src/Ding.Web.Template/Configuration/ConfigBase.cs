@@ -128,7 +128,7 @@ namespace Ding.Web.FPTemplate.Configuration
         public virtual Dictionary<String, String> ToDictionary()
         {
             Dictionary<String, String> dic = new Dictionary<String, String>();
-#if NETSTANDARD
+#if __CORE__
             IEnumerable<PropertyInfo> pis = this.GetType().GetRuntimeProperties();
 #else
             IEnumerable<PropertyInfo> pis = this.GetType().GetProperties();

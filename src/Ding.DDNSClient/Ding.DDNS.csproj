@@ -10,8 +10,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
-    <AssemblyName>HaoCoding.DDNSClient</AssemblyName>
-    <RootNamespace>HaoCoding.DDNS</RootNamespace>
+    <AssemblyName>Ding.DDNSClient</AssemblyName>
+    <RootNamespace>Ding.DDNS</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>DDNS动态解析类</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的DDNS动态解析类。</Description>
@@ -27,7 +27,7 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>
-      Ding.Core项目是Ding应用框架的DDNS动态解析类,基于常用DDNS服务提供商的基本认证协议，实现了一个DDNS Client类库和一个可参数化配置启用的应用程序,支持oray、dynu、noip(http get),需要在路由器上开端口指向内部机的Ip和端口号。
+      Ding.DDNS项目是Ding应用框架的DDNS动态解析类,基于常用DDNS服务提供商的基本认证协议，实现了一个DDNS Client类库和一个可参数化配置启用的应用程序,支持oray、dynu、noip(http get),需要在路由器上开端口指向内部机的Ip和端口号。
       Ding是一个.net core/Windows平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
     </PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>

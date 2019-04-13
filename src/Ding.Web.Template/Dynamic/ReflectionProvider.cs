@@ -53,7 +53,7 @@ namespace Ding.Web.FPTemplate.Dynamic
             {
                 return info.GetValue(container, new Object[] { propIndex });
             }
-#elif NETSTANDARD
+#elif __CORE__
             var info = t.GetRuntimeMethod("get_Item", new Type[] { propIndex.GetType() });
             if (info != null)
             {
@@ -88,7 +88,7 @@ namespace Ding.Web.FPTemplate.Dynamic
             {
 #if !NET20_NOTUSER
                 PropertyInfo p =
-#if NETSTANDARD
+#if __CORE__
                     t.GetRuntimeProperty(propName);
 #else
                     t.GetProperty(propName, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | Engine.BindIgnoreCase);
@@ -244,7 +244,7 @@ namespace Ding.Web.FPTemplate.Dynamic
                 method = type.GetMethod(methodName,
                     BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static | Engine.BindIgnoreCase,
                     null, args, null);
-#elif NETSTANDARD
+#elif __CORE__
                 method = type.GetRuntimeMethod(methodName, args);
 #else
 
@@ -262,7 +262,7 @@ namespace Ding.Web.FPTemplate.Dynamic
             ParameterInfo[] pi;
             Boolean accord;
             System.Collections.Generic.IEnumerable<MethodInfo> ms =
-#if NETSTANDARD
+#if __CORE__
                 type.GetRuntimeMethods();
 #else
                 type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Static | Engine.BindIgnoreCase);
