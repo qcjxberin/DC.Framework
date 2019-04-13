@@ -27,7 +27,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static bool ToBool( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToBool( obj );
+            return Ding.Utils.Helpers.Conv.ToBool( obj );
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static bool? ToBoolOrNull( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToBoolOrNull( obj );
+            return Ding.Utils.Helpers.Conv.ToBoolOrNull( obj );
         }
 
         #endregion
@@ -48,7 +48,7 @@ namespace Ding
         /// <returns></returns>
         public static short ToShort( this string obj)
         {
-            return Ding.Utils.Helpers.Convert.ToShort(obj);
+            return Ding.Utils.Helpers.Conv.ToShort(obj);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Ding
         /// <returns></returns>
         public static short? ToShortOrNull( this string obj)
         {
-            return Ding.Utils.Helpers.Convert.ToShortOrNull(obj);
+            return Ding.Utils.Helpers.Conv.ToShortOrNull(obj);
         }
 
         #endregion
@@ -69,7 +69,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static int ToInt( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToInt( obj );
+            return Ding.Utils.Helpers.Conv.ToInt( obj );
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static int? ToIntOrNull( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToIntOrNull( obj );
+            return Ding.Utils.Helpers.Conv.ToIntOrNull( obj );
         }
 
         #endregion
@@ -88,7 +88,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static long ToLong( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToLong( obj );
+            return Ding.Utils.Helpers.Conv.ToLong( obj );
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static long? ToLongOrNull( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToLongOrNull( obj );
+            return Ding.Utils.Helpers.Conv.ToLongOrNull( obj );
         }
 
         #endregion
@@ -108,7 +108,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static double ToDouble( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToDouble( obj );
+            return Ding.Utils.Helpers.Conv.ToDouble( obj );
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static double? ToDoubleOrNull( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToDoubleOrNull( obj );
+            return Ding.Utils.Helpers.Conv.ToDoubleOrNull( obj );
         }
 
         #endregion
@@ -128,7 +128,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static decimal ToDecimal( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToDecimal( obj );
+            return Ding.Utils.Helpers.Conv.ToDecimal( obj );
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static decimal? ToDecimalOrNull( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToDecimalOrNull( obj );
+            return Ding.Utils.Helpers.Conv.ToDecimalOrNull( obj );
         }
 
         #endregion
@@ -148,7 +148,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static DateTime ToDate( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToDate( obj );
+            return Ding.Utils.Helpers.Conv.ToDate( obj );
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static DateTime? ToDateOrNull( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToDateOrNull( obj );
+            return Ding.Utils.Helpers.Conv.ToDateOrNull( obj );
         }
 
         #endregion
@@ -168,7 +168,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static Guid ToGuid( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToGuid( obj );
+            return Ding.Utils.Helpers.Conv.ToGuid( obj );
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据</param>
         public static Guid? ToGuidOrNull( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToGuidOrNull( obj );
+            return Ding.Utils.Helpers.Conv.ToGuidOrNull( obj );
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Ding
         /// </summary>
         /// <param name="obj">数据,范例: "83B0233C-A24F-49FD-8083-1337209EBC9A,EAB523C6-2FE7-47BE-89D5-C6D440C3033A"</param>
         public static List<Guid> ToGuidList( this string obj ) {
-            return Ding.Utils.Helpers.Convert.ToGuidList( obj );
+            return Ding.Utils.Helpers.Conv.ToGuidList( obj );
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace Ding
         /// <returns></returns>
         public static string ToSnakeCase(this string str)
         {
-            return Ding.Utils.Helpers.String.ToSnakeCase(str);
+            return Ding.Utils.Helpers.Str.ToSnakeCase(str);
         }
 
         #endregion
@@ -222,7 +222,7 @@ namespace Ding
         /// <returns></returns>
         public static string ToCamelCase(this string str)
         {
-            return Ding.Utils.Helpers.String.ToCamelCase(str);
+            return Ding.Utils.Helpers.Str.ToCamelCase(str);
         }
 
         #endregion

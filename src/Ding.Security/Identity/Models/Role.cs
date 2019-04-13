@@ -19,7 +19,7 @@ namespace Ding.Security.Identity.Models {
         /// 初始化拼音简码
         /// </summary>
         public void InitPinYin() {
-            PinYin = String.PinYin( Name );
+            PinYin = Str.PinYin( Name );
         }
     }
 }

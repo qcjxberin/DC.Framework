@@ -42,7 +42,7 @@ namespace Ding.Biz.Payments.Alipay.Services.Base {
         /// </summary>
         /// <param name="name">参数名</param>
         public T GetParam<T>( string name ) {
-            return Ding.Utils.Helpers.Convert.To<T>( GetParam( name ) );
+            return Ding.Utils.Helpers.Conv.To<T>( GetParam( name ) );
         }
 
         /// <summary>

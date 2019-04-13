@@ -153,7 +153,7 @@ namespace Ding.Applications {
         /// <param name="request">创建参数</param>
         protected virtual TEntity ToEntityFromCreateRequest( TCreateRequest request ) {
             if( typeof( TCreateRequest ) == typeof( TRequest ) )
-                return ToEntity( Ding.Utils.Helpers.Convert.To<TRequest>( request ) );
+                return ToEntity( Ding.Utils.Helpers.Conv.To<TRequest>( request ) );
             return request.MapTo<TEntity>();
         }
 
@@ -163,7 +163,7 @@ namespace Ding.Applications {
         /// <param name="request">修改参数</param>
         protected virtual TEntity ToEntityFromUpdateRequest( TUpdateRequest request ) {
             if( typeof( TUpdateRequest ) == typeof( TRequest ) )
-                return ToEntity( Ding.Utils.Helpers.Convert.To<TRequest>( request ) );
+                return ToEntity( Ding.Utils.Helpers.Conv.To<TRequest>( request ) );
             return request.MapTo<TEntity>();
         }
     }

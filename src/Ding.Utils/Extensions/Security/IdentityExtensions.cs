@@ -29,7 +29,7 @@ namespace Ding.Utils.Extensions
         /// <returns></returns>
         public static T GetValue<T>(this IIdentity identity, string key)
         {
-            return Ding.Utils.Helpers.Convert.To<T>(identity.GetValue(key));
+            return Ding.Utils.Helpers.Conv.To<T>(identity.GetValue(key));
         }
     }
 }

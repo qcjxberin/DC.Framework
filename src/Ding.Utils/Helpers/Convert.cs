@@ -7,7 +7,7 @@ namespace Ding.Utils.Helpers {
     /// <summary>
     /// 类型转换
     /// </summary>
-    public static class Convert {
+    public static class Conv {
 
         #region ToByte(转换为byte)
 

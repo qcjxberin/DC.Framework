@@ -37,7 +37,7 @@ namespace Ding.Biz.Payments.Wechatpay.Parameters
         /// </summary>
         /// <param name="refundFee">退款金额, 单位: 元</param>
         public WechatpayRefundParameterBuilder RefundFee( decimal refundFee ) {
-            Add( "refund_fee", Ding.Utils.Helpers.Convert.ToInt( refundFee * 100 ) );
+            Add( "refund_fee", Ding.Utils.Helpers.Conv.ToInt( refundFee * 100 ) );
             return this;
         }
 

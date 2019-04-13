@@ -58,7 +58,7 @@ namespace Ding.Utils.Files.Paths {
         /// </summary>
         private static string FilterFileName( string fileName ) {
             fileName = Regexs.Replace( fileName, "\\W", "" );
-            return Ding.Utils.Helpers.String.PinYin( fileName );
+            return Ding.Utils.Helpers.Str.PinYin( fileName );
         }
     }
 }

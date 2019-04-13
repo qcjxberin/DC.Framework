@@ -96,7 +96,7 @@ namespace Ding.Domains.Trees {
             var result = Path.Split( ',' ).Where( id => !string.IsNullOrWhiteSpace( id ) && id != "," ).ToList();
             if( excludeSelf )
                 result = result.Where( id => id.SafeString().ToLower() != Id.SafeString().ToLower() ).ToList();
-            return result.Select( Ding.Utils.Helpers.Convert.To<TKey> ).ToList();
+            return result.Select( Ding.Utils.Helpers.Conv.To<TKey> ).ToList();
         }
     }
 }

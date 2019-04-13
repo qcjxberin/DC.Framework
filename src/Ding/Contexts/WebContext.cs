@@ -30,7 +30,7 @@ namespace Ding.Contexts {
         public T Get<T>( string key ) {
             if( Web.HttpContext == null )
                 return default( T );
-            return Ding.Utils.Helpers.Convert.To<T>( Web.HttpContext.Items[key] );
+            return Ding.Utils.Helpers.Conv.To<T>( Web.HttpContext.Items[key] );
         }
 
         /// <summary>

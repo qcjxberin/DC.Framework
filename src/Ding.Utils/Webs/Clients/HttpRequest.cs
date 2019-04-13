@@ -121,7 +121,7 @@ namespace Ding.Utils.Webs.Clients {
         /// </summary>
         private TResult ConvertTo( string result, string contentType ) {
             if( typeof( TResult ) == typeof( string ) )
-                return Ding.Utils.Helpers.Convert.To<TResult>( result );
+                return Ding.Utils.Helpers.Conv.To<TResult>( result );
             if( _convertAction != null )
                 return _convertAction( result );
             if( contentType.SafeString().ToLower() == "application/json" )

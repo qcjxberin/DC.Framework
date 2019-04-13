@@ -130,7 +130,7 @@ namespace Ding.Datas.Dapper {
             var sql = builder.ToSql();
             WriteTraceLog( sql, builder.GetParams(), builder.ToDebugSql() );
             var result = GetConnection( connection ).ExecuteScalar( sql, builder.GetParams() );
-            return Ding.Utils.Helpers.Convert.ToInt( result );
+            return Ding.Utils.Helpers.Conv.ToInt( result );
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Ding.Datas.Dapper {
             var sql = builder.ToSql();
             WriteTraceLog( sql, builder.GetParams(), builder.ToDebugSql() );
             var result = await GetConnection( connection ).ExecuteScalarAsync( sql, builder.GetParams() );
-            return Ding.Utils.Helpers.Convert.ToInt( result );
+            return Ding.Utils.Helpers.Conv.ToInt( result );
         }
 
         /// <summary>

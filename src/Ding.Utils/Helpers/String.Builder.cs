@@ -4,11 +4,11 @@ namespace Ding.Utils.Helpers {
     /// <summary>
     /// 字符串操作 - 字符串生成器
     /// </summary>
-    public partial class String {
+    public partial class Str {
         /// <summary>
         /// 初始化字符串操作
         /// </summary>
-        public String() {
+        public Str() {
             Builder = new StringBuilder();
         }
 
@@ -22,7 +22,7 @@ namespace Ding.Utils.Helpers {
         /// </summary>
         /// <typeparam name="T">值的类型</typeparam>
         /// <param name="value">值</param>
-        public String Append<T>( T value ) {
+        public Str Append<T>( T value ) {
             Builder.Append( value );
             return this;
         }
@@ -32,7 +32,7 @@ namespace Ding.Utils.Helpers {
         /// </summary>
         /// <param name="value">值</param>
         /// <param name="args">参数</param>
-        public String Append( string value, params object[] args ) {
+        public Str Append( string value, params object[] args ) {
             if( args == null )
                 args = new object[] { string.Empty };
             if( args.Length == 0 )
@@ -45,7 +45,7 @@ namespace Ding.Utils.Helpers {
         /// <summary>
         /// 追加内容并换行
         /// </summary>
-        public String AppendLine() {
+        public Str AppendLine() {
             Builder.AppendLine();
             return this;
         }
@@ -55,7 +55,7 @@ namespace Ding.Utils.Helpers {
         /// </summary>
         /// <typeparam name="T">值的类型</typeparam>
         /// <param name="value">值</param>
-        public String AppendLine<T>( T value ) {
+        public Str AppendLine<T>( T value ) {
             Append( value );
             Builder.AppendLine();
             return this;
@@ -66,7 +66,7 @@ namespace Ding.Utils.Helpers {
         /// </summary>
         /// <param name="value">值</param>
         /// <param name="args">参数</param>
-        public String AppendLine( string value, params object[] args ) {
+        public Str AppendLine( string value, params object[] args ) {
             Append( value, args );
             Builder.AppendLine();
             return this;
@@ -76,7 +76,7 @@ namespace Ding.Utils.Helpers {
         /// 替换内容
         /// </summary>
         /// <param name="value">值</param>
-        public String Replace( string value ) {
+        public Str Replace( string value ) {
             Builder.Clear();
             Builder.Append( value );
             return this;
@@ -86,7 +86,7 @@ namespace Ding.Utils.Helpers {
         /// 移除末尾字符串
         /// </summary>
         /// <param name="end">末尾字符串</param>
-        public String RemoveEnd( string end ) {
+        public Str RemoveEnd( string end ) {
             string result = Builder.ToString();
             if( !result.EndsWith( end ) )
                 return this;
@@ -97,7 +97,7 @@ namespace Ding.Utils.Helpers {
         /// <summary>
         /// 清空字符串
         /// </summary>
-        public String Clear() {
+        public Str Clear() {
             Builder = Builder.Clear();
             return this;
         }

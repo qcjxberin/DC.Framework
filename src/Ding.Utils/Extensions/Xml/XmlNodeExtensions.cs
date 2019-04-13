@@ -107,7 +107,7 @@ namespace Ding.Utils.Extensions
                 return defaultValue;
             }
 
-            return Ding.Utils.Helpers.Convert.To<T>(value);
+            return Ding.Utils.Helpers.Conv.To<T>(value);
         }
 
         #endregion

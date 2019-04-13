@@ -145,7 +145,7 @@ namespace Ding.Logs.Extensions {
                 return "''";
             switch( value.GetType().Name.ToLower() ) {
                 case "boolean":
-                    return Utils.Helpers.Convert.ToBool( value ) ? "1" : "0";
+                    return Utils.Helpers.Conv.ToBool( value ) ? "1" : "0";
                 case "int16":
                 case "int32":
                 case "int64":

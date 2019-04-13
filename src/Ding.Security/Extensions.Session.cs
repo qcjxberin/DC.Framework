@@ -4,7 +4,7 @@ using IdentityModel;
 using Ding.Helpers;
 using Ding.Security.Claims;
 using Ding.Sessions;
-using Convert = Ding.Utils.Helpers.Convert;
+using Convert = Ding.Utils.Helpers.Conv;
 
 namespace Ding.Security {
     /// <summary>

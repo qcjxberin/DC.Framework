@@ -159,7 +159,7 @@ namespace Ding.Domains {
             var name = Ding.Utils.Helpers.Lambda.GetMemberName( member );
             var description = Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription( member.Member );
             var value = member.Member.GetPropertyValue( this );
-            AddChange( name, description, Ding.Utils.Helpers.Convert.To<TValue>( value ), newValue );
+            AddChange( name, description, Ding.Utils.Helpers.Conv.To<TValue>( value ), newValue );
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace Ding.Domains {
             var description = Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription( member );
             var value = member.GetPropertyValue( this );
             if ( Reflection.IsBool( member ) )
-                value = Ding.Utils.Helpers.Convert.ToBool( value ).Description();
+                value = Ding.Utils.Helpers.Conv.ToBool( value ).Description();
             AddDescription( description, value );
         }
 

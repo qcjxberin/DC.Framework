@@ -121,7 +121,7 @@ namespace Ding.Utils.Parameters.Parsers
         /// <returns></returns>
         public T GetValue<T>(string name)
         {
-            return Ding.Utils.Helpers.Convert.To<T>(GetValue(name));
+            return Ding.Utils.Helpers.Conv.To<T>(GetValue(name));
         }
 
         /// <summary>

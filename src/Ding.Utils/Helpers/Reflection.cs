@@ -214,7 +214,7 @@ namespace Ding.Utils.Helpers {
         /// <param name="type">类型</param>
         /// <param name="parameters">传递给构造函数的参数</param>        
         public static T CreateInstance<T>( Type type, params object[] parameters ) {
-            return Ding.Utils.Helpers.Convert.To<T>( Activator.CreateInstance( type, parameters ) );
+            return Ding.Utils.Helpers.Conv.To<T>( Activator.CreateInstance( type, parameters ) );
         }
 
         /// <summary>

@@ -49,7 +49,7 @@ namespace Ding.Biz.Payments.Wechatpay.Services {
         /// </summary>
         /// <param name="name">参数名</param>
         public T GetParam<T>( string name ) {
-            return Ding.Utils.Helpers.Convert.To<T>( GetParam( name ) );
+            return Ding.Utils.Helpers.Conv.To<T>( GetParam( name ) );
         }
 
         /// <summary>

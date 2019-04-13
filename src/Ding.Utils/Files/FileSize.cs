@@ -45,21 +45,21 @@
         /// 获取文件大小，单位：K
         /// </summary>
         public double GetSizeByK() {
-            return Ding.Utils.Helpers.Convert.ToDouble( _size / 1024.0, 2 );
+            return Ding.Utils.Helpers.Conv.ToDouble( _size / 1024.0, 2 );
         }
 
         /// <summary>
         /// 获取文件大小，单位：M
         /// </summary>
         public double GetSizeByM() {
-            return Ding.Utils.Helpers.Convert.ToDouble( _size / 1024.0 / 1024.0, 2 );
+            return Ding.Utils.Helpers.Conv.ToDouble( _size / 1024.0 / 1024.0, 2 );
         }
 
         /// <summary>
         /// 获取文件大小，单位：G
         /// </summary>
         public double GetSizeByG() {
-            return Ding.Utils.Helpers.Convert.ToDouble( _size / 1024.0 / 1024.0 / 1024.0, 2 );
+            return Ding.Utils.Helpers.Conv.ToDouble( _size / 1024.0 / 1024.0 / 1024.0, 2 );
         }
 
         /// <summary>

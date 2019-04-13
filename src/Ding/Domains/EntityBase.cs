@@ -96,7 +96,7 @@ namespace Ding.Domains {
         /// 创建标识
         /// </summary>
         protected virtual TKey CreateId() {
-            return Ding.Utils.Helpers.Convert.To<TKey>( Guid.NewGuid() );
+            return Ding.Utils.Helpers.Conv.To<TKey>( Guid.NewGuid() );
         }
 
         /// <summary>
