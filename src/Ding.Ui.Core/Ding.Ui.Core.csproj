@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build/version.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Extensions\Extensions.TagBuilder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ding.Logs\Ding.Logs.csproj" />
+    <ProjectReference Include="..\Ding.Ui.Abstractions\Ding.Ui.Abstractions.csproj" />
+    <ProjectReference Include="..\Ding.Webs\Ding.Webs.csproj" />
+    <ProjectReference Include="..\Ding\Ding.csproj" />
+  </ItemGroup>
+
+</Project>
