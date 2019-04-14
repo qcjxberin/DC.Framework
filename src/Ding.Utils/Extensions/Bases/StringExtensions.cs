@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Ding.Utils.Extensions.Bases
+namespace Ding.Utils.Extensions
 {
     /// <summary>
     /// 字符串(<see cref="string"/>) 扩展
@@ -157,6 +157,36 @@ namespace Ding.Utils.Extensions.Bases
         {
             return value.Split(new[] { strSplit },
                 removeEmptyEntries ? StringSplitOptions.RemoveEmptyEntries : StringSplitOptions.None);
+        }
+
+        /// <summary>
+        /// 分割字符串
+        /// </summary>
+        /// <param name="sourceStr">源字符串</param>
+        /// <param name="splitStr">分隔字符串</param>
+        /// <returns></returns>
+        public static string[] SplitString(this string sourceStr, string splitStr)
+        {
+            if (string.IsNullOrEmpty(sourceStr) || string.IsNullOrEmpty(splitStr))
+                return new string[0] { };
+
+            if (sourceStr.IndexOf(splitStr) == -1)
+                return new string[] { sourceStr };
+
+            if (splitStr.Length == 1)
+                return sourceStr.Split(splitStr[0]);
+            else
+                return Regex.Split(sourceStr, Regex.Escape(splitStr), RegexOptions.IgnoreCase);
+        }
+
+        /// <summary>
+        /// 分割字符串
+        /// </summary>
+        /// <param name="sourceStr">源字符串</param>
+        /// <returns></returns>
+        public static string[] SplitString(this string sourceStr)
+        {
+            return SplitString(sourceStr, ",");
         }
         #endregion
 
