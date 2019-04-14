@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build/version.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="CrudServiceBase.BatchSave.cs" />
+    <None Include="CrudServiceBase.Save.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ding.Datas\Ding.Datas.csproj" />
+  </ItemGroup>
+
+</Project>
