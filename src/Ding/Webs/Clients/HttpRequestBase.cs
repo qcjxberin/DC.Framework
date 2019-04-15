@@ -1,4 +1,7 @@
-﻿using System;
+﻿#if __CORE21__
+using IdentityModel.Client;
+#endif
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;

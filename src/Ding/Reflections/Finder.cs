@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Microsoft.Extensions.PlatformAbstractions;
 using Ding.Helpers;
 using Regex = System.Text.RegularExpressions.Regex;
 
@@ -22,7 +21,7 @@ namespace Ding.Reflections {
         /// 获取程序集列表
         /// </summary>
         public virtual List<Assembly> GetAssemblies() {
-            LoadAssemblies( PlatformServices.Default.Application.ApplicationBasePath );
+            LoadAssemblies(AppContext.BaseDirectory);
             return GetAssembliesFromCurrentAppDomain();
         }
 
@@ -42,9 +41,9 @@ namespace Ding.Reflections {
         /// 程序集是否匹配
         /// </summary>
         protected virtual bool Match( string assemblyName ) {
-            if( assemblyName.StartsWith( $"{PlatformServices.Default.Application.ApplicationName}.Views" ) )
+            if( assemblyName.StartsWith( $"{Assembly.GetEntryAssembly().GetName().Name}.Views" ) )
                 return false;
-            if( assemblyName.StartsWith( $"{PlatformServices.Default.Application.ApplicationName}.PrecompiledViews" ) )
+            if( assemblyName.StartsWith( $"{Assembly.GetEntryAssembly().GetName().Name}.PrecompiledViews" ) )
                 return false;
             return Regex.IsMatch( assemblyName, SkipAssemblies, RegexOptions.IgnoreCase | RegexOptions.Compiled ) == false;
         }
