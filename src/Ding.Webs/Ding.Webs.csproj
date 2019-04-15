@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ding.Applications\Ding.Applications.csproj" />
+    <ProjectReference Include="..\Ding.CookieManager\Ding.CookieManager.csproj" />
   </ItemGroup>
 
   <ItemGroup>

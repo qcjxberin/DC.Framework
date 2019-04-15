@@ -45,5 +45,20 @@ namespace Ding.Helpers {
         public static Guid GetGuid() {
             return string.IsNullOrWhiteSpace( _id ) ? System.Guid.NewGuid() : _id.ToGuid();
         }
+
+        /// <summary>
+        /// 生成sessionid
+        /// </summary>
+        /// <returns></returns>
+        public static string GenerateSid()
+        {
+            long i = 1;
+            byte[] byteArray = System.Guid.NewGuid().ToByteArray();
+            foreach (byte b in byteArray)
+            {
+                i *= b + 1;
+            }
+            return string.Format("{0:x}", i - DateTime.Now.Ticks);
+        }
     }
 }

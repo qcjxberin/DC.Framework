@@ -90,6 +90,7 @@ namespace Ding.Dependency {
             RegisterInfrastracture();
             RegisterEventHandlers();
             RegisterDependency();
+            builder.RegisterAssemblyModules<IConfig>(_assemblies.ToArray());  // 注册自定义autofac接口
         }
 
         /// <summary>
