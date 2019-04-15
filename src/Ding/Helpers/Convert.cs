@@ -276,5 +276,59 @@ namespace Ding.Helpers {
         public static byte[] ToBytes( string input, Encoding encoding ) {
             return string.IsNullOrWhiteSpace( input ) ? new byte[] { } : encoding.GetBytes( input );
         }
+
+        #region ToShort(转换为short)
+
+        /// <summary>
+        /// 转换为16位整型
+        /// </summary>
+        /// <param name="input">输入值</param>
+        /// <returns></returns>
+        public static short ToShort(object input)
+        {
+            return ToShort(input, default);
+        }
+
+        /// <summary>
+        /// 转换为16位整型
+        /// </summary>
+        /// <param name="input">输入值</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns></returns>
+        public static short ToShort(object input, short defaultValue)
+        {
+            return ToShortOrNull(input) ?? defaultValue;
+        }
+
+        /// <summary>
+        /// 转换为16位可空整型
+        /// </summary>
+        /// <param name="input">输入值</param>
+        /// <returns></returns>
+        public static short? ToShortOrNull(object input)
+        {
+            var success = short.TryParse(input.SafeString(), out var result);
+            if (success)
+            {
+                return result;
+            }
+
+            try
+            {
+                var temp = ToDoubleOrNull(input, 0);
+                if (temp == null)
+                {
+                    return null;
+                }
+
+                return System.Convert.ToInt16(temp);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        #endregion
     }
 }

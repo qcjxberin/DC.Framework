@@ -144,5 +144,28 @@ namespace Ding {
                 return new List<Guid>();
             return obj.Select( t => t.ToGuid() ).ToList();
         }
+
+        #region ToShort(转换为short)
+        /// <summary>
+        /// 转换为short
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static short ToShort(this string obj)
+        {
+            return Ding.Helpers.Convert.ToShort(obj);
+        }
+
+        /// <summary>
+        /// 转换为可空short
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static short? ToShortOrNull(this string obj)
+        {
+            return Ding.Helpers.Convert.ToShortOrNull(obj);
+        }
+
+        #endregion
     }
 }

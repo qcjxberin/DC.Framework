@@ -54,6 +54,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Ip\db\ipipfree.ipdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Ip\db\ipipfree.ipdb" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AspectCore.Extensions.AspectScope" Version="1.2.0" />
     <PackageReference Include="AspectCore.Extensions.Autofac" Version="1.2.0" />
     <PackageReference Include="AspectCore.Extensions.DependencyInjection" Version="1.2.0" />
@@ -117,10 +125,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>R.Designer.cs</LastGenOutput>
     </EmbeddedResource>  
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Extensions\Common\" />
   </ItemGroup>
 
 </Project>
