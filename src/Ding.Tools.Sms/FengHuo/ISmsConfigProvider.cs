@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 
-namespace Ding.Sms.LuoSiMao {
+namespace Ding.Sms.FengHuo
+{
     /// <summary>
     /// 短信配置提供器
     /// </summary>

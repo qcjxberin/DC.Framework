@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Schedulers", "src\Ding
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Tools.QrCode", "src\Ding.Tools.QrCode\Ding.Tools.QrCode.csproj", "{2F232FEB-4B51-47B9-9B16-241EA0657619}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Tools.Sms", "src\Ding.Tools.Sms\Ding.Tools.Sms.csproj", "{C0EBD5A1-C3AC-4FB9-9F8D-9027851693C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Sms", "src\Ding.Tools.Sms\Ding.Sms.csproj", "{C0EBD5A1-C3AC-4FB9-9F8D-9027851693C6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Webs", "src\Ding.Webs\Ding.Webs.csproj", "{90FD0549-5E2D-487F-B4C2-F9BB27C3A12E}"
 EndProject
@@ -49,6 +49,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Biz.OAuthLogin", "src\Ding.Biz.OAuthLogin\Ding.Biz.OAuthLogin.csproj", "{7B10E510-CC44-417B-B69D-D6421071EC72}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.AspNetCore", "src\Ding.AspNetCore\Ding.AspNetCore.csproj", "{FB8AFF35-4C44-417B-9F69-A23BFB957CD2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.MailKit", "src\Ding.MailKit\Ding.MailKit.csproj", "{501EAA60-8FEB-430B-B8CC-FE0281DB80B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,6 +146,10 @@ Global
 		{FB8AFF35-4C44-417B-9F69-A23BFB957CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB8AFF35-4C44-417B-9F69-A23BFB957CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB8AFF35-4C44-417B-9F69-A23BFB957CD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{501EAA60-8FEB-430B-B8CC-FE0281DB80B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{501EAA60-8FEB-430B-B8CC-FE0281DB80B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{501EAA60-8FEB-430B-B8CC-FE0281DB80B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{501EAA60-8FEB-430B-B8CC-FE0281DB80B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -171,6 +177,7 @@ Global
 		{816DA3F2-3E37-4CF0-A59C-CA24DEEC5C59} = {5F4B688A-AB67-47AE-B2F2-699F9D646B2D}
 		{7B10E510-CC44-417B-B69D-D6421071EC72} = {5F4B688A-AB67-47AE-B2F2-699F9D646B2D}
 		{FB8AFF35-4C44-417B-9F69-A23BFB957CD2} = {5F4B688A-AB67-47AE-B2F2-699F9D646B2D}
+		{501EAA60-8FEB-430B-B8CC-FE0281DB80B0} = {5F4B688A-AB67-47AE-B2F2-699F9D646B2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}

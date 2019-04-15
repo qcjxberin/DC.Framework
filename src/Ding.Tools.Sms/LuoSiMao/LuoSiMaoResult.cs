@@ -1,8 +1,9 @@
-﻿namespace Ding.Tools.Sms.LuoSiMao {
+﻿namespace Ding.Sms.LuoSiMao {
     /// <summary>
     /// LuoSiMao短信接口返回结果
     /// </summary>
-    public class LuoSiMaoResult {
+    public class LuoSiMaoResult
+    {
         /// <summary>
         /// 错误代码
         /// </summary>
