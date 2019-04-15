@@ -1,29 +1,36 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
-using Microsoft.Net.Http.Headers;
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
+using Microsoft.Net.Http.Headers;
+using Microsoft.Extensions.Options;
 
 namespace Ding.CookieManager
 {
     /// <summary>
-    /// 这将处理受每个 cookie 长度限制的 cookie。它分解长的 cookie 以进行响应, 并根据请求重新组合它们。
+    /// This handles cookies that are limited by per cookie length. It breaks down long cookies for responses, and reassembles them
+    /// from requests.
     /// </summary>
     internal class ChunkingHttpCookie
-    {
-        private readonly CookieManagerOptions _cookieManagerOptions;
-
+	{
+		private readonly CookieManagerOptions _cookieManagerOptions;
+		
         private const string ChunkKeySuffix = "C";
         private const string ChunkCountPrefix = "chunks-";
 
         public ChunkingHttpCookie(IOptions<CookieManagerOptions> optionAccessor)
         {
-            //最小公分母。 Safari具有最低的已知限制（4093），为了以防万一，我们留下额外的一点。
-            //见http://browsercookielimits.x64.me/。
-            //如果CookiePolicy尝试添加'secure'，'samesite = strict'和/或'httponly'，请保留至少40。        
-            _cookieManagerOptions = optionAccessor.Value;
-        }
-
+            // Lowest common denominator. Safari has the lowest known limit (4093), and we leave little extra just in case.
+            // See http://browsercookielimits.x64.me/.
+            // Leave at least 40 in case CookiePolicy tries to add 'secure', 'samesite=strict' and/or 'httponly'.           
+			_cookieManagerOptions = optionAccessor.Value;
+		}
+        
 
         // Parse the "chunks-XX" to determine how many chunks there should be.
         private int ParseChunksCount(string value)
@@ -31,7 +38,8 @@ namespace Ding.CookieManager
             if (value != null && value.StartsWith(ChunkCountPrefix, StringComparison.Ordinal))
             {
                 var chunksCountString = value.Substring(ChunkCountPrefix.Length);
-                if (int.TryParse(chunksCountString, NumberStyles.None, CultureInfo.InvariantCulture, out int chunksCount))
+                int chunksCount;
+                if (int.TryParse(chunksCountString, NumberStyles.None, CultureInfo.InvariantCulture, out chunksCount))
                 {
                     return chunksCount;
                 }
@@ -136,7 +144,7 @@ namespace Ding.CookieManager
 
             var templateLength = template.ToString().Length;
 
-            value ??= string.Empty;
+            value = value ?? string.Empty;
 
             // Normal cookie
             var responseCookies = context.Response.Cookies;
@@ -175,32 +183,32 @@ namespace Ding.CookieManager
                 }
             }
         }
+		
+		public void RemoveCookie(HttpContext context,string key)
+		{
+			//validate input
+			if(context == null)
+			{
+				throw new ArgumentNullException(nameof(context));
+			}
 
-        public void RemoveCookie(HttpContext context, string key)
-        {
-            //validate input
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
+			if(key == null)
+			{
+				throw new ArgumentNullException(nameof(key));
+			}
 
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            var value = context.Request.Cookies[key];
-            var chunksCount = ParseChunksCount(value);
-            if (chunksCount > 0)
-            {
-                //delete all the chunks
-                for (int chunkId = 1; chunkId <= chunksCount; chunkId++)
-                {
-                    context.Response.Cookies.Delete(key + ChunkKeySuffix + chunkId.ToString(CultureInfo.InvariantCulture));
-                }
-            }
-            else
-                context.Response.Cookies.Delete(key);
-        }
+			var value = context.Request.Cookies[key];
+			var chunksCount = ParseChunksCount(value);
+			if (chunksCount > 0)
+			{
+				//delete all the chunks
+				for (int chunkId = 1; chunkId <= chunksCount; chunkId++)
+				{
+					context.Response.Cookies.Delete(key + ChunkKeySuffix + chunkId.ToString(CultureInfo.InvariantCulture));
+				}
+			}
+			else
+				context.Response.Cookies.Delete(key);
+		}
     }
 }

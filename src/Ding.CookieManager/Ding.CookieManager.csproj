@@ -1,74 +1,43 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../../build/version.props" />
 
   <PropertyGroup>
-    <LangVersion>8</LangVersion>
-    <!-- Disable warning for Controller/Action/Method not have block comment -->
-    <NoWarn>1701;1702;1705;1591</NoWarn>
+    <!--<TargetFramework>netcoreapp1.0</TargetFramework>-->
+    <TargetFrameworks>netstandard1.6;netstandard2.0</TargetFrameworks>
+    <RepositoryUrl>https://github.com/nemi-chand/CookieManager</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/nemi-chand/CookieManager</PackageProjectUrl>
+    <Description>ASP.Net Core Abstraction layer on top of Http Cookie</Description>
+    <Authors>Nemi Chand</Authors>
+    <Title>CookieManager : ASP.Net Core Abstraction layer on top of Http Cookie</Title>
+    <Version>2.0.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>Cookie Manager,asp.net core cookie,cookie,http cookie,secure cookie</PackageTags>
+    <PackageReleaseNotes>Added support netstandard 1.6 and netstandard 2.0</PackageReleaseNotes>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://github.com/nemi-chand/CookieManager/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
-
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <AssemblyName>Ding.CookieManager</AssemblyName>
-    <RootNamespace>Ding.CookieManager</RootNamespace>
-    <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>CooKie管理组件</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的CooKie管理组件。</Description>
-    <Company>星尘</Company>
-    <Copyright>©2008-2019 $(Company)开发团队</Copyright>
-    <Deterministic>false</Deterministic>
-    <OutputPath>..\..\output\release\</OutputPath>
-    <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-    <DefineConstants>TRACE</DefineConstants>
+  
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
+	  <DefineConstants>NETCORE1_0</DefineConstants>
   </PropertyGroup>
-
-  <PropertyGroup>
-    <PackageId>$(AssemblyName)</PackageId>
-    <Authors>丁川</Authors>
-    <PackageReleaseNotes>
-      Ding.CookieManager项目是Ding应用框架的CooKie管理组件。
-      Ding是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
-    </PackageReleaseNotes>
-    <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
-    <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
-    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSource>true</IncludeSource>
+  
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1'">
+	  <DefineConstants>NETCORE1_1</DefineConstants>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE21__</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE20__</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
-    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Ding.CookieManager.csproj.DotSettings" />
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
+  
 
-  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
-  </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
 
 </Project>
