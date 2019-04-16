@@ -7,8 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Ding.Helpers
-{
+namespace Ding.Helpers {
     /// <summary>
     /// 反射操作
     /// </summary>

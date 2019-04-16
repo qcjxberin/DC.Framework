@@ -20,7 +20,7 @@ namespace Ding.Extension
         /// <param name="source">url编码字符串</param>
         /// <param name="encoding">编码格式</param>
         /// <returns></returns>
-        public static string UrlEncode(this string source, Encoding encoding = null)
+        public static string UrlEncode(string source, Encoding encoding = null)
         {
             if (encoding == null)
             {
@@ -39,7 +39,7 @@ namespace Ding.Extension
         /// <param name="source">url编码字符串</param>
         /// <param name="encoding">编码格式</param>
         /// <returns></returns>
-        public static string UrlDecode(this string source, Encoding encoding = null)
+        public static string UrlDecode(string source, Encoding encoding = null)
         {
             if (encoding == null)
             {

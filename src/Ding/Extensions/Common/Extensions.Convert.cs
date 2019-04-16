@@ -7,6 +7,8 @@ namespace Ding {
     /// 系统扩展 - 类型转换
     /// </summary>
     public static partial class Extensions {
+        #region SafeString(安全转换为字符串)
+
         /// <summary>
         /// 安全转换为字符串，去除两端空格，当值为null时返回""
         /// </summary>
@@ -14,6 +16,10 @@ namespace Ding {
         public static string SafeString( this object input ) {
             return input?.ToString().Trim() ?? string.Empty;
         }
+
+        #endregion
+
+        #region ToBool(转换为bool)
 
         /// <summary>
         /// 转换为bool
@@ -31,6 +37,32 @@ namespace Ding {
             return Ding.Helpers.Convert.ToBoolOrNull( obj );
         }
 
+        #endregion
+
+        #region ToShort(转换为short)
+        /// <summary>
+        /// 转换为short
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static short ToShort( this string obj)
+        {
+            return Ding.Helpers.Convert.ToShort(obj);
+        }
+
+        /// <summary>
+        /// 转换为可空short
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static short? ToShortOrNull( this string obj)
+        {
+            return Ding.Helpers.Convert.ToShortOrNull(obj);
+        }
+
+        #endregion
+
+        #region ToInt(转换为int)
         /// <summary>
         /// 转换为int
         /// </summary>
@@ -47,6 +79,9 @@ namespace Ding {
             return Ding.Helpers.Convert.ToIntOrNull( obj );
         }
 
+        #endregion
+
+        #region ToLong(转换为long)
         /// <summary>
         /// 转换为long
         /// </summary>
@@ -62,6 +97,10 @@ namespace Ding {
         public static long? ToLongOrNull( this string obj ) {
             return Ding.Helpers.Convert.ToLongOrNull( obj );
         }
+
+        #endregion
+
+        #region ToDouble(转换为double)
 
         /// <summary>
         /// 转换为double
@@ -79,6 +118,10 @@ namespace Ding {
             return Ding.Helpers.Convert.ToDoubleOrNull( obj );
         }
 
+        #endregion
+
+        #region ToDecimal(转换为decimal)
+
         /// <summary>
         /// 转换为decimal
         /// </summary>
@@ -95,6 +138,10 @@ namespace Ding {
             return Ding.Helpers.Convert.ToDecimalOrNull( obj );
         }
 
+        #endregion
+
+        #region ToDate(转换为日期)
+
         /// <summary>
         /// 转换为日期
         /// </summary>
@@ -110,6 +157,10 @@ namespace Ding {
         public static DateTime? ToDateOrNull( this string obj ) {
             return Ding.Helpers.Convert.ToDateOrNull( obj );
         }
+
+        #endregion
+
+        #region ToGuid(转换为Guid)
 
         /// <summary>
         /// 转换为Guid
@@ -145,25 +196,32 @@ namespace Ding {
             return obj.Select( t => t.ToGuid() ).ToList();
         }
 
-        #region ToShort(转换为short)
-        /// <summary>
-        /// 转换为short
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public static short ToShort(this string obj)
-        {
-            return Ding.Helpers.Convert.ToShort(obj);
-        }
+        #endregion
+
+        #region ToSnakeCase(将字符串转换为蛇形策略)
 
         /// <summary>
-        /// 转换为可空short
+        /// 将字符串转换为蛇形策略
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="str">字符串</param>
         /// <returns></returns>
-        public static short? ToShortOrNull(this string obj)
+        public static string ToSnakeCase(this string str)
         {
-            return Ding.Helpers.Convert.ToShortOrNull(obj);
+            return Ding.Helpers.String.ToSnakeCase(str);
+        }
+
+        #endregion
+
+        #region ToCamelCase(将字符串转换为骆驼策略)
+
+        /// <summary>
+        /// 将字符串转换为骆驼策略
+        /// </summary>
+        /// <param name="str">字符串</param>
+        /// <returns></returns>
+        public static string ToCamelCase(this string str)
+        {
+            return Ding.Helpers.String.ToCamelCase(str);
         }
 
         #endregion

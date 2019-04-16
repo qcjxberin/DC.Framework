@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Ding.Security.Principals;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.AspNetCore.Http.Internal;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -6,11 +12,6 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Extensions;
-using Microsoft.AspNetCore.Http.Internal;
-using Ding.Security.Principals;
 
 namespace Ding.Helpers {
     /// <summary>
@@ -60,6 +61,49 @@ namespace Ding.Helpers {
         /// 宿主环境
         /// </summary>
         public static IHostingEnvironment Environment { get; set; }
+
+        #endregion
+
+        #region LocalIpAddress(本地IP)
+
+        /// <summary>
+        /// 本地IP
+        /// </summary>
+        public static string LocalIpAddress
+        {
+            get
+            {
+                try
+                {
+                    var ipAddress = HttpContext.Connection.LocalIpAddress;
+                    return IPAddress.IsLoopback(ipAddress)
+                        ? IPAddress.Loopback.ToString()
+                        : ipAddress.MapToIPv4().ToString();
+                }
+                catch
+                {
+                    return IPAddress.Loopback.ToString();
+                }
+            }
+        }
+
+        #endregion
+
+        #region RequestType(请求类型)
+
+        /// <summary>
+        /// 请求类型
+        /// </summary>
+        public static string RequestType => HttpContext?.Request?.Method;
+
+        #endregion
+
+        #region Form(表单)
+
+        /// <summary>
+        /// Form表单
+        /// </summary>
+        public static IFormCollection Form => HttpContext?.Request?.Form;
 
         #endregion
 
@@ -290,7 +334,7 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="url">url</param>
         /// <param name="isUpper">编码字符是否转成大写,范例,"http://"转成"http%3A%2F%2F"</param>
-        public static string UrlEncode( string url, bool isUpper = false ) {
+        public static string UrlEncode(this string url, bool isUpper = false ) {
             return UrlEncode( url, Encoding.UTF8, isUpper );
         }
 
@@ -300,7 +344,7 @@ namespace Ding.Helpers {
         /// <param name="url">url</param>
         /// <param name="encoding">字符编码</param>
         /// <param name="isUpper">编码字符是否转成大写,范例,"http://"转成"http%3A%2F%2F"</param>
-        public static string UrlEncode( string url, string encoding, bool isUpper = false ) {
+        public static string UrlEncode(this string url, string encoding, bool isUpper = false ) {
             encoding = string.IsNullOrWhiteSpace( encoding ) ? "UTF-8" : encoding;
             return UrlEncode( url, Encoding.GetEncoding( encoding ), isUpper );
         }
@@ -311,7 +355,7 @@ namespace Ding.Helpers {
         /// <param name="url">url</param>
         /// <param name="encoding">字符编码</param>
         /// <param name="isUpper">编码字符是否转成大写,范例,"http://"转成"http%3A%2F%2F"</param>
-        public static string UrlEncode( string url, Encoding encoding, bool isUpper = false ) {
+        public static string UrlEncode(this string url, Encoding encoding, bool isUpper = false ) {
             var result = HttpUtility.UrlEncode( url, encoding );
             if( isUpper == false )
                 return result;
@@ -343,7 +387,7 @@ namespace Ding.Helpers {
         /// Url解码
         /// </summary>
         /// <param name="url">url</param>
-        public static string UrlDecode( string url ) {
+        public static string UrlDecode(this string url ) {
             return HttpUtility.UrlDecode( url );
         }
 
@@ -352,10 +396,134 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="url">url</param>
         /// <param name="encoding">字符编码</param>
-        public static string UrlDecode( string url, Encoding encoding ) {
+        public static string UrlDecode(this string url, Encoding encoding ) {
             return HttpUtility.UrlDecode( url, encoding );
         }
 
         #endregion
+
+        #region Write(输出文件)
+
+        /// <summary>
+        /// 输出文件
+        /// </summary>
+        /// <param name="stream">文件流</param>
+        public static void Write(FileStream stream)
+        {
+            long size = stream.Length;
+            byte[] buffer = new byte[size];
+            stream.Read(buffer, 0, (int)size);
+            stream.Dispose();
+            System.IO.File.Delete(stream.Name);
+
+            Response.ContentType = "application/octet-stream";
+            Response.Headers.Add("Content-Disposition", "attachment;filename=" + WebUtility.UrlEncode(Path.GetFileName(stream.Name)));
+            Response.Headers.Add("Content-Length", size.ToString());
+
+            Task.Run(async () => { await Response.Body.WriteAsync(buffer, 0, (int)size); }).GetAwaiter().GetResult();
+            Response.Body.Close();
+        }
+
+        #endregion
+
+        #region Write(输出内容)
+
+        /// <summary>
+        /// 输出内容
+        /// </summary>
+        /// <param name="text">内容</param>
+        public static void Write(string text)
+        {
+            Response.ContentType = "text/plain;charset=utf-8";
+            Task.Run(async () => { await Response.WriteAsync(text); }).GetAwaiter().GetResult();
+        }
+
+        #endregion
+
+        #region Redirect(跳转到指定链接)
+
+        /// <summary>
+        /// 跳转到指定链接
+        /// </summary>
+        /// <param name="url">链接</param>
+        public static void Redirect(string url) => Response?.Redirect(url);
+
+        #endregion
+
+        #region ContentType(内容类型)
+
+        /// <summary>
+        /// 内容类型
+        /// </summary>
+        public static string ContentType => HttpContext?.Request?.ContentType;
+
+        #endregion
+
+        #region QueryString(参数)
+
+        /// <summary>
+        /// 参数
+        /// </summary>
+        public static string QueryString => HttpContext?.Request?.QueryString.ToString();
+
+        #endregion
+
+        /// <summary>
+        /// 返回绝对地址
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static string AbsoluteUri(this HttpRequest request)
+        {
+            var absoluteUri = string.Concat(
+                          request.Scheme,
+                          "://",
+                          request.Host.ToUriComponent(),
+                          request.PathBase.ToUriComponent(),
+                          request.Path.ToUriComponent(),
+                          request.QueryString.ToUriComponent());
+
+            return absoluteUri;
+        }
+
+        public enum AgentType
+        {
+            Android = 0,
+            IPhone = 1,
+            IPad = 2,
+            WindowsPhone = 3,
+            Windows = 4,
+            Wechat = 6,
+            MacOS = 7
+        }
+
+        /// <summary>
+        /// 获取客户端信息
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static AgentType UserAgentType(this HttpRequest request)
+        {
+            var userAgent = request.Headers["User-Agent"].ToString();
+            switch (userAgent)
+            {
+                case string android when android.Contains("MicroMessenger"):
+                    return AgentType.Wechat;
+                case string android when android.Contains("Android"):
+                    return AgentType.Android;
+                case string android when android.Contains("iPhone"):
+                    return AgentType.IPhone;
+                case string android when android.Contains("iPad"):
+                    return AgentType.IPad;
+                case string android when android.Contains("Windows Phone"):
+                    return AgentType.WindowsPhone;
+                case string android when android.Contains("Windows NT"):
+                    return AgentType.Windows;
+                case string android when android.Contains("Mac OS"):
+                    return AgentType.MacOS;
+            }
+            return AgentType.Android;
+        }
+
     }
 }

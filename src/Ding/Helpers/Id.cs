@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ding.IdGenerators.Abstractions;
+using Ding.IdGenerators.Core;
+using System;
 
 namespace Ding.Helpers {
     /// <summary>
@@ -9,6 +11,21 @@ namespace Ding.Helpers {
         /// 标识
         /// </summary>
         private static string _id;
+
+        /// <summary>
+        /// Guid 生成器
+        /// </summary>
+        public static IGuidGenerator GuidGenerator { get; set; } = SequentialGuidGenerator.Current;
+
+        /// <summary>
+        /// Long 生成器
+        /// </summary>
+        public static ILongGenerator LongGenerator { get; set; } = SnowflakeIdGenerator.Current;
+
+        /// <summary>
+        /// String 生成器
+        /// </summary>
+        public static IStringGenerator StringGenerator { get; set; } = TimestampIdGenerator.Current;
 
         /// <summary>
         /// 设置标识
@@ -29,7 +46,7 @@ namespace Ding.Helpers {
         /// 创建标识
         /// </summary>
         public static string ObjectId() {
-            return string.IsNullOrWhiteSpace( _id ) ? Ding.Helpers.Internal.ObjectId.GenerateNewStringId() : _id;
+            return string.IsNullOrWhiteSpace( _id ) ? Ding.IdGenerators.Ids.ObjectId.GenerateNewStringId() : _id;
         }
 
         /// <summary>
@@ -44,6 +61,42 @@ namespace Ding.Helpers {
         /// </summary>
         public static Guid GetGuid() {
             return string.IsNullOrWhiteSpace( _id ) ? System.Guid.NewGuid() : _id.ToGuid();
+        }
+
+        /// <summary>
+        /// 创建有序 Guid ID
+        /// </summary>
+        /// <returns></returns>
+        public static Guid SequentialGuid()
+        {
+            return GuidGenerator.Create();
+        }
+
+        /// <summary>
+        /// 创建 Long ID
+        /// </summary>
+        /// <returns></returns>
+        public static long GetLong()
+        {
+            return LongGenerator.Create();
+        }
+
+        /// <summary>
+        /// 创建 String ID
+        /// </summary>
+        /// <returns></returns>
+        public static string GetString()
+        {
+            return StringGenerator.Create();
+        }
+
+        /// <summary>
+        /// 获取13位Id字符串
+        /// </summary>
+        /// <returns></returns>
+        public static string GetIdString()
+        {
+            return IDGenerator.Instance.Generate;
         }
 
         /// <summary>

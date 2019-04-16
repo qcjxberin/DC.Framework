@@ -27,7 +27,7 @@ namespace Ding.Randoms {
         /// <param name="text">如果传入该参数，则从该文本中随机抽取</param>
         public string GenerateString( int maxLength, string text = null ) {
             if( text == null )
-                text = Const.Letters + Const.Numbers;
+                text = Const.Lowercase + Const.ArabicNumbers;
             var result = new StringBuilder();
             var length = GetRandomLength( maxLength );
             for( int i = 0; i < length; i++ )
@@ -54,7 +54,7 @@ namespace Ding.Randoms {
         /// </summary>
         /// <param name="maxLength">最大长度</param>
         public string GenerateLetters( int maxLength ) {
-            return GenerateString( maxLength, Const.Letters );
+            return GenerateString( maxLength, Const.Lowercase);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Ding.Randoms {
         /// </summary>
         /// <param name="maxLength">最大长度</param>
         public string GenerateNumbers( int maxLength ) {
-            return GenerateString( maxLength, Const.Numbers );
+            return GenerateString( maxLength, Const.ArabicNumbers);
         }
 
         /// <summary>
