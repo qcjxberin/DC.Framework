@@ -9,33 +9,32 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <AssemblyName>Ding.ExpressDelivery.Kdniao</AssemblyName>
-    <RootNamespace>Ding.ExpressDelivery.Kdniao</RootNamespace>
+    <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <AssemblyName>Ding.SharpConfig</AssemblyName>
+    <RootNamespace>SharpConfig</RootNamespace>
     <Product>$(AssemblyName)</Product>
-    <AssemblyTitle>快递鸟快递类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的快递鸟快递类库。</Description>
+    <AssemblyTitle>CFG/INI配置库</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的一个易于使用的CFG/INI配置库。</Description>
     <Company>星尘</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
     <OutputPath>..\..\output\release\</OutputPath>
     <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <DefineConstants>TRACE</DefineConstants>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>
-      Ding.ExpressDelivery.Kdniao项目是Ding应用框架的快递鸟快递类库。
-      Ding是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
+      Ding.SharpConfig项目是Ding应用框架的一个易于使用的CFG/INI配置库。
+      Ding是一个.net core/Windows平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
     </PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
     <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
     <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;ExpressDelivery;Kdniao;</PackageTags>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -43,23 +42,19 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE21__</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE__</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE20__</DefineConstants>
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45'">
+    <DefineConstants>$(DefineConstants);__WIN__</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="WebApiClient.JIT" Version="1.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Ding.ExpressDelivery\Ding.ExpressDelivery.csproj" />
-  </ItemGroup>
 
 </Project>

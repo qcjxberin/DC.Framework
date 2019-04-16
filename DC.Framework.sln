@@ -130,6 +130,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Offices.Excels.Npoi", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Offices.Npoi", "src\Ding.Offices.Npoi\Ding.Offices.Npoi.csproj", "{4F07BC75-FA88-4CC9-B255-50BD5D356D45}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.SharpConfig", "src\Ding.SharpConfig\Ding.SharpConfig.csproj", "{FE13A3E4-E215-4B95-898B-5418D6116A96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -296,6 +298,10 @@ Global
 		{4F07BC75-FA88-4CC9-B255-50BD5D356D45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F07BC75-FA88-4CC9-B255-50BD5D356D45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F07BC75-FA88-4CC9-B255-50BD5D356D45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE13A3E4-E215-4B95-898B-5418D6116A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE13A3E4-E215-4B95-898B-5418D6116A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE13A3E4-E215-4B95-898B-5418D6116A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE13A3E4-E215-4B95-898B-5418D6116A96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -361,6 +367,7 @@ Global
 		{A8D4236D-A32D-40C9-879F-93B6F41B5D77} = {6ECCA7D1-CA59-43ED-A2D8-BBB65743241F}
 		{8B5537D9-89D9-4D33-B02D-E5535F69DC3E} = {6ECCA7D1-CA59-43ED-A2D8-BBB65743241F}
 		{4F07BC75-FA88-4CC9-B255-50BD5D356D45} = {6ECCA7D1-CA59-43ED-A2D8-BBB65743241F}
+		{FE13A3E4-E215-4B95-898B-5418D6116A96} = {2EAEB30B-6C74-4A6F-88A3-B9F0A8717E61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}
