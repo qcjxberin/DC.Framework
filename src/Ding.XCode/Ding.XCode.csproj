@@ -1,0 +1,124 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build/version.props" />
+
+  <PropertyGroup>
+    <LangVersion>8</LangVersion>
+    <!-- Disable warning for Controller/Action/Method not have block comment -->
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <AssemblyName>Ding.XCode</AssemblyName>
+    <RootNamespace>Ding.XCode</RootNamespace>
+    <Product>$(AssemblyName)</Product>
+    <AssemblyTitle>数据中间件</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的数据中间件。</Description>
+    <Company>星尘</Company>
+    <Copyright>©2008-2019 $(Company)开发团队</Copyright>
+    <Deterministic>false</Deterministic>
+    <OutputPath>..\..\output\release\</OutputPath>
+    <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Authors>丁川</Authors>
+    <PackageReleaseNotes>
+      Ding.XCode项目是Ding应用框架的数据中间件。
+      Ding是一个.net core/Windows平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
+    </PackageReleaseNotes>
+    <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
+    <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;</PackageTags>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSource>true</IncludeSource>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45'">
+    <DefineConstants>$(DefineConstants);__WIN__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net45'">
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataAccessLayer\Database\Firebird.cs" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="build\**" />
+    <Compile Remove="tools\**" />
+    <EmbeddedResource Remove="build\**" />
+    <EmbeddedResource Remove="tools\**" />
+    <None Remove="build\**" />
+    <None Remove="tools\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Build.tt" />
+    <None Remove="install.ps1" />
+    <None Remove="Model.xml" />
+    <None Remove="Readme.MD" />
+    <None Remove="UpdateInfo.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Build.tt">
+      <Pack>true</Pack>
+      <PackagePath>content\Entity\</PackagePath>
+    </Content>
+    <Content Include="Model.xml">
+      <Pack>true</Pack>
+      <PackagePath>content\Entity\</PackagePath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Readme.MD" />
+    <EmbeddedResource Include="UpdateInfo.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ding.Core\Ding.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Membership\生成实体类.log">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>生成实体类.tt</DependentUpon>
+    </None>
+    <None Update="Membership\生成实体类.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>生成实体类.log</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
