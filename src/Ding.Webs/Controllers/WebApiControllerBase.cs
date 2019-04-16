@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Ding.CookieManager;
+using Ding.Helpers;
 using Ding.Logs;
 using Ding.Properties;
-using Ding.Sessions;
 using Ding.Webs.Commons;
 using Ding.Webs.Filters;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
-namespace Ding.Webs.Controllers {
+namespace Ding.Webs.Controllers
+{
     /// <summary>
     /// WebApi控制器
     /// </summary>
@@ -14,6 +18,27 @@ namespace Ding.Webs.Controllers {
     [ErrorLog]
     [TraceLog]
     public abstract class WebApiControllerBase : Controller {
+
+        public WebApiControllerBase()
+        {
+            var _cookie = Ioc.Create<ICookie>();
+            if (_cookie != null)
+            {
+                Sid = _cookie.Get("sid");
+                if (string.IsNullOrEmpty(Sid))
+                {
+                    // 生成sid
+                    Sid = Id.GenerateSid();
+                    _cookie.Set("sid", Sid, new CookieOptions() { HttpOnly = true, Expires = DateTime.Now.AddMonths(1) });
+                }
+            }
+        }
+
+        /// <summary>
+        /// 用户惟一标识符
+        /// </summary>
+        protected string Sid { get; set; }
+
         /// <summary>
         /// 日志
         /// </summary>
@@ -39,7 +64,7 @@ namespace Ding.Webs.Controllers {
         /// <summary>
         /// 会话
         /// </summary>
-        public virtual ISession Session => Security.Sessions.Session.Instance;
+        public virtual Ding.Sessions.ISession Session => Security.Sessions.Session.Instance;
 
         /// <summary>
         /// 返回成功消息
