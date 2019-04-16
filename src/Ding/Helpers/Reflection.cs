@@ -1,16 +1,20 @@
-﻿using System;
+﻿using Ding.Extension;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.ComponentModel;
-using System.IO;
-using System.Reflection;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
-namespace Ding.Helpers {
+namespace Ding.Helpers
+{
     /// <summary>
     /// 反射操作
     /// </summary>
     public static class Reflection {
+        #region GetDescription(获取类型描述)
+
         /// <summary>
         /// 获取类型描述，使用DescriptionAttribute设置描述
         /// </summary>
@@ -51,6 +55,10 @@ namespace Ding.Helpers {
             return member.GetCustomAttribute<DescriptionAttribute>() is DescriptionAttribute attribute ? attribute.Description : member.Name;
         }
 
+        #endregion
+
+        #region GetDisplayName(获取类型显示名称)
+
         /// <summary>
         /// 获取显示名称，使用DisplayNameAttribute设置显示名称
         /// </summary>
@@ -72,6 +80,10 @@ namespace Ding.Helpers {
             return string.Empty;
         }
 
+        #endregion
+
+        #region GetDisplayNameOrDescription(获取显示名称或类型描述)
+
         /// <summary>
         /// 获取显示名称或描述,使用DisplayNameAttribute设置显示名称,使用DescriptionAttribute设置描述
         /// </summary>
@@ -87,6 +99,10 @@ namespace Ding.Helpers {
             var result = GetDisplayName( member );
             return string.IsNullOrWhiteSpace( result ) ? GetDescription( member ) : result;
         }
+
+        #endregion
+
+        #region FindTypes(查找类型列表)
 
         /// <summary>
         /// 查找类型列表
@@ -155,6 +171,29 @@ namespace Ding.Helpers {
             return false;
         }
 
+        #endregion
+
+        #region GetInstancesByInterface(获取实现了接口的所有实例)
+
+        /// <summary>
+        /// 获取实现了接口的所有实例
+        /// </summary>
+        /// <typeparam name="TInterface">接口类型</typeparam>
+        /// <param name="assembly">在该程序集中查找</param>
+        /// <returns></returns>
+        public static List<TInterface> GetInstancesByInterface<TInterface>(Assembly assembly)
+        {
+            var typeInterface = typeof(TInterface);
+            return
+                assembly.GetTypes()
+                    .Where(
+                        t =>
+                            typeInterface.GetTypeInfo().IsAssignableFrom(t) && t != typeInterface &&
+                            t.GetTypeInfo().IsAbstract == false)
+                    .Select(t => CreateInstance<TInterface>(t))
+                    .ToList();
+        }
+
         /// <summary>
         /// 获取实现了接口的所有实例
         /// </summary>
@@ -164,6 +203,10 @@ namespace Ding.Helpers {
             return FindTypes<TInterface>( assemblies )
                 .Select( t => CreateInstance<TInterface>( t ) ).ToList();
         }
+
+        #endregion
+
+        #region CreateInstance(动态创建实例)
 
         /// <summary>
         /// 动态创建实例
@@ -176,12 +219,62 @@ namespace Ding.Helpers {
         }
 
         /// <summary>
+        /// 动态创建实例
+        /// </summary>
+        /// <typeparam name="T">目标类型</typeparam>
+        /// <param name="className">类名，包括命名空间,如果类型不处于当前执行程序集中，需要包含程序集名，范例：Test.Core.Test2,Test.Core</param>
+        /// <param name="parameters">传递给构造函数的参数</param>
+        /// <returns></returns>
+        public static T CreateInstance<T>(string className, params object[] parameters)
+        {
+            Type type = Type.GetType(className) ?? Assembly.GetCallingAssembly().GetType(className);
+            return CreateInstance<T>(type, parameters);
+        }
+        #endregion
+
+        #region GetAssembly(获取程序集)
+
+        /// <summary>
         /// 获取程序集
         /// </summary>
         /// <param name="assemblyName">程序集名称</param>
         public static Assembly GetAssembly( string assemblyName ) {
             return Assembly.Load( new AssemblyName( assemblyName ) );
         }
+
+        #endregion
+
+        #region GetAttribute(获取特性信息)
+
+        /// <summary>
+        /// 获取特性信息
+        /// </summary>
+        /// <typeparam name="TAttribute">泛型特性</typeparam>
+        /// <param name="memberInfo">元数据</param>
+        /// <returns></returns>
+        public static TAttribute GetAttribute<TAttribute>(MemberInfo memberInfo) where TAttribute : Attribute
+        {
+            return (TAttribute)memberInfo.GetCustomAttributes(typeof(TAttribute), false).FirstOrDefault();
+        }
+
+        #endregion
+
+        #region GetAttributes(获取特性信息数据)
+
+        /// <summary>
+        /// 获取特性信息数组
+        /// </summary>
+        /// <typeparam name="TAttribute">泛型特性</typeparam>
+        /// <param name="memberInfo">元数据</param>
+        /// <returns></returns>
+        public static TAttribute[] GetAttributes<TAttribute>(MemberInfo memberInfo) where TAttribute : Attribute
+        {
+            return Array.ConvertAll(memberInfo.GetCustomAttributes(typeof(TAttribute), false), x => (TAttribute)x);
+        }
+
+        #endregion
+
+        #region IsBool(是否布尔类型)
 
         /// <summary>
         /// 是否布尔类型
@@ -205,6 +298,10 @@ namespace Ding.Helpers {
         private static bool IsBool( PropertyInfo property ) {
             return property.PropertyType == typeof( bool ) || property.PropertyType == typeof( bool? );
         }
+
+        #endregion
+
+        #region IsEnum(是否枚举类型)
 
         /// <summary>
         /// 是否枚举类型
@@ -234,6 +331,10 @@ namespace Ding.Helpers {
             return value.GetTypeInfo().IsEnum;
         }
 
+        #endregion
+
+        #region IsDate(是否日期类型)
+
         /// <summary>
         /// 是否日期类型
         /// </summary>
@@ -260,6 +361,10 @@ namespace Ding.Helpers {
                 return true;
             return false;
         }
+
+        #endregion
+
+        #region IsInt(是否整型)
 
         /// <summary>
         /// 是否整型
@@ -295,6 +400,10 @@ namespace Ding.Helpers {
                 return true;
             return false;
         }
+
+        #endregion
+
+        #region IsNumber(是否数值类型)
 
         /// <summary>
         /// 是否数值类型
@@ -333,6 +442,10 @@ namespace Ding.Helpers {
             return false;
         }
 
+        #endregion
+
+        #region IsCollection(是否集合)
+
         /// <summary>
         /// 是否集合
         /// </summary>
@@ -342,6 +455,10 @@ namespace Ding.Helpers {
                 return true;
             return IsGenericCollection( type );
         }
+
+        #endregion
+
+        #region IsGenericCollection(是否泛型集合)
 
         /// <summary>
         /// 是否泛型集合
@@ -359,15 +476,24 @@ namespace Ding.Helpers {
                    || typeDefinition == typeof( List<> );
         }
 
+        #endregion
+
+        #region GetAssemblies(从目录获取所有程序集)
+
         /// <summary>
         /// 从目录中获取所有程序集
         /// </summary>
         /// <param name="directoryPath">目录绝对路径</param>
-        public static List<Assembly> GetAssemblies( string directoryPath ) {
-            return Directory.GetFiles( directoryPath, "*.*", SearchOption.AllDirectories ).ToList()
-                .Where( t => t.EndsWith( ".exe" ) || t.EndsWith( ".dll" ) )
-                .Select( path => Assembly.Load( new AssemblyName( path ) ) ).ToList();
+        public static List<Assembly> GetAssemblies(string directoryPath)
+        {
+            return Directory.GetFiles(directoryPath, "*.*", SearchOption.AllDirectories).ToList()
+                .Where(t => t.EndsWith(".exe") || t.EndsWith(".dll"))
+                .Select(path => Assembly.Load(new AssemblyName(path))).ToList();
         }
+
+        #endregion
+
+        #region GetPublicProperties(获取公共属性列表)
 
         /// <summary>
         /// 获取公共属性列表
@@ -377,6 +503,10 @@ namespace Ding.Helpers {
             var properties = instance.GetType().GetProperties();
             return properties.ToList().Select( t => new Item( t.Name, t.GetValue( instance ) ) ).ToList();
         }
+
+        #endregion
+
+        #region GetTopBaseType(获取顶级基类)
 
         /// <summary>
         /// 获取顶级基类
@@ -399,5 +529,105 @@ namespace Ding.Helpers {
                 return type;
             return GetTopBaseType( type.BaseType );
         }
+
+        #endregion
+
+        #region IsDeriveClassFrom(判断当前类型是否可由指定类型派生)
+
+        /// <summary>
+        /// 判断当前类型是否可由指定类型派生
+        /// </summary>
+        /// <typeparam name="TBaseType">基类型</typeparam>
+        /// <param name="type">当前类型</param>
+        /// <param name="canAbstract">能否是抽象类</param>
+        /// <returns></returns>
+        public static bool IsDeriveClassFrom<TBaseType>(Type type, bool canAbstract = false) => IsDeriveClassFrom(type, typeof(TBaseType), canAbstract);
+
+        /// <summary>
+        /// 判断当前类型是否可由指定类型派生
+        /// </summary>
+        /// <param name="type">当前类型</param>
+        /// <param name="baseType">基类型</param>
+        /// <param name="canAbstract">能否是抽象类</param>
+        /// <returns></returns>
+        public static bool IsDeriveClassFrom(Type type, Type baseType, bool canAbstract = false)
+        {
+            Check.NotNull(type, nameof(type));
+            Check.NotNull(baseType, nameof(baseType));
+
+            return type.IsClass && (!canAbstract && !type.IsAbstract) && type.IsBaseOn(baseType);
+        }
+
+        #endregion
+
+        #region IsBaseOn(返回当前类型是否是指定基类的派生类)
+
+        /// <summary>
+        /// 返回当前类型是否是指定基类的派生类
+        /// </summary>
+        /// <typeparam name="TBaseType">基类型</typeparam>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static bool IsBaseOn<TBaseType>(Type type) => IsBaseOn(type, typeof(TBaseType));
+
+        /// <summary>
+        /// 返回当前类型是否是指定基类的派生类
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="baseType"></param>
+        /// <returns></returns>
+        public static bool IsBaseOn(Type type, Type baseType) => baseType.IsGenericTypeDefinition
+            ? baseType.IsGenericAssignableFrom(type)
+            : baseType.IsAssignableFrom(type);
+
+        #endregion
+
+        #region IsGenericAssignableFrom(判断当前泛型类型是否可由指定类型的实例填充)
+
+        /// <summary>
+        /// 判断当前泛型类型是否可由指定类型的实例填充
+        /// </summary>
+        /// <param name="genericType">泛型类型</param>
+        /// <param name="type">指定类型</param>
+        /// <returns></returns>
+        public static bool IsGenericAssignableFrom(Type genericType, Type type)
+        {
+            Check.NotNull(genericType, nameof(genericType));
+            Check.NotNull(type, nameof(type));
+
+            if (!genericType.IsGenericType)
+            {
+                throw new ArgumentException("该功能只支持泛型类型的调用，非泛型类型可使用 IsAssignableFrom 方法。");
+            }
+
+            List<Type> allOthers = new List<Type>() { type };
+            if (genericType.IsInterface)
+            {
+                allOthers.AddRange(type.GetInterfaces());
+            }
+
+            foreach (var other in allOthers)
+            {
+                Type cur = other;
+                while (cur != null)
+                {
+                    if (cur.IsGenericType)
+                    {
+                        cur = cur.GetGenericTypeDefinition();
+                    }
+
+                    if (cur.IsSubclassOf(genericType) || cur == genericType)
+                    {
+                        return true;
+                    }
+
+                    cur = cur.BaseType;
+                }
+            }
+
+            return false;
+        }
+
+        #endregion
     }
 }

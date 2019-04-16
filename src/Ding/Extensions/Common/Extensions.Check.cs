@@ -1,8 +1,9 @@
 ﻿using Ding.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
-namespace Ding.Extension
+namespace Ding
 {
     /// <summary>
     /// 系统扩展 - 参数检查

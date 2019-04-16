@@ -2,7 +2,7 @@
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 
-namespace Ding.Config
+namespace Ding.Configs
 {
     /// <summary>
     /// 配置文件 操作辅助类
