@@ -1,4 +1,5 @@
 ﻿using Ding.Biz.OAuthLogin.Weibo.Configs;
+using Ding.Extension;
 using Ding.Helpers;
 
 namespace Ding.Biz.OAuthLogin

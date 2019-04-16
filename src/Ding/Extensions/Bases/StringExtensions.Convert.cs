@@ -9,7 +9,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
-namespace Ding
+namespace Ding.Extension
 {
     /// <summary>
     /// 字符串(<see cref="string"/>) 扩展 - 转换

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ding
+namespace Ding.Extension
 {
     /// <summary>
     /// 系统扩展 - 参数检查

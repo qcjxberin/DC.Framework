@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using Ding.Properties;
+using Ding.Extension;
 
 namespace Ding.Exceptions {
     /// <summary>

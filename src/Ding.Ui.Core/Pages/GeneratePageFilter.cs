@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Ding.Helpers;
 using Ding.Logs;
 using Ding.Logs.Extensions;
+using Ding.Extension;
 
 namespace Ding.Ui.Pages {
     /// <summary>

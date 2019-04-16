@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ding.Extension;
+using System;
 using System.Text.RegularExpressions;
 
 namespace Ding.Helpers

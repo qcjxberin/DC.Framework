@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Ding
+namespace Ding.Extension
 {
     /// <summary>
     /// 字符串(<see cref="string"/>) 扩展 - 正则表达式

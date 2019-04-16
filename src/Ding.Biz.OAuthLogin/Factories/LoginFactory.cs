@@ -4,6 +4,7 @@ using Ding.Biz.OAuthLogin.QQ.Configs;
 using Ding.Biz.OAuthLogin.Taobao.Configs;
 using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Biz.OAuthLogin.Weibo.Configs;
+using Ding.Extension;
 using Ding.Helpers;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
 ﻿using Ding.Biz.OAuthLogin.QQ.Configs;
+using Ding.Extension;
 using Ding.Helpers;
 
 namespace Ding.Biz.OAuthLogin

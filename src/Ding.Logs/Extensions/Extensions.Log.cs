@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ding.Exceptions;
+using Ding.Extension;
 using Ding.Helpers;
 using Ding.Logs.Contents;
 using Ding.Logs.Properties;

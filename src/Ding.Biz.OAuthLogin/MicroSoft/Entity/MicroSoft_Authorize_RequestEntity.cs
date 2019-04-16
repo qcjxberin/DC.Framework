@@ -1,4 +1,5 @@
 ﻿using Ding.Biz.OAuthLogin.MicroSoft.Configs;
+using Ding.Extension;
 using Ding.Helpers;
 using System;
 

@@ -1,4 +1,5 @@
 ﻿using Ding.Biz.OAuthLogin.WeChat.Configs;
+using Ding.Extension;
 using Ding.Helpers;
 
 namespace Ding.Biz.OAuthLogin

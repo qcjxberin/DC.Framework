@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Ding.Helpers;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Ding.Helpers;
 
 namespace Ding.Webs.Clients {
     /// <summary>

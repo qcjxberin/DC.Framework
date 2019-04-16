@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Ding.Extension;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Linq;

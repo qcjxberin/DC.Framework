@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Ding
+namespace Ding.Extension
 {
     /// <summary>
     /// 字节流(<see cref="Stream"/>) 扩展

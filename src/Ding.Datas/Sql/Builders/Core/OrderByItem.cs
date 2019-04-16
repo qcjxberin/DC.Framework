@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ding.Extension;
+using System;
 
 namespace Ding.Datas.Sql.Builders.Core {
     /// <summary>

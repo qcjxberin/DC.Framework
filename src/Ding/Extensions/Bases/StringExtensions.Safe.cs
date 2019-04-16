@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace Ding
+namespace Ding.Extension
 {
     /// <summary>
     /// 字符串(<see cref="string"/>) 扩展 - 安全
