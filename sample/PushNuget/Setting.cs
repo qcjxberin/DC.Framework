@@ -5,7 +5,7 @@
 namespace PushNuget
 {
     using System.ComponentModel;
-    using HaoCoding.Xml;
+    using Ding.Xml;
 
     /// <summary>
     /// Nuget上传设置
