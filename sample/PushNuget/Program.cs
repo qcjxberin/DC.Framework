@@ -34,7 +34,7 @@ namespace PushNuget
 
             foreach (var item in infos.ToArray())
             {
-                "cmd".Run($"/k dotnet nuget push ../{item.Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 5000, WriteLog);
+                "cmd".Run($"/k dotnet nuget push ../{item.Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 6000, WriteLog);
 
                 List.Add(item);
             }
