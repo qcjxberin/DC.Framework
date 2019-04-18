@@ -187,9 +187,14 @@ namespace Ding.Helpers {
         #region Url(请求地址)
 
         /// <summary>
-        /// 请求地址
+        /// 请求地址(未转义)
         /// </summary>
         public static string Url => Request?.GetDisplayUrl();
+
+        /// <summary>
+        /// 请求地址(转义)
+        /// </summary>
+        public static string EncodedUrl => Request?.GetEncodedUrl();
 
         #endregion
 
