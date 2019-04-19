@@ -208,7 +208,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Biz.Payment.QPay", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Biz.Payment.UnionPay", "src\Ding.Biz.Payment.UnionPay\Ding.Biz.Payment.UnionPay.csproj", "{C578AC78-2D45-4898-83D7-B89B264D273B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Biz.Payment.WeChatPay", "src\Ding.Biz.Payment.WeChatPay\Ding.Biz.Payment.WeChatPay.csproj", "{C942859C-258E-4125-BBB2-12CEE56BEC04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Biz.Payment.WeChatPay", "src\Ding.Biz.Payment.WeChatPay\Ding.Biz.Payment.WeChatPay.csproj", "{C942859C-258E-4125-BBB2-12CEE56BEC04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Hangfire", "03-Hangfire", "{59570464-A482-4D56-B222-B32A8D554489}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Hangfire", "src\Ding.Hangfire\Ding.Hangfire.csproj", "{2022CDB3-D5AE-405D-978D-489EF496A4B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Hangfire.RecurringJobExtensions", "src\Ding.Hangfire.RecurringJobExtensions\Ding.Hangfire.RecurringJobExtensions.csproj", "{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Hangfire.SQLite", "src\Ding.Hangfire.SQLite\Ding.Hangfire.SQLite.csproj", "{0B477521-A8FA-40DA-82DC-215B422F4828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -524,6 +532,18 @@ Global
 		{C942859C-258E-4125-BBB2-12CEE56BEC04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C942859C-258E-4125-BBB2-12CEE56BEC04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C942859C-258E-4125-BBB2-12CEE56BEC04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2022CDB3-D5AE-405D-978D-489EF496A4B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2022CDB3-D5AE-405D-978D-489EF496A4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2022CDB3-D5AE-405D-978D-489EF496A4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2022CDB3-D5AE-405D-978D-489EF496A4B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B477521-A8FA-40DA-82DC-215B422F4828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B477521-A8FA-40DA-82DC-215B422F4828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B477521-A8FA-40DA-82DC-215B422F4828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B477521-A8FA-40DA-82DC-215B422F4828}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -629,6 +649,10 @@ Global
 		{90B703A5-F2B6-46CF-B3E4-724E0BF4C93A} = {89BC4CEC-F0D6-4484-BCAD-A1C217DAC53C}
 		{C578AC78-2D45-4898-83D7-B89B264D273B} = {89BC4CEC-F0D6-4484-BCAD-A1C217DAC53C}
 		{C942859C-258E-4125-BBB2-12CEE56BEC04} = {89BC4CEC-F0D6-4484-BCAD-A1C217DAC53C}
+		{59570464-A482-4D56-B222-B32A8D554489} = {2EAEB30B-6C74-4A6F-88A3-B9F0A8717E61}
+		{2022CDB3-D5AE-405D-978D-489EF496A4B5} = {59570464-A482-4D56-B222-B32A8D554489}
+		{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC} = {59570464-A482-4D56-B222-B32A8D554489}
+		{0B477521-A8FA-40DA-82DC-215B422F4828} = {59570464-A482-4D56-B222-B32A8D554489}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}
