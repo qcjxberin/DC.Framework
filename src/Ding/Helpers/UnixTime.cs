@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ding.Utils.Helpers
+namespace Ding.Helpers
 {
     /// <summary>
     /// Unix时间操作
