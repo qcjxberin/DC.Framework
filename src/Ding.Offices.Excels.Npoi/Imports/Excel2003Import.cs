@@ -20,6 +20,15 @@ namespace Ding.Offices.Excels.Npoi.Imports
         }
 
         /// <summary>
+        /// 初始化一个<see cref="Excel2003Import"/>类型的实例
+        /// </summary>
+        /// <param name="stream">文件流</param>
+        /// <param name="sheetName">工作表名称</param>
+        public Excel2003Import(Stream stream, string sheetName = "") : base(stream, new Excel2003(), sheetName)
+        {
+        }
+
+        /// <summary>
         /// 获取结果
         /// </summary>
         /// <typeparam name="T">实体类型</typeparam>

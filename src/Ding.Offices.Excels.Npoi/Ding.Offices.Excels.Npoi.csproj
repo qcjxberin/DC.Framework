@@ -10,8 +10,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <AssemblyName>Ding.Offices.Excels</AssemblyName>
-    <RootNamespace>Ding.Offices.Excels</RootNamespace>
+    <AssemblyName>Ding.Offices.Excels.Npoi</AssemblyName>
+    <RootNamespace>Ding.Offices.Excels.Npoi</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>Excel Npoi 操作类库</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的Excel Npoi 操作类库。</Description>
@@ -28,7 +28,7 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Authors>丁川</Authors>
     <PackageReleaseNotes>
-      Ding.Offices.Excels项目是Ding应用框架的Excel Npoi 操作类库。
+      Ding.Offices.Excels.Npoi项目是Ding应用框架的Excel Npoi 操作类库。
       Ding是一个.net core平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
     </PackageReleaseNotes>
     <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>

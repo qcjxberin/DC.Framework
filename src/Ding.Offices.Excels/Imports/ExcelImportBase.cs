@@ -28,6 +28,18 @@ namespace Ding.Offices.Excels.Imports
         {
             _excel = excel;
             _sheetName = sheetName;
-        }        
+        }
+
+        /// <summary>
+        /// 初始化一个<see cref="ExcelImportBase"/>类型的实例
+        /// </summary>
+        /// <param name="stream">文件流</param>
+        /// <param name="excel">Excel 操作</param>
+        /// <param name="sheetName">工作表名称</param>
+        protected ExcelImportBase(Stream stream, IExcel excel, string sheetName = "") : base(stream)
+        {
+            _excel = excel;
+            _sheetName = sheetName;
+        }
     }
 }

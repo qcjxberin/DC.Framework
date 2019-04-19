@@ -498,7 +498,7 @@ namespace Ding.Extension
             {
                 throw new ArgumentNullException("value");
             }
-            if (leftLength >= value.Length)
+            if (leftLength > value.Length)
             {
                 throw new ArgumentOutOfRangeException("leftLength", leftLength,
                     "leftLength must be less than length of string");
@@ -518,7 +518,7 @@ namespace Ding.Extension
             {
                 throw new ArgumentNullException("value");
             }
-            if (rightLength >= value.Length)
+            if (rightLength > value.Length)
             {
                 throw new ArgumentOutOfRangeException("rightLength", rightLength,
                     "rightLength must be less than length of string");

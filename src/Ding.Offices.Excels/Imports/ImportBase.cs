@@ -14,12 +14,26 @@ namespace Ding.Offices.Excels.Imports
         protected string Path { get; set; }
 
         /// <summary>
+        /// 文件流
+        /// </summary>
+        protected Stream ExcelStream { get; set; }
+
+        /// <summary>
         /// 初始化一个<see cref="ImportBase"/>类型的实例
         /// </summary>
         /// <param name="path">文件路径，绝对路径</param>
         protected ImportBase(string path)
         {
             Path = path;
+        }
+
+        /// <summary>
+        /// 初始化一个<see cref="ImportBase"/>类型的实例
+        /// </summary>
+        /// <param name="stream">文件流</param>
+        protected ImportBase(Stream stream)
+        {
+            ExcelStream = stream;
         }
 
         /// <summary>
