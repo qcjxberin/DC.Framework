@@ -5,7 +5,7 @@ using DCLGB.SwaggerExtensions;
 using Ding;
 using Ding.Biz.OAuthLogin.Extensions;
 using Ding.Caches.EasyCaching;
-using Ding.CookieManager;
+using Ding.Configs;
 using Ding.Datas.Ef;
 using Ding.Dependency;
 using Ding.Events.Default;
@@ -16,7 +16,6 @@ using Ding.Net.Mail.Smtp;
 using Ding.Schedulers.Quartz;
 using Ding.Sms.FengHuo;
 using Ding.Swashbuckle.Filters.Operations;
-using Ding.Utils.Config;
 using Ding.Webs.Extensions;
 using Ding.Webs.Filters;
 using EasyCaching.InMemory;
@@ -294,7 +293,6 @@ namespace DCLGB
             app.UseEnableRequestRewind();
             app.UseErrorLog();
             app.UseStaticFiles();
-			app.UseStaticHttpContext();
             app.UseSession();
             app.UseAuthentication();
             app.UseSignalR(routes =>
