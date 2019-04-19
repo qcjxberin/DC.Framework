@@ -1,5 +1,4 @@
-﻿#if __WIN__
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
@@ -519,4 +518,3 @@ namespace Ding.Net
         #endregion
     }
 }
-#endif
