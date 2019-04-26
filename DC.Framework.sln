@@ -218,6 +218,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Hangfire.RecurringJobE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Hangfire.SQLite", "src\Ding.Hangfire.SQLite\Ding.Hangfire.SQLite.csproj", "{0B477521-A8FA-40DA-82DC-215B422F4828}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Localization", "src\Ding.Localization\Ding.Localization.csproj", "{B6BBB362-67F4-40D4-868C-D495C6890BBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -544,6 +546,10 @@ Global
 		{0B477521-A8FA-40DA-82DC-215B422F4828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B477521-A8FA-40DA-82DC-215B422F4828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B477521-A8FA-40DA-82DC-215B422F4828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BBB362-67F4-40D4-868C-D495C6890BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BBB362-67F4-40D4-868C-D495C6890BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BBB362-67F4-40D4-868C-D495C6890BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BBB362-67F4-40D4-868C-D495C6890BBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -653,6 +659,7 @@ Global
 		{2022CDB3-D5AE-405D-978D-489EF496A4B5} = {59570464-A482-4D56-B222-B32A8D554489}
 		{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC} = {59570464-A482-4D56-B222-B32A8D554489}
 		{0B477521-A8FA-40DA-82DC-215B422F4828} = {59570464-A482-4D56-B222-B32A8D554489}
+		{B6BBB362-67F4-40D4-868C-D495C6890BBA} = {2EAEB30B-6C74-4A6F-88A3-B9F0A8717E61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}

@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Ding.Webs.Razors;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Ding.Webs.Extensions {
     /// <summary>
@@ -14,6 +17,17 @@ namespace Ding.Webs.Extensions {
             services.AddScoped<IRouteAnalyzer, RouteAnalyzer>();
             services.AddScoped<IRazorHtmlGenerator, DefaultRazorHtmlGenerator>();
             return services;
+        }
+
+        public static IServiceCollection AddContextAccessor(this IServiceCollection self)
+        {
+            if (self.Count(x => x.ServiceType == typeof(IHttpContextAccessor)) == 0)
+                self.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            if (self.Count(x => x.ServiceType == typeof(IActionContextAccessor)) == 0)
+                self.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
+            return self;
         }
     }
 }
