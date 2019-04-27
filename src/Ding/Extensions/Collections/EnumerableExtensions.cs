@@ -26,6 +26,15 @@ namespace Ding.Extension
             }
         }
 
+        public static IEnumerable<T> Each<T>(this IEnumerable<T> source, Action<T> fun)
+        {
+            foreach (T item in source)
+            {
+                fun(item);
+            }
+            return source;
+        }
+
         #endregion
 
         #region DistinctBy(根据指定条件返回集合中不重复的元素)

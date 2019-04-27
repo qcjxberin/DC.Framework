@@ -191,6 +191,11 @@ namespace Ding {
             return false;
         }
 
+        public static bool IsNotNullAndWhiteSpace(this string instance)
+        {
+            return !string.IsNullOrWhiteSpace(instance);
+        }
+
         /// <summary>
         /// 判断对象是否为空
         /// </summary>

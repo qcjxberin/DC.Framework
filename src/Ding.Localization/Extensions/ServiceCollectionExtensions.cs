@@ -11,7 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddPomeloLocalization(this IServiceCollection self, Action<MemoryCultureSet> InitCultureSource = null)
+        public static IServiceCollection AddDingLocalization(this IServiceCollection self, Action<MemoryCultureSet> InitCultureSource = null)
         {
             var set = new MemoryCultureSet();
             InitCultureSource?.Invoke(set);
