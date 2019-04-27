@@ -1,11 +1,13 @@
 ﻿using Ding.CookieManager;
 using Ding.Helpers;
+using Ding.Localization;
 using Ding.Logs;
 using Ding.Properties;
 using Ding.Webs.Commons;
 using Ding.Webs.Filters;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace Ding.Webs.Controllers
@@ -37,6 +39,18 @@ namespace Ding.Webs.Controllers
         /// 用户惟一标识符
         /// </summary>
         protected string Sid { get; set; }
+
+        /// <summary>
+        /// 语言对象
+        /// </summary>
+        public IStringReader SR => HttpContext.RequestServices?.GetService<IStringReader>();
+
+        /// <summary>
+        /// 模板管理对象
+        /// </summary>
+        public TemplateManager TemplateManager => HttpContext.RequestServices?.GetService<TemplateManager>();
+
+        public Marked Marked { get; set; } = new Marked();
 
         /// <summary>
         /// 日志
