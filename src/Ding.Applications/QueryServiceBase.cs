@@ -60,6 +60,7 @@ namespace Ding.Applications {
         /// </summary>
         /// <param name="entity">实体</param>
         protected virtual TDto ToDto( TEntity entity ) {
+            if (entity == null) return default;
             return entity.MapTo<TDto>();
         }
 
