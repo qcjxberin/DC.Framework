@@ -54,12 +54,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EasyCaching.HybridCache" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.InMemory" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.Memcached" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.Redis" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.Serialization.MessagePack" Version="0.5.4.1" />
-    <PackageReference Include="EasyCaching.SQLite" Version="0.5.4.1" />
+    <PackageReference Include="EasyCaching.HybridCache" Version="0.5.6" />
+    <PackageReference Include="EasyCaching.InMemory" Version="0.5.6" />
+    <PackageReference Include="EasyCaching.Memcached" Version="0.5.6" />
+    <PackageReference Include="EasyCaching.Redis" Version="0.5.6" />
+    <PackageReference Include="EasyCaching.Serialization.MessagePack" Version="0.5.6" />
+    <PackageReference Include="EasyCaching.SQLite" Version="0.5.6" />
   </ItemGroup>
 
   <ItemGroup>
