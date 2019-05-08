@@ -93,4 +93,13 @@
     <EmbeddedResource Include="Windows\MySpeech.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Agent\AgentService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Agent\AgentServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

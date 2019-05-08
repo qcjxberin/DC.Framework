@@ -58,8 +58,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="..\Ding.Core\Agent\AgentService.cs" Link="AgentService.cs" />
-    <Compile Include="..\Ding.Core\Agent\AgentServiceBase.cs" Link="AgentServiceBase.cs" />
+    <Compile Include="..\Ding.Core\Agent\AgentService.cs" Link="AgentService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\Ding.Core\Agent\AgentServiceBase.cs" Link="AgentServiceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="..\Ding.Core\Agent\ServiceHelper.cs" Link="ServiceHelper.cs" />
     <Compile Include="..\Ding.Core\Agent\Setting.cs" Link="Setting.cs" />
   </ItemGroup>
