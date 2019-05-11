@@ -66,9 +66,34 @@ namespace Ding.Ip
             }
         }
 
+        /// <summary>
+        /// 将流复制到内存流中
+        /// </summary>
+        /// <param name="stream">流</param>
+        /// <returns></returns>
+        private MemoryStream CopyToMemory(Stream stream)
+        {
+            var memoryStream = new MemoryStream((int)stream.Length);
+            stream.CopyTo(memoryStream);
+            return memoryStream;
+        }
+
+        /// <summary>
+        /// 将流写入字节数组
+        /// </summary>
+        /// <param name="stream">流</param>
+        /// <returns></returns>
+        private byte[] ReadAllBytes(Stream stream)
+        {
+            using (var memoryStream = CopyToMemory(stream))
+            {
+                return memoryStream.ToArray();
+            }
+        }
+
         public Reader(Stream stream)
         {
-            data = stream.ReadAllBytes();
+            data = ReadAllBytes(stream);
             fileSize = data.Length;
 
             var metaLength = bytesToLong(
