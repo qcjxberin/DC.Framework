@@ -36,8 +36,8 @@ namespace Ding.Ui.Enums {
         /// 获取图片类型扩展名列表
         /// </summary>
         public static string GetExtensions( this ImageType fileType ) {
-            var name = Ding.Helpers.Enum.GetName<ImageType>( fileType );
-            return ImageTypeHelper.GetExtensions( name );
+            var name = Util.Helpers.Enum.GetName<ImageType>( fileType );
+            return FileTypeHelper.GetExtensions( name );
         }
     }
 }

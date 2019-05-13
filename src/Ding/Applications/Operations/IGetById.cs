@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using Ding.Applications.Dtos;
 
 namespace Ding.Applications.Operations {
     /// <summary>
     /// 获取指定标识实体
     /// </summary>
-    public interface IGetById<TDto> where TDto : IResponse, new() {
+    public interface IGetById<TDto> where TDto : new() {
         /// <summary>
         /// 通过编号获取
         /// </summary>

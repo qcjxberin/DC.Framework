@@ -288,32 +288,23 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="value">待加密的值</param>
         /// <param name="key">密钥</param>
-        /// <param name="encoding">字符编码</param>
-        /// <returns></returns>
-        public static string AesEncrypt(string value, string key, Encoding encoding)
-        {
-            if (string.IsNullOrWhiteSpace(value) || string.IsNullOrWhiteSpace(key))
-            {
+        /// <param name="encoding">编码</param>
+        public static string AesEncrypt( string value, string key, Encoding encoding ) {
+            if( string.IsNullOrWhiteSpace( value ) || string.IsNullOrWhiteSpace( key ) )
                 return string.Empty;
-            }
-            var rijndaelManaged = CreateRijndaelManaged(key);
-            using (var transform = rijndaelManaged.CreateEncryptor(rijndaelManaged.Key, rijndaelManaged.IV))
-            {
-                return GetEncryptResult(value, encoding, transform);
+            var rijndaelManaged = CreateRijndaelManaged( key, encoding );
+            using( var transform = rijndaelManaged.CreateEncryptor( rijndaelManaged.Key, rijndaelManaged.IV ) ) {
+                return GetEncryptResult( value, encoding, transform );
             }
         }
 
         /// <summary>
         /// 创建RijndaelManaged
         /// </summary>
-        /// <param name="key">密钥</param>
-        /// <returns></returns>
-        private static RijndaelManaged CreateRijndaelManaged(string key)
-        {
-            return new RijndaelManaged()
-            {
-                Key = System.Convert.FromBase64String(key),
-                Mode = CipherMode.CBC,
+        private static RijndaelManaged CreateRijndaelManaged( string key, Encoding encoding, CipherMode cipherMode = CipherMode.CBC ) {
+            return new RijndaelManaged {
+                Key = encoding.GetBytes( key ),
+                Mode = cipherMode,
                 Padding = PaddingMode.PKCS7,
                 IV = Iv
             };
@@ -343,21 +334,16 @@ namespace Ding.Helpers {
         /// <summary>
         /// AES解密
         /// </summary>
-        /// <param name="value">待解密的值</param>
+        /// <param name="value">加密后的值</param>
         /// <param name="key">密钥</param>
-        /// <param name="encoding">字符编码</param>
-        /// <returns></returns>
-        public static string AesDecrypt(string value, string key, Encoding encoding)
-        {
-            if (string.IsNullOrWhiteSpace(value) || string.IsNullOrWhiteSpace(key))
-            {
+        /// <param name="encoding">编码</param>
+        /// <param name="cipherMode">密码模式</param>
+        public static string AesDecrypt( string value, string key, Encoding encoding, CipherMode cipherMode = CipherMode.CBC ) {
+            if( string.IsNullOrWhiteSpace( value ) || string.IsNullOrWhiteSpace( key ) )
                 return string.Empty;
-            }
-
-            var rijndaelManaged = CreateRijndaelManaged(key);
-            using (var transform = rijndaelManaged.CreateDecryptor(rijndaelManaged.Key, rijndaelManaged.IV))
-            {
-                return GetDecryptResult(value, encoding, transform);
+            var rijndaelManaged = CreateRijndaelManaged( key, encoding, cipherMode );
+            using( var transform = rijndaelManaged.CreateDecryptor( rijndaelManaged.Key, rijndaelManaged.IV ) ) {
+                return GetDecryptResult( value, encoding, transform );
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using Ding.Ui.Builders;
+﻿using Util.Ui.Builders;
 
 namespace Ding.Ui.Zorro.Tables.Builders {
     /// <summary>
@@ -48,7 +48,7 @@ namespace Ding.Ui.Zorro.Tables.Builders {
         public void AddWidth( string width ) {
             if ( width.IsEmpty() )
                 return;
-            if( Ding.Helpers.Validation.IsNumber( width ) )
+            if( Util.Helpers.Validation.IsNumber( width ) )
                 width += "px";
             AddAttribute( "nzWidth", width );
         }

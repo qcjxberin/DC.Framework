@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Ding.Ui.Angular.Forms.Configs;
-using Ding.Ui.Angular.Forms.Resolvers;
-using Ding.Ui.Builders;
-using Ding.Ui.Configs;
-using Ding.Ui.Enums;
-using Ding.Ui.Zorro.Forms.Base;
-using Ding.Ui.Zorro.Forms.Builders;
+using Util.Ui.Angular.Forms.Configs;
+using Util.Ui.Angular.Forms.Resolvers;
+using Util.Ui.Builders;
+using Util.Ui.Configs;
+using Util.Ui.Enums;
+using Util.Ui.Zorro.Enums;
+using Util.Ui.Zorro.Forms.Base;
+using Util.Ui.Zorro.Forms.Builders;
 
 namespace Ding.Ui.Zorro.Forms.Renders {
     /// <summary>
@@ -76,6 +77,30 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         private void ConfigDatePicker( TagBuilder builder ) {
             if( _config.IsDatePicker == false )
                 return;
+            ConfigDatePickerType( builder );
+            ConfigDateFormat( builder );
+            ConfigShowTime( builder );
+        }
+
+        /// <summary>
+        /// 配置日期选择器类型
+        /// </summary>
+        private void ConfigDatePickerType( TagBuilder builder ) {
+            builder.AddAttribute( "type", _config.GetValue<DatePickerType?>( UiConst.Type ).Description() );
+        }
+
+        /// <summary>
+        /// 配置日期格式化
+        /// </summary>
+        private void ConfigDateFormat( TagBuilder builder ) {
+            builder.AddAttribute( "format", _config.GetValue( UiConst.Format ) );
+        }
+
+        /// <summary>
+        /// 配置显示时间
+        /// </summary>
+        private void ConfigShowTime( TagBuilder builder ) {
+            builder.AddAttribute( "showTime", _config.GetBoolValue( UiConst.ShowTime ) );
         }
 
         /// <summary>
@@ -91,7 +116,10 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         /// 配置类型
         /// </summary>
         private void ConfigType( TagBuilder builder ) {
-            builder.AddAttribute( UiConst.Type, _config.GetValue<TextBoxType?>( UiConst.Type )?.Description() );
+            var type = _config.GetValue<TextBoxType?>( UiConst.Type );
+            if ( type == TextBoxType.Number )
+                return;
+            builder.AddAttribute( UiConst.Type, type?.Description() );
         }
 
         /// <summary>

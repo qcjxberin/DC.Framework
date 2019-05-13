@@ -21,6 +21,7 @@ using Ding.Datas.Transactions;
 using Ding.Helpers;
 using Ding.Logs;
 using Ding.Sessions;
+using Ding.Security;
 
 namespace Ding.Datas.Ef.Core {
     /// <summary>
@@ -294,7 +295,14 @@ namespace Ding.Datas.Ef.Core {
         /// 初始化创建审计信息
         /// </summary>
         private void InitCreationAudited( EntityEntry entry ) {
-            CreationAuditedInitializer.Init( entry.Entity, GetSession() );
+            CreationAuditedInitializer.Init( entry.Entity, GetUserId(), GetUserName() );
+        }
+
+        /// <summary>
+        /// 获取用户标识
+        /// </summary>
+        protected virtual string GetUserId() {
+            return GetSession().UserId;
         }
 
         /// <summary>
@@ -305,10 +313,18 @@ namespace Ding.Datas.Ef.Core {
         }
 
         /// <summary>
+        /// 获取用户名称
+        /// </summary>
+        protected virtual string GetUserName() {
+            var name = GetSession().GetFullName();
+            return string.IsNullOrEmpty( name ) ? GetSession().GetUserName() : name;
+        }
+
+        /// <summary>
         /// 初始化修改审计信息
         /// </summary>
         private void InitModificationAudited( EntityEntry entry ) {
-            ModificationAuditedInitializer.Init( entry.Entity, GetSession() );
+            ModificationAuditedInitializer.Init( entry.Entity, GetUserId(), GetUserName() );
         }
 
         /// <summary>

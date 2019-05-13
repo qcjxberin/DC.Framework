@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-using Ding.Ui.Angular.Base;
-using Ding.Ui.Configs;
-using Ding.Ui.Renders;
-using Ding.Ui.TagHelpers;
-using Ding.Ui.Zorro.Enums;
-using Ding.Ui.Zorro.Icons.Renders;
+using Util.Ui.Angular.Base;
+using Util.Ui.Configs;
+using Util.Ui.Renders;
+using Util.Ui.TagHelpers;
+using Util.Ui.Zorro.Enums;
+using Util.Ui.Zorro.Icons.Renders;
 
 namespace Ding.Ui.Zorro.Icons {
     /// <summary>

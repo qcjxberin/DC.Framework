@@ -253,7 +253,9 @@ namespace Ding.Extension
             {
                 timeStamp = timeStamp.Substring(0, 10);
             }
+#pragma warning disable CS0618 // '“TimeZone”已过时:“System.TimeZone has been deprecated.  Please investigate the use of System.TimeZoneInfo instead.”
             DateTime dateTimeStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+#pragma warning restore CS0618 // '“TimeZone”已过时:“System.TimeZone has been deprecated.  Please investigate the use of System.TimeZoneInfo instead.”
             long lIime = long.Parse(timeStamp + "0000000");
             TimeSpan toNow = new TimeSpan(lIime);
             return dateTimeStart.Add(toNow);

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Ding.Ui.Configs;
-using Ding.Ui.Extensions;
-using Ding.Ui.TagHelpers;
+using Util.Ui.Configs;
+using Util.Ui.Extensions;
+using Util.Ui.TagHelpers;
 
 namespace Ding.Ui.Zorro.Tables.Configs {
     /// <summary>

@@ -928,12 +928,16 @@ namespace Ding.Timing
         #endregion
 
         #region 把三天内的时间用今天，昨天，前天表示，后跟时间，无日期
+#pragma warning disable CS1572 // XML 注释中有“strdate”的 param 标记，但是没有该名称的参数
+#pragma warning disable CS1573 // 参数“date”在“DateTimeUtil.ConvertDateTime(string)”的 XML 注释中没有匹配的 param 标记(但其他参数有)
         /// <summary>
         /// 把三天内的时间用今天，昨天，前天表示，后跟时间，无日期
         /// </summary>
         /// <param name="strdate">被转换的时间</param>
         /// <returns></returns>
         public static string ConvertDateTime(string date)
+#pragma warning restore CS1573 // 参数“date”在“DateTimeUtil.ConvertDateTime(string)”的 XML 注释中没有匹配的 param 标记(但其他参数有)
+#pragma warning restore CS1572 // XML 注释中有“strdate”的 param 标记，但是没有该名称的参数
         {
             return ConvertDateTime(date, DateTime.Now);
         }

@@ -1,10 +1,10 @@
-﻿using Ding.Properties;
-using Ding.Ui.Angular.Base;
-using Ding.Ui.Angular.Enums;
-using Ding.Ui.Configs;
-using Ding.Ui.Extensions;
-using Ding.Ui.Zorro.Tables.Builders;
-using Ding.Ui.Zorro.Tables.Configs;
+﻿using Util.Properties;
+using Util.Ui.Angular.Base;
+using Util.Ui.Angular.Enums;
+using Util.Ui.Configs;
+using Util.Ui.Extensions;
+using Util.Ui.Zorro.Tables.Builders;
+using Util.Ui.Zorro.Tables.Configs;
 
 namespace Ding.Ui.Zorro.Tables.Renders {
     /// <summary>
@@ -27,7 +27,7 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// <summary>
         /// 获取标签生成器
         /// </summary>
-        protected override Ding.Ui.Builders.TagBuilder GetTagBuilder() {
+        protected override Util.Ui.Builders.TagBuilder GetTagBuilder() {
             var builder = new TableColumnBuilder();
             Config( builder );
             return builder;
@@ -46,6 +46,8 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// 配置列
         /// </summary>
         private void ConfigColumn( TableColumnBuilder builder ) {
+            if( _config.Content.IsEmpty() == false )
+                return;
             var type = _config.GetValue<TableColumnType?>( UiConst.Type );
             var column = _config.GetValue( UiConst.Column );
             switch( type ) {

@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-using Ding.Ui.Angular.Base;
-using Ding.Ui.Configs;
-using Ding.Ui.Extensions;
-using Ding.Ui.Renders;
-using Ding.Ui.TagHelpers;
-using Ding.Ui.Zorro.Tables.Configs;
-using Ding.Ui.Zorro.Tables.Renders;
+using Util.Ui.Angular.Base;
+using Util.Ui.Configs;
+using Util.Ui.Extensions;
+using Util.Ui.Renders;
+using Util.Ui.TagHelpers;
+using Util.Ui.Zorro.Tables.Configs;
+using Util.Ui.Zorro.Tables.Renders;
 
 namespace Ding.Ui.Zorro.Tables {
     /// <summary>
@@ -18,21 +18,21 @@ namespace Ding.Ui.Zorro.Tables {
         /// </summary>
         public string BaseUrl { get; set; }
         /// <summary>
-        /// 数据加载地址，范例：/api/test
-        /// </summary>
-        public string Url { get; set; }
-        /// <summary>
-        /// 删除地址，注意：由于支持批量删除，所以采用Post提交，范例：/api/test/delete
-        /// </summary>
-        public string DeleteUrl { get; set; }
-        /// <summary>
         /// 基地址，基于该地址构建加载地址和删除地址，范例：传入test,则加载地址为/api/test,删除地址为/api/test/delete
         /// </summary>
         public string BindBaseUrl { get; set; }
         /// <summary>
         /// 数据加载地址，范例：/api/test
         /// </summary>
+        public string Url { get; set; }
+        /// <summary>
+        /// 数据加载地址，范例：/api/test
+        /// </summary>
         public string BindUrl { get; set; }
+        /// <summary>
+        /// 删除地址，注意：由于支持批量删除，所以采用Post提交，范例：/api/test/delete
+        /// </summary>
+        public string DeleteUrl { get; set; }
         /// <summary>
         /// 删除地址，注意：由于支持批量删除，所以采用Post提交，范例：/api/test/delete
         /// </summary>
@@ -109,7 +109,7 @@ namespace Ding.Ui.Zorro.Tables {
         private string GetId( TagHelperContext context ) {
             if ( context.AllAttributes.ContainsName( UiConst.Id ) )
                 return context.GetValueFromAttributes<string>( UiConst.Id );
-            return $"m_{Ding.Helpers.Id.Guid()}";
+            return $"m_{Util.Helpers.Id.Guid()}";
         }
     }
 }

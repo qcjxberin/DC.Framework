@@ -7,12 +7,16 @@ namespace Ding.Security
 {
     public class Aes
     {
+#pragma warning disable CS1573 // 参数“iv”在“Aes.Encrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
+#pragma warning disable CS1573 // 参数“key”在“Aes.Encrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
         /// <summary>
         /// 以RC2格式编码。
         /// </summary>
         /// <param name="value">要加密的字符串</param>
         /// <returns>加密字符串</returns>
         public static string Encrypt(string value, byte[] key, byte[] iv)
+#pragma warning restore CS1573 // 参数“key”在“Aes.Encrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
+#pragma warning restore CS1573 // 参数“iv”在“Aes.Encrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -35,12 +39,16 @@ namespace Ding.Security
             }
         }
 
+#pragma warning disable CS1573 // 参数“iv”在“Aes.Decrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
+#pragma warning disable CS1573 // 参数“key”在“Aes.Decrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
         /// <summary>
         /// 用RC2格式解码。
         /// </summary>
         /// <param name="value">要解码的字符串</param>
         /// <returns>解码字符串</returns>
         public static string Decrypt(string value, byte[] key, byte[] iv)
+#pragma warning restore CS1573 // 参数“key”在“Aes.Decrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
+#pragma warning restore CS1573 // 参数“iv”在“Aes.Decrypt(string, byte[], byte[])”的 XML 注释中没有匹配的 param 标记(但其他参数有)
         {
             if (string.IsNullOrEmpty(value))
             {

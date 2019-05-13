@@ -1,9 +1,9 @@
-﻿using Ding.Ui.Angular;
-using Ding.Ui.Angular.Base;
-using Ding.Ui.Builders;
-using Ding.Ui.Configs;
-using Ding.Ui.Zorro.Enums;
-using Ding.Ui.Zorro.Icons.Builders;
+﻿using Util.Ui.Angular;
+using Util.Ui.Angular.Base;
+using Util.Ui.Builders;
+using Util.Ui.Configs;
+using Util.Ui.Zorro.Enums;
+using Util.Ui.Zorro.Icons.Builders;
 
 namespace Ding.Ui.Zorro.Icons.Renders {
     /// <summary>

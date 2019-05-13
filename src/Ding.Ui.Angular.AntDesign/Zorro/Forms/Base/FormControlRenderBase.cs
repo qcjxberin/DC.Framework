@@ -1,7 +1,7 @@
-﻿using Ding.Ui.Angular;
-using Ding.Ui.Angular.Base;
-using Ding.Ui.Builders;
-using Ding.Ui.Configs;
+﻿using Util.Ui.Angular;
+using Util.Ui.Angular.Base;
+using Util.Ui.Builders;
+using Util.Ui.Configs;
 
 namespace Ding.Ui.Zorro.Forms.Base {
     /// <summary>
@@ -69,6 +69,7 @@ namespace Ding.Ui.Zorro.Forms.Base {
         /// 配置模型绑定
         /// </summary>
         private void ConfigModel( TagBuilder builder ) {
+            builder.AddAttribute( "[(model)]", _config.GetValue( UiConst.Model ) );
             builder.AddAttribute( "[(model)]", _config.GetValue( AngularConst.NgModel ) );
         }
 

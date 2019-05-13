@@ -1,5 +1,4 @@
-﻿using Ding.Applications.Dtos;
-using Ding.Applications.Operations;
+﻿using Ding.Applications.Operations;
 using Ding.Datas.Queries;
 
 namespace Ding.Applications {
@@ -12,7 +11,7 @@ namespace Ding.Applications {
         IGetById<TDto>, IGetByIdAsync<TDto>,
         IGetAll<TDto>, IGetAllAsync<TDto>,
         IPageQuery<TDto, TQueryParameter>, IPageQueryAsync<TDto, TQueryParameter>
-        where TDto : IResponse, new()
+        where TDto : new()
         where TQueryParameter : IQueryParameter {
     }
 }

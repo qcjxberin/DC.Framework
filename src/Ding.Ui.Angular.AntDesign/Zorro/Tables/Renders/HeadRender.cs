@@ -1,6 +1,6 @@
-﻿using Ding.Ui.Angular.Base;
-using Ding.Ui.Builders;
-using Ding.Ui.Configs;
+﻿using Util.Ui.Angular.Base;
+using Util.Ui.Builders;
+using Util.Ui.Configs;
 
 namespace Ding.Ui.Zorro.Tables.Renders {
     /// <summary>

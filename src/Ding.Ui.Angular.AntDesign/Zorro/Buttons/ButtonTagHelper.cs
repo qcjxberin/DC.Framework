@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-using Ding.Ui.Angular.Base;
-using Ding.Ui.Configs;
-using Ding.Ui.Renders;
-using Ding.Ui.TagHelpers;
-using Ding.Ui.Zorro.Buttons.Renders;
-using Ding.Ui.Zorro.Enums;
+using Util.Ui.Angular.Base;
+using Util.Ui.Configs;
+using Util.Ui.Renders;
+using Util.Ui.TagHelpers;
+using Util.Ui.Zorro.Buttons.Renders;
+using Util.Ui.Zorro.Enums;
 
 namespace Ding.Ui.Zorro.Buttons {
     /// <summary>
@@ -70,7 +70,7 @@ namespace Ding.Ui.Zorro.Buttons {
         /// </summary>
         /// <param name="context">上下文</param>
         protected override IRender GetRender( Context context ) {
-            return new ButtonWrapperRender( new Config( context ) );
+            return new ButtonRender( new Config( context ) );
         }
     }
 }
