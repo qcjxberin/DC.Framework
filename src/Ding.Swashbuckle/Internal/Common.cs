@@ -16,7 +16,7 @@ namespace Ding.Swashbuckle.Internal
         /// <returns></returns>
         public static string LoadContent(string resourceFile)
         {
-            using (var stream = typeof(Common).GetTypeInfo().Assembly.GetManifestResourceStream($"Bing.Extensions.Swashbuckle.Resources.{resourceFile}"))
+            using (var stream = typeof(Common).GetTypeInfo().Assembly.GetManifestResourceStream($"Ding.Extensions.Swashbuckle.Resources.{resourceFile}"))
             {
                 if (stream == null)
                 {
