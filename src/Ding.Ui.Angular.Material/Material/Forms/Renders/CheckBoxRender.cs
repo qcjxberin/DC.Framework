@@ -5,7 +5,7 @@ using Ding.Ui.Builders;
 using Ding.Ui.Configs;
 using Ding.Ui.Material.Enums;
 using Ding.Ui.Material.Forms.Builders;
-using Ding.Ui.Material.Forms.Resolvers;
+using Ding.Ui.Angular.Forms.Resolvers;
 
 namespace Ding.Ui.Material.Forms.Renders {
     /// <summary>
@@ -42,7 +42,7 @@ namespace Ding.Ui.Material.Forms.Renders {
             if( _config.Contains( UiConst.For ) == false )
                 return;
             var expression = _config.GetValue<ModelExpression>( UiConst.For );
-            CheckBoxExpressionResolver.Init( expression, _config );
+            ExpressionResolver.Init( expression, _config );
         }
 
         /// <summary>

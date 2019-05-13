@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Util.Ui.Angular;
-using Util.Ui.Angular.Forms.Configs;
-using Util.Ui.Angular.Forms.Resolvers;
-using Util.Ui.Builders;
-using Util.Ui.Configs;
-using Util.Ui.Zorro.Forms.Base;
-using Util.Ui.Zorro.Forms.Builders;
+using Ding.Ui.Angular;
+using Ding.Ui.Angular.Forms.Configs;
+using Ding.Ui.Angular.Forms.Resolvers;
+using Ding.Ui.Builders;
+using Ding.Ui.Configs;
+using Ding.Ui.Zorro.Forms.Base;
+using Ding.Ui.Zorro.Forms.Builders;
 
 namespace Ding.Ui.Zorro.Forms.Renders {
     /// <summary>
@@ -89,7 +89,7 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         private void AddItems() {
             if( _config.Items.Count == 0 )
                 return;
-            _config.SetAttribute( UiConst.DataSource, Util.Helpers.Json.ToJson( _config.Items, true ) );
+            _config.SetAttribute( UiConst.DataSource, Ding.Helpers.Json.ToJson( _config.Items, true ) );
         }
 
         /// <summary>

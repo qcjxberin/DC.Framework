@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-using Util.Ui.Angular.Base;
-using Util.Ui.Angular.Enums;
-using Util.Ui.Configs;
-using Util.Ui.Extensions;
-using Util.Ui.Renders;
-using Util.Ui.TagHelpers;
-using Util.Ui.Zorro.Tables.Configs;
-using Util.Ui.Zorro.Tables.Renders;
+using Ding.Ui.Angular.Base;
+using Ding.Ui.Angular.Enums;
+using Ding.Ui.Configs;
+using Ding.Ui.Extensions;
+using Ding.Ui.Renders;
+using Ding.Ui.TagHelpers;
+using Ding.Ui.Zorro.Tables.Configs;
+using Ding.Ui.Zorro.Tables.Renders;
 
 namespace Ding.Ui.Zorro.Tables {
     /// <summary>

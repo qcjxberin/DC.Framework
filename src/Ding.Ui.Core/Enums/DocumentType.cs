@@ -1,4 +1,7 @@
-﻿namespace Ding.Ui.Core.Enums
+﻿using System.ComponentModel;
+using Ding.Ui.Helpers;
+
+namespace Ding.Ui.Core.Enums
 {
     /// <summary>
     /// 文档类型
@@ -34,7 +37,7 @@
         /// 获取文档类型扩展名列表
         /// </summary>
         public static string GetExtensions( this DocumentType fileType ) {
-            var name = Util.Helpers.Enum.GetName<DocumentType>( fileType );
+            var name = Ding.Helpers.Enum.GetName<DocumentType>( fileType );
             return FileTypeHelper.GetExtensions( name );
         }
     }

@@ -46,7 +46,7 @@ namespace Ding.Ui.Angular.Internal {
         /// 初始化基础配置
         /// </summary>
         private static void Init( IConfig config, Type modelType, MemberInfo member, string propertyName ) {
-            config.SetAttribute( UiConst.Name, Util.Helpers.String.FirstLowerCase( propertyName ), false );
+            config.SetAttribute( UiConst.Name, Ding.Helpers.String.FirstLowerCase( propertyName ), false );
             var displayName = Reflection.GetDisplayNameOrDescription( member );
             config.SetAttribute( UiConst.Label, displayName, false );
             InitModel( config, modelType, member, propertyName );

@@ -1,4 +1,15 @@
-﻿namespace Ding.Ui.Controllers
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Ding.Applications.Trees;
+using Ding.Datas.Queries.Trees;
+using Ding.Domains.Repositories;
+using Ding.Exceptions;
+using Ding.Ui.Data;
+using Ding.Webs.Controllers.Trees;
+
+namespace Ding.Ui.Controllers
 {
     /// <summary>
     /// 树形表格控制器

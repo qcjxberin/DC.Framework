@@ -1,4 +1,6 @@
-﻿namespace Ding.Ui.Data {
+﻿using System.Collections.Generic;
+
+namespace Ding.Ui.Data {
     /// <summary>
     /// Ng-Zorro树形表格结果数据
     /// </summary>

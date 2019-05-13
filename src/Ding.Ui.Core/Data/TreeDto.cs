@@ -1,6 +1,6 @@
 ﻿using Ding.Applications.Trees;
 
-namespace Ding.Ui.Core.Data
+namespace Ding.Ui.Data
 {
     /// <summary>
     /// 树形参数

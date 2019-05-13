@@ -4,7 +4,7 @@ namespace Ding.Ui.Material.Forms.Builders {
     /// <summary>
     /// Mat复选框生成器
     /// </summary>
-    class CheckBoxBuilder : TagBuilder {
+    public class CheckBoxBuilder : TagBuilder {
         /// <summary>
         /// 初始化Mat复选框生成器
         /// </summary>

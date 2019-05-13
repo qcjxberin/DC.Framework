@@ -1,11 +1,11 @@
-﻿using Util.Properties;
-using Util.Ui.Angular.Base;
-using Util.Ui.Angular.Enums;
-using Util.Ui.Builders;
-using Util.Ui.Configs;
-using Util.Ui.Extensions;
-using Util.Ui.Zorro.Tables.Configs;
-using TableHeadColumnBuilder = Util.Ui.Zorro.Tables.Builders.TableHeadColumnBuilder;
+﻿using Ding.Properties;
+using Ding.Ui.Angular.Base;
+using Ding.Ui.Angular.Enums;
+using Ding.Ui.Builders;
+using Ding.Ui.Configs;
+using Ding.Ui.Extensions;
+using Ding.Ui.Zorro.Tables.Configs;
+using TableHeadColumnBuilder = Ding.Ui.Zorro.Tables.Builders.TableHeadColumnBuilder;
 
 namespace Ding.Ui.Zorro.Tables.Renders {
     /// <summary>
