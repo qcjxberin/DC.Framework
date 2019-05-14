@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Ding.Events.Handlers;
 using Ding.Helpers;
 using Ding.Reflections;
+using Ding.Mvc.Routing;
 
 namespace Ding.Dependency {
     /// <summary>
