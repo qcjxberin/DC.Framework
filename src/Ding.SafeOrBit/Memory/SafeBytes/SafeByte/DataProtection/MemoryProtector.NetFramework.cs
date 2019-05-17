@@ -1,4 +1,4 @@
-﻿#if !NETCORE && !NETCORE2
+﻿#if !NETCORE && !NETCORE2 && !NETCORE21
 using System;
 using System.Security.Cryptography;
 

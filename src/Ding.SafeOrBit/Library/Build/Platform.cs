@@ -7,6 +7,7 @@
     {
         NetStandard,
         NetStandard2,
+        NetStandard21,
         Net472,
         Net471,
         Net470,

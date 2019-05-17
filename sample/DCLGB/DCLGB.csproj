@@ -41,18 +41,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ding.Biz.OAuthLogin" Version="1.0.0-preview-20190505-01" />
-    <PackageReference Include="Ding.Caches" Version="1.0.0-preview-20190418-01" />
-    <PackageReference Include="Ding.CookieManager" Version="1.0.0-preview-20190505-01" />
-    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190505-01" />
-    <PackageReference Include="Ding.Datas" Version="1.0.0-preview-20190418-01" />
-    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190418-01" />
-    <PackageReference Include="Ding.MailKit" Version="1.0.0-preview-20190418-01" />
-    <PackageReference Include="Ding.Schedulers" Version="1.0.0-preview-20190418-01" />
-    <PackageReference Include="Ding.Swashbuckle" Version="1.0.0-preview-20190505-01" />
-    <PackageReference Include="Ding.TimedJob" Version="1.0.0-preview-20190505-01" />
-    <PackageReference Include="Ding.Tools.Sms" Version="1.0.0-preview-20190418-01" />
-    <PackageReference Include="Ding.Webs" Version="1.0.0-preview-20190418-01" />
+    <PackageReference Include="Ding.Biz.OAuthLogin" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Caches" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.CookieManager" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Datas" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.MailKit" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Schedulers" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Swashbuckle" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.TimedJob" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Tools.Sms" Version="1.0.0-preview-20190517-01" />
+    <PackageReference Include="Ding.Webs" Version="1.0.0-preview-20190517-01" />
     <PackageReference Include="IdentityServer4" Version="2.4.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
@@ -61,14 +61,14 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
-    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.4.5">
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.5.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
-    <PackageReference Include="Senparc.Weixin.MP.MVC" Version="7.2.7.2" />
-    <PackageReference Include="Senparc.Weixin.TenPay" Version="1.2.1" />
-    <PackageReference Include="Senparc.Weixin.WxOpen" Version="3.3.10" />
+    <PackageReference Include="Senparc.Weixin.MP.MVC" Version="7.2.8.3" />
+    <PackageReference Include="Senparc.Weixin.TenPay" Version="1.3.0.1" />
+    <PackageReference Include="Senparc.Weixin.WxOpen" Version="3.4.2.3" />
   </ItemGroup>
 
   <ItemGroup>

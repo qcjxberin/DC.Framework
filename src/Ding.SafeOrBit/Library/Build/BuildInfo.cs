@@ -12,6 +12,8 @@
             return Platform.NetStandard;
 #elif NETCORE2
             return Platform.NetStandard2;
+#elif NETCORE21
+            return Platform.NetStandard21;
 #elif NET472
             return Platform.Net472;
 #elif NET471

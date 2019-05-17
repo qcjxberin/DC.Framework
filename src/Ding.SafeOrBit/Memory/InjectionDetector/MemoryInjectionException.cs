@@ -50,7 +50,7 @@ namespace SafeOrbit.Exceptions
             InjectionType = injectionType;
         }
 
-#if !(NETCORE || NETCORE2)
+#if !(NETCORE || NETCORE2 || NETCORE21)
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public MemoryInjectionException(SerializationInfo info, StreamingContext context) : base(info, context)
         {

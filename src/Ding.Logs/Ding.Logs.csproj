@@ -60,7 +60,7 @@
 
   <ItemGroup>
     <PackageReference Include="Exceptionless" Version="4.3.2027" />
-    <PackageReference Include="NLog" Version="5.0.0-beta11" />
+    <PackageReference Include="NLog" Version="4.6.3" />
   </ItemGroup>
 
   <ItemGroup>

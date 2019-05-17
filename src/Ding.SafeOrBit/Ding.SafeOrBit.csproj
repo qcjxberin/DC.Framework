@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;netstandard2.0;net45;net451;net452;net46;net461;net462;net47;net471;net472;</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;netstandard2.0;netstandard2.1;net45;net451;net452;net46;net461;net462;net47;net471;net472;</TargetFrameworks>
     <AssemblyName>Ding.SafeOrBit</AssemblyName>
     <RootNamespace>SafeOrbit</RootNamespace>
     <Product>$(AssemblyName)</Product>
@@ -82,6 +82,22 @@
     <PackageReference Include="System.Security.Permissions" Version="4.5.0" />
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.6.0-preview5.19224.8" />
+    <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
+    <PackageReference Include="System.Threading.ThreadPool" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+    <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.1" />
+    <PackageReference Include="System.Reflection.Metadata" Version="1.7.0-preview5.19224.8" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <!-- Memory protection-->
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.6.0-preview5.19224.8" />
+    <!-- Serialization -->
+    <PackageReference Include="System.Runtime.Serialization.Primitives " Version="4.3.0" />
+    <PackageReference Include="System.Security.Permissions" Version="4.6.0-preview5.19224.8" />
+  </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461'  OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'net462'">
     <Reference Include="System.Xml" />
     <Reference Include="System.Security" />
@@ -94,6 +110,9 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <DefineConstants>$(DefineConstants);NETCORE2</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+    <DefineConstants>$(DefineConstants);NETCORE21</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461'  OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472'">
     <DefineConstants>$(DefineConstants);NETFRAMEWORK</DefineConstants>
