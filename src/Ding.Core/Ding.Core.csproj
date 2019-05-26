@@ -103,12 +103,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Agent\AgentService.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Agent\AgentServiceBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Update="Agent\AgentService.cs" />
+    <Compile Update="Agent\AgentServiceBase.cs" />
   </ItemGroup>
 
 </Project>
