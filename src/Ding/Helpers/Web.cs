@@ -530,7 +530,6 @@ namespace Ding.Helpers {
             return AgentType.Android;
         }
 
-
         #region DownloadAsync(下载)
 
         /// <summary>
@@ -538,9 +537,8 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="filePath">文件绝对路径</param>
         /// <param name="fileName">文件名,包含扩展名</param>
-        public static async Task DownloadFileAsync(string filePath, string fileName)
-        {
-            await DownloadFileAsync(filePath, fileName, Encoding.UTF8);
+        public static async Task DownloadFileAsync( string filePath, string fileName ) {
+            await DownloadFileAsync( filePath, fileName, Encoding.UTF8 );
         }
 
         /// <summary>
@@ -549,10 +547,9 @@ namespace Ding.Helpers {
         /// <param name="filePath">文件绝对路径</param>
         /// <param name="fileName">文件名,包含扩展名</param>
         /// <param name="encoding">字符编码</param>
-        public static async Task DownloadFileAsync(string filePath, string fileName, Encoding encoding)
-        {
-            var bytes = File.Read(filePath);
-            await DownloadAsync(bytes, fileName, encoding);
+        public static async Task DownloadFileAsync( string filePath, string fileName, Encoding encoding ) {
+            var bytes = File.Read( filePath );
+            await DownloadAsync( bytes, fileName, encoding );
         }
 
         /// <summary>
@@ -560,9 +557,8 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="stream">流</param>
         /// <param name="fileName">文件名,包含扩展名</param>
-        public static async Task DownloadAsync(Stream stream, string fileName)
-        {
-            await DownloadAsync(stream, fileName, Encoding.UTF8);
+        public static async Task DownloadAsync( Stream stream, string fileName ) {
+            await DownloadAsync( stream, fileName, Encoding.UTF8 );
         }
 
         /// <summary>
@@ -571,9 +567,8 @@ namespace Ding.Helpers {
         /// <param name="stream">流</param>
         /// <param name="fileName">文件名,包含扩展名</param>
         /// <param name="encoding">字符编码</param>
-        public static async Task DownloadAsync(Stream stream, string fileName, Encoding encoding)
-        {
-            await DownloadAsync(File.ToBytes(stream), fileName, encoding);
+        public static async Task DownloadAsync( Stream stream, string fileName, Encoding encoding ) {
+            await DownloadAsync( File.ToBytes( stream ), fileName, encoding );
         }
 
         /// <summary>
@@ -581,9 +576,8 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="bytes">字节流</param>
         /// <param name="fileName">文件名,包含扩展名</param>
-        public static async Task DownloadAsync(byte[] bytes, string fileName)
-        {
-            await DownloadAsync(bytes, fileName, Encoding.UTF8);
+        public static async Task DownloadAsync( byte[] bytes, string fileName ) {
+            await DownloadAsync( bytes, fileName, Encoding.UTF8 );
         }
 
         /// <summary>
@@ -592,15 +586,15 @@ namespace Ding.Helpers {
         /// <param name="bytes">字节流</param>
         /// <param name="fileName">文件名,包含扩展名</param>
         /// <param name="encoding">字符编码</param>
-        public static async Task DownloadAsync(byte[] bytes, string fileName, Encoding encoding)
-        {
-            if (bytes == null || bytes.Length == 0)
+        public static async Task DownloadAsync( byte[] bytes, string fileName, Encoding encoding ) {
+            if( bytes == null || bytes.Length == 0 )
                 return;
-            fileName = fileName.Replace(" ", "");
-            fileName = UrlEncode(fileName, encoding);
-            Response.ContentType = "application/cotet-stream";
-            Response.Headers.Add("Content-Disposition", $"attachment; filename={fileName}");
-            await Response.Body.WriteAsync(bytes, 0, bytes.Length);
+            fileName = fileName.Replace( " ", "" );
+            fileName = UrlEncode( fileName, encoding );
+            Response.ContentType = "application/octet-stream";
+            Response.Headers.Add( "Content-Disposition", $"attachment; filename={fileName}" );
+            Response.Headers.Add( "Content-Length", bytes.Length.ToString() );
+            await Response.Body.WriteAsync( bytes, 0, bytes.Length );
         }
 
         #endregion

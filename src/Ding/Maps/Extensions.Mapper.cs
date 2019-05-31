@@ -42,10 +42,10 @@ namespace Ding.Maps {
         /// 将源对象映射到目标对象
         /// </summary>
         private static TDestination MapTo<TDestination>( object source, TDestination destination ) {
-            if( source == null )
-                throw new ArgumentNullException( nameof( source ) );
-            if( destination == null )
-                throw new ArgumentNullException( nameof( destination ) );
+            if (source == null)
+                return default(TDestination);
+            if (destination == null)
+                return default(TDestination);
             var sourceType = GetType( source );
             var destinationType = GetType( destination );
             var map = GetMap( sourceType, destinationType );

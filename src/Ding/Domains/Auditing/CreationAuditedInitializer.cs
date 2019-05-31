@@ -44,9 +44,13 @@ namespace Ding.Domains.Auditing {
         /// 初始化
         /// </summary>
         public void Init() {
+            if (_entity == null)
+                return;
             InitCreationTime();
             InitCreator();
-            if( _entity is ICreationAudited<Guid> ) {
+            if (string.IsNullOrWhiteSpace(_userId))
+                return;
+            if ( _entity is ICreationAudited<Guid> ) {
                 InitGuid();
                 return;
             }
@@ -88,7 +92,9 @@ namespace Ding.Domains.Auditing {
         /// 初始化创建人
         /// </summary>
         private void InitCreator() {
-            if( _entity is ICreator result )
+            if (string.IsNullOrWhiteSpace(_userName))
+                return;
+            if ( _entity is ICreator result )
                 result.Creator = _userName;
         }
 

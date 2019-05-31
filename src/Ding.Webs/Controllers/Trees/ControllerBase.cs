@@ -3,8 +3,7 @@ using Ding.Datas.Queries.Trees;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Ding.Webs.Controllers.Trees
-{
+namespace Ding.Webs.Controllers.Trees {
     /// <summary>
     /// 树形控制器
     /// </summary>
