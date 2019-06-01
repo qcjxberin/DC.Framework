@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
-using Ding.Utils.Helpers;
 using Ding.Tests.Samples;
 using Ding.Tests.XUnitHelpers;
 using Xunit;
+using Ding.Helpers;
 
 namespace Ding.Tests.Helpers {
     /// <summary>
@@ -31,7 +31,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestToJson_Null() {
-            Assert.Equal( "{}", Json.ToJson( null ) );
+            Assert.Empty( Json.ToJson( null ) );
         }
 
         /// <summary>
