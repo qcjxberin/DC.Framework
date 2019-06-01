@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Ding.Ui.Data
-{
+namespace Ding.Ui.Data {
     /// <summary>
     /// 树形结果
     /// </summary>

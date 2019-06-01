@@ -7,6 +7,8 @@ using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Tables.Configs;
 using Ding.Ui.Zorro.Tables.Renders;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Ding.Ui.Angular.Resolvers;
 
 namespace Ding.Ui.Zorro.Tables {
     /// <summary>
@@ -26,6 +28,10 @@ namespace Ding.Ui.Zorro.Tables {
             _config = new Config();
         }
 
+        /// <summary>
+        /// 属性表达式
+        /// </summary>
+        public ModelExpression For { get; set; }
         /// <summary>
         /// 标题
         /// </summary>
@@ -59,7 +65,18 @@ namespace Ding.Ui.Zorro.Tables {
         /// <param name="output">TagHelper输出</param>
         protected override void ProcessBefore( TagHelperContext context, TagHelperOutput output ) {
             _config.Load( context, output );
+            ResolveExpression();
             SetShareConfig();
+        }
+
+        /// <summary>
+        /// 解析属性表达式
+        /// </summary>
+        private void ResolveExpression() {
+            if( _config.Contains( UiConst.For ) == false )
+                return;
+            var expression = _config.GetValue<ModelExpression>( UiConst.For );
+            ColumnExpressionResolver.Init( expression, _config );
         }
 
         /// <summary>

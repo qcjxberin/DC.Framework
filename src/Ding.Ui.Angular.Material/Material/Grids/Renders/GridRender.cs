@@ -1,6 +1,7 @@
 ﻿using Ding.Ui.Angular.Base;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Core.Helpers;
 using Ding.Ui.Material.Grids.Builders;
 
 namespace Ding.Ui.Material.Grids.Renders {
@@ -52,12 +53,10 @@ namespace Ding.Ui.Material.Grids.Renders {
         /// 配置行高
         /// </summary>
         private void ConfigRowHeight( TagBuilder builder ) {
-            if ( _config.Contains( UiConst.RowHeight ) == false )
+            if( _config.Contains( UiConst.RowHeight ) == false )
                 return;
             var value = _config.GetValue( UiConst.RowHeight );
-            if ( Ding.Helpers.Validation.IsNumber( value ) )
-                value = $"{value}px";
-            builder.AddAttribute( "rowHeight", value );
+            builder.AddAttribute( "rowHeight", CommonHelper.GetPixelValue( value ) );
         }
 
         /// <summary>
@@ -67,9 +66,7 @@ namespace Ding.Ui.Material.Grids.Renders {
             if( _config.Contains( MaterialConst.GutterSize ) == false )
                 return;
             var value = _config.GetValue( MaterialConst.GutterSize );
-            if( Ding.Helpers.Validation.IsNumber( value ) )
-                value = $"{value}px";
-            builder.AddAttribute( "gutterSize", value );
+            builder.AddAttribute( "gutterSize", CommonHelper.GetPixelValue( value ) );
         }
     }
 }

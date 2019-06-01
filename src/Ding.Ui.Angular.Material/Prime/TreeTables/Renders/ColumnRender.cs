@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Ding.Ui.Angular.Base;
 using Ding.Ui.Angular.Builders;
-using Ding.Ui.Angular.Tables.Resolvers;
+using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
 using Ding.Ui.Enums;

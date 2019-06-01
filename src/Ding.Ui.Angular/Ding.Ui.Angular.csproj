@@ -11,7 +11,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Ding.Ui.Angular</AssemblyName>
-    <RootNamespace>Util.Ui</RootNamespace>
+    <RootNamespace>Ding.Ui</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>Angular组件基类库</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的Angular组件基类库。</Description>

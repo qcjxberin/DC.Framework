@@ -1,6 +1,9 @@
 ﻿using Ding.Ui.Angular.Base;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Extensions;
+using Ding.Ui.Zorro.Tables.Builders;
+using Ding.Ui.Zorro.Tables.Configs;
 
 namespace Ding.Ui.Zorro.Tables.Renders {
     /// <summary>
@@ -10,26 +13,14 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// <summary>
         /// 配置
         /// </summary>
-        private readonly IConfig _config;
-        /// <summary>
-        /// 表格包装器标识
-        /// </summary>
-        private readonly string _tableWrapperId;
-        /// <summary>
-        /// 是否排序
-        /// </summary>
-        private readonly bool _isSort;
+        private readonly Config _config;
 
         /// <summary>
         /// 初始化表格头渲染器
         /// </summary>
         /// <param name="config">配置</param>
-        /// <param name="tableWrapperId">表格包装器标识</param>
-        /// <param name="isSort">是否排序</param>
-        public HeadRender( IConfig config,string tableWrapperId,bool? isSort ) : base( config ) {
+        public HeadRender( Config config ) : base( config ) {
             _config = config;
-            _tableWrapperId = tableWrapperId;
-            _isSort = isSort.SafeValue();
         }
 
         /// <summary>
@@ -59,9 +50,19 @@ namespace Ding.Ui.Zorro.Tables.Renders {
                 builder.AddSortChange( _config.GetValue( UiConst.OnSortChange ) );
                 return;
             }
-            if ( _isSort == false )
+            var shareConfig = GetShareConfig();
+            if ( shareConfig == null )
                 return;
-            builder.AddSortChange( $"{_tableWrapperId}.sort($event)" );
+            if ( shareConfig.IsSort == false )
+                return;
+            builder.AddSortChange( $"{shareConfig.TableWrapperId}.sort($event)" );
+        }
+
+        /// <summary>
+        /// 获取共享配置
+        /// </summary>
+        private TableShareConfig GetShareConfig() {
+            return _config.Context?.GetValueFromItems<TableShareConfig>( TableConfig.TableShareKey );
         }
 
         /// <summary>

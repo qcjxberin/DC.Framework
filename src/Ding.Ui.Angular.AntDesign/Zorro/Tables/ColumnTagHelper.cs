@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Ding.Properties;
 using Ding.Ui.Angular.Base;
 using Ding.Ui.Angular.Enums;
-using Ding.Ui.Angular.Tables.Resolvers;
+using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Configs;
 using Ding.Ui.Extensions;
 using Ding.Ui.Renders;

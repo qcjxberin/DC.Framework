@@ -2,11 +2,9 @@
 
   <PropertyGroup>    
     <TargetFramework>netcoreapp3.0</TargetFramework>    
-    <AssemblyName>Util.Tests</AssemblyName>    
-    <RootNamespace>Util.Tests</RootNamespace>    
-    <Description />    
-    <Authors>何镇汐;dotnetcore</Authors>    
-    <Company>何镇汐;dotnetcore</Company>    
+    <AssemblyName>Ding.Tests</AssemblyName>    
+    <RootNamespace>Ding.Tests</RootNamespace>    
+    <Description />      
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

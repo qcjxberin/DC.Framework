@@ -1,8 +1,8 @@
 ﻿using Ding.Ui.Angular;
 using Ding.Ui.Angular.Base;
+using Ding.Ui.Angular.Builders;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
-using Ding.Ui.Material.Icons.Builders;
 
 namespace Ding.Ui.Material.Icons.Renders {
     /// <summary>

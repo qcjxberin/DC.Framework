@@ -15,23 +15,23 @@ namespace Ding.Ui.Zorro.Forms.Base {
         /// </summary>
         public string NgModel { get; set; }
         /// <summary>
-        /// 名称
+        /// name,名称
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// 名称
+        /// [name],名称
         /// </summary>
         public string BindName { get; set; }
         /// <summary>
-        /// 禁用
+        /// [nzDisabled],禁用
         /// </summary>
         public string Disabled { get; set; }
         /// <summary>
-        /// 占位提示
+        /// nzPlaceHolder,占位提示
         /// </summary>
         public string Placeholder { get; set; }
         /// <summary>
-        /// 占位提示
+        /// [nzPlaceHolder],占位提示
         /// </summary>
         public string BindPlaceholder { get; set; }
         /// <summary>

@@ -2,12 +2,11 @@
 using System.Linq;
 using Ding.Maps;
 
-namespace Ding.Ui.Data
-{
+namespace Ding.Ui.Data {
     /// <summary>
     /// 树形表格结果
     /// </summary>
-    public class TreeTableResult<TNode> where TNode : TreeDto {
+    public class TreeTableResult<TNode> where TNode : TreeDto<TNode> {
         /// <summary>
         /// 树形参数列表
         /// </summary>
@@ -15,7 +14,7 @@ namespace Ding.Ui.Data
         /// <summary>
         /// 树形表格结果
         /// </summary>
-        private readonly List<ZorroTreeTableResult<TNode>> _result;
+        private readonly List<TNode> _result;
         /// <summary>
         /// 是否异步加载
         /// </summary>
@@ -29,19 +28,17 @@ namespace Ding.Ui.Data
         public TreeTableResult( IEnumerable<TNode> data, bool async = false ) {
             _data = data;
             _async = async;
-            _result = new List<ZorroTreeTableResult<TNode>>();
+            _result = new List<TNode>();
         }
 
         /// <summary>
         /// 获取树形表格结果
         /// </summary>
-        public List<ZorroTreeTableResult<TNode>> GetResult() {
+        public List<TNode> GetResult() {
             if( _data == null )
                 return _result;
             foreach ( var root in _data.Where( IsRoot ).OrderBy( t => t.SortId ) ) {
-                var rootNode = ToNode( root );
-                AddNode( rootNode, root );
-                _result.Add( rootNode );
+                AddNode( root );
             }
             return _result;
         }
@@ -56,23 +53,36 @@ namespace Ding.Ui.Data
         }
 
         /// <summary>
-        /// 转换为结果节点
+        /// 添加节点
         /// </summary>
-        protected virtual ZorroTreeTableResult<TNode> ToNode( TNode dto ) {
-            return dto?.MapTo<ZorroTreeTableResult<TNode>>();
+        private void AddNode( TNode node ) {
+            if ( node == null )
+                return;
+            Init( node );
+            _result.Add( node );
+            var children = GetChildren( node );
+            foreach( var child in children )
+                AddNode( child );
         }
 
         /// <summary>
-        /// 添加节点
+        /// 初始化节点
         /// </summary>
-        private void AddNode( ZorroTreeTableResult<TNode> root, TNode dto ) {
-            if ( root == null || dto == null )
+        protected virtual void Init( TNode node ) {
+            InitExpanded( node );
+            InitLeaf( node );
+        }
+
+        /// <summary>
+        /// 初始化节点展开状态
+        /// </summary>
+        protected virtual void InitExpanded( TNode node ) {
+            if( node.Expanded == null ) {
+                node.Expanded = false;
                 return;
-            InitLeaf( dto );
-            root.Children.Add( dto );
-            var children = GetChildren( dto );
-            foreach( var child in children )
-                AddNode( root,child );
+            }
+            if( node.Level == 1 )
+                node.Expanded = true;
         }
 
         /// <summary>

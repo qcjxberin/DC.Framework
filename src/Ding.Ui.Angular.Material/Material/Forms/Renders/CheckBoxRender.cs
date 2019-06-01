@@ -5,7 +5,7 @@ using Ding.Ui.Builders;
 using Ding.Ui.Configs;
 using Ding.Ui.Material.Enums;
 using Ding.Ui.Material.Forms.Builders;
-using Ding.Ui.Angular.Forms.Resolvers;
+using Ding.Ui.Angular.Resolvers;
 
 namespace Ding.Ui.Material.Forms.Renders {
     /// <summary>

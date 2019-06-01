@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <AssemblyName>Util.Datas.Tests.Integration</AssemblyName>
-    <RootNamespace>Util.Datas.Tests</RootNamespace>
+    <AssemblyName>Ding.Datas.Tests.Integration</AssemblyName>
+    <RootNamespace>Ding.Datas.Tests</RootNamespace>
     <Description />
-    <Authors>何镇汐;dotnetcore</Authors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

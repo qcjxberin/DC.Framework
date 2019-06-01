@@ -2,6 +2,7 @@
 using Ding.Ui.Angular.Base;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Core.Helpers;
 using Ding.Ui.FlexLayout.Enums;
 
 namespace Ding.Ui.FlexLayout.Renders {
@@ -81,9 +82,7 @@ namespace Ding.Ui.FlexLayout.Renders {
         /// </summary>
         private void ConfigGap( TagBuilder builder ) {
             var value = _config.GetValue( UiConst.Gap );
-            if ( Ding.Helpers.Validation.IsNumber( value ) )
-                value = $"{value}px";
-            builder.AddAttribute( "fxLayoutGap", value );
+            builder.AddAttribute( "fxLayoutGap", CommonHelper.GetPixelValue(value) );
         }
 
         /// <summary>

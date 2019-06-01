@@ -1,6 +1,7 @@
 ﻿using Ding.Ui.Builders;
 
-namespace Ding.Ui.Angular.Builders {
+namespace Ding.Ui.Angular.Builders
+{
     /// <summary>
     /// router-outlet生成器
     /// </summary>

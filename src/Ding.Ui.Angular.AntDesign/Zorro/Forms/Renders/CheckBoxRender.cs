@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Ding.Ui.Angular;
 using Ding.Ui.Angular.Base;
-using Ding.Ui.Angular.Forms.Resolvers;
+using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
 using Ding.Ui.Zorro.Forms.Builders;

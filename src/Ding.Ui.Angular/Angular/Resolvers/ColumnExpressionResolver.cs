@@ -1,11 +1,11 @@
-﻿using System.Reflection;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Ding.Helpers;
+﻿using Ding.Helpers;
 using Ding.Ui.Angular.Enums;
 using Ding.Ui.Configs;
 using Ding.Ui.Extensions;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System.Reflection;
 
-namespace Ding.Ui.Angular.Tables.Resolvers {
+namespace Ding.Ui.Angular.Resolvers {
     /// <summary>
     /// 表格列表达式解析器
     /// </summary>

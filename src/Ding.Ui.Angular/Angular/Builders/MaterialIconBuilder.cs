@@ -1,9 +1,8 @@
-﻿using Ding.Ui.Angular;
-using Ding.Ui.Builders;
+﻿using Ding.Ui.Builders;
 using Ding.Ui.Configs;
 using Ding.Ui.Enums;
 
-namespace Ding.Ui.Material.Icons.Builders {
+namespace Ding.Ui.Angular.Builders {
     /// <summary>
     /// Material图标生成器
     /// </summary>

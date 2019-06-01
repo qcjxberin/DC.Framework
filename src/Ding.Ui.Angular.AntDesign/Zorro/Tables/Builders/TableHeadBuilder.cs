@@ -1,4 +1,6 @@
-﻿namespace Ding.Ui.Builders {
+﻿using Ding.Ui.Builders;
+
+namespace Ding.Ui.Zorro.Tables.Builders {
     /// <summary>
     /// 表格头thead生成器
     /// </summary>

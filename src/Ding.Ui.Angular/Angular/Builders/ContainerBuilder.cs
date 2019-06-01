@@ -1,6 +1,7 @@
 ﻿using Ding.Ui.Builders;
 
-namespace Ding.Ui.Angular.Builders {
+namespace Ding.Ui.Angular.Builders
+{
     /// <summary>
     /// ng-container生成器
     /// </summary>

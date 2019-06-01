@@ -8,8 +8,7 @@ using Ding.Exceptions;
 using Ding.Ui.Data;
 using Ding.Webs.Controllers.Trees;
 
-namespace Ding.Ui.Controllers
-{
+namespace Ding.Ui.Controllers {
     /// <summary>
     /// 树形控制器
     /// </summary>
