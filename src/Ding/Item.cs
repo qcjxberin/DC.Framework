@@ -20,6 +20,7 @@ namespace Ding {
             SortId = sortId;
             Group = group;
             Disabled = disabled;
+
         }
 
         /// <summary>
