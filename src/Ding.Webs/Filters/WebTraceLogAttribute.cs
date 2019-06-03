@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 namespace Ding.Webs.Filters
 {
     /// <summary>
-    /// 跟踪日志过滤器
+    /// Web跟踪日志过滤器
     /// </summary>
     [AttributeUsage( AttributeTargets.Class | AttributeTargets.Method )]
-    public class TraceLogAttribute : ActionFilterAttribute {
+    public class WebTraceLogAttribute : ActionFilterAttribute {
         /// <summary>
         /// 日志名
         /// </summary>
-        public const string TraceLogName = "ApiTraceLog";
+        public const string TraceLogName = "WebTraceLog";
 
         /// <summary>
         /// 是否忽略,为true不记录日志
@@ -69,7 +69,7 @@ namespace Ding.Webs.Filters
         /// 执行前日志
         /// </summary>
         private async Task WriteLog( ActionExecutingContext context, ILog log ) {
-            log.Caption( "WebApi跟踪-准备执行操作" )
+            log.Caption( "Web跟踪-准备执行操作" )
                 .Class( context.Controller.SafeString() )
                 .Method( context.ActionDescriptor.DisplayName );
             await AddRequestInfo( context,log );
@@ -135,7 +135,7 @@ namespace Ding.Webs.Filters
         /// 执行后日志
         /// </summary>
         private void WriteLog( ActionExecutedContext context, ILog log ) {
-            log.Caption( "WebApi跟踪-执行操作完成" )
+            log.Caption( "Web跟踪-执行操作完成" )
                 .Class( context.Controller.SafeString() )
                 .Method( context.ActionDescriptor.DisplayName );
             AddResponseInfo( context, log );

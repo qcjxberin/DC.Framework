@@ -6,7 +6,6 @@ using Ding.Webs.Commons;
 using Ding.Webs.Filters;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace Ding.Webs.Controllers
@@ -16,7 +15,7 @@ namespace Ding.Webs.Controllers
     /// </summary>
     [ExceptionHandler]
     [ErrorLog]
-    [TraceLog]
+    [WebTraceLog]
     public abstract class WebControllerBase : Controller
     {
         public WebControllerBase()
