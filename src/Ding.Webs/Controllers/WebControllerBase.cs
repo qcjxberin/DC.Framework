@@ -4,9 +4,9 @@ using Ding.Logs;
 using Ding.Properties;
 using Ding.Webs.Commons;
 using Ding.Webs.Filters;
+using Ding.Webs.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace Ding.Webs.Controllers
 {
@@ -28,7 +28,7 @@ namespace Ding.Webs.Controllers
                 {
                     // 生成sid
                     Sid = Id.GenerateSid();
-                    _cookie.Set("sid", Sid, new CookieOptions() { HttpOnly = true, Expires = DateTime.Now.AddMonths(1) });
+                    _cookie.Set("sid", Sid, new CookieOptions() { HttpOnly = true, Expires = System.DateTime.Now.AddMonths(1) });
                 }
             }
         }
@@ -89,6 +89,75 @@ namespace Ding.Webs.Controllers
         protected virtual IActionResult Fail(string message)
         {
             return new Result(StateCode.Fail, message);
+        }
+
+        /// <summary>
+        /// 获得路由中的值
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns></returns>
+        protected int GetRouteInt(string key, int defaultValue)
+        {
+            return Convert.ToInt(RouteData.Values[key], defaultValue);
+        }
+
+        /// <summary>
+        /// 获得路由中的值
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <returns></returns>
+        protected int GetRouteInt(string key)
+        {
+            return GetRouteInt(key, 0);
+        }
+
+        /// <summary>
+        /// 获得路由中的值
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="defaultValue">默认值</param>
+        /// <returns></returns>
+        protected string GetRouteString(string key, string defaultValue)
+        {
+            object value = RouteData.Values[key];
+            if (value != null)
+                return value.ToString();
+            else
+                return defaultValue;
+        }
+
+        /// <summary>
+        /// 获得路由中的值
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <returns></returns>
+        protected string GetRouteString(string key)
+        {
+            return GetRouteString(key, "");
+        }
+
+        /// <summary>
+        /// 提示信息视图
+        /// </summary>
+        /// <param name="backUrl">返回地址</param>
+        /// <param name="message">提示信息</param>
+        /// <returns></returns>
+        protected ViewResult PromptView(string backUrl, string message)
+        {
+            return View("prompt", new PromptModel { BackUrl = backUrl, Message = message });
+        }
+
+        /// <summary>
+        /// 提示信息视图
+        /// </summary>
+        /// <param name="backUrl">返回地址</param>
+        /// <param name="message">提示信息</param>
+        /// <param name="isAutoBack">是否自动返回</param>
+        /// <returns></returns>
+        protected ViewResult PromptView(string backUrl, string message, bool isAutoBack)
+        {
+            return View("prompt", new PromptModel { BackUrl = backUrl, Message = message, IsAutoBack = isAutoBack });
         }
     }
 }
