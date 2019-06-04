@@ -188,7 +188,7 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="input">输入值</param>
         /// <returns></returns>
-        public static int ToInt(this object input)
+        public static int ToInt(object input)
         {
             return ToInt(input, default);
         }
