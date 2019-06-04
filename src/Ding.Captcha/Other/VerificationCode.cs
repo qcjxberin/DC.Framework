@@ -16,11 +16,11 @@ namespace Ding.Captcha
     /// NuGet地址：https://www.nuget.org/packages/CoreCompat.System.Drawing/（windows 下可直接使用，Linux and Mac OS 下需要安装Mono）
     /// Nuget Console：Install-Package CoreCompat.System.Drawing -Pre（windows 下可直接使用，Linux and Mac OS 下需要安装Mono）
     /// </summary>
-    public class VierificationCodeServices
+    public class VerificationCode
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public VierificationCodeServices(IHttpContextAccessor httpContextAccessor)
+        public VerificationCode(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
         }
