@@ -188,7 +188,7 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="input">输入值</param>
         /// <returns></returns>
-        public static int ToInt(object input)
+        public static int ToInt(this object input)
         {
             return ToInt(input, default);
         }
@@ -199,7 +199,7 @@ namespace Ding.Helpers {
         /// <param name="input">输入值</param>
         /// <param name="defaultValue">默认值</param>
         /// <returns></returns>
-        public static int ToInt(object input, int defaultValue)
+        public static int ToInt(this object input, int defaultValue)
         {
             return ToIntOrNull(input) ?? defaultValue;
         }
@@ -209,7 +209,7 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="input">输入值</param>
         /// <returns></returns>
-        public static int? ToIntOrNull(object input)
+        public static int? ToIntOrNull(this object input)
         {
             var success = int.TryParse(input.SafeString(), out var result);
             if (success)
@@ -707,5 +707,21 @@ namespace Ding.Helpers {
         }
 
         #endregion
+
+        /// <summary>
+        /// 将ip地址转换成long类型
+        /// </summary>
+        /// <param name="ip">ip</param>
+        /// <returns></returns>
+        public static long ConvertIPToLong(this string ip)
+        {
+            if (!ip.Contains("."))
+            {
+                ip = "127.0.0.1";
+            }
+            string[] ips = ip.Split('.');
+            long number = 16777216L * long.Parse(ips[0]) + 65536L * long.Parse(ips[1]) + 256 * long.Parse(ips[2]) + long.Parse(ips[3]);
+            return number;
+        }
     }
 }
