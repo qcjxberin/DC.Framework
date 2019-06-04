@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Ding.Utils.Drawing
+namespace Ding.Drawing
 {
     /// <summary>
     /// 验证码生成器

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace Ding.Utils.Drawing
+namespace Ding.Drawing
 {
     /// <summary>
     /// 图片操作辅助类 - 转换

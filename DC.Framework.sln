@@ -218,6 +218,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Hangfire.SQLite", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Marked", "src\Ding.Marked\Ding.Marked.csproj", "{63365E8F-69B3-4E39-B770-62258F40F178}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Captcha", "src\Ding.Captcha\Ding.Captcha.csproj", "{12698335-58F5-4E3A-959D-9B64F42811CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -544,6 +546,10 @@ Global
 		{63365E8F-69B3-4E39-B770-62258F40F178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63365E8F-69B3-4E39-B770-62258F40F178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63365E8F-69B3-4E39-B770-62258F40F178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12698335-58F5-4E3A-959D-9B64F42811CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12698335-58F5-4E3A-959D-9B64F42811CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12698335-58F5-4E3A-959D-9B64F42811CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12698335-58F5-4E3A-959D-9B64F42811CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -653,6 +659,7 @@ Global
 		{18C0C5BD-4E10-4BC5-8BAA-2B34EF2F5CAC} = {59570464-A482-4D56-B222-B32A8D554489}
 		{0B477521-A8FA-40DA-82DC-215B422F4828} = {59570464-A482-4D56-B222-B32A8D554489}
 		{63365E8F-69B3-4E39-B770-62258F40F178} = {2EAEB30B-6C74-4A6F-88A3-B9F0A8717E61}
+		{12698335-58F5-4E3A-959D-9B64F42811CB} = {2EAEB30B-6C74-4A6F-88A3-B9F0A8717E61}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}

@@ -4,7 +4,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 
-namespace Ding.Utils.Drawing
+namespace Ding.Drawing
 {
     /// <summary>
     /// 图片操作辅助类 - 信息

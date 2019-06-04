@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Ding.Utils.Drawing
+namespace Ding.Drawing
 {
     /// <summary>
     /// 图片操作辅助类 - 加载

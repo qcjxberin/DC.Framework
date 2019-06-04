@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Ding.Utils.Drawing
+namespace Ding.Drawing
 {
     /// <summary>
     /// 图像(<see cref="Bitmap"/>) 扩展

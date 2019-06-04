@@ -1,4 +1,4 @@
-﻿namespace Ding.Utils.Drawing
+﻿namespace Ding.Drawing
 {
     /// <summary>
     /// 验证码类型

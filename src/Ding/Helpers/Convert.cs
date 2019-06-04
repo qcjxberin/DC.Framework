@@ -199,7 +199,7 @@ namespace Ding.Helpers {
         /// <param name="input">输入值</param>
         /// <param name="defaultValue">默认值</param>
         /// <returns></returns>
-        public static int ToInt(this object input, int defaultValue)
+        public static int ToInt(object input, int defaultValue)
         {
             return ToIntOrNull(input) ?? defaultValue;
         }
@@ -209,7 +209,7 @@ namespace Ding.Helpers {
         /// </summary>
         /// <param name="input">输入值</param>
         /// <returns></returns>
-        public static int? ToIntOrNull(this object input)
+        public static int? ToIntOrNull(object input)
         {
             var success = int.TryParse(input.SafeString(), out var result);
             if (success)

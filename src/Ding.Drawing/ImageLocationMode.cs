@@ -1,4 +1,4 @@
-﻿namespace Ding.Utils.Drawing
+﻿namespace Ding.Drawing
 {
     /// <summary>
     /// 图片位置模式
