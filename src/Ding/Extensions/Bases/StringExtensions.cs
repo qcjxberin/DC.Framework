@@ -646,7 +646,7 @@ namespace Ding.Extension
         /// <param name="length"></param>
         /// <param name="StripHTML"></param>
         /// <returns></returns>
-        public static string GetContentSummary(string content, int length, bool StripHTML)
+        public static string GetContentSummary(this string content, int length, bool StripHTML)
         {
             if (string.IsNullOrEmpty(content) || length == 0)
                 return "";
