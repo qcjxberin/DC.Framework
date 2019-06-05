@@ -491,6 +491,15 @@ namespace Ding.Helpers {
             return absoluteUri;
         }
 
+        /// <summary>
+        /// 获取当前站点Url
+        /// </summary>
+        /// <returns></returns>
+        public static string GetSiteUrl()
+        {
+            return Request.Scheme + "://" + Request.Host;
+        }
+
         public enum AgentType
         {
             Android = 0,
