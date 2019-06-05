@@ -38,6 +38,9 @@ namespace Ding.Webs.Controllers
         /// </summary>
         protected string Sid { get; set; }
 
+        /// <summary>
+        /// MarkDown解析类
+        /// </summary>
         public Marked Marked { get; set; } = new Marked();
 
         /// <summary>
