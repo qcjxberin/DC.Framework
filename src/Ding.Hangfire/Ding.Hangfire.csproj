@@ -56,7 +56,7 @@
 
   <ItemGroup>
     <PackageReference Include="HangFire" Version="1.7.3" />
-    <PackageReference Include="Hangfire.MemoryStorage" Version="1.6.0" />
+    <PackageReference Include="Hangfire.MemoryStorage" Version="1.6.1" />
   </ItemGroup>
   
   <ItemGroup>
