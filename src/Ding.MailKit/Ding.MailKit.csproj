@@ -15,7 +15,7 @@
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>邮件操作类库</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的邮件操作类库。</Description>
-    <Company>星尘</Company>
+    <Company>武汉极思灵创</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
     <OutputPath>..\..\output\release\</OutputPath>

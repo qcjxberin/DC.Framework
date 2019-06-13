@@ -15,7 +15,7 @@
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>Mysql数据库备份操作核心类库</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的Mysql数据库备份操作核心类库。基于MySqlConnector</Description>
-    <Company>星尘</Company>
+    <Company>武汉极思灵创</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
     <OutputPath>..\..\output\release\</OutputPath>

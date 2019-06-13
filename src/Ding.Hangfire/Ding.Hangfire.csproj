@@ -15,7 +15,7 @@
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>Hangfire定时计划处理类</AssemblyTitle>
     <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的基于Hangfire的定时计划处理类。</Description>
-    <Company>星尘</Company>
+    <Company>武汉极思灵创</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>
     <OutputPath>..\..\output\release\</OutputPath>
