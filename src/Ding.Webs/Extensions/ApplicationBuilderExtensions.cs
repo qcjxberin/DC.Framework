@@ -1,10 +1,6 @@
 ﻿using Ding.Helpers;
 using Ding.Mvc.Routing;
-using Ding.Reflections;
 using Microsoft.AspNetCore.Builder;
-using Serilog;
-using System;
-using System.Linq;
 
 namespace Ding.Webs.Extensions
 {
