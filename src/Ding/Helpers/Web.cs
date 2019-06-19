@@ -198,6 +198,11 @@ namespace Ding.Helpers {
 
         #endregion
 
+        /// <summary>
+        /// 引用地址
+        /// </summary>
+        public static string RefererUrl => Request.Headers["Referer"].FirstOrDefault();
+
         #region Ip(客户端Ip地址)
 
         /// <summary>
