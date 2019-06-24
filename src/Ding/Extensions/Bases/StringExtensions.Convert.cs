@@ -261,6 +261,15 @@ namespace Ding.Extension
             return dateTimeStart.Add(toNow);
         }
 
+        public static DateTime StampToDateTime(this long timeStamp)
+        {
+#pragma warning disable CS0618 // '“TimeZone”已过时:“System.TimeZone has been deprecated.  Please investigate the use of System.TimeZoneInfo instead.”
+            var dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+#pragma warning restore CS0618 // '“TimeZone”已过时:“System.TimeZone has been deprecated.  Please investigate the use of System.TimeZoneInfo instead.”
+            TimeSpan toNow = new TimeSpan(timeStamp);
+            return dtStart.Add(toNow);
+        }
+
         #endregion
     }
 }
