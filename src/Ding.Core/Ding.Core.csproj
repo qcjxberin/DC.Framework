@@ -58,53 +58,15 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='net45'">
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms" />
+
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <PackageReference Include="System.IO.Ports" Version="4.5.0" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.5.0" />
+
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <PackageReference Include="System.IO.Ports" Version="4.6.0-preview6.19303.8" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.6.0-preview6.19303.8" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Http\HttpClient.cs" />
-    <Compile Remove="Http\HttpSession.cs" />
-    <Compile Remove="Net\WebSocketSession.cs" />
-    <Compile Remove="Properties\AssemblyInfo.cs" />
-    <Compile Remove="Reflection\EmitHelper.cs" />
-    <Compile Remove="Reflection\EmitReflect.cs" />
-    <Compile Remove="Web\Pager.cs" />
-    <Compile Remove="Web\WebHelper.cs" />
-    <Compile Remove="Windows\MySpeech.cs" />
-    <Compile Remove="发布NuGet.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Ip\db\ipipfree.ipdb" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Ip\db\ipipfree.ipdb" />
-    <EmbeddedResource Include="Windows\MySpeech.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Agent\AgentService.cs" />
-    <Compile Update="Agent\AgentServiceBase.cs" />
   </ItemGroup>
 
 </Project>
