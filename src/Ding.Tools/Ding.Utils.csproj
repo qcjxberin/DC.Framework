@@ -14,7 +14,7 @@
     <RootNamespace>Ding.Utils</RootNamespace>
     <Product>$(AssemblyName)</Product>
     <AssemblyTitle>Ding常用操作类库</AssemblyTitle>
-    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的日志、网络、RPC、序列化、缓存、Windows服务、线程池核心类库。</Description>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的常用操作类库。</Description>
     <Company>武汉极思灵创</Company>
     <Copyright>©2008-2019 $(Company)开发团队</Copyright>
     <Deterministic>false</Deterministic>

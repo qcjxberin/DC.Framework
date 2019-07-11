@@ -224,7 +224,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-Utils", "12-Utils", "{3A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Utils", "src\Ding.Tools\Ding.Utils.csproj", "{3E742E75-6E2C-447A-B02A-C14E82AD32C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.QiNiu", "src\Ding.QiNiu\Ding.QiNiu.csproj", "{F0428B41-DCEC-4711-9D99-C14AFD59CB96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.QiNiu", "src\Ding.QiNiu\Ding.QiNiu.csproj", "{F0428B41-DCEC-4711-9D99-C14AFD59CB96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
