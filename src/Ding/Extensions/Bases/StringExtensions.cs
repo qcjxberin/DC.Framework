@@ -541,12 +541,12 @@ namespace Ding.Extension
 
         #region 截取字符长度
         /// <summary>
-        /// 截取字符长度
+        /// 截取清空Html字符串
         /// </summary>
         /// <param name="inputString">字符</param>
         /// <param name="len">长度</param>
         /// <returns></returns>
-        public static string CutString(string inputString, int len)
+        public static string CutString(this string inputString, int len)
         {
             if (string.IsNullOrEmpty(inputString))
                 return "";
