@@ -1,4 +1,4 @@
-﻿using Ding.Utils.Helpers;
+﻿using Ding.Helpers;
 using System;
 using Xunit;
 

@@ -1,7 +1,7 @@
 ﻿using Ding.Datas.Sql;
 using Ding.Datas.Tests.Samples;
-using Ding.Utils;
-using Ding.Utils.Helpers;
+using Ding.Helpers;
+using Ding.Datas.Queries;
 using Xunit;
 
 namespace Ding.Datas.Tests.Sql.Builders.SqlServer {

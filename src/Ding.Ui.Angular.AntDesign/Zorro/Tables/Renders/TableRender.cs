@@ -54,6 +54,8 @@ namespace Ding.Ui.Zorro.Tables.Renders {
             ConfigUrl( builder );
             ConfigAutoLoad( builder );
             ConfigSort( builder );
+            ConfigMultiple( builder );
+            ConfigKeys( builder );
             ConfigTableWrapperEvents( builder );
         }
 
@@ -115,6 +117,20 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// </summary>
         private void ConfigSort( TagBuilder builder ) {
             builder.AddAttribute( "sortKey", _config.GetValue( UiConst.Sort ) );
+        }
+
+        /// <summary>
+        /// 配置多选
+        /// </summary>
+        private void ConfigMultiple( TagBuilder builder ) {
+            builder.AddAttribute( "[multiple]", _config.GetValue( UiConst.Multiple ) );
+        }
+
+        /// <summary>
+        /// 配置标识列表
+        /// </summary>
+        private void ConfigKeys( TagBuilder builder ) {
+            builder.AddAttribute( "[checkedKeys]", _config.GetValue( UiConst.CheckedKeys ) );
         }
 
         /// <summary>

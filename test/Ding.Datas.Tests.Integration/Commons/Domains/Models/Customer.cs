@@ -128,11 +128,11 @@ namespace Ding.Datas.Tests.Commons.Domains.Models {
         /// </summary>
         public static List<Customer> CreateCustomers() {
             return new List<Customer> {
-                new Customer( Ding.Utils.Helpers.Id.ObjectId() ) {Name = "A",Nickname = "A1",Mobile = "1"},
-                new Customer( Ding.Utils.Helpers.Id.ObjectId() ) {Name = "A",Nickname = "A2",Mobile = "2"},
-                new Customer( Ding.Utils.Helpers.Id.ObjectId() ) {Name = "B",Nickname = "B1",Mobile = "3"},
-                new Customer( Ding.Utils.Helpers.Id.ObjectId() ) {Name = "B",Nickname = "B2",Mobile = "4"},
-                new Customer( Ding.Utils.Helpers.Id.ObjectId() ) {Name = "C",Mobile = "5"}
+                new Customer( Ding.Helpers.Id.ObjectId() ) {Name = "A",Nickname = "A1",Mobile = "1"},
+                new Customer( Ding.Helpers.Id.ObjectId() ) {Name = "A",Nickname = "A2",Mobile = "2"},
+                new Customer( Ding.Helpers.Id.ObjectId() ) {Name = "B",Nickname = "B1",Mobile = "3"},
+                new Customer( Ding.Helpers.Id.ObjectId() ) {Name = "B",Nickname = "B2",Mobile = "4"},
+                new Customer( Ding.Helpers.Id.ObjectId() ) {Name = "C",Mobile = "5"}
             };
         }
     }

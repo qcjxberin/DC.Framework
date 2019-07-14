@@ -63,7 +63,6 @@ namespace Ding.Ui.Angular.Internal {
             if( string.IsNullOrWhiteSpace( model ) )
                 return;
             config.SetAttribute( UiConst.Model, model, false );
-            config.SetAttribute( AngularConst.NgModel, model, false );
         }
 
         /// <summary>
@@ -138,7 +137,7 @@ namespace Ding.Ui.Angular.Internal {
                 return;
             }
             if( Reflection.IsNumber( member ) ) {
-                config.Number();
+                config.IsNumber = true;
                 return;
             }
             InitDataType( config, member.GetCustomAttribute<DataTypeAttribute>() );
@@ -277,7 +276,7 @@ namespace Ding.Ui.Angular.Internal {
             if( attribute == null )
                 return;
             var message = attribute.ErrorMessage;
-            if( message.IsEmpty() )
+            if( message.IsEmpty() || message.Contains( "is not a valid phone number" ) )
                 message = LibraryResource.InvalidMobilePhone;
             InitRegex( config, ValidatePattern.MobilePhonePattern, message );
         }

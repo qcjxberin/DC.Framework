@@ -3,8 +3,8 @@ using Ding.Datas.Sql.Builders.Clauses;
 using Ding.Datas.Sql.Builders.Core;
 using Ding.Datas.Tests.Samples;
 using Ding.Datas.Tests.Sql.Builders.Samples;
-using Ding.Utils;
-using Ding.Utils.Helpers;
+using Ding.Datas.Queries;
+using Ding.Helpers;
 using Xunit;
 
 namespace Ding.Datas.Tests.Sql.Builders.SqlServer.Clauses {

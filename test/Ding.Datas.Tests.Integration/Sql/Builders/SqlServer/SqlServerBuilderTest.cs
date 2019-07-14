@@ -7,7 +7,7 @@ using Ding.Datas.Tests.XUnitHelpers;
 using Ding.Properties;
 using Xunit;
 using Xunit.Abstractions;
-using String = Ding.Utils.Helpers.String;
+using String = Ding.Helpers.String;
 
 namespace Ding.Datas.Tests.Sql.Builders.SqlServer {
     /// <summary>

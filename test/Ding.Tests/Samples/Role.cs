@@ -1,13 +1,11 @@
 ﻿using System;
-using Ding.Domains.Repositories;
 using Ding.Domains.Trees;
-using Ding.Security.Identity.Models;
 
 namespace Ding.Tests.Samples {
     /// <summary>
     /// 角色
     /// </summary>
-    public class Role : Role<Role,Guid,Guid?> {
+    public class Role : TreeEntityBase<Role, Guid, Guid?> {
         /// <summary>
         /// 初始化角色
         /// </summary>

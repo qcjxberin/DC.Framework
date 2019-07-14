@@ -2,7 +2,7 @@
 using Ding.Ui.Angular.Base;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
-using Ding.Ui.Zorro.Enums;
+using Ding.Ui.Enums;
 using Ding.Ui.Zorro.Icons.Builders;
 
 namespace Ding.Ui.Zorro.Icons.Renders {

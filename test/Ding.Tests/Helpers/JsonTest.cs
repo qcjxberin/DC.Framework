@@ -81,8 +81,8 @@ namespace Ding.Tests.Helpers {
             AggregateRootSample entity = new AggregateRootSample();
             entity.Code = "a";
             entity.IntSamples.Add( new IntAggregateRootSample{Name = "b"} );
-            var json = Ding.Utils.Helpers.Json.ToJson( entity );
-            entity = Ding.Utils.Helpers.Json.ToObject<AggregateRootSample>( json );
+            var json = Ding.Helpers.Json.ToJson( entity );
+            entity = Ding.Helpers.Json.ToObject<AggregateRootSample>( json );
             Assert.Equal( "a", entity.Code );
             Assert.Equal( "b", entity.IntSamples.First().Name );
         }

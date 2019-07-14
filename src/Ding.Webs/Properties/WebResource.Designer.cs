@@ -79,6 +79,15 @@ namespace Ding.Webs.Properties {
         }
         
         /// <summary>
+        ///   查找类似 查询参数不能为空 的本地化字符串。
+        /// </summary>
+        public static string QueryIsEmpty {
+            get {
+                return ResourceManager.GetString("QueryIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 修改参数不能为空 的本地化字符串。
         /// </summary>
         public static string UpdateRequestIsEmpty {

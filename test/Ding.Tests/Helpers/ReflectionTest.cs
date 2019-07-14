@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Ding.Domains;
-using Ding.Utils.Helpers;
+using Ding.Helpers;
 using Ding.Tests.Samples;
 using Xunit;
 
@@ -27,10 +27,10 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetDescription() {
-            Assert.Equal( "", Ding.Utils.Helpers.Reflection.GetDescription<EnumSample>( "X" ) );
-            Assert.Equal( "A", Ding.Utils.Helpers.Reflection.GetDescription<EnumSample>( "A" ) );
-            Assert.Equal( "B2", Ding.Utils.Helpers.Reflection.GetDescription<EnumSample>( "B" ) );
-            Assert.Equal( "IntValue", Ding.Utils.Helpers.Reflection.GetDescription<Sample>( "IntValue" ) );
+            Assert.Equal( "", Ding.Helpers.Reflection.GetDescription<EnumSample>( "X" ) );
+            Assert.Equal( "A", Ding.Helpers.Reflection.GetDescription<EnumSample>( "A" ) );
+            Assert.Equal( "B2", Ding.Helpers.Reflection.GetDescription<EnumSample>( "B" ) );
+            Assert.Equal( "IntValue", Ding.Helpers.Reflection.GetDescription<Sample>( "IntValue" ) );
         }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetDescription_Class() {
-            Assert.Equal( "测试样例", Ding.Utils.Helpers.Reflection.GetDescription<Sample>() );
-            Assert.Equal( "Sample2", Ding.Utils.Helpers.Reflection.GetDescription<Sample2>() );
+            Assert.Equal( "测试样例", Ding.Helpers.Reflection.GetDescription<Sample>() );
+            Assert.Equal( "Sample2", Ding.Helpers.Reflection.GetDescription<Sample2>() );
         }
 
         /// <summary>
@@ -47,8 +47,8 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetDisplayName() {
-            Assert.Equal( "", Ding.Utils.Helpers.Reflection.GetDisplayName<Sample>() );
-            Assert.Equal( "测试样例2", Ding.Utils.Helpers.Reflection.GetDisplayName<Sample2>() );
+            Assert.Equal( "", Ding.Helpers.Reflection.GetDisplayName<Sample>() );
+            Assert.Equal( "测试样例2", Ding.Helpers.Reflection.GetDisplayName<Sample2>() );
         }
 
         /// <summary>
@@ -56,9 +56,9 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetDescriptionOrDisplayName() {
-            Assert.Equal( "测试样例", Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription<Sample>() );
-            Assert.Equal( "测试样例2", Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription<Sample2>() );
-            Assert.Equal( "测试样例", Ding.Utils.Helpers.Reflection.GetDisplayNameOrDescription<Sample>() );
+            Assert.Equal( "测试样例", Ding.Helpers.Reflection.GetDisplayNameOrDescription<Sample>() );
+            Assert.Equal( "测试样例2", Ding.Helpers.Reflection.GetDisplayNameOrDescription<Sample2>() );
+            Assert.Equal( "测试样例", Ding.Helpers.Reflection.GetDisplayNameOrDescription<Sample>() );
         }
 
         /// <summary>
@@ -66,10 +66,10 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestIsBool() {
-            Assert.True( Ding.Utils.Helpers.Reflection.IsBool( _sample.BoolValue.GetType().GetTypeInfo() ), "BoolValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsBool( _sample.GetType().GetMember( "BoolValue" )[0] ), "BoolValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsBool( _sample.GetType().GetMember( "NullableBoolValue" )[0] ), "NullableBoolValue" );
-            Assert.False( Ding.Utils.Helpers.Reflection.IsBool( _sample.GetType().GetMember( "EnumValue" )[0] ), "EnumValue" );
+            Assert.True( Ding.Helpers.Reflection.IsBool( _sample.BoolValue.GetType().GetTypeInfo() ), "BoolValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsBool( _sample.GetType().GetMember( "BoolValue" )[0] ), "BoolValue" );
+            Assert.True( Ding.Helpers.Reflection.IsBool( _sample.GetType().GetMember( "NullableBoolValue" )[0] ), "NullableBoolValue" );
+            Assert.False( Ding.Helpers.Reflection.IsBool( _sample.GetType().GetMember( "EnumValue" )[0] ), "EnumValue" );
         }
 
         /// <summary>
@@ -77,11 +77,11 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestIsEnum() {
-            Assert.True( Ding.Utils.Helpers.Reflection.IsEnum( _sample.EnumValue.GetType().GetTypeInfo() ), "EnumValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "EnumValue" )[0] ), "EnumValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "NullableEnumValue" )[0] ), "NullableEnumValue" );
-            Assert.False( Ding.Utils.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "BoolValue" )[0] ), "BoolValue" );
-            Assert.False( Ding.Utils.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "NullableBoolValue" )[0] ), "NullableBoolValue" );
+            Assert.True( Ding.Helpers.Reflection.IsEnum( _sample.EnumValue.GetType().GetTypeInfo() ), "EnumValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "EnumValue" )[0] ), "EnumValue" );
+            Assert.True( Ding.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "NullableEnumValue" )[0] ), "NullableEnumValue" );
+            Assert.False( Ding.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "BoolValue" )[0] ), "BoolValue" );
+            Assert.False( Ding.Helpers.Reflection.IsEnum( _sample.GetType().GetMember( "NullableBoolValue" )[0] ), "NullableBoolValue" );
         }
 
         /// <summary>
@@ -89,10 +89,10 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestIsDate() {
-            Assert.True( Ding.Utils.Helpers.Reflection.IsDate( _sample.DateValue.GetType().GetTypeInfo() ), "DateValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsDate( _sample.GetType().GetMember( "DateValue" )[0] ), "DateValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsDate( _sample.GetType().GetMember( "NullableDateValue" )[0] ), "NullableDateValue" );
-            Assert.False( Ding.Utils.Helpers.Reflection.IsDate( _sample.GetType().GetMember( "EnumValue" )[0] ), "EnumValue" );
+            Assert.True( Ding.Helpers.Reflection.IsDate( _sample.DateValue.GetType().GetTypeInfo() ), "DateValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsDate( _sample.GetType().GetMember( "DateValue" )[0] ), "DateValue" );
+            Assert.True( Ding.Helpers.Reflection.IsDate( _sample.GetType().GetMember( "NullableDateValue" )[0] ), "NullableDateValue" );
+            Assert.False( Ding.Helpers.Reflection.IsDate( _sample.GetType().GetMember( "EnumValue" )[0] ), "EnumValue" );
         }
 
         /// <summary>
@@ -100,17 +100,17 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestIsInt() {
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.IntValue.GetType().GetTypeInfo() ), "IntValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "IntValue" )[0] ), "IntValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "NullableIntValue" )[0] ), "NullableIntValue" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.IntValue.GetType().GetTypeInfo() ), "IntValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "IntValue" )[0] ), "IntValue" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "NullableIntValue" )[0] ), "NullableIntValue" );
 
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.ShortValue.GetType().GetTypeInfo() ), "ShortValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "ShortValue" )[0] ), "ShortValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "NullableShortValue" )[0] ), "NullableShortValue" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.ShortValue.GetType().GetTypeInfo() ), "ShortValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "ShortValue" )[0] ), "ShortValue" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "NullableShortValue" )[0] ), "NullableShortValue" );
 
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.LongValue.GetType().GetTypeInfo() ), "LongValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "LongValue" )[0] ), "LongValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "NullableLongValue" )[0] ), "NullableLongValue" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.LongValue.GetType().GetTypeInfo() ), "LongValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "LongValue" )[0] ), "LongValue" );
+            Assert.True( Ding.Helpers.Reflection.IsInt( _sample.GetType().GetMember( "NullableLongValue" )[0] ), "NullableLongValue" );
         }
 
         /// <summary>
@@ -118,21 +118,21 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestIsNumber() {
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.DoubleValue.GetType().GetTypeInfo() ), "DoubleValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "DoubleValue" )[0] ), "DoubleValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableDoubleValue" )[0] ), "NullableDoubleValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.DoubleValue.GetType().GetTypeInfo() ), "DoubleValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "DoubleValue" )[0] ), "DoubleValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableDoubleValue" )[0] ), "NullableDoubleValue" );
 
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.DecimalValue.GetType().GetTypeInfo() ), "DecimalValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "DecimalValue" )[0] ), "DecimalValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableDecimalValue" )[0] ), "NullableDecimalValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.DecimalValue.GetType().GetTypeInfo() ), "DecimalValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "DecimalValue" )[0] ), "DecimalValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableDecimalValue" )[0] ), "NullableDecimalValue" );
 
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.FloatValue.GetType().GetTypeInfo() ), "FloatValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "FloatValue" )[0] ), "FloatValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableFloatValue" )[0] ), "NullableFloatValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.FloatValue.GetType().GetTypeInfo() ), "FloatValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "FloatValue" )[0] ), "FloatValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableFloatValue" )[0] ), "NullableFloatValue" );
 
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.IntValue.GetType().GetTypeInfo() ), "IntValue GetType" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "IntValue" )[0] ), "IntValue" );
-            Assert.True( Ding.Utils.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableIntValue" )[0] ), "NullableIntValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.IntValue.GetType().GetTypeInfo() ), "IntValue GetType" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "IntValue" )[0] ), "IntValue" );
+            Assert.True( Ding.Helpers.Reflection.IsNumber( _sample.GetType().GetMember( "NullableIntValue" )[0] ), "NullableIntValue" );
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestIsCollection() {
-            Assert.True( Ding.Utils.Helpers.Reflection.IsCollection( _sample.StringArray.GetType() ) );
+            Assert.True( Ding.Helpers.Reflection.IsCollection( _sample.StringArray.GetType() ) );
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestIsGenericCollection() {
-            Assert.True( Ding.Utils.Helpers.Reflection.IsGenericCollection( _sample.StringList.GetType() ) );
+            Assert.True( Ding.Helpers.Reflection.IsGenericCollection( _sample.StringList.GetType() ) );
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Ding.Tests.Helpers {
                 A = "1",
                 B = "2"
             };
-            var items = Ding.Utils.Helpers.Reflection.GetPublicProperties( sample );
+            var items = Ding.Helpers.Reflection.GetPublicProperties( sample );
             Assert.Equal( 2, items.Count );
             Assert.Equal( "A", items[0].Text );
             Assert.Equal( "1", items[0].Value );

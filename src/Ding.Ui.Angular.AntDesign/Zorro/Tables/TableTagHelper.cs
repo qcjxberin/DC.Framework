@@ -46,6 +46,10 @@ namespace Ding.Ui.Zorro.Tables {
         /// </summary>
         public string QueryParam { get; set; }
         /// <summary>
+        /// 是否多选，如果设置为false,则复选框变成单选框，默认为true
+        /// </summary>
+        public string Multiple { get; set; }
+        /// <summary>
         /// 排序字段,范例: creationTime desc
         /// </summary>
         public string Sort { get; set; }
@@ -93,6 +97,10 @@ namespace Ding.Ui.Zorro.Tables {
         /// [nzPageSizeOptions],分页长度配置,范例:[ 10, 20, 30 ]
         /// </summary>
         public string PageSizeOptions { get; set; }
+        /// <summary>
+        /// 选中的标识列表，用于还原选中的复选框，可以是单个Id，或Id数组，范例：'1' 或 ['1','2']
+        /// </summary>
+        public string CheckedKeys { get; set; }
         /// <summary>
         /// (nzPageSizeChange),分页大小变更事件
         /// </summary>

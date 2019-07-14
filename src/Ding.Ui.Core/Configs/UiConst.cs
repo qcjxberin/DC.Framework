@@ -1,10 +1,8 @@
-﻿namespace Ding.Ui.Configs
-{
+﻿namespace Ding.Ui.Configs {
     /// <summary>
     /// Ui常量
     /// </summary>
-    public static class UiConst
-    {
+    public static class UiConst {
         /// <summary>
         /// 名称
         /// </summary>
@@ -13,6 +11,7 @@
         /// 类名
         /// </summary>
         public const string Class = "class";
+        /// <summary>
         /// 类名
         /// </summary>
         public const string ClassName = "class-name";
@@ -93,6 +92,14 @@
         /// </summary>
         public const string OnClose = "on-close";
         /// <summary>
+        /// 搜索事件
+        /// </summary>
+        public const string OnSearch = "on-search";
+        /// <summary>
+        /// 滚动到底部事件
+        /// </summary>
+        public const string OnScrollToBottom = "on-scroll-to-bottom";
+        /// <summary>
         /// 图标
         /// </summary>
         public const string Icon = "icon";
@@ -140,6 +147,10 @@
         /// 多选
         /// </summary>
         public const string Multiple = "multiple";
+        /// <summary>
+        /// 最多选择数量
+        /// </summary>
+        public const string MaxMultipleCount = "max-multiple-count";
         /// <summary>
         /// 模型绑定
         /// </summary>
@@ -196,6 +207,10 @@
         /// 标签
         /// </summary>
         public const string Label = "label";
+        /// <summary>
+        /// 标签文本
+        /// </summary>
+        public const string LabelText = "label-text";
         /// <summary>
         /// 位置
         /// </summary>
@@ -609,6 +624,10 @@
         /// </summary>
         public const string Data = "data";
         /// <summary>
+        /// 上传前操作
+        /// </summary>
+        public const string BeforeUpload = "before-upload";
+        /// <summary>
         /// 上传前事件
         /// </summary>
         public const string OnBeforeUpload = "on-before-upload";
@@ -648,6 +667,10 @@
         /// 显示线
         /// </summary>
         public const string ShowLine = "show-line";
+        /// <summary>
+        /// 显示标签
+        /// </summary>
+        public const string ShowLabel = "show-label";
         /// <summary>
         /// 展开所有
         /// </summary>
@@ -689,13 +712,17 @@
         /// </summary>
         public const string TotalTemplate = "total-template";
         /// <summary>
-        /// 显示清除按钮
+        /// 显示清除
         /// </summary>
-        public const string ShowClearButton = "show-clear-button";
+        public const string ShowClear = "show-clear";
         /// <summary>
         /// 显示搜索
         /// </summary>
         public const string ShowSearch = "show-search";
+        /// <summary>
+        /// 显示箭头
+        /// </summary>
+        public const string ShowArrow = "show-arrow";
         /// <summary>
         /// 自动获取焦点
         /// </summary>
@@ -736,5 +763,149 @@
         /// 滚动宽度
         /// </summary>
         public const string ScrollWidth = "scroll-width";
+        /// <summary>
+        /// 服务端搜索
+        /// </summary>
+        public const string ServerSearch = "server-search";
+        /// <summary>
+        /// 滚动加载
+        /// </summary>
+        public const string ScrollLoad = "scroll-load";
+        /// <summary>
+        /// 精度
+        /// </summary>
+        public const string Precision = "precision";
+        /// <summary>
+        /// 步
+        /// </summary>
+        public const string Step = "step";
+        /// <summary>
+        /// 只能选择叶节点
+        /// </summary>
+        public const string CheckLeafOnly = "check-leaf-only";
+        /// <summary>
+        /// 列表类型
+        /// </summary>
+        public const string ListType = "list-type";
+        /// <summary>
+        /// 自定义请求
+        /// </summary>
+        public const string CustomRequest = "custom-request";
+        /// <summary>
+        /// 头部
+        /// </summary>
+        public const string Headers = "headers";
+        /// <summary>
+        /// 显示上传列表
+        /// </summary>
+        public const string ShowUploadList = "show-upload-list";
+        /// <summary>
+        /// 携带凭据
+        /// </summary>
+        public const string WithCredentials = "with-credentials";
+        /// <summary>
+        /// 预览
+        /// </summary>
+        public const string Preview = "preview";
+        /// <summary>
+        /// 移除
+        /// </summary>
+        public const string Remove = "remove";
+        /// <summary>
+        /// 是否虚线
+        /// </summary>
+        public const string Dashed = "dashed";
+        /// <summary>
+        /// 方向
+        /// </summary>
+        public const string Orientation = "orientation";
+        /// <summary>
+        /// 跨度
+        /// </summary>
+        public const string Span = "span";
+        /// <summary>
+        /// 布局
+        /// </summary>
+        public const string Layout = "layout";
+        /// <summary>
+        /// 显示冒号
+        /// </summary>
+        public const string ShowColon = "show-colon";
+        /// <summary>
+        /// 标签for属性
+        /// </summary>
+        public const string LabelFor = "label-for";
+        /// <summary>
+        /// 间隔
+        /// </summary>
+        public const string Gutter = "gutter";
+        /// <summary>
+        /// 标签跨度
+        /// </summary>
+        public const string LabelSpan = "label-span";
+        /// <summary>
+        /// 控件跨度
+        /// </summary>
+        public const string ControlSpan = "control-span";
+        /// <summary>
+        /// 是否浮动
+        /// </summary>
+        public const string IsFlex = "is-flex";
+        /// <summary>
+        /// 水平排列
+        /// </summary>
+        public const string Justify = "justify";
+        /// <summary>
+        /// 消息
+        /// </summary>
+        public const string Message = "message";
+        /// <summary>
+        /// 操作
+        /// </summary>
+        public const string Actions = "actions";
+        /// <summary>
+        /// 复选框变更事件
+        /// </summary>
+        public const string OnCheckBoxChange = "on-check-box-change";
+        /// <summary>
+        /// 允许选择
+        /// </summary>
+        public const string Selectable = "selectable";
+        /// <summary>
+        /// 内联折叠
+        /// </summary>
+        public const string InlineCollapsed = "inline-collapsed";
+        /// <summary>
+        /// 内联缩进
+        /// </summary>
+        public const string InlineIndent = "inline-indent";
+        /// <summary>
+        /// 勾选的键列表
+        /// </summary>
+        public const string CheckedKeys = "checked-keys";
+        /// <summary>
+        /// 展开的键列表
+        /// </summary>
+        public const string ExpandedKeys = "expanded-keys";
+        /// <summary>
+        /// 选中的键列表
+        /// </summary>
+        public const string SelectedKeys = "selected-keys";
+        /// <summary>
+        /// 是否按钮
+        /// </summary>
+        public const string IsButton = "is-button";
+        /// <summary>
+        /// 自动完成
+        /// </summary>
+        public const string AutoComplete = "autocomplete";
+        /// <summary>
+        /// 选择索引变更事件
+        /// </summary>
+        public const string OnSelectedIndexChange = "on-selected-index-change";
+        /// <summary>
+        /// 延迟加载
+        /// </summary>
+        public const string Lazy = "lazy";
     }
 }

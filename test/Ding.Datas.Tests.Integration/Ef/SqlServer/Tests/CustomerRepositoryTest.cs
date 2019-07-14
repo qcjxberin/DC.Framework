@@ -11,7 +11,6 @@ using Ding.Datas.Tests.Commons.Domains.Repositories;
 using Ding.Datas.Tests.Ef.SqlServer.UnitOfWorks;
 using Ding.Dependency;
 using Ding.Helpers;
-using Ding.Utils.Helpers;
 using Xunit;
 
 namespace Ding.Datas.Tests.Ef.SqlServer.Tests {

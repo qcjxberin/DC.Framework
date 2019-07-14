@@ -1,9 +1,9 @@
-﻿using Ding.Ui.Angular.Enums;
+﻿using System.Linq;
+using Ding.Ui.Angular.Enums;
 using Ding.Ui.Configs;
 using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Tables.Configs;
 using Ding.Ui.Zorro.TreeTables.Builders;
-using System.Linq;
 
 namespace Ding.Ui.Zorro.TreeTables.Renders {
     /// <summary>

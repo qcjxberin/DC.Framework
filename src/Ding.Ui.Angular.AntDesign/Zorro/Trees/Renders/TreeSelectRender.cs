@@ -3,6 +3,8 @@ using Ding.Ui.Angular;
 using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Extensions;
+using Ding.Ui.Zorro.Forms.Helpers;
 using Ding.Ui.Zorro.Trees.Builders;
 
 namespace Ding.Ui.Zorro.Trees.Renders {
@@ -13,13 +15,13 @@ namespace Ding.Ui.Zorro.Trees.Renders {
         /// <summary>
         /// 配置
         /// </summary>
-        private readonly IConfig _config;
+        private readonly Config _config;
 
         /// <summary>
         /// 初始化树形包装器渲染器
         /// </summary>
         /// <param name="config">配置</param>
-        public TreeSelectRender( IConfig config ) : base( config ) {
+        public TreeSelectRender( Config config ) : base( config ) {
             _config = config;
         }
 
@@ -37,7 +39,7 @@ namespace Ding.Ui.Zorro.Trees.Renders {
             ConfigModel( builder );
             ConfigRequired( builder );
             ConfigEvents( builder );
-            return builder;
+            return FormHelper.CreateFormItemBuilder( _config, builder );
         }
 
         /// <summary>
@@ -84,8 +86,7 @@ namespace Ding.Ui.Zorro.Trees.Renders {
         /// 配置模型绑定
         /// </summary>
         private void ConfigModel( TagBuilder builder ) {
-            builder.AddAttribute( "[(model)]", _config.GetValue( UiConst.Model ) );
-            builder.AddAttribute( "[(model)]", _config.GetValue( AngularConst.NgModel ) );
+            builder.NgModel( _config );
         }
 
         /// <summary>

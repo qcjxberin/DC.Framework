@@ -23,5 +23,13 @@ namespace Ding.Webs.Extensions {
         {
             return builder.UseMiddleware<RequestLogMiddleware>();
         }
+
+        /// <summary>
+        /// 注册真实Ip中间件
+        /// </summary>
+        /// <param name="builder">应用程序生成器</param>
+        public static IApplicationBuilder UseRealIp(this IApplicationBuilder builder) {
+            return builder.UseMiddleware<RealIpMiddleware>();
+        }
     }
 }

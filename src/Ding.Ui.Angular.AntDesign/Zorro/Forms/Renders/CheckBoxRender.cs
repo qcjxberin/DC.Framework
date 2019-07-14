@@ -4,7 +4,9 @@ using Ding.Ui.Angular.Base;
 using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Forms.Builders;
+using Ding.Ui.Zorro.Forms.Helpers;
 
 namespace Ding.Ui.Zorro.Forms.Renders {
     /// <summary>
@@ -29,9 +31,16 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         /// </summary>
         protected override TagBuilder GetTagBuilder() {
             ResolveExpression();
-            var builder = new CheckBoxBuilder();
+            var builder = CreateTagBuilder();
             Config( builder );
-            return builder;
+            return FormHelper.CreateFormItemBuilder( _config, builder );
+        }
+
+        /// <summary>
+        /// 创建标签生成器
+        /// </summary>
+        protected virtual TagBuilder CreateTagBuilder() {
+            return new CheckBoxBuilder();
         }
 
         /// <summary>
@@ -91,8 +100,7 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         /// 配置模型绑定
         /// </summary>
         private void ConfigModel( TagBuilder builder ) {
-            builder.AddAttribute( "[(ngModel)]", _config.GetValue( UiConst.Model ) );
-            builder.AddAttribute( "[(ngModel)]", _config.GetValue( AngularConst.NgModel ) );
+            builder.NgModel( _config, "ngModel" );
         }
 
         /// <summary>
