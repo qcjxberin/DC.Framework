@@ -64,12 +64,12 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.60.6" />
-    <PackageReference Include="HangFire.Core" Version="1.7.3" />
+    <PackageReference Include="HangFire.Core" Version="1.7.4" />
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="1.1.14" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="2.2.6" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
   </ItemGroup>

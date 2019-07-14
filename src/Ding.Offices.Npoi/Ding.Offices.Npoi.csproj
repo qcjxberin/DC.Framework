@@ -55,7 +55,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetCore.NPOI" Version="1.2.1" />
+    <PackageReference Include="DotNetCore.NPOI" Version="1.2.2-preview-56107813" />
   </ItemGroup>
 
   <ItemGroup>

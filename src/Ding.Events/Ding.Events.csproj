@@ -54,11 +54,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetCore.CAP.Kafka" Version="2.5.1-preview-75824665" />
-    <PackageReference Include="DotNetCore.CAP.MySql" Version="2.5.1-preview-75824665" />
-    <PackageReference Include="DotNetCore.CAP.PostgreSql" Version="2.5.1-preview-75824665" />
-    <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="2.5.1-preview-75824665" />
-    <PackageReference Include="DotNetCore.CAP.SqlServer" Version="2.5.1-preview-75824665" />
+    <PackageReference Include="DotNetCore.CAP.Kafka" Version="2.6.0-preview-79432176" />
+    <PackageReference Include="DotNetCore.CAP.MySql" Version="2.6.0-preview-79432176" />
+    <PackageReference Include="DotNetCore.CAP.PostgreSql" Version="2.6.0-preview-79432176" />
+    <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="2.6.0-preview-79432176" />
+    <PackageReference Include="DotNetCore.CAP.SqlServer" Version="2.6.0-preview-79432176" />
   </ItemGroup>
 
   <ItemGroup>
