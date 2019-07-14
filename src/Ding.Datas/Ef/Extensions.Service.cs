@@ -55,6 +55,8 @@ namespace Ding.Datas.Ef {
                 return DatabaseType.MySql;
             if( type == typeof( Ding.Datas.Ef.PgSql.UnitOfWork ) )
                 return DatabaseType.PgSql;
+            if( type == typeof( Ding.Datas.Ef.Oracle.UnitOfWork ) )
+                return DatabaseType.Oracle;
             return DatabaseType.SqlServer;
         }
 
@@ -87,6 +89,9 @@ namespace Ding.Datas.Ef {
                     return;
                 case DatabaseType.PgSql:
                     builder.UseNpgsql( connection );
+                    return;
+                case DatabaseType.Oracle:
+                    builder.UseOracle(connection);
                     return;
             }
         }

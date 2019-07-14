@@ -10,6 +10,7 @@ using Ding.Datas.Enums;
 using Ding.Datas.Sql;
 using Ding.Datas.Sql.Configs;
 using Ding.Datas.Sql.Matedatas;
+using Ding.Datas.Dapper.Oracle;
 
 namespace Ding.Datas.Dapper {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Ding.Datas.Dapper {
             services.TryAddTransient<ISqlQuery, SqlQuery>();
             services.TryAddScoped<ITableDatabase, DefaultTableDatabase>();
             AddSqlBuilder( services, config );
-            RegisterTypeHandlers();
+            RegisterTypeHandlers( config );
             return services;
         }
 
@@ -85,6 +86,9 @@ namespace Ding.Datas.Dapper {
                 case DatabaseType.MySql:
                     services.TryAddTransient<ISqlBuilder, MySqlBuilder>();
                     return;
+                case DatabaseType.Oracle:
+                    services.TryAddTransient<ISqlBuilder, OracleBuilder>();
+                    return;
                 default:
                     throw new NotImplementedException( $"Sql生成器未实现 {config.DatabaseType.Description()} 数据库" );
             }
@@ -93,8 +97,10 @@ namespace Ding.Datas.Dapper {
         /// <summary>
         /// 注册类型处理器
         /// </summary>
-        private static void RegisterTypeHandlers() {
+        private static void RegisterTypeHandlers( SqlOptions config ) {
             SqlMapper.AddTypeHandler( typeof( string ), new StringTypeHandler() );
+            if( config.DatabaseType == DatabaseType.Oracle )
+                SqlMapper.AddTypeHandler( new GuidTypeHandler() );
         }
     }
 }
