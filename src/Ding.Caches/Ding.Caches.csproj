@@ -58,6 +58,7 @@
     <PackageReference Include="EasyCaching.InMemory" Version="0.6.0" />
     <PackageReference Include="EasyCaching.Memcached" Version="0.6.0" />
     <PackageReference Include="EasyCaching.CSRedis" Version="0.6.0" />
+    <PackageReference Include="EasyCaching.Redis" Version="0.6.0" />
     <PackageReference Include="EasyCaching.Serialization.MessagePack" Version="0.6.0" />
     <PackageReference Include="EasyCaching.SQLite" Version="0.6.0" />
   </ItemGroup>
