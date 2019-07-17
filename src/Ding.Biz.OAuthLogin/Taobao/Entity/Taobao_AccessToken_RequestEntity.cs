@@ -10,21 +10,6 @@ namespace Ding.Biz.OAuthLogin
     public class Taobao_AccessToken_RequestEntity
     {
         /// <summary>
-        /// Taobao登录配置
-        /// </summary>
-        protected static readonly TaobaoConfig TaobaoConfig;
-
-        /// <summary>
-        /// 初始化一个<see cref="Taobao_AccessToken_RequestEntity"/>类型的实例
-        /// </summary>
-        static Taobao_AccessToken_RequestEntity()
-        {
-            var provider = Ioc.Create<ITaobaoConfigProvider>();
-            provider.CheckNotNull(nameof(provider));
-            TaobaoConfig = provider.GetConfigAsync().Result;
-        }
-
-        /// <summary>
         /// 等同于AppKey，创建应用时获得。
         /// </summary>
         [Required]
