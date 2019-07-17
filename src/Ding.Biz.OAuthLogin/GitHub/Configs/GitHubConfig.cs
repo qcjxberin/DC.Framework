@@ -3,7 +3,7 @@
     /// <summary>
     /// 配置
     /// </summary>
-    public class GitHubConfig : ConfigBase
+    public class GitHubConfig
     {
         /// <summary>
         /// 请根据步骤操作：authorize => access_token => user
@@ -29,23 +29,38 @@
         /// <summary>
         /// GET
         /// </summary>
-        public string API_Authorize = "https://github.com/login/oauth/authorize";
+        public static string API_Authorize { get; set; } = "https://github.com/login/oauth/authorize";
 
         /// <summary>
         /// POST
         /// </summary>
-        public string API_AccessToken = "https://github.com/login/oauth/access_token";
+        public static string API_AccessToken { get; set; } = "https://github.com/login/oauth/access_token";
 
         /// <summary>
         /// GET
         /// </summary>
-        public string API_User = "https://api.github.com/user";
+        public static string API_User { get; set; } = "https://api.github.com/user";
 
         #endregion
 
         /// <summary>
         /// github 申请的应用名称
         /// </summary>
-        public string ApplicationName { get; set; } =  "";
+        public static string ApplicationName { get; set; } =  "";
+
+        /// <summary>
+        /// APP ID
+        /// </summary>
+        public static string APPID { get; set; } = "";
+
+        /// <summary>
+        /// APP Key
+        /// </summary>
+        public static string APPKey { get; set; } = "";
+
+        /// <summary>
+        /// 回调
+        /// </summary>
+        public static string Redirect_Uri { get; set; } = "";
     }
 }

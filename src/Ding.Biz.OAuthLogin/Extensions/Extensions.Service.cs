@@ -19,17 +19,8 @@ namespace Ding.Biz.OAuthLogin.Extensions
         /// 注册登录操作
         /// </summary>
         /// <param name="services">服务集合</param>
-        /// <param name="setupAction">配置操作</param>
-        public static void AddLogin(this IServiceCollection services, Action<LoginOptions> setupAction)
+        public static void AddLogin(this IServiceCollection services)
         {
-            var options = new LoginOptions();
-            setupAction?.Invoke(options);
-            services.TryAddSingleton<IQQConfigProvider>(new QQConfigProvider(options.QqOptions));
-            services.TryAddSingleton<IWeChatConfigProvider>(new WeChatConfigProvider(options.WeChatOptions));
-            services.TryAddSingleton<IGitHubConfigProvider>(new GitHubConfigProvider(options.GitHubOptions));
-            services.TryAddSingleton<IMicroSoftConfigProvider>(new MicroSoftConfigProvider(options.MicroSoftConfig));
-            services.TryAddSingleton<ITaobaoConfigProvider>(new TaobaoConfigProvider(options.TaobaoConfig));
-            services.TryAddSingleton<IWeiboConfigProvider>(new WeiboConfigProvider(options.WeiboConfig));
             services.TryAddScoped<ILoginFactory, LoginFactory>();
         }
     }
