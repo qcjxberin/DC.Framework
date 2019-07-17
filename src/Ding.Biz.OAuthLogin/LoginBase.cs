@@ -20,7 +20,8 @@ namespace Ding.Biz.OAuthLogin
             WeChat,
             GitHub,
             TaoBao,
-            MicroSoft
+            MicroSoft,
+            MWeChat
         }
 
         /// <summary>
