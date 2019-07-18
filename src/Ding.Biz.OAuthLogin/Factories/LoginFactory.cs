@@ -6,6 +6,7 @@ using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Biz.OAuthLogin.Weibo.Configs;
 using Ding.Extension;
 using Ding.Helpers;
+using Ding.Log;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;

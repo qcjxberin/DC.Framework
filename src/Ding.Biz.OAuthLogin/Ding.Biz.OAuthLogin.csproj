@@ -62,6 +62,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Ding.Core\Ding.Core.csproj" />
     <ProjectReference Include="..\Ding.Logs\Ding.Logs.csproj" />
     <ProjectReference Include="..\Ding\Ding.csproj" />
   </ItemGroup>
