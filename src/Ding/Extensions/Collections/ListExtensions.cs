@@ -80,9 +80,9 @@ namespace Ding.Extension
         /// <param name="list">列表</param>
         /// <param name="joinChar">分割符</param>
         /// <returns></returns>
-        public static string Join<T>(this IList<T> list, char joinChar)
+        public static string JoinT<T>(this IList<T> list, char joinChar)
         {
-            return list.Join(joinChar.ToString());
+            return list.JoinT(joinChar.ToString());
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Ding.Extension
         /// <param name="list">列表</param>
         /// <param name="joinString">分割字符串</param>
         /// <returns></returns>
-        public static string Join<T>(this IList<T> list, string joinString)
+        public static string JoinT<T>(this IList<T> list, string joinString)
         {
             if (list == null || !list.Any())
             {
