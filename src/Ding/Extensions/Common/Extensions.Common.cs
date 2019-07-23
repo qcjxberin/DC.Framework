@@ -65,8 +65,8 @@ namespace Ding {
         /// <param name="list">集合</param>
         /// <param name="quotes">引号，默认不带引号，范例：单引号 "'"</param>
         /// <param name="separator">分隔符，默认使用逗号分隔</param>
-        public static string Join<T>( this IEnumerable<T> list, string quotes = "", string separator = "," ) {
-            return Ding.Helpers.String.Join( list, quotes, separator );
+        public static string JoinT<T>( this IEnumerable<T> list, string quotes = "", string separator = "," ) {
+            return Ding.Helpers.String.JoinT( list, quotes, separator );
         }
 
         #endregion

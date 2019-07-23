@@ -54,7 +54,7 @@ namespace Ding.Datas.Sql.Builders.Core {
             if( IsAggregation )
                 return Columns;
             var columns = Columns.Split( ',' ).Select( column => new SqlItem( column,GetTableAlias( register ) ) ).ToList();
-            return columns.Select( item => item.ToSql( dialect ) ).Join();
+            return columns.Select( item => item.ToSql( dialect ) ).JoinT();
         }
 
         /// <summary>

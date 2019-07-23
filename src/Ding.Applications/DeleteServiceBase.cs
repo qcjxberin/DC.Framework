@@ -111,7 +111,7 @@ namespace Ding.Applications {
         /// </summary>
         /// <param name="entities">实体集合</param>
         protected void AddLog( IList<TEntity> entities ) {
-            Log.BusinessId( entities.Select( t => t.Id ).Join() );
+            Log.BusinessId( entities.Select( t => t.Id ).JoinT() );
             foreach( var entity in entities )
                 Log.Content( entity.ToString() );
         }

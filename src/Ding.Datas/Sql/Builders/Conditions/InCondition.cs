@@ -33,7 +33,7 @@ namespace Ding.Datas.Sql.Builders.Conditions {
                 return null;
             var result = new StringBuilder();
             result.Append( $"{_name} In (" );
-            result.Append( _values.Join() );
+            result.Append( _values.JoinT() );
             result.Append( ")" );
             return result.ToString();
         }

@@ -33,7 +33,7 @@ namespace Ding.Datas.Queries {
         /// 生成排序字符串
         /// </summary>
         public string Generate() {
-            return _items.Select( t => t.Generate() ).ToList().Join();
+            return _items.Select( t => t.Generate() ).ToList().JoinT();
         }
     }
 }

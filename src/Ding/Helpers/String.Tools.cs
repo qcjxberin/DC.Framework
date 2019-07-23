@@ -18,7 +18,7 @@ namespace Ding.Helpers {
         /// <param name="list">集合</param>
         /// <param name="quotes">引号，默认不带引号，范例：单引号 "'"</param>
         /// <param name="separator">分隔符，默认使用逗号分隔</param>
-        public static string Join<T>( IEnumerable<T> list, string quotes = "", string separator = "," ) {
+        public static string JoinT<T>( IEnumerable<T> list, string quotes = "", string separator = "," ) {
             if( list == null )
                 return string.Empty;
             var result = new StringBuilder();

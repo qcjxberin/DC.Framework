@@ -25,7 +25,7 @@ namespace Ding.Logs.Extensions {
                 return parameter.Value.SafeString();
             if ( !( parameter.Value is IEnumerable<object> list ) )
                 return parameter.Value.SafeString();
-            return list.Select( t => t.SafeString() ).Join();
+            return list.Select( t => t.SafeString() ).JoinT();
         }
     }
 }

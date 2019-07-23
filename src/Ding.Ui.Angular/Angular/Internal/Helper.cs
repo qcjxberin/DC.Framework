@@ -93,7 +93,7 @@ namespace Ding.Ui.Angular.Internal {
         private static string GetFirstLowerCasePropertyName( string propertyName ) {
             if( string.IsNullOrWhiteSpace( propertyName ) )
                 return propertyName;
-            return propertyName.Split( '.' ).Select( Ding.Helpers.String.FirstLowerCase ).ToList().Join( "", "." );
+            return propertyName.Split( '.' ).Select( Ding.Helpers.String.FirstLowerCase ).ToList().JoinT( "", "." );
         }
 
         /// <summary>

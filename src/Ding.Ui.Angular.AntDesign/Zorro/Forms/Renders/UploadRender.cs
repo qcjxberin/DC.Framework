@@ -149,7 +149,7 @@ namespace Ding.Ui.Zorro.Forms.Renders {
             var result = new List<string>();
             result.AddRange( GetImageAccepts() );
             result.AddRange( GetDocumentAccepts() );
-            return result.Join();
+            return result.JoinT();
         }
 
         /// <summary>

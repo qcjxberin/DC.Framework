@@ -235,7 +235,7 @@ namespace Ding.Logs.Formats {
         /// 获取异常类型列表
         /// </summary>
         private string GetExceptionTypes( Exception exception ) {
-            return Warning.GetExceptions( exception ).Select( t => t.GetType() ).Join();
+            return Warning.GetExceptions( exception ).Select( t => t.GetType() ).JoinT();
         }
 
         /// <summary>
