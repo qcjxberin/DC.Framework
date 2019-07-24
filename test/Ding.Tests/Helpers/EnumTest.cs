@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Ding.Tests.Samples;
 using Ding.Tests.XUnitHelpers;
 using Xunit;
@@ -212,7 +213,7 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetNames() {
-            var names = Ding.Helpers.Enum.GetNames<EnumSample>();
+            var names = Ding.Helpers.Enum.GetNames<EnumSample>().OrderBy( t => t ).ToList();
             Assert.Equal( 5, names.Count );
             Assert.Equal( "A", names[0] );
             Assert.Equal( "D", names[3] );

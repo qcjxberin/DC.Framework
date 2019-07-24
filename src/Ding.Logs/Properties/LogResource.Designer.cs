@@ -79,7 +79,7 @@ namespace Ding.Logs.Properties {
         }
         
         /// <summary>
-        ///   查找类似 业务编号 的本地化字符串。
+        ///   查找类似 业务标识 的本地化字符串。
         /// </summary>
         public static string BusinessId {
             get {
@@ -295,7 +295,7 @@ namespace Ding.Logs.Properties {
         }
         
         /// <summary>
-        ///   查找类似 操作人编号 的本地化字符串。
+        ///   查找类似 操作人标识 的本地化字符串。
         /// </summary>
         public static string UserId {
             get {

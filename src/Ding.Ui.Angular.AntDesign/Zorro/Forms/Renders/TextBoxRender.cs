@@ -47,7 +47,7 @@ namespace Ding.Ui.Zorro.Forms.Renders {
             if( _config.Contains( UiConst.For ) == false )
                 return;
             var expression = _config.GetValue<ModelExpression>( UiConst.For );
-            TextBoxExpressionResolver.Init( expression, _config );
+            TextBoxExpressionResolver.Init( expression, _config, IsTableEdit() );
         }
 
         /// <summary>

@@ -1,12 +1,18 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Ding.Ui.TagHelpers;
+using Ding.Ui.Extensions;
 
 namespace Ding.Ui.Configs {
     /// <summary>
     /// 配置
     /// </summary>
     public class Config : IConfig {
+        /// <summary>
+        /// 上下文
+        /// </summary>
+        private Context _context;
+
         /// <summary>
         /// 类
         /// </summary>
@@ -32,6 +38,7 @@ namespace Ding.Ui.Configs {
         /// </summary>
         /// <param name="context">上下文</param>
         public void Load( Context context ) {
+            _context = context;
             if( context == null ) {
                 AllAttributes = new TagHelperAttributeList();
                 OutputAttributes = new TagHelperAttributeList();
@@ -39,18 +46,8 @@ namespace Ding.Ui.Configs {
             }
             AllAttributes = context.AllAttributes;
             OutputAttributes = context.OutputAttributes;
-            Content = context.Content;
             Context = new TagHelperContext( AllAttributes, context.TagHelperContext.Items, context.TagHelperContext.UniqueId );
             Output = context.Output;
-        }
-
-        /// <summary>
-        /// 加载
-        /// </summary>
-        /// <param name="context">上下文</param>
-        /// <param name="output">输出</param>
-        public void Load( TagHelperContext context, TagHelperOutput output ) {
-            Load( new Context( context, output, null ) );
         }
 
         /// <summary>
@@ -66,7 +63,7 @@ namespace Ding.Ui.Configs {
         /// <summary>
         /// 内容
         /// </summary>
-        public TagHelperContent Content { get; set; }
+        public TagHelperContent Content => _context?.Content;
 
         /// <summary>
         /// TagHelper上下文
@@ -176,6 +173,36 @@ namespace Ding.Ui.Configs {
         /// </summary>
         public virtual string GetValidateMessage() {
             return string.Empty;
+        }
+
+        /// <summary>
+        /// 从TagHelperContext Items里获取值
+        /// </summary>
+        /// <typeparam name="T">返回类型</typeparam>
+        /// <param name="key">键</param>
+        public T GetValueFromItems<T>( object key = null ) {
+            if( Context == null )
+                return default( T );
+            return Context.GetValueFromItems<T>( key );
+        }
+
+        /// <summary>
+        /// 设置TagHelperContext Items值
+        /// </summary>
+        /// <param name="value">值</param>
+        public void SetValueToItems<T>( T value ) {
+            Context?.SetValueToItems( value );
+        }
+
+        /// <summary>
+        /// 从TagHelperContext AllAttributes里获取值
+        /// </summary>
+        /// <typeparam name="T">返回类型</typeparam>
+        /// <param name="key">键</param>
+        public T GetValueFromAttributes<T>( string key ) {
+            if( Context == null )
+                return default( T );
+            return Context.GetValueFromAttributes<T>( key );
         }
     }
 }

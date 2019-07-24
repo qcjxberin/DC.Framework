@@ -1,18 +1,16 @@
-﻿using System;
+﻿using Autofac;
+using Ding.Datas.UnitOfWorks;
+using Ding.Dependency;
+using Ding.Tests.Samples;
+using NSubstitute;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Autofac;
-using NSubstitute;
-using Ding.Datas.UnitOfWorks;
-using Ding.Dependency;
-using Ding.Exceptions;
-using Ding.Tests.Samples;
-using Ding.Tests.XUnitHelpers;
 using Xunit;
-using Ding.Helpers;
 
-namespace Ding.Tests.Applications {
+namespace Ding.Tests.Applications
+{
     /// <summary>
     /// 增删改查服务测试
     /// </summary>
@@ -77,44 +75,6 @@ namespace Ding.Tests.Applications {
         }
 
         /// <summary>
-        /// 通过AOP进行DTO验证
-        /// </summary>
-        [Fact]
-        public void TestSave_ValidateDto() {
-            var container = Ioc.CreateContainer( new IocConfig() );
-            var service = container.Create<ICrudServiceSample>();
-
-            //有效
-            service.Save( _dto );
-
-            //无效
-            AssertHelper.Throws<Warning>( () => {
-                service.Save( new DtoSample() );
-            }, "名称不能为空" );
-        }
-
-        /// <summary>
-        /// 测试添加
-        /// </summary>
-        [Fact]
-        public void TestSave_Add() {
-            _service.Save( new DtoSample{Name = "a"} );
-            _repository.Received().Add( Arg.Is<EntitySample>( t => t.Name == "a" ) );
-            _repository.DidNotReceive().Update( Arg.Any<EntitySample>() );
-        }
-
-        /// <summary>
-        /// 测试修改
-        /// </summary>
-        [Fact]
-        public void TestSave_Update() {
-            _repository.Find( _id ).Returns( t => new EntitySample( _id ) );
-            _service.Save( new DtoSample { Id =_id.ToString(), Name = "b" } );
-            _repository.DidNotReceive().Add( Arg.Any<EntitySample>() );
-            _repository.Received().Update( Arg.Is<EntitySample>( t => t.Name == "b" ) );
-        }
-
-        /// <summary>
         /// 测试添加
         /// </summary>
         [Fact]
@@ -140,8 +100,8 @@ namespace Ding.Tests.Applications {
         [Fact]
         public void TestDelete() {
             var ids = new[] {_id, _id2};
-            _repository.FindByIds( ids.Join() ).Returns( GetEntities() );
-            _service.Delete( ids.Join() );
+            _repository.FindByIds( ids.JoinT() ).Returns( GetEntities() );
+            _service.Delete( ids.JoinT() );
             _repository.Received().Remove( Arg.Is<List<EntitySample>>( t => t.All( d => ids.Contains( d.Id ) ) ) );
         }
 
@@ -151,8 +111,8 @@ namespace Ding.Tests.Applications {
         [Fact]
         public void TestDelete_IdInvalid() {
             var ids = new[] { Guid.NewGuid(), Guid.NewGuid() };
-            _repository.FindByIds( ids.Join() ).Returns( new List<EntitySample>() );
-            _service.Delete( ids.Join() );
+            _repository.FindByIds( ids.JoinT() ).Returns( new List<EntitySample>() );
+            _service.Delete( ids.JoinT() );
             _repository.DidNotReceive().Remove( Arg.Any<List<EntitySample>>() );
         }
 
@@ -162,8 +122,8 @@ namespace Ding.Tests.Applications {
         [Fact]
         public async Task TestDeleteAsync() {
             var ids = new[] { _id, _id2 };
-            _repository.FindByIdsAsync( ids.Join() ).Returns( GetEntities() );
-            await _service.DeleteAsync( ids.Join() );
+            _repository.FindByIdsAsync( ids.JoinT() ).Returns( GetEntities() );
+            await _service.DeleteAsync( ids.JoinT() );
             await _repository.Received().RemoveAsync( Arg.Is<List<EntitySample>>( t => t.All( d => ids.Contains( d.Id ) ) ) );
         }
     }

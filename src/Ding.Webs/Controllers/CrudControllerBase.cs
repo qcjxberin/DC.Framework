@@ -1,8 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Ding.Applications;
 using Ding.Applications.Dtos;
 using Ding.Datas.Queries;
+using Ding.Webs.Models;
 using Ding.Webs.Properties;
 
 namespace Ding.Webs.Controllers {
@@ -32,7 +34,7 @@ namespace Ding.Webs.Controllers {
     public abstract class CrudControllerBase<TDto, TRequest, TQuery> : CrudControllerBase<TDto, TRequest, TRequest, TQuery>
         where TQuery : IQueryParameter
         where TRequest : IRequest, IKey, new()
-        where TDto : IResponse, new() {
+        where TDto : IDto, new() {
         /// <summary>
         /// 初始化Crud控制器
         /// </summary>
@@ -53,7 +55,7 @@ namespace Ding.Webs.Controllers {
         where TQuery : IQueryParameter
         where TCreateRequest : IRequest, new()
         where TUpdateRequest : IRequest,IKey, new()
-        where TDto : IResponse, new() {
+        where TDto : IDto, new() {
         /// <summary>
         /// Crud服务
         /// </summary>
@@ -153,6 +155,21 @@ namespace Ding.Webs.Controllers {
         [HttpPost( "delete" )]
         public virtual async Task<IActionResult> BatchDeleteAsync( [FromBody] string ids ) {
             await _service.DeleteAsync( ids );
+            return Success();
+        }
+
+        /// <summary>
+        /// 批量保存
+        /// </summary>
+        /// <param name="request">保存参数</param>
+        [HttpPost( "save" )]
+        public virtual async Task<IActionResult> SaveAsync( [FromBody] SaveModel request ) {
+            if( request == null )
+                return Fail( WebResource.RequestIsEmpty );
+            var creationList = Ding.Helpers.Json.ToObject<List<TDto>>( request.CreationList );
+            var updateList = Ding.Helpers.Json.ToObject<List<TDto>>( request.UpdateList );
+            var deleteList = Ding.Helpers.Json.ToObject<List<TDto>>( request.DeleteList );
+            await _service.SaveAsync( creationList, updateList, deleteList );
             return Success();
         }
     }

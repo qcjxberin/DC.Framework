@@ -14,7 +14,7 @@ namespace Ding.Tests.Helpers {
             int[] input = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             var list = Ding.Helpers.Random.Sort( input );
             Assert.Equal( 10, list.Distinct().Count() );
-            Assert.NotEqual( "1,2,3,4,5,6,7,8,9,10", list.Join() );
+            Assert.NotEqual( "1,2,3,4,5,6,7,8,9,10", list.JoinT() );
         }
     }
 }

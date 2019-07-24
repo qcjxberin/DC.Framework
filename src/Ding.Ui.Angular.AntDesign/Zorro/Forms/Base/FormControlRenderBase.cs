@@ -4,6 +4,7 @@ using Ding.Ui.Builders;
 using Ding.Ui.Configs;
 using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Forms.Helpers;
+using Ding.Ui.Zorro.Tables.Configs;
 
 namespace Ding.Ui.Zorro.Forms.Base {
     /// <summary>
@@ -28,6 +29,7 @@ namespace Ding.Ui.Zorro.Forms.Base {
         /// </summary>
         protected void Config( TagBuilder builder ) {
             ConfigId( builder );
+            ConfigTableEdit( builder );
             ConfigName( builder );
             ConfigDisabled( builder );
             ConfigPlaceholder( builder );
@@ -35,6 +37,32 @@ namespace Ding.Ui.Zorro.Forms.Base {
             ConfigModel( builder );
             ConfigRequired( builder );
             ConfigEvents( builder );
+        }
+
+        /// <summary>
+        /// 配置表格编辑
+        /// </summary>
+        private void ConfigTableEdit( TagBuilder builder ) {
+            var config = GetColumnShareConfig();
+            if( config == null )
+                return;
+            builder.AddAttribute( "[row]", config.RowId );
+        }
+
+        /// <summary>
+        /// 是否表格编辑
+        /// </summary>
+        protected bool IsTableEdit() {
+            if( GetColumnShareConfig() == null )
+                return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 获取列共享配置
+        /// </summary>
+        protected ColumnShareConfig GetColumnShareConfig() {
+            return _config.GetValueFromItems<ColumnShareConfig>();
         }
 
         /// <summary>

@@ -1,7 +1,6 @@
 ﻿using Ding.Ui.Angular.Base;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
-using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Tables.Builders;
 using Ding.Ui.Zorro.Tables.Configs;
 
@@ -62,7 +61,7 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// 获取共享配置
         /// </summary>
         private TableShareConfig GetShareConfig() {
-            return _config.Context?.GetValueFromItems<TableShareConfig>( TableConfig.TableShareKey );
+            return _config.GetValueFromItems<TableShareConfig>();
         }
 
         /// <summary>

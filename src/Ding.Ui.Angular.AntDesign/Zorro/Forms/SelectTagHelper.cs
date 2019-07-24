@@ -4,6 +4,7 @@ using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Forms.Base;
 using Ding.Ui.Zorro.Forms.Renders;
+using Ding.Ui.Enums;
 
 namespace Ding.Ui.Zorro.Forms {
     /// <summary>
@@ -40,9 +41,17 @@ namespace Ding.Ui.Zorro.Forms {
         /// </summary>
         public string DefaultOptionText { get; set; }
         /// <summary>
-        /// 启用多选
+        /// nzMode,选择模式
+        /// </summary>
+        public SelectMode Mode { get; set; }
+        /// <summary>
+        /// 启用多选,默认值:false
         /// </summary>
         public bool Multiple { get; set; }
+        /// <summary>
+        /// 启用标签,默认值:false
+        /// </summary>
+        public bool Tags { get; set; }
         /// <summary>
         /// [nzMaxMultipleCount],允许选中的最大数量
         /// </summary>

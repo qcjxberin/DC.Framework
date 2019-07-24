@@ -40,8 +40,8 @@ namespace Ding.Tests {
         /// </summary>
         [Fact]
         public void TestJoin() {
-            Assert.Equal( "1,2,3", new List<int> { 1, 2, 3 }.Join() );
-            Assert.Equal( "'1','2','3'", new List<int> { 1, 2, 3 }.Join( "'" ) );
+            Assert.Equal( "1,2,3", new List<int> { 1, 2, 3 }.JoinT() );
+            Assert.Equal( "'1','2','3'", new List<int> { 1, 2, 3 }.JoinT( "'" ) );
         }
     }
 }
