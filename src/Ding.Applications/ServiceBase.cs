@@ -31,6 +31,6 @@ namespace Ding.Applications {
         /// <summary>
         /// 用户会话
         /// </summary>
-        public virtual ISession Session => Ding.Security.Sessions.Session.Instance;
+        public virtual ISession Session => Sessions.Session.Instance;
     }
 }

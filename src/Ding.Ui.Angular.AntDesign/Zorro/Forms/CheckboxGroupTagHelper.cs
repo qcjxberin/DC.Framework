@@ -1,10 +1,10 @@
-﻿using Ding.Ui.Angular.Base;
+﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using Ding.Ui.Angular.Base;
 using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Forms.Configs;
 using Ding.Ui.Zorro.Forms.Renders;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Ding.Ui.Zorro.Forms {
     /// <summary>
@@ -16,6 +16,18 @@ namespace Ding.Ui.Zorro.Forms {
         /// 属性表达式
         /// </summary>
         public ModelExpression For { get; set; }
+        /// <summary>
+        /// 是否显示标签，默认值：false
+        /// </summary>
+        public bool ShowLabel { get; set; }
+        /// <summary>
+        /// 标签文本
+        /// </summary>
+        public string LabelText { get; set; }
+        /// <summary>
+        /// 标签的栅格占位格数
+        /// </summary>
+        public int LabelSpan { get; set; }
         /// <summary>
         /// [(ngModel)],模型绑定
         /// </summary>
@@ -56,6 +68,10 @@ namespace Ding.Ui.Zorro.Forms {
         /// 必填项错误消息
         /// </summary>
         public string RequiredMessage { get; set; }
+        /// <summary>
+        /// nzSpan,24栅格占位格数，可选值: 0 - 24, 为 0 时隐藏
+        /// </summary>
+        public int Span { get; set; }
         /// <summary>
         /// (ngModelChange),变更事件处理函数
         /// </summary>

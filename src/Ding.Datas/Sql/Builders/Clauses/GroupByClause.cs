@@ -56,7 +56,7 @@ namespace Ding.Datas.Sql.Builders.Clauses {
         /// <summary>
         /// 分组列表
         /// </summary>
-        public string GroupColumns => _group.Select( t => t.ToSql( _dialect ) ).Join();
+        public string GroupColumns => _group.Select( t => t.ToSql( _dialect ) ).JoinT();
 
         /// <summary>
         /// 复制Group By子句

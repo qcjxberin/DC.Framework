@@ -1,6 +1,6 @@
 ﻿using Ding.Datas.Dapper.PgSql;
 using Ding.Datas.Sql;
-using Ding.Utils.Helpers;
+using Ding.Helpers;
 using Xunit;
 using Xunit.Abstractions;
 

@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Ding.Ui.Angular.Base;
 using Ding.Ui.Angular.Enums;
+using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Configs;
 using Ding.Ui.Extensions;
 using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Tables.Configs;
 using Ding.Ui.Zorro.Tables.Renders;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Ding.Ui.Angular.Resolvers;
 
 namespace Ding.Ui.Zorro.Tables {
     /// <summary>
@@ -54,17 +54,15 @@ namespace Ding.Ui.Zorro.Tables {
         /// </summary>
         /// <param name="context">上下文</param>
         protected override IRender GetRender( Context context ) {
-            _config.Content = context.Content;
             return new HeadColumnRender( _config );
         }
 
         /// <summary>
         /// 处理前操作
         /// </summary>
-        /// <param name="context">TagHelper上下文</param>
-        /// <param name="output">TagHelper输出</param>
-        protected override void ProcessBefore( TagHelperContext context, TagHelperOutput output ) {
-            _config.Load( context, output );
+        /// <param name="context">上下文</param>
+        protected override void ProcessBefore( Context context ) {
+            _config.Load( context );
             ResolveExpression();
             SetShareConfig();
         }
@@ -83,7 +81,7 @@ namespace Ding.Ui.Zorro.Tables {
         /// 设置共享配置
         /// </summary>
         private void SetShareConfig() {
-            var shareConfig = _config.Context.GetValueFromItems<TableShareConfig>( TableConfig.TableShareKey );
+            var shareConfig = _config.GetValueFromItems<TableShareConfig>();
             if ( shareConfig == null )
                 return;
             SetAutoCreateSort( shareConfig );
@@ -93,7 +91,7 @@ namespace Ding.Ui.Zorro.Tables {
         /// 设置自动创建排序列
         /// </summary>
         private void SetAutoCreateSort( TableShareConfig config ) {
-            if( _config.Context.GetValueFromAttributes<string>( UiConst.Sort ).IsEmpty() )
+            if( _config.GetValueFromAttributes<string>( UiConst.Sort ).IsEmpty() )
                 return;
             config.AutoCreateSort = false;
             config.IsSort = true;

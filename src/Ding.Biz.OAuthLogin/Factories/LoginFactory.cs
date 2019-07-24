@@ -6,6 +6,7 @@ using Ding.Biz.OAuthLogin.WeChat.Configs;
 using Ding.Biz.OAuthLogin.Weibo.Configs;
 using Ding.Extension;
 using Ding.Helpers;
+using Ding.Log;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,45 +19,8 @@ namespace Ding.Biz.OAuthLogin
     /// </summary>
     public class LoginFactory : ILoginFactory
     {
-        /// <summary>
-        /// QQ登录配置提供器
-        /// </summary>
-        protected readonly IQQConfigProvider _qqConfigProvider;
 
-        /// <summary>
-        /// 微信登录配置提供器
-        /// </summary>
-        protected readonly IWeChatConfigProvider _wechatConfigProvider;
-
-        /// <summary>
-        /// GitHub登录配置提供器
-        /// </summary>
-        protected readonly IGitHubConfigProvider _githubConfigProvider;
-
-        /// <summary>
-        /// MicroSoft登录配置提供器
-        /// </summary>
-        protected readonly IMicroSoftConfigProvider _microsoftConfigProvider;
-
-        /// <summary>
-        /// Taobao登录配置提供器
-        /// </summary>
-        protected readonly ITaobaoConfigProvider _taobaoConfigProvider;
-
-        /// <summary>
-        /// Weibo登录配置提供器
-        /// </summary>
-        protected readonly IWeiboConfigProvider _weibaoConfigProvider;
-
-        public LoginFactory(IQQConfigProvider qqConfigProvider, IWeChatConfigProvider wechatConfigProvider, IGitHubConfigProvider githubConfigProvider, IMicroSoftConfigProvider microsoftConfigProvider, ITaobaoConfigProvider taobaoConfigProvider, IWeiboConfigProvider weibaoConfigProvider)
-        {
-            _qqConfigProvider = qqConfigProvider;
-            _wechatConfigProvider = wechatConfigProvider;
-            _githubConfigProvider = githubConfigProvider;
-            _microsoftConfigProvider = microsoftConfigProvider;
-            _taobaoConfigProvider = taobaoConfigProvider;
-            _weibaoConfigProvider = weibaoConfigProvider;
-        }
+        public LoginFactory() { }
 
         #region QQ登录
         /// <summary>
@@ -64,18 +28,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<string> AuthorizationHref(QQ_Authorization_RequestEntity entity)
+        public string AuthorizationHref(QQ_Authorization_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _qqConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             return string.Concat(new string[] {
-                config.API_Authorization_PC,
+                QQConfig.API_Authorization_PC,
                 "?client_id=",
                 entity.client_id,
                 "&response_type=",
@@ -91,7 +52,7 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<QQ_AccessToken_ResultEntity> AccessToken(QQ_AccessToken_RequestEntity entity)
+        public QQ_AccessToken_ResultEntity AccessToken(QQ_AccessToken_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
@@ -100,10 +61,7 @@ namespace Ding.Biz.OAuthLogin
 
             string pars = LoginBase.EntityToPars(entity);
 
-            var config = await _qqConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
-            string result = HttpTo.Get(config.API_AccessToken_PC + "?" + pars);
+            string result = HttpTo.Get(QQConfig.API_AccessToken_PC + "?" + pars);
 
             List<string> listPars = result.Split('&').ToList();
             var jo = new JObject();
@@ -123,18 +81,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<QQ_OpenId_ResultEntity> OpenId(QQ_OpenId_RequestEntity entity)
+        public QQ_OpenId_ResultEntity OpenId(QQ_OpenId_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _qqConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Get(config.API_OpenID_PC + "?" + pars);
+            string result = HttpTo.Get(QQConfig.API_OpenID_PC + "?" + pars);
             result = result.Replace("callback( ", "").Replace(" );", "");
 
             var outmo = LoginBase.ResultOutput<QQ_OpenId_ResultEntity>(result);
@@ -147,18 +102,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<QQ_OpenId_get_user_info_ResultEntity> OpenId_Get_User_Info(QQ_OpenAPI_RequestEntity entity)
+        public QQ_OpenId_get_user_info_ResultEntity OpenId_Get_User_Info(QQ_OpenAPI_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _qqConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Get(config.API_Get_User_Info + "?" + pars);
+            string result = HttpTo.Get(QQConfig.API_Get_User_Info + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<QQ_OpenId_get_user_info_ResultEntity>(result.Replace("\r\n", ""));
 
@@ -172,18 +124,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<string> AuthorizationHref(WeChat_Authorization_RequestEntity entity)
+        public string AuthorizationHref(WeChat_Authorization_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _wechatConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             return string.Concat(new string[] {
-                config.API_Authorization,
+                WeChatConfig.API_Authorization,
                 "?appid=",
                 entity.appid,
                 "&response_type=",
@@ -201,18 +150,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<WeChat_AccessToken_ResultEntity> AccessToken(WeChat_AccessToken_RequestEntity entity)
+        public WeChat_AccessToken_ResultEntity AccessToken(WeChat_AccessToken_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _wechatConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Get(config.API_AccessToken + "?" + pars);
+            string result = HttpTo.Get(WeChatConfig.API_AccessToken + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<WeChat_AccessToken_ResultEntity>(result);
 
@@ -224,18 +170,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<WeChat_OpenId_get_user_info_ResultEntity> Get_User_Info(WeChat_OpenAPI_RequestEntity entity)
+        public WeChat_OpenId_get_user_info_ResultEntity Get_User_Info(WeChat_OpenAPI_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _wechatConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Get(config.API_UserInfo + "?" + pars);
+            string result = HttpTo.Get(WeChatConfig.API_UserInfo + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<WeChat_OpenId_get_user_info_ResultEntity>(result.Replace("\r\n", ""));
 
@@ -249,18 +192,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<string> AuthorizeHref(GitHub_Authorize_RequestEntity entity)
+        public string AuthorizeHref(GitHub_Authorize_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _githubConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             return string.Concat(new string[] {
-                config.API_Authorize,
+                GitHubConfig.API_Authorize,
                 "?client_id=",
                 entity.client_id,
                 "&scope=",
@@ -276,19 +216,16 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<GitHub_AccessToken_ResultEntity> AccessToken(GitHub_AccessToken_RequestEntity entity)
+        public GitHub_AccessToken_ResultEntity AccessToken(GitHub_AccessToken_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _githubConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = HttpTo.HWRequest(config.API_AccessToken, "POST", pars);
+            var hwr = HttpTo.HWRequest(GitHubConfig.API_AccessToken, "POST", pars);
             hwr.Accept = "application/json";//application/xml
             string result = HttpTo.Url(hwr);
 
@@ -302,19 +239,16 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<GitHub_User_ResultEntity> User(GitHub_User_RequestEntity entity)
+        public GitHub_User_ResultEntity User(GitHub_User_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _githubConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = HttpTo.HWRequest(config.API_User + "?" + pars);
+            var hwr = HttpTo.HWRequest(GitHubConfig.API_User + "?" + pars);
             hwr.UserAgent = entity.ApplicationName;
             string result = HttpTo.Url(hwr);
 
@@ -330,18 +264,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<string> AuthorizeHref(MicroSoft_Authorize_RequestEntity entity)
+        public string AuthorizeHref(MicroSoft_Authorize_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _microsoftConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             return string.Concat(new string[] {
-                config.API_Authorize,
+                MicroSoftConfig.API_Authorize,
                 "?client_id=",
                 entity.client_id,
                 "&scope=",
@@ -357,19 +288,16 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<MicroSoft_AccessToken_ResultEntity> AccessToken(MicroSoft_AccessToken_RequestEntity entity)
+        public MicroSoft_AccessToken_ResultEntity AccessToken(MicroSoft_AccessToken_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _microsoftConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
 
-            string result = HttpTo.Post(config.API_AccessToken, pars);
+            string result = HttpTo.Post(MicroSoftConfig.API_AccessToken, pars);
 
             var outmo = LoginBase.ResultOutput<MicroSoft_AccessToken_ResultEntity>(result);
 
@@ -381,19 +309,16 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<MicroSoft_User_ResultEntity> User(MicroSoft_User_RequestEntity entity)
+        public MicroSoft_User_ResultEntity User(MicroSoft_User_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _microsoftConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
 
-            var hwr = HttpTo.HWRequest(config.API_User + "?" + pars);
+            var hwr = HttpTo.HWRequest(MicroSoftConfig.API_User + "?" + pars);
             hwr.ContentType = null;
             string result = HttpTo.Url(hwr);
             var outmo = LoginBase.ResultOutput<MicroSoft_User_ResultEntity>(result, new List<string> { "emails" });
@@ -408,18 +333,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<string> AuthorizeHref(Taobao_Authorize_RequestEntity entity)
+        public string AuthorizeHref(Taobao_Authorize_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _taobaoConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             return string.Concat(new string[] {
-                config.API_Authorize,
+                TaobaoConfig.API_Authorize,
                 "?response_type=",
                 entity.response_type,
                 "&client_id=",
@@ -437,18 +359,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<Taobao_AccessToken_ResultEntity> AccessToken(Taobao_AccessToken_RequestEntity entity)
+        public Taobao_AccessToken_ResultEntity AccessToken(Taobao_AccessToken_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _taobaoConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Post(config.API_AccessToken, pars);
+            string result = HttpTo.Post(TaobaoConfig.API_AccessToken, pars);
             var outmo = LoginBase.ResultOutput<Taobao_AccessToken_ResultEntity>(result);
 
             return outmo;
@@ -461,18 +380,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<string> AuthorizeHref(Weibo_Authorize_RequestEntity entity)
+        public string AuthorizeHref(Weibo_Authorize_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _weibaoConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             return string.Concat(new string[] {
-                config.API_Authorize,
+                WeiboConfig.API_Authorize,
                 "?client_id=",
                 entity.client_id,
                 "&response_type=",
@@ -488,18 +404,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<Weibo_AccessToken_ResultEntity> AccessToken(Weibo_AccessToken_RequestEntity entity)
+        public Weibo_AccessToken_ResultEntity AccessToken(Weibo_AccessToken_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _weibaoConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Post(config.API_AccessToken, pars);
+            string result = HttpTo.Post(WeiboConfig.API_AccessToken, pars);
 
             var outmo = LoginBase.ResultOutput<Weibo_AccessToken_ResultEntity>(result);
 
@@ -511,18 +424,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<Weibo_GetTokenInfo_ResultEntity> GetTokenInfo(Weibo_GetTokenInfo_RequestEntity entity)
+        public Weibo_GetTokenInfo_ResultEntity GetTokenInfo(Weibo_GetTokenInfo_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _weibaoConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Post(config.API_GetTokenInfo, pars);
+            string result = HttpTo.Post(WeiboConfig.API_GetTokenInfo, pars);
 
             var outmo = LoginBase.ResultOutput<Weibo_GetTokenInfo_ResultEntity>(result);
 
@@ -534,18 +444,15 @@ namespace Ding.Biz.OAuthLogin
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<Weibo_UserShow_ResultEntity> UserShow(Weibo_UserShow_RequestEntity entity)
+        public Weibo_UserShow_ResultEntity UserShow(Weibo_UserShow_RequestEntity entity)
         {
             if (!LoginBase.IsValid(entity))
             {
                 return null;
             }
 
-            var config = await _weibaoConfigProvider.GetConfigAsync();
-            config.CheckNotNull(nameof(config));
-
             string pars = LoginBase.EntityToPars(entity);
-            string result = HttpTo.Get(config.API_UserShow + "?" + pars);
+            string result = HttpTo.Get(WeiboConfig.API_UserShow + "?" + pars);
 
             var outmo = LoginBase.ResultOutput<Weibo_UserShow_ResultEntity>(result, new List<string> { "status" });
 

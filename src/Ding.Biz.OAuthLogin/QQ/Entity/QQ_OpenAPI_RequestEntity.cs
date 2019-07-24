@@ -23,21 +23,6 @@ namespace Ding.Biz.OAuthLogin
     public class QQ_OpenAPI_RequestEntity
     {
         /// <summary>
-        /// QQ登录配置
-        /// </summary>
-        protected static readonly QQConfig QQConfig;
-
-        /// <summary>
-        /// 初始化一个<see cref="QQ_Authorization_RequestEntity"/>类型的实例
-        /// </summary>
-        static QQ_OpenAPI_RequestEntity()
-        {
-            var provider = Ioc.Create<IQQConfigProvider>();
-            provider.CheckNotNull(nameof(provider));
-            QQConfig = provider.GetConfigAsync().Result;
-        }
-
-        /// <summary>
         /// 可通过使用Authorization_Code获取Access_Token 或来获取。 
         /// access_token有3个月有效期。
         /// </summary>

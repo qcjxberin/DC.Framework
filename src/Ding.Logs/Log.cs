@@ -139,7 +139,7 @@ namespace Ding.Logs {
                 return Ioc.Create<ISession>();
             }
             catch {
-                return Ding.Security.Sessions.Session.Instance;
+                return Sessions.Session.Instance;
             }
         }
     }

@@ -14,7 +14,7 @@ namespace Ding.Datas.Tests.Commons.Datas.Pos {
             if( po == null )
                 return null;
             var entity = po.MapTo( new Product( po.Id ) );
-            entity.ProductType = Ding.Utils.Helpers.Json.ToObject<ProductType>( po.Extends );
+            entity.ProductType = Ding.Helpers.Json.ToObject<ProductType>( po.Extends );
             return entity;
         }
 
@@ -26,7 +26,7 @@ namespace Ding.Datas.Tests.Commons.Datas.Pos {
             if( entity == null )
                 return null;
             var po = entity.MapTo<ProductPo>();
-            po.Extends = Ding.Utils.Helpers.Json.ToJson( entity.ProductType );
+            po.Extends = Ding.Helpers.Json.ToJson( entity.ProductType );
             return po;
         }
     }

@@ -2,6 +2,9 @@
 using Ding.Ui.Angular.Base;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Extensions;
+using Ding.Ui.Zorro.Forms.Helpers;
+using Ding.Ui.Zorro.Tables.Configs;
 
 namespace Ding.Ui.Zorro.Forms.Base {
     /// <summary>
@@ -11,13 +14,13 @@ namespace Ding.Ui.Zorro.Forms.Base {
         /// <summary>
         /// 配置
         /// </summary>
-        private readonly IConfig _config;
+        private readonly Config _config;
 
         /// <summary>
         /// 初始化下拉列表渲染器
         /// </summary>
         /// <param name="config">下拉列表配置</param>
-        protected FormControlRenderBase( IConfig config ) : base( config ) {
+        protected FormControlRenderBase( Config config ) : base( config ) {
             _config = config;
         }
 
@@ -26,6 +29,7 @@ namespace Ding.Ui.Zorro.Forms.Base {
         /// </summary>
         protected void Config( TagBuilder builder ) {
             ConfigId( builder );
+            ConfigTableEdit( builder );
             ConfigName( builder );
             ConfigDisabled( builder );
             ConfigPlaceholder( builder );
@@ -33,6 +37,32 @@ namespace Ding.Ui.Zorro.Forms.Base {
             ConfigModel( builder );
             ConfigRequired( builder );
             ConfigEvents( builder );
+        }
+
+        /// <summary>
+        /// 配置表格编辑
+        /// </summary>
+        private void ConfigTableEdit( TagBuilder builder ) {
+            var config = GetColumnShareConfig();
+            if( config == null )
+                return;
+            builder.AddAttribute( "[row]", config.RowId );
+        }
+
+        /// <summary>
+        /// 是否表格编辑
+        /// </summary>
+        protected bool IsTableEdit() {
+            if( GetColumnShareConfig() == null )
+                return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 获取列共享配置
+        /// </summary>
+        protected ColumnShareConfig GetColumnShareConfig() {
+            return _config.GetValueFromItems<ColumnShareConfig>();
         }
 
         /// <summary>
@@ -69,8 +99,7 @@ namespace Ding.Ui.Zorro.Forms.Base {
         /// 配置模型绑定
         /// </summary>
         private void ConfigModel( TagBuilder builder ) {
-            builder.AddAttribute( "[(model)]", _config.GetValue( UiConst.Model ) );
-            builder.AddAttribute( "[(model)]", _config.GetValue( AngularConst.NgModel ) );
+            builder.NgModel( _config );
         }
 
         /// <summary>
@@ -90,6 +119,13 @@ namespace Ding.Ui.Zorro.Forms.Base {
             builder.AddAttribute( "(onBlur)", _config.GetValue( UiConst.OnBlur ) );
             builder.AddAttribute( "(onKeyup)", _config.GetValue( UiConst.OnKeyup ) );
             builder.AddAttribute( "(onKeydown)", _config.GetValue( UiConst.OnKeydown ) );
+        }
+
+        /// <summary>
+        /// 获取表单项生成器
+        /// </summary>
+        protected virtual TagBuilder GetFormItemBuilder( TagBuilder controlBuilder ) {
+            return FormHelper.CreateFormItemBuilder( _config, controlBuilder );
         }
     }
 }

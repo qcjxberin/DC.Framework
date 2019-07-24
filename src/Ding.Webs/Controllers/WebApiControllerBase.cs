@@ -64,7 +64,7 @@ namespace Ding.Webs.Controllers
         /// <summary>
         /// 会话
         /// </summary>
-        public virtual Ding.Sessions.ISession Session => Security.Sessions.Session.Instance;
+        public virtual Ding.Sessions.ISession Session => Sessions.Session.Instance;
 
         /// <summary>
         /// 返回成功消息

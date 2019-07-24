@@ -19,7 +19,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "123abc456", @"\d+([a-z]+\d+)", "$1", "abc456" )]
         [InlineData( "123abc456", @"\d+([a-z]\d+)", "$1", "" )]
         public void TestGetValue( string input, string pattern,string resultPattern, string result ) {
-            Assert.Equal( result, Ding.Utils.Helpers.Regexs.GetValue( input, pattern, resultPattern ) );
+            Assert.Equal( result, Ding.Helpers.Regex.GetValue( input, pattern, resultPattern ) );
         }
 
         /// <summary>
@@ -27,13 +27,13 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestGetValues() {
-            Assert.Empty(Ding.Utils.Helpers.Regexs.GetValues( "", "",null ) );
-            Assert.Empty(Ding.Utils.Helpers.Regexs.GetValues( "123abc456", @"\d{5}",new []{"$1"} ) );
-            Assert.Equal( "123", Ding.Utils.Helpers.Regexs.GetValues( "123abc456", @"(\d*)", new[] { "$1" } )["$1"] );
-            Assert.Equal( "abc", Ding.Utils.Helpers.Regexs.GetValues( "123abc456", @"\d*([a-z]*)\d*", new[] { "$1" } )["$1"] );
-            Assert.Equal( "123", Ding.Utils.Helpers.Regexs.GetValues( "123abc456", @"(\d*)([a-z]*)(\d*)", new[] { "$1", "$2", "$3" } )["$1"] );
-            Assert.Equal( "abc", Ding.Utils.Helpers.Regexs.GetValues( "123abc456", @"(\d*)([a-z]*)(\d*)", new[] { "$1", "$2", "$3" } )["$2"] );
-            Assert.Equal( "456", Ding.Utils.Helpers.Regexs.GetValues( "123abc456", @"(\d*)([a-z]*)(\d*)", new[] { "$1", "$2", "$3" } )["$3"] );
+            Assert.Empty(Ding.Helpers.Regex.GetValues( "", "",null ) );
+            Assert.Empty(Ding.Helpers.Regex.GetValues( "123abc456", @"\d{5}",new []{"$1"} ) );
+            Assert.Equal( "123", Ding.Helpers.Regex.GetValues( "123abc456", @"(\d*)", new[] { "$1" } )["$1"] );
+            Assert.Equal( "abc", Ding.Helpers.Regex.GetValues( "123abc456", @"\d*([a-z]*)\d*", new[] { "$1" } )["$1"] );
+            Assert.Equal( "123", Ding.Helpers.Regex.GetValues( "123abc456", @"(\d*)([a-z]*)(\d*)", new[] { "$1", "$2", "$3" } )["$1"] );
+            Assert.Equal( "abc", Ding.Helpers.Regex.GetValues( "123abc456", @"(\d*)([a-z]*)(\d*)", new[] { "$1", "$2", "$3" } )["$2"] );
+            Assert.Equal( "456", Ding.Helpers.Regex.GetValues( "123abc456", @"(\d*)([a-z]*)(\d*)", new[] { "$1", "$2", "$3" } )["$3"] );
         }
     }
 }

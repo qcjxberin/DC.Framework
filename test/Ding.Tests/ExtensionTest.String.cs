@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using Ding.Extension;
 
 namespace Ding.Tests {
     /// <summary>

@@ -239,7 +239,7 @@ namespace Ding.Ui.Controllers {
         protected virtual async Task<PagerList<PrimeTreeNode<TDto>>> Search( TQuery query ) {
             var data = await _service.QueryAsync( query );
             var ids = data.GetMissingParentIds();
-            var list = await _service.GetByIdsAsync( ids.Join() );
+            var list = await _service.GetByIdsAsync( ids.JoinT() );
             data.AddRange( list );
             return ToPagerList( data, query, true );
         }

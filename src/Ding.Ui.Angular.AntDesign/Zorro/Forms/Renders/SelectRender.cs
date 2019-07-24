@@ -4,8 +4,10 @@ using Ding.Ui.Angular.Forms.Configs;
 using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Enums;
 using Ding.Ui.Zorro.Forms.Base;
 using Ding.Ui.Zorro.Forms.Builders;
+using Ding.Ui.Zorro.Forms.Helpers;
 using Ding.Ui.Core.Helpers;
 
 namespace Ding.Ui.Zorro.Forms.Renders {
@@ -32,9 +34,9 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         protected override TagBuilder GetTagBuilder() {
             ResolveExpression();
             var builder = new SelectWrapperBuilder();
-            base.Config( builder );
+            Config( builder );
             ConfigSelect( builder );
-            return builder;
+            return GetFormItemBuilder( builder );
         }
 
         /// <summary>
@@ -55,11 +57,13 @@ namespace Ding.Ui.Zorro.Forms.Renders {
             ConfigUrl( builder );
             ConfigDataSource( builder );
             ConfigDefaultOption( builder );
-            ConfigMultiple( builder );
-            ConfigShowClearButton( builder );
-            ConfigShowSearch( builder );
+            ConfigMode( builder );
+            ConfigShowClear( builder );
+            ConfigSearch( builder );
+            ConfigShowArrow( builder );
             ConfigTemplate( builder );
             ConfigStandalone( builder );
+            ConfigEvents( builder );
         }
 
         /// <summary>
@@ -104,24 +108,41 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         }
 
         /// <summary>
-        /// 配置多选
+        /// 配置多选模式
         /// </summary>
-        private void ConfigMultiple( SelectWrapperBuilder builder ) {
+        private void ConfigMode( SelectWrapperBuilder builder ) {
+            var mode = _config.GetValue<SelectMode?>( UiConst.Mode );
+            if( mode == SelectMode.Multiple )
+                _config.SetAttribute( UiConst.Multiple,true );
+            if( mode == SelectMode.Tags )
+                _config.SetAttribute( UiConst.Tags, true );
             builder.AddAttribute( "[multiple]", _config.GetBoolValue( UiConst.Multiple ) );
+            builder.AddAttribute( "[tags]", _config.GetBoolValue( UiConst.Tags ) );
+            builder.AddAttribute( "[maxMultipleCount]", _config.GetValue( UiConst.MaxMultipleCount ) );
         }
 
         /// <summary>
         /// 配置显示清除按钮
         /// </summary>
-        private void ConfigShowClearButton( SelectWrapperBuilder builder ) {
-            builder.AddAttribute( "[allowClear]", _config.GetBoolValue( UiConst.ShowClearButton ) );
+        private void ConfigShowClear( SelectWrapperBuilder builder ) {
+            builder.AddAttribute( "[allowClear]", _config.GetBoolValue( UiConst.ShowClear ) );
         }
 
         /// <summary>
-        /// 配置显示搜索框
+        /// 配置搜索
         /// </summary>
-        private void ConfigShowSearch( SelectWrapperBuilder builder ) {
+        private void ConfigSearch( SelectWrapperBuilder builder ) {
+            builder.AddAttribute( "order", _config.GetValue( UiConst.Sort ) );
             builder.AddAttribute( "[showSearch]", _config.GetBoolValue( UiConst.ShowSearch ) );
+            builder.AddAttribute( "[isServerSearch]", _config.GetBoolValue( UiConst.ServerSearch ) );
+            builder.AddAttribute( "[isScrollLoad]", _config.GetBoolValue( UiConst.ScrollLoad ) );
+        }
+
+        /// <summary>
+        /// 配置显示箭头
+        /// </summary>
+        private void ConfigShowArrow( SelectWrapperBuilder builder ) {
+            builder.AddAttribute( "[showArrow]", _config.GetBoolValue( UiConst.ShowArrow ) );
         }
 
         /// <summary>
@@ -136,6 +157,14 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         /// </summary>
         private void ConfigStandalone( TagBuilder builder ) {
             builder.AddAttribute( "[standalone]", _config.GetBoolValue( UiConst.Standalone ) );
+        }
+
+        /// <summary>
+        /// 配置事件
+        /// </summary>
+        private void ConfigEvents( TagBuilder builder ) {
+            builder.AddAttribute( "(onSearch)", _config.GetValue( UiConst.OnSearch ) );
+            builder.AddAttribute( "(onScrollToBottom)", _config.GetValue( UiConst.OnScrollToBottom ) );
         }
     }
 }

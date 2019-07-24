@@ -1,11 +1,11 @@
 ﻿using System;
-using Ding.Security.Identity.Models;
+using Ding.Domains;
 
 namespace Ding.Tests.Samples {
     /// <summary>
     /// 用户
     /// </summary>
-    public class User : User<User,Guid> {
+    public class User : AggregateRoot<User,Guid> {
         /// <summary>
         /// 初始化用户
         /// </summary>

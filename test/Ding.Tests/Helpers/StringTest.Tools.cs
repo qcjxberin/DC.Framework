@@ -12,21 +12,21 @@ namespace Ding.Tests.Helpers {
         /// </summary>
         [Fact]
         public void TestJoin() {
-            Assert.Equal( "1,2,3", Ding.Utils.Helpers.String.Join( new List<int> { 1, 2, 3 } ) );
-            Assert.Equal( "'1','2','3'", Ding.Utils.Helpers.String.Join( new List<int> { 1, 2, 3 }, "'" ) );
-            Assert.Equal( "123", Ding.Utils.Helpers.String.Join( new List<int> { 1, 2, 3 }, "", "" ) );
-            Assert.Equal( "\"1\",\"2\",\"3\"", Ding.Utils.Helpers.String.Join( new List<int> { 1, 2, 3 }, "\"" ) );
-            Assert.Equal( "1 2 3", Ding.Utils.Helpers.String.Join( new List<int> { 1, 2, 3 }, "", " " ) );
-            Assert.Equal( "1;2;3", Ding.Utils.Helpers.String.Join( new List<int> { 1, 2, 3 }, "", ";" ) );
-            Assert.Equal( "1,2,3", Ding.Utils.Helpers.String.Join( new List<string> { "1", "2", "3" } ) );
-            Assert.Equal( "'1','2','3'", Ding.Utils.Helpers.String.Join( new List<string> { "1", "2", "3" }, "'" ) );
+            Assert.Equal( "1,2,3", Ding.Helpers.String.JoinT( new List<int> { 1, 2, 3 } ) );
+            Assert.Equal( "'1','2','3'", Ding.Helpers.String.JoinT( new List<int> { 1, 2, 3 }, "'" ) );
+            Assert.Equal( "123", Ding.Helpers.String.JoinT( new List<int> { 1, 2, 3 }, "", "" ) );
+            Assert.Equal( "\"1\",\"2\",\"3\"", Ding.Helpers.String.JoinT( new List<int> { 1, 2, 3 }, "\"" ) );
+            Assert.Equal( "1 2 3", Ding.Helpers.String.JoinT( new List<int> { 1, 2, 3 }, "", " " ) );
+            Assert.Equal( "1;2;3", Ding.Helpers.String.JoinT( new List<int> { 1, 2, 3 }, "", ";" ) );
+            Assert.Equal( "1,2,3", Ding.Helpers.String.JoinT( new List<string> { "1", "2", "3" } ) );
+            Assert.Equal( "'1','2','3'", Ding.Helpers.String.JoinT( new List<string> { "1", "2", "3" }, "'" ) );
 
             var list = new List<Guid> {
                 new Guid( "83B0233C-A24F-49FD-8083-1337209EBC9A" ),
                 new Guid( "EAB523C6-2FE7-47BE-89D5-C6D440C3033A" )
             };
-            Assert.Equal( "83B0233C-A24F-49FD-8083-1337209EBC9A,EAB523C6-2FE7-47BE-89D5-C6D440C3033A".ToLower(), Ding.Utils.Helpers.String.Join( list ) );
-            Assert.Equal( "'83B0233C-A24F-49FD-8083-1337209EBC9A','EAB523C6-2FE7-47BE-89D5-C6D440C3033A'".ToLower(), Ding.Utils.Helpers.String.Join( list, "'" ) );
+            Assert.Equal( "83B0233C-A24F-49FD-8083-1337209EBC9A,EAB523C6-2FE7-47BE-89D5-C6D440C3033A".ToLower(), Ding.Helpers.String.JoinT( list ) );
+            Assert.Equal( "'83B0233C-A24F-49FD-8083-1337209EBC9A','EAB523C6-2FE7-47BE-89D5-C6D440C3033A'".ToLower(), Ding.Helpers.String.JoinT( list, "'" ) );
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "饕餮", "tt" )]
         [InlineData( "爩", "y" )]
         public void TestPinYin( string input, string result ) {
-            Assert.Equal( result, Ding.Utils.Helpers.String.PinYin( input ) );
+            Assert.Equal( result, Ding.Helpers.String.PinYin( input ) );
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "AB", "aB" )]
         [InlineData( "Abc", "abc" )]
         public void TestFirstLowerCase( string value, string result ) {
-            Assert.Equal( result, Ding.Utils.Helpers.String.FirstLowerCase( value ) );
+            Assert.Equal( result, Ding.Helpers.String.FirstLowerCase( value ) );
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "AB", "AB" )]
         [InlineData( "abC", "AbC" )]
         public void TestFirstUpperCase( string value, string result ) {
-            Assert.Equal( result, Ding.Utils.Helpers.String.FirstUpperCase( value ) );
+            Assert.Equal( result, Ding.Helpers.String.FirstUpperCase( value ) );
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Ding.Tests.Helpers {
         [InlineData( "ABC", "abc" )]
         [InlineData( "NetCore", "net-core" )]
         public void TestSplitWordGroup( string value, string result ) {
-            Assert.Equal( result, Ding.Utils.Helpers.String.SplitWordGroup( value ) );
+            Assert.Equal( result, Ding.Helpers.String.SplitWordGroup( value ) );
         }
     }
 }

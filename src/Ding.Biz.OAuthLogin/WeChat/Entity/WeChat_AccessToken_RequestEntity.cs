@@ -10,21 +10,6 @@ namespace Ding.Biz.OAuthLogin
     public class WeChat_AccessToken_RequestEntity
     {
         /// <summary>
-        /// 微信登录配置
-        /// </summary>
-        protected static readonly WeChatConfig WeChatConfig;
-
-        /// <summary>
-        /// 初始化一个<see cref="WeChat_AccessToken_RequestEntity"/>类型的实例
-        /// </summary>
-        static WeChat_AccessToken_RequestEntity()
-        {
-            var provider = Ioc.Create<IWeChatConfigProvider>();
-            provider.CheckNotNull(nameof(provider));
-            WeChatConfig = provider.GetConfigAsync().Result;
-        }
-
-        /// <summary>
         /// 填authorization_code
         /// </summary>
         [Required]

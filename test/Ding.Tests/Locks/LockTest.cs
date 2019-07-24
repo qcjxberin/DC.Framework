@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Ding.Helpers;
-using Ding.Utils.Helpers;
+using Ding.Helpers;
 using Xunit;
 
 namespace Ding.Tests.Locks {

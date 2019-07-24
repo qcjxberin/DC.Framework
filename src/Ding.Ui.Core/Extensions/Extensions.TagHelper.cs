@@ -27,13 +27,15 @@ namespace Ding.Ui.Extensions {
         /// <typeparam name="T">返回类型</typeparam>
         /// <param name="context">上下文</param>
         /// <param name="key">键</param>
-        public static T GetValueFromItems<T>( this TagHelperContext context, object key ) {
+        public static T GetValueFromItems<T>( this TagHelperContext context, object key = null ) {
+            if ( key == null )
+                key = typeof( T );
             var exists = context.Items.TryGetValue( key, out var value );
             if( exists == false )
                 return default( T );
             if( !( value is TagHelperAttribute tagHelperAttribute ) )
-                return Ding.Helpers.Convert.To<T>( value ); ;
-            return Ding.Helpers.Convert.To<T>( tagHelperAttribute?.Value );
+                return Ding.Helpers.Convert.To<T>( value );
+            return Ding.Helpers.Convert.To<T>( tagHelperAttribute.Value );
         }
 
         /// <summary>
@@ -44,6 +46,18 @@ namespace Ding.Ui.Extensions {
         /// <param name="value">值</param>
         public static void SetValueToItems( this TagHelperContext context, object key,object value ) {
             if ( context.Items.ContainsKey( key ) )
+                return;
+            context.Items[key] = value;
+        }
+
+        /// <summary>
+        /// 设置TagHelperContext Items值
+        /// </summary>
+        /// <param name="context">上下文</param>
+        /// <param name="value">值</param>
+        public static void SetValueToItems<T>( this TagHelperContext context, T value ) {
+            var key = typeof( T );
+            if( context.Items.ContainsKey( key ) )
                 return;
             context.Items[key] = value;
         }

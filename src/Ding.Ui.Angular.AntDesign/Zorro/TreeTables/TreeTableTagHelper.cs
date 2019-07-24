@@ -1,9 +1,9 @@
-﻿using Ding.Ui.Renders;
+﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Tables;
 using Ding.Ui.Zorro.Tables.Configs;
 using Ding.Ui.Zorro.TreeTables.Renders;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Ding.Ui.Zorro.TreeTables {
     /// <summary>
@@ -15,6 +15,10 @@ namespace Ding.Ui.Zorro.TreeTables {
         /// 是否显示复选框，默认为 true
         /// </summary>
         public bool ShowCheckbox { get; set; }
+        /// <summary>
+        /// 是否只能选择叶节点,仅对单选框有效，默认为 false
+        /// </summary>
+        public string CheckLeafOnly { get; set; }
         /// <summary>
         /// 是否展开所有节点，默认为 false
         /// </summary>

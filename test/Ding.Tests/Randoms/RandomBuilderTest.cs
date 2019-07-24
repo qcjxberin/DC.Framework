@@ -1,8 +1,8 @@
 ﻿using System;
 using NSubstitute;
 using Xunit;
-using Ding.Utils;
-using Ding.Utils.Randoms;
+using Ding.Datas.Queries;
+using Ding.Randoms;
 
 namespace Ding.Tests.Randoms {
     /// <summary>

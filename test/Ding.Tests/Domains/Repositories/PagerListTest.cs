@@ -1,5 +1,5 @@
 ﻿using Ding.Domains.Repositories;
-using Ding.Utils.Helpers;
+using Ding.Helpers;
 using Ding.Tests.Samples;
 using Xunit;
 

@@ -1,10 +1,9 @@
 ﻿using Ding.Ui.Angular;
 using Ding.Ui.Angular.Base;
-using Ding.Ui.Angular.Builders;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Enums;
 using Ding.Ui.Zorro.Buttons.Builders;
-using Ding.Ui.Zorro.Enums;
 using Ding.Ui.Zorro.Icons.Builders;
 
 namespace Ding.Ui.Zorro.Buttons.Renders {
@@ -41,7 +40,7 @@ namespace Ding.Ui.Zorro.Buttons.Renders {
             ConfigId( builder );
             ConfigText( builder );
             ConfigValidateForm( builder );
-            ConfigStype( builder );
+            ConfigStyle( builder );
             ConfigDisabled( builder );
             ConfigTooltip( builder );
             ConfigLoading( builder );
@@ -71,7 +70,7 @@ namespace Ding.Ui.Zorro.Buttons.Renders {
         /// <summary>
         /// 配置样式
         /// </summary>
-        private void ConfigStype( TagBuilder builder ) {
+        private void ConfigStyle( TagBuilder builder ) {
             builder.AddAttribute( UiConst.Color, _config.GetValue<Color?>( UiConst.Color )?.Description() );
             builder.AddAttribute( UiConst.Size, _config.GetValue<ButtonSize?>( UiConst.Size )?.Description() );
             builder.AddAttribute( UiConst.Shape, _config.GetValue<ButtonShape?>( UiConst.Shape )?.Description() );

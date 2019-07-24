@@ -79,7 +79,7 @@ namespace Ding.Datas.Sql.Builders.Core {
         public string GetColumns<TEntity>( Expression<Func<TEntity, object[]>> columns, bool propertyAsAlias ) {
             var names = Lambda.GetLastNames( columns );
             if( _matedata == null )
-                return names.Join();
+                return names.JoinT();
             return GetColumns<TEntity>( names, propertyAsAlias );
         }
 
@@ -88,11 +88,11 @@ namespace Ding.Datas.Sql.Builders.Core {
         /// </summary>
         private string GetColumns<TEntity>( List<string> names, bool propertyAsAlias ) {
             if( propertyAsAlias == false )
-                return names.Select( name => _matedata.GetColumn( typeof( TEntity ), name ) ).Join();
+                return names.Select( name => _matedata.GetColumn( typeof( TEntity ), name ) ).JoinT();
             return names.Select( name => {
                 var column = _matedata.GetColumn( typeof( TEntity ), name );
                 return column == name ? column : $"{column} As {name}";
-            } ).Join();
+            } ).JoinT();
         }
 
         /// <summary>

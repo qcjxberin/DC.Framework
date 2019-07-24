@@ -1,6 +1,6 @@
 ﻿using Ding.Datas.Sql.Builders.Conditions;
 using Ding.Datas.Sql.Builders.Core;
-using Ding.Utils;
+using Ding.Datas.Queries;
 using Xunit;
 
 namespace Ding.Datas.Tests.Sql.Builders.Base {

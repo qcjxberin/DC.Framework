@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Security.Claims;
 using System.Text;
@@ -234,8 +235,8 @@ namespace Ding.Helpers {
                     return _ip;
                 var list = new[] { "127.0.0.1", "::1" };
                 var result = HttpContext?.Connection?.RemoteIpAddress.SafeString();
-                if( string.IsNullOrWhiteSpace( result ) || list.Contains( result ) )
-                    result = GetLanIp();
+                if (string.IsNullOrWhiteSpace(result) || list.Contains(result))
+                    result = Common.IsWindows ? GetLanIp() : GetLanIp(NetworkInterfaceType.Ethernet);
                 return result;
             }
         }
@@ -248,6 +249,31 @@ namespace Ding.Helpers {
                 if( hostAddress.AddressFamily == AddressFamily.InterNetwork )
                     return hostAddress.ToString();
             }
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// 获取局域网IP
+        /// </summary>
+        /// <param name="type">网络接口类型</param>
+        private static string GetLanIp(NetworkInterfaceType type) {
+            try {
+                foreach (var item in NetworkInterface.GetAllNetworkInterfaces()) {
+                    if(item.NetworkInterfaceType!=type || item.OperationalStatus!=OperationalStatus.Up)
+                        continue;
+                    var ipProperties = item.GetIPProperties();
+                    if(ipProperties.GatewayAddresses.FirstOrDefault() == null)
+                        continue;
+                    foreach (var ip in ipProperties.UnicastAddresses) {
+                        if (ip.Address.AddressFamily == AddressFamily.InterNetwork)
+                            return ip.Address.ToString();
+                    }
+                }
+            }
+            catch {
+                return string.Empty;
+            }
+
             return string.Empty;
         }
 
@@ -333,6 +359,33 @@ namespace Ding.Helpers {
         public static IFormFile GetFile() {
             var files = GetFiles();
             return files.Count == 0 ? null : files[0];
+        }
+
+        #endregion
+
+        #region GetParam(获取请求参数)
+
+        /// <summary>
+        /// 获取请求参数，搜索路径：查询参数->表单参数->请求头
+        /// </summary>
+        /// <param name="name">参数名</param>
+        public static string GetParam( string name ) {
+            if ( string.IsNullOrWhiteSpace( name ) )
+                return string.Empty;
+            if ( Request == null )
+                return string.Empty;
+            var result = string.Empty;
+            if( Request.Query != null )
+                result = Request.Query[name];
+            if ( string.IsNullOrWhiteSpace( result ) == false )
+                return result;
+            if( Request.Form != null )
+                result = Request.Form[name];
+            if( string.IsNullOrWhiteSpace( result ) == false )
+                return result;
+            if( Request.Headers != null )
+                result = Request.Headers[name];
+            return result;
         }
 
         #endregion

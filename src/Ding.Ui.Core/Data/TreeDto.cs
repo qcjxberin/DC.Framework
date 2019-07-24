@@ -1,5 +1,6 @@
 ﻿using Ding.Applications.Trees;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ding.Ui.Data
 {
@@ -31,6 +32,7 @@ namespace Ding.Ui.Data
         /// <summary>
         /// 图标
         /// </summary>
+        [Display(Name = "图标")]
         public string Icon { get; set; }
         /// <summary>
         /// 是否禁用复选框

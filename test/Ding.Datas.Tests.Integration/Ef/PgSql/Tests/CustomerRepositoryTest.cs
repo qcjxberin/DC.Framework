@@ -10,7 +10,7 @@ using Ding.Datas.Tests.Commons.Domains.Models;
 using Ding.Datas.Tests.Commons.Domains.Repositories;
 using Ding.Datas.Tests.Ef.PgSql.UnitOfWorks;
 using Ding.Dependency;
-using Ding.Utils.Helpers;
+using Ding.Helpers;
 using Xunit;
 
 namespace Ding.Datas.Tests.Ef.PgSql.Tests {

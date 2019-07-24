@@ -1,6 +1,6 @@
 ﻿using System;
 using Xunit;
-using String = Ding.Utils.Helpers.String;
+using String = Ding.Helpers.String;
 
 namespace Ding.Tests.Helpers {
     /// <summary>

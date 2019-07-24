@@ -124,7 +124,7 @@ namespace Ding.Datas.Sql.Builders.Clauses {
         public string ToSql() {
             if( _items.Count == 0 )
                 return null;
-            return $"Order By {_items.Select( t => t.ToSql( _dialect, _register ) ).Join()}";
+            return $"Order By {_items.Select( t => t.ToSql( _dialect, _register ) ).JoinT()}";
         }
     }
 }

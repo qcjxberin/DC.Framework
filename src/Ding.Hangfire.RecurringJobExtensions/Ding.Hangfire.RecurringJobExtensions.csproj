@@ -55,7 +55,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="HangFire.Core" Version="1.7.3" />
+    <PackageReference Include="HangFire.Core" Version="1.7.4" />
   </ItemGroup>
 
 </Project>

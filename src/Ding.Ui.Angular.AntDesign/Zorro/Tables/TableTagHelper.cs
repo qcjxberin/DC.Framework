@@ -18,11 +18,11 @@ namespace Ding.Ui.Zorro.Tables {
         /// </summary>
         public string Data { get; set; }
         /// <summary>
-        /// 基地址，基于该地址构建加载地址和删除地址，范例：传入test,则加载地址为/api/test,删除地址为/api/test/delete
+        /// 基地址，基于该地址构建加载地址和删除地址，范例：传入test,则加载地址为/api/test,删除地址为/api/test/delete,批量保存地址为/api/test/save
         /// </summary>
         public string BaseUrl { get; set; }
         /// <summary>
-        /// 基地址，基于该地址构建加载地址和删除地址，范例：传入test,则加载地址为/api/test,删除地址为/api/test/delete
+        /// 基地址，基于该地址构建加载地址和删除地址，范例：传入test,则加载地址为/api/test,删除地址为/api/test/delete,批量保存地址为/api/test/save
         /// </summary>
         public string BindBaseUrl { get; set; }
         /// <summary>
@@ -42,9 +42,21 @@ namespace Ding.Ui.Zorro.Tables {
         /// </summary>
         public string BindDeleteUrl { get; set; }
         /// <summary>
+        /// 批量保存地址，范例：/api/test/save
+        /// </summary>
+        public string SaveUrl { get; set; }
+        /// <summary>
+        /// 批量保存地址，范例：/api/test/save
+        /// </summary>
+        public string BindSaveUrl { get; set; }
+        /// <summary>
         /// 查询参数
         /// </summary>
         public string QueryParam { get; set; }
+        /// <summary>
+        /// 是否多选，如果设置为false,则复选框变成单选框，默认为true
+        /// </summary>
+        public string Multiple { get; set; }
         /// <summary>
         /// 排序字段,范例: creationTime desc
         /// </summary>
@@ -94,6 +106,14 @@ namespace Ding.Ui.Zorro.Tables {
         /// </summary>
         public string PageSizeOptions { get; set; }
         /// <summary>
+        /// 选中的标识列表，用于还原选中的复选框，可以是单个Id，或Id数组，范例：'1' 或 ['1','2']
+        /// </summary>
+        public string CheckedKeys { get; set; }
+        /// <summary>
+        /// 双击启动行编辑模式，仅影响首次进入编辑模式，默认值：true，设置成false，则首次进入编辑模式使用单击
+        /// </summary>
+        public bool DoubleClickStartEdit { get; set; }
+        /// <summary>
         /// (nzPageSizeChange),分页大小变更事件
         /// </summary>
         public string OnPageSizeChange { get; set; }
@@ -122,10 +142,9 @@ namespace Ding.Ui.Zorro.Tables {
         /// <summary>
         /// 处理前操作
         /// </summary>
-        /// <param name="context">TagHelper上下文</param>
-        /// <param name="output">TagHelper输出</param>
-        protected override void ProcessBefore( TagHelperContext context, TagHelperOutput output ) {
-            InitShare( context );
+        /// <param name="context">上下文</param>
+        protected override void ProcessBefore( Context context ) {
+            InitShare( context.TagHelperContext );
         }
 
         /// <summary>
@@ -134,7 +153,7 @@ namespace Ding.Ui.Zorro.Tables {
         public void InitShare( TagHelperContext context ) {
             var shareConfig = new TableShareConfig( GetId( context ) );
             InitShareConfig( context, shareConfig );
-            context.SetValueToItems( TableConfig.TableShareKey, shareConfig );
+            context.SetValueToItems( shareConfig );
         }
 
         /// <summary>

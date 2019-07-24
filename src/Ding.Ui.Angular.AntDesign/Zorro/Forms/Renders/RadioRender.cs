@@ -5,7 +5,9 @@ using Ding.Ui.Angular.Forms.Configs;
 using Ding.Ui.Angular.Resolvers;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Forms.Builders;
+using Ding.Ui.Zorro.Forms.Helpers;
 
 namespace Ding.Ui.Zorro.Forms.Renders {
     /// <summary>
@@ -32,7 +34,7 @@ namespace Ding.Ui.Zorro.Forms.Renders {
             ResolveExpression();
             var builder = new RadioWrapperBuilder();
             Config( builder );
-            return builder;
+            return FormHelper.CreateFormItemBuilder( _config, builder );
         }
 
         /// <summary>
@@ -88,8 +90,7 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         /// 配置模型绑定
         /// </summary>
         private void ConfigModel( TagBuilder builder ) {
-            builder.AddAttribute( "[(model)]", _config.GetValue( UiConst.Model ) );
-            builder.AddAttribute( "[(model)]", _config.GetValue( AngularConst.NgModel ) );
+            builder.NgModel( _config );
         }
 
         /// <summary>

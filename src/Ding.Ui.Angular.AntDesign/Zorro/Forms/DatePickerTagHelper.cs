@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using Ding.Ui.Angular.Forms.Configs;
+using Ding.Ui.Enums;
 using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
-using Ding.Ui.Zorro.Enums;
 using Ding.Ui.Zorro.Forms.Base;
 using Ding.Ui.Zorro.Forms.Renders;
 
@@ -38,7 +38,7 @@ namespace Ding.Ui.Zorro.Forms {
         /// <summary>
         /// [nzAllowClear],是否显示清除按钮，默认值： true
         /// </summary>
-        public bool ShowClearButton { get; set; }
+        public bool ShowClear { get; set; }
         /// <summary>
         /// [nzAutoFocus],是否自动获取焦点，默认值： false
         /// </summary>

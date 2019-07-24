@@ -219,7 +219,7 @@ namespace Ding.Ui.Controllers {
         protected virtual async Task<ZorroTreeResult> Search( TQuery query ) {
             var data = await _service.QueryAsync( query );
             var ids = data.GetMissingParentIds();
-            var list = await _service.GetByIdsAsync( ids.Join() );
+            var list = await _service.GetByIdsAsync( ids.JoinT() );
             data.AddRange( list );
             ProcessData( data, query );
             if( GetLoadMode() == LoadMode.Async )
