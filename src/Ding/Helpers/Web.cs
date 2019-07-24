@@ -237,6 +237,10 @@ namespace Ding.Helpers {
                 var result = HttpContext?.Connection?.RemoteIpAddress.SafeString();
                 if (string.IsNullOrWhiteSpace(result) || list.Contains(result))
                     result = Common.IsWindows ? GetLanIp() : GetLanIp(NetworkInterfaceType.Ethernet);
+                if (result.Contains("::ffff:127.0.0.1"))
+                {
+                    return "127.0.0.1";
+                }
                 return result;
             }
         }
