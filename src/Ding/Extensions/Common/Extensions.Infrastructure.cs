@@ -3,6 +3,7 @@ using System.Text;
 using AspectCore.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Ding.Dependency;
+using Ding.Sessions;
 
 namespace Ding {
     /// <summary>
@@ -27,6 +28,7 @@ namespace Ding {
         public static IServiceProvider AddDing( this IServiceCollection services, Action<IAspectConfiguration> aopConfigAction, params IConfig[] configs ) {
             services.AddHttpContextAccessor();
             Encoding.RegisterProvider( CodePagesEncodingProvider.Instance );
+            services.AddSingleton<ISession, Session>();
             return Bootstrapper.Run( services, configs, aopConfigAction );
         }
     }

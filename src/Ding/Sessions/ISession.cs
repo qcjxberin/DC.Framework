@@ -4,7 +4,7 @@ namespace Ding.Sessions {
     /// <summary>
     /// 用户会话
     /// </summary>
-    public interface ISession : ISingletonDependency {
+    public interface ISession {
         /// <summary>
         /// 是否认证
         /// </summary>

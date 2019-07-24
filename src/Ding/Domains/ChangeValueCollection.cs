@@ -26,7 +26,7 @@ namespace Ding.Domains {
         public override string ToString() {
             var result = new StringBuilder();
             foreach( var item in this )
-                result.AppendLine( item.ToString() );
+                result.Append($"{item},");
             return result.ToString();
         }
     }
