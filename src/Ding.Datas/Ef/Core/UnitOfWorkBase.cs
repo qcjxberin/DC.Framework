@@ -68,7 +68,7 @@ namespace Ding.Datas.Ef.Core {
         protected UnitOfWorkBase( DbContextOptions options, IServiceProvider serviceProvider )
             : base( options ) {
             TraceId = Guid.NewGuid().ToString();
-            Session = Ding.Security.Sessions.Session.Instance;
+            Session = Sessions.Session.Instance;
             _serviceProvider = serviceProvider ?? Ioc.Create<IServiceProvider>();
             RegisterToManager();
         }
