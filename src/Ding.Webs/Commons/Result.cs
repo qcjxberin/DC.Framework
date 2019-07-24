@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ding.Webs.Commons {
@@ -18,6 +19,10 @@ namespace Ding.Webs.Commons {
         /// 数据
         /// </summary>
         public dynamic Data { get; }
+        /// <summary>
+        /// 操作时间
+        /// </summary>
+        public DateTime OperationTime { get; }
 
         /// <summary>
         /// 初始化返回结果
@@ -29,15 +34,19 @@ namespace Ding.Webs.Commons {
             Code = code;
             Message = message;
             Data = data;
+            OperationTime = DateTime.Now;
         }
 
         /// <summary>
         /// 执行结果
         /// </summary>
         public override Task ExecuteResultAsync( ActionContext context ) {
+            if (context == null)
+                throw new ArgumentNullException(nameof(context));
             this.Value = new {
                 Code = Code.Value(),
                 Message = Message,
+                OperationTime = OperationTime,
                 Data = Data
             };
             return base.ExecuteResultAsync( context );
