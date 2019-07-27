@@ -41,18 +41,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ding.Biz.OAuthLogin" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Caches" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.CookieManager" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Datas" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.MailKit" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Schedulers" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Swashbuckle" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.TimedJob" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Tools.Sms" Version="1.0.0-preview-20190713-01" />
-    <PackageReference Include="Ding.Webs" Version="1.0.0-preview-20190713-01" />
+    <PackageReference Include="Ding.Biz.OAuthLogin" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Caches" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.CookieManager" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Core" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Datas" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Events" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.MailKit" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Schedulers" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Swashbuckle" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.TimedJob" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Tools.Sms" Version="1.0.0-preview-20190725-01" />
+    <PackageReference Include="Ding.Webs" Version="1.0.0-preview-20190725-01" />
     <PackageReference Include="IdentityServer4" Version="2.5.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0-preview.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.7.0" />

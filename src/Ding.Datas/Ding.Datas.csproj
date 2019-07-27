@@ -57,7 +57,7 @@
     <PackageReference Include="Dapper" Version="1.60.6" />
     <PackageReference Include="Dapper.Contrib" Version="1.60.1" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
-    <PackageReference Include="Oracle.EntityFrameworkCore" Version="2.19.0-beta4" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="2.19.30" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
