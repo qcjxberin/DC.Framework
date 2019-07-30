@@ -45,7 +45,7 @@ namespace Ding.Files
         /// </summary>
         /// <param name="url"></param>
         /// <param name="fullFilePathAndName"></param>
-        public void DownLoadFileFromUrl(string url, string fullFilePathAndName)
+        public static void DownLoadFileFromUrl(string url, string fullFilePathAndName)
         {
             using (FileStream fs = new FileStream(fullFilePathAndName, FileMode.OpenOrCreate))
             {
