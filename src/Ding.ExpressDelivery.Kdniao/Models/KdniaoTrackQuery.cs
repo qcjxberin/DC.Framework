@@ -24,6 +24,11 @@ namespace Ding.ExpressDelivery.Kdniao.Models
         public string OrderCode { get; set; }
 
         /// <summary>
+        /// 收/寄件人手机号后四位数字
+        /// </summary>
+        public string CustomerName { get; set; }
+
+        /// <summary>
         /// 是否处理信息
         /// </summary>
         public string IsHandleInfo { get; set; } = "0";
