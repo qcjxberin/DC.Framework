@@ -226,6 +226,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.Utils", "src\Ding.Tool
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ding.QiNiu", "src\Ding.QiNiu\Ding.QiNiu.csproj", "{F0428B41-DCEC-4711-9D99-C14AFD59CB96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ding.Exceptionless.AspNetCore", "src\Ding.Exceptionless.AspNetCore\Ding.Exceptionless.AspNetCore.csproj", "{AD17C9F8-AFA1-4626-B20D-36F15CE5767B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -564,6 +566,10 @@ Global
 		{F0428B41-DCEC-4711-9D99-C14AFD59CB96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0428B41-DCEC-4711-9D99-C14AFD59CB96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0428B41-DCEC-4711-9D99-C14AFD59CB96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD17C9F8-AFA1-4626-B20D-36F15CE5767B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD17C9F8-AFA1-4626-B20D-36F15CE5767B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD17C9F8-AFA1-4626-B20D-36F15CE5767B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD17C9F8-AFA1-4626-B20D-36F15CE5767B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -677,6 +683,7 @@ Global
 		{3AFFD3EB-D469-4FC4-83D7-1CE8BD4AF2A1} = {4EDFCA61-82F2-497D-BCD2-D84CB996AA9B}
 		{3E742E75-6E2C-447A-B02A-C14E82AD32C9} = {3AFFD3EB-D469-4FC4-83D7-1CE8BD4AF2A1}
 		{F0428B41-DCEC-4711-9D99-C14AFD59CB96} = {4858128B-CD19-4165-9EEA-0995E748739B}
+		{AD17C9F8-AFA1-4626-B20D-36F15CE5767B} = {0C5FBD44-A8CD-44EC-BC2C-870F9EBDCF5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6E8E23-8AB6-4AB6-9B31-494CB7CE5E63}
