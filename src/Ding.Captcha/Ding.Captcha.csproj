@@ -67,12 +67,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Two\fonts\Candara.ttf" />
+    <None Remove="Two\fonts\impact.ttf" />
+    <None Remove="Two\fonts\monbaiti.ttf" />
+    <None Remove="Two\fonts\STCAIYUN.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Two\fonts\Candara.ttf" />
+    <EmbeddedResource Include="Two\fonts\impact.ttf" />
+    <EmbeddedResource Include="Two\fonts\monbaiti.ttf" />
+    <EmbeddedResource Include="Two\fonts\STCAIYUN.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta0006" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ding\Ding.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="One\Two\" />
   </ItemGroup>
 
 </Project>
