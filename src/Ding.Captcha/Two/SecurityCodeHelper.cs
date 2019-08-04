@@ -1,4 +1,6 @@
-﻿using SixLabors.Fonts;
+﻿using Ding.Log;
+using Microsoft.Extensions.FileProviders;
+using SixLabors.Fonts;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.PixelFormats;
@@ -7,9 +9,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
-namespace Ding.Captcha.Two
+namespace Ding.Captcha
 {
     /// <summary>
     /// 验证码配置和逻辑
@@ -196,7 +199,23 @@ namespace Ding.Captcha.Two
                 }
                 else
                 {
-                    throw new Exception($"绘制验证码字体文件不存在，请将字体文件(.ttf)复制到目录：{fontDir}");
+                    var embeddedProvider = new EmbeddedFileProvider(Assembly.GetCallingAssembly());
+                    var files = embeddedProvider.GetDirectoryContents("");
+                    if (files.Count() > 0)
+                    {
+                        XTrace.UseConsole();
+                        var fontCollection = new FontCollection();
+                        foreach (var item in files)
+                        {
+                            list.Add(new Font(fontCollection.Install(item.CreateReadStream()), fontSize));
+                            XTrace.WriteLine(item.Name + "_" + item.PhysicalPath);
+                        }
+                        XTrace.WriteLine("测试测试测试测试");
+                    }
+                    else
+                    {
+                        throw new Exception($"绘制验证码字体文件不存在，请将字体文件(.ttf)复制到目录：{fontDir}");
+                    }
                 }
                 _fontArr = list.ToArray();
             }

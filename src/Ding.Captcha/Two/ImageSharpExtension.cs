@@ -7,7 +7,7 @@ using SixLabors.Shapes;
 using System;
 using System.Collections.Generic;
 
-namespace Ding.Captcha.Two
+namespace Ding.Captcha
 {
     public static class ImageSharpExtension
     {
