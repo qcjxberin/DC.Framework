@@ -11,6 +11,7 @@ using Ding.Datas.Sql;
 using Ding.Datas.Sql.Configs;
 using Ding.Datas.Sql.Matedatas;
 using Ding.Datas.Dapper.Oracle;
+using Ding.Datas.Dapper.Sqlite;
 
 namespace Ding.Datas.Dapper {
     /// <summary>
@@ -89,6 +90,9 @@ namespace Ding.Datas.Dapper {
                 case DatabaseType.Oracle:
                     services.TryAddTransient<ISqlBuilder, OracleBuilder>();
                     return;
+                case DatabaseType.Sqlite:
+                    services.TryAddTransient<ISqlBuilder, SqliteBuilder>();
+                    break;
                 default:
                     throw new NotImplementedException( $"Sql生成器未实现 {config.DatabaseType.Description()} 数据库" );
             }

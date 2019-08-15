@@ -57,6 +57,8 @@ namespace Ding.Datas.Ef {
                 return DatabaseType.PgSql;
             if( type == typeof( Ding.Datas.Ef.Oracle.UnitOfWork ) )
                 return DatabaseType.Oracle;
+            if (type == typeof(Ding.Datas.Ef.Sqlite.UnitOfWork))
+                return DatabaseType.Sqlite;
             return DatabaseType.SqlServer;
         }
 
@@ -92,6 +94,9 @@ namespace Ding.Datas.Ef {
                     return;
                 case DatabaseType.Oracle:
                     builder.UseOracle(connection);
+                    return;
+                case DatabaseType.Sqlite:
+                    builder.UseSqlite(connection);
                     return;
             }
         }
