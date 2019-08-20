@@ -7,6 +7,7 @@ using Ding.Webs.Filters;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Options;
 
 namespace Ding.Webs.Controllers
 {
@@ -28,7 +29,8 @@ namespace Ding.Webs.Controllers
                 {
                     // 生成sid
                     Sid = Id.GenerateSid();
-                    _cookie.Set("sid", Sid, new CookieOptions() { HttpOnly = true, Expires = System.DateTime.Now.AddMonths(1) });
+                    var CookieOptions = Ioc.Create<IOptions<CookieManagerOptions>>();
+                    _cookie.Set("sid", Sid, new CookieOptions() { HttpOnly = true, Expires = System.DateTime.Now.AddMonths(1), Domain = CookieOptions.Value.Domain });
                 }
             }
         }

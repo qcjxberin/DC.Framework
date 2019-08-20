@@ -30,5 +30,10 @@ namespace Ding.CookieManager
 		/// Throw if not all chunks of a cookie are available on a request for re-assembly.
 		/// </summary>
 		public bool ThrowForPartialCookies { get; set; } = true;
+
+        /// <summary>
+        /// Cookie域
+        /// </summary>
+        public string Domain { get; set; } = "";
 	}
 }
