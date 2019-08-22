@@ -6,6 +6,7 @@ using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Tables.Configs;
 using Ding.Ui.Zorro.Tables.Renders;
+using Ding.Ui.Enums;
 
 namespace Ding.Ui.Zorro.Tables {
     /// <summary>
@@ -114,6 +115,10 @@ namespace Ding.Ui.Zorro.Tables {
         /// </summary>
         public bool DoubleClickStartEdit { get; set; }
         /// <summary>
+        /// nzSize,表格尺寸，默认为 default
+        /// </summary>
+        public TableSize Size { get; set; }
+        /// <summary>
         /// (nzPageSizeChange),分页大小变更事件
         /// </summary>
         public string OnPageSizeChange { get; set; }
@@ -147,14 +152,18 @@ namespace Ding.Ui.Zorro.Tables {
             InitShare( context.TagHelperContext );
         }
 
-        /// <summary>
+         /// <summary>
         /// 初始化共享实例
         /// </summary>
         public void InitShare( TagHelperContext context ) {
-            var shareConfig = new TableShareConfig( GetId( context ) );
+            var shareConfig = context.GetValueFromItems<TableShareConfig>();
+            if ( shareConfig == null ) {
+                shareConfig = new TableShareConfig( GetId( context ) );
+                context.SetValueToItems( shareConfig );
+            }
             InitShareConfig( context, shareConfig );
-            context.SetValueToItems( shareConfig );
         }
+
 
         /// <summary>
         /// 设置表格标识

@@ -4,6 +4,7 @@ using Ding.Ui.Angular.Base;
 using Ding.Ui.Angular.Builders;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
+using Ding.Ui.Enums;
 using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Tables.Builders;
 using Ding.Ui.Zorro.Tables.Configs;
@@ -191,6 +192,7 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// </summary>
         private void ConfigStyle( TagBuilder tableBuilder ) {
             tableBuilder.AddAttribute( "nzBordered", _config.GetBoolValue( UiConst.ShowBorder ) );
+            tableBuilder.AddAttribute( "nzSize", _config.GetValue<TableSize?>( UiConst.Size )?.Description() );
         }
 
         /// <summary>
@@ -364,7 +366,7 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// </summary>
         protected virtual void AddBody( TableBodyBuilder tableBodyBuilder ) {
             var rowBuilder = new RowBuilder();
-            rowBuilder.NgFor( $"let row of {_config.Id}.data" );
+            rowBuilder.ConfigIterationVar( _config.Id );
             AddEditRow( rowBuilder );
             AddRowEvents( rowBuilder );
             rowBuilder.AppendContent( _config.Content );

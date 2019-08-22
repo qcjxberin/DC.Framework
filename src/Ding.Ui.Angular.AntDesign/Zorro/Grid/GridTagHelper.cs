@@ -1,28 +1,19 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
+﻿using Ding.Maps;
 using Ding.Ui.Angular.Base;
 using Ding.Ui.Configs;
-using Ding.Ui.Enums;
 using Ding.Ui.Extensions;
 using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
-using Ding.Ui.Zorro.Forms.Renders;
 using Ding.Ui.Zorro.Grid.Configs;
-using Ding.Maps;
+using Ding.Ui.Zorro.Grid.Renders;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Ding.Ui.Zorro.Forms {
+namespace Ding.Ui.Zorro.Grid {
     /// <summary>
-    /// 表单
+    /// 栅格布局
     /// </summary>
-    [HtmlTargetElement( "util-form" )]
-    public class FormTagHelper : AngularTagHelperBase {
-        /// <summary>
-        /// nzLayout,布局方式
-        /// </summary>
-        public FormLayout Layout { get; set; }
-        /// <summary>
-        /// 是否显示表单标签的冒号，默认值：true
-        /// </summary>
-        public bool ShowColon { get; set; }
+    [HtmlTargetElement( "util-grid")]
+    public class GridTagHelper : AngularTagHelperBase {
         /// <summary>
         /// 是否显示表单标签，默认值：false
         /// </summary>
@@ -51,21 +42,13 @@ namespace Ding.Ui.Zorro.Forms {
         /// 自动创建栅格列，默认值：false
         /// </summary>
         public bool AutoCreateColumn { get; set; }
-        /// <summary>
-        /// 是否打开浏览器自动完成功能，默认值：false
-        /// </summary>
-        public bool AutoComplete { get; set; }
-        /// <summary>
-        /// 提交事件处理函数，范例：handle()
-        /// </summary>
-        public string OnSubmit { get; set; }
 
         /// <summary>
         /// 获取渲染器
         /// </summary>
         /// <param name="context">上下文</param>
         protected override IRender GetRender( Context context ) {
-            return new FormRender( new Config( context ) );
+            return new GridRender( new Config( context ) );
         }
 
         /// <summary>

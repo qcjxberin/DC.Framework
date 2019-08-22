@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
+using Ding.Datas.Sql;
 
 namespace Ding.Datas.Tests.Samples {
     /// <summary>
@@ -18,7 +18,7 @@ namespace Ding.Datas.Tests.Samples {
         /// <summary>
         /// 跳过的属性
         /// </summary>
-        [NotMapped]
+        [Ignore]
         public bool Ignore { get; set; }
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System;
-using Ding.Aspects;
 
 namespace Ding.Datas.Sql.Matedatas {
     /// <summary>
     /// 实体元数据
     /// </summary>
-    [Ignore]
+    [Ding.Aspects.Ignore]
     public interface IEntityMatedata {
         /// <summary>
         /// 获取表名

@@ -5,6 +5,9 @@ using Ding.Ui.Enums;
 using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Grid.Renders;
+using Ding.Ui.Zorro.Grid.Configs;
+using Ding.Ui.Extensions;
+using Ding.Maps;
 
 namespace Ding.Ui.Zorro.Grid {
     /// <summary>
@@ -28,6 +31,14 @@ namespace Ding.Ui.Zorro.Grid {
         /// nzJustify,水平排列方式
         /// </summary>
         public Justify Justify { get; set; }
+        /// <summary>
+        /// 栅格列的占位格数
+        /// </summary>
+        public int ColumnSpan { get; set; }
+        /// <summary>
+        /// 自动创建栅格列，默认值：false
+        /// </summary>
+        public bool AutoCreateColumn { get; set; }
 
         /// <summary>
         /// 获取渲染器
@@ -35,6 +46,27 @@ namespace Ding.Ui.Zorro.Grid {
         /// <param name="context">上下文</param>
         protected override IRender GetRender( Context context ) {
             return new RowRender( new Config( context ) );
+        }
+        
+        /// <summary>
+        /// 处理前操作
+        /// </summary>
+        /// <param name="context">上下文</param>
+        protected override void ProcessBefore( Context context ) {
+            var shareConfig = context.GetValueFromItems<GridShareConfig>();
+            var config = shareConfig.MapTo<GridShareConfig>() ?? new GridShareConfig();
+            InitShareConfig( context.TagHelperContext, config );
+            context.SetValueToItems( config );
+        }
+
+        /// <summary>
+        /// 初始化共享配置
+        /// </summary>
+        protected virtual void InitShareConfig( TagHelperContext context, GridShareConfig config ) {
+            if( context.AllAttributes.ContainsName( UiConst.ColumnSpan ) )
+                config.ColumnSpan = context.GetValueFromAttributes<string>( UiConst.ColumnSpan );
+            if( context.AllAttributes.ContainsName( UiConst.AutoCreateColumn ) )
+                config.AutoCreateColumn = context.GetValueFromAttributes<bool>( UiConst.AutoCreateColumn );
         }
     }
 }

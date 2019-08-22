@@ -5,6 +5,7 @@ using Ding.Ui.Angular.Forms.Configs;
 using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Forms.Renders;
+using Ding.Ui.Enums;
 
 namespace Ding.Ui.Zorro.Forms {
     /// <summary>
@@ -29,6 +30,10 @@ namespace Ding.Ui.Zorro.Forms {
         /// </summary>
         public int LabelSpan { get; set; }
         /// <summary>
+        /// 是否flex布局，默认值：false
+        /// </summary>
+        public bool IsFlex { get; set; }
+        /// <summary>
         /// [(ngModel)],模型绑定
         /// </summary>
         public string NgModel { get; set; }
@@ -40,6 +45,10 @@ namespace Ding.Ui.Zorro.Forms {
         /// [nzName],控件的名称
         /// </summary>
         public string BindName { get; set; }
+        /// <summary>
+        /// 按钮样式
+        /// </summary>
+        public RadioButtonStyle ButtonStyle { get; set; }
         /// <summary>
         /// 是否垂直布局
         /// </summary>

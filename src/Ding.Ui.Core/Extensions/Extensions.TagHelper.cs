@@ -28,7 +28,7 @@ namespace Ding.Ui.Extensions {
         /// <param name="context">上下文</param>
         /// <param name="key">键</param>
         public static T GetValueFromItems<T>( this TagHelperContext context, object key = null ) {
-            if ( key == null )
+            if( key == null )
                 key = typeof( T );
             var exists = context.Items.TryGetValue( key, out var value );
             if( exists == false )
@@ -44,9 +44,9 @@ namespace Ding.Ui.Extensions {
         /// <param name="context">上下文</param>
         /// <param name="key">键</param>
         /// <param name="value">值</param>
-        public static void SetValueToItems( this TagHelperContext context, object key,object value ) {
-            if ( context.Items.ContainsKey( key ) )
-                return;
+        public static void SetValueToItems( this TagHelperContext context, object key, object value ) {
+            if( context.Items.ContainsKey( key ) )
+                RemoveFromItems( context, key );
             context.Items[key] = value;
         }
 
@@ -57,9 +57,27 @@ namespace Ding.Ui.Extensions {
         /// <param name="value">值</param>
         public static void SetValueToItems<T>( this TagHelperContext context, T value ) {
             var key = typeof( T );
-            if( context.Items.ContainsKey( key ) )
+            SetValueToItems( context, key, value );
+        }
+
+        /// <summary>
+        /// 移除TagHelperContext Items值
+        /// </summary>
+        /// <param name="context">上下文</param>
+        /// <param name="key">键</param>
+        public static void RemoveFromItems( this TagHelperContext context, object key ) {
+            if( context.Items.ContainsKey( key ) == false )
                 return;
-            context.Items[key] = value;
+            context.Items.Remove( key );
+        }
+
+        /// <summary>
+        /// 移除TagHelperContext Items值
+        /// </summary>
+        /// <param name="context">上下文</param>
+        public static void RemoveFromItems<T>( this TagHelperContext context ) {
+            var key = typeof( T );
+            RemoveFromItems( context, key );
         }
 
         /// <summary>

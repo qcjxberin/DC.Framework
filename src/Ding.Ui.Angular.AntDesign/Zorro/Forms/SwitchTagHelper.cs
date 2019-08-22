@@ -33,6 +33,10 @@ namespace Ding.Ui.Zorro.Forms {
         /// </summary>
         public int LabelSpan { get; set; }
         /// <summary>
+        /// 是否flex布局，默认值：false
+        /// </summary>
+        public bool IsFlex { get; set; }
+        /// <summary>
         /// name,控件名称
         /// </summary>
         public string Name { get; set; }

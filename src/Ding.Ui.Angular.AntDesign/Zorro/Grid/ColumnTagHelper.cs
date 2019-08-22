@@ -4,6 +4,8 @@ using Ding.Ui.Configs;
 using Ding.Ui.Renders;
 using Ding.Ui.TagHelpers;
 using Ding.Ui.Zorro.Grid.Renders;
+using Ding.Ui.Zorro.Grid.Configs;
+using Ding.Maps;
 
 namespace Ding.Ui.Zorro.Grid {
     /// <summary>
@@ -16,9 +18,21 @@ namespace Ding.Ui.Zorro.Grid {
         /// </summary>
         public int Span { get; set; }
         /// <summary>
-        /// [nzOffset],栅格左侧偏移的间隔格数
+        /// [nzOffset],栅格偏移的格数
         /// </summary>
         public int Offset { get; set; }
+        /// <summary>
+        /// [nzOrder],栅格顺序
+        /// </summary>
+        public new int Order { get; set; }
+        /// <summary>
+        /// [nzPull],栅格向左移动的格数
+        /// </summary>
+        public int Pull { get; set; }
+        /// <summary>
+        /// [nzPush],栅格向右移动的格数
+        /// </summary>
+        public int Push { get; set; }
 
         /// <summary>
         /// 获取渲染器
@@ -26,6 +40,19 @@ namespace Ding.Ui.Zorro.Grid {
         /// <param name="context">上下文</param>
         protected override IRender GetRender( Context context ) {
             return new ColumnRender( new Config( context ) );
+        }
+        
+        /// <summary>
+        /// 处理前操作
+        /// </summary>
+        /// <param name="context">上下文</param>
+        protected override void ProcessBefore( Context context ) {
+            var shareConfig = context.GetValueFromItems<GridShareConfig>();
+            if( shareConfig == null )
+                return;
+            var config = shareConfig.MapTo<GridShareConfig>();
+            config.AutoCreateColumn = false;
+            context.SetValueToItems( config );
         }
     }
 }

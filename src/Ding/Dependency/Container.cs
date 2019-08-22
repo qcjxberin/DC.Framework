@@ -125,8 +125,12 @@ namespace Ding.Dependency {
                 foreach ( var config in configs )
                     builder.RegisterModule( config );
             }
-            if( services != null )
-                builder.Populate( services );
+            if (services == null)
+            {
+                services = new ServiceCollection();
+                builder.AddSingleton(services);
+            }
+            builder.Populate(services);
             return builder;
         }
 

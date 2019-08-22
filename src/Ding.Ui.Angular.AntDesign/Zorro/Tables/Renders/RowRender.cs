@@ -1,7 +1,6 @@
 ﻿using Ding.Ui.Angular.Base;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
-using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Tables.Builders;
 using Ding.Ui.Zorro.Tables.Configs;
 
@@ -59,7 +58,7 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         private void ConfigVariable( RowBuilder builder ) {
             if( _tableId.IsEmpty() )
                 return;
-            builder.NgFor( $"let row of {_tableId}.data" );
+            builder.ConfigIterationVar( _tableId );
         }
 
         /// <summary>

@@ -70,5 +70,12 @@ namespace Ding.Datas.Dapper.Sqlite
         {
             return $"Limit {GetLimitParam()} OFFSET {GetOffsetParam()}";
         }
+
+        /// <summary>
+        /// 获取CTE关键字
+        /// </summary>
+        protected override string GetCteKeyWord() {
+            return "With Recursive";
+        }
     }
 }

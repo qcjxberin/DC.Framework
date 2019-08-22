@@ -8,6 +8,7 @@ using Ding.Ui.Configs;
 using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Forms.Builders;
 using Ding.Ui.Zorro.Forms.Helpers;
+using Ding.Ui.Enums;
 
 namespace Ding.Ui.Zorro.Forms.Renders {
     /// <summary>
@@ -53,6 +54,7 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         private void Config( TagBuilder builder ) {
             ConfigId( builder );
             ConfigName( builder );
+            ConfigStyle(builder);
             ConfigLabel( builder );
             ConfigDisabled( builder );
             ConfigModel( builder );
@@ -67,7 +69,13 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         /// </summary>
         private void ConfigName( TagBuilder builder ) {
             builder.AddAttribute( UiConst.Name, _config.GetValue( UiConst.Name ) );
-            builder.AddAttribute( "[name]", _config.GetValue( AngularConst.BindName ) );
+        }
+
+        /// <summary>
+        /// 配置样式
+        /// </summary>
+        private void ConfigStyle( TagBuilder builder ) {
+            builder.AddAttribute( "buttonStyle", _config.GetValue<RadioButtonStyle?>( UiConst.ButtonStyle )?.Description() );
         }
 
         /// <summary>

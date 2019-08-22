@@ -50,8 +50,8 @@ namespace Ding.Sms.AliYun
             var config = await _configProvider.GetConfigAsync();
             var accessKeyId = config.AccessKeyId;
             var accessKeySecret = config.AccessKeySecret;
-            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", accessKeyId, accessKeySecret);
-            DefaultProfile.AddEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);
+            var profile = DefaultProfile.GetProfile("cn-hangzhou", accessKeyId, accessKeySecret);
+            profile.AddEndpoint("cn-hangzhou", "cn-hangzhou", product, domain);
             IAcsClient acsClient = new DefaultAcsClient(profile);
             SendSmsRequest request = new SendSmsRequest();
             SendSmsResponse response = null;

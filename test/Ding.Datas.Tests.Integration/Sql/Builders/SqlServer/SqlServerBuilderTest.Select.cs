@@ -1,4 +1,6 @@
-﻿using Ding.Datas.Sql;
+﻿using Ding.Datas.Dapper.SqlServer;
+using Ding.Datas.Sql;
+using Ding.Datas.Sql.Matedatas;
 using Ding.Datas.Tests.Samples;
 using Ding.Helpers;
 using Xunit;
@@ -353,6 +355,44 @@ namespace Ding.Datas.Tests.Sql.Builders.SqlServer {
             Assert.Equal( 2, _builder.GetParams().Count );
             Assert.Equal( "a", _builder.GetParams()["@_p_0"] );
             Assert.Equal( 1, _builder.GetParams()["@_p_1"] );
+        }
+
+        /// <summary>
+        /// 将类型上所有属性设置为列名 - 忽略Ignore特性的属性
+        /// </summary>
+        [Fact]
+        public void TestSelect_8() {
+            //结果
+            var result = new String();
+            result.AppendLine( "Select [s].[StringValue],[s].[IsDeleted] " );
+            result.Append( "From [Sample3] As [s]" );
+
+            //执行
+            _builder = new SqlServerBuilder( new DefaultEntityMatedata() );
+            _builder.Select<Sample3>().From<Sample3>( "s" );
+
+            //验证
+            Assert.Equal( result.ToString(), _builder.ToSql() );
+        }
+
+        /// <summary>
+        /// 覆盖已设置列名
+        /// </summary>
+        [Fact]
+        public void TestSelect_9() {
+            //结果
+            var result = new String();
+            result.AppendLine( "Select [s].[IsDeleted],[s].[StringValue] As [a] " );
+            result.Append( "From [Sample3] As [s]" );
+
+            //执行
+            _builder = new SqlServerBuilder( new DefaultEntityMatedata() );
+            _builder.Select<Sample3>()
+                .Select<Sample3>( t => t.StringValue,"a" )
+                .From<Sample3>( "s" );
+
+            //验证
+            Assert.Equal( result.ToString(), _builder.ToSql() );
         }
     }
 }
