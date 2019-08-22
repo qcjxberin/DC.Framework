@@ -1,8 +1,9 @@
-namespace Ding.Payment.Alipay.Response
+﻿namespace Ding.Payment.Alipay.Response
 {
     /// <summary>
     /// AlipayBossFncXwbtestRetModifyResponse.
     /// </summary>
     public class AlipayBossFncXwbtestRetModifyResponse : AlipayResponse
-    {}
+    {
+    }
 }

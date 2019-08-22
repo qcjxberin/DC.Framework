@@ -1,6 +1,5 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Domain
@@ -15,8 +14,6 @@ namespace Ding.Payment.Alipay.Domain
         /// openId的列表
         /// </summary>
         [JsonProperty("open_ids")]
-        [XmlArray("open_ids")]
-        [XmlArrayItem("string")]
         public List<string> OpenIds { get; set; }
     }
 }

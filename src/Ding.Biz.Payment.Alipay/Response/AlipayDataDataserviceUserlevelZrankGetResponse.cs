@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Ding.Payment.Alipay.Domain;
+﻿using Ding.Payment.Alipay.Domain;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
@@ -13,7 +12,6 @@ namespace Ding.Payment.Alipay.Response
         /// 活跃高价值用户返回
         /// </summary>
         [JsonProperty("result")]
-        [XmlElement("result")]
         public AlipayHighValueCustomerResult Result { get; set; }
     }
 }

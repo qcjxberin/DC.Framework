@@ -1,5 +1,4 @@
-using System;
-using System.Xml.Serialization;
+﻿using System;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Domain
@@ -14,7 +13,6 @@ namespace Ding.Payment.Alipay.Domain
         /// sdfghsgafds
         /// </summary>
         [JsonProperty("wasfdasdf")]
-        [XmlElement("wasfdasdf")]
         public string Wasfdasdf { get; set; }
     }
 }

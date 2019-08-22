@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.AspNetCore.Http;
 
-namespace Ding.Payment.LianLianPay.Utility
+namespace Ding.Payment.LianLianPay.LianLianPay.Utility
 {
     /// <summary>
     /// LianLianPay 工具类。

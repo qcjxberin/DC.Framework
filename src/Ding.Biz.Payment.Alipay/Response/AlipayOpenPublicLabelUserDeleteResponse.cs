@@ -1,8 +1,9 @@
-namespace Ding.Payment.Alipay.Response
+﻿namespace Ding.Payment.Alipay.Response
 {
     /// <summary>
     /// AlipayOpenPublicLabelUserDeleteResponse.
     /// </summary>
     public class AlipayOpenPublicLabelUserDeleteResponse : AlipayResponse
-    {}
+    {
+    }
 }

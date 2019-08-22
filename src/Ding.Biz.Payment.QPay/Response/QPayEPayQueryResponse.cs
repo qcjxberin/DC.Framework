@@ -100,7 +100,7 @@ namespace Ding.Payment.QPay.Response
         /// </summary>
         [XmlElement("appid")]
         public string AppId { get; set; }
-       
+
         /// <summary>
         /// 用户标识	
         /// </summary>

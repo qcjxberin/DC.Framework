@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Ding.Payment.LianLianPay.Domain
+namespace Ding.Payment.LianLianPay.LianLianPay.Domain
 {
     /// <summary>
     /// 支行信息

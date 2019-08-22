@@ -1,13 +1,13 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Ding.Payment.Security;
 using Org.BouncyCastle.Crypto;
 
-namespace Ding.Payment.LianLianPay.Utility
+namespace Ding.Payment.LianLianPay.LianLianPay.Utility
 {
     /// <summary>
-    /// LianLianPay ��ȫ�ࡣ
+    /// LianLianPay 安全类。
     /// </summary>
     public class LianLianPaySecurity
     {

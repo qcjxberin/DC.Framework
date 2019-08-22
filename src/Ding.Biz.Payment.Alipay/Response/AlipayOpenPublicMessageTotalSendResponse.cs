@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
 {
@@ -12,7 +11,6 @@ namespace Ding.Payment.Alipay.Response
         /// 消息ID
         /// </summary>
         [JsonProperty("message_id")]
-        [XmlElement("message_id")]
         public string MessageId { get; set; }
     }
 }

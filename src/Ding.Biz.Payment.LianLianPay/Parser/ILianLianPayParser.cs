@@ -1,4 +1,4 @@
-﻿namespace Ding.Payment.LianLianPay.Parser
+﻿namespace Ding.Payment.LianLianPay.LianLianPay.Parser
 {
     /// <summary>
     /// LianLianPay API响应解释器接口。

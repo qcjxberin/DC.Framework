@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Ding.Payment.LianLianPay.Response
+namespace Ding.Payment.LianLianPay.LianLianPay.Response
 {
     public class LianLianPayModifyPhoneCheckResponse : LianLianPayResponse
     {

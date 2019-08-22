@@ -1,4 +1,4 @@
-﻿namespace Ding.Payment.LianLianPay
+﻿namespace Ding.Payment.LianLianPay.LianLianPay
 {
     /// <summary>
     /// LianLianPay 通知。

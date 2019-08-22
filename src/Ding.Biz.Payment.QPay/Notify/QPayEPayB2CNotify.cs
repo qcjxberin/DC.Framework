@@ -48,7 +48,7 @@ namespace Ding.Payment.QPay.Notify
         /// 金额
         /// </summary>
         [XmlElement("total_fee")]
-        public string TotalFee { get; set; }
+        public int TotalFee { get; set; }
 
         /// <summary>
         /// 时间(红包领取或退款成功时间)

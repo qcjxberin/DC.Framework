@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ding.Payment.UnionPay
@@ -15,8 +15,11 @@ namespace Ding.Payment.UnionPay
             this IServiceCollection services,
             Action<UnionPayOptions> setupAction)
         {
-            services.AddScoped<IUnionPayClient, UnionPayClient>();
-            services.AddScoped<IUnionPayNotifyClient, UnionPayNotifyClient>();
+            services.AddHttpClient(nameof(UnionPayClient));
+
+            services.AddSingleton<IUnionPayClient, UnionPayClient>();
+            services.AddSingleton<IUnionPayNotifyClient, UnionPayNotifyClient>();
+
             if (setupAction != null)
             {
                 services.Configure(setupAction);

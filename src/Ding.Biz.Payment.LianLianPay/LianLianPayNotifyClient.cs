@@ -1,31 +1,24 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using Ding.Payment.LianLianPay.Parser;
-using Ding.Payment.LianLianPay.Utility;
+using Ding.Payment.LianLianPay.LianLianPay.Parser;
+using Ding.Payment.LianLianPay.LianLianPay.Utility;
 using Ding.Payment.Security;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Ding.Payment.LianLianPay
+namespace Ding.Payment.LianLianPay.LianLianPay
 {
     /// <summary>
     /// LianLianPay 通知解析客户端。
     /// </summary>
     public class LianLianPayNotifyClient : ILianLianPayNotifyClient
     {
-        private readonly ILogger _logger;
-        private readonly IOptionsSnapshot<LianLianPayOptions> _optionsSnapshotAccessor;
-
         #region LianLianPayNotifyClient Constructors
 
-        public LianLianPayNotifyClient(
-            ILogger<LianLianPayClient> logger,
-            IOptionsSnapshot<LianLianPayOptions> optionsAccessor)
+        public LianLianPayNotifyClient()
         {
-            _logger = logger;
-            _optionsSnapshotAccessor = optionsAccessor;
         }
 
         #endregion
@@ -37,15 +30,11 @@ namespace Ding.Payment.LianLianPay
             return await ExecuteAsync<T>(request, null);
         }
 
-        public async Task<T> ExecuteAsync<T>(HttpRequest request, string optionsName) where T : LianLianPayNotify
+        public async Task<T> ExecuteAsync<T>(HttpRequest request, LianLianPayOptions options) where T : LianLianPayNotify
         {
-            var options = _optionsSnapshotAccessor.Get(optionsName);
             if (request.HasFormContentType)
             {
                 var parameters = await GetParametersAsync(request);
-                var query = LianLianPayUtility.BuildQuery(parameters);
-                _logger.Log(options.LogLevel, "Request:{query}", query);
-
                 var parser = new LianLianPayDictionaryParser<T>();
                 var rsp = parser.Parse(parameters);
                 CheckNotifySign(parameters, options);
@@ -55,7 +44,6 @@ namespace Ding.Payment.LianLianPay
             if (request.HasTextJsonContentType())
             {
                 var body = await new StreamReader(request.Body).ReadToEndAsync();
-                _logger.Log(options.LogLevel, "Request:{body}", body);
 
                 var parser = new LianLianPayJsonParser<T>();
                 var rsp = parser.Parse(body);

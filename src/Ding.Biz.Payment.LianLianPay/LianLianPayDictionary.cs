@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ding.Payment.LianLianPay
+namespace Ding.Payment.LianLianPay.LianLianPay
 {
     /// <summary>
     /// LianLianPay 字典。

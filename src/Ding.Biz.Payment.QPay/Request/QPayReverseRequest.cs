@@ -1,18 +1,14 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Ding.Payment.QPay.Response;
+using Ding.Payment.QPay.Utility;
 
 namespace Ding.Payment.QPay.Request
 {
     /// <summary>
     /// 撤销订单
     /// </summary>
-    public class QPayReverseRequest : IQPayCertificateRequest<QPayReverseResponse>
+    public class QPayReverseRequest : IQPayCertRequest<QPayReverseResponse>
     {
-        /// <summary>
-        /// 应用ID
-        /// </summary>
-        public string AppId { get; set; }
-
         /// <summary>
         /// 子商户应用ID
         /// </summary>
@@ -49,7 +45,6 @@ namespace Ding.Payment.QPay.Request
         {
             var parameters = new QPayDictionary
             {
-                { "appid", AppId },
                 { "sub_appid", SubAppId },
                 { "sub_mch_id", SubMchId },
                 { "out_trade_no", OutTradeNo },
@@ -59,7 +54,16 @@ namespace Ding.Payment.QPay.Request
             return parameters;
         }
 
-        public bool IsCheckResponseSign()
+        public void PrimaryHandler(QPayOptions options, QPayDictionary sortedTxtParams)
+        {
+            sortedTxtParams.Add(QPayConsts.NONCE_STR, QPayUtility.GenerateNonceStr());
+            sortedTxtParams.Add(QPayConsts.APPID, options.AppId);
+            sortedTxtParams.Add(QPayConsts.MCH_ID, options.MchId);
+
+            sortedTxtParams.Add(QPayConsts.SIGN, QPaySignature.SignWithKey(sortedTxtParams, options.Key));
+        }
+
+        public bool GetNeedCheckSign()
         {
             return true;
         }

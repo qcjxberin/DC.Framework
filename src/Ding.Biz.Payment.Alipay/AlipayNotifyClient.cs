@@ -1,67 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Ding.Payment.Alipay.Parser;
 using Ding.Payment.Alipay.Utility;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Ding.Payment.Alipay
 {
-    /// <summary>
-    /// Alipay 通知解析客户端。
-    /// </summary>
     public class AlipayNotifyClient : IAlipayNotifyClient
     {
-        private readonly ILogger _logger;
-        private readonly IOptionsSnapshot<AlipayOptions> _optionsSnapshotAccessor;
-
         #region AlipayNotifyClient Constructors
 
-        public AlipayNotifyClient(
-            ILogger<AlipayNotifyClient> logger,
-            IOptionsSnapshot<AlipayOptions> optionsAccessor)
+        public AlipayNotifyClient()
         {
-            _logger = logger;
-            _optionsSnapshotAccessor = optionsAccessor;
+
         }
 
         #endregion
 
         #region IAlipayNotifyClient Members
 
-        public async Task<T> ExecuteAsync<T>(HttpRequest request) where T : AlipayNotify
+        public Task<T> ExecuteAsync<T>(HttpRequest request, AlipayOptions options) where T : AlipayNotify
         {
-            return await ExecuteAsync<T>(request, null);
-        }
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
 
-        public async Task<T> ExecuteAsync<T>(HttpRequest request, string optionsName) where T : AlipayNotify
-        {
-            var options = _optionsSnapshotAccessor.Get(optionsName);
-            var parameters = await GetParametersAsync(request);
-            var query = AlipayUtility.BuildQuery(parameters);
-            _logger.Log(options.LogLevel, "Request:{query}", query);
+            if (string.IsNullOrEmpty(options.SignType))
+            {
+                throw new ArgumentNullException(nameof(options.SignType));
+            }
 
+            if (string.IsNullOrEmpty(options.AppPrivateKey))
+            {
+                throw new ArgumentNullException(nameof(options.AppPrivateKey));
+            }
+
+            var parameters = GetParameters(request);
             var parser = new AlipayDictionaryParser<T>();
             var rsp = parser.Parse(parameters);
             CheckNotifySign(parameters, options);
-            return rsp;
+            return Task.FromResult(rsp);
         }
 
         #endregion
 
         #region Common Method
 
-        private async Task<SortedDictionary<string, string>> GetParametersAsync(HttpRequest request)
+        private Dictionary<string, string> GetParameters(HttpRequest request)
         {
-            var parameters = new SortedDictionary<string, string>();
+            var parameters = new Dictionary<string, string>();
             if (request.Method == "POST")
             {
-                var form = await request.ReadFormAsync();
-                foreach (var iter in form)
+                foreach (var iter in request.Form)
                 {
                     parameters.Add(iter.Key, iter.Value);
                 }
@@ -89,7 +82,7 @@ namespace Ding.Payment.Alipay
             }
 
             var prestr = GetSignContent(dictionary);
-            if (!AlipaySignature.RSACheckContent(prestr, sign, options.PublicRSAParameters, options.SignType))
+            if (!AlipaySignature.RSACheckContent(prestr, sign, options.AlipayPublicKey, options.SignType))
             {
                 throw new AlipayException("sign check fail: check Sign Data Fail!");
             }
@@ -102,8 +95,9 @@ namespace Ding.Payment.Alipay
                 throw new ArgumentNullException(nameof(dictionary));
             }
 
+            var sortPara = new SortedDictionary<string, string>(dictionary);
             var sb = new StringBuilder();
-            foreach (var iter in dictionary)
+            foreach (var iter in sortPara)
             {
                 if (!string.IsNullOrEmpty(iter.Value) && iter.Key != "sign" && iter.Key != "sign_type")
                 {

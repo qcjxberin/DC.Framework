@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Ding.Payment.Alipay.Domain;
+﻿using Ding.Payment.Alipay.Domain;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
@@ -13,7 +12,6 @@ namespace Ding.Payment.Alipay.Response
         /// 活动详情
         /// </summary>
         [JsonProperty("camp_detail")]
-        [XmlElement("camp_detail")]
         public CampDetail CampDetail { get; set; }
     }
 }

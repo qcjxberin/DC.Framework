@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Ding.Payment.Alipay.Domain;
+﻿using Ding.Payment.Alipay.Domain;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
@@ -13,7 +12,6 @@ namespace Ding.Payment.Alipay.Response
         /// 学生信息
         /// </summary>
         [JsonProperty("student_info_share_result")]
-        [XmlElement("student_info_share_result")]
         public EduStudentInfoShareResult StudentInfoShareResult { get; set; }
     }
 }

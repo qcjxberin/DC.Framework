@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Ding.Payment.Alipay.Domain;
+﻿using Ding.Payment.Alipay.Domain;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
@@ -13,7 +12,6 @@ namespace Ding.Payment.Alipay.Response
         /// 返回tablelistresult列表
         /// </summary>
         [JsonProperty("tableinfo_result")]
-        [XmlElement("tableinfo_result")]
         public TableInfoResult TableinfoResult { get; set; }
     }
 }

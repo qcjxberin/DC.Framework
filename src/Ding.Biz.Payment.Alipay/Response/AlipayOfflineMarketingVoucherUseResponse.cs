@@ -1,8 +1,9 @@
-namespace Ding.Payment.Alipay.Response
+﻿namespace Ding.Payment.Alipay.Response
 {
     /// <summary>
     /// AlipayOfflineMarketingVoucherUseResponse.
     /// </summary>
     public class AlipayOfflineMarketingVoucherUseResponse : AlipayResponse
-    {}
+    {
+    }
 }

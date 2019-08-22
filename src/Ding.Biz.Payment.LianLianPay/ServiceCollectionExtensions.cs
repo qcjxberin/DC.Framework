@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ding.Payment.LianLianPay
+namespace Ding.Payment.LianLianPay.LianLianPay
 {
     public static class ServiceCollectionExtensions
     {
@@ -15,8 +15,11 @@ namespace Ding.Payment.LianLianPay
             this IServiceCollection services,
             Action<LianLianPayOptions> setupAction)
         {
-            services.AddScoped<ILianLianPayClient, LianLianPayClient>();
-            services.AddScoped<ILianLianPayNotifyClient, LianLianPayNotifyClient>();
+            services.AddHttpClient(nameof(LianLianPayClient));
+
+            services.AddSingleton<ILianLianPayClient, LianLianPayClient>();
+            services.AddSingleton<ILianLianPayNotifyClient, LianLianPayNotifyClient>();
+
             if (setupAction != null)
             {
                 services.Configure(setupAction);

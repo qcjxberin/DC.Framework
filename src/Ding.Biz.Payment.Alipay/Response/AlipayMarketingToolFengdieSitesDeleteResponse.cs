@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Ding.Payment.Alipay.Domain;
+﻿using Ding.Payment.Alipay.Domain;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
@@ -13,7 +12,6 @@ namespace Ding.Payment.Alipay.Response
         /// 返回删除云凤蝶站点成功与失败的结果
         /// </summary>
         [JsonProperty("data")]
-        [XmlElement("data")]
         public FengdieSuccessRespModel Data { get; set; }
     }
 }

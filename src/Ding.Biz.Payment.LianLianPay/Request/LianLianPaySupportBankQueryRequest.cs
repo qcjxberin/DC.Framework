@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Ding.Payment.LianLianPay.Response;
+using Ding.Payment.LianLianPay.LianLianPay.Response;
 
-namespace Ding.Payment.LianLianPay.Request
+namespace Ding.Payment.LianLianPay.LianLianPay.Request
 {
     /// <summary>
     /// 支持银行查询

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Ding.Payment.LianLianPay.Response
+namespace Ding.Payment.LianLianPay.LianLianPay.Response
 {
     /// <summary>
     /// 收款结果查询

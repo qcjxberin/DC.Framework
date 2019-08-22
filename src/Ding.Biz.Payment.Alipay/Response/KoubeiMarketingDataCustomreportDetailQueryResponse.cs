@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Ding.Payment.Alipay.Domain;
+﻿using Ding.Payment.Alipay.Domain;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
@@ -13,7 +12,6 @@ namespace Ding.Payment.Alipay.Response
         /// 自定义报表规则条件的详细信息
         /// </summary>
         [JsonProperty("report_condition_info")]
-        [XmlElement("report_condition_info")]
         public CustomReportCondition ReportConditionInfo { get; set; }
     }
 }

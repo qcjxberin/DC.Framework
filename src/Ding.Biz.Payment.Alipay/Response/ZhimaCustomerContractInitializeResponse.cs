@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
 {
@@ -12,7 +11,6 @@ namespace Ding.Payment.Alipay.Response
         /// 电子合约号，后续的电子签名流程需要用到
         /// </summary>
         [JsonProperty("contract_no")]
-        [XmlElement("contract_no")]
         public string ContractNo { get; set; }
     }
 }

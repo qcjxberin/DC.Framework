@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
 {
@@ -12,7 +11,6 @@ namespace Ding.Payment.Alipay.Response
         /// 报告内容，格式详见示例代码
         /// </summary>
         [JsonProperty("report")]
-        [XmlElement("report")]
         public string Report { get; set; }
     }
 }

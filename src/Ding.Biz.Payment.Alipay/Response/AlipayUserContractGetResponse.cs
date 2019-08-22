@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Ding.Payment.Alipay.Domain;
+﻿using Ding.Payment.Alipay.Domain;
 using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
@@ -13,7 +12,6 @@ namespace Ding.Payment.Alipay.Response
         /// 支付宝用户订购信息
         /// </summary>
         [JsonProperty("alipay_contract")]
-        [XmlElement("alipay_contract")]
         public AlipayContract AlipayContract { get; set; }
     }
 }

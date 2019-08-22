@@ -1,15 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using Ding.Payment.Security;
 
 namespace Ding.Payment.QPay.Utility
 {
-    /// <summary>
-    /// QPay 签名类。
-    /// </summary>
     public class QPaySignature
     {
-        public static string SignWithKey(SortedDictionary<string, string> dictionary, string key)
+        public static string SignWithKey(QPayDictionary dictionary, string key)
         {
             var content = new StringBuilder();
             foreach (var iter in dictionary)
@@ -20,7 +16,7 @@ namespace Ding.Payment.QPay.Utility
                 }
             }
             var signContent = content.Append("key=").Append(key).ToString();
-            return MD5.Compute(signContent).ToUpper();
+            return MD5.Compute(signContent).ToUpperInvariant();
         }
     }
 }

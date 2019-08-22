@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Ding.Payment.LianLianPay
+namespace Ding.Payment.LianLianPay.LianLianPay
 {
     /// <summary>
     /// LianLianPay 请求接口。

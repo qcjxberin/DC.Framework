@@ -1,5 +1,4 @@
-using System.Xml.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Ding.Payment.Alipay.Response
 {
@@ -12,7 +11,6 @@ namespace Ding.Payment.Alipay.Response
         /// 1
         /// </summary>
         [JsonProperty("xw")]
-        [XmlElement("xw")]
         public string Xw { get; set; }
     }
 }

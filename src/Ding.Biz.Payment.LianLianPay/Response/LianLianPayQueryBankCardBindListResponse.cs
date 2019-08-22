@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Ding.Payment.LianLianPay.Domain;
+using Ding.Payment.LianLianPay.LianLianPay.Domain;
 using Newtonsoft.Json;
 
-namespace Ding.Payment.LianLianPay.Response
+namespace Ding.Payment.LianLianPay.LianLianPay.Response
 {
     /// <summary>
     /// 用户签约银行卡列表查询

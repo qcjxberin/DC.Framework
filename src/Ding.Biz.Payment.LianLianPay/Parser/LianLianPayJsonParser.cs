@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Ding.Payment.LianLianPay.Parser
+namespace Ding.Payment.LianLianPay.LianLianPay.Parser
 {
     /// <summary>
     /// LianLianPay JSON响应通用解释器。
