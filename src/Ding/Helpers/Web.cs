@@ -65,6 +65,19 @@ namespace Ding.Helpers {
 
         #endregion
 
+        #region 是否Web
+        /// <summary>
+        /// 判断是否Web环境
+        /// </summary>
+        public static bool IsWeb
+        {
+            get
+            {
+                return HttpContextAccessor != null;
+            }
+        }
+        #endregion
+
         #region LocalIpAddress(本地IP)
 
         /// <summary>

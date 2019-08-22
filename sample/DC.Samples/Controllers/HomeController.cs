@@ -9,6 +9,8 @@ using DC.Samples.Models;
 using Ding.Helpers;
 using Microsoft.Extensions.Configuration;
 using DC.Samples.Service;
+using Ding.Log;
+using DC.Samples.Common;
 
 namespace DC.Samples.Controllers
 {
@@ -25,6 +27,8 @@ namespace DC.Samples.Controllers
         {
             var s = Ioc.Create<IConfiguration>();
             var s1 = Ioc.Create<ITest>();
+            XTrace.UseConsole();
+            XTrace.WriteLine(AdScope.GetCount().ToString());
             return Content(s["AllowedHosts"] + " " + s1.TT());
             return View();
         }

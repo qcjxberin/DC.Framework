@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Ding.Core\Ding.Core.csproj" />
+    <ProjectReference Include="..\..\src\Ding.MemoryDB\Ding.MemoryDB.csproj" />
     <ProjectReference Include="..\..\src\Ding\Ding.csproj" />
   </ItemGroup>
 
