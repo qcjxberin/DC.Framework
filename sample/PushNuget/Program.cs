@@ -39,7 +39,13 @@ namespace PushNuget
 
             foreach (var item in infos.ToArray())
             {
-                "cmd".Run($"/k dotnet nuget push ../{item.Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 1000, WriteLog);
+                if (item.Name.Contains(".symbols.nupkg"))
+                {
+                    item.Delete();
+                    _filescount--;
+                    continue;
+                }
+                "cmd".Run($"/k dotnet nuget push ../{item.Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 3000, WriteLog);
 
                 AllList.Add(item);
             }
