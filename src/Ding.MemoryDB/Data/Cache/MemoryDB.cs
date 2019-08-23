@@ -527,6 +527,10 @@ namespace Ding.Data
 
         private static String getCachePath(Type t)
         {
+            if (Web.IsWeb)
+            {
+                return getCacheFileName(t.FullName);
+            }
             return getCacheFileName(t.FullName);
         }
 
@@ -534,6 +538,12 @@ namespace Ding.Data
         {
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"App_Data/Data/{name}{fileExt}");
         }
+
+        private static String getWebCacheFileName(String name)
+        {
+            return Path.Combine(Web.RootPath, $"App_Data/Data/{name}{fileExt}");
+        }
+
 
         private static readonly String fileExt = ".json";
 
