@@ -4,16 +4,21 @@
 
 namespace PushNuget
 {
+    using Ding.Log;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
     using System.Linq;
+    using System.Text.RegularExpressions;
     using System.Threading;
+    using System.Threading.Tasks;
 
     internal class Program
     {
-        private static readonly List<FileInfo> List = new List<FileInfo>(); // 待处理的文件
+        private static readonly List<FileInfo> AllList = new List<FileInfo>(); // 待处理的文件
+
+        private static readonly List<FileInfo> PushList = new List<FileInfo>(); // 已上传的文件
 
         private static int _count;  // 处理过的文件数量
 
@@ -34,9 +39,9 @@ namespace PushNuget
 
             foreach (var item in infos.ToArray())
             {
-                "cmd".Run($"/k dotnet nuget push ../{item.Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 6000, WriteLog);
+                "cmd".Run($"/k dotnet nuget push ../{item.Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 1000, WriteLog);
 
-                List.Add(item);
+                AllList.Add(item);
             }
 
             Console.WriteLine($@"已上传文件数：{_count},总文件数：{_filescount}");
@@ -46,9 +51,9 @@ namespace PushNuget
                 Console.WriteLine("5秒后即将关闭");
                 Thread.Sleep(5_000);
 
-                if (List.Count > 0)
+                if (AllList.Count > 0)
                 {
-                    foreach (var row in List.ToArray())
+                    foreach (var row in AllList.ToArray())
                     {
                         Console.WriteLine($@"删除 {row.Name}");
                         row.Delete();
@@ -72,12 +77,14 @@ namespace PushNuget
 
         protected static void WriteLog(string msg)
         {
-            if (msg.Contains("error:") || msg.Contains("已推送包"))
+            XTrace.UseConsole();
+            if (msg.IndexOf("正在将 ") > -1)
             {
+                string result = msg.Substring(msg.IndexOf("正在将") + 3, msg.IndexOf("推送到") - 10);
+                PushList.Add(("../" + result.Trim()).AsFile());
                 _count++;
             }
-
-            Console.WriteLine(msg);
+            XTrace.WriteLine(msg);
         }
     }
 }
