@@ -1,5 +1,9 @@
 本项目安装使用需要vs2019 preveiew最新版及最新版net core 3.0 sdk
 
+请加群交流：774046050
+
+要看具体的使用方法：请看项目[GitDC](https://gitee.com/xingchensoft/GitDC)
+
 
 常用方法：
 
