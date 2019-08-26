@@ -11,6 +11,21 @@ namespace Ding.Biz.OAuthLogin
     public class Weibo_AccessToken_RequestEntity
     {
         /// <summary>
+        /// Weibo登录配置
+        /// </summary>
+        protected static readonly WeiboConfig WeiboConfig;
+
+        /// <summary>
+        /// 初始化一个<see cref="Weibo_Authorize_RequestEntity"/>类型的实例
+        /// </summary>
+        static Weibo_AccessToken_RequestEntity()
+        {
+            var provider = Ioc.Create<IWeiboConfigProvider>();
+            provider.CheckNotNull(nameof(provider));
+            WeiboConfig = provider.GetConfigAsync().Result;
+        }
+
+        /// <summary>
         /// 申请应用时分配的AppKey。
         /// </summary>
         [Required]

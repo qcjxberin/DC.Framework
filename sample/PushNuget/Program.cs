@@ -54,8 +54,8 @@ namespace PushNuget
 
             if (_count == _filescount)
             {
-                Console.WriteLine("5秒后即将关闭");
-                Thread.Sleep(5_000);
+                Console.WriteLine("10秒后即将关闭");
+                Thread.Sleep(10_000);
 
                 if (AllList.Count > 0)
                 {

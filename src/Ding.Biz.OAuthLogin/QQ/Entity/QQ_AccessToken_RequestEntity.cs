@@ -10,6 +10,21 @@ namespace Ding.Biz.OAuthLogin
     public class QQ_AccessToken_RequestEntity
     {
         /// <summary>
+        /// QQ登录配置
+        /// </summary>
+        protected static readonly QQConfig QQConfig;
+
+        /// <summary>
+        /// 初始化一个<see cref="QQ_Authorization_RequestEntity"/>类型的实例
+        /// </summary>
+        static QQ_AccessToken_RequestEntity()
+        {
+            var provider = Ioc.Create<IQQConfigProvider>();
+            provider.CheckNotNull(nameof(provider));
+            QQConfig = provider.GetConfigAsync().Result;
+        }
+
+        /// <summary>
         /// 授权类型，在本步骤中，此值为“authorization_code”。
         /// </summary>
         [Required]

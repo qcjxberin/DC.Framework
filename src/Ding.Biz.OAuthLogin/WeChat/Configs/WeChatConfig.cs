@@ -3,7 +3,7 @@
     /// <summary>
     /// 配置
     /// </summary>
-    public class WeChatConfig
+    public class WeChatConfig : ConfigBase
     {
         /// <summary>
         /// 仅做说明用
@@ -21,33 +21,18 @@
         /// <summary>
         /// GET
         /// </summary>
-        public static string API_Authorization { get; set; } = "https://open.weixin.qq.com/connect/qrconnect";
+        public string API_Authorization = "https://open.weixin.qq.com/connect/qrconnect";
 
         /// <summary>
         /// POST
         /// </summary>
-        public static string API_AccessToken { get; set; } = "https://api.weixin.qq.com/sns/oauth2/access_token";
+        public string API_AccessToken = "https://api.weixin.qq.com/sns/oauth2/access_token";
 
         /// <summary>
         /// GET
         /// </summary>
-        public static string API_UserInfo { get; set; } = "https://api.weixin.qq.com/sns/userinfo";
+        public string API_UserInfo = "https://api.weixin.qq.com/sns/userinfo";
 
         #endregion
-
-        /// <summary>
-        /// APP ID
-        /// </summary>
-        public static string APPID { get; set; } = "";
-
-        /// <summary>
-        /// APP Key
-        /// </summary>
-        public static string APPKey { get; set; } = "";
-
-        /// <summary>
-        /// 回调
-        /// </summary>
-        public static string Redirect_Uri { get; set; } = "";
     }
 }

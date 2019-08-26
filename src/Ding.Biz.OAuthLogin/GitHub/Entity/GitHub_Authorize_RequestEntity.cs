@@ -11,6 +11,21 @@ namespace Ding.Biz.OAuthLogin
     public class GitHub_Authorize_RequestEntity
     {
         /// <summary>
+        /// GitHub登录配置
+        /// </summary>
+        protected static readonly GitHubConfig GitHubConfig;
+
+        /// <summary>
+        /// 初始化一个<see cref="GitHub_Authorize_RequestEntity"/>类型的实例
+        /// </summary>
+        static GitHub_Authorize_RequestEntity()
+        {
+            var provider = Ioc.Create<IGitHubConfigProvider>();
+            provider.CheckNotNull(nameof(provider));
+            GitHubConfig = provider.GetConfigAsync().Result;
+        }
+
+        /// <summary>
         /// 注册应用时的获取的client_id
         /// </summary>
         [Required]

@@ -11,6 +11,21 @@ namespace Ding.Biz.OAuthLogin
     public class MicroSoft_Authorize_RequestEntity
     {
         /// <summary>
+        /// MicroSoft登录配置
+        /// </summary>
+        protected static readonly MicroSoftConfig MicroSoftConfig;
+
+        /// <summary>
+        /// 初始化一个<see cref="MicroSoft_Authorize_RequestEntity"/>类型的实例
+        /// </summary>
+        static MicroSoft_Authorize_RequestEntity()
+        {
+            var provider = Ioc.Create<IMicroSoftConfigProvider>();
+            provider.CheckNotNull(nameof(provider));
+            MicroSoftConfig = provider.GetConfigAsync().Result;
+        }
+
+        /// <summary>
         /// 注册应用时的获取的client_id
         /// </summary>
         [Required]
