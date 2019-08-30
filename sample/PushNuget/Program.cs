@@ -5,6 +5,7 @@
 namespace PushNuget
 {
     using Ding.Log;
+    using Ding.Threading;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
@@ -16,28 +17,41 @@ namespace PushNuget
 
     internal class Program
     {
-        private static readonly List<FileInfo> AllList = new List<FileInfo>(); // 待处理的文件
+        private static FileInfo[] Infos; //要上传的文件
 
-        private static readonly List<FileInfo> PushList = new List<FileInfo>(); // 已上传的文件
-
-        private static int _count;  // 处理过的文件数量
+        private static int _count = 0;  // 处理过的文件数量
 
         private static int _filescount; // 所有文件数量
 
+        private static int jishi = 10;
+
+        private static bool isjishi = false;
+
+        /// <summary>
+        /// 全局定时器
+        /// </summary>
+        public static TimerX GlobalTimer { get; private set; }
+
         private static void Main(string[] args)
         {
+            XTrace.UseConsole();
+            GlobalTimer = new TimerX(GlobalScheduledTasks, null, 1000, 1000);
+
             Console.Title = args.Length > 0 ? args[0] : @"上传到Nuget";
 
             var fileInfos = "../".AsDirectory().GetAllFiles("*.nupkg");  // 获取所有的nupkg文件
-            var infos = fileInfos as FileInfo[] ?? fileInfos.ToArray();
-            if (!infos.Any())
+            Infos = fileInfos as FileInfo[] ?? fileInfos.ToArray();
+            if (!Infos.Any())
             {
                 Console.WriteLine(@"没有发现要上传的NuGet文件");
+                isjishi = true;
+                Close(false);
+                return;
             }
 
-            _filescount = infos.Count();
+            _filescount = Infos.Count();
 
-            foreach (var item in infos.ToArray())
+            foreach (var item in Infos)
             {
                 if (item.Name.Contains(".symbols.nupkg"))
                 {
@@ -45,52 +59,78 @@ namespace PushNuget
                     _filescount--;
                     continue;
                 }
-                "cmd".Run($"/k dotnet nuget push ../{item.Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 3000, WriteLog);
-
-                AllList.Add(item);
             }
 
-            Console.WriteLine($@"已上传文件数：{_count},总文件数：{_filescount}");
+            Push();
 
-            if (_count == _filescount)
-            {
-                Console.WriteLine("10秒后即将关闭");
-                Thread.Sleep(10_000);
+            Console.ReadKey();
+        }
 
-                if (AllList.Count > 0)
-                {
-                    foreach (var row in AllList.ToArray())
-                    {
-                        Console.WriteLine($@"删除 {row.Name}");
-                        row.Delete();
-                    }
-                }
-
-                var process = Process.GetProcessesByName("PushNuget");
-                foreach (var p in process)
-                {
-                    if (!p.CloseMainWindow())
-                    {
-                        p.Kill();
-                    }
-                }
-            }
-            else
-            {
-                Console.WriteLine($@"上传的文件数和实际文件数不一致，请检查后重新执行工具。");
-            }
+        protected static void Push()
+        {
+            "cmd".Run($"/k dotnet nuget push ../{Infos[_count].Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 6000, WriteLog);
         }
 
         protected static void WriteLog(string msg)
         {
-            XTrace.UseConsole();
-            if (msg.IndexOf("正在将 ") > -1)
+            if (msg.IndexOf("error: ") > -1 || msg.IndexOf("已推送包") > -1)
             {
-                string result = msg.Substring(msg.IndexOf("正在将") + 3, msg.IndexOf("推送到") - 10);
-                PushList.Add(("../" + result.Trim()).AsFile());
-                _count++;
+                Interlocked.Increment(ref _count);
+
+                XTrace.WriteLine(msg);
+                if (_count != _filescount)
+                {
+                    Push();
+                }
+                else
+                {
+                    Console.WriteLine($@"已上传文件数：{_count},总文件数：{_filescount}");
+
+                    if (_count == _filescount)
+                    {
+                        isjishi = true;
+                        Close(true);
+                    }
+                    else
+                    {
+                        Console.WriteLine($@"上传的文件数和实际文件数不一致，请检查后重新执行工具。");
+                    }
+                }
+                return;
             }
             XTrace.WriteLine(msg);
+        }
+
+        protected static void Close(bool existFile)
+        {
+            Console.WriteLine("10秒后即将关闭");
+            Thread.Sleep(10_000);
+
+            if (existFile)
+            {
+                foreach (var row in Infos)
+                {
+                    Console.WriteLine($@"删除 {row.Name}");
+                    row.Delete();
+                }
+            }
+            var process = Process.GetProcessesByName("PushNuget");
+            foreach (var p in process)
+            {
+                if (!p.CloseMainWindow())
+                {
+                    p.Kill();
+                }
+            }
+        }
+
+        private static void GlobalScheduledTasks(object state)
+        {
+            if (isjishi)
+            {
+                XTrace.WriteLine(jishi.ToString());
+                jishi--;
+            }
         }
     }
 }
