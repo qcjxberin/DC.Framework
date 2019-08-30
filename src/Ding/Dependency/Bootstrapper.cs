@@ -61,9 +61,10 @@ namespace Ding.Dependency {
         /// <param name="configs">依赖配置</param>
         /// <param name="aopConfigAction">Aop配置操作</param>
         /// <param name="finder">类型查找器</param>
-        public static IServiceProvider Run( IServiceCollection services = null, IConfig[] configs = null, 
-                Action<IAspectConfiguration> aopConfigAction=null, IFind finder = null ) {
-            return new Bootstrapper( services, configs, aopConfigAction, finder ).Bootstrap();
+        public static IServiceProvider Run(IServiceCollection services = null, IConfig[] configs = null,
+                Action<IAspectConfiguration> aopConfigAction = null, IFind finder = null)
+        {
+            return new Bootstrapper(services, configs, aopConfigAction, finder).Bootstrap();
         }
 
         /// <summary>
