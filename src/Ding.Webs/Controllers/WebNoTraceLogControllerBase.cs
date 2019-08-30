@@ -15,6 +15,7 @@ namespace Ding.Webs.Controllers
     /// </summary>
     [ExceptionHandler]
     [ErrorLog]
+    [WebTraceLog(IgnoreFormParams = true)]
     public class WebNoTraceLogControllerBase : Controller
     {
         public WebNoTraceLogControllerBase()

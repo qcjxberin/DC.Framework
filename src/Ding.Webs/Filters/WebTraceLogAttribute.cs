@@ -25,6 +25,11 @@ namespace Ding.Webs.Filters
         public bool Ignore { get; set; }
 
         /// <summary>
+        /// 是否忽略参数，为true则不记录参数
+        /// </summary>
+        public bool IgnoreFormParams { get; set; }
+
+        /// <summary>
         /// 执行
         /// </summary>
         public override async Task OnActionExecutionAsync( ActionExecutingContext context, ActionExecutionDelegate next ) {
@@ -84,7 +89,10 @@ namespace Ding.Webs.Filters
             log.Params( "Http请求方式", request.Method );
             if( string.IsNullOrWhiteSpace( request.ContentType ) == false )
                 log.Params( "ContentType", request.ContentType );
-            await AddFormParams( request, log );
+            if (IgnoreFormParams)
+            {
+                await AddFormParams(request, log);
+            }
             AddCookie( request, log );
         }
 
