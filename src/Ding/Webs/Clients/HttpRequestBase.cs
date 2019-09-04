@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ding.Helpers;
 using Ding.Webs.Clients.Parameters;
+using IdentityModel.Client;
 
 namespace Ding.Webs.Clients {
     /// <summary>
