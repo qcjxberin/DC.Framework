@@ -487,45 +487,69 @@ namespace Ding.Extension
             return startIndex >= value.Length ? string.Empty : value.Substring(startIndex).Trim();
         }
 
+        #region 取左、中、右
         /// <summary>
-        /// 获取字符串指定长度左边的部分
+        /// 取左边的字符
         /// </summary>
-        /// <param name="value">值</param>
-        /// <param name="leftLength">指定字符串长度</param>
+        /// <param name="sSource">字符串</param>
+        /// <param name="iLength">要取长度</param>
         /// <returns></returns>
-        public static string Left(this string value, int leftLength)
+        public static string Left(this string sSource, int iLength)
         {
-            if (value == null)
+            if (!sSource.StrIsNullOrEmpty())
             {
-                throw new ArgumentNullException("value");
+                if (iLength > sSource.Length)
+                {
+                    return sSource;
+                }
+                else
+                {
+                    return sSource.Substring(0, iLength);
+                }
             }
-            if (leftLength > value.Length)
-            {
-                throw new ArgumentOutOfRangeException("leftLength", leftLength,
-                    "leftLength must be less than length of string");
-            }
-            return value.Substring(0, leftLength);
+            return string.Empty;
         }
 
         /// <summary>
-        /// 获取字符串指定长度右边的部分
+        /// 取右边的字符
         /// </summary>
-        /// <param name="value">值</param>
-        /// <param name="rightLength">指定字符串长度</param>
+        /// <param name="sSource">字符串</param>
+        /// <param name="iLength">要取长度</param>
         /// <returns></returns>
-        public static string Right(this string value, int rightLength)
+        public static String Right(this string sSource, int iLength)
         {
-            if (value == null)
+            if (!sSource.StrIsNullOrEmpty())
             {
-                throw new ArgumentNullException("value");
+                if (iLength > sSource.Length)
+                {
+                    return sSource;
+                }
+                else
+                {
+                    return sSource.Substring(sSource.Length - iLength, iLength);
+                }
             }
-            if (rightLength > value.Length)
-            {
-                throw new ArgumentOutOfRangeException("rightLength", rightLength,
-                    "rightLength must be less than length of string");
-            }
-            return value.Substring(value.Length - rightLength);
+            return string.Empty;
         }
+
+        /// <summary>
+        /// 取中间的字符。
+        /// </summary>
+        /// <param name="sSource">字符串</param>
+        /// <param name="iStart">开始长度</param>
+        /// <param name="iLength">结束长度</param>
+        /// <returns></returns>
+        public static String Mid(this string sSource, int iStart, int iLength)
+        {
+            if (!sSource.StrIsNullOrEmpty())
+            {
+                int iStartPoint = iStart > sSource.Length ? sSource.Length : iStart;
+                return sSource.Substring(iStartPoint, iStartPoint + iLength > sSource.Length ? sSource.Length - iStartPoint : iLength);
+            }
+            return string.Empty;
+        }
+
+        #endregion
 
         /// <summary>
         /// 获取字符串指定索引部分
