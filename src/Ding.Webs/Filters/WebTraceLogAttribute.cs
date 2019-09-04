@@ -89,7 +89,7 @@ namespace Ding.Webs.Filters
             log.Params( "Http请求方式", request.Method );
             if( string.IsNullOrWhiteSpace( request.ContentType ) == false )
                 log.Params( "ContentType", request.ContentType );
-            if (IgnoreFormParams)
+            if (!IgnoreFormParams)
             {
                 await AddFormParams(request, log);
             }
