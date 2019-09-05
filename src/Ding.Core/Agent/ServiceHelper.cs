@@ -21,7 +21,7 @@ namespace Ding.Agent
             {
                 var p = Process.GetCurrentProcess();
                 var filename = p.MainModule.FileName;
-                filename = Path.GetFileName(filename);
+                //filename = Path.GetFileName(filename);
                 filename = filename.Replace(".vshost.", ".");
 
                 return filename;

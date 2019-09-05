@@ -10,7 +10,11 @@ namespace Ding.Ip
 
         public IDC()
         {
+#if NET4
+            reader = new Reader(GetType().Assembly.GetManifestResourceStream("Ding.Core.Ip.db.ipipfree.ipdb"));
+#else
             reader = new Reader(GetType().GetTypeInfo().Assembly.GetManifestResourceStream("Ding.Core.Ip.db.ipipfree.ipdb"));
+#endif
         }
 
         public IDC(string name)

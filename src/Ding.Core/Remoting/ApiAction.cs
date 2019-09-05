@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Ding.Data;
+using Ding.Log;
 using Ding.Reflection;
 
 namespace Ding.Remoting
@@ -28,6 +29,12 @@ namespace Ding.Remoting
 
         /// <summary>是否二进制返回</summary>
         public Boolean IsPacketReturn { get; }
+
+        /// <summary>处理统计</summary>
+        public ICounter StatProcess { get; set; } = new PerfCounter();
+
+        /// <summary>最后会话</summary>
+        public String LastSession { get; set; }
 
         /// <summary>实例化</summary>
         public ApiAction(MethodInfo method, Type type)

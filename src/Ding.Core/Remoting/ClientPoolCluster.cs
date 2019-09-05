@@ -85,10 +85,14 @@ namespace Ding.Remoting
             {
                 // 最小值为0，连接池不再使用栈，只使用队列
                 Min = 0;
-                Max = 100000;
+                Max = 100_000;
             }
 
             protected override ISocketClient OnCreate() => Host.CreateClient();
+
+            /// <summary>释放时，返回是否有效。无效对象将会被抛弃</summary>
+            /// <param name="value"></param>
+            protected override Boolean OnPut(ISocketClient value) => value != null && !value.Disposed /*&& value.Client != null*/;
         }
     }
 }

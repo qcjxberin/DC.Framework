@@ -6,6 +6,9 @@ using Ding.Log;
 using Ding.Messaging;
 using Ding.Net;
 using Ding.Threading;
+#if !NET4
+using TaskEx = System.Threading.Tasks.Task;
+#endif
 
 namespace Ding.Remoting
 {
@@ -22,7 +25,7 @@ namespace Ding.Remoting
         /// <summary>客户端连接集群</summary>
         public ICluster<String, ISocketClient> Cluster { get; set; }
 
-        /// <summary>是否使用连接池。true时建立多个到服务端的连接，默认false使用单一连接</summary>
+        /// <summary>是否使用连接池。true时建立多个到服务端的连接（高吞吐），默认false使用单一连接（低延迟）</summary>
         public Boolean UsePool { get; set; }
 
         /// <summary>主机</summary>
@@ -89,21 +92,8 @@ namespace Ding.Remoting
                 if (Handler == null) Handler = new ApiHandler { Host = this };
 
                 // 集群
-                var cluster = Cluster;
-                if (cluster == null)
-                {
-                    if (UsePool)
-                        cluster = new ClientPoolCluster();
-                    else
-                        cluster = new ClientSingleCluster();
-                    Cluster = cluster;
-                }
-
-                if (cluster is ClientSingleCluster sc && sc.OnCreate == null) sc.OnCreate = OnCreate;
-                if (cluster is ClientPoolCluster pc && pc.OnCreate == null) pc.OnCreate = OnCreate;
-
-                if (cluster.GetItems == null) cluster.GetItems = () => Servers;
-                cluster.Open();
+                Cluster = InitCluster();
+                WriteLog("集群：{0}", Cluster);
 
                 Encoder.Log = EncoderLog;
 
@@ -139,6 +129,28 @@ namespace Ding.Remoting
             Active = false;
         }
 
+        /// <summary>初始化集群</summary>
+        protected virtual ICluster<String, ISocketClient> InitCluster()
+        {
+            var cluster = Cluster;
+            if (cluster == null)
+            {
+                if (UsePool)
+                    cluster = new ClientPoolCluster();
+                else
+                    cluster = new ClientSingleCluster();
+                //Cluster = cluster;
+            }
+
+            if (cluster is ClientSingleCluster sc && sc.OnCreate == null) sc.OnCreate = OnCreate;
+            if (cluster is ClientPoolCluster pc && pc.OnCreate == null) pc.OnCreate = OnCreate;
+
+            if (cluster.GetItems == null) cluster.GetItems = () => Servers;
+            cluster.Open();
+
+            return cluster;
+        }
+
         /// <summary>查找Api动作</summary>
         /// <param name="action"></param>
         /// <returns></returns>
@@ -160,7 +172,10 @@ namespace Ding.Remoting
         public virtual async Task<Object> InvokeAsync(Type resultType, String action, Object args = null, Byte flag = 0)
         {
             // 让上层异步到这直接返回，后续代码在另一个线程执行
-            await Task.Yield();
+            //!!! Task.Yield会导致强制捕获上下文，虽然会在另一个线程执行，但在UI线程中可能无法抢占上下文导致死锁
+#if !NET4
+            //await Task.Yield();
+#endif
 
             Open();
 
@@ -168,27 +183,24 @@ namespace Ding.Remoting
 
             try
             {
-                return await ApiHostHelper.InvokeAsync(this, this, resultType, act, args, flag);
+                return await ApiHostHelper.InvokeAsync(this, this, resultType, act, args, flag).ConfigureAwait(false);
             }
             catch (ApiException ex)
             {
                 // 重新登录后再次调用
                 if (ex.Code == 401)
                 {
-                    var waiter = Cluster.Invoke(client => OnLoginAsync(client, true));
-                    if (waiter == null) throw;
+                    await Cluster.InvokeAsync(client => OnLoginAsync(client, true)).ConfigureAwait(false);
 
-                    await waiter;
-
-                    return await ApiHostHelper.InvokeAsync(this, this, resultType, act, args, flag);
+                    return await ApiHostHelper.InvokeAsync(this, this, resultType, act, args, flag).ConfigureAwait(false);
                 }
 
                 throw;
             }
             // 截断任务取消异常，避免过长
-            catch (TaskCanceledException ex)
+            catch (TaskCanceledException)
             {
-                throw new TaskCanceledException($"[{action}]超时[{Timeout:n0}ms]取消", ex);
+                throw new TaskCanceledException($"[{act}]超时[{Timeout:n0}ms]取消");
             }
         }
 
@@ -201,8 +213,8 @@ namespace Ding.Remoting
         public virtual async Task<TResult> InvokeAsync<TResult>(String action, Object args = null, Byte flag = 0)
         {
             // 发送失败时，返回空
-            var rs = await InvokeAsync(typeof(TResult), action, args, flag);
-            if (rs == null) return default(TResult);
+            var rs = await InvokeAsync(typeof(TResult), action, args, flag).ConfigureAwait(false);
+            if (rs == null) return default;
 
             return (TResult)rs;
         }
@@ -215,8 +227,8 @@ namespace Ding.Remoting
         public virtual TResult Invoke<TResult>(String action, Object args = null, Byte flag = 0)
         {
             // 发送失败时，返回空
-            var rs = InvokeAsync(typeof(TResult), action, args, flag).Result;
-            if (rs == null) return default(TResult);
+            var rs = TaskEx.Run(() => InvokeAsync(typeof(TResult), action, args, flag)).Result;
+            if (rs == null) return default;
 
             return (TResult)rs;
         }
@@ -247,36 +259,12 @@ namespace Ding.Remoting
         {
             var act = action;
 
-            return (TResult)await ApiHostHelper.InvokeAsync(this, client, typeof(TResult), act, args, flag);
+            return (TResult)await ApiHostHelper.InvokeAsync(this, client, typeof(TResult), act, args, flag).ConfigureAwait(false);
         }
 
-        async Task<IMessage> IApiSession.SendAsync(IMessage msg)
-        {
-            try
-            {
-                return await Cluster.InvokeAll(async client => await client.SendMessageAsync(msg) as IMessage);
-            }
-            catch (ClusterException ex)
-            {
-                if (ShowError) WriteLog("请求[{0}]错误！Timeout=[{1:n0}ms] {2}", ex.Resource, Timeout, ex.GetMessage());
+        Task<IMessage> IApiSession.SendAsync(IMessage msg) => Cluster.InvokeAsync(client => client.SendMessageAsync(msg)).ContinueWith(t => t.Result as IMessage);
 
-                throw ex;
-            }
-        }
-
-        Boolean IApiSession.Send(IMessage msg)
-        {
-            try
-            {
-                return Cluster.InvokeAll(client => client.SendMessage(msg));
-            }
-            catch (ClusterException ex)
-            {
-                if (ShowError) WriteLog("请求[{0}]错误！Timeout=[{1:n0}ms] {2}", ex.Resource, Timeout, ex.GetMessage());
-
-                throw ex;
-            }
-        }
+        Boolean IApiSession.Send(IMessage msg) => Cluster.Invoke(client => client.SendMessage(msg));
         #endregion
 
         #region 登录
@@ -292,15 +280,17 @@ namespace Ding.Remoting
         /// <summary>连接后自动登录</summary>
         /// <param name="client">客户端</param>
         /// <param name="force">强制登录</param>
-        protected virtual Task<Object> OnLoginAsync(ISocketClient client, Boolean force) => null;
+        protected virtual Task<Object> OnLoginAsync(ISocketClient client, Boolean force) => TaskEx.FromResult<Object>(null);
 
         /// <summary>登录</summary>
         /// <returns></returns>
         public virtual async Task<Object> LoginAsync()
         {
-            await Task.Yield();
+#if !NET4
+            //await Task.Yield();
+#endif
 
-            return Cluster.InvokeAll(client => OnLoginAsync(client, false));
+            return await Cluster.InvokeAsync(client => OnLoginAsync(client, false)).ConfigureAwait(false);
         }
         #endregion
 
@@ -328,8 +318,7 @@ namespace Ding.Remoting
             LastActive = DateTime.Now;
 
             // Api解码消息得到Action和参数
-            var msg = e.Message as IMessage;
-            if (msg == null || msg.Reply) return;
+            if (!(e.Message is IMessage msg) || msg.Reply) return;
 
             var ss = sender as ISocketRemote;
             var host = this as IApiHost;

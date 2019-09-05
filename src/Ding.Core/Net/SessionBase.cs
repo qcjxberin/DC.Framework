@@ -9,6 +9,9 @@ using Ding.Data;
 using Ding.Log;
 using Ding.Model;
 using Ding.Threading;
+#if !NET4
+using TaskEx = System.Threading.Tasks.Task;
+#endif
 
 namespace Ding.Net
 {
@@ -512,8 +515,6 @@ namespace Ding.Net
         /// <returns></returns>
         public virtual Boolean SendMessage(Object message)
         {
-            //Pipeline.FireWrite(this, message);
-
             var ctx = CreateContext(this);
             message = Pipeline.Write(ctx, message);
 
@@ -525,15 +526,13 @@ namespace Ding.Net
         /// <returns></returns>
         public virtual Task<Object> SendMessageAsync(Object message)
         {
-            //Pipeline.FireWriteAndWait(this, message);
-
             var ctx = CreateContext(this);
             var source = new TaskCompletionSource<Object>();
             ctx["TaskSource"] = source;
 
             message = Pipeline.Write(ctx, message);
 
-            if (!ctx.FireWrite(message)) return Task.FromResult((Object)null);
+            if (!ctx.FireWrite(message)) return TaskEx.FromResult((Object)null);
 
             return source.Task;
         }

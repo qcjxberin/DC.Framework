@@ -9,6 +9,9 @@ using Ding.Data;
 using Ding.Log;
 using Ding.Model;
 using Ding.Threading;
+#if !NET4
+using TaskEx = System.Threading.Tasks.Task;
+#endif
 
 namespace Ding.Net
 {
@@ -167,7 +170,7 @@ namespace Ding.Net
 
             message = Pipeline.Write(ctx, message);
 
-            if (!ctx.FireWrite(message)) return Task.FromResult((Object)null);
+            if (!ctx.FireWrite(message)) return TaskEx.FromResult((Object)null);
 
             return source.Task;
         }
