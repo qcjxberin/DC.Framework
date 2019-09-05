@@ -26,7 +26,7 @@ namespace Ding.Caching
         public T this[Int32 index]
         {
             get => Execute(r => r.Execute<T>("LINDEX", Key, index));
-            set => Execute(r => r.Execute<T>("LSET", Key, index, value), true);
+            set => Execute(r => r.Execute<String>("LSET", Key, index, value), true);
         }
 
         /// <summary>个数</summary>
@@ -36,10 +36,15 @@ namespace Ding.Caching
 
         /// <summary>添加元素在后面</summary>
         /// <param name="item"></param>
-        public void Add(T item) => Execute(r => r.Execute<T>("RPUSH", Key, item), true);
+        public void Add(T item) => Execute(r => r.Execute<Int32>("RPUSH", Key, item), true);
 
-        /// <summary>清空列表</summary>
-        public void Clear() => LTrim(0, -1);
+        /// <summary>批量添加</summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public Int32 AddRange(IEnumerable<T> values) => RPUSH(values);
+
+        /// <summary>清空列表-start>end 清空</summary>
+        public void Clear() => LTrim(-1, 0);
 
         /// <summary>是否包含指定元素</summary>
         /// <param name="item"></param>
@@ -72,8 +77,8 @@ namespace Ding.Caching
             var count = Count;
             if (count > 1000) throw new NotSupportedException($"[{Key}]的元素个数过多，不支持！");
 
-            var list = GetAll().ToList();
-            return list.IndexOf(item);
+            var arr = GetAll();
+            return Array.IndexOf(arr, item);
         }
 
         /// <summary>在指定位置插入</summary>
@@ -119,6 +124,38 @@ namespace Ding.Caching
         #endregion
 
         #region 高级操作
+        /// <summary>批量添加</summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public Int32 RPUSH(IEnumerable<T> values)
+        {
+            var args = new List<Object>
+            {
+                Key
+            };
+            foreach (var item in values)
+            {
+                args.Add(item);
+            }
+            return Execute(rc => rc.Execute<Int32>("RPUSH", args.ToArray()), true);
+        }
+
+        /// <summary>批量添加</summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public Int32 LPUSH(IEnumerable<T> values)
+        {
+            var args = new List<Object>
+            {
+                Key
+            };
+            foreach (var item in values)
+            {
+                args.Add(item);
+            }
+            return Execute(rc => rc.Execute<Int32>("LPUSH", args.ToArray()), true);
+        }
+
         /// <summary>在指定元素之前插入</summary>
         /// <param name="pivot"></param>
         /// <param name="value"></param>

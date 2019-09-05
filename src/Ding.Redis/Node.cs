@@ -181,8 +181,8 @@ namespace Ding.Caching
 
                 var rc = new RedisClient
                 {
+                    Host = rds,
                     Server = uri,
-                    Password = rds.Password,
                 };
 
                 rc.Log = rds.Log;
