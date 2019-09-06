@@ -1,6 +1,7 @@
 ﻿using Ding.Reflection;
+using System;
 
-namespace System
+namespace Ding
 {
     /// <summary>模型扩展</summary>
     public static class ModelExtension
