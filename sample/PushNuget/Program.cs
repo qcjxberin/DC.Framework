@@ -60,6 +60,7 @@ namespace PushNuget
                     continue;
                 }
             }
+            Thread.Sleep(1000);
 
             Push();
 
