@@ -68,7 +68,7 @@ namespace PushNuget
 
         protected static void Push()
         {
-            "cmd".Run($"/k dotnet nuget push ../{Infos[_count].Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 6000, WriteLog);
+            "cmd".Run($"/k dotnet nuget push ../{Infos[_count].Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 10000, WriteLog);
         }
 
         protected static void WriteLog(string msg)
