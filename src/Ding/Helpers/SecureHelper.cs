@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -12,84 +13,167 @@ namespace Ding.Helpers
         /// <summary>
         /// AES密钥向量
         /// </summary>
-        private static readonly byte[] _aeskeys = new byte[] { 18, 52, 86, 120, 144, 171, 205, 239, 18, 52, 86, 120, 144, 171, 205, 239 };
+        private static readonly byte[] _aeskeys = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF, 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
         //验证Base64字符串的正则表达式
         private static System.Text.RegularExpressions.Regex _base64regex = new System.Text.RegularExpressions.Regex("[A-Za-z0-9\\=\\/\\+]");
-        //防SQL注入正则表达式1
-        private static System.Text.RegularExpressions.Regex _sqlkeywordregex1 = new System.Text.RegularExpressions.Regex(@"(select|insert|delete|from|count\(|drop|table|update|truncate|asc\(|mid\(|char\(|xp_cmdshell|exec|master|net|local|group|administrators|user|or|and|-|;|,|\(|\)|\[|\]|\{|\}|%|\*|!|\')", RegexOptions.IgnoreCase);
-        //防SQL注入正则表达式2
-        private static System.Text.RegularExpressions.Regex _sqlkeywordregex2 = new System.Text.RegularExpressions.Regex(@"(select|insert|delete|from|count\(|drop|table|update|truncate|asc\(|mid\(|char\(|xp_cmdshell|exec|master|net|local|group|administrators|user|or|and|-|;|,|\(|\)|\[|\]|\{|\}|%|@|\*|!|\')", RegexOptions.IgnoreCase);
+        //防SQL注入正则表达式
+        private static System.Text.RegularExpressions.Regex _sqlkeywordregex = new System.Text.RegularExpressions.Regex(@"(select|insert|delete|from|count\(|drop|table|update|truncate|asc\(|mid\(|char\(|xp_cmdshell|exec|master|net|local|group|administrators|user|or|and|-|;|,|\(|\)|\[|\]|\{|\}|%|\*|!|\')", RegexOptions.IgnoreCase);
 
-        public static string DecodeBase64(Encoding encode, string result)
+        /// <summary>
+        /// AES加密
+        /// </summary>
+        /// <param name="encryptStr">加密字符串</param>
+        /// <param name="encryptKey">密钥</param>
+        /// <returns></returns>
+        public static string AESEncrypt(string encryptStr, string encryptKey)
         {
-            byte[] numArray = System.Convert.FromBase64String(result);
-            string str;
-            try
+            if (string.IsNullOrWhiteSpace(encryptStr))
+                return string.Empty;
+
+            encryptKey = StringHelper.SubString(encryptKey, 32);
+            encryptKey = encryptKey.PadRight(32, ' ');
+
+            //分组加密算法
+            SymmetricAlgorithm des = Rijndael.Create();
+            byte[] inputByteArray = Encoding.UTF8.GetBytes(encryptStr);//得到需要加密的字节数组 
+            //设置密钥及密钥向量
+            des.Key = Encoding.UTF8.GetBytes(encryptKey);
+            des.IV = _aeskeys;
+            byte[] cipherBytes = null;
+            using (MemoryStream ms = new MemoryStream())
             {
-                str = encode.GetString(numArray);
+                using (CryptoStream cs = new CryptoStream(ms, des.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(inputByteArray, 0, inputByteArray.Length);
+                    cs.FlushFinalBlock();
+                    cipherBytes = ms.ToArray();//得到加密后的字节数组
+                    cs.Close();
+                    ms.Close();
+                }
             }
-            catch
+            return System.Convert.ToBase64String(cipherBytes);
+        }
+
+        /// <summary>
+        /// AES解密
+        /// </summary>
+        /// <param name="decryptStr">解密字符串</param>
+        /// <param name="decryptKey">密钥</param>
+        /// <returns></returns>
+        public static string AESDecrypt(string decryptStr, string decryptKey)
+        {
+            if (string.IsNullOrWhiteSpace(decryptStr))
+                return string.Empty;
+
+            decryptKey = StringHelper.SubString(decryptKey, 32);
+            decryptKey = decryptKey.PadRight(32, ' ');
+
+            byte[] cipherText = System.Convert.FromBase64String(decryptStr);
+
+            SymmetricAlgorithm des = Rijndael.Create();
+            des.Key = Encoding.UTF8.GetBytes(decryptKey);
+            des.IV = _aeskeys;
+            byte[] decryptBytes = new byte[cipherText.Length];
+            using (MemoryStream ms = new MemoryStream(cipherText))
             {
-                str = result;
+                using (CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(), CryptoStreamMode.Read))
+                {
+                    cs.Read(decryptBytes, 0, decryptBytes.Length);
+                    cs.Close();
+                    ms.Close();
+                }
             }
-            return str;
+            return Encoding.UTF8.GetString(decryptBytes).Replace("\0", "");//将字符串后尾的'\0'去掉
         }
 
-        public static string DecodeBase64(string result)
+        /// <summary>
+        /// MD5散列
+        /// </summary>
+        public static string MD5(string inputStr)
         {
-            return DecodeBase64(Encoding.UTF8, result);
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] hashByte = md5.ComputeHash(Encoding.UTF8.GetBytes(inputStr));
+            StringBuilder sb = new StringBuilder();
+            foreach (byte item in hashByte)
+                sb.Append(item.ToString("x").PadLeft(2, '0'));
+            return sb.ToString();
         }
 
-        public static string EncodeBase64(Encoding encode, string source)
-        {
-            return System.Convert.ToBase64String(encode.GetBytes(source));
-        }
-
-        public static string EncodeBase64(string source)
-        {
-            return EncodeBase64(Encoding.UTF8, source);
-        }
-
+        /// <summary>
+        /// 判断是否是Base64字符串
+        /// </summary>
+        /// <returns></returns>
         public static bool IsBase64String(string str)
         {
-            bool flag;
-            flag = (str == null ? true : _base64regex.IsMatch(str));
-            return flag;
-        }
-
-        public static bool IsSafeSqlString(string s)
-        {
-            return IsSafeSqlString(s, true);
+            if (str != null)
+                return _base64regex.IsMatch(str);
+            return true;
         }
 
         /// <summary>
         /// 判断当前字符串是否存在SQL注入
         /// </summary>
         /// <returns></returns>
-        public static bool IsSafeSqlString(string s, bool isStrict)
+        public static bool IsSafeSqlString(string s)
         {
-            if (s != null)
-            {
-                if (isStrict)
-                    return !_sqlkeywordregex2.IsMatch(s);
-                else
-                    return !_sqlkeywordregex1.IsMatch(s);
-            }
+            if (s != null && _sqlkeywordregex.IsMatch(s))
+                return false;
             return true;
         }
 
-        public static string MD5(this string inputStr)
+        /// <summary> 
+        /// Base64加密 
+        /// </summary> 
+        /// <param name="encode">加密采用的编码方式</param> 
+        /// <param name="source">待加密的明文</param> 
+        /// <returns></returns> 
+        public static string EncodeBase64(Encoding encode, string source)
         {
-            MD5 mD5CryptoServiceProvider = System.Security.Cryptography.MD5.Create();
-            byte[] numArray = mD5CryptoServiceProvider.ComputeHash(Encoding.UTF8.GetBytes(inputStr));
-            StringBuilder stringBuilder = new StringBuilder();
-            byte[] numArray1 = numArray;
-            for (int i = 0; i < numArray1.Length; i++)
+            byte[] bytes = encode.GetBytes(source);
+            string text = System.Convert.ToBase64String(bytes);
+
+            return text;
+        }
+
+        /// <summary> 
+        /// Base64加密，采用utf8编码方式加密 
+        /// </summary> 
+        /// <param name="source">待加密的明文</param> 
+        /// <returns>加密后的字符串</returns> 
+        public static string EncodeBase64(string source)
+        {
+            return EncodeBase64(Encoding.UTF8, source);
+        }
+
+        /// <summary> 
+        /// Base64解密 
+        /// </summary> 
+        /// <param name="encode">解密采用的编码方式，注意和加密时采用的方式一致</param> 
+        /// <param name="result">待解密的密文</param> 
+        /// <returns>解密后的字符串</returns> 
+        public static string DecodeBase64(Encoding encode, string result)
+        {
+            string decode = "";
+            byte[] bytes = System.Convert.FromBase64String(result);
+            try
             {
-                byte num = numArray1[i];
-                stringBuilder.Append(num.ToString("x").PadLeft(2, '0'));
+                decode = encode.GetString(bytes);
             }
-            return stringBuilder.ToString();
+            catch
+            {
+                decode = result;
+            }
+            return decode;
+        }
+
+        /// <summary> 
+        /// Base64解密，采用utf8编码方式解密 
+        /// </summary> 
+        /// <param name="result">待解密的密文</param> 
+        /// <returns>解密后的字符串</returns> 
+        public static string DecodeBase64(string result)
+        {
+            return DecodeBase64(Encoding.UTF8, result);
         }
 
     }

@@ -19,6 +19,8 @@ namespace PushNuget
     {
         private static FileInfo[] Infos; //要上传的文件
 
+        private static List<FileInfo> PushFile; //实际要上传的文件
+
         private static int _count = 0;  // 处理过的文件数量
 
         private static int _filescount; // 所有文件数量
@@ -41,6 +43,7 @@ namespace PushNuget
 
             var fileInfos = "../".AsDirectory().GetAllFiles("*.nupkg");  // 获取所有的nupkg文件
             Infos = fileInfos as FileInfo[] ?? fileInfos.ToArray();
+            PushFile = Infos.ToList();
             if (!Infos.Any())
             {
                 Console.WriteLine(@"没有发现要上传的NuGet文件");
@@ -56,6 +59,7 @@ namespace PushNuget
                 if (item.Name.Contains(".symbols.nupkg"))
                 {
                     item.Delete();
+                    PushFile.Remove(item);
                     _filescount--;
                     continue;
                 }
@@ -69,7 +73,7 @@ namespace PushNuget
 
         protected static void Push()
         {
-            "cmd".Run($"/k dotnet nuget push ../{Infos[_count].Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 10000, WriteLog);
+            "cmd".Run($"/k dotnet nuget push ../{PushFile[_count].Name} -k {Setting.Current.Key} -s {Setting.Current.Source}", 10000, WriteLog);
         }
 
         protected static void WriteLog(string msg)
@@ -109,7 +113,7 @@ namespace PushNuget
 
             if (existFile)
             {
-                foreach (var row in Infos)
+                foreach (var row in PushFile)
                 {
                     Console.WriteLine($@"删除 {row.Name}");
                     row.Delete();

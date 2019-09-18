@@ -328,5 +328,40 @@ namespace Ding.Helpers
         }
         #endregion
 
+        #region 截取字符串
+
+        /// <summary>
+        /// 截取字符串
+        /// </summary>
+        /// <param name="sourceStr">源字符串</param>
+        /// <param name="startIndex">开始位置的索引</param>
+        /// <param name="length">子字符串的长度</param>
+        /// <returns></returns>
+        public static string SubString(string sourceStr, int startIndex, int length)
+        {
+            if (!string.IsNullOrEmpty(sourceStr))
+            {
+                if (sourceStr.Length >= (startIndex + length))
+                    return sourceStr.Substring(startIndex, length);
+                else
+                    return sourceStr.Substring(startIndex);
+            }
+
+            return "";
+        }
+
+        /// <summary>
+        /// 截取字符串
+        /// </summary>
+        /// <param name="sourceStr">源字符串</param>
+        /// <param name="length">子字符串的长度</param>
+        /// <returns></returns>
+        public static string SubString(string sourceStr, int length)
+        {
+            return SubString(sourceStr, 0, length);
+        }
+
+        #endregion
+
     }
 }

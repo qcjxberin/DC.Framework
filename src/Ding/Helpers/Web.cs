@@ -201,12 +201,12 @@ namespace Ding.Helpers {
         #region Url(请求地址)
 
         /// <summary>
-        /// 请求地址(未转义)
+        /// 获得请求的原始url(未转义)
         /// </summary>
         public static string Url => Request?.GetDisplayUrl();
 
         /// <summary>
-        /// 请求地址(转义)
+        /// 获得请求的原始url(转义)
         /// </summary>
         public static string EncodedUrl => Request?.GetEncodedUrl();
 
