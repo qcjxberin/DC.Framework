@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Ding.Logs.Abstractions;
 using Ding.Logs.Core;
 using Ding.Logs.Formats;
+using NLog.LayoutRenderers;
+using Ding.Logs.NLog;
 
 namespace Ding.Logs.Extensions {
     /// <summary>
@@ -16,6 +18,7 @@ namespace Ding.Logs.Extensions {
         /// </summary>
         /// <param name="services">服务集合</param>
         public static void AddNLog( this IServiceCollection services ) {
+            LayoutRenderer.Register<NLogLayoutRenderer>( "log" );
             services.TryAddScoped<ILogProviderFactory, Ding.Logs.NLog.LogProviderFactory>();
             services.TryAddSingleton<ILogFormat, ContentFormat>();
             services.TryAddScoped<ILogContext, LogContext>();

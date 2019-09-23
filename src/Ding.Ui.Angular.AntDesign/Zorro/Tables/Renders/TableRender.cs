@@ -5,7 +5,6 @@ using Ding.Ui.Angular.Builders;
 using Ding.Ui.Builders;
 using Ding.Ui.Configs;
 using Ding.Ui.Enums;
-using Ding.Ui.Extensions;
 using Ding.Ui.Zorro.Tables.Builders;
 using Ding.Ui.Zorro.Tables.Configs;
 using TableHeadColumnBuilder = Ding.Ui.Zorro.Tables.Builders.TableHeadColumnBuilder;
@@ -369,6 +368,7 @@ namespace Ding.Ui.Zorro.Tables.Renders {
             rowBuilder.ConfigIterationVar( _config.Id );
             AddEditRow( rowBuilder );
             AddRowEvents( rowBuilder );
+            AddSelectedRowBackgroundColor( rowBuilder );
             rowBuilder.AppendContent( _config.Content );
             tableBodyBuilder.AppendContent( rowBuilder );
         }
@@ -387,6 +387,16 @@ namespace Ding.Ui.Zorro.Tables.Renders {
         /// </summary>
         private void AddRowEvents( RowBuilder rowBuilder ) {
             rowBuilder.Click( _config.GetValue( UiConst.OnClickRow ) );
+        }
+
+        /// <summary>
+        /// 添加选中行的背景色
+        /// </summary>
+        private void AddSelectedRowBackgroundColor( RowBuilder rowBuilder ) {
+            if ( _config.Contains( UiConst.SelectedRowBackgroundColor ) == false )
+                return;
+            rowBuilder.Click( $"{_config.WrapperId}.selectRowOnly(row)" );
+            rowBuilder.AddAttribute( "[style.background-color]", $"{_config.WrapperId}.isSelected(row)?{_config.GetValue( UiConst.SelectedRowBackgroundColor )}:''" );
         }
 
         /// <summary>

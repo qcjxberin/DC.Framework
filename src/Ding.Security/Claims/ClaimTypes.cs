@@ -6,6 +6,11 @@ namespace Ding.Security.Claims {
     /// </summary>
     public static class ClaimTypes {
         /// <summary>
+        /// 用户Id
+        /// </summary>
+        public static string UserId { get; set; } = JwtClaimTypes.Subject;
+
+        /// <summary>
         /// 电子邮件
         /// </summary>
         public static string Email { get; set; } = JwtClaimTypes.Email;

@@ -151,6 +151,15 @@ namespace Ding.Logs.Properties {
         }
         
         /// <summary>
+        ///   查找类似 日志标识 的本地化字符串。
+        /// </summary>
+        public static string LogId {
+            get {
+                return ResourceManager.GetString("LogId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 日志名称 的本地化字符串。
         /// </summary>
         public static string LogName {
