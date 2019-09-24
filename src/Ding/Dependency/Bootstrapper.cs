@@ -172,6 +172,9 @@ namespace Ding.Dependency {
         /// 注册作用域依赖
         /// </summary>
         private void RegisterScopeDependency() {
+#if __CORE21__
+            _services.BatchRegisterService(GetTypes<IScopeDependency>(), ServiceLifetime.Scoped);
+#endif
             _builder.RegisterTypes( GetTypes<IScopeDependency>() ).AsImplementedInterfaces().PropertiesAutowired().InstancePerLifetimeScope();
         }
 
@@ -179,6 +182,9 @@ namespace Ding.Dependency {
         /// 注册瞬态依赖
         /// </summary>
         private void RegisterTransientDependency() {
+#if __CORE21__
+            _services.BatchRegisterService(GetTypes<ITransientDependency>(), ServiceLifetime.Transient);
+#endif
             _builder.RegisterTypes( GetTypes<ITransientDependency>() ).AsImplementedInterfaces().PropertiesAutowired().InstancePerDependency();
         }
 
