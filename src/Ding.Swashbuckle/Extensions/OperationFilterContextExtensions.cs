@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Ding.Swashbuckle.Extensions
 {
@@ -15,7 +15,6 @@ namespace Ding.Swashbuckle.Extensions
         /// </summary>
         /// <typeparam name="TAttribute">特性类型</typeparam>
         /// <param name="context">操作过滤器上下文</param>
-        /// <returns></returns>
         public static IEnumerable<TAttribute> GetControllerAndActionAttributes<TAttribute>(
             this OperationFilterContext context) where TAttribute : Attribute
         {

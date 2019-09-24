@@ -3,10 +3,10 @@
 namespace Ding.Swashbuckle.Attributes
 {
     /// <summary>
-    /// Swagger上传，用于标识接口是否包含上传信息参数
+    /// Swagger: 上传，用于标识接口是否包含上传信息参数
     /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
-    public class SwaggerUploadAttribute:Attribute
+    public class SwaggerUploadAttribute : Attribute
     {
         /// <summary>
         /// 参数名

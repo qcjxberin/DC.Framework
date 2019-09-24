@@ -7,12 +7,12 @@ namespace Ding.Swashbuckle.Filters.Operations
     /// 授权选择器标签
     /// </summary>
     /// <typeparam name="T">特性类型</typeparam>
-    public class PolicySelectorWithLabel<T> where T:Attribute
+    public class PolicySelectorWithLabel<T> where T : Attribute
     {
         /// <summary>
         /// 选择器
         /// </summary>
-        public Func<IEnumerable<T>,IEnumerable<string>> Selector { get; set; }
+        public Func<IEnumerable<T>, IEnumerable<string>> Selector { get; set; }
 
         /// <summary>
         /// 标签

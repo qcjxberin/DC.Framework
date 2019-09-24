@@ -1,4 +1,5 @@
 ﻿using Ding.Swashbuckle.Internal;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ding.Swashbuckle.Controllers
@@ -6,8 +7,9 @@ namespace Ding.Swashbuckle.Controllers
     /// <summary>
     /// 资源 控制器
     /// </summary>
+    [AllowAnonymous]
     [Route("swagger/resources")]
-    public class ResourcesController: Controller
+    public class ResourcesController : Controller
     {
         /// <summary>
         /// 获取翻译器资源

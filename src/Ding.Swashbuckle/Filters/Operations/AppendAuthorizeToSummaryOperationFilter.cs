@@ -12,17 +12,17 @@ namespace Ding.Swashbuckle.Filters.Operations
     /// <summary>
     /// 添加 追加授权信息到注释 操作过滤器
     /// </summary>
-    public class AddAppendAuthorizeToSummaryOperationFilter : IOperationFilter
+    public class AppendAuthorizeToSummaryOperationFilter : IOperationFilter
     {
         /// <summary>
         /// 过滤器
         /// </summary>
-        private readonly AddAppendAuthorizeToSummaryOperationFilter<AuthorizeAttribute> _filter;
+        private readonly AppendAuthorizeToSummaryOperationFilter<AuthorizeAttribute> _filter;
 
         /// <summary>
-        /// 初始化一个<see cref="AddAppendAuthorizeToSummaryOperationFilter"/>类型的实例
+        /// 初始化一个<see cref="AppendAuthorizeToSummaryOperationFilter"/>类型的实例
         /// </summary>
-        public AddAppendAuthorizeToSummaryOperationFilter()
+        public AppendAuthorizeToSummaryOperationFilter()
         {
             var policySelector = new PolicySelectorWithLabel<AuthorizeAttribute>()
             {
@@ -31,14 +31,14 @@ namespace Ding.Swashbuckle.Filters.Operations
                     authAttributes.Where(x => !string.IsNullOrWhiteSpace(x.Policy)).Select(x => x.Policy)
             };
 
-            var rolesSelector=new PolicySelectorWithLabel<AuthorizeAttribute>()
+            var rolesSelector = new PolicySelectorWithLabel<AuthorizeAttribute>()
             {
                 Label = "roles",
                 Selector = authAttributes =>
                     authAttributes.Where(x => !string.IsNullOrWhiteSpace(x.Roles)).Select(x => x.Roles)
             };
-            _filter = new AddAppendAuthorizeToSummaryOperationFilter<AuthorizeAttribute>(
-                new[] {policySelector, rolesSelector}.AsEnumerable());
+            _filter = new AppendAuthorizeToSummaryOperationFilter<AuthorizeAttribute>(
+                new[] { policySelector, rolesSelector }.AsEnumerable());
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Ding.Swashbuckle.Filters.Operations
         /// <param name="context">操作过滤器上下文</param>
         public void Apply(Operation operation, OperationFilterContext context)
         {
-            _filter.Apply(operation,context);
+            _filter.Apply(operation, context);
         }
     }
 
@@ -56,7 +56,7 @@ namespace Ding.Swashbuckle.Filters.Operations
     /// 添加 追加授权信息到注释 操作过滤器
     /// </summary>
     /// <typeparam name="TAttribute">特性类型</typeparam>
-    public class AddAppendAuthorizeToSummaryOperationFilter<TAttribute> : IOperationFilter where TAttribute : Attribute
+    public class AppendAuthorizeToSummaryOperationFilter<TAttribute> : IOperationFilter where TAttribute : Attribute
     {
         /// <summary>
         /// 授权选择器标签列表
@@ -64,10 +64,10 @@ namespace Ding.Swashbuckle.Filters.Operations
         private readonly IEnumerable<PolicySelectorWithLabel<TAttribute>> _policySelectors;
 
         /// <summary>
-        /// 初始化一个<see cref="AddAppendAuthorizeToSummaryOperationFilter{TAttribute}"/>类型的实例
+        /// 初始化一个<see cref="AppendAuthorizeToSummaryOperationFilter{TAttribute}"/>类型的实例
         /// </summary>
         /// <param name="policySelectors">授权选择器标签列表</param>
-        public AddAppendAuthorizeToSummaryOperationFilter(
+        public AppendAuthorizeToSummaryOperationFilter(
             IEnumerable<PolicySelectorWithLabel<TAttribute>> policySelectors)
         {
             _policySelectors = policySelectors;
@@ -81,21 +81,14 @@ namespace Ding.Swashbuckle.Filters.Operations
         public void Apply(Operation operation, OperationFilterContext context)
         {
             if (context.GetControllerAndActionAttributes<AllowAnonymousAttribute>().Any())
-            {
                 return;
-            }
-
             var authorizeAttributes = context.GetControllerAndActionAttributes<TAttribute>().ToList();
-            if (authorizeAttributes.Any())
-            {
-                var authorizationDescription=new StringBuilder(" (Auth");
-                foreach (var policySelector in _policySelectors)
-                {
-                    AppendPolicies(authorizeAttributes, authorizationDescription, policySelector);
-                }
-
-                operation.Summary += authorizationDescription.ToString().TrimEnd(';') + ")";
-            }
+            if (!authorizeAttributes.Any())
+                return;
+            var authorizationDescription = new StringBuilder(" (Auth");
+            foreach (var policySelector in _policySelectors)
+                AppendPolicies(authorizeAttributes, authorizationDescription, policySelector);
+            operation.Summary += authorizationDescription.ToString().TrimEnd(';') + ")";
         }
 
         /// <summary>
@@ -109,9 +102,7 @@ namespace Ding.Swashbuckle.Filters.Operations
         {
             var policies = policySelector.Selector(authorizeAttributes).OrderBy(policy => policy).ToList();
             if (policies.Any())
-            {
                 authorizationDescription.Append($" {policySelector.Label}: {string.Join(", ", policies)};");
-            }
         }
     }
 }
