@@ -8,8 +8,8 @@ using System.Text.RegularExpressions;
 namespace Ding.VueCliMiddle
 {
     /// <summary>
-    /// 执行在<c>package.json</c>文件中定义<c>script</c>的条目,
-    /// 捕获写入stdio的任何输出。
+    /// Executes the <c>script</c> entries defined in a <c>package.json</c> file,
+    /// capturing any output written to stdio.
     /// </summary>
     internal class ScriptRunner
     {
@@ -23,6 +23,16 @@ namespace Ding.VueCliMiddle
         private string GetArgSuffix() => Runner == ScriptRunnerType.Npm ? "-- " : "";
 
         private static Regex AnsiColorRegex = new Regex("\x001b\\[[0-9;]*m", RegexOptions.None, TimeSpan.FromSeconds(1));
+
+        public Process RunnerProcess => _runnerProcess;
+
+        private Process _runnerProcess;
+
+        public void Kill()
+        {
+            try { _runnerProcess?.Kill(); } catch { }
+            try { _runnerProcess?.WaitForExit(); } catch { }
+        }
 
         public ScriptRunner(string workingDirectory, string scriptName, string arguments, IDictionary<string, string> envVars, ScriptRunnerType runner)
         {
@@ -42,11 +52,11 @@ namespace Ding.VueCliMiddle
             var completeArguments = $"{GetArgPrefix()}{scriptName} {GetArgSuffix()}{arguments ?? string.Empty}";
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                // 在 Windows 上, NPM 可执行文件是一个. cmd 文件, 因此无法执行
-                // 直接 (除了与 Usseshelrex否 = true, 但这是没有好处的, 因为
-                // 它可以防止捕获 stdio)。因此, 我们需要通过 "cmd/c" 调用它。
+                // On Windows, the NPM executable is a .cmd file, so it can't be executed
+                // directly (except with UseShellExecute=true, but that's no good, because
+                // it prevents capturing stdio). So we need to invoke it via "cmd /c".
+                completeArguments = $"/c {npmExe} {completeArguments}";
                 npmExe = "cmd";
-                completeArguments = $"/c npm {completeArguments}";
             }
 
             var processStartInfo = new ProcessStartInfo(npmExe)
@@ -67,21 +77,23 @@ namespace Ding.VueCliMiddle
                 }
             }
 
-            var process = LaunchNodeProcess(processStartInfo);
-            StdOut = new EventedStreamReader(process.StandardOutput);
-            StdErr = new EventedStreamReader(process.StandardError);
+            _runnerProcess = LaunchNodeProcess(processStartInfo);
+            StdOut = new EventedStreamReader(_runnerProcess.StandardOutput);
+            StdErr = new EventedStreamReader(_runnerProcess.StandardError);
         }
 
         public void AttachToLogger(ILogger logger)
         {
-            // 当NPM任务发出完整的行时，将它们传递给真正的记录器
+            // When the NPM task emits complete lines, pass them through to the real logger
             StdOut.OnReceivedLine += line =>
             {
                 if (!string.IsNullOrWhiteSpace(line))
                 {
-                    // NPM任务通常会发出ANSI颜色，但转发没有意义
-                    // 那些记录器（因为记录器不一定是任何类型的终端）
-                    logger.LogInformation(StripAnsiColors(line) + "\r\n");
+                    // NPM tasks commonly emit ANSI colors, but it wouldn't make sense to forward
+                    // those to loggers (because a logger isn't necessarily any kind of terminal)
+                    //logger.LogInformation(StripAnsiColors(line).TrimEnd('\n'));
+                    // making this console for debug purpose 
+                    Console.Write(line);
                 }
             };
 
@@ -89,11 +101,14 @@ namespace Ding.VueCliMiddle
             {
                 if (!string.IsNullOrWhiteSpace(line))
                 {
-                    logger.LogError(StripAnsiColors(line + "\r\n"));
+                    //logger.LogError(StripAnsiColors(line).TrimEnd('\n'));
+                    // making this console for debug purpose
+                    Console.Error.Write(line);
                 }
             };
 
-            // 但是当它发出不完整的行时，假设这是进度信息，因此无论记录器配置如何，只需将其传递给StdOut。
+            // But when it emits incomplete lines, assume this is progress information and
+            // hence just pass it through to StdOut regardless of logger config.
             StdErr.OnReceivedChunk += chunk =>
             {
                 var containsNewline = Array.IndexOf(chunk.Array, '\n', chunk.Offset, chunk.Count) >= 0;
@@ -114,7 +129,7 @@ namespace Ding.VueCliMiddle
             {
                 var process = Process.Start(startInfo);
 
-                // 有关原因，请参阅OutOfProcessNodeInstance.cs中的等效注释
+                // See equivalent comment in OutOfProcessNodeInstance.cs for why
                 process.EnableRaisingEvents = true;
 
                 return process;

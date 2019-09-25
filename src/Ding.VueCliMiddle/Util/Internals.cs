@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Text;
 using System.Threading.Tasks;
-using System.Net.Sockets;
 using System.Net;
+using System.Net.Sockets;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Ding.VueCliMiddle
@@ -18,12 +17,17 @@ namespace Ding.VueCliMiddle
             IApplicationBuilder appBuilder,
             string logCategoryName)
         {
-            // 如果DI系统给我们一个记录器，请使用它。 否则，请设置默认值。
+            // If the DI system gives us a logger, use it. Otherwise, set up a default one.
             var loggerFactory = appBuilder.ApplicationServices.GetService<ILoggerFactory>();
-            var logger = loggerFactory != null
-                ? loggerFactory.CreateLogger(logCategoryName)
-                : new ConsoleLogger(logCategoryName, null, false);
-            return logger;
+            if (loggerFactory == null)
+            {
+                loggerFactory = LoggerFactory.Create(builder =>
+                {
+                    builder.AddConsole();
+                });
+            }
+
+            return loggerFactory.CreateLogger(logCategoryName);
         }
     }
 
@@ -33,7 +37,7 @@ namespace Ding.VueCliMiddle
         {
             if (task == await Task.WhenAny(task, Task.Delay(timeoutDelay)))
             {
-                task.Wait(); // 允许任何错误传播
+                task.Wait(); // Allow any errors to propagate
             }
             else
             {
@@ -72,8 +76,8 @@ namespace Ding.VueCliMiddle
     }
 
     /// <summary>
-    /// 包含一个<see cref="StreamReader"/>来公开一个事件API，发出通知
-    /// 当流发出部分行时, 完成的行, 或最终关闭。
+    /// Wraps a <see cref="StreamReader"/> to expose an evented API, issuing notifications
+    /// when the stream emits partial lines, completed lines, or finally closes.
     /// </summary>
     internal class EventedStreamReader
     {
@@ -149,10 +153,11 @@ namespace Ding.VueCliMiddle
                 }
 
                 OnChunk(new ArraySegment<char>(buf, 0, chunkLength));
-                int lineBreakPos;
+
+                int lineBreakPos = -1;
                 int startPos = 0;
 
-                // 获取所有换行符
+                // get all the newlines
                 while ((lineBreakPos = Array.IndexOf(buf, '\n', startPos, chunkLength - startPos)) >= 0 && startPos < chunkLength)
                 {
                     var length = (lineBreakPos + 1) - startPos;
@@ -162,7 +167,7 @@ namespace Ding.VueCliMiddle
                     startPos = lineBreakPos + 1;
                 }
 
-                // 得到休息
+                // get the rest
                 if (lineBreakPos < 0 && startPos < chunkLength)
                 {
                     _linesBuffer.Append(buf, startPos, chunkLength - startPos);
@@ -190,14 +195,14 @@ namespace Ding.VueCliMiddle
     }
 
     /// <summary>
-    /// 从<see cref="EventedStreamReader"/>中捕获完成的行通知,
-    /// 将数据合并为一个<see cref="string"/>.
+    /// Captures the completed-line notifications from a <see cref="EventedStreamReader"/>,
+    /// combining the data into a single <see cref="string"/>.
     /// </summary>
     internal class EventedStreamStringReader : IDisposable
     {
-        private readonly EventedStreamReader _eventedStreamReader;
+        private EventedStreamReader _eventedStreamReader;
         private bool _isDisposed;
-        private readonly StringBuilder _stringBuilder = new StringBuilder();
+        private StringBuilder _stringBuilder = new StringBuilder();
 
         public EventedStreamStringReader(EventedStreamReader eventedStreamReader)
         {

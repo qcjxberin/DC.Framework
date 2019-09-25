@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Ding.VueCliMiddle.Util;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.SpaServices;
 using Microsoft.Extensions.Logging;
 using System;
@@ -14,11 +15,11 @@ namespace Ding.VueCliMiddle
         private const string LogCategoryName = "VueCliMiddleware";
         internal const string DefaultRegex = "running at";
 
-        private static TimeSpan RegexMatchTimeout = TimeSpan.FromMinutes(5); // 这是仅开发时间的功能, 因此很长时间的超时是可以的
+        private static TimeSpan RegexMatchTimeout = TimeSpan.FromMinutes(5); // This is a development-time only feature, so a very long timeout is fine
 
         public static void Attach(
             ISpaBuilder spaBuilder,
-            string scriptName, int port = 0, ScriptRunnerType runner = ScriptRunnerType.Npm, string regex = DefaultRegex)
+            string scriptName, int port = 8080, ScriptRunnerType runner = ScriptRunnerType.Npm, string regex = DefaultRegex)
         {
             var sourcePath = spaBuilder.Options.SourcePath;
             if (string.IsNullOrEmpty(sourcePath))
@@ -31,24 +32,24 @@ namespace Ding.VueCliMiddle
                 throw new ArgumentException("Cannot be null or empty", nameof(scriptName));
             }
 
-            // 启动vue-cli并连接到中间件管道
+            // Start vue-cli and attach to middleware pipeline
             var appBuilder = spaBuilder.ApplicationBuilder;
             var logger = LoggerFinder.GetOrCreateLogger(appBuilder, LogCategoryName);
             var portTask = StartVueCliServerAsync(sourcePath, scriptName, logger, port, runner, regex);
 
-            // 我们代理的所有内容都硬编码为目标http://localhost，因为：
-            // - 请求总是来自本地机器（我们不接受远程
-            //   直接转到vue-cli服务器的请求)
-            // - 鉴于此，没有理由使用https，即使我们也不行
-            //   想要，因为通常vue-cli服务器没有证书
+            // Everything we proxy is hardcoded to target http://localhost because:
+            // - the requests are always from the local machine (we're not accepting remote
+            //   requests that go directly to the vue-cli server)
+            // - given that, there's no reason to use https, and we couldn't even if we
+            //   wanted to, because in general the vue-cli server has no certificate
             var targetUriTask = portTask.ContinueWith(
                 task =>
                 new UriBuilder("http", "localhost", task.Result).Uri);
 
             SpaProxyingExtensions.UseProxyToSpaDevelopmentServer(spaBuilder, () =>
             {
-                // 在每个请求中，我们创建一个具有自己超时的单独启动任务。 就这样，即使
-                // 第一个请求超时，后续请求仍然有效。
+                // On each request, we create a separate startup task with its own timeout. That way, even if
+                // the first request times out, subsequent requests could still work.
                 var timeout = spaBuilder.Options.StartupTimeout;
                 return targetUriTask.WithTimeout(timeout,
                     $"The vue-cli server did not start listening for requests " +
@@ -61,26 +62,37 @@ namespace Ding.VueCliMiddle
             string sourcePath, string npmScriptName, ILogger logger, int portNumber, ScriptRunnerType runner, string regex)
         {
             if (portNumber < 80)
+            {
                 portNumber = TcpPortFinder.FindAvailablePort();
+            }
+            else
+            {
+                // if the port we want to use is occupied, terminate the process utilizing that port.
+                // this occurs when "stop" is used from the debugger and the middleware does not have the opportunity to kill the process
+                PidUtils.KillPort((ushort)portNumber);
+            }
             logger.LogInformation($"Starting server on port {portNumber}...");
 
             var envVars = new Dictionary<string, string>
             {
                 { "PORT", portNumber.ToString() },
-                { "DEV_SERVER_PORT", portNumber.ToString() }, // vue cli 3使用--port {number}，包含在下面
-                { "BROWSER", "none" }, // 我们不希望vue-cli打开指向内部开发服务器端口的额外浏览器窗口
+                { "DEV_SERVER_PORT", portNumber.ToString() }, // vue cli 3 uses --port {number}, included below
+                { "BROWSER", "none" }, // We don't want vue-cli to open its own extra browser window pointing to the internal dev server port
             };
             var npmScriptRunner = new ScriptRunner(sourcePath, npmScriptName, $"--port {portNumber:0}", envVars, runner: runner);
+            AppDomain.CurrentDomain.DomainUnload += (s, e) => npmScriptRunner?.Kill();
+            AppDomain.CurrentDomain.ProcessExit += (s, e) => npmScriptRunner?.Kill();
+            AppDomain.CurrentDomain.UnhandledException += (s, e) => npmScriptRunner?.Kill();
             npmScriptRunner.AttachToLogger(logger);
 
             using (var stdErrReader = new EventedStreamStringReader(npmScriptRunner.StdErr))
             {
                 try
                 {
-                    // 虽然Vue dev服务器最终可能告诉我们它正在监听的URL，
-                    // 在完成编译之前不会这样做，即使那时候也是如此
-                    // 没有编译器警告。 因此，不要等待，尽快考虑好
-                    // 当它开始侦听请求时
+                    // Although the Vue dev server may eventually tell us the URL it's listening on,
+                    // it doesn't do so until it's finished compiling, and even then only if there were
+                    // no compiler warnings. So instead of waiting for that, consider it ready as soon
+                    // as it starts listening for requests.
                     await npmScriptRunner.StdOut.WaitForMatch(new Regex(!string.IsNullOrWhiteSpace(regex) ? regex : DefaultRegex, RegexOptions.None, RegexMatchTimeout));
                 }
                 catch (EndOfStreamException ex)
