@@ -21,6 +21,7 @@ namespace Ding.VueCliMiddle
             var loggerFactory = appBuilder.ApplicationServices.GetService<ILoggerFactory>();
             if (loggerFactory == null)
             {
+                loggerFactory = new LoggerFactory();
                 loggerFactory = LoggerFactory.Create(builder =>
                 {
                     builder.AddConsole();
