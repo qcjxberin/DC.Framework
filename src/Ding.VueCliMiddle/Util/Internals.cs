@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using System;
-using System.Threading.Tasks;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Ding.VueCliMiddle
 {
@@ -17,8 +18,15 @@ namespace Ding.VueCliMiddle
             IApplicationBuilder appBuilder,
             string logCategoryName)
         {
-            // If the DI system gives us a logger, use it. Otherwise, set up a default one.
+            // 如果DI系统给我们一个记录器，请使用它。 否则，请设置默认值。
             var loggerFactory = appBuilder.ApplicationServices.GetService<ILoggerFactory>();
+
+#if __CORE20__
+            var logger = loggerFactory != null
+                ? loggerFactory.CreateLogger(logCategoryName)
+                : new ConsoleLogger(logCategoryName, null, false);
+            return logger;
+#elif __COREAPP30__
             if (loggerFactory == null)
             {
                 loggerFactory = new LoggerFactory();
@@ -29,6 +37,7 @@ namespace Ding.VueCliMiddle
             }
 
             return loggerFactory.CreateLogger(logCategoryName);
+#endif
         }
     }
 
