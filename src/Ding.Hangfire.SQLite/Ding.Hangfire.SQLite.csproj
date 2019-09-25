@@ -68,17 +68,17 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="2.2.6" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="3.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
-    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.0.0" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.0.2-pre20190904113843" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="3.0.0-preview8.19405.11" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0-preview8.19405.3" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="3.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
-    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.0.0" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.0.2-pre20190904113843" />
   </ItemGroup>
 
 </Project>
