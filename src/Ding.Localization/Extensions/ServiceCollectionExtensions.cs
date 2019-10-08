@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Ding.Localization;
+using Ding.Localization.Filters;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using System;
+using System.Linq;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -17,8 +22,6 @@ namespace Microsoft.Extensions.DependencyInjection
             self.AddSingleton<ITranslator, NonTranslator>();
             self.AddSingleton<ITranslatedCaching, MemoryTranslatedCaching>();
             self.AddScoped<ITranslatorDisabler, DefaultTranslatorDisabler>();
-            self.AddScoped<IEntityStateListener, LocalizationEntityStateListener>();
-            self.Configure<MvcOptions>(x => x.Filters.Add(typeof(DbContextModelBindingFilter)));
             return self;
         }
 
@@ -30,6 +33,17 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddBaiduTranslator(this IServiceCollection self)
         {
             return self.AddSingleton<ITranslator, BaiduTranslator>();
+        }
+
+        public static IServiceCollection AddContextAccessor(this IServiceCollection self)
+        {
+            if (self.Count(x => x.ServiceType == typeof(IHttpContextAccessor)) == 0)
+                self.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            if (self.Count(x => x.ServiceType == typeof(IActionContextAccessor)) == 0)
+                self.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
+            return self;
         }
 
     }
