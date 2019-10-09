@@ -1,6 +1,7 @@
 ﻿using Ding.CookieManager;
 using Ding.Helpers;
 using Ding.Logs;
+using Ding.Localization;
 using Ding.Properties;
 using Ding.Webs.Commons;
 using Ding.Webs.Filters;
