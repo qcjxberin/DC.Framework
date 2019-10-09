@@ -1,5 +1,6 @@
 ﻿using Ding.CookieManager;
 using Ding.Helpers;
+using Ding.Localization;
 using Ding.Logs;
 using Ding.Properties;
 using Ding.Webs.Commons;
@@ -38,6 +39,17 @@ namespace Ding.Webs.Controllers
         /// 用户惟一标识符
         /// </summary>
         public string Sid { get; set; }
+
+        /// <summary>
+        /// 多语言对象
+        /// </summary>
+        public IStringReader SR
+        {
+            get
+            {
+                return Ioc.Create<IStringReader>();
+            }
+        }
 
         /// <summary>
         /// 日志

@@ -1,5 +1,6 @@
 ﻿using Ding.CookieManager;
 using Ding.Helpers;
+using Ding.Localization;
 using Ding.Logs;
 using Ding.Properties;
 using Ding.Webs.Commons;
@@ -42,6 +43,17 @@ namespace Ding.Webs.Controllers
         /// MarkDown解析类
         /// </summary>
         public Marked Marked { get; set; } = new Marked();
+
+        /// <summary>
+        /// 多语言对象
+        /// </summary>
+        public IStringReader SR
+        {
+            get
+            {
+                return Ioc.Create<IStringReader>();
+            }
+        }
 
         /// <summary>
         /// 日志

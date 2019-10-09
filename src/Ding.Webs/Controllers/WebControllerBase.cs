@@ -44,6 +44,17 @@ namespace Ding.Webs.Controllers
         public Marked Marked { get; set; } = new Marked();
 
         /// <summary>
+        /// 多语言对象
+        /// </summary>
+        public IStringReader SR
+        {
+            get
+            {
+                return Ioc.Create<IStringReader>();
+            }
+        }
+
+        /// <summary>
         /// 日志
         /// </summary>
         private ILog _log;
