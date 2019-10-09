@@ -36,7 +36,7 @@ namespace Ding.Webs.Controllers
         /// <summary>
         /// 用户惟一标识符
         /// </summary>
-        protected string Sid { get; set; }
+        public string Sid { get; set; }
 
         /// <summary>
         /// MarkDown解析类
