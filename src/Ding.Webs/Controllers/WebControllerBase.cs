@@ -45,15 +45,14 @@ namespace Ding.Webs.Controllers
         public Marked Marked { get; set; } = new Marked();
 
         /// <summary>
+        /// Cookie操作类
+        /// </summary>
+        public SmartCookies Cookies { get { return Ioc.Create<SmartCookies>(); } }
+
+        /// <summary>
         /// 多语言对象
         /// </summary>
-        public IStringReader SR
-        {
-            get
-            {
-                return Ioc.Create<IStringReader>();
-            }
-        }
+        public IStringReader SR { get { return Ioc.Create<IStringReader>(); } }
 
         /// <summary>
         /// 日志
