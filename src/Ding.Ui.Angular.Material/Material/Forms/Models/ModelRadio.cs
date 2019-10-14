@@ -45,9 +45,9 @@ namespace Ding.Ui.Material.Forms.Models {
         /// 根据类型初始化
         /// </summary>
         private void InitType() {
-            if( Reflection.IsBool( _memberInfo ) )
+            if(Ding.Helpers.Reflection.IsBool( _memberInfo ) )
                 this.Bool();
-            else if( Reflection.IsEnum( _memberInfo ) )
+            else if(Ding.Helpers.Reflection.IsEnum( _memberInfo ) )
                 Enum<TProperty>();
         }
     }

@@ -201,7 +201,7 @@ namespace Ding.Ui.Zorro.Tables.Renders {
             var scroll = new ScrollInfo( _config.GetValue( UiConst.ScrollWidth ), _config.GetValue( UiConst.ScrollHeight ) );
             if( scroll.IsNull )
                 return;
-            tableBuilder.AddAttribute( "[nzScroll]", Json.ToJson( scroll, true ) );
+            tableBuilder.AddAttribute( "[nzScroll]", Ding.Helpers.Json.ToJson( scroll, true ) );
         }
 
         /// <summary>

@@ -67,9 +67,9 @@ namespace Ding.Ui.Angular.Resolvers {
         /// 根据类型初始化
         /// </summary>
         private void InitType() {
-            if ( Reflection.IsBool( _memberInfo ) )
+            if (Ding.Helpers.Reflection.IsBool( _memberInfo ) )
                 _config.AddBool();
-            else if ( Reflection.IsEnum( _memberInfo ) )
+            else if (Ding.Helpers.Reflection.IsEnum( _memberInfo ) )
                 _config.AddEnum( _expression.Metadata.ModelType );
         }
     }

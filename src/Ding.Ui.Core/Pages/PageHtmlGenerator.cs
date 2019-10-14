@@ -38,7 +38,7 @@ namespace Ding.Ui.Pages {
         /// </summary>
         public async Task BuildAsync() {
             var pageActionDescriptors = GetPageActionDescriptors();
-            var requestUrl = $"{Web.Request.Scheme}://{Web.Request.Host}";
+            var requestUrl = $"{Ding.Helpers.Web.Request.Scheme}://{Ding.Helpers.Web.Request.Host}";
             foreach( var actionDescriptor in pageActionDescriptors ) {
                 if( actionDescriptor.RelativePath.ToLower() == "/Pages/Index.cshtml".ToLower() ) {
                     continue;
@@ -51,7 +51,7 @@ namespace Ding.Ui.Pages {
                         continue;
                     }
                 }
-                await Web.Client<string>().Get( $"{requestUrl}/view{path}" ).ResultAsync();
+                await Ding.Helpers.Web.Client<string>().Get( $"{requestUrl}/view{path}" ).ResultAsync();
             }
         }
 

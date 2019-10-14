@@ -52,7 +52,7 @@ namespace Ding.Ui.Angular.Resolvers {
         /// </summary>
         private void Init() {
             _config.SetAttribute( UiConst.Column, Ding.Helpers.String.FirstLowerCase( _expression.Name ) );
-            _config.SetAttribute( UiConst.Title, Reflection.GetDisplayNameOrDescription( _memberInfo ) );
+            _config.SetAttribute( UiConst.Title, Ding.Helpers.Reflection.GetDisplayNameOrDescription( _memberInfo ) );
             InitType();
         }
 
@@ -60,9 +60,9 @@ namespace Ding.Ui.Angular.Resolvers {
         /// 根据类型初始化
         /// </summary>
         private void InitType() {
-            if( Reflection.IsBool( _memberInfo ) )
+            if(Ding.Helpers.Reflection.IsBool( _memberInfo ) )
                 _config.SetAttribute( UiConst.Type, TableColumnType.Bool );
-            else if( Reflection.IsDate( _memberInfo ) )
+            else if(Ding.Helpers.Reflection.IsDate( _memberInfo ) )
                 _config.SetAttribute( UiConst.Type, TableColumnType.Date );
         }
     }

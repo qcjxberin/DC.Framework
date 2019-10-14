@@ -25,7 +25,7 @@ namespace Ding.Ui.Angular.Internal {
         /// <param name="expression">属性表达式</param>
         /// <param name="member">成员</param>
         public static void Init<TModel, TProperty>( IConfig config, Expression<Func<TModel, TProperty>> expression, MemberInfo member ) {
-            Type modelType = Common.GetType<TModel>();
+            Type modelType = Ding.Helpers.Common.GetType<TModel>();
             var propertyName = Lambda.GetName( expression );
             Init( config, modelType, member, propertyName );
         }
@@ -56,7 +56,7 @@ namespace Ding.Ui.Angular.Internal {
                 return;
             }
             config.SetAttribute( UiConst.Name, Ding.Helpers.String.FirstLowerCase( propertyName ), false );
-            var displayName = Reflection.GetDisplayNameOrDescription( member );
+            var displayName = Ding.Helpers.Reflection.GetDisplayNameOrDescription( member );
             config.SetAttribute( UiConst.Label, displayName, false );
             InitModel( config, modelType, member, propertyName );
             InitRequired( config, member );
@@ -141,11 +141,11 @@ namespace Ding.Ui.Angular.Internal {
         /// <param name="config">配置</param>
         /// <param name="member">成员</param>
         public static void InitDataType( TextBoxConfig config, MemberInfo member ) {
-            if( Reflection.IsDate( member ) ) {
+            if(Ding.Helpers.Reflection.IsDate( member ) ) {
                 config.IsDatePicker = true;
                 return;
             }
-            if( Reflection.IsNumber( member ) ) {
+            if(Ding.Helpers.Reflection.IsNumber( member ) ) {
                 config.IsNumber = true;
                 return;
             }

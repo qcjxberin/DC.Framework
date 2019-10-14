@@ -133,9 +133,9 @@ namespace Ding.Ui.Zorro.Forms.Renders {
         /// </summary>
         private void AddItems( ModelExpression expression ) {
             var memberInfo = expression.GetMemberInfo();
-            if( Reflection.IsBool( memberInfo ) )
+            if(Ding.Helpers.Reflection.IsBool( memberInfo ) )
                 _config.AddBool();
-            else if( Reflection.IsEnum( memberInfo ) )
+            else if(Ding.Helpers.Reflection.IsEnum( memberInfo ) )
                 _config.AddEnum( expression.Metadata.ModelType );
         }
     }

@@ -113,10 +113,10 @@ namespace Ding.Ui.Components {
         /// </summary>
         private ILog GetLog() {
             try {
-                return Log.GetLog( TraceLogName );
+                return Ding.Logs.Log.GetLog( TraceLogName );
             }
             catch {
-                return Log.Null;
+                return Ding.Logs.Log.Null;
             }
         }
 

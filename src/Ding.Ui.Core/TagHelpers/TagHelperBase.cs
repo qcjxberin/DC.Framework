@@ -74,10 +74,10 @@ namespace Ding.Ui.TagHelpers {
         /// </summary>
         private ILog GetLog() {
             try {
-                return Log.GetLog( ComponentBase.TraceLogName );
+                return Ding.Logs.Log.GetLog( ComponentBase.TraceLogName );
             }
             catch {
-                return Log.Null;
+                return Ding.Logs.Log.Null;
             }
         }
     }

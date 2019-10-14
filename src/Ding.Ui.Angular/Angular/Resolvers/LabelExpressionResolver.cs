@@ -61,9 +61,9 @@ namespace Ding.Ui.Angular.Resolvers {
         /// 根据类型初始化
         /// </summary>
         private void InitType() {
-            if( Reflection.IsBool( _memberInfo ) )
+            if(Ding.Helpers.Reflection.IsBool( _memberInfo ) )
                 _config.SetAttribute( UiConst.Type, LabelType.Bool );
-            else if( Reflection.IsDate( _memberInfo ) )
+            else if(Ding.Helpers.Reflection.IsDate( _memberInfo ) )
                 _config.SetAttribute( UiConst.Type, LabelType.Date );
         }
     }
