@@ -52,10 +52,10 @@ namespace Ding.Webs.Filters
         /// </summary>
         private ILog GetLog() {
             try {
-                return Log.GetLog( TraceLogName );
+                return Ding.Logs.Log.GetLog( TraceLogName );
             }
             catch {
-                return Log.Null;
+                return Ding.Logs.Log.Null;
             }
         }
 
@@ -169,7 +169,7 @@ namespace Ding.Webs.Filters
                 return;
             log.Content( $"响应消息: { result.Message}" )
                 .Content( "响应结果:" )
-                .Content( $"{Json.ToJson( result.Data )}" );
+                .Content( $"{Ding.Helpers.Json.ToJson( result.Data )}" );
         }
     }
 }

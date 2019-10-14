@@ -44,7 +44,7 @@ namespace Ding.Webs.Middlewares
             if (context.Request.Method != "GET")
             {
                 var rempteIp = context.Connection.RemoteIpAddress;
-                var log = Log.GetLog(this);
+                var log = Ding.Logs.Log.GetLog(this);
                 log.Debug($"来自远程IP地址的请求：{rempteIp}");
 
                 string[] ips = _whitelist.Split(';');

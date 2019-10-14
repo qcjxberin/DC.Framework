@@ -61,7 +61,7 @@ namespace Ding.Webs.Middlewares
                 return;
             }
 
-            var log = Log.GetLog(this).Caption("请求日志中间件");
+            var log = Ding.Logs.Log.GetLog(this).Caption("请求日志中间件");
             log.Content(new Dictionary<string, string>()
             {
                 {"请求方法", context.Request.Method},

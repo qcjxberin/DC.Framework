@@ -66,7 +66,7 @@ namespace Ding.Webs.Filters {
                 System.IO.File.WriteAllText( path, html );
             }
             catch( Exception ex ) {
-                ex.Log( Log.GetLog().Caption( "生成html静态文件失败" ) );
+                ex.Log( Ding.Logs.Log.GetLog().Caption( "生成html静态文件失败" ) );
             }
         }
 

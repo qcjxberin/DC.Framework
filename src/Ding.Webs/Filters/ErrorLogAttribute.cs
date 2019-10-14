@@ -13,7 +13,7 @@ namespace Ding.Webs.Filters {
         public override void OnException( ExceptionContext context ) {
             if( context == null )
                 return;
-            var log = Log.GetLog( context ).Caption( "WebApi全局异常" );
+            var log = Ding.Logs.Log.GetLog( context ).Caption( "WebApi全局异常" );
             context.Exception.Log( log );
         }
     }

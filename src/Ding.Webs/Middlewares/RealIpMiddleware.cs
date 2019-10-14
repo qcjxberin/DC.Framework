@@ -59,7 +59,7 @@ namespace Ding.Webs.Middlewares
         private void WriteLog(HttpContext context, IPAddress address) {
             if(context==null)
                 return;
-            var log = Log.GetLog(this);
+            var log = Ding.Logs.Log.GetLog(this);
             if (!log.IsDebugEnabled)
                 return;
             log.Caption("真实Ip中间件")
