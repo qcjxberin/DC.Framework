@@ -4,6 +4,8 @@
 
 要看具体的使用方法：请看项目[GitDC](https://gitee.com/xingchensoft/GitDC)
 
+我们已经有多个项目在使用此框架，[模块邦](https://www.mokuaibang.com)为目前已上线项目。
+
 
 常用方法：
 
