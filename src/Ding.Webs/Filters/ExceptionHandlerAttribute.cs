@@ -12,7 +12,7 @@ namespace Ding.Webs.Filters {
         public override void OnException( ExceptionContext context ) {
             context.ExceptionHandled = true;
             context.HttpContext.Response.StatusCode = 200;
-            context.Result = new Result( StateCode.Fail, context.Exception.GetPrompt() );
+            context.Result = new Ding.Webs.Commons.Result( StateCode.Fail, context.Exception.GetPrompt() );
         }
     }
 }

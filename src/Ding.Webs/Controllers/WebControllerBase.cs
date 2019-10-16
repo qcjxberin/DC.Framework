@@ -93,7 +93,7 @@ namespace Ding.Webs.Controllers
         {
             if (message == null)
                 message = R.Success;
-            return new Result(StateCode.Ok, message, data);
+            return new Ding.Webs.Commons.Result(StateCode.Ok, message, data);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Ding.Webs.Controllers
         /// <param name="message">消息</param>
         protected virtual IActionResult Fail(string message)
         {
-            return new Result(StateCode.Fail, message);
+            return new Ding.Webs.Commons.Result(StateCode.Fail, message);
         }
 
         /// <summary>

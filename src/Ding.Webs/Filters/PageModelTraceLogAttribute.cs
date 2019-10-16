@@ -1,7 +1,6 @@
 ﻿using Ding.Helpers;
 using Ding.Logs;
 using Ding.Logs.Extensions;
-using Ding.Webs.Commons;
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
@@ -157,7 +156,7 @@ namespace Ding.Webs.Filters
         /// 记录响应结果
         /// </summary>
         private void AddResult( ActionExecutedContext context, ILog log ) {
-            if( !( context.Result is Result result ) )
+            if( !( context.Result is Ding.Webs.Commons.Result result ) )
                 return;
             log.Content( $"响应消息: { result.Message}" )
                 .Content( "响应结果:" )

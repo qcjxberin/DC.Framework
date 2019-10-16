@@ -40,7 +40,7 @@ namespace Ding.Webs.Filters {
             try {
                 isSuccess = @lock.Lock( key, GetExpiration() );
                 if ( isSuccess == false ) {
-                    context.Result = new Result( StateCode.Fail, GetFailMessage() );
+                    context.Result = new Ding.Webs.Commons.Result( StateCode.Fail, GetFailMessage() );
                     return;
                 }
                 OnActionExecuting( context );

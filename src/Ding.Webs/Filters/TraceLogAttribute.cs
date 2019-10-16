@@ -157,7 +157,7 @@ namespace Ding.Webs.Filters
         /// 记录响应结果
         /// </summary>
         private void AddResult( ActionExecutedContext context, ILog log ) {
-            if( !( context.Result is Result result ) )
+            if( !( context.Result is Ding.Webs.Commons.Result result ) )
                 return;
             log.Content( $"响应消息: { result.Message}" )
                 .Content( "响应结果:" )

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Ding.Webs.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using System.Threading.Tasks;
 using IMiddleware = Ding.AspNetCore.IMiddleware;
@@ -6,21 +7,18 @@ using IMiddleware = Ding.AspNetCore.IMiddleware;
 namespace Ding.Webs.Middlewares
 {
     /// <summary>
-    /// 将不带www的顶级域名转向带www的
+    /// 将指定网址永久跳转到网址
     /// </summary>
-    public class RedirectWwwMiddleware : IMiddleware
+    public class JumpMiddleware : IMiddleware
     {
         /// <summary>
         /// 下一个中间件
         /// </summary>
         private readonly RequestDelegate _next;
 
-        private readonly bool IsSSL = false;
-
-        public RedirectWwwMiddleware(RequestDelegate next, bool isSSL)
+        public JumpMiddleware(RequestDelegate next)
         {
             _next = next;
-            IsSSL = isSSL;
         }
 
         /// <summary>
@@ -40,25 +38,21 @@ namespace Ding.Webs.Middlewares
             var host = request.Host.Value;
             var url = request.GetDisplayUrl();
 
-            if (!host.Contains("localhost") && host.Split('.').Length == 2)
+            if (!host.Contains("localhost"))
             {
-                if (IsSSL)
+                var list = cdb.findAll<JumpMap>();
+                foreach (var row in list)
                 {
-                    url = url.Replace("http://", "https://");
+                    if (row.Url == url)
+                    {
+                        response.Redirect(row.JumpTo, true);
+                        return;
+                    }
                 }
-
-                response.Redirect(url.Replace(host, $"www.{host}"), true);
-                return;
-            }
-            
-            if (IsSSL && url.Contains("http://"))
-            {
-                url = url.Replace("http://", "https://");
-                response.Redirect(url, true);
-                return;
             }
 
             await _next.Invoke(context);
         }
+
     }
 }

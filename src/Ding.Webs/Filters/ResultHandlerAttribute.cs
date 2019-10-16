@@ -40,15 +40,15 @@ namespace Ding.Webs.Filters
             }
             if (context.Result is ObjectResult objectResult)
             {
-                context.Result = new Result(StateCode.Ok, string.Empty, objectResult.Value);
+                context.Result = new Ding.Webs.Commons.Result(StateCode.Ok, string.Empty, objectResult.Value);
             }
             else if (context.Result is EmptyResult emptyResult)
             {
-                context.Result = new Result(StateCode.Ok, string.Empty);
+                context.Result = new Ding.Webs.Commons.Result(StateCode.Ok, string.Empty);
             }
             else if (context.Result is JsonResult jsonResult)
             {
-                context.Result = new Result(StateCode.Ok, string.Empty, jsonResult.Value);
+                context.Result = new Ding.Webs.Commons.Result(StateCode.Ok, string.Empty, jsonResult.Value);
             }
             else if (context.Result is ViewResult viewResult)
             {

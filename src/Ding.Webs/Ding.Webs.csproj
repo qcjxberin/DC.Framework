@@ -87,6 +87,7 @@
     <ProjectReference Include="..\Ding.Core\Ding.Core.csproj" />
     <ProjectReference Include="..\Ding.Localization\Ding.Localization.csproj" />
     <ProjectReference Include="..\Ding.Marked\Ding.Marked.csproj" />
+    <ProjectReference Include="..\Ding.MemoryDB\Ding.MemoryDB.csproj" />
   </ItemGroup>
 
   <ItemGroup>
