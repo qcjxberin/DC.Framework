@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../build/version.props" />
+
+  <PropertyGroup>
+    <LangVersion>8</LangVersion>
+    <!-- Disable warning for Controller/Action/Method not have block comment -->
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net461;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <AssemblyName>Ding.AliIoTHttp2</AssemblyName>
+    <RootNamespace>iotxashttp2netsdk</RootNamespace>
+    <Product>$(AssemblyName)</Product>
+    <AssemblyTitle>阿里物联网HTTP/2通道接收设备消息类</AssemblyTitle>
+    <Description>$(AssemblyName)是基于.net core平台开发的应用框架中的阿里物联网HTTP/2通道接收设备消息类。</Description>
+    <Company>武汉极思灵创</Company>
+    <Copyright>©2008-2019 $(Company)开发团队</Copyright>
+    <Deterministic>false</Deterministic>
+    <OutputPath>..\..\output\release\</OutputPath>
+    <DocumentationFile>$(OutputPath)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Authors>丁川</Authors>
+    <PackageReleaseNotes>
+      Ding.AliIoTHttp2项目是Ding应用框架的阿里物联网HTTP/2通道接收设备消息类。
+      Ding是一个.net core/Windows平台下的应用框架，旨在提升小型团队的开发输出能力，由常用公共操作类(工具类)、分层架构基类、Ui组件，第三方组件封装，第三方业务接口封装，配套代码生成模板，权限等组成。
+    </PackageReleaseNotes>
+    <ProjectUrl>https://gitee.com/xingchensoft/DC.Framework</ProjectUrl>
+    <PackageIconUrl>http://www.haocoding.com/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://gitee.com/xingchensoft/DC.Framework</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>星尘;$(AssemblyName);DotNetCore;AspNetCore;Core;Ding;ApplicationFramework;AliIoTHttp2;iotxashttp2netsdk;</PackageTags>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSource>true</IncludeSource>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_1;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <DefineConstants>$(DefineConstants);NETSTANDARD2_0;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net461'">
+    <DefineConstants>$(DefineConstants);__WIN__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Extensions.Http">
+      <Version>2.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="Microsoft.Extensions.Http">
+      <Version>3.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
