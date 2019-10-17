@@ -525,6 +525,11 @@ namespace Ding.Data
 
         private static String getCachePath(Type t)
         {
+            if (Ding.Helpers.Web.IsWeb)
+            {
+                return Path.Combine(Ding.Helpers.Web.RootPath, $"App_Data/Data/{t.FullName}{fileExt}");
+            }
+
             return getCacheFileName(t.FullName);
         }
 

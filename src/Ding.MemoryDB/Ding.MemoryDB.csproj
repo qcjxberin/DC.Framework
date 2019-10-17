@@ -59,4 +59,8 @@
   <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.1'">
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ding\Ding.csproj" />
+  </ItemGroup>
+
 </Project>

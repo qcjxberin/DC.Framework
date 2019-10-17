@@ -38,16 +38,13 @@ namespace Ding.Webs.Middlewares
             var host = request.Host.Value;
             var url = request.GetDisplayUrl();
 
-            if (!host.Contains("localhost"))
+            var list = cdb.findAll<JumpMap>();
+            foreach (var row in list)
             {
-                var list = cdb.findAll<JumpMap>();
-                foreach (var row in list)
+                if (row.Url == url)
                 {
-                    if (row.Url == url)
-                    {
-                        response.Redirect(row.JumpTo, true);
-                        return;
-                    }
+                    response.Redirect(row.JumpTo, true);
+                    return;
                 }
             }
 
